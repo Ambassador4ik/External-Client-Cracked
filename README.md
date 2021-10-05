@@ -5,6 +5,6 @@ This is deobfuscated source code of Russian minecraft 1.12.2 hacked client Exter
 Leaked by one of developers
 
 
-Deobf by Ambassador4ik
+Deobf by Ambassador4ik & DidYouMuch
 
 Ambassador4ik#7777
