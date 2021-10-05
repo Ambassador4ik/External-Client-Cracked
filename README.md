@@ -1,1 +1,7 @@
 # External-Client-Cracked
+
+This is deobfuscated source code of Russian minecraft 1.12.2 hacked client External Client 
+Leaked by one of developers
+
+Deobf by Ambassador4ik
+Ambassador4ik#7777
