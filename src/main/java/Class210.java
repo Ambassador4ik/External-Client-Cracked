@@ -36,7 +36,7 @@ public class Class210 implements ICrashReportDetail {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     public String call() throws Exception {
-        String var10000 = String.valueOf(this..func_77978_p());
+        String var10000 = String.valueOf(this..getTagCompound());
         if (llIIlllIlllI(69800, 8035)) {
             throw null;
         } else {

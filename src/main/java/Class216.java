@@ -32,7 +32,7 @@ public class Class216 implements ItemMeshDefinition {
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public ModelResourceLocation func_178113_a(ItemStack var1) {
+    public ModelResourceLocation getModelLocation(ItemStack var1) {
         ModelResourceLocation var10000 = new ModelResourceLocation;
         String var10002 = Class60. ("|ruv{\u007fBws+");
         if (llllIIIIIlIl(93140, 7406)) {

@@ -57,8 +57,8 @@ public class Class227 implements Runnable {
             }
 
             if (!llllllllIIll(this..                                                                                                    .
-            field_71439_g) ||llllllllIlII(this..                                                                                                    .
-            field_71441_e)){
+            player) ||llllllllIlII(this..                                                                                                    .
+            world)){
                 if (llllllllIIIl(67993, 5279)) {
                     throw null;
                 }

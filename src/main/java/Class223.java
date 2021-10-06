@@ -81,7 +81,7 @@ public class Class223 extends Class171 {
 
     public int _____________________________________________________________________________________/* $FF was:                                                                                      */() {
         return this.                                                                                                    .
-        field_71441_e.field_147482_g.stream().filter(Class223::).mapToInt(Class223::).sum();
+        world.loadedTileEntityList.stream().filter(Class223::).mapToInt(Class223::).sum();
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderWorldLastEvent var1) {
@@ -94,7 +94,7 @@ public class Class223 extends Class171 {
 
             boolean var18;
             for (int var11 = 0; !lllIlllIIllI(75248, 6562); var18 = true) {
-                if (!lllIlllIlIII(var10000, this..field_71441_e.field_147482_g.size())){
+                if (!lllIlllIlIII(var10000, this..world.loadedTileEntityList.size())){
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
@@ -104,46 +104,46 @@ public class Class223 extends Class171 {
                 }
 
                 TileEntity var2;
-                if (lllIlllIlIIl((var2 = (TileEntity) this..field_71441_e.field_147482_g.get(var11)) instanceof TileEntityMobSpawner))
+                if (lllIlllIlIIl((var2 = (TileEntity) this..world.loadedTileEntityList.get(var11)) instanceof TileEntityMobSpawner))
                 {
                     TileEntityMobSpawner var12;
                     TileEntityMobSpawner var16 = var12 = (TileEntityMobSpawner) var2;
-                    BlockPos var10001 = var16.func_174877_v();
-                    double var4 = (double) var10001.func_177958_n() - this.                                                                                                    .
-                    func_175598_ae().field_78730_l;
-                    double var6 = (double) var10001.func_177956_o() - this.                                                                                                    .
-                    func_175598_ae().field_78731_m;
-                    double var8 = (double) var10001.func_177952_p() - this.                                                                                                    .
-                    func_175598_ae().field_78728_n;
-                    BlockPos var3 = var16.func_145881_a().func_177221_b();
-                    float var14 = ((float) this..field_71439_g.func_70011_f((double) var3.func_177958_n(), (double) var3.func_177956_o(), (double) var3.func_177952_p()) + 3.0F) *
+                    BlockPos var10001 = var16.getPos();
+                    double var4 = (double) var10001.getX() - this.                                                                                                    .
+                    getRenderManager().viewerPosX;
+                    double var6 = (double) var10001.getY() - this.                                                                                                    .
+                    getRenderManager().viewerPosY;
+                    double var8 = (double) var10001.getZ() - this.                                                                                                    .
+                    getRenderManager().viewerPosZ;
+                    BlockPos var3 = var16.getSpawnerBaseLogic().getSpawnerPosition();
+                    float var14 = ((float) this..player.getDistance((double) var3.getX(), (double) var3.getY(), (double) var3.getZ()) + 3.0F) *
                     0.5F;
-                    GlStateManager.func_179094_E();
+                    GlStateManager.pushMatrix();
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179090_x();
+                    GlStateManager.disableTexture2D();
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179097_i();
+                    GlStateManager.disableDepth();
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179129_p();
+                    GlStateManager.disableCull();
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179147_l();
+                    GlStateManager.enableBlend();
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179132_a(false);
+                    GlStateManager.depthMask(false);
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
@@ -158,7 +158,7 @@ public class Class223 extends Class171 {
                         throw null;
                     }
 
-                    GlStateManager.func_187441_d(2.0F);
+                    GlStateManager.glLineWidth(2.0F);
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
@@ -168,7 +168,7 @@ public class Class223 extends Class171 {
                         throw null;
                     }
 
-                    Class181. (Block.field_185505_j);
+                    Class181. (Block.FULL_BLOCK_AABB);
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
@@ -178,7 +178,7 @@ public class Class223 extends Class171 {
                         throw null;
                     }
 
-                    Class181. (Block.field_185505_j);
+                    Class181. (Block.FULL_BLOCK_AABB);
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
@@ -194,14 +194,14 @@ public class Class223 extends Class171 {
                         throw null;
                     }
 
-                    Vec3d var10 = Block.field_185505_j.func_189972_c();
-                    GlStateManager.func_179137_b(var10.field_72450_a, var10.field_72448_b, var10.field_72449_c);
+                    Vec3d var10 = Block.FULL_BLOCK_AABB.getCenter();
+                    GlStateManager.translate(var10.x, var10.y, var10.z);
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
 
                     float var17;
-                    if (lllIlllIlIlI(this..field_71474_y.field_74320_O,2)){
+                    if (lllIlllIlIlI(this..gameSettings.thirdPersonView,2)){
                     var17 = -1.0F;
                     var18 = true;
                 } else{
@@ -217,12 +217,12 @@ public class Class223 extends Class171 {
                     }
 
                     float var15 = var17;
-                    GL11.glRotatef(-this..func_175598_ae().field_78735_i, 0.0F, 1.0F, 0.0F);
+                    GL11.glRotatef(-this..getRenderManager().playerViewY, 0.0F, 1.0F, 0.0F);
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
 
-                    GL11.glRotatef(this..func_175598_ae().field_78732_j, var15, 0.0F, 0.0F);
+                    GL11.glRotatef(this..getRenderManager().playerViewX, var15, 0.0F, 0.0F);
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
@@ -237,7 +237,7 @@ public class Class223 extends Class171 {
                         throw null;
                     }
 
-                    var10004 = var10004.insert(0, var12.func_145881_a().func_184994_d().func_70005_c_());
+                    var10004 = var10004.insert(0, var12.getSpawnerBaseLogic().getCachedEntity().getName());
                     String var10005 = Class60. ("8¾m");
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
@@ -252,34 +252,34 @@ public class Class223 extends Class171 {
                     String var13 = String.valueOf(var10004.append(var20 / 20));
                     var14 = (float) this.                                                                                           .
                     (var13);
-                    var15 = (float) (this..field_71466_p.field_78288_b + 1);
+                    var15 = (float) (this..fontRenderer.FONT_HEIGHT + 1);
                     this.                                                                                           .
                     (-var14 / 2.0F - 1.0F, -var15 / 2.0F - 1.0F, var14 / 2.0F + 1.0F, var15 / 2.0F - 2.0F, Class73.                                                                                                  )
                     ;
                     this.                                                                                           .
                     (var13, -var14 / 2.0F, -var15 / 2.0F, Class73.                                                                                          )
                     ;
-                    GlStateManager.func_179098_w();
+                    GlStateManager.enableTexture2D();
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179126_j();
+                    GlStateManager.enableDepth();
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179089_o();
+                    GlStateManager.enableCull();
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179084_k();
+                    GlStateManager.disableBlend();
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179132_a(true);
+                    GlStateManager.depthMask(true);
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
@@ -289,12 +289,12 @@ public class Class223 extends Class171 {
                         throw null;
                     }
 
-                    GlStateManager.func_179121_F();
+                    GlStateManager.popMatrix();
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179117_G();
+                    GlStateManager.resetColor();
                     if (lllIlllIIllI(75248, 6562)) {
                         throw null;
                     }

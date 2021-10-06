@@ -206,9 +206,9 @@ public class Class224 extends Class171 {
     }
 
     private boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var1) {
-        if (!lllIlIIlIIll(var1.func_70089_S()) || !lllIlIIlIlII(var1, this..field_71439_g) ||
+        if (!lllIlIIlIIll(var1.isEntityAlive()) || !lllIlIIlIlII(var1, this..player) ||
         lllIlIIlIlIl(var1 instanceof EntityLivingBase) && (!lllIlIIlIIll(var1 instanceof EntityPlayer) || lllIlIIlIlIl(Class73...
-        (var1.func_70005_c_())))){
+        (var1.getName())))){
             if (lllIlIIlIIlI(80240, 1287)) {
                 throw null;
             } else {
@@ -216,14 +216,14 @@ public class Class224 extends Class171 {
             }
         } else if (lllIlIIlIIlI(80240, 1287)) {
             throw null;
-        } else if (lllIlIIlIIll(var1 instanceof EntityPlayer) && lllIlIIlIIll(var1.func_82150_aj()) && lllIlIIlIlIl(Class73..                                                                                                    .
-        (var1.func_70005_c_()))){
+        } else if (lllIlIIlIIll(var1 instanceof EntityPlayer) && lllIlIIlIIll(var1.isInvisible()) && lllIlIIlIlIl(Class73..                                                                                                    .
+        (var1.getName()))){
             return this.                                                                                                  .
             ();
         } else if (lllIlIIlIIlI(80240, 1287)) {
             throw null;
         } else if (lllIlIIlIIll(var1 instanceof EntityPlayer) && lllIlIIlIlIl(Class73..                                                                                                    .
-        (var1.func_70005_c_()))){
+        (var1.getName()))){
             return this.                                                                              .();
         } else if (lllIlIIlIIlI(80240, 1287)) {
             throw null;
@@ -261,7 +261,7 @@ public class Class224 extends Class171 {
                 throw null;
             } else {
                 this.                                                                                                    .
-                field_71441_e.field_72996_f.forEach(this::);
+                world.loadedEntityList.forEach(this::);
                 var10000 = true;
             }
         }
@@ -269,9 +269,9 @@ public class Class224 extends Class171 {
 
     private void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(double var1) {
         boolean var22;
-        if (lllIlIIlIllI(this..func_175606_aa()) &&lllIlIIlIllI(this..field_71441_e)){
+        if (lllIlIIlIllI(this..getRenderViewEntity()) &&lllIlIIlIllI(this..world)){
             this.                                                                                                    .
-            field_147125_j = null;
+            pointedEntity = null;
             double var10000;
             boolean var10001;
             if (lllIlIIlIIll(this.. ())){
@@ -292,13 +292,13 @@ public class Class224 extends Class171 {
 
             double var3 = var10000;
             this. = this.                                                                                                    .
-            func_175606_aa().func_174822_a(var3, 1.0F);
+            getRenderViewEntity().rayTrace(var3, 1.0F);
             double var5 = var3;
             Vec3d var7 = this.                                                                                                    .
-            func_175606_aa().func_174824_e(1.0F);
+            getRenderViewEntity().getPositionEyes(1.0F);
             if (lllIlIIlIllI(this.)) {
                 var5 = this.                                                                                     .
-                field_72307_f.func_72438_d(var7);
+                hitVec.distanceTo(var7);
             }
 
             if (lllIlIIlIIlI(97639, 9066)) {
@@ -306,17 +306,17 @@ public class Class224 extends Class171 {
             }
 
             Vec3d var8 = this.                                                                                                    .
-            func_175606_aa().func_70676_i(1.0F);
-            Vec3d var9 = var7.func_72441_c(var8.field_72450_a * var3, var8.field_72448_b * var3, var8.field_72449_c * var3);
+            getRenderViewEntity().getLook(1.0F);
+            Vec3d var9 = var7.add(var8.x * var3, var8.y * var3, var8.z * var3);
             this. = null;
             Vec3d var10 = null;
             WorldClient var18 = this.                                                                                                    .
-            field_71441_e;
+            world;
             Entity var19 = this.                                                                                                    .
-            func_175606_aa();
+            getRenderViewEntity();
             AxisAlignedBB var10002 = this.                                                                                                    .
-            func_175606_aa().func_174813_aQ().func_72321_a(var8.field_72450_a * var3, var8.field_72448_b * var3, var8.field_72449_c * var3);
-            Predicate var10003 = EntitySelectors.field_180132_d;
+            getRenderViewEntity().getEntityBoundingBox().expand(var8.x * var3, var8.y * var3, var8.z * var3);
+            Predicate var10003 = EntitySelectors.NOT_SPECTATING;
             Class135 var10004 = new Class135(this);
             if (lllIlIIlIIlI(97639, 9066)) {
                 throw null;
@@ -327,7 +327,7 @@ public class Class224 extends Class171 {
                 throw null;
             }
 
-            List var16 = var18.func_175674_a(var19, var10002, var10003);
+            List var16 = var18.getEntitiesInAABBexcluding(var19, var10002, var10003);
             var3 = var5;
             int var11;
             int var20 = var11 = 0;
@@ -354,21 +354,21 @@ public class Class224 extends Class171 {
                         }
 
                         this. = var23;
-                        byte var25 = this. (this..field_72308_g);
+                        byte var25 = this. (this..entityHit);
                         if (lllIlIIlIIlI(97639, 9066)) {
                             throw null;
                         }
 
                         if (lllIlIIlIIll(var25)) {
                             this.                                                                                                    .
-                            field_71476_x = this.;
+                            objectMouseOver = this.;
                             if (!lllIlIIlIlIl(this. instanceof EntityLivingBase) || lllIlIIlIIll(this. instanceof EntityItemFrame)) {
                                 if (lllIlIIlIIlI(97639, 9066)) {
                                     throw null;
                                 }
 
                                 this.                                                                                                    .
-                                field_147125_j = this.;
+                                pointedEntity = this.;
                             }
                         }
                     }
@@ -376,11 +376,11 @@ public class Class224 extends Class171 {
                 }
 
                 Entity var12;
-                if (lllIlIIlIIll((var12 = (Entity) var16.get(var11)).func_70067_L())) {
+                if (lllIlIIlIIll((var12 = (Entity) var16.get(var11)).canBeCollidedWith())) {
                     float var13 = (float) var1;
-                    AxisAlignedBB var21 = var12.func_174813_aQ().func_72321_a((double) var13, (double) var13, (double) var13).func_72321_a((double) (-var13), (double) (-var13), (double) (-var13));
-                    RayTraceResult var17 = var21.func_72327_a(var7, var9);
-                    if (lllIlIIlIIll(var21.func_72318_a(var7))) {
+                    AxisAlignedBB var21 = var12.getEntityBoundingBox().expand((double) var13, (double) var13, (double) var13).expand((double) (-var13), (double) (-var13), (double) (-var13));
+                    RayTraceResult var17 = var21.calculateIntercept(var7, var9);
+                    if (lllIlIIlIIll(var21.contains(var7))) {
                         double var27;
                         double var28;
                         if (!lllIlIIllIII((var27 = 0.0D - var3) == 0.0D ? 0 : (var27 < 0.0D ? -1 : 1)) || lllIlIIlIlIl((var28 = var3 - 0.0D) == 0.0D ? 0 : (var28 < 0.0D ? -1 : 1))) {
@@ -398,7 +398,7 @@ public class Class224 extends Class171 {
                                     throw null;
                                 }
 
-                                var24 = var17.field_72307_f;
+                                var24 = var17.hitVec;
                             }
 
                             if (lllIlIIlIIlI(97639, 9066)) {
@@ -417,17 +417,17 @@ public class Class224 extends Class171 {
                         double var14;
                         double var29;
                         double var30;
-                        if (lllIlIIlIllI(var17) && (!lllIlIIllIII((var29 = (var14 = var7.func_72438_d(var17.field_72307_f)) - var3) == 0.0D ? 0 : (var29 < 0.0D ? -1 : 1)) || lllIlIIlIlIl((var30 = var3 - 0.0D) == 0.0D ? 0 : (var30 < 0.0D ? -1 : 1)))) {
+                        if (lllIlIIlIllI(var17) && (!lllIlIIllIII((var29 = (var14 = var7.distanceTo(var17.hitVec)) - var3) == 0.0D ? 0 : (var29 < 0.0D ? -1 : 1)) || lllIlIIlIlIl((var30 = var3 - 0.0D) == 0.0D ? 0 : (var30 < 0.0D ? -1 : 1)))) {
                             if (lllIlIIlIIlI(97639, 9066)) {
                                 throw null;
                             }
 
-                            if (lllIlIIllIlI(var12, this..func_175606_aa().func_184187_bx()) &&
+                            if (lllIlIIllIlI(var12, this..getRenderViewEntity().getRidingEntity()) &&
                             lllIlIIlIlIl(var12.canRiderInteract())){
                                 double var31;
                                 if (lllIlIIlIlIl((var31 = var3 - 0.0D) == 0.0D ? 0 : (var31 < 0.0D ? -1 : 1))) {
                                     this. = var12;
-                                    var10 = var17.field_72307_f;
+                                    var10 = var17.hitVec;
                                     var22 = true;
                                 }
                             } else{
@@ -436,7 +436,7 @@ public class Class224 extends Class171 {
                                 }
 
                                 this. = var12;
-                                var10 = var17.field_72307_f;
+                                var10 = var17.hitVec;
                                 var3 = var14;
                             }
                         }
@@ -538,7 +538,7 @@ public class Class224 extends Class171 {
                     } else {
                         if (lllIlIIlIIll(var10000.equals(var10001))) {
                             this.                                                                                                    .
-                            field_71441_e.field_72996_f.stream().filter(this::).forEach(this::);
+                            world.loadedEntityList.stream().filter(this::).forEach(this::);
                         }
 
                         if (lllIlIIlIIlI(42916, 920)) {
@@ -553,13 +553,13 @@ public class Class224 extends Class171 {
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var1, double var2) {
-        double var4 = ((double) var1.field_70130_N + var2) / 2.0D;
-        var2 = (double) var1.field_70131_O + var2 / 2.0D;
-        AxisAlignedBB var10000 = new AxisAlignedBB(var1.field_70165_t - var4, var1.field_70163_u, var1.field_70161_v - var4, var1.field_70165_t + var4, var1.field_70163_u + var2, var1.field_70161_v + var4);
+        double var4 = ((double) var1.width + var2) / 2.0D;
+        var2 = (double) var1.height + var2 / 2.0D;
+        AxisAlignedBB var10000 = new AxisAlignedBB(var1.posX - var4, var1.posY, var1.posZ - var4, var1.posX + var4, var1.posY + var2, var1.posZ + var4);
         if (lllIlIIlIIlI(42860, 3836)) {
             throw null;
         } else {
-            var1.func_174826_a(var10000);
+            var1.setEntityBoundingBox(var10000);
             boolean var6 = true;
         }
     }

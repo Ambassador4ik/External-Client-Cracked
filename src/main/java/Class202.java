@@ -46,7 +46,7 @@ public class Class202 extends Class171 {
             throw null;
         } else {
             this.                                                                                                    .
-            field_71474_y.field_74333_Y = this.;
+            gameSettings.gammaSetting = this.;
             boolean var10000 = true;
         }
     }
@@ -59,9 +59,9 @@ public class Class202 extends Class171 {
             throw null;
         } else {
             this. = this.                                                                                                    .
-            field_71474_y.field_74333_Y;
+            gameSettings.gammaSetting;
             this.                                                                                                    .
-            field_71474_y.field_74333_Y = 1000.0F;
+            gameSettings.gammaSetting = 1000.0F;
             boolean var10000 = true;
         }
     }

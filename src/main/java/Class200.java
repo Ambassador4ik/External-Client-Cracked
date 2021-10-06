@@ -220,7 +220,7 @@ public class Class200 extends Class171 {
                         while (!llllIIIllIll(35840, 8233)) {
                             if (llllIIIlllII(0)) {
                                 this.                                                                                                    .
-                                field_71441_e.func_72877_b(6000L);
+                                world.setWorldTime(6000L);
                                 var7 = true;
                                 return;
                             }
@@ -239,7 +239,7 @@ public class Class200 extends Class171 {
                         throw null;
                     }
 
-                    this.                                                                                                    .field_71441_e.func_72877_b(18000L);
+                    this.                                                                                                    .world.setWorldTime(18000L);
                     var7 = true;
                     return;
                 case 2:
@@ -247,7 +247,7 @@ public class Class200 extends Class171 {
                         throw null;
                     }
 
-                    this.                                                                                                    .field_71441_e.func_72877_b((long) (this. = (int) (this.. () * 1000.0D)));
+                    this.                                                                                                    .world.setWorldTime((long) (this. = (int) (this.. () * 1000.0D)));
                     var7 = true;
                     return;
                 case 3:
@@ -255,7 +255,7 @@ public class Class200 extends Class171 {
                         throw null;
                     } else {
                         WorldClient var6 = this.                                                                                                    .
-                        field_71441_e;
+                        world;
                         int var10002;
                         if (llllIIIllIll(this., 24000)) {
                             var10002 = 0;
@@ -272,7 +272,7 @@ public class Class200 extends Class171 {
                             throw null;
                         }
 
-                        var6.func_72877_b((long) (this. = var10002));
+                        var6.setWorldTime((long) (this. = var10002));
                         this.                                                                              .
                         ((double) ((float) this. / 1000.0F));
                         var7 = true;

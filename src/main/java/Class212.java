@@ -199,7 +199,7 @@ public class Class212 extends Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderGameOverlayEvent var1) {
         this. = this.                                                                                                    .
-        field_71439_g.func_110144_aD();
+        player.getLastAttackedEntity();
         if (lllIlllllllI(Class122.) && (!lllIllllllll(Class122. instanceof EntityPlayer) || llllIIIIIIII(Class122. instanceof EntityArmorStand))) {
             if (llllIIIIIIIl(33410, 7551)) {
                 throw null;
@@ -229,15 +229,15 @@ public class Class212 extends Class171 {
                             throw null;
                         } else {
                             ScaledResolution var25 = var1.getResolution();
-                            int var10 = var25.func_78326_a() / 2 + this.                                                                                            .
+                            int var10 = var25.getScaledWidth() / 2 + this.                                                                                            .
                             ();
-                            int var11 = var25.func_78328_b() / 2 + this.                                                                                  .
+                            int var11 = var25.getScaledHeight() / 2 + this.                                                                                  .
                             ();
                             byte var3 = 20;
                             int var4;
                             int var26;
                             boolean var27;
-                            if (llllIIIIIIlI(var4 = 20 + this.. (this..func_70005_c_())+2, 90)){
+                            if (llllIIIIIIlI(var4 = 20 + this.. (this..getName())+2, 90)){
                                 var26 = 90;
                                 var27 = true;
                             } else{
@@ -257,7 +257,7 @@ public class Class212 extends Class171 {
                                 ((double) (var10 - 1), (double) (var11 - 1), (double) (var5 + 2), (double) var15, 2.0D, Class73.                                                                                                  )
                                 ;
                                 ResourceLocation var28 = this.;
-                                ResourceLocation var29 = AbstractClientPlayer.func_110311_f(this..func_70005_c_());
+                                ResourceLocation var29 = AbstractClientPlayer.getLocationSkin(this..getName());
                                 if (llllIIIIIIIl(33410, 7551)) {
                                     throw null;
                                 } else {
@@ -270,18 +270,18 @@ public class Class212 extends Class171 {
                                                     throw null;
                                                 }
 
-                                                var28 = AbstractClientPlayer.func_110311_f(this..func_70005_c_());
+                                                var28 = AbstractClientPlayer.getLocationSkin(this..getName());
                                                 if (llllIIIIIIIl(33410, 7551)) {
                                                     throw null;
                                                 }
 
-                                                ThreadDownloadImageData var31 = AbstractClientPlayer.func_110304_a(var28, this..func_70005_c_())
+                                                ThreadDownloadImageData var31 = AbstractClientPlayer.getDownloadImageSkin(var28, this..getName())
                                                 ;
                                                 if (llllIIIIIIIl(33410, 7551)) {
                                                     throw null;
                                                 }
 
-                                                var31.func_110551_a(this..func_110442_L());
+                                                var31.loadTexture(this..getResourceManager());
                                             } catch (Exception var9) {
                                                 if (llllIIIIIIIl(33410, 7551)) {
                                                     throw null;
@@ -303,7 +303,7 @@ public class Class212 extends Class171 {
                                             throw null;
                                         }
 
-                                        var29 = AbstractClientPlayer.func_110311_f(this..func_70005_c_());
+                                        var29 = AbstractClientPlayer.getLocationSkin(this..getName());
                                         if (llllIIIIIIIl(33410, 7551)) {
                                             throw null;
                                         }
@@ -314,19 +314,19 @@ public class Class212 extends Class171 {
                                     if (llllIIIIIIIl(33410, 7551)) {
                                         throw null;
                                     } else {
-                                        GlStateManager.func_179117_G();
+                                        GlStateManager.resetColor();
                                         if (llllIIIIIIIl(33410, 7551)) {
                                             throw null;
                                         } else {
                                             TextureManager var10008 = this.                                                                                                    .
-                                            func_110434_K();
-                                            ResourceLocation var10009 = AbstractClientPlayer.func_110311_f(this..func_70005_c_())
+                                            getTextureManager();
+                                            ResourceLocation var10009 = AbstractClientPlayer.getLocationSkin(this..getName())
                                             ;
                                             if (llllIIIIIIIl(33410, 7551)) {
                                                 throw null;
                                             } else {
-                                                var10008.func_110577_a(var10009);
-                                                Gui.func_152125_a(var10, var11, 8.0F, 8.0F, 8, 8, var3 - 1, var3 - 1, 64.0F, 64.0F);
+                                                var10008.bindTexture(var10009);
+                                                Gui.drawScaledCustomSizeModalRect(var10, var11, 8.0F, 8.0F, 8, 8, var3 - 1, var3 - 1, 64.0F, 64.0F);
                                                 if (llllIIIIIIIl(33410, 7551)) {
                                                     throw null;
                                                 } else {
@@ -341,15 +341,15 @@ public class Class212 extends Class171 {
                                                         var10006. (var10007, var50, var51, 6.0D, 2.0D, var10012.getRGB())
                                                         ;
                                                         float var16 = this.                                                                                         .
-                                                        func_110143_aJ() / this.                                                                                         .
-                                                        func_110138_aP();
+                                                        getHealth() / this.                                                                                         .
+                                                        getMaxHealth();
                                                         float var6 = 100.0F * var16 / 50.0F;
                                                         var16 = (float) var5 * var16;
                                                         this.                                                                                     .
                                                         (var16);
                                                         this.                                                                                     .
                                                         ();
-                                                        GlStateManager.func_179131_c(2.0F - var6, var6, 0.0F, 1.0F);
+                                                        GlStateManager.color(2.0F - var6, var6, 0.0F, 1.0F);
                                                         if (llllIIIIIIIl(33410, 7551)) {
                                                             throw null;
                                                         } else {
@@ -362,7 +362,7 @@ public class Class212 extends Class171 {
                                                             } else {
                                                                 var10003. (var10004, var10005, var49, 6.0D, 2.0D);
                                                                 this.                                                                                           .
-                                                                (this..func_70005_c_(), (float) (var10 + var3 + 1), (float) var11, Class73.                                                                                          )
+                                                                (this..getName(), (float) (var10 + var3 + 1), (float) var11, Class73.                                                                                          )
                                                                 ;
                                                                 Class4 var32 = this.;
                                                                 StringBuilder var10002 = new StringBuilder();
@@ -374,7 +374,7 @@ public class Class212 extends Class171 {
                                                                         throw null;
                                                                     } else {
                                                                         var10002 = var10002.insert(0, var43);
-                                                                        double var36 = Math.ceil((double) this..func_110143_aJ())
+                                                                        double var36 = Math.ceil((double) this..getHealth())
                                                                         ;
                                                                         if (llllIIIIIIIl(33410, 7551)) {
                                                                             throw null;
@@ -402,7 +402,7 @@ public class Class212 extends Class171 {
                                                                                     }
 
                                                                                     var37 = var37.append(var33);
-                                                                                    double var35 = Math.ceil((double) ((EntityPlayer) this.).func_71024_bL().func_75115_e());
+                                                                                    double var35 = Math.ceil((double) ((EntityPlayer) this.).getFoodStats().getSaturationLevel());
                                                                                     if (llllIIIIIIIl(33410, 7551)) {
                                                                                         throw null;
                                                                                     }
@@ -425,7 +425,7 @@ public class Class212 extends Class171 {
                                                                                             throw null;
                                                                                         }
 
-                                                                                        var13.add(String.valueOf(var37.insert(0, var39).append(((EntityPlayer) this.).func_71024_bL().func_75116_a())));
+                                                                                        var13.add(String.valueOf(var37.insert(0, var39).append(((EntityPlayer) this.).getFoodStats().getFoodLevel())));
                                                                                     }
 
                                                                                     if (llllIIIIIIIl(33410, 7551)) {
@@ -440,7 +440,7 @@ public class Class212 extends Class171 {
 
                                                                                             Object[] var38 = new Object[1];
                                                                                             Float var48 = this.                                                                                                    .
-                                                                                            field_71439_g.func_70032_d(this.);
+                                                                                            player.getDistance(this.);
                                                                                             if (llllIIIIIIIl(33410, 7551)) {
                                                                                                 throw null;
                                                                                             }
@@ -508,7 +508,7 @@ public class Class212 extends Class171 {
                                                                                                     }
 
                                                                                                     ArrayList var18 = var45;
-                                                                                                    List var47 = Lists.reverse(((EntityPlayer) this.).field_71071_by.field_70460_b);
+                                                                                                    List var47 = Lists.reverse(((EntityPlayer) this.).inventory.armorInventory);
                                                                                                     if (llllIIIIIIIl(33410, 7551)) {
                                                                                                         throw null;
                                                                                                     }
@@ -527,7 +527,7 @@ public class Class212 extends Class171 {
                                                                                                             }
 
                                                                                                             ItemStack var22;
-                                                                                                            if (lllIllllllll((var22 = ((EntityPlayer) this.).field_71071_by.func_70448_g()).func_77973_b() instanceof ItemAir)) {
+                                                                                                            if (lllIllllllll((var22 = ((EntityPlayer) this.).inventory.getCurrentItem()).getItem() instanceof ItemAir)) {
                                                                                                                 var18.add(var22);
                                                                                                             }
 
@@ -535,7 +535,7 @@ public class Class212 extends Class171 {
                                                                                                                 throw null;
                                                                                                             }
 
-                                                                                                            if (lllIllllllll((var22 = (ItemStack) ((EntityPlayer) this.).field_71071_by.field_184439_c.get(0)).func_77973_b() instanceof ItemAir)) {
+                                                                                                            if (lllIllllllll((var22 = (ItemStack) ((EntityPlayer) this.).inventory.offHandInventory.get(0)).getItem() instanceof ItemAir)) {
                                                                                                                 var18.add(var22);
                                                                                                             }
 
@@ -566,7 +566,7 @@ public class Class212 extends Class171 {
                                                                                                         }
 
                                                                                                         ItemStack var21;
-                                                                                                        if (lllIllllllll((var21 = (ItemStack) var20.next()).func_77973_b() instanceof ItemAir)) {
+                                                                                                        if (lllIllllllll((var21 = (ItemStack) var20.next()).getItem() instanceof ItemAir)) {
                                                                                                             var18.add(var21);
                                                                                                             var10000 = true;
                                                                                                         }

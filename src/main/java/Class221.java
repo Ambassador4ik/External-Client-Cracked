@@ -73,26 +73,26 @@ public class Class221 extends Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(PlayerTickEvent var1) {
         boolean var10000;
-        if (lIIIIIIIIIlIl(this..field_71439_g.func_70089_S()) &&lIIIIIIIIIllI(this.)){
+        if (lIIIIIIIIIlIl(this..player.isEntityAlive()) &&lIIIIIIIIIllI(this.)){
             String var3 = Class60. ("B!<i>B'?a;K 3(");
             if (lIIIIIIIIIIII(81309, 2691)) {
                 throw null;
             } else {
                 Object[] var10001 = new Object[3];
                 Integer var10004 = (int) this.                                                                                                    .
-                field_71439_g.field_70165_t;
+                player.posX;
                 if (lIIIIIIIIIIII(81309, 2691)) {
                     throw null;
                 } else {
                     var10001[0] = var10004;
                     var10004 = (int) this.                                                                                                    .
-                    field_71439_g.field_70163_u;
+                    player.posY;
                     if (lIIIIIIIIIIII(81309, 2691)) {
                         throw null;
                     } else {
                         var10001[1] = var10004;
                         var10004 = (int) this.                                                                                                    .
-                        field_71439_g.field_70161_v;
+                        player.posZ;
                         if (lIIIIIIIIIIII(81309, 2691)) {
                             throw null;
                         } else {
@@ -129,7 +129,7 @@ public class Class221 extends Class171 {
         } else if (lIIIIIIIIIIII(81309, 2691)) {
             throw null;
         } else {
-            if (lIIIIIIIIIlIl(this.) && lIIIIIIIIIllI(this..field_71439_g.func_70089_S())){
+            if (lIIIIIIIIIlIl(this.) && lIIIIIIIIIllI(this..player.isEntityAlive())){
                 this. = true;
             }
 

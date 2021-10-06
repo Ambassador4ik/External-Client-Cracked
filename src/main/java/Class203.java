@@ -210,16 +210,16 @@ public class Class203 extends Class171 {
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Class195 var1, ItemStack var2, int var3, int var4, @Nullable String var5) {
-        if (lllIlIllIIlI(var2.func_190926_b())) {
+        if (lllIlIllIIlI(var2.isEmpty())) {
             boolean var10001;
-            if (!lllIlIlIllIl(var2.func_190916_E(), 1) || lllIlIllIlII(var5)) {
+            if (!lllIlIlIllIl(var2.getCount(), 1) || lllIlIllIlII(var5)) {
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
                 String var10000;
                 if (lllIlIllIlIl(var5)) {
-                    var10000 = String.valueOf(var2.func_190916_E());
+                    var10000 = String.valueOf(var2.getCount());
                     if (lllIlIlIlIlI(20451, 7058)) {
                         throw null;
                     }
@@ -238,33 +238,33 @@ public class Class203 extends Class171 {
                 }
 
                 String var6 = var10000;
-                GlStateManager.func_179140_f();
+                GlStateManager.disableLighting();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179097_i();
+                GlStateManager.disableDepth();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179084_k();
+                GlStateManager.disableBlend();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
                 var1.drawStringWithShadow(var6, (float) (var3 + 19 - 2 - var1.getStringWidth(var6)), (float) (var4 + 6 + 3), 16777215);
-                GlStateManager.func_179145_e();
+                GlStateManager.enableLighting();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179126_j();
+                GlStateManager.enableDepth();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179147_l();
+                GlStateManager.enableBlend();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
@@ -275,40 +275,40 @@ public class Class203 extends Class171 {
             }
 
             Tessellator var14;
-            if (lllIlIlIllII(var2.func_77973_b().showDurabilityBar(var2))) {
-                GlStateManager.func_179140_f();
+            if (lllIlIlIllII(var2.getItem().showDurabilityBar(var2))) {
+                GlStateManager.disableLighting();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179097_i();
+                GlStateManager.disableDepth();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179090_x();
+                GlStateManager.disableTexture2D();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179118_c();
+                GlStateManager.disableAlpha();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179084_k();
+                GlStateManager.disableBlend();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                var14 = Tessellator.func_178181_a();
+                var14 = Tessellator.getInstance();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                BufferBuilder var10 = var14.func_178180_c();
-                double var7 = var2.func_77973_b().getDurabilityForDisplay(var2);
-                int var12 = var2.func_77973_b().getRGBDurabilityForDisplay(var2);
+                BufferBuilder var10 = var14.getBuffer();
+                double var7 = var2.getItem().getDurabilityForDisplay(var2);
+                int var12 = var2.getItem().getRGBDurabilityForDisplay(var2);
                 int var15 = Math.round(13.0F - (float) var7 * 13.0F);
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
@@ -325,27 +325,27 @@ public class Class203 extends Class171 {
                     throw null;
                 }
 
-                GlStateManager.func_179147_l();
+                GlStateManager.enableBlend();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179141_d();
+                GlStateManager.enableAlpha();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179098_w();
+                GlStateManager.enableTexture2D();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179145_e();
+                GlStateManager.enableLighting();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179126_j();
+                GlStateManager.enableDepth();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
@@ -355,14 +355,14 @@ public class Class203 extends Class171 {
                 throw null;
             }
 
-            Minecraft var16 = Minecraft.func_71410_x();
+            Minecraft var16 = Minecraft.getMinecraft();
             if (lllIlIlIlIlI(20451, 7058)) {
                 throw null;
             }
 
             EntityPlayerSP var13;
             float var18;
-            if (lllIlIllIlIl(var13 = var16.field_71439_g)) {
+            if (lllIlIllIlIl(var13 = var16.player)) {
                 var18 = 0.0F;
                 var10001 = true;
             } else {
@@ -370,14 +370,14 @@ public class Class203 extends Class171 {
                     throw null;
                 }
 
-                CooldownTracker var19 = var13.func_184811_cZ();
-                Item var17 = var2.func_77973_b();
-                Minecraft var10002 = Minecraft.func_71410_x();
+                CooldownTracker var19 = var13.getCooldownTracker();
+                Item var17 = var2.getItem();
+                Minecraft var10002 = Minecraft.getMinecraft();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                var18 = var19.func_185143_a(var17, var10002.func_184121_ak());
+                var18 = var19.getCooldown(var17, var10002.getRenderPartialTicks());
             }
 
             if (lllIlIlIlIlI(20451, 7058)) {
@@ -387,34 +387,34 @@ public class Class203 extends Class171 {
             float var11 = var18;
             float var21;
             if (lllIlIllIllI((var21 = var11 - 0.0F) == 0.0F ? 0 : (var21 < 0.0F ? -1 : 1))) {
-                GlStateManager.func_179140_f();
+                GlStateManager.disableLighting();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179097_i();
+                GlStateManager.disableDepth();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179090_x();
+                GlStateManager.disableTexture2D();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                var14 = Tessellator.func_178181_a();
+                var14 = Tessellator.getInstance();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                BufferBuilder var8 = var14.func_178180_c();
-                int var10004 = MathHelper.func_76141_d(16.0F * (1.0F - var11));
+                BufferBuilder var8 = var14.getBuffer();
+                int var10004 = MathHelper.floor(16.0F * (1.0F - var11));
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
                 int var10003 = var4 + var10004;
-                int var10005 = MathHelper.func_76123_f(16.0F * var11);
+                int var10005 = MathHelper.ceil(16.0F * var11);
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
@@ -424,17 +424,17 @@ public class Class203 extends Class171 {
                     throw null;
                 }
 
-                GlStateManager.func_179098_w();
+                GlStateManager.enableTexture2D();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179145_e();
+                GlStateManager.enableLighting();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
 
-                GlStateManager.func_179126_j();
+                GlStateManager.enableDepth();
                 if (lllIlIlIlIlI(20451, 7058)) {
                     throw null;
                 }
@@ -457,11 +457,11 @@ public class Class203 extends Class171 {
             if (lllIlIlIlIlI(10288, 6080)) {
                 throw null;
             } else {
-                GlStateManager.func_179097_i();
+                GlStateManager.disableDepth();
                 if (lllIlIlIlIlI(10288, 6080)) {
                     throw null;
                 } else {
-                    GlStateManager.func_179140_f();
+                    GlStateManager.disableLighting();
                     if (lllIlIlIlIlI(10288, 6080)) {
                         throw null;
                     } else {
@@ -475,24 +475,24 @@ public class Class203 extends Class171 {
                             throw null;
                         } else {
                             var10002. (var10003, var10004, var10005, var10006, var10007.getRGB());
-                            GlStateManager.func_179145_e();
+                            GlStateManager.enableLighting();
                             if (lllIlIlIlIlI(10288, 6080)) {
                                 throw null;
                             } else {
-                                RenderHelper.func_74519_b();
+                                RenderHelper.enableStandardItemLighting();
                                 if (lllIlIlIlIlI(10288, 6080)) {
                                     throw null;
                                 } else {
                                     this.                                                                                           .
-                                    ().func_175042_a(var1, var2, var3);
-                                    RenderHelper.func_74518_a();
+                                    ().renderItemIntoGUI(var1, var2, var3);
+                                    RenderHelper.disableStandardItemLighting();
                                     if (lllIlIlIlIlI(10288, 6080)) {
                                         throw null;
                                     } else {
                                         String var5 = "";
-                                        if (lllIlIlIlIll(var1.func_190916_E(), 1)) {
+                                        if (lllIlIlIlIll(var1.getCount(), 1)) {
                                             StringBuilder var10000 = new StringBuilder;
-                                            String var28 = String.valueOf(var1.func_190916_E());
+                                            String var28 = String.valueOf(var1.getCount());
                                             if (lllIlIlIlIlI(10288, 6080)) {
                                                 throw null;
                                             }
@@ -509,15 +509,15 @@ public class Class203 extends Class171 {
                                             throw null;
                                         } else {
                                             this. (this.. (), var1, var2, var3, var5);
-                                            GlStateManager.func_179126_j();
+                                            GlStateManager.enableDepth();
                                             if (lllIlIlIlIlI(10288, 6080)) {
                                                 throw null;
                                             } else {
-                                                GlStateManager.func_179140_f();
+                                                GlStateManager.disableLighting();
                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                     throw null;
                                                 } else {
-                                                    GlStateManager.func_179097_i();
+                                                    GlStateManager.disableDepth();
                                                     if (lllIlIlIlIlI(10288, 6080)) {
                                                         throw null;
                                                     } else {
@@ -527,221 +527,221 @@ public class Class203 extends Class171 {
                                                         } else {
                                                             if (lllIlIlIllII(this.. ())){
                                                                 var3 -= 28;
-                                                                Enchantment var26 = Enchantment.func_185262_c(0);
+                                                                Enchantment var26 = Enchantment.getEnchantmentByID(0);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                int var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                int var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var25 = var27;
-                                                                var26 = Enchantment.func_185262_c(7);
+                                                                var26 = Enchantment.getEnchantmentByID(7);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var6 = var27;
-                                                                var26 = Enchantment.func_185262_c(34);
+                                                                var26 = Enchantment.getEnchantmentByID(34);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var7 = var27;
-                                                                var26 = Enchantment.func_185262_c(70);
+                                                                var26 = Enchantment.getEnchantmentByID(70);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var8 = var27;
-                                                                var26 = Enchantment.func_185262_c(2);
+                                                                var26 = Enchantment.getEnchantmentByID(2);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var9 = var27;
-                                                                var26 = Enchantment.func_185262_c(8);
+                                                                var26 = Enchantment.getEnchantmentByID(8);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var10 = var27;
-                                                                var26 = Enchantment.func_185262_c(71);
+                                                                var26 = Enchantment.getEnchantmentByID(71);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var11 = var27;
-                                                                var26 = Enchantment.func_185262_c(10);
+                                                                var26 = Enchantment.getEnchantmentByID(10);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var12 = var27;
-                                                                var26 = Enchantment.func_185262_c(22);
+                                                                var26 = Enchantment.getEnchantmentByID(22);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var13 = var27;
-                                                                var26 = Enchantment.func_185262_c(16);
+                                                                var26 = Enchantment.getEnchantmentByID(16);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var14 = var27;
-                                                                var26 = Enchantment.func_185262_c(21);
+                                                                var26 = Enchantment.getEnchantmentByID(21);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var15 = var27;
-                                                                var26 = Enchantment.func_185262_c(51);
+                                                                var26 = Enchantment.getEnchantmentByID(51);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var16 = var27;
-                                                                var26 = Enchantment.func_185262_c(48);
+                                                                var26 = Enchantment.getEnchantmentByID(48);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var17 = var27;
-                                                                var26 = Enchantment.func_185262_c(49);
+                                                                var26 = Enchantment.getEnchantmentByID(49);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var18 = var27;
-                                                                var26 = Enchantment.func_185262_c(50);
+                                                                var26 = Enchantment.getEnchantmentByID(50);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var19 = var27;
-                                                                var26 = Enchantment.func_185262_c(19);
+                                                                var26 = Enchantment.getEnchantmentByID(19);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var20 = var27;
-                                                                var26 = Enchantment.func_185262_c(20);
+                                                                var26 = Enchantment.getEnchantmentByID(20);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var21 = var27;
-                                                                var26 = Enchantment.func_185262_c(32);
+                                                                var26 = Enchantment.getEnchantmentByID(32);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var22 = var27;
-                                                                var26 = Enchantment.func_185262_c(33);
+                                                                var26 = Enchantment.getEnchantmentByID(33);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
                                                                 int var23 = var27;
-                                                                var26 = Enchantment.func_185262_c(35);
+                                                                var26 = Enchantment.getEnchantmentByID(35);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
 
-                                                                var27 = EnchantmentHelper.func_77506_a(var26, var1);
+                                                                var27 = EnchantmentHelper.getEnchantmentLevel(var26, var1);
                                                                 if (lllIlIlIlIlI(10288, 6080)) {
                                                                     throw null;
                                                                 }
@@ -1024,16 +1024,16 @@ public class Class203 extends Class171 {
     }
 
     private void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(BufferBuilder var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {
-        var1.func_181668_a(7, DefaultVertexFormats.field_181706_f);
-        var1.func_181662_b((double) (var2 + 0), (double) (var3 + 0), 0.0D).func_181669_b(var6, var7, var8, var9).func_181675_d();
-        var1.func_181662_b((double) (var2 + 0), (double) (var3 + var5), 0.0D).func_181669_b(var6, var7, var8, var9).func_181675_d();
-        var1.func_181662_b((double) (var2 + var4), (double) (var3 + var5), 0.0D).func_181669_b(var6, var7, var8, var9).func_181675_d();
-        var1.func_181662_b((double) (var2 + var4), (double) (var3 + 0), 0.0D).func_181669_b(var6, var7, var8, var9).func_181675_d();
-        Tessellator var10000 = Tessellator.func_178181_a();
+        var1.begin(7, DefaultVertexFormats.POSITION_COLOR);
+        var1.pos((double) (var2 + 0), (double) (var3 + 0), 0.0D).color(var6, var7, var8, var9).endVertex();
+        var1.pos((double) (var2 + 0), (double) (var3 + var5), 0.0D).color(var6, var7, var8, var9).endVertex();
+        var1.pos((double) (var2 + var4), (double) (var3 + var5), 0.0D).color(var6, var7, var8, var9).endVertex();
+        var1.pos((double) (var2 + var4), (double) (var3 + 0), 0.0D).color(var6, var7, var8, var9).endVertex();
+        Tessellator var10000 = Tessellator.getInstance();
         if (lllIlIlIlIlI(65827, 6030)) {
             throw null;
         } else {
-            var10000.func_78381_a();
+            var10000.draw();
             boolean var10 = true;
         }
     }
@@ -1049,7 +1049,7 @@ public class Class203 extends Class171 {
             throw null;
         } else {
             Iterator var3 = this.                                                                                                    .
-            field_71441_e.field_73010_i.iterator();
+            world.playerEntities.iterator();
 
             while (!lllIlIlIlIlI(91627, 4584)) {
                 if (!lllIlIlIllII(var3.hasNext())) {
@@ -1062,7 +1062,7 @@ public class Class203 extends Class171 {
                 }
 
                 EntityPlayer var4 = (EntityPlayer) var3.next();
-                if (lllIlIlIllII(var2.func_70005_c_().contains(var4.func_70005_c_()))) {
+                if (lllIlIlIllII(var2.getName().contains(var4.getName()))) {
                     var1.setCanceled(true);
                     var10000 = true;
                     return;
@@ -1084,7 +1084,7 @@ public class Class203 extends Class171 {
             } else {
                 var2 = (float) this.                                                                                           .
                 (var1);
-                float var3 = (float) (this..field_71466_p.field_78288_b + 1);
+                float var3 = (float) (this..fontRenderer.FONT_HEIGHT + 1);
                 Class4 var10001 = this.;
                 float var10002 = -var2 / 2.0F - 1.0F;
                 float var10004 = var2 / 2.0F + 1.0F;
@@ -1108,7 +1108,7 @@ public class Class203 extends Class171 {
     }
 
     private boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(EntityPlayer var1) {
-        if (lllIlIllIlII(var1) && lllIlIlIllII(var1.func_70089_S()) && lllIlIllIlll(var1, this..field_71439_g)){
+        if (lllIlIllIlII(var1) && lllIlIlIllII(var1.isEntityAlive()) && lllIlIllIlll(var1, this..player)){
             int var10000 = Class123. (var1);
             if (lllIlIlIlIlI(83341, 4670)) {
                 throw null;
@@ -1119,7 +1119,7 @@ public class Class203 extends Class171 {
                     throw null;
                 }
 
-                if (lllIlIlIllII(var1.func_82150_aj())) {
+                if (lllIlIlIllII(var1.isInvisible())) {
                     return this.                                                                                            .
                     ();
                 }
@@ -1145,7 +1145,7 @@ public class Class203 extends Class171 {
             throw null;
         } else {
             ArrayList var3 = var10000;
-            Iterator var4 = var1.field_71071_by.field_70460_b.iterator();
+            Iterator var4 = var1.inventory.armorInventory.iterator();
 
             while (!lllIlIlIlIlI(31701, 119)) {
                 boolean var10;
@@ -1155,7 +1155,7 @@ public class Class203 extends Class171 {
                     }
 
                     ItemStack var8;
-                    if (lllIlIllIIlI((var8 = var1.field_71071_by.func_70448_g()).func_77973_b() instanceof ItemAir)) {
+                    if (lllIlIllIIlI((var8 = var1.inventory.getCurrentItem()).getItem() instanceof ItemAir)) {
                         var3.add(var8);
                     }
 
@@ -1163,7 +1163,7 @@ public class Class203 extends Class171 {
                         throw null;
                     }
 
-                    if (lllIlIllIIlI((var8 = (ItemStack) var1.field_71071_by.field_184439_c.get(0)).func_77973_b() instanceof ItemAir)) {
+                    if (lllIlIllIIlI((var8 = (ItemStack) var1.inventory.offHandInventory.get(0)).getItem() instanceof ItemAir)) {
                         var3.add(var8);
                     }
 
@@ -1200,7 +1200,7 @@ public class Class203 extends Class171 {
                 }
 
                 ItemStack var5;
-                if (lllIlIllIIlI((var5 = (ItemStack) var4.next()).func_77973_b() instanceof ItemAir)) {
+                if (lllIlIllIIlI((var5 = (ItemStack) var4.next()).getItem() instanceof ItemAir)) {
                     var3.add(var5);
                     var10 = true;
                 }
@@ -1214,37 +1214,37 @@ public class Class203 extends Class171 {
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(EntityPlayer var1, float var2) {
         double var3;
-        float var5 = (float) (((var3 = (double) this..field_71439_g.func_70032_d(var1)) + 3.0D) / 10.0D / 50.0D * 20.0D)
+        float var5 = (float) (((var3 = (double) this..player.getDistance(var1)) + 3.0D) / 10.0D / 50.0D * 20.0D)
         ;
         var3 = (var3 + 3.0D) / 100.0D * 40.0D / 100.0D * 6.0D + 2.1D;
         double var6 = 0.0D;
-        if (lllIlIlIllII(var1.func_70093_af())) {
+        if (lllIlIlIllII(var1.isSneaking())) {
             var6 = 0.4D;
         }
 
         if (lllIlIlIlIlI(75834, 5599)) {
             throw null;
         } else {
-            double var8 = var1.field_70142_S + (var1.field_70165_t - var1.field_70142_S) * (double) var2;
-            var3 = var1.field_70137_T + (var1.field_70163_u - var1.field_70137_T) * (double) var2 + var3 - var6;
-            var6 = var1.field_70136_U + (var1.field_70161_v - var1.field_70136_U) * (double) var2;
-            GlStateManager.func_179094_E();
+            double var8 = var1.lastTickPosX + (var1.posX - var1.lastTickPosX) * (double) var2;
+            var3 = var1.lastTickPosY + (var1.posY - var1.lastTickPosY) * (double) var2 + var3 - var6;
+            var6 = var1.lastTickPosZ + (var1.posZ - var1.lastTickPosZ) * (double) var2;
+            GlStateManager.pushMatrix();
             if (lllIlIlIlIlI(75834, 5599)) {
                 throw null;
             } else {
-                GlStateManager.func_179090_x();
+                GlStateManager.disableTexture2D();
                 if (lllIlIlIlIlI(75834, 5599)) {
                     throw null;
                 } else {
-                    GlStateManager.func_179097_i();
+                    GlStateManager.disableDepth();
                     if (lllIlIlIlIlI(75834, 5599)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179147_l();
+                        GlStateManager.enableBlend();
                         if (lllIlIlIlIlI(75834, 5599)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179132_a(false);
+                            GlStateManager.depthMask(false);
                             if (lllIlIlIlIlI(75834, 5599)) {
                                 throw null;
                             } else {
@@ -1253,19 +1253,19 @@ public class Class203 extends Class171 {
                                     throw null;
                                 } else {
                                     RenderManager var10 = this.                                                                                                    .
-                                    func_175598_ae();
-                                    GL11.glTranslated(var8 - var10.field_78730_l, var3 - var10.field_78731_m, var6 - var10.field_78728_n);
+                                    getRenderManager();
+                                    GL11.glTranslated(var8 - var10.viewerPosX, var3 - var10.viewerPosY, var6 - var10.viewerPosZ);
                                     if (lllIlIlIlIlI(75834, 5599)) {
                                         throw null;
                                     } else {
-                                        GL11.glRotatef(-var10.field_78735_i, 0.0F, 1.0F, 0.0F);
+                                        GL11.glRotatef(-var10.playerViewY, 0.0F, 1.0F, 0.0F);
                                         if (lllIlIlIlIlI(75834, 5599)) {
                                             throw null;
                                         } else {
-                                            float var10000 = var10.field_78732_j;
+                                            float var10000 = var10.playerViewX;
                                             float var10001;
                                             boolean var10002;
-                                            if (lllIlIlIllIl(this..field_71474_y.field_74320_O,2)){
+                                            if (lllIlIlIllIl(this..gameSettings.thirdPersonView,2)){
                                                 var10001 = -1.0F;
                                                 var10002 = true;
                                             } else{
@@ -1291,7 +1291,7 @@ public class Class203 extends Class171 {
                                                         String var13;
                                                         String var14;
                                                         boolean var15;
-                                                        if (lllIlIlIlIll(var11 = (int) var1.func_110143_aJ(), 15)) {
+                                                        if (lllIlIlIlIll(var11 = (int) var1.getHealth(), 15)) {
                                                             var14 = Class60. (":");
                                                             if (lllIlIlIlIlI(75834, 5599)) {
                                                                 throw null;
@@ -1394,7 +1394,7 @@ public class Class203 extends Class171 {
                                                                     if (lllIlIlIlIlI(75834, 5599)) {
                                                                         throw null;
                                                                     } else {
-                                                                        var12 = String.valueOf(var18.insert(0, var12).append(var1.func_145748_c_().func_150254_d()));
+                                                                        var12 = String.valueOf(var18.insert(0, var12).append(var1.getDisplayName().getFormattedText()));
                                                                         var18 = new StringBuilder();
                                                                         if (lllIlIlIlIlI(75834, 5599)) {
                                                                             throw null;
@@ -1412,7 +1412,7 @@ public class Class203 extends Class171 {
                                                                                 }
 
                                                                                 var16 = var16.insert(0, var10003).append(var13);
-                                                                                double var21 = Math.ceil((double) var1.func_110143_aJ());
+                                                                                double var21 = Math.ceil((double) var1.getHealth());
                                                                                 if (lllIlIlIlIlI(75834, 5599)) {
                                                                                     throw null;
                                                                                 }
@@ -1461,7 +1461,7 @@ public class Class203 extends Class171 {
                                                                                     var18 = var18.insert(0, var12);
                                                                                     if (lllIlIlIllII(this.. ())){
                                                                                         if (lllIlIlIllII(Class73..                                                                                                    .
-                                                                                        (var1.func_70005_c_()))){
+                                                                                        (var1.getName()))){
                                                                                             var20 = Class60.
                                                                                             (";A¿y4½n\u0006");
                                                                                             if (lllIlIlIlIlI(75834, 5599)) {
@@ -1512,11 +1512,11 @@ public class Class203 extends Class171 {
                                                                                             if (lllIlIlIlIlI(75834, 5599)) {
                                                                                                 throw null;
                                                                                             } else {
-                                                                                                GlStateManager.func_179084_k();
+                                                                                                GlStateManager.disableBlend();
                                                                                                 if (lllIlIlIlIlI(75834, 5599)) {
                                                                                                     throw null;
                                                                                                 } else {
-                                                                                                    GlStateManager.func_179132_a(true);
+                                                                                                    GlStateManager.depthMask(true);
                                                                                                     if (lllIlIlIlIlI(75834, 5599)) {
                                                                                                         throw null;
                                                                                                     } else {
@@ -1524,19 +1524,19 @@ public class Class203 extends Class171 {
                                                                                                         if (lllIlIlIlIlI(75834, 5599)) {
                                                                                                             throw null;
                                                                                                         } else {
-                                                                                                            GlStateManager.func_179098_w();
+                                                                                                            GlStateManager.enableTexture2D();
                                                                                                             if (lllIlIlIlIlI(75834, 5599)) {
                                                                                                                 throw null;
                                                                                                             } else {
-                                                                                                                GlStateManager.func_179126_j();
+                                                                                                                GlStateManager.enableDepth();
                                                                                                                 if (lllIlIlIlIlI(75834, 5599)) {
                                                                                                                     throw null;
                                                                                                                 } else {
-                                                                                                                    GlStateManager.func_179121_F();
+                                                                                                                    GlStateManager.popMatrix();
                                                                                                                     if (lllIlIlIlIlI(75834, 5599)) {
                                                                                                                         throw null;
                                                                                                                     } else {
-                                                                                                                        GlStateManager.func_179117_G();
+                                                                                                                        GlStateManager.resetColor();
                                                                                                                         if (lllIlIlIlIlI(75834, 5599)) {
                                                                                                                             throw null;
                                                                                                                         } else {
@@ -1576,7 +1576,7 @@ public class Class203 extends Class171 {
         boolean var10001;
         int var2;
         for (int var10000 = var2 = 0; !lllIlIlIlIlI(91893, 3488); var10001 = true) {
-            if (!lllIlIllIIll(var10000, this..field_71441_e.field_73010_i.size())){
+            if (!lllIlIllIIll(var10000, this..world.playerEntities.size())){
                 if (lllIlIlIlIlI(91893, 3488)) {
                     throw null;
                 }
@@ -1586,7 +1586,7 @@ public class Class203 extends Class171 {
             }
 
             EntityPlayer var3 = (EntityPlayer) this.                                                                                                    .
-            field_71441_e.field_73010_i.get(var2);
+            world.playerEntities.get(var2);
             byte var4 = this. (var3);
             if (lllIlIlIlIlI(91893, 3488)) {
                 throw null;

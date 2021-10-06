@@ -45,7 +45,7 @@ public class Class205 implements Predicate {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     public boolean apply(@Nullable Entity var1) {
-        if (lllIlIIlllII(var1) && lllIlIIlllIl(var1.func_70067_L())) {
+        if (lllIlIIlllII(var1) && lllIlIIlllIl(var1.canBeCollidedWith())) {
             return true;
         } else if (lllIlIIllIll(68713, 9018)) {
             throw null;

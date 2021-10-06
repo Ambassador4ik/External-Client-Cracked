@@ -52,20 +52,20 @@ public class Class209 extends Class171 {
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(PlayerTickEvent var1) {
-        if (llllIlIlllII(this..field_71474_y.field_74314_A.func_151468_f()) &&(!llllIlIlllII(this.. ()) ||
-        llllIlIlllII(this..field_71439_g.field_70123_F))){
+        if (llllIlIlllII(this..gameSettings.keyBindJump.isPressed()) &&(!llllIlIlllII(this.. ()) ||
+        llllIlIlllII(this..player.collidedHorizontally))){
             if (llllIlIllllI(83016, 6523)) {
                 throw null;
             }
 
             double var2 = 0.413213D;
-            double[] var5 = new double[]{this..field_71439_g.field_70165_t, this.                                                                                                    .
-            field_71439_g.field_70163_u + var2, this.                                                                                                    .
-            field_71439_g.field_70161_v};
-            float[] var4 = new float[]{this..field_71439_g.field_70177_z, this.                                                                                                    .
-            field_71439_g.field_70125_A};
+            double[] var5 = new double[]{this..player.posX, this.                                                                                                    .
+            player.posY + var2, this.                                                                                                    .
+            player.posZ};
+            float[] var4 = new float[]{this..player.rotationYaw, this.                                                                                                    .
+            player.rotationPitch};
             this.                                                                                                    .
-            field_71439_g.field_70181_x = var2;
+            player.motionY = var2;
             PositionRotation var10002 = new PositionRotation(var5[0], var5[1], var5[2], var4[0], var4[1], true);
             if (llllIlIllllI(83016, 6523)) {
                 throw null;
@@ -73,7 +73,7 @@ public class Class209 extends Class171 {
 
             this. (var10002);
             this.                                                                                                    .
-            field_71439_g.func_180426_a(var5[0], var5[1], var5[2], var4[0], var4[1], 1, true);
+            player.setPositionAndRotationDirect(var5[0], var5[1], var5[2], var4[0], var4[1], 1, true);
         }
 
         if (llllIlIllllI(83016, 6523)) {

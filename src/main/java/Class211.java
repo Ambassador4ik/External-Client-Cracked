@@ -72,10 +72,10 @@ public class Class211 extends Class171 {
                         break;
                     }
 
-                    if (lllIIIlIlIlI(this..field_71439_g.field_71071_by.func_70301_a(var3).func_77973_b() instanceof ItemEnderPearl))
+                    if (lllIIIlIlIlI(this..player.inventory.getStackInSlot(var3).getItem() instanceof ItemEnderPearl))
                     {
                         int var2 = this.                                                                                                    .
-                        field_71439_g.field_71071_by.field_70461_c;
+                        player.inventory.currentItem;
                         CPacketHeldItemChange var10003 = new CPacketHeldItemChange(var3);
                         if (lllIIIlIlIII(59042, 2457)) {
                             throw null;

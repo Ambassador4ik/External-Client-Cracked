@@ -86,7 +86,7 @@ public class Class222 extends Class171 {
     }
 
     public double ____________________________________________________________________________/* $FF was:                                                                             */(double var1) {
-        float var10000 = MathHelper.func_76131_a(this..func_175606_aa().field_70125_A + 30.0F, -90.0F, 90.0F);
+        float var10000 = MathHelper.clamp(this..getRenderViewEntity().rotationPitch + 30.0F, -90.0F, 90.0F);
         if (llIlIIIlllll(82927, 2519)) {
             throw null;
         } else {
@@ -112,8 +112,8 @@ public class Class222 extends Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderGameOverlayEvent var1) {
         ScaledResolution var10000 = var1.getResolution();
-        float var11 = (float) (var10000.func_78326_a() / 2);
-        float var2 = (float) var10000.func_78328_b() * 0.8F;
+        float var11 = (float) (var10000.getScaledWidth() / 2);
+        float var2 = (float) var10000.getScaledHeight() * 0.8F;
         Class36[] var13 = Class36.values();
         if (llIlIIIlllll(19663, 9292)) {
             throw null;
@@ -135,7 +135,7 @@ public class Class222 extends Class171 {
 
                 Class36 var6 = var3[var5];
                 double var7 = this. (var6);
-                float var9 = var11 + (float) this. (var7) - (float) (this..field_71466_p.func_78256_a(var6. ()) /2);
+                float var9 = var11 + (float) this. (var7) - (float) (this..fontRenderer.getStringWidth(var6. ()) /2);
                 float var12 = var2 + (float) this. (var7);
                 Class4 var10001 = this.;
                 double var10002 = (double) (var9 - 1.0F);
@@ -179,7 +179,7 @@ public class Class222 extends Class171 {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     public double ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Class36 var1) {
-        float var10001 = MathHelper.func_76142_g(this..func_175606_aa().field_70177_z);
+        float var10001 = MathHelper.wrapDegrees(this..getRenderViewEntity().rotationYaw);
         if (llIlIIIlllll(75170, 2336)) {
             throw null;
         } else {

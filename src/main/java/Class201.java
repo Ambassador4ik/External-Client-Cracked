@@ -208,9 +208,9 @@ public class Class201 extends Class171 {
         if (llIIllIIIIlI(this.. (var3))){
             this. = var2;
             this.                                                                                                    .
-            field_71442_b.func_180512_c(var2, EnumFacing.UP);
+            playerController.onPlayerDamageBlock(var2, EnumFacing.UP);
             this.                                                                                                    .
-            field_71439_g.func_184609_a(var1);
+            player.swingArm(var1);
             this.                                                                              .();
         }
 
@@ -240,7 +240,7 @@ public class Class201 extends Class171 {
             }
 
             this.                                                                                                    .
-            field_71439_g.field_70759_as = ((CPacketPlayer) var1).func_186999_a(0.0F);
+            player.rotationYawHead = ((CPacketPlayer) var1).getYaw(0.0F);
         }
 
         if (llIIllIIIlII(99182, 3931)) {
@@ -261,10 +261,10 @@ public class Class201 extends Class171 {
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(BlockPos var1) {
         Block var2;
-        if (llIIllIIIIlI((var2 = this..field_71441_e.func_180495_p(var1).func_177230_c()) instanceof BlockCrops)){
+        if (llIIllIIIIlI((var2 = this..world.getBlockState(var1).getBlock()) instanceof BlockCrops)){
             BlockCrops var3;
-            if (llIIllIIllII((var3 = (BlockCrops) var2).func_176201_c(this..field_71441_e.func_180495_p(var1)),
-            var3.func_185526_g())){
+            if (llIIllIIllII((var3 = (BlockCrops) var2).getMetaFromState(this..world.getBlockState(var1)),
+            var3.getMaxAge())){
                 return true;
             }
         } else{
@@ -274,7 +274,7 @@ public class Class201 extends Class171 {
 
             if (llIIllIIIIlI(var2 instanceof BlockNetherWart)) {
                 BlockNetherWart var4;
-                if (llIIllIIllII((var4 = (BlockNetherWart) var2).func_176201_c(this..field_71441_e.func_180495_p(var1)),
+                if (llIIllIIllII((var4 = (BlockNetherWart) var2).getMetaFromState(this..world.getBlockState(var1)),
                 3)){
                     return true;
                 }
@@ -284,7 +284,7 @@ public class Class201 extends Class171 {
                 }
 
                 if (llIIllIIIIlI(var2 instanceof BlockReed)) {
-                    if (llIIllIIIIlI(this..field_71441_e.func_180495_p(var1.func_177977_b()).func_177230_c() instanceof BlockReed))
+                    if (llIIllIIIIlI(this..world.getBlockState(var1.down()).getBlock() instanceof BlockReed))
                     {
                         return true;
                     }
@@ -294,7 +294,7 @@ public class Class201 extends Class171 {
                     }
 
                     if (llIIllIIIIlI(var2 instanceof BlockCactus)) {
-                        if (llIIllIIIIlI(this..field_71441_e.func_180495_p(var1.func_177977_b()).func_177230_c() instanceof BlockCactus))
+                        if (llIIllIIIIlI(this..world.getBlockState(var1.down()).getBlock() instanceof BlockCactus))
                         {
                             return true;
                         }
@@ -305,8 +305,8 @@ public class Class201 extends Class171 {
 
                         if (llIIllIIIIlI(var2 instanceof BlockBeetroot)) {
                             BlockBeetroot var5;
-                            if (llIIllIIllII((var5 = (BlockBeetroot) var2).func_176201_c(this..field_71441_e.func_180495_p(var1)),
-                            var5.func_185526_g())){
+                            if (llIIllIIllII((var5 = (BlockBeetroot) var2).getMetaFromState(this..world.getBlockState(var1)),
+                            var5.getMaxAge())){
                                 return true;
                             }
                         } else {
@@ -332,7 +332,7 @@ public class Class201 extends Class171 {
 
                             if (llIIllIIIIlI(var2 instanceof BlockChorusFlower)) {
                                 BlockChorusFlower var6;
-                                if (llIIllIIllII((var6 = (BlockChorusFlower) var2).func_176201_c(this..field_71441_e.func_180495_p(var1)),
+                                if (llIIllIIllII((var6 = (BlockChorusFlower) var2).getMetaFromState(this..world.getBlockState(var1)),
                                 5)){
                                     return true;
                                 }
@@ -361,20 +361,20 @@ public class Class201 extends Class171 {
         if (llIIllIIIIlI(this.. (var3))){
             this. = var2;
             PlayerControllerMP var10000 = this.                                                                                                    .
-            field_71442_b;
+            playerController;
             EntityPlayerSP var10001 = this.                                                                                                    .
-            field_71439_g;
+            player;
             WorldClient var10002 = this.                                                                                                    .
-            field_71441_e;
+            world;
             EnumFacing var10004 = EnumFacing.UP;
             Vec3d var10005 = new Vec3d(var2);
             if (llIIllIIIlII(74811, 393)) {
                 throw null;
             }
 
-            var10000.func_187099_a(var10001, var10002, var2, var10004, var10005, var1);
+            var10000.processRightClickBlock(var10001, var10002, var2, var10004, var10005, var1);
             this.                                                                                                    .
-            field_71439_g.func_184609_a(var1);
+            player.swingArm(var1);
             this.                                                                                                   .();
         }
 
@@ -388,8 +388,8 @@ public class Class201 extends Class171 {
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
         if (llIIllIIIIlI(this.. ()) &&llIIllIIIIll(this.)){
             EntityPlayerSP var10000 = this.                                                                                                    .
-            field_71439_g;
-            var10000.field_70177_z = (float) ((double) var10000.field_70177_z + 0.001D);
+            player;
+            var10000.rotationYaw = (float) ((double) var10000.rotationYaw + 0.001D);
         }
 
         if (llIIllIIIlII(35147, 4870)) {
@@ -406,9 +406,9 @@ public class Class201 extends Class171 {
                 int var8 = this.                                                                                                  .
                 ();
                 Item var2 = this.                                                                                                    .
-                field_71439_g.field_71071_by.func_70448_g().func_77973_b();
+                player.inventory.getCurrentItem().getItem();
                 Item var3 = this.                                                                                                    .
-                field_71439_g.func_184592_cb().func_77973_b();
+                player.getHeldItemOffhand().getItem();
                 boolean var15;
                 boolean var10001;
                 if (llIIllIIIIlI(var2 instanceof ItemHoe)) {
@@ -427,9 +427,9 @@ public class Class201 extends Class171 {
                         }
 
                         BlockPos var6 = (BlockPos) var4.get(var5);
-                        if (llIIllIIIIlI(this..field_71441_e.func_180495_p(var6.func_177984_a()).func_177230_c() instanceof BlockTallGrass))
+                        if (llIIllIIIIlI(this..world.getBlockState(var6.up()).getBlock() instanceof BlockTallGrass))
                         {
-                            this. (EnumHand.MAIN_HAND, var6.func_177984_a(), this.                                                                                           .
+                            this. (EnumHand.MAIN_HAND, var6.up(), this.                                                                                           .
                             ());
                             var15 = true;
                         } else{
@@ -455,7 +455,7 @@ public class Class201 extends Class171 {
                     throw null;
                 } else {
                     byte var16;
-                    if (llIIllIIIlll(var2 instanceof ItemSeeds) && llIIllIIlIII(var2, Items.field_151174_bG) && !llIIllIIIlIl(var2, Items.field_151172_bF)) {
+                    if (llIIllIIIlll(var2 instanceof ItemSeeds) && llIIllIIlIII(var2, Items.POTATO) && !llIIllIIIlIl(var2, Items.CARROT)) {
                         if (llIIllIIIlII(35147, 4870)) {
                             throw null;
                         }
@@ -474,7 +474,7 @@ public class Class201 extends Class171 {
                         throw null;
                     } else {
                         byte var9 = var16;
-                        if (llIIllIIIlll(var3 instanceof ItemSeeds) && llIIllIIlIII(var3, Items.field_151174_bG) && !llIIllIIIlIl(var3, Items.field_151172_bF)) {
+                        if (llIIllIIIlll(var3 instanceof ItemSeeds) && llIIllIIlIII(var3, Items.POTATO) && !llIIllIIIlIl(var3, Items.CARROT)) {
                             if (llIIllIIIlII(35147, 4870)) {
                                 throw null;
                             }
@@ -519,7 +519,7 @@ public class Class201 extends Class171 {
                                 Iterator var18;
                                 BlockPos var10002;
                                 boolean var10003;
-                                if (llIIllIIIIlI(var12) && llIIllIIlIII(var2, Items.field_151075_bm) && llIIllIIlIII(var3, Items.field_151075_bm)) {
+                                if (llIIllIIIIlI(var12) && llIIllIIlIII(var2, Items.NETHER_WART) && llIIllIIlIII(var3, Items.NETHER_WART)) {
                                     var18 = var13 = (var11 = this. (var8, Class214.                                                                                                   )).
                                     iterator();
 
@@ -568,7 +568,7 @@ public class Class201 extends Class171 {
                                 if (llIIllIIIlII(35147, 4870)) {
                                     throw null;
                                 } else {
-                                    if (!llIIllIIlIII(var2, Items.field_151075_bm) || llIIllIIIlIl(var3, Items.field_151075_bm)) {
+                                    if (!llIIllIIlIII(var2, Items.NETHER_WART) || llIIllIIIlIl(var3, Items.NETHER_WART)) {
                                         if (llIIllIIIlII(35147, 4870)) {
                                             throw null;
                                         }
@@ -594,7 +594,7 @@ public class Class201 extends Class171 {
                                             }
 
                                             var7 = (BlockPos) var13.next();
-                                            if (llIIllIIIlIl(var2, Items.field_151075_bm)) {
+                                            if (llIIllIIIlIl(var2, Items.NETHER_WART)) {
                                                 var17 = EnumHand.MAIN_HAND;
                                                 var10002 = var7;
                                                 var10003 = true;
@@ -620,7 +620,7 @@ public class Class201 extends Class171 {
 
                                     if (llIIllIIIlII(35147, 4870)) {
                                         throw null;
-                                    } else if (llIIllIIIlIl(var2, Items.field_151100_aR)) {
+                                    } else if (llIIllIIIlIl(var2, Items.DYE)) {
                                         for (var18 = var13 = this. (var8,Class214.                                                                                  ).
                                         iterator();
                                         !llIIllIIIlII(35147, 4870);

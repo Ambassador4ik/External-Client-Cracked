@@ -88,13 +88,13 @@ public class Class208 extends Class171 {
         if (llIllIlIIIII(this.) && llIllIIlllII(this.. (10))){
             this.                                                                                         .();
             this.                                                                                                    .
-            field_71439_g.field_71174_a.func_147297_a(this.);
+            player.connection.sendPacket(this.);
         }
 
         if (llIllIIllIII(39166, 1245)) {
             throw null;
         } else {
-            if (llIllIlIIIII(this.) && llIllIIlllIl(this..field_71441_e,this.                                                                                                   ))
+            if (llIllIlIIIII(this.) && llIllIIlllIl(this..world,this.                                                                                                   ))
             {
                 this. (false);
             }
@@ -110,11 +110,11 @@ public class Class208 extends Class171 {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Object var1, Class170 var2) {
-        if (llIllIIllIll(var2, Class170.) && llIllIIlllII(var1 instanceof CPacketClickWindow) && llIllIIlllIl(var1, this.) && llIllIIllllI(((CPacketClickWindow) var1).func_149546_g().func_77973_b() instanceof ItemAir)) {
+        if (llIllIIllIll(var2, Class170.) && llIllIIlllII(var1 instanceof CPacketClickWindow) && llIllIIlllIl(var1, this.) && llIllIIllllI(((CPacketClickWindow) var1).getClickedItem().getItem() instanceof ItemAir)) {
             this. = (CPacketClickWindow) var1;
             if (llIllIIlllll(this.)) {
                 this. = this.                                                                                                    .
-                field_71441_e;
+                world;
             }
         }
 

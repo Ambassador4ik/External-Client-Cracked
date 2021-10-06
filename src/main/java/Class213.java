@@ -91,7 +91,7 @@ public class Class213 extends Class171 {
                                         if (llIlIIllIllI(11414, 1575)) {
                                             throw null;
                                         } else {
-                                            ItemStack var19 = new ItemStack(Blocks.field_150482_ag);
+                                            ItemStack var19 = new ItemStack(Blocks.DIAMOND_ORE);
                                             if (llIlIIllIllI(11414, 1575)) {
                                                 throw null;
                                             } else {
@@ -105,7 +105,7 @@ public class Class213 extends Class171 {
                                                     if (llIlIIllIllI(11414, 1575)) {
                                                         throw null;
                                                     } else {
-                                                        ItemStack var18 = new ItemStack(Blocks.field_150412_bA);
+                                                        ItemStack var18 = new ItemStack(Blocks.EMERALD_ORE);
                                                         if (llIlIIllIllI(11414, 1575)) {
                                                             throw null;
                                                         } else {
@@ -119,7 +119,7 @@ public class Class213 extends Class171 {
                                                                 if (llIlIIllIllI(11414, 1575)) {
                                                                     throw null;
                                                                 } else {
-                                                                    ItemStack var16 = new ItemStack(Blocks.field_150352_o);
+                                                                    ItemStack var16 = new ItemStack(Blocks.GOLD_ORE);
                                                                     if (llIlIIllIllI(11414, 1575)) {
                                                                         throw null;
                                                                     } else {
@@ -133,7 +133,7 @@ public class Class213 extends Class171 {
                                                                             if (llIlIIllIllI(11414, 1575)) {
                                                                                 throw null;
                                                                             } else {
-                                                                                ItemStack var14 = new ItemStack(Blocks.field_150366_p);
+                                                                                ItemStack var14 = new ItemStack(Blocks.IRON_ORE);
                                                                                 if (llIlIIllIllI(11414, 1575)) {
                                                                                     throw null;
                                                                                 } else {
@@ -149,7 +149,7 @@ public class Class213 extends Class171 {
                                                                                         if (llIlIIllIllI(11414, 1575)) {
                                                                                             throw null;
                                                                                         } else {
-                                                                                            ItemStack var12 = new ItemStack(Blocks.field_150450_ax);
+                                                                                            ItemStack var12 = new ItemStack(Blocks.REDSTONE_ORE);
                                                                                             if (llIlIIllIllI(11414, 1575)) {
                                                                                                 throw null;
                                                                                             } else {
@@ -166,7 +166,7 @@ public class Class213 extends Class171 {
                                                                                                     if (llIlIIllIllI(11414, 1575)) {
                                                                                                         throw null;
                                                                                                     } else {
-                                                                                                        ItemStack var10 = new ItemStack(Blocks.field_150365_q);
+                                                                                                        ItemStack var10 = new ItemStack(Blocks.COAL_ORE);
                                                                                                         if (llIlIIllIllI(11414, 1575)) {
                                                                                                             throw null;
                                                                                                         } else {
@@ -183,7 +183,7 @@ public class Class213 extends Class171 {
                                                                                                                 if (llIlIIllIllI(11414, 1575)) {
                                                                                                                     throw null;
                                                                                                                 } else {
-                                                                                                                    ItemStack var8 = new ItemStack(Blocks.field_150369_x);
+                                                                                                                    ItemStack var8 = new ItemStack(Blocks.LAPIS_ORE);
                                                                                                                     if (llIlIIllIllI(11414, 1575)) {
                                                                                                                         throw null;
                                                                                                                     } else {
@@ -200,7 +200,7 @@ public class Class213 extends Class171 {
                                                                                                                             if (llIlIIllIllI(11414, 1575)) {
                                                                                                                                 throw null;
                                                                                                                             } else {
-                                                                                                                                ItemStack var6 = new ItemStack(Blocks.field_150449_bY);
+                                                                                                                                ItemStack var6 = new ItemStack(Blocks.QUARTZ_ORE);
                                                                                                                                 if (llIlIIllIllI(11414, 1575)) {
                                                                                                                                     throw null;
                                                                                                                                 } else {
@@ -217,7 +217,7 @@ public class Class213 extends Class171 {
                                                                                                                                         if (llIlIIllIllI(11414, 1575)) {
                                                                                                                                             throw null;
                                                                                                                                         } else {
-                                                                                                                                            ItemStack var3 = new ItemStack(Blocks.field_150426_aN);
+                                                                                                                                            ItemStack var3 = new ItemStack(Blocks.GLOWSTONE);
                                                                                                                                             if (llIlIIllIllI(11414, 1575)) {
                                                                                                                                                 throw null;
                                                                                                                                             } else {
@@ -309,7 +309,7 @@ public class Class213 extends Class171 {
     }
 
     public static ArrayList ________________________________________________________________________________________________/* $FF was:                                                                                                 */(int var0) {
-        Minecraft var10000 = Minecraft.func_71410_x();
+        Minecraft var10000 = Minecraft.getMinecraft();
         if (llIlIIllIllI(88489, 2217)) {
             throw null;
         } else {
@@ -325,11 +325,11 @@ public class Class213 extends Class171 {
                 } else {
                     byte var3 = var11. ();
                     int var4;
-                    int var12 = var4 = (int) var1.field_71439_g.field_70165_t - var0;
+                    int var12 = var4 = (int) var1.player.posX - var0;
 
                     label113:
                     while (!llIlIIllIllI(88489, 2217)) {
-                        if (!llIlIIlllIlI(var12, (int) var1.field_71439_g.field_70165_t + var0)) {
+                        if (!llIlIIlllIlI(var12, (int) var1.player.posX + var0)) {
                             if (llIlIIllIllI(88489, 2217)) {
                                 throw null;
                             }
@@ -339,8 +339,8 @@ public class Class213 extends Class171 {
 
                         int var5;
                         boolean var10001;
-                        for (var12 = var5 = (int) var1.field_71439_g.field_70161_v - var0; !llIlIIllIllI(88489, 2217); var10001 = true) {
-                            if (!llIlIIlllIlI(var12, (int) var1.field_71439_g.field_70161_v + var0)) {
+                        for (var12 = var5 = (int) var1.player.posZ - var0; !llIlIIllIllI(88489, 2217); var10001 = true) {
+                            if (!llIlIIlllIlI(var12, (int) var1.player.posZ + var0)) {
                                 if (llIlIIllIllI(88489, 2217)) {
                                     throw null;
                                 }
@@ -351,7 +351,7 @@ public class Class213 extends Class171 {
                                 continue label113;
                             }
 
-                            int var6 = var1.field_71441_e.func_189649_b(var4, var5);
+                            int var6 = var1.world.getHeight(var4, var5);
                             int var7;
                             var12 = var7 = 0;
 
@@ -360,12 +360,12 @@ public class Class213 extends Class171 {
                                     throw null;
                                 }
 
-                                if (!llIlIIlllIlI(var12, var6) || !llIlIIlllIll(var1.field_71439_g)) {
+                                if (!llIlIIlllIlI(var12, var6) || !llIlIIlllIll(var1.player)) {
                                     break;
                                 }
 
                                 boolean var15;
-                                if (llIlIIllllII(var1.field_71441_e)) {
+                                if (llIlIIllllII(var1.world)) {
                                     var15 = true;
                                     break;
                                 }
@@ -381,7 +381,7 @@ public class Class213 extends Class171 {
 
                                 BlockPos var8 = var13;
                                 IBlockState var9;
-                                if (!llIlIIllllIl((var9 = var1.field_71441_e.func_180495_p(var8)).func_177230_c() instanceof BlockOre) || !llIlIIlllllI(var9.func_177230_c(), Blocks.field_150450_ax) || !llIlIIlllllI(var9.func_177230_c(), Blocks.field_150439_ay) || llIlIIllIlll(var9.func_177230_c(), Blocks.field_150426_aN)) {
+                                if (!llIlIIllllIl((var9 = var1.world.getBlockState(var8)).getBlock() instanceof BlockOre) || !llIlIIlllllI(var9.getBlock(), Blocks.REDSTONE_ORE) || !llIlIIlllllI(var9.getBlock(), Blocks.LIT_REDSTONE_ORE) || llIlIIllIlll(var9.getBlock(), Blocks.GLOWSTONE)) {
                                     if (llIlIIllIllI(88489, 2217)) {
                                         throw null;
                                     }
@@ -432,30 +432,30 @@ public class Class213 extends Class171 {
     }
 
     public static boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(BlockPos var0) {
-        Minecraft var10000 = Minecraft.func_71410_x();
+        Minecraft var10000 = Minecraft.getMinecraft();
         if (llIlIIllIllI(20138, 4895)) {
             throw null;
         } else {
             Minecraft var1 = var10000;
             Block var2;
-            if (llIlIIllllIl((var2 = var10000.field_71441_e.func_180495_p(var0.func_177982_a(1, 0, 0)).func_177230_c()) instanceof BlockAir) && !llIlIIllIlIl(var2 instanceof BlockLiquid)) {
+            if (llIlIIllllIl((var2 = var10000.world.getBlockState(var0.add(1, 0, 0)).getBlock()) instanceof BlockAir) && !llIlIIllIlIl(var2 instanceof BlockLiquid)) {
                 if (llIlIIllIllI(20138, 4895)) {
                     throw null;
-                } else if (llIlIIllllIl((var2 = var1.field_71441_e.func_180495_p(var0.func_177982_a(-1, 0, 0)).func_177230_c()) instanceof BlockAir) && !llIlIIllIlIl(var2 instanceof BlockLiquid)) {
+                } else if (llIlIIllllIl((var2 = var1.world.getBlockState(var0.add(-1, 0, 0)).getBlock()) instanceof BlockAir) && !llIlIIllIlIl(var2 instanceof BlockLiquid)) {
                     if (llIlIIllIllI(20138, 4895)) {
                         throw null;
-                    } else if (llIlIIllllIl((var2 = var1.field_71441_e.func_180495_p(var0.func_177982_a(0, 1, 0)).func_177230_c()) instanceof BlockAir) && !llIlIIllIlIl(var2 instanceof BlockLiquid)) {
+                    } else if (llIlIIllllIl((var2 = var1.world.getBlockState(var0.add(0, 1, 0)).getBlock()) instanceof BlockAir) && !llIlIIllIlIl(var2 instanceof BlockLiquid)) {
                         if (llIlIIllIllI(20138, 4895)) {
                             throw null;
-                        } else if (llIlIIllllIl((var2 = var1.field_71441_e.func_180495_p(var0.func_177982_a(0, -1, 0)).func_177230_c()) instanceof BlockAir) && !llIlIIllIlIl(var2 instanceof BlockLiquid)) {
+                        } else if (llIlIIllllIl((var2 = var1.world.getBlockState(var0.add(0, -1, 0)).getBlock()) instanceof BlockAir) && !llIlIIllIlIl(var2 instanceof BlockLiquid)) {
                             if (llIlIIllIllI(20138, 4895)) {
                                 throw null;
-                            } else if (llIlIIllllIl((var2 = var1.field_71441_e.func_180495_p(var0.func_177982_a(0, 0, 1)).func_177230_c()) instanceof BlockAir) && !llIlIIllIlIl(var2 instanceof BlockLiquid)) {
+                            } else if (llIlIIllllIl((var2 = var1.world.getBlockState(var0.add(0, 0, 1)).getBlock()) instanceof BlockAir) && !llIlIIllIlIl(var2 instanceof BlockLiquid)) {
                                 if (llIlIIllIllI(20138, 4895)) {
                                     throw null;
                                 } else {
                                     Block var3;
-                                    if (llIlIIllllIl((var3 = var1.field_71441_e.func_180495_p(var0.func_177982_a(0, 0, -1)).func_177230_c()) instanceof BlockAir) && !llIlIIllIlIl(var3 instanceof BlockLiquid)) {
+                                    if (llIlIIllllIl((var3 = var1.world.getBlockState(var0.add(0, 0, -1)).getBlock()) instanceof BlockAir) && !llIlIIllIlIl(var3 instanceof BlockLiquid)) {
                                         if (llIlIIllIllI(20138, 4895)) {
                                             throw null;
                                         } else {
@@ -568,28 +568,28 @@ public class Class213 extends Class171 {
 
                 BlockPos var2 = (BlockPos) var4.next();
                 Block var3 = this.                                                                                                    .
-                field_71441_e.func_180495_p(var2).func_177230_c();
-                GlStateManager.func_179094_E();
+                world.getBlockState(var2).getBlock();
+                GlStateManager.pushMatrix();
                 if (llIlIIllIllI(43111, 9070)) {
                     throw null;
                 }
 
-                GlStateManager.func_179090_x();
+                GlStateManager.disableTexture2D();
                 if (llIlIIllIllI(43111, 9070)) {
                     throw null;
                 }
 
-                GlStateManager.func_179147_l();
+                GlStateManager.enableBlend();
                 if (llIlIIllIllI(43111, 9070)) {
                     throw null;
                 }
 
-                GlStateManager.func_179097_i();
+                GlStateManager.disableDepth();
                 if (llIlIIllIllI(43111, 9070)) {
                     throw null;
                 }
 
-                GlStateManager.func_187441_d(2.0F);
+                GlStateManager.glLineWidth(2.0F);
                 if (llIlIIllIllI(43111, 9070)) {
                     throw null;
                 }
@@ -599,20 +599,20 @@ public class Class213 extends Class171 {
                     throw null;
                 }
 
-                GL11.glTranslated((double) var2.func_177958_n() - this..func_175598_ae().field_78730_l, (double) var2.func_177956_o() - this.                                                                                                    .
-                func_175598_ae().field_78731_m, (double) var2.func_177952_p() - this.                                                                                                    .
-                func_175598_ae().field_78728_n);
+                GL11.glTranslated((double) var2.getX() - this..getRenderManager().viewerPosX, (double) var2.getY() - this.                                                                                                    .
+                getRenderManager().viewerPosY, (double) var2.getZ() - this.                                                                                                    .
+                getRenderManager().viewerPosZ);
                 if (llIlIIllIllI(43111, 9070)) {
                     throw null;
                 }
 
-                if (llIlIIllIlll(var3, Blocks.field_150482_ag) && llIlIIllIlIl(this.. ())){
+                if (llIlIIllIlll(var3, Blocks.DIAMOND_ORE) && llIlIIllIlIl(this.. ())){
                     GL11.glColor4f(0.0F, 1.0F, 1.0F, 0.7F);
                     if (llIlIIllIllI(43111, 9070)) {
                         throw null;
                     }
 
-                    Class181. (Block.field_185505_j);
+                    Class181. (Block.FULL_BLOCK_AABB);
                     if (llIlIIllIllI(43111, 9070)) {
                         throw null;
                     }
@@ -623,13 +623,13 @@ public class Class213 extends Class171 {
                         throw null;
                     }
 
-                    if (llIlIIllIlll(var3, Blocks.field_150412_bA) && llIlIIllIlIl(this.. ())){
+                    if (llIlIIllIlll(var3, Blocks.EMERALD_ORE) && llIlIIllIlIl(this.. ())){
                         GL11.glColor4f(0.0F, 1.0F, 0.0F, 0.7F);
                         if (llIlIIllIllI(43111, 9070)) {
                             throw null;
                         }
 
-                        Class181. (Block.field_185505_j);
+                        Class181. (Block.FULL_BLOCK_AABB);
                         if (llIlIIllIllI(43111, 9070)) {
                             throw null;
                         }
@@ -640,13 +640,13 @@ public class Class213 extends Class171 {
                             throw null;
                         }
 
-                        if (llIlIIllIlll(var3, Blocks.field_150352_o) && llIlIIllIlIl(this.. ())){
+                        if (llIlIIllIlll(var3, Blocks.GOLD_ORE) && llIlIIllIlIl(this.. ())){
                             GL11.glColor4f(1.0F, 1.0F, 0.0F, 0.7F);
                             if (llIlIIllIllI(43111, 9070)) {
                                 throw null;
                             }
 
-                            Class181. (Block.field_185505_j);
+                            Class181. (Block.FULL_BLOCK_AABB);
                             if (llIlIIllIllI(43111, 9070)) {
                                 throw null;
                             }
@@ -657,10 +657,10 @@ public class Class213 extends Class171 {
                                 throw null;
                             }
 
-                            if (llIlIIllIlll(var3, Blocks.field_150366_p) && llIlIIllIlIl(this.. ())){
+                            if (llIlIIllIlll(var3, Blocks.IRON_ORE) && llIlIIllIlIl(this.. ())){
                                 this.                                                                                           .
                                 (255, 100, 100, 178.0F);
-                                Class181. (Block.field_185505_j);
+                                Class181. (Block.FULL_BLOCK_AABB);
                                 if (llIlIIllIllI(43111, 9070)) {
                                     throw null;
                                 }
@@ -671,10 +671,10 @@ public class Class213 extends Class171 {
                                     throw null;
                                 }
 
-                                if (llIlIIllIlll(var3, Blocks.field_150365_q) && llIlIIllIlIl(this.. ())){
+                                if (llIlIIllIlll(var3, Blocks.COAL_ORE) && llIlIIllIlIl(this.. ())){
                                     this.                                                                                           .
                                     (50, 50, 50, 178.0F);
-                                    Class181. (Block.field_185505_j);
+                                    Class181. (Block.FULL_BLOCK_AABB);
                                     if (llIlIIllIllI(43111, 9070)) {
                                         throw null;
                                     }
@@ -685,10 +685,10 @@ public class Class213 extends Class171 {
                                         throw null;
                                     }
 
-                                    if (llIlIIllIlll(var3, Blocks.field_150369_x) && llIlIIllIlIl(this.. ())){
+                                    if (llIlIIllIlll(var3, Blocks.LAPIS_ORE) && llIlIIllIlIl(this.. ())){
                                         this.                                                                                           .
                                         (16, 34, 181, 178.0F);
-                                        Class181. (Block.field_185505_j);
+                                        Class181. (Block.FULL_BLOCK_AABB);
                                         if (llIlIIllIllI(43111, 9070)) {
                                             throw null;
                                         }
@@ -699,10 +699,10 @@ public class Class213 extends Class171 {
                                             throw null;
                                         }
 
-                                        if (llIlIIllIlll(var3, Blocks.field_150449_bY) && llIlIIllIlIl(this.. ())){
+                                        if (llIlIIllIlll(var3, Blocks.QUARTZ_ORE) && llIlIIllIlIl(this.. ())){
                                             this.                                                                                           .
                                             (255, 255, 255, 178.0F);
-                                            Class181. (Block.field_185505_j);
+                                            Class181. (Block.FULL_BLOCK_AABB);
                                             if (llIlIIllIllI(43111, 9070)) {
                                                 throw null;
                                             }
@@ -713,10 +713,10 @@ public class Class213 extends Class171 {
                                                 throw null;
                                             }
 
-                                            if (llIlIIllIlll(var3, Blocks.field_150450_ax) && llIlIIllIlIl(this.. ())){
+                                            if (llIlIIllIlll(var3, Blocks.REDSTONE_ORE) && llIlIIllIlIl(this.. ())){
                                                 this.                                                                                           .
                                                 (255, 0, 0, 178.0F);
-                                                Class181. (Block.field_185505_j);
+                                                Class181. (Block.FULL_BLOCK_AABB);
                                                 if (llIlIIllIllI(43111, 9070)) {
                                                     throw null;
                                                 }
@@ -727,11 +727,11 @@ public class Class213 extends Class171 {
                                                     throw null;
                                                 }
 
-                                                if (llIlIIllIlll(var3, Blocks.field_150439_ay) && llIlIIllIlIl(this.. ()))
+                                                if (llIlIIllIlll(var3, Blocks.LIT_REDSTONE_ORE) && llIlIIllIlIl(this.. ()))
                                                 {
                                                     this.                                                                                           .
                                                     (255, 0, 0, 178.0F);
-                                                    Class181. (Block.field_185505_j);
+                                                    Class181. (Block.FULL_BLOCK_AABB);
                                                     if (llIlIIllIllI(43111, 9070)) {
                                                         throw null;
                                                     }
@@ -742,11 +742,11 @@ public class Class213 extends Class171 {
                                                         throw null;
                                                     }
 
-                                                    if (llIlIIllIlll(var3, Blocks.field_150426_aN) && llIlIIllIlIl(this..
+                                                    if (llIlIIllIlll(var3, Blocks.GLOWSTONE) && llIlIIllIlIl(this..
                                                     ())){
                                                         this.                                                                                           .
                                                         (255, 255, 0, 178.0F);
-                                                        Class181. (Block.field_185505_j);
+                                                        Class181. (Block.FULL_BLOCK_AABB);
                                                         if (llIlIIllIllI(43111, 9070)) {
                                                             throw null;
                                                         }
@@ -765,17 +765,17 @@ public class Class213 extends Class171 {
                     throw null;
                 }
 
-                GlStateManager.func_179098_w();
+                GlStateManager.enableTexture2D();
                 if (llIlIIllIllI(43111, 9070)) {
                     throw null;
                 }
 
-                GlStateManager.func_179084_k();
+                GlStateManager.disableBlend();
                 if (llIlIIllIllI(43111, 9070)) {
                     throw null;
                 }
 
-                GlStateManager.func_179126_j();
+                GlStateManager.enableDepth();
                 if (llIlIIllIllI(43111, 9070)) {
                     throw null;
                 }
@@ -785,12 +785,12 @@ public class Class213 extends Class171 {
                     throw null;
                 }
 
-                GlStateManager.func_179121_F();
+                GlStateManager.popMatrix();
                 if (llIlIIllIllI(43111, 9070)) {
                     throw null;
                 }
 
-                GlStateManager.func_179117_G();
+                GlStateManager.resetColor();
                 if (llIlIIllIllI(43111, 9070)) {
                     throw null;
                 }

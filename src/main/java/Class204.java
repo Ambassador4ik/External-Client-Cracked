@@ -64,27 +64,27 @@ public class Class204 extends Class171 {
                 throw null;
             } else {
                 this. (String.valueOf(var10002.append(var10003)));
-                if (lllllIlIIIlI(this..field_71439_g.func_184218_aH()) &&
-                lllllIlIIIlI(this..field_71474_y.field_74351_w.func_151470_d())){
+                if (lllllIlIIIlI(this..player.isRiding()) &&
+                lllllIlIIIlI(this..gameSettings.keyBindForward.isKeyDown())){
                     Entity var2 = this.                                                                                                    .
-                    field_71439_g.func_184187_bx();
+                    player.getRidingEntity();
                     float var3 = this.                                                                                                    .
-                    field_71439_g.field_70177_z * 0.017453292F;
+                    player.rotationYaw * 0.017453292F;
                     float var5 = 0.001F * (float) var4;
-                    double var6 = var2.field_70159_w;
-                    float var8 = MathHelper.func_76126_a(var3);
+                    double var6 = var2.motionX;
+                    float var8 = MathHelper.sin(var3);
                     if (lllllIIlllll(26710, 1275)) {
                         throw null;
                     }
 
-                    var2.field_70159_w = var6 - (double) (var8 * var5);
-                    double var10001 = var2.field_70179_y;
-                    float var7 = MathHelper.func_76134_b(var3);
+                    var2.motionX = var6 - (double) (var8 * var5);
+                    double var10001 = var2.motionZ;
+                    float var7 = MathHelper.cos(var3);
                     if (lllllIIlllll(26710, 1275)) {
                         throw null;
                     }
 
-                    var2.field_70179_y = var10001 + (double) (var7 * var5);
+                    var2.motionZ = var10001 + (double) (var7 * var5);
                 }
 
                 if (lllllIIlllll(26710, 1275)) {

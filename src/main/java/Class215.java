@@ -60,11 +60,11 @@ public class Class215 extends Class171 {
             throw null;
         } else {
             ArrayList var1 = var10000;
-            Minecraft var8 = Minecraft.func_71410_x();
+            Minecraft var8 = Minecraft.getMinecraft();
             if (llIIllIIIIII(81055, 7040)) {
                 throw null;
             } else {
-                BlockPos var2 = var8.field_71439_g.func_180425_c();
+                BlockPos var2 = var8.player.getPosition();
                 byte var3 = 3;
                 int var4 = 3;
 
@@ -107,18 +107,18 @@ public class Class215 extends Class171 {
                                 continue label73;
                             }
 
-                            BlockPos var10 = new BlockPos(var2.func_177958_n() + var4, var2.func_177956_o() + var5, var2.func_177952_p() + var6);
+                            BlockPos var10 = new BlockPos(var2.getX() + var4, var2.getY() + var5, var2.getZ() + var6);
                             if (llIIllIIIIII(81055, 7040)) {
                                 throw null;
                             }
 
                             BlockPos var7 = var10;
-                            var8 = Minecraft.func_71410_x();
+                            var8 = Minecraft.getMinecraft();
                             if (llIIllIIIIII(81055, 7040)) {
                                 throw null;
                             }
 
-                            if (llIIlIllllll(var8.field_71441_e.func_180495_p(var7).func_177230_c() instanceof BlockBed)) {
+                            if (llIIlIllllll(var8.world.getBlockState(var7).getBlock() instanceof BlockBed)) {
                                 var1.add(var7);
                             }
 
@@ -146,16 +146,16 @@ public class Class215 extends Class171 {
     private void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(BlockPos var1) {
         if (llIIlIllllll(this.. (20))){
             EnumFacing[] var10001 = this.;
-            int var10002 = Math.round(this..field_71439_g.field_70177_z / 90.0F);
+            int var10002 = Math.round(this..player.rotationYaw / 90.0F);
             if (llIIllIIIIII(40237, 5918)) {
                 throw null;
             }
 
-            EnumFacing var2 = var10001[var10002 & 3].func_176734_d();
+            EnumFacing var2 = var10001[var10002 & 3].getOpposite();
             this.                                                                                                    .
-            field_71442_b.func_180512_c(var1, var2);
+            playerController.onPlayerDamageBlock(var1, var2);
             this.                                                                                                    .
-            field_71439_g.func_184609_a(EnumHand.MAIN_HAND);
+            player.swingArm(EnumHand.MAIN_HAND);
             this.                                                                                         .();
         }
 
