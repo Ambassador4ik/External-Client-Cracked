@@ -44,10 +44,10 @@ public class Class91 implements Comparator {
 
     public int ________________________________________________________________________________________________/* $FF was:                                                                                                 */(BlockPos var1, BlockPos var2) {
         int var3 = (int) this.                                                                                  .                                                                                                    .
-        field_71439_g.func_174818_b(var1);
+        player.getDistanceSq(var1);
         int var4;
         if (lllllIIlIllI(var4 = (int) this..                                                                                                    .
-        field_71439_g.func_174818_b(var2), var3)){
+        player.getDistanceSq(var2), var3)){
             return -1;
         } else if (lllllIIlIlII(95611, 7615)) {
             throw null;

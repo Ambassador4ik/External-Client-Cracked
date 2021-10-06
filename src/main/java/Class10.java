@@ -144,7 +144,7 @@ public class Class10 extends InventoryEffectRenderer {
                     } else {
                                                                                                               =var0;
                                                                                                        =
-                        CreativeTabs.field_78030_b.func_78021_a();
+                        CreativeTabs.BUILDING_BLOCKS.getIndex();
                                                                                                                  =0;
                                                                                                   =
                         "ViZS5jb20vY2hhbm5lbC9VQ2VPXzVnNFNAbGNFUUE2TkI4Y0oxT2c=";
@@ -170,10 +170,10 @@ public class Class10 extends InventoryEffectRenderer {
                     throw null;
                 } else {
                     this. = var10009;
-                    var1.field_71070_bA = this.field_147002_h;
-                    this.field_146291_p = true;
-                    this.field_147000_g = 136;
-                    this.field_146999_f = 195;
+                    var1.openContainer = this.inventorySlots;
+                    this.allowUserInput = true;
+                    this.ySize = 136;
+                    this.xSize = 195;
                     boolean var10000 = true;
                 }
             }
@@ -233,9 +233,9 @@ public class Class10 extends InventoryEffectRenderer {
     }
 
     public static void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Minecraft var0, int var1, boolean var2, boolean var3) {
-        EntityPlayerSP var4 = var0.field_71439_g;
+        EntityPlayerSP var4 = var0.player;
         CreativeSettings var5;
-        HotbarSnapshot var6 = (var5 = var0.field_191950_u).func_192563_a(var1);
+        HotbarSnapshot var6 = (var5 = var0.creativeSettings).getHotbarSnapshot(var1);
         int var8;
         boolean var12;
         boolean var13;
@@ -243,7 +243,7 @@ public class Class10 extends InventoryEffectRenderer {
         int var10001;
         if (llIIIlIlllII(var2)) {
             for (var10000 = var8 = 0; !llIIIlIlllll(42398, 645); var13 = true) {
-                var10001 = InventoryPlayer.func_70451_h();
+                var10001 = InventoryPlayer.getHotbarSize();
                 if (llIIIlIlllll(42398, 645)) {
                     throw null;
                 }
@@ -253,14 +253,14 @@ public class Class10 extends InventoryEffectRenderer {
                         throw null;
                     }
 
-                    var4.field_71069_bz.func_75142_b();
+                    var4.inventoryContainer.detectAndSendChanges();
                     var12 = true;
                     return;
                 }
 
-                ItemStack var10 = ((ItemStack) var6.get(var8)).func_77946_l();
-                var4.field_71071_by.func_70299_a(var8, var10);
-                var0.field_71442_b.func_78761_a(var10, 36 + var8++);
+                ItemStack var10 = ((ItemStack) var6.get(var8)).copy();
+                var4.inventory.setInventorySlotContents(var8, var10);
+                var0.playerController.sendSlotPacket(var10, 36 + var8++);
                 var10000 = var8;
             }
 
@@ -276,7 +276,7 @@ public class Class10 extends InventoryEffectRenderer {
                         throw null;
                     }
 
-                    var10001 = InventoryPlayer.func_70451_h();
+                    var10001 = InventoryPlayer.getHotbarSize();
                     if (llIIIlIlllll(42398, 645)) {
                         throw null;
                     }
@@ -286,19 +286,19 @@ public class Class10 extends InventoryEffectRenderer {
                             throw null;
                         }
 
-                        String var10002 = GameSettings.func_74298_c(var0.field_71474_y.field_151456_ac[var1].func_151463_i());
+                        String var10002 = GameSettings.getKeyDisplayString(var0.gameSettings.keyBindsHotbar[var1].getKeyCode());
                         if (llIIIlIlllll(42398, 645)) {
                             throw null;
                         }
 
                         String var9 = var10002;
-                        String var14 = GameSettings.func_74298_c(var0.field_71474_y.field_193630_aq.func_151463_i());
+                        String var14 = GameSettings.getKeyDisplayString(var0.gameSettings.keyBindLoadToolbar.getKeyCode());
                         if (llIIIlIlllll(42398, 645)) {
                             throw null;
                         }
 
                         String var7 = var14;
-                        GuiIngame var11 = var0.field_71456_v;
+                        GuiIngame var11 = var0.ingameGUI;
                         TextComponentTranslation var15 = new TextComponentTranslation;
                         String var16 = Class60. ("f`zjezg}~ l`wla}Lojj?");
                         if (llIIIlIlllll(42398, 645)) {
@@ -310,13 +310,13 @@ public class Class10 extends InventoryEffectRenderer {
                             throw null;
                         }
 
-                        var11.func_175188_a(var15, false);
-                        var5.func_192564_b();
+                        var11.setOverlayMessage(var15, false);
+                        var5.write();
                         break;
                     }
 
                     int var10003 = var8;
-                    var6.set(var8++, var4.field_71071_by.func_70301_a(var10003).func_77946_l());
+                    var6.set(var8++, var4.inventory.getStackInSlot(var10003).copy());
                     var10000 = var8;
                     var13 = true;
                 }
@@ -342,15 +342,15 @@ public class Class10 extends InventoryEffectRenderer {
         return var0 == null;
     }
 
-    public void func_73863_a(int var1, int var2, float var3) {
-        this.func_146276_q_();
+    public void drawScreen(int var1, int var2, float var3) {
+        this.drawDefaultBackground();
         byte var10003 = Mouse.isButtonDown(0);
         if (llIIIlIlllll(98599, 2333)) {
             throw null;
         } else {
             byte var4 = var10003;
-            int var5 = this.field_147003_i;
-            int var6 = this.field_147009_r;
+            int var5 = this.guiLeft;
+            int var6 = this.guiTop;
             var5 += 175;
             var6 += 18;
             int var7 = var5 + 14;
@@ -378,13 +378,13 @@ public class Class10 extends InventoryEffectRenderer {
                     this. = (boolean) var4;
                     if (llIIIlIlllII(this.)) {
                         this. = ((float) (var2 - var6) - 7.5F) / ((float) (var8 - var6) - 15.0F);
-                        float var10002 = MathHelper.func_76131_a(this., 0.0F, 1.0F);
+                        float var10002 = MathHelper.clamp(this., 0.0F, 1.0F);
                         if (llIIIlIlllll(98599, 2333)) {
                             throw null;
                         }
 
                         this. = var10002;
-                        ((Class3) this.field_147002_h).scrollTo(this.);
+                        ((Class3) this.inventorySlots).scrollTo(this.);
                     }
 
                     if (llIIIlIlllll(98599, 2333)) {
@@ -392,40 +392,40 @@ public class Class10 extends InventoryEffectRenderer {
                     } else {
                         this.                                                                                         .
                         ();
-                        ScaledResolution var17 = new ScaledResolution(this.field_146297_k);
+                        ScaledResolution var17 = new ScaledResolution(this.mc);
                         if (llIIIlIlllll(98599, 2333)) {
                             throw null;
                         } else {
-                            int var10 = var17.func_78326_a();
-                            var5 = var17.func_78328_b();
-                            GlStateManager.func_179094_E();
+                            int var10 = var17.getScaledWidth();
+                            var5 = var17.getScaledHeight();
+                            GlStateManager.pushMatrix();
                             if (llIIIlIlllll(98599, 2333)) {
                                 throw null;
                             } else {
-                                GlStateManager.func_179109_b((float) (var10 / 2), (float) (var5 / 2), 0.0F);
+                                GlStateManager.translate((float) (var10 / 2), (float) (var5 / 2), 0.0F);
                                 if (llIIIlIlllll(98599, 2333)) {
                                     throw null;
                                 } else {
-                                    GlStateManager.func_179152_a(this.. (), this.                                                                                         .
+                                    GlStateManager.scale(this.. (), this.                                                                                         .
                                     (), 1.0F);
                                     if (llIIIlIlllll(98599, 2333)) {
                                         throw null;
                                     } else {
-                                        GlStateManager.func_179109_b((float) (-var10 / 2), (float) (-var5 / 2), 0.0F);
+                                        GlStateManager.translate((float) (-var10 / 2), (float) (-var5 / 2), 0.0F);
                                         if (llIIIlIlllll(98599, 2333)) {
                                             throw null;
                                         } else {
-                                            super.func_73863_a(var1, var2, var3);
+                                            super.drawScreen(var1, var2, var3);
                                             if (llIIIlIlllll(98599, 2333)) {
                                                 throw null;
                                             } else {
-                                                GlStateManager.func_179121_F();
+                                                GlStateManager.popMatrix();
                                                 if (llIIIlIlllll(98599, 2333)) {
                                                     throw null;
                                                 } else {
                                                     int var9 =                                                                                                *
                                                     10;
-                                                    int var10000 = Math.min(CreativeTabs.field_78032_a.length, (+1) * 10 + 2);
+                                                    int var10000 = Math.min(CreativeTabs.CREATIVE_TAB_ARRAY.length, (+1) * 10 + 2);
                                                     if (llIIIlIlllll(98599, 2333)) {
                                                         throw null;
                                                     } else {
@@ -438,7 +438,7 @@ public class Class10 extends InventoryEffectRenderer {
                                                             throw null;
                                                         } else {
                                                             byte var13 = 0;
-                                                            Object[] var15 = Arrays.copyOfRange(CreativeTabs.field_78032_a, var9, var10);
+                                                            Object[] var15 = Arrays.copyOfRange(CreativeTabs.CREATIVE_TAB_ARRAY, var9, var10);
                                                             if (llIIIlIlllll(98599, 2333)) {
                                                                 throw null;
                                                             } else {
@@ -489,14 +489,14 @@ public class Class10 extends InventoryEffectRenderer {
                                                                 if (llIIIlIlllll(98599, 2333)) {
                                                                     throw null;
                                                                 } else {
-                                                                    if (llIIIllIIlll(var18) && llIIIllIIlll(this.renderCreativeInventoryHoveringText(CreativeTabs.field_78027_g, var1, var2))) {
-                                                                        this.renderCreativeInventoryHoveringText(CreativeTabs.field_78036_m, var1, var2);
+                                                                    if (llIIIllIIlll(var18) && llIIIllIIlll(this.renderCreativeInventoryHoveringText(CreativeTabs.SEARCH, var1, var2))) {
+                                                                        this.renderCreativeInventoryHoveringText(CreativeTabs.INVENTORY, var1, var2);
                                                                     }
 
                                                                     if (llIIIlIlllll(98599, 2333)) {
                                                                         throw null;
                                                                     } else {
-                                                                        if (llIIIllIIllI(this.) && llIIIlIllIIl(, CreativeTabs.field_78036_m.func_78021_a()) && llIIIlIlllII(this.func_146978_c(this..field_75223_e, this..field_75221_f,
+                                                                        if (llIIIllIIllI(this.) && llIIIlIllIIl(, CreativeTabs.INVENTORY.getIndex()) && llIIIlIlllII(this.isPointInRegion(this..xPos, this..yPos,
                                                                         16, 16, var1, var2))){
                                                                             String var19 = Class60.
                                                                             ("bd~na~cyz$bbiYhd/");
@@ -504,12 +504,12 @@ public class Class10 extends InventoryEffectRenderer {
                                                                                 throw null;
                                                                             }
 
-                                                                            var19 = I18n.func_135052_a(var19, new Object[0]);
+                                                                            var19 = I18n.format(var19, new Object[0]);
                                                                             if (llIIIlIlllll(98599, 2333)) {
                                                                                 throw null;
                                                                             }
 
-                                                                            this.func_146279_a(var19, var1, var2);
+                                                                            this.drawHoveringText(var19, var1, var2);
                                                                         }
 
                                                                         if (llIIIlIlllll(98599, 2333)) {
@@ -540,31 +540,31 @@ public class Class10 extends InventoryEffectRenderer {
                                                                                 }
 
                                                                                 String var12 = var20;
-                                                                                var10 = this.field_146289_q.func_78256_a(var12);
-                                                                                GlStateManager.func_179140_f();
+                                                                                var10 = this.fontRenderer.getStringWidth(var12);
+                                                                                GlStateManager.disableLighting();
                                                                                 if (llIIIlIlllll(98599, 2333)) {
                                                                                     throw null;
                                                                                 }
 
-                                                                                this.field_73735_i = 300.0F;
-                                                                                this.field_146296_j.field_77023_b = 300.0F;
-                                                                                this.field_146289_q.func_78276_b(var12, this.field_147003_i + this.field_146999_f / 2 - var10 / 2, this.field_147009_r - 44, -1);
-                                                                                this.field_73735_i = 0.0F;
-                                                                                this.field_146296_j.field_77023_b = 0.0F;
+                                                                                this.zLevel = 300.0F;
+                                                                                this.itemRender.zLevel = 300.0F;
+                                                                                this.fontRenderer.drawString(var12, this.guiLeft + this.xSize / 2 - var10 / 2, this.guiTop - 44, -1);
+                                                                                this.zLevel = 0.0F;
+                                                                                this.itemRender.zLevel = 0.0F;
                                                                             }
 
                                                                             if (llIIIlIlllll(98599, 2333)) {
                                                                                 throw null;
                                                                             } else {
-                                                                                GlStateManager.func_179131_c(1.0F, 1.0F, 1.0F, 1.0F);
+                                                                                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                                                                                 if (llIIIlIlllll(98599, 2333)) {
                                                                                     throw null;
                                                                                 } else {
-                                                                                    GlStateManager.func_179140_f();
+                                                                                    GlStateManager.disableLighting();
                                                                                     if (llIIIlIlllll(98599, 2333)) {
                                                                                         throw null;
                                                                                     } else {
-                                                                                        this.func_191948_b(var1, var2);
+                                                                                        this.renderHoveredToolTip(var1, var2);
                                                                                         var16 = true;
                                                                                     }
                                                                                 }
@@ -589,19 +589,19 @@ public class Class10 extends InventoryEffectRenderer {
     }
 
     public boolean isMouseOverTab(CreativeTabs var1, int var2, int var3) {
-        if (llIIIlllIIlI(var1.getTabPage(), ) && llIIIlllIIll(var1, CreativeTabs.field_78027_g) && llIIIlllIIll(var1, CreativeTabs.field_78036_m)) {
+        if (llIIIlllIIlI(var1.getTabPage(), ) && llIIIlllIIll(var1, CreativeTabs.SEARCH) && llIIIlllIIll(var1, CreativeTabs.INVENTORY)) {
             return false;
         } else if (llIIIlIlllll(9478, 9848)) {
             throw null;
         } else {
-            int var4 = var1.func_78020_k();
+            int var4 = var1.getColumn();
             int var5 = 28 * var4;
             byte var6 = 0;
             CreativeTabs var10000;
             boolean var10001;
-            if (llIIIlIlllII(var1.func_192394_m())) {
+            if (llIIIlIlllII(var1.isAlignedRight())) {
                 var10000 = var1;
-                var5 = this.field_146999_f - 28 * (6 - var4) + 2;
+                var5 = this.xSize - 28 * (6 - var4) + 2;
                 var10001 = true;
             } else {
                 if (llIIIlIlllll(9478, 9848)) {
@@ -624,7 +624,7 @@ public class Class10 extends InventoryEffectRenderer {
             } else {
                 int var7;
                 int var8;
-                if (llIIIlIlllII(var10000.func_78023_l())) {
+                if (llIIIlIlllII(var10000.isOnTopRow())) {
                     var7 = var6 - 32;
                     var8 = var2;
                     var10001 = true;
@@ -633,7 +633,7 @@ public class Class10 extends InventoryEffectRenderer {
                         throw null;
                     }
 
-                    var7 = var6 + this.field_147000_g;
+                    var7 = var6 + this.ySize;
                     var8 = var2;
                 }
 
@@ -650,13 +650,13 @@ public class Class10 extends InventoryEffectRenderer {
         }
     }
 
-    public void func_146281_b() {
-        super.func_146281_b();
+    public void onGuiClosed() {
+        super.onGuiClosed();
         if (llIIIlIlllll(45486, 3002)) {
             throw null;
         } else {
-            if (llIIIllIIllI(this.field_146297_k.field_71439_g) && llIIIllIIllI(this.field_146297_k.field_71439_g.field_71071_by)) {
-                this.field_146297_k.field_71439_g.field_71069_bz.func_82847_b(this.);
+            if (llIIIllIIllI(this.mc.player) && llIIIllIIllI(this.mc.player.inventory)) {
+                this.mc.player.inventoryContainer.removeListener(this.);
             }
 
             if (llIIIlIlllll(45486, 3002)) {
@@ -677,7 +677,7 @@ public class Class10 extends InventoryEffectRenderer {
     public void drawTab(CreativeTabs var1) {
         byte var10000;
         boolean var10001;
-        if (llIIIlIllIIl(var1.func_78021_a(), )) {
+        if (llIIIlIllIIl(var1.getIndex(), )) {
             var10000 = 1;
             var10001 = true;
         } else {
@@ -692,12 +692,12 @@ public class Class10 extends InventoryEffectRenderer {
             throw null;
         } else {
             byte var2 = var10000;
-            byte var3 = var1.func_78023_l();
+            byte var3 = var1.isOnTopRow();
             int var4;
-            int var5 = (var4 = var1.func_78020_k()) * 28;
+            int var5 = (var4 = var1.getColumn()) * 28;
             int var6 = 0;
-            int var7 = this.field_147003_i + 28 * var4;
-            int var8 = this.field_147009_r;
+            int var7 = this.guiLeft + 28 * var4;
+            int var8 = this.guiTop;
             if (llIIIlIlllII(var2)) {
                 var6 += 32;
             }
@@ -705,8 +705,8 @@ public class Class10 extends InventoryEffectRenderer {
             if (llIIIlIlllll(33503, 8362)) {
                 throw null;
             } else {
-                if (llIIIlIlllII(var1.func_192394_m())) {
-                    var7 = this.field_147003_i + this.field_146999_f - 28 * (6 - var4);
+                if (llIIIlIlllII(var1.isAlignedRight())) {
+                    var7 = this.guiLeft + this.xSize - 28 * (6 - var4);
                     var10000 = var3;
                     var10001 = true;
                 } else {
@@ -738,27 +738,27 @@ public class Class10 extends InventoryEffectRenderer {
                         }
 
                         var6 += 64;
-                        var8 += this.field_147000_g - 4;
+                        var8 += this.ySize - 4;
                     }
 
                     if (llIIIlIlllll(33503, 8362)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179140_f();
+                        GlStateManager.disableLighting();
                         if (llIIIlIlllll(33503, 8362)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179124_c(1.0F, 1.0F, 1.0F);
+                            GlStateManager.color(1.0F, 1.0F, 1.0F);
                             if (llIIIlIlllll(33503, 8362)) {
                                 throw null;
                             } else {
-                                GlStateManager.func_179147_l();
+                                GlStateManager.enableBlend();
                                 if (llIIIlIlllll(33503, 8362)) {
                                     throw null;
                                 } else {
-                                    this.func_73729_b(var7, var8, var5, var6, 28, 32);
-                                    this.field_73735_i = 100.0F;
-                                    this.field_146296_j.field_77023_b = 100.0F;
+                                    this.drawTexturedModalRect(var7, var8, var5, var6, 28, 32);
+                                    this.zLevel = 100.0F;
+                                    this.itemRender.zLevel = 100.0F;
                                     var7 += 6;
                                     int var12 = var8 + 8;
                                     byte var10;
@@ -777,23 +777,23 @@ public class Class10 extends InventoryEffectRenderer {
                                         throw null;
                                     } else {
                                         var8 = var12 + var10;
-                                        GlStateManager.func_179145_e();
+                                        GlStateManager.enableLighting();
                                         if (llIIIlIlllll(33503, 8362)) {
                                             throw null;
                                         } else {
-                                            GlStateManager.func_179091_B();
+                                            GlStateManager.enableRescaleNormal();
                                             if (llIIIlIlllll(33503, 8362)) {
                                                 throw null;
                                             } else {
-                                                ItemStack var9 = var1.func_151244_d();
-                                                this.field_146296_j.func_180450_b(var9, var7, var8);
-                                                this.field_146296_j.func_175030_a(this.field_146289_q, var9, var7, var8);
-                                                GlStateManager.func_179140_f();
+                                                ItemStack var9 = var1.getIcon();
+                                                this.itemRender.renderItemAndEffectIntoGUI(var9, var7, var8);
+                                                this.itemRender.renderItemOverlays(this.fontRenderer, var9, var7, var8);
+                                                GlStateManager.disableLighting();
                                                 if (llIIIlIlllll(33503, 8362)) {
                                                     throw null;
                                                 } else {
-                                                    this.field_146296_j.field_77023_b = 0.0F;
-                                                    this.field_73735_i = 0.0F;
+                                                    this.itemRender.zLevel = 0.0F;
+                                                    this.zLevel = 0.0F;
                                                     var11 = true;
                                                 }
                                             }
@@ -810,17 +810,17 @@ public class Class10 extends InventoryEffectRenderer {
 
     private void ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
         Class3 var1;
-        (var1 = (Class3) this.field_147002_h).                                                                                  .
+        (var1 = (Class3) this.inventorySlots).                                                                                  .
         clear();
         CreativeTabs var2;
         boolean var10;
         boolean var10001;
-        if (llIIIlIlllII((var2 = CreativeTabs.field_78032_a[                                                                                    ]).
-        hasSearchBar()) &&llIIIlllIIll(var2, CreativeTabs.field_78027_g)){
-            var2.func_78018_a(var1.);
-            if (llIIIllIIlll(this..func_146179_b().isEmpty())){
+        if (llIIIlIlllII((var2 = CreativeTabs.CREATIVE_TAB_ARRAY[                                                                                    ]).
+        hasSearchBar()) &&llIIIlllIIll(var2, CreativeTabs.SEARCH)){
+            var2.displayAllRelevantItems(var1.);
+            if (llIIIllIIlll(this..getText().isEmpty())){
                 String var8 = this.                                                                                     .
-                func_146179_b().toLowerCase(Locale.ROOT);
+                getText().toLowerCase(Locale.ROOT);
                 Iterator var9 = var1.                                                                                  .
                 iterator();
 
@@ -835,9 +835,9 @@ public class Class10 extends InventoryEffectRenderer {
 
                     ItemStack var6 = (ItemStack) var9.next();
                     byte var5 = 0;
-                    EntityPlayerSP var12 = this.field_146297_k.field_71439_g;
+                    EntityPlayerSP var12 = this.mc.player;
                     TooltipFlags var10002;
-                    if (llIIIlIlllII(this.field_146297_k.field_71474_y.field_82882_x)) {
+                    if (llIIIlIlllII(this.mc.gameSettings.advancedItemTooltips)) {
                         var10002 = TooltipFlags.ADVANCED;
                         boolean var10003 = true;
                     } else {
@@ -852,7 +852,7 @@ public class Class10 extends InventoryEffectRenderer {
                         throw null;
                     }
 
-                    Iterator var7 = var6.func_82840_a(var12, var10002).iterator();
+                    Iterator var7 = var6.getTooltip(var12, var10002).iterator();
 
                     byte var13;
                     while (true) {
@@ -869,7 +869,7 @@ public class Class10 extends InventoryEffectRenderer {
                             break;
                         }
 
-                        String var11 = TextFormatting.func_110646_a((String) var7.next());
+                        String var11 = TextFormatting.getTextWithoutFormattingCodes((String) var7.next());
                         if (llIIIlIlllll(81138, 6796)) {
                             throw null;
                         }
@@ -902,9 +902,9 @@ public class Class10 extends InventoryEffectRenderer {
         } else if (llIIIlIlllll(81138, 6796)) {
             throw null;
         } else {
-            if (llIIIlIlllII(this..func_146179_b().isEmpty())){
+            if (llIIIlIlllII(this..getText().isEmpty())){
                 Iterator var3;
-                Iterator var10000 = var3 = Item.field_150901_e.iterator();
+                Iterator var10000 = var3 = Item.REGISTRY.iterator();
 
                 while (true) {
                     if (llIIIlIlllll(81138, 6796)) {
@@ -917,7 +917,7 @@ public class Class10 extends InventoryEffectRenderer {
 
                     Item var4 = (Item) var3.next();
                     var10000 = var3;
-                    var4.func_150895_a(CreativeTabs.field_78027_g, var1.);
+                    var4.getSubItems(CreativeTabs.SEARCH, var1.);
                     var10001 = true;
                 }
             } else{
@@ -926,7 +926,7 @@ public class Class10 extends InventoryEffectRenderer {
                 }
 
                 var1.                                                                                  .
-                addAll(this.field_146297_k.func_193987_a(SearchTreeManager.field_194011_a).func_194038_a(this..func_146179_b().toLowerCase(Locale.ROOT)))
+                addAll(this.mc.getSearchTree(SearchTreeManager.ITEMS).search(this..getText().toLowerCase(Locale.ROOT)))
                 ;
             }
 
@@ -942,15 +942,15 @@ public class Class10 extends InventoryEffectRenderer {
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public void func_146284_a(GuiButton var1) throws IOException {
-        if (llIIIlIllIIl(var1.field_146127_k, 1)) {
-            Minecraft var10000 = this.field_146297_k;
-            GuiStats var10001 = new GuiStats(this, this.field_146297_k.field_71439_g.func_146107_m());
+    public void actionPerformed(GuiButton var1) throws IOException {
+        if (llIIIlIllIIl(var1.id, 1)) {
+            Minecraft var10000 = this.mc;
+            GuiStats var10001 = new GuiStats(this, this.mc.player.getStatFileWriter());
             if (llIIIlIlllll(9058, 1595)) {
                 throw null;
             }
 
-            var10000.func_147108_a(var10001);
+            var10000.displayGuiScreen(var10001);
         }
 
         if (llIIIlIlllll(9058, 1595)) {
@@ -958,7 +958,7 @@ public class Class10 extends InventoryEffectRenderer {
         } else {
             int var2;
             boolean var3;
-            if (llIIIlIllIIl(var1.field_146127_k, 101)) {
+            if (llIIIlIllIIl(var1.id, 101)) {
                 var2 = Math.max(-1, 0);
                 if (llIIIlIlllll(9058, 1595)) {
                     throw null;
@@ -969,7 +969,7 @@ public class Class10 extends InventoryEffectRenderer {
             } else if (llIIIlIlllll(9058, 1595)) {
                 throw null;
             } else {
-                if (llIIIlIllIIl(var1.field_146127_k, 102)) {
+                if (llIIIlIllIIl(var1.id, 102)) {
                     var2 = Math.min(+1, this.);
                     if (llIIIlIlllll(9058, 1595)) {
                         throw null;
@@ -987,15 +987,15 @@ public class Class10 extends InventoryEffectRenderer {
         }
     }
 
-    public void func_73876_c() {
-        if (llIIIllIIlll(this.field_146297_k.field_71442_b.func_78758_h())) {
-            Minecraft var10000 = this.field_146297_k;
-            GuiInventory var10001 = new GuiInventory(this.field_146297_k.field_71439_g);
+    public void updateScreen() {
+        if (llIIIllIIlll(this.mc.playerController.isInCreativeMode())) {
+            Minecraft var10000 = this.mc;
+            GuiInventory var10001 = new GuiInventory(this.mc.player);
             if (llIIIlIlllll(32562, 541)) {
                 throw null;
             }
 
-            var10000.func_147108_a(var10001);
+            var10000.displayGuiScreen(var10001);
         }
 
         if (llIIIlIlllll(32562, 541)) {
@@ -1005,14 +1005,14 @@ public class Class10 extends InventoryEffectRenderer {
         }
     }
 
-    public void func_73869_a(char var1, int var2) throws IOException {
+    public void keyTyped(char var1, int var2) throws IOException {
         boolean var10000;
-        if (llIIIllIIlll(CreativeTabs.field_78032_a[].hasSearchBar())) {
-            byte var3 = GameSettings.func_100015_a(this.field_146297_k.field_71474_y.field_74310_D);
+        if (llIIIllIIlll(CreativeTabs.CREATIVE_TAB_ARRAY[].hasSearchBar())) {
+            byte var3 = GameSettings.isKeyDown(this.mc.gameSettings.keyBindChat);
             if (llIIIlIlllll(79142, 9424)) {
                 throw null;
             } else if (llIIIlIlllII(var3)) {
-                this. (CreativeTabs.field_78027_g);
+                this. (CreativeTabs.SEARCH);
                 if (llIIIlIlllll(79142, 9424)) {
                     throw null;
                 } else {
@@ -1021,7 +1021,7 @@ public class Class10 extends InventoryEffectRenderer {
             } else if (llIIIlIlllll(79142, 9424)) {
                 throw null;
             } else {
-                super.func_73869_a(var1, var2);
+                super.keyTyped(var1, var2);
                 if (llIIIlIlllll(79142, 9424)) {
                     throw null;
                 } else {
@@ -1034,14 +1034,14 @@ public class Class10 extends InventoryEffectRenderer {
             if (llIIIlIlllII(this.)) {
                 this. = false;
                 this.                                                                                     .
-                func_146180_a("");
+                setText("");
             }
 
             if (llIIIlIlllll(79142, 9424)) {
                 throw null;
             } else {
-                if (llIIIllIIlll(this.func_146983_a(var2))) {
-                    if (llIIIlIlllII(this..func_146201_a(var1, var2))){
+                if (llIIIllIIlll(this.checkHotbarKeys(var2))) {
+                    if (llIIIlIlllII(this..textboxKeyTyped(var1, var2))){
                         this. ();
                         if (llIIIlIlllll(79142, 9424)) {
                             throw null;
@@ -1055,7 +1055,7 @@ public class Class10 extends InventoryEffectRenderer {
                         throw null;
                     }
 
-                    super.func_73869_a(var1, var2);
+                    super.keyTyped(var1, var2);
                     if (llIIIlIlllll(79142, 9424)) {
                         throw null;
                     }
@@ -1070,13 +1070,13 @@ public class Class10 extends InventoryEffectRenderer {
         }
     }
 
-    public void func_73864_a(int var1, int var2, int var3) throws IOException {
+    public void mouseClicked(int var1, int var2, int var3) throws IOException {
         boolean var10;
         if (llIIIllIIlll(var3)) {
-            int var4 = var1 - this.field_147003_i;
-            int var5 = var2 - this.field_147009_r;
+            int var4 = var1 - this.guiLeft;
+            int var5 = var2 - this.guiTop;
             CreativeTabs[] var6;
-            int var7 = (var6 = CreativeTabs.field_78032_a).length;
+            int var7 = (var6 = CreativeTabs.CREATIVE_TAB_ARRAY).length;
             int var8;
             int var10000 = var8 = 0;
 
@@ -1108,7 +1108,7 @@ public class Class10 extends InventoryEffectRenderer {
         if (llIIIlIlllll(10282, 6134)) {
             throw null;
         } else {
-            super.func_73864_a(var1, var2, var3);
+            super.mouseClicked(var1, var2, var3);
             if (llIIIlIlllll(10282, 6134)) {
                 throw null;
             } else {
@@ -1117,53 +1117,53 @@ public class Class10 extends InventoryEffectRenderer {
         }
     }
 
-    public void func_73866_w_() {
+    public void initGui() {
         boolean var2;
-        if (llIIIlIlllII(this.field_146297_k.field_71442_b.func_78758_h())) {
-            super.func_73866_w_();
+        if (llIIIlIlllII(this.mc.playerController.isInCreativeMode())) {
+            super.initGui();
             if (llIIIlIlllll(18890, 7073)) {
                 throw null;
             }
 
-            this.field_146292_n.clear();
+            this.buttonList.clear();
             Keyboard.enableRepeatEvents(true);
             if (llIIIlIlllll(18890, 7073)) {
                 throw null;
             }
 
-            GuiTextField var10008 = new GuiTextField(0, this.field_146289_q, this.field_147003_i + 82, this.field_147009_r + 6, 80, this.field_146289_q.field_78288_b);
+            GuiTextField var10008 = new GuiTextField(0, this.fontRenderer, this.guiLeft + 82, this.guiTop + 6, 80, this.fontRenderer.FONT_HEIGHT);
             if (llIIIlIlllll(18890, 7073)) {
                 throw null;
             }
 
             this. = var10008;
             this.                                                                                     .
-            func_146203_f(50);
+            setMaxStringLength(50);
             this.                                                                                     .
-            func_146185_a(false);
+            setEnableBackgroundDrawing(false);
             this.                                                                                     .
-            func_146189_e(false);
+            setVisible(false);
             this.                                                                                     .
-            func_146193_g(16777215);
+            setTextColor(16777215);
             int var1 = ;
                                                                                               =-1;
-            this. (CreativeTabs.field_78032_a[var1]);
+            this. (CreativeTabs.CREATIVE_TAB_ARRAY[var1]);
             if (llIIIlIlllll(18890, 7073)) {
                 throw null;
             }
 
-            CreativeCrafting var10002 = new CreativeCrafting(this.field_146297_k);
+            CreativeCrafting var10002 = new CreativeCrafting(this.mc);
             if (llIIIlIlllll(18890, 7073)) {
                 throw null;
             }
 
             this. = var10002;
-            this.field_146297_k.field_71439_g.field_71069_bz.func_75132_a(this.);
-            if (llIIIllllllI(var1 = CreativeTabs.field_78032_a.length, 12)) {
-                List var10000 = this.field_146292_n;
+            this.mc.player.inventoryContainer.addListener(this.);
+            if (llIIIllllllI(var1 = CreativeTabs.CREATIVE_TAB_ARRAY.length, 12)) {
+                List var10000 = this.buttonList;
                 GuiButton var10001 = new GuiButton;
-                int var10004 = this.field_147003_i;
-                int var10005 = this.field_147009_r - 50;
+                int var10004 = this.guiLeft;
+                int var10005 = this.guiTop - 50;
                 String var7 = Class60. ("g");
                 if (llIIIlIlllll(18890, 7073)) {
                     throw null;
@@ -1175,10 +1175,10 @@ public class Class10 extends InventoryEffectRenderer {
                 }
 
                 var10000.add(var10001);
-                List var4 = this.field_146292_n;
+                List var4 = this.buttonList;
                 GuiButton var6 = new GuiButton;
-                var10005 = this.field_147003_i + this.field_146999_f - 20;
-                int var10006 = this.field_147009_r - 50;
+                var10005 = this.guiLeft + this.xSize - 20;
+                int var10006 = this.guiTop - 50;
                 String var10009 = Class60. ("e");
                 if (llIIIlIlllll(18890, 7073)) {
                     throw null;
@@ -1203,13 +1203,13 @@ public class Class10 extends InventoryEffectRenderer {
                 throw null;
             }
 
-            Minecraft var3 = this.field_146297_k;
-            Class127 var5 = new Class127(this.field_146297_k.field_71439_g);
+            Minecraft var3 = this.mc;
+            Class127 var5 = new Class127(this.mc.player);
             if (llIIIlIlllll(18890, 7073)) {
                 throw null;
             }
 
-            var3.func_147108_a(var5);
+            var3.displayGuiScreen(var5);
         }
 
         if (llIIIlIlllll(18890, 7073)) {
@@ -1224,20 +1224,20 @@ public class Class10 extends InventoryEffectRenderer {
         return;
     }
 
-    public void func_146976_a(float var1, int var2, int var3) {
-        GlStateManager.func_179131_c(1.0F, 1.0F, 1.0F, 1.0F);
+    public void drawGuiContainerBackgroundLayer(float var1, int var2, int var3) {
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         if (llIIIlIlllll(82500, 9508)) {
             throw null;
         } else {
-            RenderHelper.func_74520_c();
+            RenderHelper.enableGUIStandardItemLighting();
             if (llIIIlIlllll(82500, 9508)) {
                 throw null;
             } else {
-                CreativeTabs var8 = CreativeTabs.field_78032_a[                                                                                    ]
+                CreativeTabs var8 = CreativeTabs.CREATIVE_TAB_ARRAY[                                                                                    ]
                 ;
                 int var4 =                                                                                                *
                 10;
-                int var10000 = Math.min(CreativeTabs.field_78032_a.length, (+1) * 10 + 2);
+                int var10000 = Math.min(CreativeTabs.CREATIVE_TAB_ARRAY.length, (+1) * 10 + 2);
                 if (llIIIlIlllll(82500, 9508)) {
                     throw null;
                 } else {
@@ -1249,7 +1249,7 @@ public class Class10 extends InventoryEffectRenderer {
                     if (llIIIlIlllll(82500, 9508)) {
                         throw null;
                     } else {
-                        Object[] var10 = Arrays.copyOfRange(CreativeTabs.field_78032_a, var4, var5);
+                        Object[] var10 = Arrays.copyOfRange(CreativeTabs.CREATIVE_TAB_ARRAY, var4, var5);
                         if (llIIIlIlllll(82500, 9508)) {
                             throw null;
                         } else {
@@ -1266,18 +1266,18 @@ public class Class10 extends InventoryEffectRenderer {
                                     }
 
                                     if (llIIIlIlllII()) {
-                                        if (llIIIlllIIll(var8, CreativeTabs.field_78027_g)) {
-                                            this.field_146297_k.func_110434_K().func_110577_a();
-                                            this.drawTab(CreativeTabs.field_78027_g);
+                                        if (llIIIlllIIll(var8, CreativeTabs.SEARCH)) {
+                                            this.mc.getTextureManager().bindTexture();
+                                            this.drawTab(CreativeTabs.SEARCH);
                                         }
 
                                         if (llIIIlIlllll(82500, 9508)) {
                                             throw null;
                                         }
 
-                                        if (llIIIlllIIll(var8, CreativeTabs.field_78036_m)) {
-                                            this.field_146297_k.func_110434_K().func_110577_a();
-                                            this.drawTab(CreativeTabs.field_78036_m);
+                                        if (llIIIlllIIll(var8, CreativeTabs.INVENTORY)) {
+                                            this.mc.getTextureManager().bindTexture();
+                                            this.drawTab(CreativeTabs.INVENTORY);
                                         }
                                     }
 
@@ -1285,19 +1285,19 @@ public class Class10 extends InventoryEffectRenderer {
                                         throw null;
                                     }
 
-                                    this.field_146297_k.func_110434_K().func_110577_a(var8.getBackgroundImage());
-                                    this.func_73729_b(this.field_147003_i, this.field_147009_r, 0, 0, this.field_146999_f, this.field_147000_g);
+                                    this.mc.getTextureManager().bindTexture(var8.getBackgroundImage());
+                                    this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
                                     this.                                                                                     .
-                                    func_146194_f();
-                                    GlStateManager.func_179131_c(1.0F, 1.0F, 1.0F, 1.0F);
+                                    drawTextBox();
+                                    GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                                     if (llIIIlIlllll(82500, 9508)) {
                                         throw null;
                                     }
 
-                                    var4 = this.field_147003_i + 175;
-                                    var6 = (var5 = this.field_147009_r + 18) + 112;
-                                    this.field_146297_k.func_110434_K().func_110577_a();
-                                    if (llIIIlIlllII(var8.func_78017_i())) {
+                                    var4 = this.guiLeft + 175;
+                                    var6 = (var5 = this.guiTop + 18) + 112;
+                                    this.mc.getTextureManager().bindTexture();
+                                    if (llIIIlIlllII(var8.hasScrollbar())) {
                                         int var10002 = var5 + (int) ((float) (var6 - var5 - 17) * this.);
                                         byte var10004 = this. ();
                                         if (llIIIlIlllll(82500, 9508)) {
@@ -1319,7 +1319,7 @@ public class Class10 extends InventoryEffectRenderer {
                                             throw null;
                                         }
 
-                                        this.func_73729_b(var4, var10002, 232 + var10004, 0, 12, 15);
+                                        this.drawTexturedModalRect(var4, var10002, 232 + var10004, 0, 12, 15);
                                     }
 
                                     if (llIIIlIlllll(82500, 9508)) {
@@ -1331,7 +1331,7 @@ public class Class10 extends InventoryEffectRenderer {
                                             throw null;
                                         }
 
-                                        if (llIIIlllIIll(var8, CreativeTabs.field_78027_g) && llIIIlllIIll(var8, CreativeTabs.field_78036_m)) {
+                                        if (llIIIlllIIll(var8, CreativeTabs.SEARCH) && llIIIlllIIll(var8, CreativeTabs.INVENTORY)) {
                                             var12 = true;
                                             return;
                                         }
@@ -1342,8 +1342,8 @@ public class Class10 extends InventoryEffectRenderer {
                                     }
 
                                     this.drawTab(var8);
-                                    if (llIIIllIIlII(var8, CreativeTabs.field_78036_m)) {
-                                        GuiInventory.func_147046_a(this.field_147003_i + 88, this.field_147009_r + 45, 20, (float) (this.field_147003_i + 88 - var2), (float) (this.field_147009_r + 45 - 30 - var3), this.field_146297_k.field_71439_g);
+                                    if (llIIIllIIlII(var8, CreativeTabs.INVENTORY)) {
+                                        GuiInventory.drawEntityOnScreen(this.guiLeft + 88, this.guiTop + 45, 20, (float) (this.guiLeft + 88 - var2), (float) (this.guiTop + 45 - 30 - var3), this.mc.player);
                                         if (llIIIlIlllll(82500, 9508)) {
                                             throw null;
                                         }
@@ -1359,7 +1359,7 @@ public class Class10 extends InventoryEffectRenderer {
 
                                 CreativeTabs var7;
                                 CreativeTabs var11 = var7 = var9[var6];
-                                this.field_146297_k.func_110434_K().func_110577_a();
+                                this.mc.getTextureManager().bindTexture();
                                 if (llIIIllIIIlI(var11)) {
                                     var12 = true;
                                 } else {
@@ -1367,7 +1367,7 @@ public class Class10 extends InventoryEffectRenderer {
                                         throw null;
                                     }
 
-                                    if (llIIIlllIIlI(var7.func_78021_a(), )) {
+                                    if (llIIIlllIIlI(var7.getIndex(), )) {
                                         this.drawTab(var7);
                                     }
                                 }
@@ -1388,13 +1388,13 @@ public class Class10 extends InventoryEffectRenderer {
         }
     }
 
-    public void func_146286_b(int var1, int var2, int var3) {
+    public void mouseReleased(int var1, int var2, int var3) {
         boolean var10;
         if (llIIIllIIlll(var3)) {
-            int var4 = var1 - this.field_147003_i;
-            int var5 = var2 - this.field_147009_r;
+            int var4 = var1 - this.guiLeft;
+            int var5 = var2 - this.guiTop;
             CreativeTabs[] var6;
-            int var7 = (var6 = CreativeTabs.field_78032_a).length;
+            int var7 = (var6 = CreativeTabs.CREATIVE_TAB_ARRAY).length;
             int var8;
             int var10000 = var8 = 0;
 
@@ -1431,7 +1431,7 @@ public class Class10 extends InventoryEffectRenderer {
         if (llIIIlIlllll(25893, 829)) {
             throw null;
         } else {
-            super.func_146286_b(var1, var2, var3);
+            super.mouseReleased(var1, var2, var3);
             if (llIIIlIlllll(25893, 829)) {
                 throw null;
             } else {
@@ -1440,22 +1440,22 @@ public class Class10 extends InventoryEffectRenderer {
         }
     }
 
-    public void func_146979_b(int var1, int var2) {
+    public void drawGuiContainerForegroundLayer(int var1, int var2) {
         CreativeTabs var3;
-        if (llIIIllIIllI(var3 = CreativeTabs.field_78032_a[                                                                                    ]) &&
-        llIIIlIlllII(var3.func_78019_g())){
-            GlStateManager.func_179084_k();
+        if (llIIIllIIllI(var3 = CreativeTabs.CREATIVE_TAB_ARRAY[                                                                                    ]) &&
+        llIIIlIlllII(var3.drawInForegroundOfTab())){
+            GlStateManager.disableBlend();
             if (llIIIlIlllll(52148, 7194)) {
                 throw null;
             }
 
-            FontRenderer var10000 = this.field_146289_q;
-            String var10001 = I18n.func_135052_a(var3.func_78024_c(), new Object[0]);
+            FontRenderer var10000 = this.fontRenderer;
+            String var10001 = I18n.format(var3.getTranslationKey(), new Object[0]);
             if (llIIIlIlllll(52148, 7194)) {
                 throw null;
             }
 
-            var10000.func_78276_b(var10001, 8, 6, var3.getLabelColor());
+            var10000.drawString(var10001, 8, 6, var3.getLabelColor());
         }
 
         if (llIIIlIlllll(52148, 7194)) {
@@ -1465,8 +1465,8 @@ public class Class10 extends InventoryEffectRenderer {
         }
     }
 
-    public void func_146274_d() throws IOException {
-        super.func_146274_d();
+    public void handleMouseInput() throws IOException {
+        super.handleMouseInput();
         if (llIIIlIlllll(16189, 2003)) {
             throw null;
         } else {
@@ -1482,7 +1482,7 @@ public class Class10 extends InventoryEffectRenderer {
                     }
 
                     if (llIIIlIlllII(var3)) {
-                        int var2 = (((Class3) this.field_147002_h)..size() + 9 - 1) /9 - 5;
+                        int var2 = (((Class3) this.inventorySlots)..size() + 9 - 1) /9 - 5;
                         if (llIIIlllIIIl(var1)) {
                             var1 = 1;
                         }
@@ -1500,13 +1500,13 @@ public class Class10 extends InventoryEffectRenderer {
                         }
 
                         this. = (float) ((double) this. - (double) var1 / (double) var2);
-                        float var10002 = MathHelper.func_76131_a(this., 0.0F, 1.0F);
+                        float var10002 = MathHelper.clamp(this., 0.0F, 1.0F);
                         if (llIIIlIlllll(16189, 2003)) {
                             throw null;
                         }
 
                         this. = var10002;
-                        ((Class3) this.field_147002_h).scrollTo(this.);
+                        ((Class3) this.inventorySlots).scrollTo(this.);
                     }
                 }
 
@@ -1519,12 +1519,12 @@ public class Class10 extends InventoryEffectRenderer {
         }
     }
 
-    public void func_146285_a(ItemStack var1, int var2, int var3) {
+    public void renderToolTip(ItemStack var1, int var2, int var3) {
         boolean var10000;
-        if (llIIIlIllIIl(, CreativeTabs.field_78027_g.func_78021_a())) {
-            EntityPlayerSP var10001 = this.field_146297_k.field_71439_g;
+        if (llIIIlIllIIl(, CreativeTabs.SEARCH.getIndex())) {
+            EntityPlayerSP var10001 = this.mc.player;
             TooltipFlags var10002;
-            if (llIIIlIlllII(this.field_146297_k.field_71474_y.field_82882_x)) {
+            if (llIIIlIlllII(this.mc.gameSettings.advancedItemTooltips)) {
                 var10002 = TooltipFlags.ADVANCED;
                 boolean var10003 = true;
             } else {
@@ -1545,9 +1545,9 @@ public class Class10 extends InventoryEffectRenderer {
                 boolean var17;
                 label149:
                 {
-                    var4 = var1.func_82840_a(var10001, var10002);
-                    if (llIIIllIIIlI(var5 = var1.func_77973_b().func_77640_w()) && llIIIllIIlII(var1.func_77973_b(), Items.field_151134_bR)) {
-                        Map var14 = EnchantmentHelper.func_82781_a(var1);
+                    var4 = var1.getTooltip(var10001, var10002);
+                    if (llIIIllIIIlI(var5 = var1.getItem().getCreativeTab()) && llIIIllIIlII(var1.getItem(), Items.ENCHANTED_BOOK)) {
+                        Map var14 = EnchantmentHelper.getEnchantments(var1);
                         if (llIIIlIlllll(67254, 7229)) {
                             throw null;
                         }
@@ -1556,7 +1556,7 @@ public class Class10 extends InventoryEffectRenderer {
                         if (llIIIlIllIIl(var14.size(), 1)) {
                             Enchantment var7 = (Enchantment) var6.keySet().iterator().next();
                             CreativeTabs[] var8;
-                            int var9 = (var8 = CreativeTabs.field_78032_a).length;
+                            int var9 = (var8 = CreativeTabs.CREATIVE_TAB_ARRAY).length;
                             int var10;
                             var15 = var10 = 0;
 
@@ -1570,7 +1570,7 @@ public class Class10 extends InventoryEffectRenderer {
                                 }
 
                                 CreativeTabs var11;
-                                if (llIIIlIlllII((var11 = var8[var10]).func_111226_a(var7.field_77351_y))) {
+                                if (llIIIlIlllII((var11 = var8[var10]).hasRelevantEnchantmentType(var7.type))) {
                                     var16 = var5 = var11;
                                     var17 = true;
                                     break label149;
@@ -1606,7 +1606,7 @@ public class Class10 extends InventoryEffectRenderer {
                         }
 
                         var19 = var19.append("").append(TextFormatting.BOLD).append(TextFormatting.BLUE);
-                        String var20 = I18n.func_135052_a(var5.func_78024_c(), new Object[0]);
+                        String var20 = I18n.format(var5.getTranslationKey(), new Object[0]);
                         if (llIIIlIlllll(67254, 7229)) {
                             throw null;
                         }
@@ -1624,7 +1624,7 @@ public class Class10 extends InventoryEffectRenderer {
                                     throw null;
                                 }
 
-                                FontRenderer var13 = var1.func_77973_b().getFontRenderer(var1);
+                                FontRenderer var13 = var1.getItem().getFontRenderer(var1);
                                 GuiUtils.preItemToolTip(var1);
                                 if (llIIIlIlllll(67254, 7229)) {
                                     throw null;
@@ -1632,7 +1632,7 @@ public class Class10 extends InventoryEffectRenderer {
 
                                 FontRenderer var21;
                                 if (llIIIllIIIlI(var13)) {
-                                    var21 = this.field_146289_q;
+                                    var21 = this.fontRenderer;
                                     boolean var10005 = true;
                                 } else {
                                     if (llIIIlIlllll(67254, 7229)) {
@@ -1662,7 +1662,7 @@ public class Class10 extends InventoryEffectRenderer {
                                     throw null;
                                 }
 
-                                var4.set(var12, String.valueOf(var18.append(var1.func_77973_b().getForgeRarity(var1).getColor()).append((String) var4.get(var12))));
+                                var4.set(var12, String.valueOf(var18.append(var1.getItem().getForgeRarity(var1).getColor()).append((String) var4.get(var12))));
                                 var10000 = true;
                             } else {
                                 if (llIIIlIlllll(67254, 7229)) {
@@ -1692,7 +1692,7 @@ public class Class10 extends InventoryEffectRenderer {
         } else if (llIIIlIlllll(67254, 7229)) {
             throw null;
         } else {
-            super.func_146285_a(var1, var2, var3);
+            super.renderToolTip(var1, var2, var3);
             if (llIIIlIlllll(67254, 7229)) {
                 throw null;
             } else {
@@ -1709,13 +1709,13 @@ public class Class10 extends InventoryEffectRenderer {
             throw null;
         } else {
             int var2 = ;
-                                                                                              =var1.func_78021_a();
-            Class3 var3 = (Class3) this.field_147002_h;
-            this.field_147008_s.clear();
+                                                                                              =var1.getIndex();
+            Class3 var3 = (Class3) this.inventorySlots;
+            this.dragSplittingSlots.clear();
             var3.                                                                                  .clear();
             int var10000;
             boolean var19;
-            if (llIIIllIIlII(var1, CreativeTabs.field_192395_m)) {
+            if (llIIIllIIlII(var1, CreativeTabs.HOTBAR)) {
                 int var4;
                 var10000 = var4 = 0;
 
@@ -1729,7 +1729,7 @@ public class Class10 extends InventoryEffectRenderer {
                     }
 
                     HotbarSnapshot var5;
-                    if (llIIIlIlllII((var5 = this.field_146297_k.field_191950_u.func_192563_a(var4)).isEmpty())) {
+                    if (llIIIlIlllII((var5 = this.mc.creativeSettings.getHotbarSnapshot(var4)).isEmpty())) {
                         int var6;
                         var10000 = var6 = 0;
 
@@ -1743,7 +1743,7 @@ public class Class10 extends InventoryEffectRenderer {
                             }
 
                             if (llIIIlIllIIl(var6, var4)) {
-                                ItemStack var16 = new ItemStack(Items.field_151121_aF);
+                                ItemStack var16 = new ItemStack(Items.PAPER);
                                 if (llIIIlIlllll(11052, 8037)) {
                                     throw null;
                                 }
@@ -1754,14 +1754,14 @@ public class Class10 extends InventoryEffectRenderer {
                                     throw null;
                                 }
 
-                                var16.func_190925_c(var10001);
-                                String var10002 = GameSettings.func_74298_c(this.field_146297_k.field_71474_y.field_151456_ac[var4].func_151463_i());
+                                var16.getOrCreateSubCompound(var10001);
+                                String var10002 = GameSettings.getKeyDisplayString(this.mc.gameSettings.keyBindsHotbar[var4].getKeyCode());
                                 if (llIIIlIlllll(11052, 8037)) {
                                     throw null;
                                 }
 
                                 String var8 = var10002;
-                                var10001 = GameSettings.func_74298_c(this.field_146297_k.field_71474_y.field_193629_ap.func_151463_i());
+                                var10001 = GameSettings.getKeyDisplayString(this.mc.gameSettings.keyBindSaveToolbar.getKeyCode());
                                 if (llIIIlIlllll(11052, 8037)) {
                                     throw null;
                                 }
@@ -1778,7 +1778,7 @@ public class Class10 extends InventoryEffectRenderer {
                                     throw null;
                                 }
 
-                                var7.func_151001_c(var18.func_150260_c());
+                                var7.setStackDisplayName(var18.getUnformattedText());
                                 var3.                                                                                  .
                                 add(var7);
                                 var17 = true;
@@ -1788,7 +1788,7 @@ public class Class10 extends InventoryEffectRenderer {
                                 }
 
                                 var3.                                                                                  .
-                                add(ItemStack.field_190927_a);
+                                add(ItemStack.EMPTY);
                             }
 
                             if (llIIIlIlllll(11052, 8037)) {
@@ -1821,8 +1821,8 @@ public class Class10 extends InventoryEffectRenderer {
                     throw null;
                 }
 
-                if (llIIIlllIIll(var1, CreativeTabs.field_78027_g)) {
-                    var1.func_78018_a(var3.);
+                if (llIIIlllIIll(var1, CreativeTabs.SEARCH)) {
+                    var1.displayAllRelevantItems(var3.);
                 }
             }
 
@@ -1830,10 +1830,10 @@ public class Class10 extends InventoryEffectRenderer {
                 throw null;
             } else {
                 Class10 var23;
-                if (llIIIllIIlII(var1, CreativeTabs.field_78036_m)) {
-                    Container var10 = this.field_146297_k.field_71439_g.field_71069_bz;
+                if (llIIIllIIlII(var1, CreativeTabs.INVENTORY)) {
+                    Container var10 = this.mc.player.inventoryContainer;
                     if (llIIIllIIIlI(this.)) {
-                        this. = var3.field_75151_b;
+                        this. = var3.inventorySlots;
                     }
 
                     if (llIIIlIlllll(11052, 8037)) {
@@ -1845,7 +1845,7 @@ public class Class10 extends InventoryEffectRenderer {
                         throw null;
                     }
 
-                    var3.field_75151_b = var21;
+                    var3.inventorySlots = var21;
                     int var11;
                     var10000 = var11 = 0;
 
@@ -1854,7 +1854,7 @@ public class Class10 extends InventoryEffectRenderer {
                             throw null;
                         }
 
-                        if (!llIIIllIIlIl(var10000, var10.field_75151_b.size())) {
+                        if (!llIIIllIIlIl(var10000, var10.inventorySlots.size())) {
                             if (llIIIlIlllll(11052, 8037)) {
                                 throw null;
                             }
@@ -1866,26 +1866,26 @@ public class Class10 extends InventoryEffectRenderer {
                             }
 
                             this. = var22;
-                            var3.field_75151_b.add(this.);
+                            var3.inventorySlots.add(this.);
                             var19 = true;
                             break;
                         }
 
-                        Class196 var20 = new Class196(this, (Slot) var10.field_75151_b.get(var11), var11);
+                        Class196 var20 = new Class196(this, (Slot) var10.inventorySlots.get(var11), var11);
                         if (llIIIlIlllll(11052, 8037)) {
                             throw null;
                         }
 
                         Class196 var12 = var20;
-                        var3.field_75151_b.add(var12);
+                        var3.inventorySlots.add(var12);
                         int var13;
                         int var14;
                         int var15;
                         if (llIIIlIlllll(var11, 5) && llIIIllIIlIl(var11, 9)) {
                             var14 = (var13 = var11 - 5) / 2;
                             var15 = var13 % 2;
-                            var12.field_75223_e = 54 + var14 * 54;
-                            var12.field_75221_f = 6 + var15 * 27;
+                            var12.xPos = 54 + var14 * 54;
+                            var12.yPos = 6 + var15 * 27;
                             var17 = true;
                         } else {
                             if (llIIIlIlllll(11052, 8037)) {
@@ -1893,8 +1893,8 @@ public class Class10 extends InventoryEffectRenderer {
                             }
 
                             if (llIIIllllIIl(var11) && llIIIllIIlIl(var11, 5)) {
-                                var12.field_75223_e = -2000;
-                                var12.field_75221_f = -2000;
+                                var12.xPos = -2000;
+                                var12.yPos = -2000;
                                 var17 = true;
                             } else {
                                 if (llIIIlIlllll(11052, 8037)) {
@@ -1902,27 +1902,27 @@ public class Class10 extends InventoryEffectRenderer {
                                 }
 
                                 if (llIIIlIllIIl(var11, 45)) {
-                                    var12.field_75223_e = 35;
-                                    var12.field_75221_f = 20;
+                                    var12.xPos = 35;
+                                    var12.yPos = 20;
                                     var17 = true;
                                 } else {
                                     if (llIIIlIlllll(11052, 8037)) {
                                         throw null;
                                     }
 
-                                    if (llIIIllIIlIl(var11, var10.field_75151_b.size())) {
+                                    if (llIIIllIIlIl(var11, var10.inventorySlots.size())) {
                                         var14 = (var13 = var11 - 9) % 9;
                                         var15 = var13 / 9;
-                                        var12.field_75223_e = 9 + var14 * 18;
+                                        var12.xPos = 9 + var14 * 18;
                                         if (llIIIlIlllll(var11, 36)) {
-                                            var12.field_75221_f = 112;
+                                            var12.yPos = 112;
                                             var17 = true;
                                         } else {
                                             if (llIIIlIlllll(11052, 8037)) {
                                                 throw null;
                                             }
 
-                                            var12.field_75221_f = 54 + var15 * 18;
+                                            var12.yPos = 54 + var15 * 18;
                                         }
                                     }
                                 }
@@ -1942,8 +1942,8 @@ public class Class10 extends InventoryEffectRenderer {
                         throw null;
                     }
 
-                    if (llIIIlIllIIl(var2, CreativeTabs.field_78036_m.func_78021_a())) {
-                        var3.field_75151_b = this.;
+                    if (llIIIlIllIIl(var2, CreativeTabs.INVENTORY.getIndex())) {
+                        var3.inventorySlots = this.;
                         this. = null;
                     }
 
@@ -1962,19 +1962,19 @@ public class Class10 extends InventoryEffectRenderer {
                         if (llIIIllIIllI(var23.)) {
                             if (llIIIlIlllII(var1.hasSearchBar())) {
                                 this.                                                                                     .
-                                func_146189_e(true);
+                                setVisible(true);
                                 var23 = this;
                                 this.                                                                                     .
-                                func_146205_d(false);
+                                setCanLoseFocus(false);
                                 this.                                                                                     .
-                                func_146195_b(true);
+                                setFocused(true);
                                 this.                                                                                     .
-                                func_146180_a("");
+                                setText("");
                                 this.                                                                                     .
-                                field_146218_h = var1.getSearchbarWidth();
+                                width = var1.getSearchbarWidth();
                                 this.                                                                                     .
-                                field_146209_f = this.field_147003_i + 171 - this.                                                                                     .
-                                field_146218_h;
+                                x = this.guiLeft + 171 - this.                                                                                     .
+                                width;
                                 this. ();
                                 if (llIIIlIlllll(11052, 8037)) {
                                     throw null;
@@ -1989,11 +1989,11 @@ public class Class10 extends InventoryEffectRenderer {
                             }
 
                             this.                                                                                     .
-                            func_146189_e(false);
+                            setVisible(false);
                             this.                                                                                     .
-                            func_146205_d(true);
+                            setCanLoseFocus(true);
                             this.                                                                                     .
-                            func_146195_b(false);
+                            setFocused(false);
                         }
 
                         if (llIIIlIlllll(11052, 8037)) {
@@ -2015,7 +2015,7 @@ public class Class10 extends InventoryEffectRenderer {
         }
     }
 
-    public void func_184098_a(@Nullable Slot var1, int var2, int var3, ClickType var4) {
+    public void handleMouseClick(@Nullable Slot var1, int var2, int var3, ClickType var4) {
         this. = true;
         byte var10000;
         boolean var10001;
@@ -2053,12 +2053,12 @@ public class Class10 extends InventoryEffectRenderer {
                 InventoryPlayer var10;
                 ItemStack var12;
                 boolean var26;
-                if (llIIIllIIIlI(var1) && llIIIlllIIlI(, CreativeTabs.field_78036_m.func_78021_a()) && llIIIlllIIll(var4, ClickType.QUICK_CRAFT)) {
-                    if (llIIIllIIlll((var10 = this.field_146297_k.field_71439_g.field_71071_by).func_70445_o().func_190926_b())) {
+                if (llIIIllIIIlI(var1) && llIIIlllIIlI(, CreativeTabs.INVENTORY.getIndex()) && llIIIlllIIll(var4, ClickType.QUICK_CRAFT)) {
+                    if (llIIIllIIlll((var10 = this.mc.player.inventory).getItemStack().isEmpty())) {
                         if (llIIIllIIlll(var3)) {
-                            this.field_146297_k.field_71439_g.func_71019_a(var10.func_70445_o(), true);
-                            this.field_146297_k.field_71442_b.func_78752_a(var10.func_70445_o());
-                            var10.func_70437_b(ItemStack.field_190927_a);
+                            this.mc.player.dropItem(var10.getItemStack(), true);
+                            this.mc.playerController.sendPacketDropItem(var10.getItemStack());
+                            var10.setItemStack(ItemStack.EMPTY);
                         }
 
                         if (llIIIlIlllll(23114, 6651)) {
@@ -2066,9 +2066,9 @@ public class Class10 extends InventoryEffectRenderer {
                         }
 
                         if (llIIIlIllIIl(var3, 1)) {
-                            var12 = var10.func_70445_o().func_77979_a(1);
-                            this.field_146297_k.field_71439_g.func_71019_a(var12, true);
-                            this.field_146297_k.field_71442_b.func_78752_a(var12);
+                            var12 = var10.getItemStack().splitStack(1);
+                            this.mc.player.dropItem(var12, true);
+                            this.mc.playerController.sendPacketDropItem(var12);
                             var26 = true;
                             return;
                         }
@@ -2078,7 +2078,7 @@ public class Class10 extends InventoryEffectRenderer {
                         throw null;
                     }
 
-                    if (llIIIllIIllI(var1) && llIIIllIIlll(var1.func_82869_a(this.field_146297_k.field_71439_g))) {
+                    if (llIIIllIIllI(var1) && llIIIllIIlll(var1.canTakeStack(this.mc.player))) {
                         var26 = true;
                         return;
                     }
@@ -2097,11 +2097,11 @@ public class Class10 extends InventoryEffectRenderer {
                                 throw null;
                             }
 
-                            if (!llIIIllIIlIl(var20, this.field_146297_k.field_71439_g.field_71069_bz.func_75138_a().size())) {
+                            if (!llIIIllIIlIl(var20, this.mc.player.inventoryContainer.getInventory().size())) {
                                 break;
                             }
 
-                            this.field_146297_k.field_71442_b.func_78761_a(ItemStack.field_190927_a, var11++);
+                            this.mc.playerController.sendSlotPacket(ItemStack.EMPTY, var11++);
                             var20 = var11;
                             var10001 = true;
                         }
@@ -2116,9 +2116,9 @@ public class Class10 extends InventoryEffectRenderer {
                         int var10002;
                         boolean var19;
                         boolean var10003;
-                        if (llIIIlIllIIl(, CreativeTabs.field_78036_m.func_78021_a())) {
+                        if (llIIIlIllIIl(, CreativeTabs.INVENTORY.getIndex())) {
                             if (llIIIllIIlII(var1, this.)) {
-                                this.field_146297_k.field_71439_g.field_71071_by.func_70437_b(ItemStack.field_190927_a);
+                                this.mc.player.inventory.setItemStack(ItemStack.EMPTY);
                                 var26 = true;
                                 return;
                             }
@@ -2127,7 +2127,7 @@ public class Class10 extends InventoryEffectRenderer {
                                 throw null;
                             }
 
-                            if (llIIIllIIlII(var4, ClickType.THROW) && llIIIllIIllI(var1) && llIIIlIlllII(var1.func_75216_d())) {
+                            if (llIIIllIIlII(var4, ClickType.THROW) && llIIIllIIllI(var1) && llIIIlIlllII(var1.getHasStack())) {
                                 if (llIIIllIIlll(var3)) {
                                     var16 = 1;
                                     var19 = true;
@@ -2136,24 +2136,24 @@ public class Class10 extends InventoryEffectRenderer {
                                         throw null;
                                     }
 
-                                    var16 = var1.func_75211_c().func_77976_d();
+                                    var16 = var1.getStack().getMaxStackSize();
                                 }
 
                                 if (llIIIlIlllll(23114, 6651)) {
                                     throw null;
                                 }
 
-                                var6 = var1.func_75209_a(var16);
-                                var12 = var1.func_75211_c();
-                                this.field_146297_k.field_71439_g.func_71019_a(var6, true);
-                                this.field_146297_k.field_71442_b.func_78752_a(var6);
-                                PlayerControllerMP var22 = this.field_146297_k.field_71442_b;
+                                var6 = var1.decrStackSize(var16);
+                                var12 = var1.getStack();
+                                this.mc.player.dropItem(var6, true);
+                                this.mc.playerController.sendPacketDropItem(var6);
+                                PlayerControllerMP var22 = this.mc.playerController;
                                 Slot var24 = Class196. ((Class196) var1);
                                 if (llIIIlIlllll(23114, 6651)) {
                                     throw null;
                                 }
 
-                                var22.func_78761_a(var12, var24.field_75222_d);
+                                var22.sendSlotPacket(var12, var24.slotNumber);
                                 var26 = true;
                                 return;
                             }
@@ -2162,10 +2162,10 @@ public class Class10 extends InventoryEffectRenderer {
                                 throw null;
                             }
 
-                            if (llIIIllIIlII(var4, ClickType.THROW) && llIIIllIIlll(this.field_146297_k.field_71439_g.field_71071_by.func_70445_o().func_190926_b())) {
-                                this.field_146297_k.field_71439_g.func_71019_a(this.field_146297_k.field_71439_g.field_71071_by.func_70445_o(), true);
-                                this.field_146297_k.field_71442_b.func_78752_a(this.field_146297_k.field_71439_g.field_71071_by.func_70445_o());
-                                this.field_146297_k.field_71439_g.field_71071_by.func_70437_b(ItemStack.field_190927_a);
+                            if (llIIIllIIlII(var4, ClickType.THROW) && llIIIllIIlll(this.mc.player.inventory.getItemStack().isEmpty())) {
+                                this.mc.player.dropItem(this.mc.player.inventory.getItemStack(), true);
+                                this.mc.playerController.sendPacketDropItem(this.mc.player.inventory.getItemStack());
+                                this.mc.player.inventory.setItemStack(ItemStack.EMPTY);
                                 var26 = true;
                                 return;
                             }
@@ -2174,7 +2174,7 @@ public class Class10 extends InventoryEffectRenderer {
                                 throw null;
                             }
 
-                            var17 = this.field_146297_k.field_71439_g.field_71069_bz;
+                            var17 = this.mc.player.inventoryContainer;
                             if (llIIIllIIIlI(var1)) {
                                 var16 = var2;
                                 var10002 = var3;
@@ -2189,7 +2189,7 @@ public class Class10 extends InventoryEffectRenderer {
                                     throw null;
                                 }
 
-                                var16 = var25.field_75222_d;
+                                var16 = var25.slotNumber;
                                 var10002 = var3;
                             }
 
@@ -2197,8 +2197,8 @@ public class Class10 extends InventoryEffectRenderer {
                                 throw null;
                             }
 
-                            var17.func_184996_a(var16, var10002, var4, this.field_146297_k.field_71439_g);
-                            this.field_146297_k.field_71439_g.field_71069_bz.func_75142_b();
+                            var17.slotClick(var16, var10002, var4, this.mc.player);
+                            this.mc.player.inventoryContainer.detectAndSendChanges();
                             var26 = true;
                             return;
                         }
@@ -2209,17 +2209,17 @@ public class Class10 extends InventoryEffectRenderer {
 
                         ItemStack var9;
                         ItemStack var15;
-                        if (llIIIlllIIll(var4, ClickType.QUICK_CRAFT) && llIIIllIIlII(var1.field_75224_c, )) {
+                        if (llIIIlllIIll(var4, ClickType.QUICK_CRAFT) && llIIIllIIlII(var1.inventory, )) {
                             label403:
                             {
-                                var12 = (var10 = this.field_146297_k.field_71439_g.field_71071_by).func_70445_o();
-                                ItemStack var13 = var1.func_75211_c();
+                                var12 = (var10 = this.mc.player.inventory).getItemStack();
+                                ItemStack var13 = var1.getStack();
                                 if (llIIIllIIlII(var4, ClickType.SWAP)) {
-                                    if (llIIIllIIlll(var13.func_190926_b()) && llIIIllllIIl(var3) && llIIIllIIlIl(var3, 9)) {
-                                        var9 = var13.func_77946_l();
-                                        var9.func_190920_e(var9.func_77976_d());
-                                        this.field_146297_k.field_71439_g.field_71071_by.func_70299_a(var3, var9);
-                                        this.field_146297_k.field_71439_g.field_71069_bz.func_75142_b();
+                                    if (llIIIllIIlll(var13.isEmpty()) && llIIIllllIIl(var3) && llIIIllIIlIl(var3, 9)) {
+                                        var9 = var13.copy();
+                                        var9.setCount(var9.getMaxStackSize());
+                                        this.mc.player.inventory.setInventorySlotContents(var3, var9);
+                                        this.mc.player.inventoryContainer.detectAndSendChanges();
                                     }
 
                                     if (llIIIlIlllll(23114, 6651)) {
@@ -2235,10 +2235,10 @@ public class Class10 extends InventoryEffectRenderer {
                                 }
 
                                 if (llIIIllIIlII(var4, ClickType.CLONE)) {
-                                    if (llIIIlIlllII(var10.func_70445_o().func_190926_b()) && llIIIlIlllII(var1.func_75216_d())) {
-                                        var9 = var1.func_75211_c().func_77946_l();
-                                        var9.func_190920_e(var9.func_77976_d());
-                                        var10.func_70437_b(var9);
+                                    if (llIIIlIlllII(var10.getItemStack().isEmpty()) && llIIIlIlllII(var1.getHasStack())) {
+                                        var9 = var1.getStack().copy();
+                                        var9.setCount(var9.getMaxStackSize());
+                                        var10.setItemStack(var9);
                                     }
 
                                     if (llIIIlIlllll(23114, 6651)) {
@@ -2254,8 +2254,8 @@ public class Class10 extends InventoryEffectRenderer {
                                 }
 
                                 if (llIIIllIIlII(var4, ClickType.THROW)) {
-                                    if (llIIIllIIlll(var13.func_190926_b())) {
-                                        var15 = var9 = var13.func_77946_l();
+                                    if (llIIIllIIlll(var13.isEmpty())) {
+                                        var15 = var9 = var13.copy();
                                         if (llIIIllIIlll(var3)) {
                                             var16 = 1;
                                             var19 = true;
@@ -2264,16 +2264,16 @@ public class Class10 extends InventoryEffectRenderer {
                                                 throw null;
                                             }
 
-                                            var16 = var9.func_77976_d();
+                                            var16 = var9.getMaxStackSize();
                                         }
 
                                         if (llIIIlIlllll(23114, 6651)) {
                                             throw null;
                                         }
 
-                                        var15.func_190920_e(var16);
-                                        this.field_146297_k.field_71439_g.func_71019_a(var9, true);
-                                        this.field_146297_k.field_71442_b.func_78752_a(var9);
+                                        var15.setCount(var16);
+                                        this.mc.player.dropItem(var9, true);
+                                        this.mc.playerController.sendPacketDropItem(var9);
                                     }
 
                                     if (llIIIlIlllll(23114, 6651)) {
@@ -2288,8 +2288,8 @@ public class Class10 extends InventoryEffectRenderer {
                                     throw null;
                                 }
 
-                                if (llIIIllIIlll(var12.func_190926_b()) && llIIIllIIlll(var13.func_190926_b()) && llIIIlIlllII(var12.func_77969_a(var13))) {
-                                    var10000 = ItemStack.func_77970_a(var12, var13);
+                                if (llIIIllIIlll(var12.isEmpty()) && llIIIllIIlll(var13.isEmpty()) && llIIIlIlllII(var12.isItemEqual(var13))) {
+                                    var10000 = ItemStack.areItemStackTagsEqual(var12, var13);
                                     if (llIIIlIlllll(23114, 6651)) {
                                         throw null;
                                     }
@@ -2300,13 +2300,13 @@ public class Class10 extends InventoryEffectRenderer {
                                                 throw null;
                                             }
 
-                                            var12.func_190918_g(1);
+                                            var12.shrink(1);
                                             var26 = true;
                                             return;
                                         }
 
                                         if (llIIIlIlllII(var5)) {
-                                            var12.func_190920_e(var12.func_77976_d());
+                                            var12.setCount(var12.getMaxStackSize());
                                             var26 = true;
                                             return;
                                         }
@@ -2315,8 +2315,8 @@ public class Class10 extends InventoryEffectRenderer {
                                             throw null;
                                         }
 
-                                        if (llIIIllIIlIl(var12.func_190916_E(), var12.func_77976_d())) {
-                                            var12.func_190917_f(1);
+                                        if (llIIIllIIlIl(var12.getCount(), var12.getMaxStackSize())) {
+                                            var12.grow(1);
                                             var26 = true;
                                             return;
                                         }
@@ -2328,26 +2328,26 @@ public class Class10 extends InventoryEffectRenderer {
                                     throw null;
                                 }
 
-                                if (!llIIIllIIlll(var13.func_190926_b()) || !llIIIlIlllII(var12.func_190926_b())) {
+                                if (!llIIIllIIlll(var13.isEmpty()) || !llIIIlIlllII(var12.isEmpty())) {
                                     if (llIIIlIlllll(23114, 6651)) {
                                         throw null;
                                     } else if (llIIIllIIlll(var3)) {
-                                        var10.func_70437_b(ItemStack.field_190927_a);
+                                        var10.setItemStack(ItemStack.EMPTY);
                                         var26 = true;
                                         return;
                                     } else if (llIIIlIlllll(23114, 6651)) {
                                         throw null;
                                     } else {
-                                        var10.func_70445_o().func_190918_g(1);
+                                        var10.getItemStack().shrink(1);
                                         var26 = true;
                                         return;
                                     }
                                 }
 
-                                var10.func_70437_b(var13.func_77946_l());
-                                var12 = var10.func_70445_o();
+                                var10.setItemStack(var13.copy());
+                                var12 = var10.getItemStack();
                                 if (llIIIlIlllII(var5)) {
-                                    var12.func_190920_e(var12.func_77976_d());
+                                    var12.setCount(var12.getMaxStackSize());
                                     var26 = true;
                                     return;
                                 }
@@ -2357,16 +2357,16 @@ public class Class10 extends InventoryEffectRenderer {
                                 throw null;
                             }
 
-                            if (llIIIllIIllI(this.field_147002_h)) {
+                            if (llIIIllIIllI(this.inventorySlots)) {
                                 if (llIIIllIIIlI(var1)) {
-                                    var15 = ItemStack.field_190927_a;
+                                    var15 = ItemStack.EMPTY;
                                     var10001 = true;
                                 } else {
                                     if (llIIIlIlllll(23114, 6651)) {
                                         throw null;
                                     }
 
-                                    var15 = this.field_147002_h.func_75139_a(var1.field_75222_d).func_75211_c();
+                                    var15 = this.inventorySlots.getSlot(var1.slotNumber).getStack();
                                 }
 
                                 if (llIIIlIlllll(23114, 6651)) {
@@ -2374,7 +2374,7 @@ public class Class10 extends InventoryEffectRenderer {
                                 }
 
                                 var6 = var15;
-                                var17 = this.field_147002_h;
+                                var17 = this.inventorySlots;
                                 if (llIIIllIIIlI(var1)) {
                                     var16 = var2;
                                     var10002 = var3;
@@ -2384,7 +2384,7 @@ public class Class10 extends InventoryEffectRenderer {
                                         throw null;
                                     }
 
-                                    var16 = var1.field_75222_d;
+                                    var16 = var1.slotNumber;
                                     var10002 = var3;
                                 }
 
@@ -2392,8 +2392,8 @@ public class Class10 extends InventoryEffectRenderer {
                                     throw null;
                                 }
 
-                                var17.func_184996_a(var16, var10002, var4, this.field_146297_k.field_71439_g);
-                                var20 = Container.func_94532_c(var3);
+                                var17.slotClick(var16, var10002, var4, this.mc.player);
+                                var20 = Container.getDragEvent(var3);
                                 if (llIIIlIlllll(23114, 6651)) {
                                     throw null;
                                 }
@@ -2411,7 +2411,7 @@ public class Class10 extends InventoryEffectRenderer {
                                             break;
                                         }
 
-                                        this.field_146297_k.field_71442_b.func_78761_a(this.field_147002_h.func_75139_a(45 + var7).func_75211_c(), 36 + var7++);
+                                        this.mc.playerController.sendSlotPacket(this.inventorySlots.getSlot(45 + var7).getStack(), 36 + var7++);
                                         var20 = var7;
                                         var10001 = true;
                                     }
@@ -2421,21 +2421,21 @@ public class Class10 extends InventoryEffectRenderer {
                                     }
 
                                     if (llIIIllIIllI(var1)) {
-                                        var12 = this.field_147002_h.func_75139_a(var1.field_75222_d).func_75211_c();
-                                        this.field_146297_k.field_71442_b.func_78761_a(var12, var1.field_75222_d - this.field_147002_h.field_75151_b.size() + 9 + 36);
+                                        var12 = this.inventorySlots.getSlot(var1.slotNumber).getStack();
+                                        this.mc.playerController.sendSlotPacket(var12, var1.slotNumber - this.inventorySlots.inventorySlots.size() + 9 + 36);
                                         int var8 = 45 + var3;
                                         Class10 var23;
                                         if (llIIIllIIlII(var4, ClickType.SWAP)) {
                                             var23 = this;
-                                            this.field_146297_k.field_71442_b.func_78761_a(var6, var8 - this.field_147002_h.field_75151_b.size() + 9 + 36);
+                                            this.mc.playerController.sendSlotPacket(var6, var8 - this.inventorySlots.inventorySlots.size() + 9 + 36);
                                             var10001 = true;
                                         } else {
                                             if (llIIIlIlllll(23114, 6651)) {
                                                 throw null;
                                             }
 
-                                            if (llIIIllIIlII(var4, ClickType.THROW) && llIIIllIIlll(var6.func_190926_b())) {
-                                                var15 = var9 = var6.func_77946_l();
+                                            if (llIIIllIIlII(var4, ClickType.THROW) && llIIIllIIlll(var6.isEmpty())) {
+                                                var15 = var9 = var6.copy();
                                                 if (llIIIllIIlll(var3)) {
                                                     var16 = 1;
                                                     var19 = true;
@@ -2444,16 +2444,16 @@ public class Class10 extends InventoryEffectRenderer {
                                                         throw null;
                                                     }
 
-                                                    var16 = var9.func_77976_d();
+                                                    var16 = var9.getMaxStackSize();
                                                 }
 
                                                 if (llIIIlIlllll(23114, 6651)) {
                                                     throw null;
                                                 }
 
-                                                var15.func_190920_e(var16);
-                                                this.field_146297_k.field_71439_g.func_71019_a(var9, true);
-                                                this.field_146297_k.field_71442_b.func_78752_a(var9);
+                                                var15.setCount(var16);
+                                                this.mc.player.dropItem(var9, true);
+                                                this.mc.playerController.sendPacketDropItem(var9);
                                             }
 
                                             if (llIIIlIlllll(23114, 6651)) {
@@ -2467,7 +2467,7 @@ public class Class10 extends InventoryEffectRenderer {
                                             throw null;
                                         }
 
-                                        var23.field_146297_k.field_71439_g.field_71069_bz.func_75142_b();
+                                        var23.mc.player.inventoryContainer.detectAndSendChanges();
                                     }
                                 }
                             }
@@ -2484,15 +2484,15 @@ public class Class10 extends InventoryEffectRenderer {
         }
     }
 
-    public void func_175378_g() {
-        int var1 = this.field_147003_i;
-        super.func_175378_g();
+    public void updateActivePotionEffects() {
+        int var1 = this.guiLeft;
+        super.updateActivePotionEffects();
         if (llIIIlIlllll(29013, 5131)) {
             throw null;
         } else {
-            if (llIIIllIIllI(this.) && llIIIlllIIlI(this.field_147003_i, var1)) {
+            if (llIIIllIIllI(this.) && llIIIlllIIlI(this.guiLeft, var1)) {
                 this.                                                                                     .
-                field_146209_f = this.field_147003_i + 82;
+                x = this.guiLeft + 82;
             }
 
             if (llIIIlIlllll(29013, 5131)) {
@@ -2504,12 +2504,12 @@ public class Class10 extends InventoryEffectRenderer {
     }
 
     private boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
-        if (llIIIllIIIlI(CreativeTabs.field_78032_a[                                                                                    ]))
+        if (llIIIllIIIlI(CreativeTabs.CREATIVE_TAB_ARRAY[                                                                                    ]))
         {
             return false;
         } else if (llIIIlIlllll(68855, 7759)) {
             throw null;
-        } else if (llIIIlllIIlI(, CreativeTabs.field_78036_m.func_78021_a()) && llIIIlIlllII(CreativeTabs.field_78032_a[].func_78017_i()) && llIIIlIlllII(((Class3) this.field_147002_h).canScroll())) {
+        } else if (llIIIlllIIlI(, CreativeTabs.INVENTORY.getIndex()) && llIIIlIlllII(CreativeTabs.CREATIVE_TAB_ARRAY[].hasScrollbar()) && llIIIlIlllII(((Class3) this.inventorySlots).canScroll())) {
             return true;
         } else if (llIIIlIlllll(68855, 7759)) {
             throw null;
@@ -2519,14 +2519,14 @@ public class Class10 extends InventoryEffectRenderer {
     }
 
     public boolean renderCreativeInventoryHoveringText(CreativeTabs var1, int var2, int var3) {
-        int var4 = var1.func_78020_k();
+        int var4 = var1.getColumn();
         int var5 = 28 * var4;
         byte var6 = 0;
         CreativeTabs var10000;
         boolean var10001;
-        if (llIIIlIlllII(var1.func_192394_m())) {
+        if (llIIIlIlllII(var1.isAlignedRight())) {
             var10000 = var1;
-            var5 = this.field_146999_f - 28 * (6 - var4) + 2;
+            var5 = this.xSize - 28 * (6 - var4) + 2;
             var10001 = true;
         } else {
             if (llIIIlIlllll(72424, 4401)) {
@@ -2549,7 +2549,7 @@ public class Class10 extends InventoryEffectRenderer {
         } else {
             int var7;
             Class10 var8;
-            if (llIIIlIlllII(var10000.func_78023_l())) {
+            if (llIIIlIlllII(var10000.isOnTopRow())) {
                 var7 = var6 - 32;
                 var8 = this;
                 var10001 = true;
@@ -2558,18 +2558,18 @@ public class Class10 extends InventoryEffectRenderer {
                     throw null;
                 }
 
-                var7 = var6 + this.field_147000_g;
+                var7 = var6 + this.ySize;
                 var8 = this;
             }
 
             if (llIIIlIlllll(72424, 4401)) {
                 throw null;
-            } else if (llIIIlIlllII(var8.func_146978_c(var5 + 3, var7 + 3, 23, 27, var2, var3))) {
-                String var9 = I18n.func_135052_a(var1.func_78024_c(), new Object[0]);
+            } else if (llIIIlIlllII(var8.isPointInRegion(var5 + 3, var7 + 3, 23, 27, var2, var3))) {
+                String var9 = I18n.format(var1.getTranslationKey(), new Object[0]);
                 if (llIIIlIlllll(72424, 4401)) {
                     throw null;
                 } else {
-                    this.func_146279_a(var9, var2, var3);
+                    this.drawHoveringText(var9, var2, var3);
                     return true;
                 }
             } else if (llIIIlIlllll(72424, 4401)) {

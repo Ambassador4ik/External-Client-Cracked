@@ -63,10 +63,10 @@ public class Class44 extends Class171 {
             throw null;
         } else {
             MovementInput var2 = var1.getMovementInput();
-            var2.field_78899_d = true;
+            var2.sneak = true;
             if (llIlIlIlllll(this.. ())){
-                var2.field_192832_b *= 0.294F;
-                var2.field_78902_a *= 0.294F;
+                var2.moveForward *= 0.294F;
+                var2.moveStrafe *= 0.294F;
             }
 
             if (llIlIllIIIIl(66745, 3232)) {

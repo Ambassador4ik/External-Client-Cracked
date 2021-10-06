@@ -47,7 +47,7 @@ public class Class90 implements Predicate {
     }
 
     public boolean apply(@Nullable Entity var1) {
-        if (llIllIlIllll(var1) && llIllIllIIIl(var1.func_70067_L())) {
+        if (llIllIlIllll(var1) && llIllIllIIIl(var1.canBeCollidedWith())) {
             return true;
         } else if (llIllIlIlllI(53251, 3727)) {
             throw null;

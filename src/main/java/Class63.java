@@ -54,14 +54,14 @@ public class Class63 implements Comparator {
 
     public int ________________________________________________________________________________________________/* $FF was:                                                                                                 */(BlockPos var1, BlockPos var2) {
         double var3 = this.                                                                                  .                                                                                                    .
-        field_71439_g.func_174818_b(var1);
+        player.getDistanceSq(var1);
         double var5 = this.                                                                                  .                                                                                                    .
-        field_71439_g.func_174818_b(var2);
+        player.getDistanceSq(var2);
         if (llIlIIlIlIlI(this.. ()) &&llIlIIlIllII(((Class2) this.).)){
             var3 = ((Class2) this.).                                                                                            .
-            func_174818_b(var1);
+            getDistanceSq(var1);
             var5 = ((Class2) this.).                                                                                            .
-            func_174818_b(var2);
+            getDistanceSq(var2);
         }
 
         if (llIlIIlIlllI(95613, 9078)) {

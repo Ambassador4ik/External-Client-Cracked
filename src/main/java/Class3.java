@@ -38,12 +38,12 @@ public class Class3 extends Container {
         if (llIlllIIlIll(31249, 5266)) {
             throw null;
         } else {
-            NonNullList var10002 = NonNullList.func_191196_a();
+            NonNullList var10002 = NonNullList.create();
             if (llIlllIIlIll(31249, 5266)) {
                 throw null;
             } else {
                 this. = var10002;
-                InventoryPlayer var2 = var1.field_71071_by;
+                InventoryPlayer var2 = var1.inventory;
 
                 int var3;
                 boolean var5;
@@ -75,7 +75,7 @@ public class Class3 extends Container {
                                 throw null;
                             }
 
-                            this.func_75146_a(var6);
+                            this.addSlotToContainer(var6);
                             var10000 = var3;
                         }
 
@@ -109,7 +109,7 @@ public class Class3 extends Container {
                             throw null;
                         }
 
-                        this.func_75146_a(var10001);
+                        this.addSlotToContainer(var10001);
                         var10000 = var4;
                     }
 
@@ -157,16 +157,16 @@ public class Class3 extends Container {
         return var0 >= 0;
     }
 
-    public ItemStack func_82846_b(EntityPlayer var1, int var2) {
+    public ItemStack transferStackInSlot(EntityPlayer var1, int var2) {
         Slot var3;
-        if (llIlllIIlIll(var2, this.field_75151_b.size() - 9) && llIlllIIllll(var2, this.field_75151_b.size()) && llIlllIllIII(var3 = (Slot) this.field_75151_b.get(var2)) && llIlllIllIlI(var3.func_75216_d())) {
-            var3.func_75215_d(ItemStack.field_190927_a);
+        if (llIlllIIlIll(var2, this.inventorySlots.size() - 9) && llIlllIIllll(var2, this.inventorySlots.size()) && llIlllIllIII(var3 = (Slot) this.inventorySlots.get(var2)) && llIlllIllIlI(var3.getHasStack())) {
+            var3.putStack(ItemStack.EMPTY);
         }
 
         if (llIlllIIlIll(41139, 4300)) {
             throw null;
         } else {
-            return ItemStack.field_190927_a;
+            return ItemStack.EMPTY;
         }
     }
 
@@ -180,7 +180,7 @@ public class Class3 extends Container {
         }
     }
 
-    public boolean func_75145_c(EntityPlayer var1) {
+    public boolean canInteractWith(EntityPlayer var1) {
         return true;
     }
 
@@ -227,7 +227,7 @@ public class Class3 extends Container {
                             throw null;
                         }
 
-                        var6.func_70299_a(var4 + var3 * 9, (ItemStack) this..get(var5));
+                        var6.setInventorySlotContents(var4 + var3 * 9, (ItemStack) this..get(var5));
                         var7 = true;
                     } else{
                         if (llIlllIIlIll(24842, 1798)) {
@@ -239,7 +239,7 @@ public class Class3 extends Container {
                             throw null;
                         }
 
-                        var6.func_70299_a(var4 + var3 * 9, ItemStack.field_190927_a);
+                        var6.setInventorySlotContents(var4 + var3 * 9, ItemStack.EMPTY);
                     }
 
                     if (llIlllIIlIll(24842, 1798)) {
@@ -259,8 +259,8 @@ public class Class3 extends Container {
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public boolean func_94530_a(ItemStack var1, Slot var2) {
-        if (llIlllIIlIIl(var2.field_75221_f, 90)) {
+    public boolean canMergeSlot(ItemStack var1, Slot var2) {
+        if (llIlllIIlIIl(var2.yPos, 90)) {
             return true;
         } else if (llIlllIIlIll(63717, 7423)) {
             throw null;
@@ -269,8 +269,8 @@ public class Class3 extends Container {
         }
     }
 
-    public boolean func_94531_b(Slot var1) {
-        if (llIlllIlIllI(var1.field_75224_c instanceof InventoryPlayer) && (!llIlllIIlIIl(var1.field_75221_f, 90) || !llIlllIlIlll(var1.field_75223_e, 162))) {
+    public boolean canDragIntoSlot(Slot var1) {
+        if (llIlllIlIllI(var1.inventory instanceof InventoryPlayer) && (!llIlllIIlIIl(var1.yPos, 90) || !llIlllIlIlll(var1.xPos, 162))) {
             if (llIlllIIlIll(39397, 5377)) {
                 throw null;
             } else {

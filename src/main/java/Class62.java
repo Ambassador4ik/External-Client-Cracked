@@ -48,7 +48,7 @@ public class Class62 implements ICommand {
         if (llIIIlIIIlII(43996, 2765)) {
             throw null;
         } else {
-            Minecraft var10001 = Minecraft.func_71410_x();
+            Minecraft var10001 = Minecraft.getMinecraft();
             if (llIIIlIIIlII(43996, 2765)) {
                 throw null;
             } else {
@@ -70,11 +70,11 @@ public class Class62 implements ICommand {
         return var0 == var1;
     }
 
-    public boolean func_82358_a(String[] var1, int var2) {
+    public boolean isUsernameIndex(String[] var1, int var2) {
         return false;
     }
 
-    public String func_71518_a(ICommandSender var1) {
+    public String getUsage(ICommandSender var1) {
         return "";
     }
 
@@ -84,11 +84,11 @@ public class Class62 implements ICommand {
         return this.compareTo((ICommand) var1);
     }
 
-    public void func_184881_a(MinecraftServer var1, ICommandSender var2, String[] var3) throws CommandException {
+    public void execute(MinecraftServer var1, ICommandSender var2, String[] var3) throws CommandException {
         boolean var10000;
         if (llIIIlIlIIII(Class73.)) {
             NetHandlerPlayClient var6 = this.                                                                                  .
-            func_147114_u();
+            getConnection();
             CPacketChatMessage var7 = new CPacketChatMessage;
             StringBuilder var8 = new StringBuilder();
             if (llIIIlIIIlII(22602, 2951)) {
@@ -111,7 +111,7 @@ public class Class62 implements ICommand {
                             if (llIIIlIIIlII(22602, 2951)) {
                                 throw null;
                             } else {
-                                var6.func_147297_a(var7);
+                                var6.sendPacket(var7);
                                 var10000 = true;
                             }
                         }
@@ -130,17 +130,17 @@ public class Class62 implements ICommand {
                         }
 
                         EntityPlayerSP var5 = this.                                                                                  .
-                        field_71439_g;
+                        player;
                         double var10001 = this.                                                                                  .
-                        field_71439_g.field_70165_t;
+                        player.posX;
                         double var10002 = this.                                                                                  .
-                        field_71439_g.field_70163_u;
+                        player.posY;
                         double var10003 = Double.parseDouble(var3[0]);
                         if (llIIIlIIIlII(22602, 2951)) {
                             throw null;
                         }
 
-                        var5.func_70107_b(var10001, var10002 + var10003, this..field_71439_g.field_70161_v);
+                        var5.setPosition(var10001, var10002 + var10003, this..player.posZ);
                     } catch (Exception var4) {
                         if (llIIIlIIIlII(22602, 2951)) {
                             throw null;
@@ -165,11 +165,11 @@ public class Class62 implements ICommand {
         }
     }
 
-    public String func_71517_b() {
+    public String getName() {
         return "";
     }
 
-    public List func_71514_a() {
+    public List getAliases() {
         String[] var10000 = new String[1];
         String var10003 = Class60. ("9-");
         if (llIIIlIIIlII(8240, 8871)) {
@@ -189,11 +189,11 @@ public class Class62 implements ICommand {
         return 0;
     }
 
-    public List func_184883_a(MinecraftServer var1, ICommandSender var2, String[] var3, BlockPos var4) {
+    public List getTabCompletions(MinecraftServer var1, ICommandSender var2, String[] var3, BlockPos var4) {
         return null;
     }
 
-    public boolean func_184882_a(MinecraftServer var1, ICommandSender var2) {
+    public boolean checkPermission(MinecraftServer var1, ICommandSender var2) {
         return true;
     }
 }

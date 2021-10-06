@@ -124,7 +124,7 @@ public class Class26 extends GuiButton {
         return var0 == 0;
     }
 
-    public boolean func_146116_c(Minecraft var1, int var2, int var3) {
+    public boolean mousePressed(Minecraft var1, int var2, int var3) {
         if (llIIlllllIII(this.) && llIIlllllIII(this.) && llIIllllIlll(var2, this.) && llIIllllIlll(var3, this.) && llIIlllllIIl(var2, this. + this.) && llIIlllllIIl(var3, this. + this.)) {
             return true;
         } else if (llIIllllIlll(42396, 5812)) {
@@ -134,14 +134,14 @@ public class Class26 extends GuiButton {
         }
     }
 
-    public boolean func_146115_a() {
+    public boolean isMouseOver() {
         return this.;
     }
 
-    public void func_191745_a(Minecraft var1, int var2, int var3, float var4) {
+    public void drawButton(Minecraft var1, int var2, int var3, float var4) {
         if (llIIlllllIII(this.)) {
-            var1.func_110434_K().func_110577_a();
-            GlStateManager.func_179131_c(1.0F, 1.0F, 1.0F, 1.0F);
+            var1.getTextureManager().bindTexture();
+            GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             if (llIIllllIlll(20638, 1718)) {
                 throw null;
             }
@@ -207,22 +207,22 @@ public class Class26 extends GuiButton {
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public void func_146113_a(SoundHandler var1) {
-        PositionedSoundRecord var10001 = PositionedSoundRecord.func_184371_a(SoundEvents.field_187909_gi, 1.0F);
+    public void playPressSound(SoundHandler var1) {
+        PositionedSoundRecord var10001 = PositionedSoundRecord.getMasterRecord(SoundEvents.UI_BUTTON_CLICK, 1.0F);
         if (llIIllllIlll(58906, 7516)) {
             throw null;
         } else {
-            var1.func_147682_a(var10001);
+            var1.playSound(var10001);
             boolean var10000 = true;
         }
     }
 
-    public void func_175211_a(int var1) {
+    public void setWidth(int var1) {
         this. = var1;
         boolean var10000 = true;
     }
 
-    public int func_146114_a(boolean var1) {
+    public int getHoverState(boolean var1) {
         byte var2 = 1;
         if (llIIllllIllI(this.)) {
             boolean var3 = false;
@@ -248,19 +248,19 @@ public class Class26 extends GuiButton {
         boolean var10000 = true;
     }
 
-    public void func_146118_a(int var1, int var2) {
+    public void mouseReleased(int var1, int var2) {
         boolean var10000 = true;
     }
 
-    public void func_146119_b(Minecraft var1, int var2, int var3) {
+    public void mouseDragged(Minecraft var1, int var2, int var3) {
         boolean var10000 = true;
     }
 
-    public int func_146117_b() {
+    public int getButtonWidth() {
         return this.;
     }
 
-    public void func_146111_b(int var1, int var2) {
+    public void drawButtonForegroundLayer(int var1, int var2) {
         boolean var10000 = true;
     }
 }

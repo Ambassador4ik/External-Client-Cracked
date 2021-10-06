@@ -63,9 +63,9 @@ public class Class86 extends Class171 {
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
         boolean var10000;
-        if (lllllIlllIll(this..field_71439_g.func_184592_cb().func_77973_b() instanceof ItemShield) &&
-        lllllIlllIll(this..field_71439_g.func_184587_cr()) &&
-        lllllIlllIll(this..field_71474_y.field_74312_F.func_151470_d()) &&lllllIlllIll(this.)){
+        if (lllllIlllIll(this..player.getHeldItemOffhand().getItem() instanceof ItemShield) &&
+        lllllIlllIll(this..player.isHandActive()) &&
+        lllllIlllIll(this..gameSettings.keyBindAttack.isKeyDown()) &&lllllIlllIll(this.)){
             if (lllllIlllIll(this.. ())){
                 CPacketPlayerDigging var10002 = new CPacketPlayerDigging;
                 Action var10004 = Action.RELEASE_USE_ITEM;
@@ -81,7 +81,7 @@ public class Class86 extends Class171 {
 
                 this. (var10002);
                 this.                                                                                                    .
-                field_71439_g.func_184602_cy();
+                player.resetActiveHand();
             }
 
             if (lllllIllIllI(87270, 8575)) {
@@ -98,7 +98,7 @@ public class Class86 extends Class171 {
         } else if (lllllIllIllI(87270, 8575)) {
             throw null;
         } else {
-            if (lllllIllllII(this..field_71474_y.field_74312_F.func_151470_d())){
+            if (lllllIllllII(this..gameSettings.keyBindAttack.isKeyDown())){
                 this. = true;
             }
 

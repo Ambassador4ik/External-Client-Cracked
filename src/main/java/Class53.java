@@ -39,13 +39,13 @@ public class Class53 extends Class171 {
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Object var1, Class170 var2) {
         if (lllIllIlIIIl(var1 instanceof SPacketPlayerPosLook)) {
             Class22. (var1, this.                                                                                                    .
-            field_71439_g.field_70177_z);
+            player.rotationYaw);
             if (lllIllIlIIII(63001, 9182)) {
                 throw null;
             }
 
             Class22. (var1, this.                                                                                                    .
-            field_71439_g.field_70125_A);
+            player.rotationPitch);
             if (lllIllIlIIII(63001, 9182)) {
                 throw null;
             }

@@ -142,25 +142,25 @@ public class Class96 extends TileEntitySpecialRenderer {
                 throw null;
             } else {
                 byte var13 = var10000;
-                Block var15 = var1.func_145838_q();
-                GlStateManager.func_179094_E();
+                Block var15 = var1.getBlockType();
+                GlStateManager.pushMatrix();
                 if (llIllIllIllI(92928, 3502)) {
                     throw null;
                 } else {
                     int var20;
-                    if (llIllIlllIlI(var15, Blocks.field_150472_an)) {
-                        GlStateManager.func_179109_b((float) var2 + 0.5F, (float) var4 + 0.5F, (float) var6 + 0.5F);
+                    if (llIllIlllIlI(var15, Blocks.STANDING_SIGN)) {
+                        GlStateManager.translate((float) var2 + 0.5F, (float) var4 + 0.5F, (float) var6 + 0.5F);
                         if (llIllIllIllI(92928, 3502)) {
                             throw null;
                         }
 
-                        GlStateManager.func_179114_b(-((float) (var1.func_145832_p() * 360) / 16.0F), 0.0F, 1.0F, 0.0F);
+                        GlStateManager.rotate(-((float) (var1.getBlockMetadata() * 360) / 16.0F), 0.0F, 1.0F, 0.0F);
                         if (llIllIllIllI(92928, 3502)) {
                             throw null;
                         }
 
                         this.                                                                                                   .
-                        field_78165_b.field_78806_j = true;
+                        signStick.showModel = true;
                         var20 = var9;
                         var19 = true;
                     } else {
@@ -168,7 +168,7 @@ public class Class96 extends TileEntitySpecialRenderer {
                             throw null;
                         }
 
-                        int var16 = var1.func_145832_p();
+                        int var16 = var1.getBlockMetadata();
                         float var11 = 0.0F;
                         if (llIllIlllIll(var16, 2)) {
                             var11 = 180.0F;
@@ -194,24 +194,24 @@ public class Class96 extends TileEntitySpecialRenderer {
                             throw null;
                         }
 
-                        GlStateManager.func_179109_b((float) var2 + 0.5F, (float) var4 + 0.5F, (float) var6 + 0.5F);
+                        GlStateManager.translate((float) var2 + 0.5F, (float) var4 + 0.5F, (float) var6 + 0.5F);
                         if (llIllIllIllI(92928, 3502)) {
                             throw null;
                         }
 
-                        GlStateManager.func_179114_b(-var11, 0.0F, 1.0F, 0.0F);
+                        GlStateManager.rotate(-var11, 0.0F, 1.0F, 0.0F);
                         if (llIllIllIllI(92928, 3502)) {
                             throw null;
                         }
 
-                        GlStateManager.func_179109_b(0.0F, -0.3125F, -0.4375F);
+                        GlStateManager.translate(0.0F, -0.3125F, -0.4375F);
                         if (llIllIllIllI(92928, 3502)) {
                             throw null;
                         }
 
                         var20 = var9;
                         this.                                                                                                   .
-                        field_78165_b.field_78806_j = false;
+                        signStick.showModel = false;
                     }
 
                     if (llIllIllIllI(92928, 3502)) {
@@ -219,28 +219,28 @@ public class Class96 extends TileEntitySpecialRenderer {
                     } else {
                         boolean var21;
                         if (llIllIllllII(var20)) {
-                            this.func_147499_a(field_178460_a[var9]);
-                            GlStateManager.func_179128_n(5890);
+                            this.bindTexture(DESTROY_STAGES[var9]);
+                            GlStateManager.matrixMode(5890);
                             if (llIllIllIllI(92928, 3502)) {
                                 throw null;
                             }
 
-                            GlStateManager.func_179094_E();
+                            GlStateManager.pushMatrix();
                             if (llIllIllIllI(92928, 3502)) {
                                 throw null;
                             }
 
-                            GlStateManager.func_179152_a(4.0F, 2.0F, 1.0F);
+                            GlStateManager.scale(4.0F, 2.0F, 1.0F);
                             if (llIllIllIllI(92928, 3502)) {
                                 throw null;
                             }
 
-                            GlStateManager.func_179109_b(0.0625F, 0.0625F, 0.0625F);
+                            GlStateManager.translate(0.0625F, 0.0625F, 0.0625F);
                             if (llIllIllIllI(92928, 3502)) {
                                 throw null;
                             }
 
-                            GlStateManager.func_179128_n(5888);
+                            GlStateManager.matrixMode(5888);
                             if (llIllIllIllI(92928, 3502)) {
                                 throw null;
                             }
@@ -251,44 +251,44 @@ public class Class96 extends TileEntitySpecialRenderer {
                                 throw null;
                             }
 
-                            this.func_147499_a();
+                            this.bindTexture();
                         }
 
                         if (llIllIllIllI(92928, 3502)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179091_B();
+                            GlStateManager.enableRescaleNormal();
                             if (llIllIllIllI(92928, 3502)) {
                                 throw null;
                             } else {
-                                GlStateManager.func_179094_E();
+                                GlStateManager.pushMatrix();
                                 if (llIllIllIllI(92928, 3502)) {
                                     throw null;
                                 } else {
-                                    GlStateManager.func_179152_a(0.6666667F, -0.6666667F, -0.6666667F);
+                                    GlStateManager.scale(0.6666667F, -0.6666667F, -0.6666667F);
                                     if (llIllIllIllI(92928, 3502)) {
                                         throw null;
                                     } else {
                                         this.                                                                                                   .
-                                        func_78164_a();
-                                        GlStateManager.func_179121_F();
+                                        renderSign();
+                                        GlStateManager.popMatrix();
                                         if (llIllIllIllI(92928, 3502)) {
                                             throw null;
                                         } else {
-                                            FontRenderer var17 = this.func_147498_b();
-                                            GlStateManager.func_179109_b(0.0F, 0.33333334F, 0.046666667F);
+                                            FontRenderer var17 = this.getFontRenderer();
+                                            GlStateManager.translate(0.0F, 0.33333334F, 0.046666667F);
                                             if (llIllIllIllI(92928, 3502)) {
                                                 throw null;
                                             } else {
-                                                GlStateManager.func_179152_a(0.010416667F, -0.010416667F, 0.010416667F);
+                                                GlStateManager.scale(0.010416667F, -0.010416667F, 0.010416667F);
                                                 if (llIllIllIllI(92928, 3502)) {
                                                     throw null;
                                                 } else {
-                                                    GlStateManager.func_187432_a(0.0F, 0.0F, -0.010416667F);
+                                                    GlStateManager.glNormal3f(0.0F, 0.0F, -0.010416667F);
                                                     if (llIllIllIllI(92928, 3502)) {
                                                         throw null;
                                                     } else {
-                                                        GlStateManager.func_179132_a(false);
+                                                        GlStateManager.depthMask(false);
                                                         if (llIllIllIllI(92928, 3502)) {
                                                             throw null;
                                                         } else {
@@ -301,12 +301,12 @@ public class Class96 extends TileEntitySpecialRenderer {
                                                                         throw null;
                                                                     }
 
-                                                                    if (!llIllIlllllI(var20, var1.field_145915_a.length)) {
+                                                                    if (!llIllIlllllI(var20, var1.signText.length)) {
                                                                         break;
                                                                     }
 
-                                                                    if (llIllIllllll(var1.field_145915_a[var18])) {
-                                                                        List var23 = GuiUtilRenderComponents.func_178908_a(var1.field_145915_a[var18], 90, var17, false, true);
+                                                                    if (llIllIllllll(var1.signText[var18])) {
+                                                                        List var23 = GuiUtilRenderComponents.splitText(var1.signText[var18], 90, var17, false, true);
                                                                         if (llIllIllIllI(92928, 3502)) {
                                                                             throw null;
                                                                         }
@@ -314,7 +314,7 @@ public class Class96 extends TileEntitySpecialRenderer {
                                                                         List var14 = var23;
                                                                         String var24;
                                                                         if (llIllIllllll(var23) && llIllIlllIIl(var14.isEmpty())) {
-                                                                            var24 = ((ITextComponent) var14.get(0)).func_150254_d();
+                                                                            var24 = ((ITextComponent) var14.get(0)).getFormattedText();
                                                                             var19 = true;
                                                                         } else {
                                                                             if (llIllIllIllI(92928, 3502)) {
@@ -329,7 +329,7 @@ public class Class96 extends TileEntitySpecialRenderer {
                                                                         }
 
                                                                         String var12 = var24;
-                                                                        if (llIllIlllIll(var18, var1.field_145918_i)) {
+                                                                        if (llIllIlllIll(var18, var1.lineBeingEdited)) {
                                                                             StringBuilder var25 = new StringBuilder();
                                                                             if (llIllIllIllI(92928, 3502)) {
                                                                                 throw null;
@@ -346,14 +346,14 @@ public class Class96 extends TileEntitySpecialRenderer {
                                                                                 throw null;
                                                                             }
 
-                                                                            var17.func_78276_b(var12 = String.valueOf(var25.append(var22)), -var17.func_78256_a(var12) / 2, var18 * 10 - var1.field_145915_a.length * 5, 0);
+                                                                            var17.drawString(var12 = String.valueOf(var25.append(var22)), -var17.getStringWidth(var12) / 2, var18 * 10 - var1.signText.length * 5, 0);
                                                                             var21 = true;
                                                                         } else {
                                                                             if (llIllIllIllI(92928, 3502)) {
                                                                                 throw null;
                                                                             }
 
-                                                                            var17.func_78276_b(var12, -var17.func_78256_a(var12) / 2, var18 * 10 - var1.field_145915_a.length * 5, 0);
+                                                                            var17.drawString(var12, -var17.getStringWidth(var12) / 2, var18 * 10 - var1.signText.length * 5, 0);
                                                                         }
                                                                     }
 
@@ -370,30 +370,30 @@ public class Class96 extends TileEntitySpecialRenderer {
                                                             if (llIllIllIllI(92928, 3502)) {
                                                                 throw null;
                                                             } else {
-                                                                GlStateManager.func_179132_a(true);
+                                                                GlStateManager.depthMask(true);
                                                                 if (llIllIllIllI(92928, 3502)) {
                                                                     throw null;
                                                                 } else {
-                                                                    GlStateManager.func_179131_c(1.0F, 1.0F, 1.0F, 1.0F);
+                                                                    GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                                                                     if (llIllIllIllI(92928, 3502)) {
                                                                         throw null;
                                                                     } else {
-                                                                        GlStateManager.func_179121_F();
+                                                                        GlStateManager.popMatrix();
                                                                         if (llIllIllIllI(92928, 3502)) {
                                                                             throw null;
                                                                         } else {
                                                                             if (llIllIllllII(var9)) {
-                                                                                GlStateManager.func_179128_n(5890);
+                                                                                GlStateManager.matrixMode(5890);
                                                                                 if (llIllIllIllI(92928, 3502)) {
                                                                                     throw null;
                                                                                 }
 
-                                                                                GlStateManager.func_179121_F();
+                                                                                GlStateManager.popMatrix();
                                                                                 if (llIllIllIllI(92928, 3502)) {
                                                                                     throw null;
                                                                                 }
 
-                                                                                GlStateManager.func_179128_n(5888);
+                                                                                GlStateManager.matrixMode(5888);
                                                                                 if (llIllIllIllI(92928, 3502)) {
                                                                                     throw null;
                                                                                 }
@@ -423,7 +423,7 @@ public class Class96 extends TileEntitySpecialRenderer {
         }
     }
 
-    public void func_192841_a(TileEntity var1, double var2, double var4, double var6, float var8, int var9, float var10) {
+    public void render(TileEntity var1, double var2, double var4, double var6, float var8, int var9, float var10) {
         this.render((TileEntitySign) var1, var2, var4, var6, var8, var9, var10);
         boolean var10000 = true;
     }

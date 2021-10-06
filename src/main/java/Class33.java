@@ -87,7 +87,7 @@ public class Class33 extends Class171 {
     }
 
     public int _____________________________________________________________________________________/* $FF was:                                                                                      */() {
-        if (lllIIlIllIII(this..field_71439_g.func_184592_cb().func_77973_b() instanceof ItemFood)){
+        if (lllIIlIllIII(this..player.getHeldItemOffhand().getItem() instanceof ItemFood)){
             return 40;
         } else if (lllIIlIlIlll(87651, 2726)) {
             throw null;
@@ -103,7 +103,7 @@ public class Class33 extends Class171 {
                     return -1;
                 }
 
-                if (lllIIlIllIII(this..field_71439_g.field_71071_by.func_70301_a(var1).func_77973_b() instanceof ItemFood))
+                if (lllIIlIllIII(this..player.inventory.getStackInSlot(var1).getItem() instanceof ItemFood))
                 {
                     return var1;
                 }
@@ -122,35 +122,35 @@ public class Class33 extends Class171 {
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
         boolean var10000;
-        if (lllIIlIllIII(this..field_71439_g.func_184812_l_())){
+        if (lllIIlIllIII(this..player.isCreative())){
             var10000 = true;
         } else if (lllIIlIlIlll(70346, 4022)) {
             throw null;
         } else {
             int var2 = this. ();
             double var3;
-            if (lllIIlIllIIl((var3 = (double) this..field_71439_g.func_71024_bL().func_75116_a() - this.. ()) ==
+            if (lllIIlIllIIl((var3 = (double) this..player.getFoodStats().getFoodLevel() - this.. ()) ==
             0.0D ? 0 : (var3 < 0.0D ? -1 : 1)) &&lllIIlIllIlI(var2, -1)){
                 if (lllIIlIllIll(this.)) {
                     this. = this.                                                                                                    .
-                    field_71439_g.field_71071_by.field_70461_c;
+                    player.inventory.currentItem;
                 }
 
                 if (lllIIlIlIlll(70346, 4022)) {
                     throw null;
                 } else {
                     this. = true;
-                    if (lllIIlIlllII(var2, 9) && lllIIlIllIlI(this..field_71439_g.field_71071_by.field_70461_c,var2)){
+                    if (lllIIlIlllII(var2, 9) && lllIIlIllIlI(this..player.inventory.currentItem,var2)){
                         this.                                                                                                    .
-                        field_71439_g.field_71071_by.field_70461_c = var2;
+                        player.inventory.currentItem = var2;
                         this.                                                                                                    .
-                        field_71442_b.func_78765_e();
+                        playerController.updateController();
                     }
 
                     if (lllIIlIlIlll(70346, 4022)) {
                         throw null;
                     } else {
-                        KeyBinding.func_74510_a(this..field_71474_y.field_74313_G.func_151463_i(), true);
+                        KeyBinding.setKeyBindState(this..gameSettings.keyBindUseItem.getKeyCode(), true);
                         if (lllIIlIlIlll(70346, 4022)) {
                             throw null;
                         } else {
@@ -164,9 +164,9 @@ public class Class33 extends Class171 {
                 if (lllIIlIllIII(this.)) {
                     if (lllIIlIllIlI(this., -1)) {
                         this.                                                                                                    .
-                        field_71439_g.field_71071_by.field_70461_c = this.;
+                        player.inventory.currentItem = this.;
                         this.                                                                                                    .
-                        field_71442_b.func_78765_e();
+                        playerController.updateController();
                     }
 
                     if (lllIIlIlIlll(70346, 4022)) {
@@ -174,7 +174,7 @@ public class Class33 extends Class171 {
                     }
 
                     this. = false;
-                    KeyBinding.func_74510_a(this..field_71474_y.field_74313_G.func_151463_i(), false);
+                    KeyBinding.setKeyBindState(this..gameSettings.keyBindUseItem.getKeyCode(), false);
                     if (lllIIlIlIlll(70346, 4022)) {
                         throw null;
                     }

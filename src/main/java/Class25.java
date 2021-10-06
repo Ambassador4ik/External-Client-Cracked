@@ -631,14 +631,14 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         this. = var10035;
                         this. = true;
                         this. = true;
-                        long var10030 = Minecraft.func_71386_F();
+                        long var10030 = Minecraft.getSystemTime();
                         if (llIIlIIlIIll(46408, 20)) {
                             throw null;
                         } else {
                             this. = var10030;
                             this. = new float[1024];
                             this. = new float[1024];
-                            FloatBuffer var10024 = GLAllocation.func_74529_h(16);
+                            FloatBuffer var10024 = GLAllocation.createDirectFloatBuffer(16);
                             if (llIIlIIlIIll(46408, 20)) {
                                 throw null;
                             } else {
@@ -649,8 +649,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                 this. =;
                                 this. = var1;
                                 this. = var2;
-                                this. = var1.func_175597_ag();
-                                MapItemRenderer var10010 = new MapItemRenderer(var1.func_110434_K());
+                                this. = var1.getItemRenderer();
+                                MapItemRenderer var10010 = new MapItemRenderer(var1.getTextureManager());
                                 if (llIIlIIlIIll(46408, 20)) {
                                     throw null;
                                 } else {
@@ -660,14 +660,14 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                         throw null;
                                     } else {
                                         this. = var10009;
-                                        TextureManager var10007 = var1.func_110434_K();
+                                        TextureManager var10007 = var1.getTextureManager();
                                         String var10008 = Class60. ("ws\u007fskW}+");
                                         if (llIIlIIlIIll(46408, 20)) {
                                             throw null;
                                         } else {
-                                            this. = var10007.func_110578_a(var10008, this.);
+                                            this. = var10007.getDynamicTextureLocation(var10008, this.);
                                             this. = this.                                                                                                                              .
-                                            func_110565_c();
+                                            getTextureData();
                                             this. = null;
                                             Class171 var10001 = Class133. (96);
                                             if (llIIlIIlIIll(46408, 20)) {
@@ -685,7 +685,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                         }
 
                                                         Class var10 = this.                                                                                   .
-                                                        field_71460_t.getClass();
+                                                        entityRenderer.getClass();
                                                         String var13 = Class60. ("}ovx@-$/$#O:");
                                                         if (llIIlIIlIIll(46408, 20)) {
                                                             throw null;
@@ -716,7 +716,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
                                                         float var3 = (float) (var7 - 16);
                                                         float var4 = (float) (var6 - 16);
-                                                        float var8 = MathHelper.func_76129_c(var3 * var3 + var4 * var4);
+                                                        float var8 = MathHelper.sqrt(var3 * var3 + var4 * var4);
                                                         if (llIIlIIlIIll(46408, 20)) {
                                                             throw null;
                                                         }
@@ -813,19 +813,19 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
     }
 
     public static void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(FontRenderer var0, String var1, float var2, float var3, float var4, int var5, float var6, float var7, boolean var8, boolean var9) {
-        GlStateManager.func_179094_E();
+        GlStateManager.pushMatrix();
         if (llIIlIIlIIll(91941, 4714)) {
             throw null;
         } else {
-            GlStateManager.func_179109_b(var2, var3, var4);
+            GlStateManager.translate(var2, var3, var4);
             if (llIIlIIlIIll(91941, 4714)) {
                 throw null;
             } else {
-                GlStateManager.func_187432_a(0.0F, 1.0F, 0.0F);
+                GlStateManager.glNormal3f(0.0F, 1.0F, 0.0F);
                 if (llIIlIIlIIll(91941, 4714)) {
                     throw null;
                 } else {
-                    GlStateManager.func_179114_b(-var6, 0.0F, 1.0F, 0.0F);
+                    GlStateManager.rotate(-var6, 0.0F, 1.0F, 0.0F);
                     if (llIIlIIlIIll(91941, 4714)) {
                         throw null;
                     } else {
@@ -844,24 +844,24 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         if (llIIlIIlIIll(91941, 4714)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179114_b((float) var10000 * var7, 1.0F, 0.0F, 0.0F);
+                            GlStateManager.rotate((float) var10000 * var7, 1.0F, 0.0F, 0.0F);
                             if (llIIlIIlIIll(91941, 4714)) {
                                 throw null;
                             } else {
-                                GlStateManager.func_179152_a(-0.025F, -0.025F, 0.025F);
+                                GlStateManager.scale(-0.025F, -0.025F, 0.025F);
                                 if (llIIlIIlIIll(91941, 4714)) {
                                     throw null;
                                 } else {
-                                    GlStateManager.func_179140_f();
+                                    GlStateManager.disableLighting();
                                     if (llIIlIIlIIll(91941, 4714)) {
                                         throw null;
                                     } else {
-                                        GlStateManager.func_179132_a(false);
+                                        GlStateManager.depthMask(false);
                                         if (llIIlIIlIIll(91941, 4714)) {
                                             throw null;
                                         } else {
                                             if (llIIlIIlIlII(var9)) {
-                                                GlStateManager.func_179097_i();
+                                                GlStateManager.disableDepth();
                                                 if (llIIlIIlIIll(91941, 4714)) {
                                                     throw null;
                                                 }
@@ -870,37 +870,37 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             if (llIIlIIlIIll(91941, 4714)) {
                                                 throw null;
                                             } else {
-                                                GlStateManager.func_179147_l();
+                                                GlStateManager.enableBlend();
                                                 if (llIIlIIlIIll(91941, 4714)) {
                                                     throw null;
                                                 } else {
-                                                    GlStateManager.func_187428_a(SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, SourceFactor.ONE, DestFactor.ZERO);
+                                                    GlStateManager.tryBlendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, SourceFactor.ONE, DestFactor.ZERO);
                                                     if (llIIlIIlIIll(91941, 4714)) {
                                                         throw null;
                                                     } else {
-                                                        int var10 = var0.func_78256_a(var1) / 2;
-                                                        GlStateManager.func_179090_x();
+                                                        int var10 = var0.getStringWidth(var1) / 2;
+                                                        GlStateManager.disableTexture2D();
                                                         if (llIIlIIlIIll(91941, 4714)) {
                                                             throw null;
                                                         } else {
-                                                            Tessellator var12 = Tessellator.func_178181_a();
+                                                            Tessellator var12 = Tessellator.getInstance();
                                                             if (llIIlIIlIIll(91941, 4714)) {
                                                                 throw null;
                                                             } else {
-                                                                BufferBuilder var11 = var12.func_178180_c();
-                                                                var11.func_181668_a(7, DefaultVertexFormats.field_181706_f);
-                                                                var11.func_181662_b((double) (-var10 - 1), (double) (-1 + var5), 0.0D).func_181666_a(0.0F, 0.0F, 0.0F, 0.25F).func_181675_d();
-                                                                var11.func_181662_b((double) (-var10 - 1), (double) (8 + var5), 0.0D).func_181666_a(0.0F, 0.0F, 0.0F, 0.25F).func_181675_d();
-                                                                var11.func_181662_b((double) (var10 + 1), (double) (8 + var5), 0.0D).func_181666_a(0.0F, 0.0F, 0.0F, 0.25F).func_181675_d();
-                                                                var11.func_181662_b((double) (var10 + 1), (double) (-1 + var5), 0.0D).func_181666_a(0.0F, 0.0F, 0.0F, 0.25F).func_181675_d();
-                                                                var12.func_78381_a();
-                                                                GlStateManager.func_179098_w();
+                                                                BufferBuilder var11 = var12.getBuffer();
+                                                                var11.begin(7, DefaultVertexFormats.POSITION_COLOR);
+                                                                var11.pos((double) (-var10 - 1), (double) (-1 + var5), 0.0D).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
+                                                                var11.pos((double) (-var10 - 1), (double) (8 + var5), 0.0D).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
+                                                                var11.pos((double) (var10 + 1), (double) (8 + var5), 0.0D).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
+                                                                var11.pos((double) (var10 + 1), (double) (-1 + var5), 0.0D).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
+                                                                var12.draw();
+                                                                GlStateManager.enableTexture2D();
                                                                 if (llIIlIIlIIll(91941, 4714)) {
                                                                     throw null;
                                                                 } else {
                                                                     if (llIIlIIlIlII(var9)) {
-                                                                        var0.func_78276_b(var1, -var0.func_78256_a(var1) / 2, var5, 553648127);
-                                                                        GlStateManager.func_179126_j();
+                                                                        var0.drawString(var1, -var0.getStringWidth(var1) / 2, var5, 553648127);
+                                                                        GlStateManager.enableDepth();
                                                                         if (llIIlIIlIIll(91941, 4714)) {
                                                                             throw null;
                                                                         }
@@ -909,11 +909,11 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                     if (llIIlIIlIIll(91941, 4714)) {
                                                                         throw null;
                                                                     } else {
-                                                                        GlStateManager.func_179132_a(true);
+                                                                        GlStateManager.depthMask(true);
                                                                         if (llIIlIIlIIll(91941, 4714)) {
                                                                             throw null;
                                                                         } else {
-                                                                            int var10002 = -var0.func_78256_a(var1) / 2;
+                                                                            int var10002 = -var0.getStringWidth(var1) / 2;
                                                                             int var10004;
                                                                             if (llIIlIIlIIlI(var9)) {
                                                                                 var10004 = 553648127;
@@ -929,20 +929,20 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                             if (llIIlIIlIIll(91941, 4714)) {
                                                                                 throw null;
                                                                             } else {
-                                                                                var0.func_78276_b(var1, var10002, var5, var10004);
-                                                                                GlStateManager.func_179145_e();
+                                                                                var0.drawString(var1, var10002, var5, var10004);
+                                                                                GlStateManager.enableLighting();
                                                                                 if (llIIlIIlIIll(91941, 4714)) {
                                                                                     throw null;
                                                                                 } else {
-                                                                                    GlStateManager.func_179084_k();
+                                                                                    GlStateManager.disableBlend();
                                                                                     if (llIIlIIlIIll(91941, 4714)) {
                                                                                         throw null;
                                                                                     } else {
-                                                                                        GlStateManager.func_179131_c(1.0F, 1.0F, 1.0F, 1.0F);
+                                                                                        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                                                                                         if (llIIlIIlIIll(91941, 4714)) {
                                                                                             throw null;
                                                                                         } else {
-                                                                                            GlStateManager.func_179121_F();
+                                                                                            GlStateManager.popMatrix();
                                                                                             if (llIIlIIlIIll(91941, 4714)) {
                                                                                                 throw null;
                                                                                             } else {
@@ -977,17 +977,17 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
     private void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(int var1, float var2) {
         Entity var3 = this.                                                                                   .
-        func_175606_aa();
-        this.func_191514_d(false);
-        GlStateManager.func_187432_a(0.0F, -1.0F, 0.0F);
+        getRenderViewEntity();
+        this.setupFogColor(false);
+        GlStateManager.glNormal3f(0.0F, -1.0F, 0.0F);
         if (llIIlIIlIIll(75491, 5815)) {
             throw null;
         } else {
-            GlStateManager.func_179131_c(1.0F, 1.0F, 1.0F, 1.0F);
+            GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             if (llIIlIIlIIll(75491, 5815)) {
                 throw null;
             } else {
-                IBlockState var10001 = ActiveRenderInfo.func_186703_a(this..field_71441_e, var3, var2);
+                IBlockState var10001 = ActiveRenderInfo.getBlockStateAtEntityViewpoint(this..world, var3, var2);
                 if (llIIlIIlIIll(75491, 5815)) {
                     throw null;
                 } else {
@@ -1000,7 +1000,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         boolean var7;
                         float var10;
                         if (llIIlIIllIII((var10 = var10000 - 0.0F) == 0.0F ? 0 : (var10 < 0.0F ? -1 : 1))) {
-                            GlStateManager.func_179095_a(var5);
+                            GlStateManager.setFogDensity(var5);
                             if (llIIlIIlIIll(75491, 5815)) {
                                 throw null;
                             }
@@ -1012,10 +1012,10 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                             }
 
                             ContextCapabilities var9;
-                            if (llIIlIIlIIlI(var3 instanceof EntityLivingBase) && llIIlIIlIIlI(((EntityLivingBase) var3).func_70644_a(MobEffects.field_76440_q))) {
+                            if (llIIlIIlIIlI(var3 instanceof EntityLivingBase) && llIIlIIlIIlI(((EntityLivingBase) var3).isPotionActive(MobEffects.BLINDNESS))) {
                                 var5 = 5.0F;
                                 int var6;
-                                if (llIIlIIlIllI(var6 = ((EntityLivingBase) var3).func_70660_b(MobEffects.field_76440_q).func_76459_b(), 20)) {
+                                if (llIIlIIlIllI(var6 = ((EntityLivingBase) var3).getActivePotionEffect(MobEffects.BLINDNESS).getDuration(), 20)) {
                                     var5 = 5.0F + (this. - 5.0F) * (1.0F - (float) var6 / 20.0F);
                                 }
 
@@ -1023,18 +1023,18 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                     throw null;
                                 }
 
-                                GlStateManager.func_187430_a(FogMode.LINEAR);
+                                GlStateManager.setFog(FogMode.LINEAR);
                                 if (llIIlIIlIIll(75491, 5815)) {
                                     throw null;
                                 }
 
                                 if (llIIlIIlIlIl(var1, -1)) {
-                                    GlStateManager.func_179102_b(0.0F);
+                                    GlStateManager.setFogStart(0.0F);
                                     if (llIIlIIlIIll(75491, 5815)) {
                                         throw null;
                                     }
 
-                                    GlStateManager.func_179153_c(var5 * 0.8F);
+                                    GlStateManager.setFogEnd(var5 * 0.8F);
                                     if (llIIlIIlIIll(75491, 5815)) {
                                         throw null;
                                     }
@@ -1045,12 +1045,12 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                         throw null;
                                     }
 
-                                    GlStateManager.func_179102_b(var5 * 0.25F);
+                                    GlStateManager.setFogStart(var5 * 0.25F);
                                     if (llIIlIIlIIll(75491, 5815)) {
                                         throw null;
                                     }
 
-                                    GlStateManager.func_179153_c(var5);
+                                    GlStateManager.setFogEnd(var5);
                                     if (llIIlIIlIIll(75491, 5815)) {
                                         throw null;
                                     }
@@ -1066,7 +1066,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                 }
 
                                 if (llIIlIIlIIlI(var9.GL_NV_fog_distance)) {
-                                    GlStateManager.func_187412_c(34138, 34139);
+                                    GlStateManager.glFogi(34138, 34139);
                                     if (llIIlIIlIIll(75491, 5815)) {
                                         throw null;
                                     }
@@ -1079,12 +1079,12 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                 }
 
                                 if (llIIlIIlIIlI(this.)) {
-                                    GlStateManager.func_187430_a(FogMode.EXP);
+                                    GlStateManager.setFog(FogMode.EXP);
                                     if (llIIlIIlIIll(75491, 5815)) {
                                         throw null;
                                     }
 
-                                    GlStateManager.func_179095_a(0.1F);
+                                    GlStateManager.setFogDensity(0.1F);
                                     if (llIIlIIlIIll(75491, 5815)) {
                                         throw null;
                                     }
@@ -1095,15 +1095,15 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                         throw null;
                                     }
 
-                                    if (llIIlIlIIIIl(var4.func_185904_a(), Material.field_151586_h)) {
-                                        GlStateManager.func_187430_a(FogMode.EXP);
+                                    if (llIIlIlIIIIl(var4.getMaterial(), Material.WATER)) {
+                                        GlStateManager.setFog(FogMode.EXP);
                                         if (llIIlIIlIIll(75491, 5815)) {
                                             throw null;
                                         }
 
                                         if (llIIlIIlIIlI(var3 instanceof EntityLivingBase)) {
-                                            if (llIIlIIlIIlI(((EntityLivingBase) var3).func_70644_a(MobEffects.field_76427_o))) {
-                                                GlStateManager.func_179095_a(0.01F);
+                                            if (llIIlIIlIIlI(((EntityLivingBase) var3).isPotionActive(MobEffects.WATER_BREATHING))) {
+                                                GlStateManager.setFogDensity(0.01F);
                                                 if (llIIlIIlIIll(75491, 5815)) {
                                                     throw null;
                                                 }
@@ -1114,12 +1114,12 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                     throw null;
                                                 }
 
-                                                int var8 = EnchantmentHelper.func_185292_c((EntityLivingBase) var3);
+                                                int var8 = EnchantmentHelper.getRespirationModifier((EntityLivingBase) var3);
                                                 if (llIIlIIlIIll(75491, 5815)) {
                                                     throw null;
                                                 }
 
-                                                GlStateManager.func_179095_a(0.1F - (float) var8 * 0.03F);
+                                                GlStateManager.setFogDensity(0.1F - (float) var8 * 0.03F);
                                                 if (llIIlIIlIIll(75491, 5815)) {
                                                     throw null;
                                                 }
@@ -1131,7 +1131,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                 throw null;
                                             }
 
-                                            GlStateManager.func_179095_a(0.1F);
+                                            GlStateManager.setFogDensity(0.1F);
                                             if (llIIlIIlIIll(75491, 5815)) {
                                                 throw null;
                                             }
@@ -1143,13 +1143,13 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             throw null;
                                         }
 
-                                        if (llIIlIlIIIIl(var4.func_185904_a(), Material.field_151587_i)) {
-                                            GlStateManager.func_187430_a(FogMode.EXP);
+                                        if (llIIlIlIIIIl(var4.getMaterial(), Material.LAVA)) {
+                                            GlStateManager.setFog(FogMode.EXP);
                                             if (llIIlIIlIIll(75491, 5815)) {
                                                 throw null;
                                             }
 
-                                            GlStateManager.func_179095_a(2.0F);
+                                            GlStateManager.setFogDensity(2.0F);
                                             if (llIIlIIlIIll(75491, 5815)) {
                                                 throw null;
                                             }
@@ -1161,18 +1161,18 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             }
 
                                             var5 = this.;
-                                            GlStateManager.func_187430_a(FogMode.LINEAR);
+                                            GlStateManager.setFog(FogMode.LINEAR);
                                             if (llIIlIIlIIll(75491, 5815)) {
                                                 throw null;
                                             }
 
                                             if (llIIlIIlIlIl(var1, -1)) {
-                                                GlStateManager.func_179102_b(0.0F);
+                                                GlStateManager.setFogStart(0.0F);
                                                 if (llIIlIIlIIll(75491, 5815)) {
                                                     throw null;
                                                 }
 
-                                                GlStateManager.func_179153_c(var5);
+                                                GlStateManager.setFogEnd(var5);
                                                 if (llIIlIIlIIll(75491, 5815)) {
                                                     throw null;
                                                 }
@@ -1183,12 +1183,12 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                     throw null;
                                                 }
 
-                                                GlStateManager.func_179102_b(var5 * 0.75F);
+                                                GlStateManager.setFogStart(var5 * 0.75F);
                                                 if (llIIlIIlIIll(75491, 5815)) {
                                                     throw null;
                                                 }
 
-                                                GlStateManager.func_179153_c(var5);
+                                                GlStateManager.setFogEnd(var5);
                                                 if (llIIlIIlIIll(75491, 5815)) {
                                                     throw null;
                                                 }
@@ -1204,7 +1204,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             }
 
                                             if (llIIlIIlIIlI(var9.GL_NV_fog_distance)) {
-                                                GlStateManager.func_187412_c(34138, 34139);
+                                                GlStateManager.glFogi(34138, 34139);
                                                 if (llIIlIIlIIll(75491, 5815)) {
                                                     throw null;
                                                 }
@@ -1214,13 +1214,13 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                 throw null;
                                             }
 
-                                            if (!llIIlIIlIlII(this..field_71441_e.field_73011_w.func_76568_b((int) var3.field_70165_t, (int) var3.field_70161_v)) ||
-                                            llIIlIIlIIlI(this..field_71456_v.func_184046_j().func_184056_f())){
+                                            if (!llIIlIIlIlII(this..world.provider.doesXZShowFog((int) var3.posX, (int) var3.posZ)) ||
+                                            llIIlIIlIIlI(this..ingameGUI.getBossOverlay().shouldCreateFog())){
                                                 if (llIIlIIlIIll(75491, 5815)) {
                                                     throw null;
                                                 }
 
-                                                GlStateManager.func_179102_b(var5 * 0.05F);
+                                                GlStateManager.setFogStart(var5 * 0.05F);
                                                 if (llIIlIIlIIll(75491, 5815)) {
                                                     throw null;
                                                 }
@@ -1230,7 +1230,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                     throw null;
                                                 }
 
-                                                GlStateManager.func_179153_c(var10000 * 0.5F);
+                                                GlStateManager.setFogEnd(var10000 * 0.5F);
                                                 if (llIIlIIlIIll(75491, 5815)) {
                                                     throw null;
                                                 }
@@ -1253,15 +1253,15 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         if (llIIlIIlIIll(75491, 5815)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179142_g();
+                            GlStateManager.enableColorMaterial();
                             if (llIIlIIlIIll(75491, 5815)) {
                                 throw null;
                             } else {
-                                GlStateManager.func_179127_m();
+                                GlStateManager.enableFog();
                                 if (llIIlIIlIIll(75491, 5815)) {
                                     throw null;
                                 } else {
-                                    GlStateManager.func_179104_a(1028, 4608);
+                                    GlStateManager.colorMaterial(1028, 4608);
                                     if (llIIlIIlIIll(75491, 5815)) {
                                         throw null;
                                     } else {
@@ -1278,8 +1278,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
     private void ____________________________________________________________________________/* $FF was:                                                                             */() {
         float var1 = 1.0F;
-        if (llIIlIIlIIlI(this..func_175606_aa() instanceof AbstractClientPlayer)){
-            var1 = ((AbstractClientPlayer) this..func_175606_aa()).func_175156_o();
+        if (llIIlIIlIIlI(this..getRenderViewEntity() instanceof AbstractClientPlayer)){
+            var1 = ((AbstractClientPlayer) this..getRenderViewEntity()).getFovModifier();
         }
 
         if (llIIlIIlIIll(55615, 5114)) {
@@ -1320,20 +1320,20 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         label259:
         {
             Entity var10000 = var2 = this.                                                                                   .
-            func_175606_aa();
-            var3 = var10000.func_70047_e();
-            var4 = var10000.field_70169_q + (var2.field_70165_t - var2.field_70169_q) * (double) var1;
-            var6 = var2.field_70167_r + (var2.field_70163_u - var2.field_70167_r) * (double) var1 + (double) var3;
-            var8 = var10000.field_70166_s + (var2.field_70161_v - var2.field_70166_s) * (double) var1;
+            getRenderViewEntity();
+            var3 = var10000.getEyeHeight();
+            var4 = var10000.prevPosX + (var2.posX - var2.prevPosX) * (double) var1;
+            var6 = var2.prevPosY + (var2.posY - var2.prevPosY) * (double) var1 + (double) var3;
+            var8 = var10000.prevPosZ + (var2.posZ - var2.prevPosZ) * (double) var1;
             boolean var10001;
-            if (llIIlIIlIIlI(var10000 instanceof EntityLivingBase) && llIIlIIlIIlI(((EntityLivingBase) var2).func_70608_bn())) {
+            if (llIIlIIlIIlI(var10000 instanceof EntityLivingBase) && llIIlIIlIIlI(((EntityLivingBase) var2).isPlayerSleeping())) {
                 var3 = (float) ((double) var3 + 1.0D);
-                GlStateManager.func_179109_b(0.0F, 0.3F, 0.0F);
+                GlStateManager.translate(0.0F, 0.3F, 0.0F);
                 if (llIIlIIlIIll(84597, 5111)) {
                     throw null;
                 }
 
-                if (llIIlIIlIlII(this..field_71474_y.field_74325_U)){
+                if (llIIlIIlIlII(this..gameSettings.debugCamEnable)){
                     BlockPos var43 = new BlockPos(var2);
                     if (llIIlIIlIIll(84597, 5111)) {
                         throw null;
@@ -1342,18 +1342,18 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     BlockPos var27 = var43;
                     var42 = this;
                     IBlockState var29 = this.                                                                                   .
-                    field_71441_e.func_180495_p(var27);
-                    ForgeHooksClient.orientBedCamera(this..field_71441_e, var27, var29, var2);
+                    world.getBlockState(var27);
+                    ForgeHooksClient.orientBedCamera(this..world, var27, var29, var2);
                     if (llIIlIIlIIll(84597, 5111)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179114_b(var2.field_70126_B + (var2.field_70177_z - var2.field_70126_B) * var1 + 180.0F, 0.0F, -1.0F, 0.0F);
+                    GlStateManager.rotate(var2.prevRotationYaw + (var2.rotationYaw - var2.prevRotationYaw) * var1 + 180.0F, 0.0F, -1.0F, 0.0F);
                     if (llIIlIIlIIll(84597, 5111)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179114_b(var2.field_70127_C + (var2.field_70125_A - var2.field_70127_C) * var1, -1.0F, 0.0F, 0.0F);
+                    GlStateManager.rotate(var2.prevRotationPitch + (var2.rotationPitch - var2.prevRotationPitch) * var1, -1.0F, 0.0F, 0.0F);
                     if (llIIlIIlIIll(84597, 5111)) {
                         throw null;
                     }
@@ -1366,7 +1366,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     throw null;
                 }
 
-                if (llIIlIIllIlI(this..field_71474_y.field_74320_O)){
+                if (llIIlIIllIlI(this..gameSettings.thirdPersonView)){
                     Class171 var34 = Class133. (62);
                     if (llIIlIIlIIll(84597, 5111)) {
                         throw null;
@@ -1396,8 +1396,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     }
 
                     double var11 = (double) var36;
-                    if (llIIlIIlIIlI(this..field_71474_y.field_74325_U)){
-                        GlStateManager.func_179109_b(0.0F, 0.0F, (float) (-var11));
+                    if (llIIlIIlIIlI(this..gameSettings.debugCamEnable)){
+                        GlStateManager.translate(0.0F, 0.0F, (float) (-var11));
                         if (llIIlIIlIIll(84597, 5111)) {
                             throw null;
                         }
@@ -1408,9 +1408,9 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                             throw null;
                         }
 
-                        float var13 = var2.field_70177_z;
-                        float var14 = var2.field_70125_A;
-                        if (llIIlIIlIlIl(this..field_71474_y.field_74320_O,2)){
+                        float var13 = var2.rotationYaw;
+                        float var14 = var2.rotationPitch;
+                        if (llIIlIIlIlIl(this..gameSettings.thirdPersonView,2)){
                             var14 += 180.0F;
                         }
 
@@ -1418,30 +1418,30 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                             throw null;
                         }
 
-                        var36 = MathHelper.func_76126_a(var13 * 0.017453292F);
+                        var36 = MathHelper.sin(var13 * 0.017453292F);
                         if (llIIlIIlIIll(84597, 5111)) {
                             throw null;
                         }
 
                         var36 = -var36;
-                        float var37 = MathHelper.func_76134_b(var14 * 0.017453292F);
+                        float var37 = MathHelper.cos(var14 * 0.017453292F);
                         if (llIIlIIlIIll(84597, 5111)) {
                             throw null;
                         }
 
                         double var15 = (double) (var36 * var37) * var11;
-                        var36 = MathHelper.func_76134_b(var13 * 0.017453292F);
+                        var36 = MathHelper.cos(var13 * 0.017453292F);
                         if (llIIlIIlIIll(84597, 5111)) {
                             throw null;
                         }
 
-                        var37 = MathHelper.func_76134_b(var14 * 0.017453292F);
+                        var37 = MathHelper.cos(var14 * 0.017453292F);
                         if (llIIlIIlIIll(84597, 5111)) {
                             throw null;
                         }
 
                         double var17 = (double) (var36 * var37) * var11;
-                        var36 = MathHelper.func_76126_a(var14 * 0.017453292F);
+                        var36 = MathHelper.sin(var14 * 0.017453292F);
                         if (llIIlIIlIIll(84597, 5111)) {
                             throw null;
                         }
@@ -1471,7 +1471,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                 var23 *= 0.1F;
                                 var24 *= 0.1F;
                                 WorldClient var40 = this.                                                                                   .
-                                field_71441_e;
+                                world;
                                 Vec3d var39 = new Vec3d(var4 + (double) var22, var6 + (double) var23, var8 + (double) var24);
                                 if (llIIlIIlIIll(84597, 5111)) {
                                     throw null;
@@ -1483,8 +1483,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                 }
 
                                 RayTraceResult var45;
-                                if (llIIlIIlllIl(var45 = var40.func_72933_a(var39, var10002))) {
-                                    Vec3d var41 = var45.field_72307_f;
+                                if (llIIlIIlllIl(var45 = var40.rayTraceBlocks(var39, var10002))) {
+                                    Vec3d var41 = var45.hitVec;
                                     var39 = new Vec3d(var4, var6, var8);
                                     if (llIIlIIlIIll(84597, 5111)) {
                                         throw null;
@@ -1492,7 +1492,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
                                     double var25;
                                     double var48;
-                                    if (llIIlIlIIIII((var48 = (var25 = var41.func_72438_d(var39)) - var11) == 0.0D ? 0 : (var48 < 0.0D ? -1 : 1))) {
+                                    if (llIIlIlIIIII((var48 = (var25 = var41.distanceTo(var39)) - var11) == 0.0D ? 0 : (var48 < 0.0D ? -1 : 1))) {
                                         var11 = var25;
                                     }
                                 }
@@ -1511,8 +1511,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                             throw null;
                         }
 
-                        if (llIIlIIlIlIl(this..field_71474_y.field_74320_O,2)){
-                            GlStateManager.func_179114_b(180.0F, 0.0F, 1.0F, 0.0F);
+                        if (llIIlIIlIlIl(this..gameSettings.thirdPersonView,2)){
+                            GlStateManager.rotate(180.0F, 0.0F, 1.0F, 0.0F);
                             if (llIIlIIlIIll(84597, 5111)) {
                                 throw null;
                             }
@@ -1522,27 +1522,27 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                             throw null;
                         }
 
-                        GlStateManager.func_179114_b(var2.field_70125_A - var14, 1.0F, 0.0F, 0.0F);
+                        GlStateManager.rotate(var2.rotationPitch - var14, 1.0F, 0.0F, 0.0F);
                         if (llIIlIIlIIll(84597, 5111)) {
                             throw null;
                         }
 
-                        GlStateManager.func_179114_b(var2.field_70177_z - var13, 0.0F, 1.0F, 0.0F);
+                        GlStateManager.rotate(var2.rotationYaw - var13, 0.0F, 1.0F, 0.0F);
                         if (llIIlIIlIIll(84597, 5111)) {
                             throw null;
                         }
 
-                        GlStateManager.func_179109_b(0.0F, 0.0F, (float) (-var11));
+                        GlStateManager.translate(0.0F, 0.0F, (float) (-var11));
                         if (llIIlIIlIIll(84597, 5111)) {
                             throw null;
                         }
 
-                        GlStateManager.func_179114_b(var13 - var2.field_70177_z, 0.0F, 1.0F, 0.0F);
+                        GlStateManager.rotate(var13 - var2.rotationYaw, 0.0F, 1.0F, 0.0F);
                         if (llIIlIIlIIll(84597, 5111)) {
                             throw null;
                         }
 
-                        GlStateManager.func_179114_b(var14 - var2.field_70125_A, 1.0F, 0.0F, 0.0F);
+                        GlStateManager.rotate(var14 - var2.rotationPitch, 1.0F, 0.0F, 0.0F);
                         if (llIIlIIlIIll(84597, 5111)) {
                             throw null;
                         }
@@ -1554,7 +1554,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         throw null;
                     }
 
-                    GlStateManager.func_179109_b(0.0F, 0.0F, 0.05F);
+                    GlStateManager.translate(0.0F, 0.0F, 0.05F);
                     if (llIIlIIlIIll(84597, 5111)) {
                         throw null;
                     }
@@ -1571,21 +1571,21 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         if (llIIlIIlIIll(84597, 5111)) {
             throw null;
         } else {
-            if (llIIlIIlIlII(var42..field_71474_y.field_74325_U)){
-                float var28 = var2.field_70126_B + (var2.field_70177_z - var2.field_70126_B) * var1 + 180.0F;
-                float var30 = var2.field_70127_C + (var2.field_70125_A - var2.field_70127_C) * var1;
+            if (llIIlIIlIlII(var42..gameSettings.debugCamEnable)){
+                float var28 = var2.prevRotationYaw + (var2.rotationYaw - var2.prevRotationYaw) * var1 + 180.0F;
+                float var30 = var2.prevRotationPitch + (var2.rotationPitch - var2.prevRotationPitch) * var1;
                 float var12 = 0.0F;
                 if (llIIlIIlIIlI(var2 instanceof EntityAnimal)) {
                     EntityAnimal var31;
                     EntityAnimal var44 = var31 = (EntityAnimal) var2;
-                    var28 = var44.field_70758_at + (var44.field_70759_as - var31.field_70758_at) * var1 + 180.0F;
+                    var28 = var44.prevRotationYawHead + (var44.rotationYawHead - var31.prevRotationYawHead) * var1 + 180.0F;
                 }
 
                 if (llIIlIIlIIll(84597, 5111)) {
                     throw null;
                 }
 
-                IBlockState var46 = ActiveRenderInfo.func_186703_a(this..field_71441_e, var2, var1);
+                IBlockState var46 = ActiveRenderInfo.getBlockStateAtEntityViewpoint(this..world, var2, var1);
                 if (llIIlIIlIIll(84597, 5111)) {
                     throw null;
                 }
@@ -1598,17 +1598,17 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
                 CameraSetup var33 = var47;
                 MinecraftForge.EVENT_BUS.post(var33);
-                GlStateManager.func_179114_b(var33.getRoll(), 0.0F, 0.0F, 1.0F);
+                GlStateManager.rotate(var33.getRoll(), 0.0F, 0.0F, 1.0F);
                 if (llIIlIIlIIll(84597, 5111)) {
                     throw null;
                 }
 
-                GlStateManager.func_179114_b(var33.getPitch(), 1.0F, 0.0F, 0.0F);
+                GlStateManager.rotate(var33.getPitch(), 1.0F, 0.0F, 0.0F);
                 if (llIIlIIlIIll(84597, 5111)) {
                     throw null;
                 }
 
-                GlStateManager.func_179114_b(var33.getYaw(), 0.0F, 1.0F, 0.0F);
+                GlStateManager.rotate(var33.getYaw(), 0.0F, 1.0F, 0.0F);
                 if (llIIlIIlIIll(84597, 5111)) {
                     throw null;
                 }
@@ -1617,15 +1617,15 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
             if (llIIlIIlIIll(84597, 5111)) {
                 throw null;
             } else {
-                GlStateManager.func_179109_b(0.0F, -var3, 0.0F);
+                GlStateManager.translate(0.0F, -var3, 0.0F);
                 if (llIIlIIlIIll(84597, 5111)) {
                     throw null;
                 } else {
-                    var4 = var2.field_70169_q + (var2.field_70165_t - var2.field_70169_q) * (double) var1;
-                    var6 = var2.field_70167_r + (var2.field_70163_u - var2.field_70167_r) * (double) var1 + (double) var3;
-                    var8 = var2.field_70166_s + (var2.field_70161_v - var2.field_70166_s) * (double) var1;
+                    var4 = var2.prevPosX + (var2.posX - var2.prevPosX) * (double) var1;
+                    var6 = var2.prevPosY + (var2.posY - var2.prevPosY) * (double) var1 + (double) var3;
+                    var8 = var2.prevPosZ + (var2.posZ - var2.prevPosZ) * (double) var1;
                     this. = this.                                                                                   .
-                    field_71438_f.func_72721_a(var4, var6, var8, var1);
+                    renderGlobal.hasCloudFog(var4, var6, var8, var1);
                     var38 = true;
                 }
             }
@@ -1640,137 +1640,137 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
             var4 = (10.25F * var5 * var4 + -24.95F * var4 * var4 + 25.5F * var5 + -13.8F * var4 + 4.0F * var3) * 3.1415927F;
             var5 = this. * (float) (var1 / 4);
             float var6 = this. * (float) (var2 / 4);
-            GlStateManager.func_179141_d();
+            GlStateManager.enableAlpha();
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            GlStateManager.func_179094_E();
+            GlStateManager.pushMatrix();
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            GlStateManager.func_179123_a();
+            GlStateManager.pushAttrib();
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            GlStateManager.func_179126_j();
+            GlStateManager.enableDepth();
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            GlStateManager.func_179129_p();
+            GlStateManager.disableCull();
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            GlStateManager.func_179124_c(1.0F, 1.0F, 0.0F);
+            GlStateManager.color(1.0F, 1.0F, 0.0F);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            RenderHelper.func_74519_b();
+            RenderHelper.enableStandardItemLighting();
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
             float var10001 = (float) (var1 / 2);
-            float var10003 = MathHelper.func_76126_a(var4 * 2.0F);
+            float var10003 = MathHelper.sin(var4 * 2.0F);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            var10003 = MathHelper.func_76135_e(var10003);
+            var10003 = MathHelper.abs(var10003);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
             var10001 += var5 * var10003;
             float var10002 = (float) (var2 / 2);
-            float var10004 = MathHelper.func_76126_a(var4 * 2.0F);
+            float var10004 = MathHelper.sin(var4 * 2.0F);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            var10004 = MathHelper.func_76135_e(var10004);
+            var10004 = MathHelper.abs(var10004);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            GlStateManager.func_179109_b(var10001, var10002 + var6 * var10004, -50.0F);
+            GlStateManager.translate(var10001, var10002 + var6 * var10004, -50.0F);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            var10003 = MathHelper.func_76126_a(var4);
+            var10003 = MathHelper.sin(var4);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            GlStateManager.func_179152_a(var1, -(var1 = 50.0F + 175.0F * var10003), var1);
+            GlStateManager.scale(var1, -(var1 = 50.0F + 175.0F * var10003), var1);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            var10002 = MathHelper.func_76126_a(var4);
+            var10002 = MathHelper.sin(var4);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            var10002 = MathHelper.func_76135_e(var10002);
+            var10002 = MathHelper.abs(var10002);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            GlStateManager.func_179114_b(900.0F * var10002, 0.0F, 1.0F, 0.0F);
+            GlStateManager.rotate(900.0F * var10002, 0.0F, 1.0F, 0.0F);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            var10002 = MathHelper.func_76134_b(var3 * 8.0F);
+            var10002 = MathHelper.cos(var3 * 8.0F);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            GlStateManager.func_179114_b(6.0F * var10002, 1.0F, 0.0F, 0.0F);
+            GlStateManager.rotate(6.0F * var10002, 1.0F, 0.0F, 0.0F);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            var10002 = MathHelper.func_76134_b(var3 * 8.0F);
+            var10002 = MathHelper.cos(var3 * 8.0F);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            GlStateManager.func_179114_b(6.0F * var10002, 0.0F, 0.0F, 1.0F);
+            GlStateManager.rotate(6.0F * var10002, 0.0F, 0.0F, 1.0F);
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
             this.                                                                                   .
-            func_175599_af().func_181564_a(this., TransformType.FIXED);
-            GlStateManager.func_179099_b();
+            getRenderItem().renderItem(this., TransformType.FIXED);
+            GlStateManager.popAttrib();
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            GlStateManager.func_179121_F();
+            GlStateManager.popMatrix();
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            RenderHelper.func_74518_a();
+            RenderHelper.disableStandardItemLighting();
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            GlStateManager.func_179089_o();
+            GlStateManager.enableCull();
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
 
-            GlStateManager.func_179097_i();
+            GlStateManager.disableDepth();
             if (llIIlIIlIIll(40748, 5199)) {
                 throw null;
             }
@@ -1820,10 +1820,10 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_110549_a(IResourceManager var1) {
+    public void onResourceManagerReload(IResourceManager var1) {
         if (llIIlIIlllIl(this.)) {
             this.                                                                                                                                     .
-            func_148021_a();
+            deleteShaderGroup();
         }
 
         if (llIIlIIlIIll(21176, 442)) {
@@ -1832,58 +1832,58 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
             this. = null;
             boolean var10000;
             if (llIIlIIlIlIl(this., )) {
-                this.func_175066_a(this..func_175606_aa());
+                this.loadEntityShader(this..getRenderViewEntity());
                 var10000 = true;
             } else if (llIIlIIlIIll(21176, 442)) {
                 throw null;
             } else {
-                this.func_175069_a([this.]);
+                this.loadShader([this.]);
                 var10000 = true;
             }
         }
     }
 
-    public ShaderGroup func_147706_e() {
+    public ShaderGroup getShaderGroup() {
         return this.;
     }
 
-    public void func_78471_a(float var1, long var2) {
+    public void renderWorld(float var1, long var2) {
         this. (var1);
         if (llIIlIIlIIll(48309, 6827)) {
             throw null;
         } else {
-            if (llIIlIIlllII(this..func_175606_aa())){
+            if (llIIlIIlllII(this..getRenderViewEntity())){
                 this.                                                                                   .
-                func_175607_a(this..field_71439_g);
+                setRenderViewEntity(this..player);
             }
 
             if (llIIlIIlIIll(48309, 6827)) {
                 throw null;
             } else {
-                this.func_78473_a(var1);
-                GlStateManager.func_179126_j();
+                this.getMouseOver(var1);
+                GlStateManager.enableDepth();
                 if (llIIlIIlIIll(48309, 6827)) {
                     throw null;
                 } else {
-                    GlStateManager.func_179141_d();
+                    GlStateManager.enableAlpha();
                     if (llIIlIIlIIll(48309, 6827)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179092_a(516, 0.5F);
+                        GlStateManager.alphaFunc(516, 0.5F);
                         if (llIIlIIlIIll(48309, 6827)) {
                             throw null;
                         } else {
                             Profiler var10001 = this.                                                                                   .
-                            field_71424_I;
+                            profiler;
                             String var10002 = Class60. ("y~wn{)");
                             if (llIIlIIlIIll(48309, 6827)) {
                                 throw null;
                             } else {
-                                var10001.func_76320_a(var10002);
+                                var10001.startSection(var10002);
                                 Class25 var10000;
-                                if (llIIlIIlIIlI(this..field_71474_y.field_74337_g)){
+                                if (llIIlIIlIIlI(this..gameSettings.anaglyph)){
                                                                                                               =0;
-                                    GlStateManager.func_179135_a(false, true, true, false);
+                                    GlStateManager.colorMask(false, true, true, false);
                                     if (llIIlIIlIIll(48309, 6827)) {
                                         throw null;
                                     }
@@ -1895,7 +1895,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                     }
 
                                                                                                               =1;
-                                    GlStateManager.func_179135_a(true, false, false, false);
+                                    GlStateManager.colorMask(true, false, false, false);
                                     if (llIIlIIlIIll(48309, 6827)) {
                                         throw null;
                                     }
@@ -1905,7 +1905,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                         throw null;
                                     }
 
-                                    GlStateManager.func_179135_a(true, true, true, false);
+                                    GlStateManager.colorMask(true, true, true, false);
                                     if (llIIlIIlIIll(48309, 6827)) {
                                         throw null;
                                     }
@@ -1927,7 +1927,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                     throw null;
                                 } else {
                                     var10000.                                                                                   .
-                                    field_71424_I.func_76319_b();
+                                    profiler.endSection();
                                     boolean var4 = true;
                                 }
                             }
@@ -1940,27 +1940,27 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
     private void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(int var1, float var2, long var3) {
         RenderGlobal var5 = this.                                                                                   .
-        field_71438_f;
+        renderGlobal;
         ParticleManager var6 = this.                                                                                   .
-        field_71452_i;
+        effectRenderer;
         byte var10005 = this. ();
         if (llIIlIIlIIll(23361, 6878)) {
             throw null;
         } else {
             byte var7 = var10005;
-            GlStateManager.func_179089_o();
+            GlStateManager.enableCull();
             if (llIIlIIlIIll(23361, 6878)) {
                 throw null;
             } else {
                 Profiler var10004 = this.                                                                                   .
-                field_71424_I;
+                profiler;
                 String var32 = Class60. ("|ry~)");
                 if (llIIlIIlIIll(23361, 6878)) {
                     throw null;
                 } else {
-                    var10004.func_76318_c(var32);
-                    GlStateManager.func_179083_b(0, 0, this..field_71443_c, this.                                                                                   .
-                    field_71440_d);
+                    var10004.endStartSection(var32);
+                    GlStateManager.viewport(0, 0, this..displayWidth, this.                                                                                   .
+                    displayHeight);
                     if (llIIlIIlIIll(23361, 6878)) {
                         throw null;
                     } else {
@@ -1968,23 +1968,23 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         if (llIIlIIlIIll(23361, 6878)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179086_m(16640);
+                            GlStateManager.clear(16640);
                             if (llIIlIIlIIll(23361, 6878)) {
                                 throw null;
                             } else {
                                 Profiler var10002 = this.                                                                                   .
-                                field_71424_I;
+                                profiler;
                                 String var10003 = Class60. ("yzt\u007fl:");
                                 if (llIIlIIlIIll(23361, 6878)) {
                                     throw null;
                                 } else {
-                                    var10002.func_76318_c(var10003);
-                                    this.func_78479_a(var2, var1);
+                                    var10002.endStartSection(var10003);
+                                    this.setupCameraTransform(var2, var1);
                                     Entity var10000 = this.                                                                                   .
-                                    func_175606_aa();
+                                    getRenderViewEntity();
                                     boolean var10001;
                                     boolean var22;
-                                    if (llIIlIIlIlIl(this..field_71474_y.field_74320_O,2)){
+                                    if (llIIlIIlIlIl(this..gameSettings.thirdPersonView,2)){
                                         var10001 = true;
                                         var22 = true;
                                     } else{
@@ -2003,54 +2003,54 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             throw null;
                                         } else {
                                             Profiler var17 = this.                                                                                   .
-                                            field_71424_I;
+                                            profiler;
                                             String var21 = Class60. ("zojolh6");
                                             if (llIIlIIlIIll(23361, 6878)) {
                                                 throw null;
                                             } else {
-                                                var17.func_76318_c(var21);
-                                                ClippingHelperImpl.func_78558_a();
+                                                var17.endStartSection(var21);
+                                                ClippingHelperImpl.getInstance();
                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                     throw null;
                                                 } else {
                                                     Profiler var27 = this.                                                                                   .
-                                                    field_71424_I;
+                                                    profiler;
                                                     String var29 = Class60. ("\u007fhspqs<");
                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                         throw null;
                                                     } else {
-                                                        var27.func_76318_c(var29);
+                                                        var27.endStartSection(var29);
                                                         Frustum var28 = new Frustum();
                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                             throw null;
                                                         } else {
                                                             Frustum var8 = var28;
                                                             Entity var9 = this.                                                                                   .
-                                                            func_175606_aa();
-                                                            double var10 = var9.field_70142_S + (var9.field_70165_t - var9.field_70142_S) * (double) var2;
-                                                            double var12 = var9.field_70137_T + (var9.field_70163_u - var9.field_70137_T) * (double) var2;
-                                                            double var14 = var9.field_70136_U + (var9.field_70161_v - var9.field_70136_U) * (double) var2;
-                                                            var8.func_78547_a(var10, var12, var14);
-                                                            if (llIIlIIlIIll(this..field_71474_y.field_151451_c,4)){
+                                                            getRenderViewEntity();
+                                                            double var10 = var9.lastTickPosX + (var9.posX - var9.lastTickPosX) * (double) var2;
+                                                            double var12 = var9.lastTickPosY + (var9.posY - var9.lastTickPosY) * (double) var2;
+                                                            double var14 = var9.lastTickPosZ + (var9.posZ - var9.lastTickPosZ) * (double) var2;
+                                                            var8.setPosition(var10, var12, var14);
+                                                            if (llIIlIIlIIll(this..gameSettings.renderDistanceChunks,4)){
                                                                 this. (-1, var2);
                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                     throw null;
                                                                 }
 
                                                                 Profiler var10007 = this.                                                                                   .
-                                                                field_71424_I;
+                                                                profiler;
                                                                 String var10008 = Class60. ("kr\"");
                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                     throw null;
                                                                 }
 
-                                                                var10007.func_76318_c(var10008);
-                                                                GlStateManager.func_179128_n(5889);
+                                                                var10007.endStartSection(var10008);
+                                                                GlStateManager.matrixMode(5889);
                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                     throw null;
                                                                 }
 
-                                                                GlStateManager.func_179096_D();
+                                                                GlStateManager.loadIdentity();
                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                     throw null;
                                                                 }
@@ -2060,24 +2060,24 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                     throw null;
                                                                 }
 
-                                                                Project.gluPerspective(var33, (float) this..field_71443_c / (float) this.                                                                                   .
-                                                                field_71440_d, 0.05F, this. * 2.0F);
+                                                                Project.gluPerspective(var33, (float) this..displayWidth / (float) this.                                                                                   .
+                                                                displayHeight, 0.05F, this. * 2.0F);
                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                     throw null;
                                                                 }
 
-                                                                GlStateManager.func_179128_n(5888);
+                                                                GlStateManager.matrixMode(5888);
                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                     throw null;
                                                                 }
 
-                                                                var5.func_174976_a(var2, var1);
-                                                                GlStateManager.func_179128_n(5889);
+                                                                var5.renderSky(var2, var1);
+                                                                GlStateManager.matrixMode(5889);
                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                     throw null;
                                                                 }
 
-                                                                GlStateManager.func_179096_D();
+                                                                GlStateManager.loadIdentity();
                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                     throw null;
                                                                 }
@@ -2087,14 +2087,14 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                     throw null;
                                                                 }
 
-                                                                Project.gluPerspective(var23, (float) this..field_71443_c / (float) this.                                                                                   .
-                                                                field_71440_d, 0.05F, this. * MathHelper.field_180189_a)
+                                                                Project.gluPerspective(var23, (float) this..displayWidth / (float) this.                                                                                   .
+                                                                displayHeight, 0.05F, this. * MathHelper.SQRT_2)
                                                                 ;
                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                     throw null;
                                                                 }
 
-                                                                GlStateManager.func_179128_n(5888);
+                                                                GlStateManager.matrixMode(5888);
                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                     throw null;
                                                                 }
@@ -2107,12 +2107,12 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                     throw null;
                                                                 } else {
-                                                                    GlStateManager.func_179103_j(7425);
+                                                                    GlStateManager.shadeModel(7425);
                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                         throw null;
                                                                     } else {
                                                                         double var37;
-                                                                        if (llIIlIlIIIII((var37 = var9.field_70163_u + (double) var9.func_70047_e() - 128.0D) == 0.0D ? 0 : (var37 < 0.0D ? -1 : 1))) {
+                                                                        if (llIIlIlIIIII((var37 = var9.posY + (double) var9.getEyeHeight() - 128.0D) == 0.0D ? 0 : (var37 < 0.0D ? -1 : 1))) {
                                                                             this. (var5, var2, var1, var10, var12, var14)
                                                                             ;
                                                                             if (llIIlIIlIIll(23361, 6878)) {
@@ -2124,25 +2124,25 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                             throw null;
                                                                         } else {
                                                                             var10004 = this.                                                                                   .
-                                                                            field_71424_I;
+                                                                            profiler;
                                                                             var32 = Class60.
                                                                             ("ji|j\u007fixnwic{\u007f5");
                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                 throw null;
                                                                             } else {
-                                                                                var10004.func_76318_c(var32);
+                                                                                var10004.endStartSection(var32);
                                                                                 this. (0, var2);
                                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                                     throw null;
                                                                                 } else {
                                                                                     this.                                                                                   .
-                                                                                    func_110434_K().func_110577_a(TextureMap.field_110575_b);
-                                                                                    RenderHelper.func_74518_a();
+                                                                                    getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+                                                                                    RenderHelper.disableStandardItemLighting();
                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                         throw null;
                                                                                     } else {
                                                                                         var17 = this.                                                                                   .
-                                                                                        field_71424_I;
+                                                                                        profiler;
                                                                                         var21 = Class60.
                                                                                         ("csfer\u007f~Hlshb+");
                                                                                         if (llIIlIIlIIll(23361, 6878)) {
@@ -2153,10 +2153,10 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                                             boolean var35;
                                                                                             label528:
                                                                                             {
-                                                                                                var17.func_76318_c(var21);
+                                                                                                var17.endStartSection(var21);
                                                                                                 var24 = (double) var2;
                                                                                                 var10006 = this.++;
-                                                                                                if (llIIlIIlIlII(this..field_71439_g.func_175149_v()))
+                                                                                                if (llIIlIIlIlII(this..player.isSpectator()))
                                                                                                 {
                                                                                                     var10005 = Class133.
                                                                                                     (28);
@@ -2193,7 +2193,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                 throw null;
                                                                                             } else {
-                                                                                                var5.func_174970_a(var9, var24, var8, var10006, var35);
+                                                                                                var5.setupTerrain(var9, var24, var8, var10006, var35);
                                                                                                 Profiler var25;
                                                                                                 String var26;
                                                                                                 if (!llIIlIIlIIlI(var1) || llIIlIIlIlIl(var1, 2)) {
@@ -2202,49 +2202,49 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                                                     }
 
                                                                                                     var25 = this.                                                                                   .
-                                                                                                    field_71424_I;
+                                                                                                    profiler;
                                                                                                     var26 = Class60.
                                                                                                     ("nj|zk\u007f\u007fsft{(");
                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                         throw null;
                                                                                                     }
 
-                                                                                                    var25.func_76318_c(var26);
+                                                                                                    var25.endStartSection(var26);
                                                                                                     this.                                                                                   .
-                                                                                                    field_71438_f.func_174967_a(var3);
+                                                                                                    renderGlobal.updateChunks(var3);
                                                                                                 }
 
                                                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                                                     throw null;
                                                                                                 } else {
                                                                                                     var27 = this.                                                                                   .
-                                                                                                    field_71424_I;
+                                                                                                    profiler;
                                                                                                     var29 = Class60.
                                                                                                     ("hxmnyt5");
                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                         throw null;
                                                                                                     } else {
-                                                                                                        var27.func_76318_c(var29);
-                                                                                                        GlStateManager.func_179128_n(5888);
+                                                                                                        var27.endStartSection(var29);
+                                                                                                        GlStateManager.matrixMode(5888);
                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                             throw null;
                                                                                                         } else {
-                                                                                                            GlStateManager.func_179094_E();
+                                                                                                            GlStateManager.pushMatrix();
                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                 throw null;
                                                                                                             } else {
-                                                                                                                GlStateManager.func_179118_c();
+                                                                                                                GlStateManager.disableAlpha();
                                                                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                     throw null;
                                                                                                                 } else {
-                                                                                                                    var5.func_174977_a(BlockRenderLayer.SOLID, (double) var2, var1, var9);
-                                                                                                                    GlStateManager.func_179141_d();
+                                                                                                                    var5.renderBlockLayer(BlockRenderLayer.SOLID, (double) var2, var1, var9);
+                                                                                                                    GlStateManager.enableAlpha();
                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                         throw null;
                                                                                                                     } else {
                                                                                                                         ITextureObject var18 = this.                                                                                   .
-                                                                                                                        func_110434_K().func_110581_b(TextureMap.field_110575_b);
-                                                                                                                        if (llIIlIIllIlI(this..field_71474_y.field_151442_I))
+                                                                                                                        getTextureManager().getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+                                                                                                                        if (llIIlIIllIlI(this..gameSettings.mipmapLevels))
                                                                                                                         {
                                                                                                                             var22 = true;
                                                                                                                             boolean var30 = true;
@@ -2260,102 +2260,102 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                             throw null;
                                                                                                                         } else {
-                                                                                                                            var18.func_174936_b(false, var22);
-                                                                                                                            var5.func_174977_a(BlockRenderLayer.CUTOUT_MIPPED, (double) var2, var1, var9);
+                                                                                                                            var18.setBlurMipmap(false, var22);
+                                                                                                                            var5.renderBlockLayer(BlockRenderLayer.CUTOUT_MIPPED, (double) var2, var1, var9);
                                                                                                                             this.                                                                                   .
-                                                                                                                            func_110434_K().func_110581_b(TextureMap.field_110575_b).func_174935_a();
+                                                                                                                            getTextureManager().getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE).restoreLastBlurMipmap();
                                                                                                                             this.                                                                                   .
-                                                                                                                            func_110434_K().func_110581_b(TextureMap.field_110575_b).func_174936_b(false, false);
-                                                                                                                            var5.func_174977_a(BlockRenderLayer.CUTOUT, (double) var2, var1, var9);
+                                                                                                                            getTextureManager().getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE).setBlurMipmap(false, false);
+                                                                                                                            var5.renderBlockLayer(BlockRenderLayer.CUTOUT, (double) var2, var1, var9);
                                                                                                                             this.                                                                                   .
-                                                                                                                            func_110434_K().func_110581_b(TextureMap.field_110575_b).func_174935_a();
-                                                                                                                            GlStateManager.func_179103_j(7424);
+                                                                                                                            getTextureManager().getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE).restoreLastBlurMipmap();
+                                                                                                                            GlStateManager.shadeModel(7424);
                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                 throw null;
                                                                                                                             } else {
-                                                                                                                                GlStateManager.func_179092_a(516, 0.1F);
+                                                                                                                                GlStateManager.alphaFunc(516, 0.1F);
                                                                                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                     throw null;
                                                                                                                                 } else {
                                                                                                                                     if (llIIlIIlIlII(this.)) {
-                                                                                                                                        GlStateManager.func_179128_n(5888);
+                                                                                                                                        GlStateManager.matrixMode(5888);
                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                             throw null;
                                                                                                                                         }
 
-                                                                                                                                        GlStateManager.func_179121_F();
+                                                                                                                                        GlStateManager.popMatrix();
                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                             throw null;
                                                                                                                                         }
 
-                                                                                                                                        GlStateManager.func_179094_E();
+                                                                                                                                        GlStateManager.pushMatrix();
                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                             throw null;
                                                                                                                                         }
 
-                                                                                                                                        RenderHelper.func_74519_b();
+                                                                                                                                        RenderHelper.enableStandardItemLighting();
                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                             throw null;
                                                                                                                                         }
 
                                                                                                                                         var10004 = this.                                                                                   .
-                                                                                                                                        field_71424_I;
+                                                                                                                                        profiler;
                                                                                                                                         var32 = Class60.
                                                                                                                                         ("~tlrksy(");
                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                             throw null;
                                                                                                                                         }
 
-                                                                                                                                        var10004.func_76318_c(var32);
+                                                                                                                                        var10004.endStartSection(var32);
                                                                                                                                         ForgeHooksClient.setRenderPass(0);
                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                             throw null;
                                                                                                                                         }
 
-                                                                                                                                        var5.func_180446_a(var9, var8, var2);
+                                                                                                                                        var5.renderEntities(var9, var8, var2);
                                                                                                                                         ForgeHooksClient.setRenderPass(0);
                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                             throw null;
                                                                                                                                         }
 
-                                                                                                                                        RenderHelper.func_74518_a();
+                                                                                                                                        RenderHelper.disableStandardItemLighting();
                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                             throw null;
                                                                                                                                         }
 
-                                                                                                                                        this.func_175072_h();
+                                                                                                                                        this.disableLightmap();
                                                                                                                                     }
 
                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                         throw null;
                                                                                                                                     } else {
-                                                                                                                                        GlStateManager.func_179128_n(5888);
+                                                                                                                                        GlStateManager.matrixMode(5888);
                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                             throw null;
                                                                                                                                         } else {
-                                                                                                                                            GlStateManager.func_179121_F();
+                                                                                                                                            GlStateManager.popMatrix();
                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                 throw null;
                                                                                                                                             } else {
-                                                                                                                                                if (llIIlIIlIIlI(var7) && llIIlIIlllIl(this..field_71476_x) &&
-                                                                                                                                                llIIlIIlIlII(var9.func_70055_a(Material.field_151586_h)))
+                                                                                                                                                if (llIIlIIlIIlI(var7) && llIIlIIlllIl(this..objectMouseOver) &&
+                                                                                                                                                llIIlIIlIlII(var9.isInsideOfMaterial(Material.WATER)))
                                                                                                                                                 {
                                                                                                                                                     EntityPlayer var16 = (EntityPlayer) var9;
-                                                                                                                                                    GlStateManager.func_179118_c();
+                                                                                                                                                    GlStateManager.disableAlpha();
                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                         throw null;
                                                                                                                                                     }
 
                                                                                                                                                     var10002 = this.                                                                                   .
-                                                                                                                                                    field_71424_I;
+                                                                                                                                                    profiler;
                                                                                                                                                     var10003 = Class60.
                                                                                                                                                     ("shkpqs>");
                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                         throw null;
                                                                                                                                                     }
 
-                                                                                                                                                    var10002.func_76318_c(var10003);
-                                                                                                                                                    byte var19 = ForgeHooksClient.onDrawBlockHighlight(var5, var16, this..field_71476_x,
+                                                                                                                                                    var10002.endStartSection(var10003);
+                                                                                                                                                    byte var19 = ForgeHooksClient.onDrawBlockHighlight(var5, var16, this..objectMouseOver,
                                                                                                                                                     0, var2)
                                                                                                                                                     ;
                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
@@ -2363,7 +2363,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                                                                                                     }
 
                                                                                                                                                     if (llIIlIIlIlII(var19)) {
-                                                                                                                                                        var5.func_72731_b(var16, this..field_71476_x, 0, var2)
+                                                                                                                                                        var5.drawSelectionBox(var16, this..objectMouseOver, 0, var2)
                                                                                                                                                         ;
                                                                                                                                                     }
 
@@ -2371,7 +2371,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                                                                                                         throw null;
                                                                                                                                                     }
 
-                                                                                                                                                    GlStateManager.func_179141_d();
+                                                                                                                                                    GlStateManager.enableAlpha();
                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                         throw null;
                                                                                                                                                     }
@@ -2380,61 +2380,61 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                                                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                     throw null;
                                                                                                                                                 } else {
-                                                                                                                                                    if (llIIlIIlIIlI(this..field_184132_p.func_190074_a()))
+                                                                                                                                                    if (llIIlIIlIIlI(this..debugRenderer.shouldRender()))
                                                                                                                                                     {
                                                                                                                                                         this.                                                                                   .
-                                                                                                                                                        field_184132_p.func_190073_a(var2, var3);
+                                                                                                                                                        debugRenderer.renderDebug(var2, var3);
                                                                                                                                                     }
 
                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                         throw null;
                                                                                                                                                     } else {
                                                                                                                                                         var10004 = this.                                                                                   .
-                                                                                                                                                        field_71424_I;
+                                                                                                                                                        profiler;
                                                                                                                                                         var32 = Class60.
                                                                                                                                                         ("ppd`bzjDnzxf}f(");
                                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                             throw null;
                                                                                                                                                         } else {
-                                                                                                                                                            var10004.func_76318_c(var32);
-                                                                                                                                                            GlStateManager.func_179147_l();
+                                                                                                                                                            var10004.endStartSection(var32);
+                                                                                                                                                            GlStateManager.enableBlend();
                                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                 throw null;
                                                                                                                                                             } else {
-                                                                                                                                                                GlStateManager.func_187428_a(SourceFactor.SRC_ALPHA, DestFactor.ONE, SourceFactor.ONE, DestFactor.ZERO);
+                                                                                                                                                                GlStateManager.tryBlendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.ONE, SourceFactor.ONE, DestFactor.ZERO);
                                                                                                                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                     throw null;
                                                                                                                                                                 } else {
                                                                                                                                                                     this.                                                                                   .
-                                                                                                                                                                    func_110434_K().func_110581_b(TextureMap.field_110575_b).func_174936_b(false, false);
-                                                                                                                                                                    Tessellator var31 = Tessellator.func_178181_a();
+                                                                                                                                                                    getTextureManager().getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE).setBlurMipmap(false, false);
+                                                                                                                                                                    Tessellator var31 = Tessellator.getInstance();
                                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                         throw null;
                                                                                                                                                                     } else {
-                                                                                                                                                                        Tessellator var34 = Tessellator.func_178181_a();
+                                                                                                                                                                        Tessellator var34 = Tessellator.getInstance();
                                                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                             throw null;
                                                                                                                                                                         } else {
-                                                                                                                                                                            var5.func_174981_a(var31, var34.func_178180_c(), var9, var2);
+                                                                                                                                                                            var5.drawBlockDamageTexture(var31, var34.getBuffer(), var9, var2);
                                                                                                                                                                             this.                                                                                   .
-                                                                                                                                                                            func_110434_K().func_110581_b(TextureMap.field_110575_b).func_174935_a();
-                                                                                                                                                                            GlStateManager.func_179084_k();
+                                                                                                                                                                            getTextureManager().getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE).restoreLastBlurMipmap();
+                                                                                                                                                                            GlStateManager.disableBlend();
                                                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                 throw null;
                                                                                                                                                                             } else {
                                                                                                                                                                                 if (llIIlIIlIlII(this.)) {
-                                                                                                                                                                                    this.func_180436_i();
+                                                                                                                                                                                    this.enableLightmap();
                                                                                                                                                                                     Profiler var36 = this.                                                                                   .
-                                                                                                                                                                                    field_71424_I;
+                                                                                                                                                                                    profiler;
                                                                                                                                                                                     String var10009 = Class60.
                                                                                                                                                                                     ("wslK~hhrpvu(");
                                                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                         throw null;
                                                                                                                                                                                     }
 
-                                                                                                                                                                                    var36.func_76318_c(var10009);
-                                                                                                                                                                                    var6.func_78872_b(var9, var2);
-                                                                                                                                                                                    RenderHelper.func_74518_a();
+                                                                                                                                                                                    var36.endStartSection(var10009);
+                                                                                                                                                                                    var6.renderLitParticles(var9, var2);
+                                                                                                                                                                                    RenderHelper.disableStandardItemLighting();
                                                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                         throw null;
                                                                                                                                                                                     }
@@ -2447,56 +2447,56 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                                                                                                                                     }
 
                                                                                                                                                                                     var27 = this.                                                                                   .
-                                                                                                                                                                                    field_71424_I;
+                                                                                                                                                                                    profiler;
                                                                                                                                                                                     var29 = Class60.
                                                                                                                                                                                     ("csbg~qxv(");
                                                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                         throw null;
                                                                                                                                                                                     }
 
-                                                                                                                                                                                    var27.func_76318_c(var29);
-                                                                                                                                                                                    var6.func_78874_a(var9, var2);
-                                                                                                                                                                                    this.func_175072_h();
+                                                                                                                                                                                    var27.endStartSection(var29);
+                                                                                                                                                                                    var6.renderParticles(var9, var2);
+                                                                                                                                                                                    this.disableLightmap();
                                                                                                                                                                                 }
 
                                                                                                                                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                     throw null;
                                                                                                                                                                                 } else {
-                                                                                                                                                                                    GlStateManager.func_179132_a(false);
+                                                                                                                                                                                    GlStateManager.depthMask(false);
                                                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                         throw null;
                                                                                                                                                                                     } else {
-                                                                                                                                                                                        GlStateManager.func_179089_o();
+                                                                                                                                                                                        GlStateManager.enableCull();
                                                                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                             throw null;
                                                                                                                                                                                         } else {
                                                                                                                                                                                             Profiler var10012 = this.                                                                                   .
-                                                                                                                                                                                            field_71424_I;
+                                                                                                                                                                                            profiler;
                                                                                                                                                                                             String var10013 = Class60.
                                                                                                                                                                                             ("kx~hpx)");
                                                                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                 throw null;
                                                                                                                                                                                             } else {
-                                                                                                                                                                                                var10012.func_76318_c(var10013);
-                                                                                                                                                                                                this.func_78474_d(var2);
-                                                                                                                                                                                                GlStateManager.func_179132_a(true);
+                                                                                                                                                                                                var10012.endStartSection(var10013);
+                                                                                                                                                                                                this.renderRainSnow(var2);
+                                                                                                                                                                                                GlStateManager.depthMask(true);
                                                                                                                                                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                     throw null;
                                                                                                                                                                                                 } else {
-                                                                                                                                                                                                    var5.func_180449_a(var9, var2);
-                                                                                                                                                                                                    GlStateManager.func_179084_k();
+                                                                                                                                                                                                    var5.renderWorldBorder(var9, var2);
+                                                                                                                                                                                                    GlStateManager.disableBlend();
                                                                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                         throw null;
                                                                                                                                                                                                     } else {
-                                                                                                                                                                                                        GlStateManager.func_179089_o();
+                                                                                                                                                                                                        GlStateManager.enableCull();
                                                                                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                             throw null;
                                                                                                                                                                                                         } else {
-                                                                                                                                                                                                            GlStateManager.func_187428_a(SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, SourceFactor.ONE, DestFactor.ZERO);
+                                                                                                                                                                                                            GlStateManager.tryBlendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, SourceFactor.ONE, DestFactor.ZERO);
                                                                                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                 throw null;
                                                                                                                                                                                                             } else {
-                                                                                                                                                                                                                GlStateManager.func_179092_a(516, 0.1F);
+                                                                                                                                                                                                                GlStateManager.alphaFunc(516, 0.1F);
                                                                                                                                                                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                     throw null;
                                                                                                                                                                                                                 } else {
@@ -2506,51 +2506,51 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                         throw null;
                                                                                                                                                                                                                     } else {
-                                                                                                                                                                                                                        GlStateManager.func_179147_l();
+                                                                                                                                                                                                                        GlStateManager.enableBlend();
                                                                                                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                             throw null;
                                                                                                                                                                                                                         } else {
-                                                                                                                                                                                                                            GlStateManager.func_179132_a(false);
+                                                                                                                                                                                                                            GlStateManager.depthMask(false);
                                                                                                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                 throw null;
                                                                                                                                                                                                                             } else {
                                                                                                                                                                                                                                 this.                                                                                   .
-                                                                                                                                                                                                                                func_110434_K().func_110577_a(TextureMap.field_110575_b);
-                                                                                                                                                                                                                                GlStateManager.func_179103_j(7425);
+                                                                                                                                                                                                                                getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+                                                                                                                                                                                                                                GlStateManager.shadeModel(7425);
                                                                                                                                                                                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                     throw null;
                                                                                                                                                                                                                                 } else {
                                                                                                                                                                                                                                     var10002 = this.                                                                                   .
-                                                                                                                                                                                                                                    field_71424_I;
+                                                                                                                                                                                                                                    profiler;
                                                                                                                                                                                                                                     var10003 = Class60.
                                                                                                                                                                                                                                     ("dcr~g}bs}\u007f/");
                                                                                                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                         throw null;
                                                                                                                                                                                                                                     } else {
-                                                                                                                                                                                                                                        var10002.func_76318_c(var10003);
-                                                                                                                                                                                                                                        var5.func_174977_a(BlockRenderLayer.TRANSLUCENT, (double) var2, var1, var9);
+                                                                                                                                                                                                                                        var10002.endStartSection(var10003);
+                                                                                                                                                                                                                                        var5.renderBlockLayer(BlockRenderLayer.TRANSLUCENT, (double) var2, var1, var9);
                                                                                                                                                                                                                                         if (llIIlIIlIlII(this.)) {
-                                                                                                                                                                                                                                            RenderHelper.func_74519_b();
+                                                                                                                                                                                                                                            RenderHelper.enableStandardItemLighting();
                                                                                                                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                 throw null;
                                                                                                                                                                                                                                             }
 
                                                                                                                                                                                                                                             var27 = this.                                                                                   .
-                                                                                                                                                                                                                                            field_71424_I;
+                                                                                                                                                                                                                                            profiler;
                                                                                                                                                                                                                                             var29 = Class60.
                                                                                                                                                                                                                                             ("~tlrksy(");
                                                                                                                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                 throw null;
                                                                                                                                                                                                                                             }
 
-                                                                                                                                                                                                                                            var27.func_76318_c(var29);
+                                                                                                                                                                                                                                            var27.endStartSection(var29);
                                                                                                                                                                                                                                             ForgeHooksClient.setRenderPass(1);
                                                                                                                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                 throw null;
                                                                                                                                                                                                                                             }
 
-                                                                                                                                                                                                                                            var5.func_180446_a(var9, var8, var2);
-                                                                                                                                                                                                                                            GlStateManager.func_187428_a(SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, SourceFactor.ONE, DestFactor.ZERO);
+                                                                                                                                                                                                                                            var5.renderEntities(var9, var8, var2);
+                                                                                                                                                                                                                                            GlStateManager.tryBlendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, SourceFactor.ONE, DestFactor.ZERO);
                                                                                                                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                 throw null;
                                                                                                                                                                                                                                             }
@@ -2560,7 +2560,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                                                                                                                                                                                                 throw null;
                                                                                                                                                                                                                                             }
 
-                                                                                                                                                                                                                                            RenderHelper.func_74518_a();
+                                                                                                                                                                                                                                            RenderHelper.disableStandardItemLighting();
                                                                                                                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                 throw null;
                                                                                                                                                                                                                                             }
@@ -2569,37 +2569,37 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                                                                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                             throw null;
                                                                                                                                                                                                                                         } else {
-                                                                                                                                                                                                                                            GlStateManager.func_179103_j(7424);
+                                                                                                                                                                                                                                            GlStateManager.shadeModel(7424);
                                                                                                                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                 throw null;
                                                                                                                                                                                                                                             } else {
-                                                                                                                                                                                                                                                GlStateManager.func_179132_a(true);
+                                                                                                                                                                                                                                                GlStateManager.depthMask(true);
                                                                                                                                                                                                                                                 if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                     throw null;
                                                                                                                                                                                                                                                 } else {
-                                                                                                                                                                                                                                                    GlStateManager.func_179089_o();
+                                                                                                                                                                                                                                                    GlStateManager.enableCull();
                                                                                                                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                         throw null;
                                                                                                                                                                                                                                                     } else {
-                                                                                                                                                                                                                                                        GlStateManager.func_179084_k();
+                                                                                                                                                                                                                                                        GlStateManager.disableBlend();
                                                                                                                                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                             throw null;
                                                                                                                                                                                                                                                         } else {
-                                                                                                                                                                                                                                                            GlStateManager.func_179106_n();
+                                                                                                                                                                                                                                                            GlStateManager.disableFog();
                                                                                                                                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                                 throw null;
                                                                                                                                                                                                                                                             } else {
                                                                                                                                                                                                                                                                 double var38;
-                                                                                                                                                                                                                                                                if (llIIlIIllIII((var38 = var9.field_70163_u + (double) var9.func_70047_e() - 128.0D) == 0.0D ? 0 : (var38 < 0.0D ? -1 : 1))) {
+                                                                                                                                                                                                                                                                if (llIIlIIllIII((var38 = var9.posY + (double) var9.getEyeHeight() - 128.0D) == 0.0D ? 0 : (var38 < 0.0D ? -1 : 1))) {
                                                                                                                                                                                                                                                                     var27 = this.                                                                                   .
-                                                                                                                                                                                                                                                                    field_71424_I;
+                                                                                                                                                                                                                                                                    profiler;
                                                                                                                                                                                                                                                                     var29 = Class60.
                                                                                                                                                                                                                                                                     ("qs|fqR{\u007fmu(");
                                                                                                                                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                                         throw null;
                                                                                                                                                                                                                                                                     }
 
-                                                                                                                                                                                                                                                                    var27.func_76318_c(var29);
+                                                                                                                                                                                                                                                                    var27.endStartSection(var29);
                                                                                                                                                                                                                                                                     this.
                                                                                                                                                                                                                                                                     (var5, var2, var1, var10, var12, var14)
                                                                                                                                                                                                                                                                     ;
@@ -2612,27 +2612,27 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                                                                                                                                                                                                                     throw null;
                                                                                                                                                                                                                                                                 } else {
                                                                                                                                                                                                                                                                     var10004 = this.                                                                                   .
-                                                                                                                                                                                                                                                                    field_71424_I;
+                                                                                                                                                                                                                                                                    profiler;
                                                                                                                                                                                                                                                                     var32 = Class60.
                                                                                                                                                                                                                                                                     ("mezljU~nmneyXfex/");
                                                                                                                                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                                         throw null;
                                                                                                                                                                                                                                                                     } else {
-                                                                                                                                                                                                                                                                        var10004.func_76318_c(var32);
+                                                                                                                                                                                                                                                                        var10004.endStartSection(var32);
                                                                                                                                                                                                                                                                         ForgeHooksClient.dispatchRenderLast(var5, var2);
                                                                                                                                                                                                                                                                         if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                                             throw null;
                                                                                                                                                                                                                                                                         } else {
                                                                                                                                                                                                                                                                             var25 = this.                                                                                   .
-                                                                                                                                                                                                                                                                            field_71424_I;
+                                                                                                                                                                                                                                                                            profiler;
                                                                                                                                                                                                                                                                             var26 = Class60.
                                                                                                                                                                                                                                                                             ("s{v?");
                                                                                                                                                                                                                                                                             if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                                                 throw null;
                                                                                                                                                                                                                                                                             } else {
-                                                                                                                                                                                                                                                                                var25.func_76318_c(var26);
+                                                                                                                                                                                                                                                                                var25.endStartSection(var26);
                                                                                                                                                                                                                                                                                 if (llIIlIIlIIlI(this.)) {
-                                                                                                                                                                                                                                                                                    GlStateManager.func_179086_m(256);
+                                                                                                                                                                                                                                                                                    GlStateManager.clear(256);
                                                                                                                                                                                                                                                                                     if (llIIlIIlIIll(23361, 6878)) {
                                                                                                                                                                                                                                                                                         throw null;
                                                                                                                                                                                                                                                                                     }
@@ -2718,11 +2718,11 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_78474_d(float var1) {
+    public void renderRainSnow(float var1) {
         IRenderHandler var2;
         boolean var40;
-        if (llIIlIIlllIl(var2 = this..field_71441_e.field_73011_w.getWeatherRenderer())){
-            var2.render(var1, this..field_71441_e, this.                                                                                   )
+        if (llIIlIIlllIl(var2 = this..world.provider.getWeatherRenderer())){
+            var2.render(var1, this..world, this.                                                                                   )
             ;
             var40 = true;
         } else if (llIIlIIlIIll(50829, 5417)) {
@@ -2730,74 +2730,74 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         } else {
             float var36;
             float var46;
-            if (llIIlIIllIlI((var46 = (var36 = this..field_71441_e.func_72867_j(var1)) - 0.0F) == 0.0F ? 0 : (var46 < 0.0F ? -1 : 1)))
+            if (llIIlIIllIlI((var46 = (var36 = this..world.getRainStrength(var1)) - 0.0F) == 0.0F ? 0 : (var46 < 0.0F ? -1 : 1)))
             {
-                this.func_180436_i();
+                this.enableLightmap();
                 Entity var3 = this.                                                                                   .
-                func_175606_aa();
+                getRenderViewEntity();
                 WorldClient var4 = this.                                                                                   .
-                field_71441_e;
-                int var10006 = MathHelper.func_76128_c(var3.field_70165_t);
+                world;
+                int var10006 = MathHelper.floor(var3.posX);
                 if (llIIlIIlIIll(50829, 5417)) {
                     throw null;
                 }
 
                 int var5 = var10006;
-                int var10005 = MathHelper.func_76128_c(var3.field_70163_u);
+                int var10005 = MathHelper.floor(var3.posY);
                 if (llIIlIIlIIll(50829, 5417)) {
                     throw null;
                 }
 
                 int var6 = var10005;
-                int var10004 = MathHelper.func_76128_c(var3.field_70161_v);
+                int var10004 = MathHelper.floor(var3.posZ);
                 if (llIIlIIlIIll(50829, 5417)) {
                     throw null;
                 }
 
                 int var7 = var10004;
-                Tessellator var41 = Tessellator.func_178181_a();
+                Tessellator var41 = Tessellator.getInstance();
                 if (llIIlIIlIIll(50829, 5417)) {
                     throw null;
                 }
 
                 Tessellator var8 = var41;
-                BufferBuilder var9 = var41.func_178180_c();
-                GlStateManager.func_179129_p();
+                BufferBuilder var9 = var41.getBuffer();
+                GlStateManager.disableCull();
                 if (llIIlIIlIIll(50829, 5417)) {
                     throw null;
                 }
 
-                GlStateManager.func_187432_a(0.0F, 1.0F, 0.0F);
+                GlStateManager.glNormal3f(0.0F, 1.0F, 0.0F);
                 if (llIIlIIlIIll(50829, 5417)) {
                     throw null;
                 }
 
-                GlStateManager.func_179147_l();
+                GlStateManager.enableBlend();
                 if (llIIlIIlIIll(50829, 5417)) {
                     throw null;
                 }
 
-                GlStateManager.func_187428_a(SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, SourceFactor.ONE, DestFactor.ZERO);
+                GlStateManager.tryBlendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, SourceFactor.ONE, DestFactor.ZERO);
                 if (llIIlIIlIIll(50829, 5417)) {
                     throw null;
                 }
 
-                GlStateManager.func_179092_a(516, 0.1F);
+                GlStateManager.alphaFunc(516, 0.1F);
                 if (llIIlIIlIIll(50829, 5417)) {
                     throw null;
                 }
 
-                double var10 = var3.field_70142_S + (var3.field_70165_t - var3.field_70142_S) * (double) var1;
-                double var12 = var3.field_70137_T + (var3.field_70163_u - var3.field_70137_T) * (double) var1;
-                double var14 = var3.field_70136_U + (var3.field_70161_v - var3.field_70136_U) * (double) var1;
-                int var10001 = MathHelper.func_76128_c(var12);
+                double var10 = var3.lastTickPosX + (var3.posX - var3.lastTickPosX) * (double) var1;
+                double var12 = var3.lastTickPosY + (var3.posY - var3.lastTickPosY) * (double) var1;
+                double var14 = var3.lastTickPosZ + (var3.posZ - var3.lastTickPosZ) * (double) var1;
+                int var10001 = MathHelper.floor(var12);
                 if (llIIlIIlIIll(50829, 5417)) {
                     throw null;
                 }
 
                 int var16 = var10001;
                 byte var17 = 5;
-                if (llIIlIIlIIlI(this..field_71474_y.field_74347_j)){
+                if (llIIlIIlIIlI(this..gameSettings.fancyGraphics)){
                 var17 = 10;
             }
 
@@ -2807,8 +2807,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
                 byte var18 = -1;
                 float var19 = (float) this. + var1;
-                var9.func_178969_c(-var10, -var12, -var14);
-                GlStateManager.func_179131_c(1.0F, 1.0F, 1.0F, 1.0F);
+                var9.setTranslation(-var10, -var12, -var14);
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                 if (llIIlIIlIIll(50829, 5417)) {
                     throw null;
                 }
@@ -2834,30 +2834,30 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         }
 
                         if (llIIlIIllIII(var18)) {
-                            var8.func_78381_a();
+                            var8.draw();
                         }
 
                         if (llIIlIIlIIll(50829, 5417)) {
                             throw null;
                         }
 
-                        var9.func_178969_c(0.0D, 0.0D, 0.0D);
-                        GlStateManager.func_179089_o();
+                        var9.setTranslation(0.0D, 0.0D, 0.0D);
+                        GlStateManager.enableCull();
                         if (llIIlIIlIIll(50829, 5417)) {
                             throw null;
                         }
 
-                        GlStateManager.func_179084_k();
+                        GlStateManager.disableBlend();
                         if (llIIlIIlIIll(50829, 5417)) {
                             throw null;
                         }
 
-                        GlStateManager.func_179092_a(516, 0.1F);
+                        GlStateManager.alphaFunc(516, 0.1F);
                         if (llIIlIIlIIll(50829, 5417)) {
                             throw null;
                         }
 
-                        this.func_175072_h();
+                        this.disableLightmap();
                         break;
                     }
 
@@ -2880,14 +2880,14 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         var23] *0.5D;
                         var12 = (double) this.                                                                                                      [
                         var23] *0.5D;
-                        var20.func_181079_c(var22, 0, var21);
-                        Biome var42 = var4.func_180494_b(var20);
-                        if (!llIIlIIlIlII(var42.func_76738_d()) || llIIlIIlIIlI(var42.func_76746_c())) {
+                        var20.setPos(var22, 0, var21);
+                        Biome var42 = var4.getBiome(var20);
+                        if (!llIIlIIlIlII(var42.canRain()) || llIIlIIlIIlI(var42.getEnableSnow())) {
                             if (llIIlIIlIIll(50829, 5417)) {
                                 throw null;
                             }
 
-                            int var24 = var4.func_175725_q(var20).func_177956_o();
+                            int var24 = var4.getPrecipitationHeight(var20).getY();
                             int var25 = var6 - var17;
                             int var26 = var6 + var17;
                             if (llIIlIIlIllI(var25, var24)) {
@@ -2918,16 +2918,16 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                             if (llIIlIIlllll(var25, var26)) {
                                 this.                                                                                              .
                                 setSeed((long) (var22 * var22 * 3121 + var22 * 45238971 ^ var21 * var21 * 418711 + var21 * 13761));
-                                var20.func_181079_c(var22, var25, var21);
-                                float var43 = var42.func_180626_a(var20);
+                                var20.setPos(var22, var25, var21);
+                                float var43 = var42.getTemperature(var20);
                                 double var28;
                                 double var30;
                                 float var38;
                                 float var47;
-                                if (llIIlIIllIII((var47 = var4.func_72959_q().func_76939_a(var43, var24) - 0.15F) == 0.0F ? 0 : (var47 < 0.0F ? -1 : 1))) {
+                                if (llIIlIIllIII((var47 = var4.getBiomeProvider().getTemperatureAtHeight(var43, var24) - 0.15F) == 0.0F ? 0 : (var47 < 0.0F ? -1 : 1))) {
                                     if (llIIlIIlIIlI(var18)) {
                                         if (llIIlIIllIII(var18)) {
-                                            var8.func_78381_a();
+                                            var8.draw();
                                         }
 
                                         if (llIIlIIlIIll(50829, 5417)) {
@@ -2936,8 +2936,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
                                         var18 = 0;
                                         this.                                                                                   .
-                                        func_110434_K().func_110577_a();
-                                        var9.func_181668_a(7, DefaultVertexFormats.field_181704_d);
+                                        getTextureManager().bindTexture();
+                                        var9.begin(7, DefaultVertexFormats.PARTICLE_POSITION_TEX_COLOR_LMAP);
                                     }
 
                                     if (llIIlIIlIIll(50829, 5417)) {
@@ -2946,23 +2946,23 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
                                     var14 = -((double) (this. + var22 * var22 * 3121 + var22 * 45238971 + var21 * var21 * 418711 + var21 * 13761 & 31) + (double) var1) / 32.0D * (3.0D + this..nextDouble())
                                     ;
-                                    var28 = (double) ((float) var22 + 0.5F) - var3.field_70165_t;
-                                    var30 = (double) ((float) var21 + 0.5F) - var3.field_70161_v;
-                                    var38 = MathHelper.func_76133_a(var28 * var28 + var30 * var30);
+                                    var28 = (double) ((float) var22 + 0.5F) - var3.posX;
+                                    var30 = (double) ((float) var21 + 0.5F) - var3.posZ;
+                                    var38 = MathHelper.sqrt(var28 * var28 + var30 * var30);
                                     if (llIIlIIlIIll(50829, 5417)) {
                                         throw null;
                                     }
 
                                     float var32 = var38 / (float) var17;
                                     float var33 = ((1.0F - var32 * var32) * 0.5F + 0.5F) * var36;
-                                    var20.func_181079_c(var22, var27, var21);
+                                    var20.setPos(var22, var27, var21);
                                     int var34;
-                                    int var35 = (var34 = var4.func_175626_b(var20, 0)) >> 16 & '\uffff';
+                                    int var35 = (var34 = var4.getCombinedLight(var20, 0)) >> 16 & '\uffff';
                                     var23 = var34 & '\uffff';
-                                    var9.func_181662_b((double) var22 - var10 + 0.5D, (double) var26, (double) var21 - var12 + 0.5D).func_187315_a(0.0D, (double) var25 * 0.25D + var14).func_181666_a(1.0F, 1.0F, 1.0F, var33).func_187314_a(var35, var23).func_181675_d();
-                                    var9.func_181662_b((double) var22 + var10 + 0.5D, (double) var26, (double) var21 + var12 + 0.5D).func_187315_a(1.0D, (double) var25 * 0.25D + var14).func_181666_a(1.0F, 1.0F, 1.0F, var33).func_187314_a(var35, var23).func_181675_d();
-                                    var9.func_181662_b((double) var22 + var10 + 0.5D, (double) var25, (double) var21 + var12 + 0.5D).func_187315_a(1.0D, (double) var26 * 0.25D + var14).func_181666_a(1.0F, 1.0F, 1.0F, var33).func_187314_a(var35, var23).func_181675_d();
-                                    var9.func_181662_b((double) var22 - var10 + 0.5D, (double) var25, (double) var21 - var12 + 0.5D).func_187315_a(0.0D, (double) var26 * 0.25D + var14).func_181666_a(1.0F, 1.0F, 1.0F, var33).func_187314_a(var35, var23).func_181675_d();
+                                    var9.pos((double) var22 - var10 + 0.5D, (double) var26, (double) var21 - var12 + 0.5D).tex(0.0D, (double) var25 * 0.25D + var14).color(1.0F, 1.0F, 1.0F, var33).lightmap(var35, var23).endVertex();
+                                    var9.pos((double) var22 + var10 + 0.5D, (double) var26, (double) var21 + var12 + 0.5D).tex(1.0D, (double) var25 * 0.25D + var14).color(1.0F, 1.0F, 1.0F, var33).lightmap(var35, var23).endVertex();
+                                    var9.pos((double) var22 + var10 + 0.5D, (double) var25, (double) var21 + var12 + 0.5D).tex(1.0D, (double) var26 * 0.25D + var14).color(1.0F, 1.0F, 1.0F, var33).lightmap(var35, var23).endVertex();
+                                    var9.pos((double) var22 - var10 + 0.5D, (double) var25, (double) var21 - var12 + 0.5D).tex(0.0D, (double) var26 * 0.25D + var14).color(1.0F, 1.0F, 1.0F, var33).lightmap(var35, var23).endVertex();
                                     var40 = true;
                                 } else {
                                     if (llIIlIIlIIll(50829, 5417)) {
@@ -2971,7 +2971,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
                                     if (llIIlIIlllll(var18, 1)) {
                                         if (llIIlIIllIII(var18)) {
-                                            var8.func_78381_a();
+                                            var8.draw();
                                         }
 
                                         if (llIIlIIlIIll(50829, 5417)) {
@@ -2980,8 +2980,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
                                         var18 = 1;
                                         this.                                                                                   .
-                                        func_110434_K().func_110577_a();
-                                        var9.func_181668_a(7, DefaultVertexFormats.field_181704_d);
+                                        getTextureManager().bindTexture();
+                                        var9.begin(7, DefaultVertexFormats.PARTICLE_POSITION_TEX_COLOR_LMAP);
                                     }
 
                                     if (llIIlIIlIIll(50829, 5417)) {
@@ -2993,22 +2993,22 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                     nextDouble() + (double) var19 * 0.01D * (double) ((float) this..nextGaussian());
                                     var30 = this.                                                                                              .
                                     nextDouble() + (double) (var19 * (float) this..nextGaussian()) *0.001D;
-                                    double var44 = (double) ((float) var22 + 0.5F) - var3.field_70165_t;
-                                    double var45 = (double) ((float) var21 + 0.5F) - var3.field_70161_v;
-                                    var38 = MathHelper.func_76133_a(var44 * var44 + var45 * var45);
+                                    double var44 = (double) ((float) var22 + 0.5F) - var3.posX;
+                                    double var45 = (double) ((float) var21 + 0.5F) - var3.posZ;
+                                    var38 = MathHelper.sqrt(var44 * var44 + var45 * var45);
                                     if (llIIlIIlIIll(50829, 5417)) {
                                         throw null;
                                     }
 
                                     var43 = var38 / (float) var17;
                                     var43 = ((1.0F - var43 * var43) * 0.3F + 0.5F) * var36;
-                                    var20.func_181079_c(var22, var27, var21);
-                                    var27 = (var24 = (var4.func_175626_b(var20, 0) * 3 + 15728880) / 4) >> 16 & '\uffff';
+                                    var20.setPos(var22, var27, var21);
+                                    var27 = (var24 = (var4.getCombinedLight(var20, 0) * 3 + 15728880) / 4) >> 16 & '\uffff';
                                     var24 &= 65535;
-                                    var9.func_181662_b((double) var22 - var10 + 0.5D, (double) var26, (double) var21 - var12 + 0.5D).func_187315_a(0.0D + var28, (double) var25 * 0.25D + var14 + var30).func_181666_a(1.0F, 1.0F, 1.0F, var43).func_187314_a(var27, var24).func_181675_d();
-                                    var9.func_181662_b((double) var22 + var10 + 0.5D, (double) var26, (double) var21 + var12 + 0.5D).func_187315_a(1.0D + var28, (double) var25 * 0.25D + var14 + var30).func_181666_a(1.0F, 1.0F, 1.0F, var43).func_187314_a(var27, var24).func_181675_d();
-                                    var9.func_181662_b((double) var22 + var10 + 0.5D, (double) var25, (double) var21 + var12 + 0.5D).func_187315_a(1.0D + var28, (double) var26 * 0.25D + var14 + var30).func_181666_a(1.0F, 1.0F, 1.0F, var43).func_187314_a(var27, var24).func_181675_d();
-                                    var9.func_181662_b((double) var22 - var10 + 0.5D, (double) var25, (double) var21 - var12 + 0.5D).func_187315_a(0.0D + var28, (double) var26 * 0.25D + var14 + var30).func_181666_a(1.0F, 1.0F, 1.0F, var43).func_187314_a(var27, var24).func_181675_d();
+                                    var9.pos((double) var22 - var10 + 0.5D, (double) var26, (double) var21 - var12 + 0.5D).tex(0.0D + var28, (double) var25 * 0.25D + var14 + var30).color(1.0F, 1.0F, 1.0F, var43).lightmap(var27, var24).endVertex();
+                                    var9.pos((double) var22 + var10 + 0.5D, (double) var26, (double) var21 + var12 + 0.5D).tex(1.0D + var28, (double) var25 * 0.25D + var14 + var30).color(1.0F, 1.0F, 1.0F, var43).lightmap(var27, var24).endVertex();
+                                    var9.pos((double) var22 + var10 + 0.5D, (double) var25, (double) var21 + var12 + 0.5D).tex(1.0D + var28, (double) var26 * 0.25D + var14 + var30).color(1.0F, 1.0F, 1.0F, var43).lightmap(var27, var24).endVertex();
+                                    var9.pos((double) var22 - var10 + 0.5D, (double) var25, (double) var21 - var12 + 0.5D).tex(0.0D + var28, (double) var26 * 0.25D + var14 + var30).color(1.0F, 1.0F, 1.0F, var43).lightmap(var27, var24).endVertex();
                                 }
                             }
                         }
@@ -3033,10 +3033,10 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_181022_b() {
+    public void stopUseShader() {
         if (llIIlIIlllIl(this.)) {
             this.                                                                                                                                     .
-            func_148021_a();
+            deleteShaderGroup();
         }
 
         if (llIIlIIlIIll(54799, 4280)) {
@@ -3048,7 +3048,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_175069_a(ResourceLocation var1) {
+    public void loadShader(ResourceLocation var1) {
         Logger var10000;
         String var10001;
         boolean var5;
@@ -3057,16 +3057,16 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 throw null;
             }
 
-            ShaderGroup var10002 = new ShaderGroup(this..func_110434_K(), this., this.                                                                                   .
-            func_147110_a(), var1);
+            ShaderGroup var10002 = new ShaderGroup(this..getTextureManager(), this., this.                                                                                   .
+            getFramebuffer(), var1);
             if (llIIlIIlIIll(20379, 6631)) {
                 throw null;
             }
 
             this. = var10002;
             this.                                                                                                                                     .
-            func_148026_a(this..field_71443_c, this.                                                                                   .
-            field_71440_d);
+            createBindFramebuffers(this..displayWidth, this.                                                                                   .
+            displayHeight);
             this. = true;
         } catch (IOException var3) {
             if (llIIlIIlIIll(20379, 6631)) {
@@ -3118,8 +3118,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
             byte var10000;
             boolean var10001;
             Entity var1;
-            if (llIIlIIlIIlI((var1 = this..func_175606_aa()) instanceof EntityPlayer) &&
-            llIIlIIlIlII(this..field_71474_y.field_74319_N)){
+            if (llIIlIIlIIlI((var1 = this..getRenderViewEntity()) instanceof EntityPlayer) &&
+            llIIlIIlIlII(this..gameSettings.hideGUI)){
                 var10000 = 1;
                 var10001 = true;
             } else{
@@ -3134,18 +3134,18 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 throw null;
             } else {
                 byte var2 = var10000;
-                if (llIIlIIlIIlI(var2) && llIIlIIlIlII(((EntityPlayer) var1).field_71075_bZ.field_75099_e)) {
-                    ItemStack var5 = ((EntityPlayer) var1).func_184614_ca();
-                    if (llIIlIIlllIl(this..field_71476_x) &&llIIlIlIIIIl(this..field_71476_x.field_72313_a, Type.BLOCK))
+                if (llIIlIIlIIlI(var2) && llIIlIIlIlII(((EntityPlayer) var1).capabilities.allowEdit)) {
+                    ItemStack var5 = ((EntityPlayer) var1).getHeldItemMainhand();
+                    if (llIIlIIlllIl(this..objectMouseOver) &&llIIlIlIIIIl(this..objectMouseOver.typeOfHit, Type.BLOCK))
                     {
                         BlockPos var3 = this.                                                                                   .
-                        field_71476_x.func_178782_a();
+                        objectMouseOver.getBlockPos();
                         Block var4 = this.                                                                                   .
-                        field_71441_e.func_180495_p(var3).func_177230_c();
-                        if (llIIlIlIIIIl(this..field_71442_b.func_178889_l(),GameType.SPECTATOR)){
+                        world.getBlockState(var3).getBlock();
+                        if (llIIlIlIIIIl(this..playerController.getCurrentGameType(),GameType.SPECTATOR)){
                         boolean var7;
-                        if (llIIlIIlIIlI(var4.hasTileEntity(this..field_71441_e.func_180495_p(var3))) &&
-                        llIIlIIlIIlI(this..field_71441_e.func_175625_s(var3) instanceof IInventory)){
+                        if (llIIlIIlIIlI(var4.hasTileEntity(this..world.getBlockState(var3))) &&
+                        llIIlIIlIIlI(this..world.getTileEntity(var3) instanceof IInventory)){
                             var7 = true;
                             var10001 = true;
                         } else{
@@ -3168,7 +3168,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                             throw null;
                         }
 
-                        if (llIIlIIlIlII(var5.func_190926_b()) && (!llIIlIIlIlII(var5.func_179544_c(var4)) || llIIlIIlIIlI(var5.func_179547_d(var4)))) {
+                        if (llIIlIIlIlII(var5.isEmpty()) && (!llIIlIIlIlII(var5.canDestroy(var4)) || llIIlIIlIIlI(var5.canPlaceOn(var4)))) {
                             if (llIIlIIlIIll(89610, 5218)) {
                                 throw null;
                             }
@@ -3202,16 +3202,16 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public void func_175072_h() {
-        GlStateManager.func_179138_g(OpenGlHelper.field_77476_b);
+    public void disableLightmap() {
+        GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
         if (llIIlIIlIIll(49475, 6540)) {
             throw null;
         } else {
-            GlStateManager.func_179090_x();
+            GlStateManager.disableTexture2D();
             if (llIIlIIlIIll(49475, 6540)) {
                 throw null;
             } else {
-                GlStateManager.func_179138_g(OpenGlHelper.field_77478_a);
+                GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
                 if (llIIlIIlIIll(49475, 6540)) {
                     throw null;
                 } else {
@@ -3221,19 +3221,19 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_152430_c(float var1) {
-        this.func_78478_c();
+    public void renderStreamIndicator(float var1) {
+        this.setupOverlayRendering();
         boolean var10000 = true;
     }
 
     private float ________________________________________________________________________________________________/* $FF was:                                                                                                 */(EntityLivingBase var1, float var2) {
         int var3;
-        if (llIIlIIllIll(var3 = var1.func_70660_b(MobEffects.field_76439_r).func_76459_b(), 200)) {
+        if (llIIlIIllIll(var3 = var1.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration(), 200)) {
             return 1.0F;
         } else if (llIIlIIlIIll(19728, 532)) {
             throw null;
         } else {
-            float var10001 = MathHelper.func_76126_a(((float) var3 - var2) * 3.1415927F * 0.2F);
+            float var10001 = MathHelper.sin(((float) var3 - var2) * 3.1415927F * 0.2F);
             if (llIIlIIlIIll(19728, 532)) {
                 throw null;
             } else {
@@ -3242,7 +3242,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_175071_c() {
+    public void switchUseShader() {
         boolean var10001;
         if (llIIlIIlIlII(this.)) {
             var10001 = true;
@@ -3263,19 +3263,19 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public MapItemRenderer func_147701_i() {
+    public MapItemRenderer getMapItemRenderer() {
         return this.;
     }
 
-    public void func_78464_a() {
-        if (llIIlIIlIIlI(OpenGlHelper.field_148824_g)) {
-            ShaderLinkHelper var10000 = ShaderLinkHelper.func_148074_b();
+    public void updateRenderer() {
+        if (llIIlIIlIIlI(OpenGlHelper.shadersSupported)) {
+            ShaderLinkHelper var10000 = ShaderLinkHelper.getStaticShaderLinkHelper();
             if (llIIlIIlIIll(89737, 5668)) {
                 throw null;
             }
 
             if (llIIlIIlllII(var10000)) {
-                ShaderLinkHelper.func_148076_a();
+                ShaderLinkHelper.setNewStaticShaderLinkHelper();
                 if (llIIlIIlIIll(89737, 5668)) {
                     throw null;
                 }
@@ -3298,15 +3298,15 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     boolean var10001;
                     float var2;
                     Class25 var3;
-                    if (llIIlIIlIIlI(this..field_71474_y.field_74326_T)){
+                    if (llIIlIIlIIlI(this..gameSettings.smoothCamera)){
                         var3 = this;
                         float var10007 = var1 = this.                                                                                   .
-                        field_71474_y.field_74341_c * 0.6F + 0.2F;
+                        gameSettings.mouseSensitivity * 0.6F + 0.2F;
                         var2 = var10007 * var10007 * var1 * 8.0F;
                         this. = this.                                                                                .
-                        func_76333_a(this., 0.05F * var2);
+                        smooth(this., 0.05F * var2);
                         this. = this.                                                                                                       .
-                        func_76333_a(this., 0.05F * var2);
+                        smooth(this., 0.05F * var2);
                         this. = 0.0F;
                         this. = 0.0F;
                         this. = 0.0F;
@@ -3320,36 +3320,36 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         this. = 0.0F;
                         this. = 0.0F;
                         this.                                                                                .
-                        func_180179_a();
+                        reset();
                         this.                                                                                                       .
-                        func_180179_a();
+                        reset();
                     }
 
                     if (llIIlIIlIIll(89737, 5668)) {
                         throw null;
                     } else {
-                        if (llIIlIIlllII(var3..func_175606_aa())){
+                        if (llIIlIIlllII(var3..getRenderViewEntity())){
                             this.                                                                                   .
-                            func_175607_a(this..field_71439_g);
+                            setRenderViewEntity(this..player);
                         }
 
                         if (llIIlIIlIIll(89737, 5668)) {
                             throw null;
                         } else {
                             WorldClient var10008 = this.                                                                                   .
-                            field_71441_e;
-                            BlockPos var10009 = new BlockPos(this..func_175606_aa().func_174824_e(1.0F));
+                            world;
+                            BlockPos var10009 = new BlockPos(this..getRenderViewEntity().getPositionEyes(1.0F));
                             if (llIIlIIlIIll(89737, 5668)) {
                                 throw null;
                             } else {
-                                var1 = var10008.func_175724_o(var10009);
+                                var1 = var10008.getLightBrightness(var10009);
                                 var2 = (float) this.                                                                                   .
-                                field_71474_y.field_151451_c / 32.0F;
+                                gameSettings.renderDistanceChunks / 32.0F;
                                 var1 = var1 * (1.0F - var2) + var2;
                                 this. += (var1 - this.) * 0.1F;
                                 ++this.;
                                 this.                                                                                                     .
-                                func_78441_a();
+                                updateEquippedItem();
                                 this. ();
                                 if (llIIlIIlIIll(89737, 5668)) {
                                     throw null;
@@ -3357,7 +3357,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                     label93:
                                     {
                                         this. = this.;
-                                        if (llIIlIIlIIlI(this..field_71456_v.func_184046_j().func_184053_e())){
+                                        if (llIIlIIlIIlI(this..ingameGUI.getBossOverlay().shouldDarkenSky())){
                                         this. += 0.05F;
                                         float var5;
                                         if (llIIlIIllIlI((var5 = this. - 1.0F) == 0.0F ? 0 : (var5 < 0.0F ? -1 : 1))) {
@@ -3410,21 +3410,21 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
     }
 
     private void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderGlobal var1, float var2, int var3, double var4, double var6, double var8) {
-        if (llIIlIIlIIlI(this..field_71474_y.func_181147_e())){
+        if (llIIlIIlIIlI(this..gameSettings.shouldRenderClouds())){
             Profiler var10008 = this.                                                                                   .
-            field_71424_I;
+            profiler;
             String var10009 = Class60. ("ywvoz(");
             if (llIIlIIlIIll(78312, 2593)) {
                 throw null;
             }
 
-            var10008.func_76318_c(var10009);
-            GlStateManager.func_179128_n(5889);
+            var10008.endStartSection(var10009);
+            GlStateManager.matrixMode(5889);
             if (llIIlIIlIIll(78312, 2593)) {
                 throw null;
             }
 
-            GlStateManager.func_179096_D();
+            GlStateManager.loadIdentity();
             if (llIIlIIlIIll(78312, 2593)) {
                 throw null;
             }
@@ -3434,18 +3434,18 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 throw null;
             }
 
-            Project.gluPerspective(var10006, (float) this..field_71443_c / (float) this.                                                                                   .
-            field_71440_d, 0.05F, this. * 4.0F);
+            Project.gluPerspective(var10006, (float) this..displayWidth / (float) this.                                                                                   .
+            displayHeight, 0.05F, this. * 4.0F);
             if (llIIlIIlIIll(78312, 2593)) {
                 throw null;
             }
 
-            GlStateManager.func_179128_n(5888);
+            GlStateManager.matrixMode(5888);
             if (llIIlIIlIIll(78312, 2593)) {
                 throw null;
             }
 
-            GlStateManager.func_179094_E();
+            GlStateManager.pushMatrix();
             if (llIIlIIlIIll(78312, 2593)) {
                 throw null;
             }
@@ -3455,23 +3455,23 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 throw null;
             }
 
-            var1.func_180447_b(var2, var3, var4, var6, var8);
-            GlStateManager.func_179106_n();
+            var1.renderClouds(var2, var3, var4, var6, var8);
+            GlStateManager.disableFog();
             if (llIIlIIlIIll(78312, 2593)) {
                 throw null;
             }
 
-            GlStateManager.func_179121_F();
+            GlStateManager.popMatrix();
             if (llIIlIIlIIll(78312, 2593)) {
                 throw null;
             }
 
-            GlStateManager.func_179128_n(5889);
+            GlStateManager.matrixMode(5889);
             if (llIIlIIlIIll(78312, 2593)) {
                 throw null;
             }
 
-            GlStateManager.func_179096_D();
+            GlStateManager.loadIdentity();
             if (llIIlIIlIIll(78312, 2593)) {
                 throw null;
             }
@@ -3481,13 +3481,13 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 throw null;
             }
 
-            Project.gluPerspective(var10001, (float) this..field_71443_c / (float) this.                                                                                   .
-            field_71440_d, 0.05F, this. * MathHelper.field_180189_a);
+            Project.gluPerspective(var10001, (float) this..displayWidth / (float) this.                                                                                   .
+            displayHeight, 0.05F, this. * MathHelper.SQRT_2);
             if (llIIlIIlIIll(78312, 2593)) {
                 throw null;
             }
 
-            GlStateManager.func_179128_n(5888);
+            GlStateManager.matrixMode(5888);
             if (llIIlIIlIIll(78312, 2593)) {
                 throw null;
             }
@@ -3510,7 +3510,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         return this.;
     }
 
-    public void func_181560_a(float var1, long var2) {
+    public void updateCameraAndRender(float var1, long var2) {
         byte var10000 = Display.isActive();
         if (llIIlIIlIIll(65756, 1744)) {
             throw null;
@@ -3527,8 +3527,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     label382:
                     {
                         var4 = var10000;
-                        if (llIIlIIlIlII(var10000) && llIIlIIlIIlI(this..field_71474_y.field_82881_y)){
-                        if (!llIIlIIlIIlI(this..field_71474_y.field_85185_A)){
+                        if (llIIlIIlIlII(var10000) && llIIlIIlIIlI(this..gameSettings.pauseOnLostFocus)){
+                        if (!llIIlIIlIIlI(this..gameSettings.touchscreen)){
                             break label382;
                         }
 
@@ -3546,7 +3546,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                             throw null;
                         }
 
-                        var10001 = Minecraft.func_71386_F();
+                        var10001 = Minecraft.getSystemTime();
                         if (llIIlIIlIIll(65756, 1744)) {
                             throw null;
                         }
@@ -3559,7 +3559,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         throw null;
                     }
 
-                    var22 = Minecraft.func_71386_F();
+                    var22 = Minecraft.getSystemTime();
                     if (llIIlIIlIIll(65756, 1744)) {
                         throw null;
                     }
@@ -3568,7 +3568,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     if (llIIlIIllIlI((var40 = var22 - this. - 500L) == 0L ? 0 : (var40 < 0L ? -1 : 1))) {
                         var23 = this;
                         this.                                                                                   .
-                        func_71385_j();
+                        displayInGameMenu();
                         var24 = true;
                         break label380;
                     }
@@ -3585,14 +3585,14 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 throw null;
             } else {
                 Profiler var26 = var23.                                                                                   .
-                field_71424_I;
+                profiler;
                 String var25 = Class60. ("rqil>");
                 if (llIIlIIlIIll(65756, 1744)) {
                     throw null;
                 } else {
-                    var26.func_76320_a(var25);
+                    var26.startSection(var25);
                     int var27;
-                    if (llIIlIIlIIlI(var4) && llIIlIIlIIlI(Minecraft.field_142025_a) && llIIlIIlIIlI(this..field_71415_G))
+                    if (llIIlIIlIIlI(var4) && llIIlIIlIIlI(Minecraft.IS_RUNNING_ON_MAC) && llIIlIIlIIlI(this..inGameHasFocus))
                     {
                         var10000 = Mouse.isInsideWindow();
                         if (llIIlIIlIIll(65756, 1744)) {
@@ -3633,21 +3633,21 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     } else {
                         label385:
                         {
-                            if (llIIlIIlIIlI(this..field_71415_G) &&llIIlIIlIIlI(var4)){
+                            if (llIIlIIlIIlI(this..inGameHasFocus) &&llIIlIIlIIlI(var4)){
                             this.                                                                                   .
-                            field_71417_B.func_74374_c();
+                            mouseHelper.mouseXYChange();
                             this.                                                                                   .
-                            func_193032_ao().func_193299_a(this..field_71417_B);
+                            getTutorial().handleMouse(this..mouseHelper);
                             float var5;
                             float var10003 = var5 = this.                                                                                   .
-                            field_71474_y.field_74341_c * 0.6F + 0.2F;
+                            gameSettings.mouseSensitivity * 0.6F + 0.2F;
                             float var6 = var10003 * var10003 * var5 * 8.0F;
                             float var7 = (float) this.                                                                                   .
-                            field_71417_B.field_74377_a * var6;
+                            mouseHelper.deltaX * var6;
                             float var8 = (float) this.                                                                                   .
-                            field_71417_B.field_74375_b * var6;
+                            mouseHelper.deltaY * var6;
                             byte var9 = 1;
-                            if (llIIlIIlIIlI(this..field_71474_y.field_74338_d)){
+                            if (llIIlIIlIIlI(this..gameSettings.invertMouse)){
                                 var9 = -1;
                             }
 
@@ -3655,7 +3655,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                 throw null;
                             }
 
-                            if (llIIlIIlIIlI(this..field_71474_y.field_74326_T)){
+                            if (llIIlIIlIIlI(this..gameSettings.smoothCamera)){
                                 var23 = this;
                                 this. += var7;
                                 this. += var8;
@@ -3664,7 +3664,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                 var7 = this. * var10;
                                 var8 = this. * var10;
                                 this.                                                                                   .
-                                field_71439_g.func_70082_c(var7, var8 * (float) var9);
+                                player.turn(var7, var8 * (float) var9);
                                 var24 = true;
                                 break label385;
                             }
@@ -3676,7 +3676,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                             this. = 0.0F;
                             this. = 0.0F;
                             this.                                                                                   .
-                            field_71439_g.func_70082_c(var7, var8 * (float) var9);
+                            player.turn(var7, var8 * (float) var9);
                         }
 
                             if (llIIlIIlIIll(65756, 1744)) {
@@ -3690,47 +3690,47 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                             throw null;
                         } else {
                             var23.                                                                                   .
-                            field_71424_I.func_76319_b();
+                            profiler.endSection();
                             boolean var37;
-                            if (llIIlIIlIlII(this..field_71454_w)){
+                            if (llIIlIIlIlII(this..skipRenderWorld)){
                                                                                                                         =
                                 this.                                                                                   .
-                                field_71474_y.field_74337_g;
+                                gameSettings.anaglyph;
                                 ScaledResolution var30 = new ScaledResolution(this.);
                                 if (llIIlIIlIIll(65756, 1744)) {
                                     throw null;
                                 }
 
                                 ScaledResolution var15 = var30;
-                                int var16 = var30.func_78326_a();
-                                int var17 = var30.func_78328_b();
+                                int var16 = var30.getScaledWidth();
+                                int var17 = var30.getScaledHeight();
                                 var27 = Mouse.getX();
                                 if (llIIlIIlIIll(65756, 1744)) {
                                     throw null;
                                 }
 
                                 int var18 = var27 * var16 / this.                                                                                   .
-                                field_71443_c;
+                                displayWidth;
                                 int var10002 = Mouse.getY();
                                 if (llIIlIIlIIll(65756, 1744)) {
                                     throw null;
                                 }
 
                                 int var19 = var17 - var10002 * var17 / this.                                                                                   .
-                                field_71440_d - 1;
+                                displayHeight - 1;
                                 int var20 = this.                                                                                   .
-                                field_71474_y.field_74350_i;
+                                gameSettings.limitFramerate;
                                 String var31;
-                                if (llIIlIIlllIl(this..field_71441_e)){
+                                if (llIIlIIlllIl(this..world)){
                                     Profiler var28 = this.                                                                                   .
-                                    field_71424_I;
+                                    profiler;
                                     var31 = Class60. ("s{jz7");
                                     if (llIIlIIlIIll(65756, 1744)) {
                                         throw null;
                                     }
 
-                                    var28.func_76320_a(var31);
-                                    var10002 = Minecraft.func_175610_ah();
+                                    var28.startSection(var31);
+                                    var10002 = Minecraft.getDebugFPS();
                                     if (llIIlIIlIIll(65756, 1744)) {
                                         throw null;
                                     }
@@ -3763,23 +3763,23 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                         throw null;
                                     }
 
-                                    this.func_78471_a(var1, var33 + var2);
-                                    if (llIIlIIlIIlI(this..func_71356_B())){
+                                    this.renderWorld(var1, var33 + var2);
+                                    if (llIIlIIlIIlI(this..isSingleplayer())){
                                         var22 = this.;
-                                        var10001 = Minecraft.func_71386_F();
+                                        var10001 = Minecraft.getSystemTime();
                                         if (llIIlIIlIIll(65756, 1744)) {
                                             throw null;
                                         }
 
                                         long var41;
                                         if (llIIlIlIIIII((var41 = var22 - (var10001 - 1000L)) == 0L ? 0 : (var41 < 0L ? -1 : 1))) {
-                                            var32 = Minecraft.func_71386_F();
+                                            var32 = Minecraft.getSystemTime();
                                             if (llIIlIIlIIll(65756, 1744)) {
                                                 throw null;
                                             }
 
                                             this. = var32;
-                                            if (llIIlIIlIlII(this..func_71401_C().func_184106_y())){
+                                            if (llIIlIIlIlII(this..getIntegratedServer().isWorldIconSet())){
                                                 this. ();
                                                 if (llIIlIIlIIll(65756, 1744)) {
                                                     throw null;
@@ -3792,28 +3792,28 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                         throw null;
                                     }
 
-                                    if (llIIlIIlIIlI(OpenGlHelper.field_148824_g)) {
+                                    if (llIIlIIlIIlI(OpenGlHelper.shadersSupported)) {
                                         this.                                                                                   .
-                                        field_71438_f.func_174975_c();
+                                        renderGlobal.renderEntityOutlineFramebuffer();
                                         if (llIIlIIlllIl(this.) && llIIlIIlIIlI(this.)) {
-                                            GlStateManager.func_179128_n(5890);
+                                            GlStateManager.matrixMode(5890);
                                             if (llIIlIIlIIll(65756, 1744)) {
                                                 throw null;
                                             }
 
-                                            GlStateManager.func_179094_E();
+                                            GlStateManager.pushMatrix();
                                             if (llIIlIIlIIll(65756, 1744)) {
                                                 throw null;
                                             }
 
-                                            GlStateManager.func_179096_D();
+                                            GlStateManager.loadIdentity();
                                             if (llIIlIIlIIll(65756, 1744)) {
                                                 throw null;
                                             }
 
                                             this.                                                                                                                                     .
-                                            func_148018_a(var1);
-                                            GlStateManager.func_179121_F();
+                                            render(var1);
+                                            GlStateManager.popMatrix();
                                             if (llIIlIIlIIll(65756, 1744)) {
                                                 throw null;
                                             }
@@ -3824,7 +3824,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                         }
 
                                         this.                                                                                   .
-                                        func_147110_a().func_147610_a(true);
+                                        getFramebuffer().bindFramebuffer(true);
                                     }
 
                                     if (llIIlIIlIIll(65756, 1744)) {
@@ -3837,32 +3837,32 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                     }
 
                                     Profiler var34 = this.                                                                                   .
-                                    field_71424_I;
+                                    profiler;
                                     String var35 = Class60. ("\u007fl2");
                                     if (llIIlIIlIIll(65756, 1744)) {
                                         throw null;
                                     }
 
-                                    var34.func_76318_c(var35);
-                                    if (!llIIlIIlIIlI(this..field_71474_y.field_74319_N) ||
-                                    llIIlIIlllIl(this..field_71462_r)){
+                                    var34.endStartSection(var35);
+                                    if (!llIIlIIlIIlI(this..gameSettings.hideGUI) ||
+                                    llIIlIIlllIl(this..currentScreen)){
                                         if (llIIlIIlIIll(65756, 1744)) {
                                             throw null;
                                         }
 
-                                        GlStateManager.func_179092_a(516, 0.1F);
+                                        GlStateManager.alphaFunc(516, 0.1F);
                                         if (llIIlIIlIIll(65756, 1744)) {
                                             throw null;
                                         }
 
-                                        this.func_78478_c();
+                                        this.setupOverlayRendering();
                                         this. (var16, var17, var1);
                                         if (llIIlIIlIIll(65756, 1744)) {
                                             throw null;
                                         }
 
                                         this.                                                                                   .
-                                        field_71456_v.func_175180_a(var1);
+                                        ingameGUI.renderGameOverlay(var1);
                                     }
 
                                     if (llIIlIIlIIll(65756, 1744)) {
@@ -3871,58 +3871,58 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
                                     var23 = this;
                                     this.                                                                                   .
-                                    field_71424_I.func_76319_b();
+                                    profiler.endSection();
                                     var24 = true;
                                 } else{
                                     if (llIIlIIlIIll(65756, 1744)) {
                                         throw null;
                                     }
 
-                                    GlStateManager.func_179083_b(0, 0, this..field_71443_c, this.                                                                                   .
-                                    field_71440_d);
+                                    GlStateManager.viewport(0, 0, this..displayWidth, this.                                                                                   .
+                                    displayHeight);
                                     if (llIIlIIlIIll(65756, 1744)) {
                                         throw null;
                                     }
 
-                                    GlStateManager.func_179128_n(5889);
+                                    GlStateManager.matrixMode(5889);
                                     if (llIIlIIlIIll(65756, 1744)) {
                                         throw null;
                                     }
 
-                                    GlStateManager.func_179096_D();
+                                    GlStateManager.loadIdentity();
                                     if (llIIlIIlIIll(65756, 1744)) {
                                         throw null;
                                     }
 
-                                    GlStateManager.func_179128_n(5888);
+                                    GlStateManager.matrixMode(5888);
                                     if (llIIlIIlIIll(65756, 1744)) {
                                         throw null;
                                     }
 
-                                    GlStateManager.func_179096_D();
+                                    GlStateManager.loadIdentity();
                                     if (llIIlIIlIIll(65756, 1744)) {
                                         throw null;
                                     }
 
                                     var23 = this;
-                                    this.func_78478_c();
+                                    this.setupOverlayRendering();
                                     System.nanoTime();
                                     if (llIIlIIlIIll(65756, 1744)) {
                                         throw null;
                                     }
 
-                                    TileEntityRendererDispatcher.field_147556_a.field_147553_e = this.                                                                                   .
-                                    func_110434_K();
-                                    TileEntityRendererDispatcher.field_147556_a.field_147557_n = this.                                                                                   .
-                                    field_71466_p;
+                                    TileEntityRendererDispatcher.instance.renderEngine = this.                                                                                   .
+                                    getTextureManager();
+                                    TileEntityRendererDispatcher.instance.fontRenderer = this.                                                                                   .
+                                    fontRenderer;
                                 }
 
                                 if (llIIlIIlIIll(65756, 1744)) {
                                     throw null;
                                 }
 
-                                if (llIIlIIlllIl(var23..field_71462_r)){
-                                    GlStateManager.func_179086_m(256);
+                                if (llIIlIIlllIl(var23..currentScreen)){
+                                    GlStateManager.clear(256);
                                     if (llIIlIIlIIll(65756, 1744)) {
                                         throw null;
                                     }
@@ -3932,8 +3932,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             throw null;
                                         }
 
-                                        ForgeHooksClient.drawScreen(this..field_71462_r, var18, var19, this.                                                                                   .
-                                        func_193989_ak());
+                                        ForgeHooksClient.drawScreen(this..currentScreen, var18, var19, this.                                                                                   .
+                                        getTickLength());
                                         if (llIIlIIlIIll(65756, 1744)) {
                                             throw null;
                                         }
@@ -3947,7 +3947,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             throw null;
                                         }
 
-                                        CrashReport var38 = CrashReport.func_85055_a(var13, var25);
+                                        CrashReport var38 = CrashReport.makeCrashReport(var13, var25);
                                         if (llIIlIIlIIll(65756, 1744)) {
                                             throw null;
                                         }
@@ -3958,7 +3958,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             throw null;
                                         }
 
-                                        CrashReportCategory var12 = var38.func_85058_a(var25);
+                                        CrashReportCategory var12 = var38.makeCategory(var25);
                                         String var10005 = Class60. ("Crauq\u007f7~y|>");
                                         if (llIIlIIlIIll(65756, 1744)) {
                                             throw null;
@@ -3969,7 +3969,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             throw null;
                                         }
 
-                                        var12.func_189529_a(var10005, var10006);
+                                        var12.addDetail(var10005, var10006);
                                         var31 = Class60. ("Wtli{;quqzesy5");
                                         if (llIIlIIlIIll(65756, 1744)) {
                                             throw null;
@@ -3980,7 +3980,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             throw null;
                                         }
 
-                                        var12.func_189529_a(var31, var10004);
+                                        var12.addDetail(var31, var10004);
                                         var25 = Class60. ("Crauq\u007f7cqk>");
                                         if (llIIlIIlIIll(65756, 1744)) {
                                             throw null;
@@ -3991,7 +3991,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             throw null;
                                         }
 
-                                        var12.func_189529_a(var25, var36);
+                                        var12.addDetail(var25, var36);
                                         ReportedException var39 = new ReportedException(var21);
                                         if (llIIlIIlIIll(65756, 1744)) {
                                             throw null;
@@ -4055,17 +4055,17 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
     private void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(float var1) {
         if (llIIlIIlIIlI(this.)) {
             Profiler var10001 = this.                                                                                   .
-            field_71424_I;
+            profiler;
             String var10002 = Class60. ("ws\u007fskNy#");
             if (llIIlIIlIIll(44752, 5413)) {
                 throw null;
             }
 
-            var10001.func_76320_a(var10002);
+            var10001.startSection(var10002);
             WorldClient var2;
-            if (llIIlIIlllIl(var2 = this..field_71441_e)){
+            if (llIIlIIlllIl(var2 = this..world)){
                 float var3;
-                float var4 = (var3 = var2.func_72971_b(1.0F)) * 0.95F + 0.05F;
+                float var4 = (var3 = var2.getSunBrightness(1.0F)) * 0.95F + 0.05F;
                 int var5;
                 int var10000 = var5 = 0;
 
@@ -4080,17 +4080,17 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         }
 
                         this.                                                                                                                              .
-                        func_110564_a();
+                        updateDynamicTexture();
                         this. = false;
                         this.                                                                                   .
-                        field_71424_I.func_76319_b();
+                        profiler.endSection();
                         break;
                     }
 
-                    float var6 = var2.field_73011_w.func_177497_p()[var5 / 16] * var4;
-                    float var7 = var2.field_73011_w.func_177497_p()[var5 % 16] * (this. * 0.1F + 1.5F);
-                    if (llIIlIIllIlI(var2.func_175658_ac())) {
-                        var6 = var2.field_73011_w.func_177497_p()[var5 / 16];
+                    float var6 = var2.provider.getLightBrightnessTable()[var5 / 16] * var4;
+                    float var7 = var2.provider.getLightBrightnessTable()[var5 % 16] * (this. * 0.1F + 1.5F);
+                    if (llIIlIIllIlI(var2.getLastLightningBolt())) {
+                        var6 = var2.provider.getLightBrightnessTable()[var5 / 16];
                     }
 
                     if (llIIlIIlIIll(44752, 5413)) {
@@ -4119,7 +4119,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         throw null;
                     }
 
-                    if (llIIlIIlIlIl(var2.field_73011_w.func_186058_p().func_186068_a(), 1)) {
+                    if (llIIlIIlIlIl(var2.provider.getDimensionType().getId(), 1)) {
                         var8 = 0.22F + var7 * 0.75F;
                         var9 = 0.28F + var10 * 0.75F;
                         var12 = 0.25F + var11 * 0.75F;
@@ -4130,30 +4130,30 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     }
 
                     float[] var16 = new float[]{var8, var9, var12};
-                    var2.field_73011_w.getLightmapColors(var1, var3, var6, var7, var16);
+                    var2.provider.getLightmapColors(var1, var3, var6, var7, var16);
                     var8 = var16[0];
                     var9 = var16[1];
                     var12 = var16[2];
-                    float var20 = MathHelper.func_76131_a(var8, 0.0F, 1.0F);
+                    float var20 = MathHelper.clamp(var8, 0.0F, 1.0F);
                     if (llIIlIIlIIll(44752, 5413)) {
                         throw null;
                     }
 
                     var8 = var20;
-                    var20 = MathHelper.func_76131_a(var9, 0.0F, 1.0F);
+                    var20 = MathHelper.clamp(var9, 0.0F, 1.0F);
                     if (llIIlIIlIIll(44752, 5413)) {
                         throw null;
                     }
 
                     var9 = var20;
-                    var20 = MathHelper.func_76131_a(var12, 0.0F, 1.0F);
+                    var20 = MathHelper.clamp(var12, 0.0F, 1.0F);
                     if (llIIlIIlIIll(44752, 5413)) {
                         throw null;
                     }
 
                     var12 = var20;
-                    if (llIIlIIlIIlI(this..field_71439_g.func_70644_a(MobEffects.field_76439_r))){
-                        float var18 = this. (this..field_71439_g, var1);
+                    if (llIIlIIlIIlI(this..player.isPotionActive(MobEffects.NIGHT_VISION))){
+                        float var18 = this. (this..player, var1);
                         if (llIIlIIlIIll(44752, 5413)) {
                             throw null;
                         }
@@ -4214,7 +4214,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     }
 
                     var6 = this.                                                                                   .
-                    field_71474_y.field_74333_Y;
+                    gameSettings.gammaSetting;
                     var7 = 1.0F - var8;
                     var10 = 1.0F - var9;
                     var11 = 1.0F - var12;
@@ -4302,18 +4302,18 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_78479_a(float var1, int var2) {
-        this. = (float) (this..field_71474_y.field_151451_c * 16);
-        GlStateManager.func_179128_n(5889);
+    public void setupCameraTransform(float var1, int var2) {
+        this. = (float) (this..gameSettings.renderDistanceChunks * 16);
+        GlStateManager.matrixMode(5889);
         if (llIIlIIlIIll(92404, 1079)) {
             throw null;
         } else {
-            GlStateManager.func_179096_D();
+            GlStateManager.loadIdentity();
             if (llIIlIIlIIll(92404, 1079)) {
                 throw null;
             } else {
-                if (llIIlIIlIIlI(this..field_71474_y.field_74337_g)){
-                    GlStateManager.func_179109_b((float) (-(var2 * 2 - 1)) * 0.07F, 0.0F, 0.0F);
+                if (llIIlIIlIIlI(this..gameSettings.anaglyph)){
+                    GlStateManager.translate((float) (-(var2 * 2 - 1)) * 0.07F, 0.0F, 0.0F);
                     if (llIIlIIlIIll(92404, 1079)) {
                         throw null;
                     }
@@ -4324,12 +4324,12 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 } else {
                     double var5;
                     if (llIIlIIlIIlI((var5 = this. - 1.0D) == 0.0D ? 0 : (var5 < 0.0D ? -1 : 1))) {
-                        GlStateManager.func_179109_b((float) this., (float) (-this.), 0.0F);
+                        GlStateManager.translate((float) this., (float) (-this.), 0.0F);
                         if (llIIlIIlIIll(92404, 1079)) {
                             throw null;
                         }
 
-                        GlStateManager.func_179139_a(this., this., 1.0D);
+                        GlStateManager.scale(this., this., 1.0D);
                         if (llIIlIIlIIll(92404, 1079)) {
                             throw null;
                         }
@@ -4342,21 +4342,21 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         if (llIIlIIlIIll(92404, 1079)) {
                             throw null;
                         } else {
-                            Project.gluPerspective(var10002, (float) this..field_71443_c / (float) this.                                                                                   .
-                            field_71440_d, 0.05F, this. * MathHelper.field_180189_a);
+                            Project.gluPerspective(var10002, (float) this..displayWidth / (float) this.                                                                                   .
+                            displayHeight, 0.05F, this. * MathHelper.SQRT_2);
                             if (llIIlIIlIIll(92404, 1079)) {
                                 throw null;
                             } else {
-                                GlStateManager.func_179128_n(5888);
+                                GlStateManager.matrixMode(5888);
                                 if (llIIlIIlIIll(92404, 1079)) {
                                     throw null;
                                 } else {
-                                    GlStateManager.func_179096_D();
+                                    GlStateManager.loadIdentity();
                                     if (llIIlIIlIIll(92404, 1079)) {
                                         throw null;
                                     } else {
-                                        if (llIIlIIlIIlI(this..field_71474_y.field_74337_g)){
-                                            GlStateManager.func_179109_b((float) (var2 * 2 - 1) * 0.1F, 0.0F, 0.0F);
+                                        if (llIIlIIlIIlI(this..gameSettings.anaglyph)){
+                                            GlStateManager.translate((float) (var2 * 2 - 1) * 0.1F, 0.0F, 0.0F);
                                             if (llIIlIIlIIll(92404, 1079)) {
                                                 throw null;
                                             }
@@ -4369,7 +4369,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             if (llIIlIIlIIll(92404, 1079)) {
                                                 throw null;
                                             } else {
-                                                if (llIIlIIlIIlI(this..field_71474_y.field_74336_f)){
+                                                if (llIIlIIlIIlI(this..gameSettings.viewBobbing)){
                                                     this. (var1);
                                                     if (llIIlIIlIIll(92404, 1079)) {
                                                         throw null;
@@ -4381,10 +4381,10 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                 } else {
                                                     float var4;
                                                     float var6;
-                                                    if (llIIlIIllIlI((var6 = (var4 = this..field_71439_g.field_71080_cy + (this..field_71439_g.field_71086_bY - this..field_71439_g.field_71080_cy) * var1)
+                                                    if (llIIlIIllIlI((var6 = (var4 = this..player.prevTimeInPortal + (this..player.timeInPortal - this..player.prevTimeInPortal) * var1)
                                                         -0.0F) ==0.0F ? 0 : (var6 < 0.0F ? -1 : 1))){
                                                         byte var3 = 20;
-                                                        if (llIIlIIlIIlI(this..field_71439_g.func_70644_a(MobEffects.field_76431_k)))
+                                                        if (llIIlIIlIIlI(this..player.isPotionActive(MobEffects.NAUSEA)))
                                                         {
                                                             var3 = 7;
                                                         }
@@ -4394,17 +4394,17 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                         }
 
                                                         var4 = (5.0F / (var4 * var4 + 5.0F) - var4 * 0.04F) * (5.0F / (var4 * var4 + 5.0F) - var4 * 0.04F);
-                                                        GlStateManager.func_179114_b(((float) this. + var1) * (float) var3, 0.0F, 1.0F, 1.0F);
+                                                        GlStateManager.rotate(((float) this. + var1) * (float) var3, 0.0F, 1.0F, 1.0F);
                                                         if (llIIlIIlIIll(92404, 1079)) {
                                                             throw null;
                                                         }
 
-                                                        GlStateManager.func_179152_a(1.0F / var4, 1.0F, 1.0F);
+                                                        GlStateManager.scale(1.0F / var4, 1.0F, 1.0F);
                                                         if (llIIlIIlIIll(92404, 1079)) {
                                                             throw null;
                                                         }
 
-                                                        GlStateManager.func_179114_b(-((float) this. + var1) * (float) var3, 0.0F, 1.0F, 1.0F);
+                                                        GlStateManager.rotate(-((float) this. + var1) * (float) var3, 0.0F, 1.0F, 1.0F);
                                                         if (llIIlIIlIIll(92404, 1079)) {
                                                             throw null;
                                                         }
@@ -4427,7 +4427,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
                                                                         while (!llIIlIIlIIll(92404, 1079)) {
                                                                             if (llIIlIIlIlII(0)) {
-                                                                                GlStateManager.func_179114_b(90.0F, 0.0F, 1.0F, 0.0F);
+                                                                                GlStateManager.rotate(90.0F, 0.0F, 1.0F, 0.0F);
                                                                                 if (llIIlIIlIIll(92404, 1079)) {
                                                                                     throw null;
                                                                                 }
@@ -4449,7 +4449,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                             throw null;
                                                                         }
 
-                                                                        GlStateManager.func_179114_b(180.0F, 0.0F, 1.0F, 0.0F);
+                                                                        GlStateManager.rotate(180.0F, 0.0F, 1.0F, 0.0F);
                                                                         if (llIIlIIlIIll(92404, 1079)) {
                                                                             throw null;
                                                                         }
@@ -4461,7 +4461,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                             throw null;
                                                                         }
 
-                                                                        GlStateManager.func_179114_b(-90.0F, 0.0F, 1.0F, 0.0F);
+                                                                        GlStateManager.rotate(-90.0F, 0.0F, 1.0F, 0.0F);
                                                                         if (llIIlIIlIIll(92404, 1079)) {
                                                                             throw null;
                                                                         }
@@ -4473,7 +4473,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                             throw null;
                                                                         }
 
-                                                                        GlStateManager.func_179114_b(90.0F, 1.0F, 0.0F, 0.0F);
+                                                                        GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                                                                         if (llIIlIIlIIll(92404, 1079)) {
                                                                             throw null;
                                                                         }
@@ -4485,7 +4485,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                                             throw null;
                                                                         }
 
-                                                                        GlStateManager.func_179114_b(-90.0F, 1.0F, 0.0F, 0.0F);
+                                                                        GlStateManager.rotate(-90.0F, 1.0F, 0.0F, 0.0F);
                                                                         if (llIIlIIlIIll(92404, 1079)) {
                                                                             throw null;
                                                                         }
@@ -4512,12 +4512,12 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_175066_a(@Nullable Entity var1) {
+    public void loadEntityShader(@Nullable Entity var1) {
         boolean var10000;
-        if (llIIlIIlIIlI(OpenGlHelper.field_148824_g)) {
+        if (llIIlIIlIIlI(OpenGlHelper.shadersSupported)) {
             if (llIIlIIlllIl(this.)) {
                 this.                                                                                                                                     .
-                func_148021_a();
+                deleteShaderGroup();
             }
 
             if (llIIlIIlIIll(70574, 745)) {
@@ -4539,7 +4539,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     throw null;
                 }
 
-                this.func_175069_a(var10001);
+                this.loadShader(var10001);
                 var10000 = true;
                 return;
             }
@@ -4560,7 +4560,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     throw null;
                 }
 
-                this.func_175069_a(var10001);
+                this.loadShader(var10001);
                 var10000 = true;
                 return;
             }
@@ -4581,7 +4581,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     throw null;
                 }
 
-                this.func_175069_a(var10001);
+                this.loadShader(var10001);
                 var10000 = true;
                 return;
             }
@@ -4603,37 +4603,37 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_78478_c() {
+    public void setupOverlayRendering() {
         ScaledResolution var10000 = new ScaledResolution(this.);
         if (llIIlIIlIIll(77035, 1855)) {
             throw null;
         } else {
             ScaledResolution var1 = var10000;
-            GlStateManager.func_179086_m(256);
+            GlStateManager.clear(256);
             if (llIIlIIlIIll(77035, 1855)) {
                 throw null;
             } else {
-                GlStateManager.func_179128_n(5889);
+                GlStateManager.matrixMode(5889);
                 if (llIIlIIlIIll(77035, 1855)) {
                     throw null;
                 } else {
-                    GlStateManager.func_179096_D();
+                    GlStateManager.loadIdentity();
                     if (llIIlIIlIIll(77035, 1855)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179130_a(0.0D, var1.func_78327_c(), var1.func_78324_d(), 0.0D, 1000.0D, 3000.0D);
+                        GlStateManager.ortho(0.0D, var1.getScaledWidth_double(), var1.getScaledHeight_double(), 0.0D, 1000.0D, 3000.0D);
                         if (llIIlIIlIIll(77035, 1855)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179128_n(5888);
+                            GlStateManager.matrixMode(5888);
                             if (llIIlIIlIIll(77035, 1855)) {
                                 throw null;
                             } else {
-                                GlStateManager.func_179096_D();
+                                GlStateManager.loadIdentity();
                                 if (llIIlIIlIIll(77035, 1855)) {
                                     throw null;
                                 } else {
-                                    GlStateManager.func_179109_b(0.0F, 0.0F, -2000.0F);
+                                    GlStateManager.translate(0.0F, 0.0F, -2000.0F);
                                     if (llIIlIIlIIll(77035, 1855)) {
                                         throw null;
                                     } else {
@@ -4650,8 +4650,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
     private void __________________________________________________________________________________________/* $FF was:                                                                                           */() {
         float var1 = this.                                                                                   .
-        field_71441_e.func_72867_j(1.0F);
-        if (llIIlIIlIlII(this..field_71474_y.field_74347_j)){
+        world.getRainStrength(1.0F);
+        if (llIIlIIlIlII(this..gameSettings.fancyGraphics)){
             var1 /= 2.0F;
         }
 
@@ -4664,9 +4664,9 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 this.                                                                                              .
                 setSeed((long) this. * 312987231L);
                 Entity var2 = this.                                                                                   .
-                func_175606_aa();
+                getRenderViewEntity();
                 WorldClient var3 = this.                                                                                   .
-                field_71441_e;
+                world;
                 BlockPos var10001 = new BlockPos(var2);
                 if (llIIlIIlIIll(81732, 7316)) {
                     throw null;
@@ -4678,7 +4678,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 double var8 = 0.0D;
                 int var10 = 0;
                 int var20 = (int) (100.0F * var1 * var1);
-                if (llIIlIIlIlIl(this..field_71474_y.field_74362_aa,1)){
+                if (llIIlIIlIlIl(this..gameSettings.particleSetting,1)){
                     var20 >>= 1;
                     var10000 = true;
                 } else{
@@ -4686,7 +4686,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         throw null;
                     }
 
-                    if (llIIlIIlIlIl(this..field_71474_y.field_74362_aa,2)){
+                    if (llIIlIIlIlIl(this..gameSettings.particleSetting,2)){
                         var20 = 0;
                     }
                 }
@@ -4711,16 +4711,16 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         if (llIIlIIllIlI(var10) && llIIlIIlIllI(this..nextInt(3),this.++)){
                             this. = 0;
                             double var27;
-                            if (llIIlIIllIlI((var27 = var6 - (double) (var21.func_177956_o() + 1)) == 0.0D ? 0 : (var27 < 0.0D ? -1 : 1))) {
-                                var23 = var3.func_175725_q(var21).func_177956_o();
-                                int var25 = MathHelper.func_76141_d((float) var21.func_177956_o());
+                            if (llIIlIIllIlI((var27 = var6 - (double) (var21.getY() + 1)) == 0.0D ? 0 : (var27 < 0.0D ? -1 : 1))) {
+                                var23 = var3.getPrecipitationHeight(var21).getY();
+                                int var25 = MathHelper.floor((float) var21.getY());
                                 if (llIIlIIlIIll(81732, 7316)) {
                                     throw null;
                                 }
 
                                 if (llIIlIIllIll(var23, var25)) {
                                     this.                                                                                   .
-                                    field_71441_e.func_184134_a(var4, var6, var8, SoundEvents.field_187919_gs, SoundCategory.WEATHER, 0.1F, 0.5F, false);
+                                    world.playSound(var4, var6, var8, SoundEvents.WEATHER_RAIN_ABOVE, SoundCategory.WEATHER, 0.1F, 0.5F, false);
                                     var10000 = true;
                                     return;
                                 }
@@ -4731,30 +4731,30 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                             }
 
                             this.                                                                                   .
-                            field_71441_e.func_184134_a(var4, var6, var8, SoundEvents.field_187918_gr, SoundCategory.WEATHER, 0.2F, 1.0F, false);
+                            world.playSound(var4, var6, var8, SoundEvents.WEATHER_RAIN, SoundCategory.WEATHER, 0.2F, 1.0F, false);
                         }
                         break;
                     }
 
                     BlockPos var12;
-                    Biome var13 = var3.func_180494_b(var12 = var3.func_175725_q(var21.func_177982_a(this..nextInt(10) - this..nextInt(10), 0, this..nextInt(10) - this.                                                                                              .
+                    Biome var13 = var3.getBiome(var12 = var3.getPrecipitationHeight(var21.add(this..nextInt(10) - this..nextInt(10), 0, this..nextInt(10) - this.                                                                                              .
                     nextInt(10))));
                     BlockPos var14;
-                    IBlockState var15 = var3.func_180495_p(var14 = var12.func_177977_b());
+                    IBlockState var15 = var3.getBlockState(var14 = var12.down());
                     float var28;
-                    if (llIIlIIlIlll(var12.func_177956_o(), var21.func_177956_o() + 10) && llIIlIIlIIll(var12.func_177956_o(), var21.func_177956_o() - 10) && llIIlIIlIIlI(var13.func_76738_d()) && llIIlIIllIII((var28 = var13.func_180626_a(var12) - 0.15F) == 0.0F ? 0 : (var28 < 0.0F ? -1 : 1))) {
+                    if (llIIlIIlIlll(var12.getY(), var21.getY() + 10) && llIIlIIlIIll(var12.getY(), var21.getY() - 10) && llIIlIIlIIlI(var13.canRain()) && llIIlIIllIII((var28 = var13.getTemperature(var12) - 0.15F) == 0.0F ? 0 : (var28 < 0.0F ? -1 : 1))) {
                         double var16 = this.                                                                                              .
                         nextDouble();
                         double var18 = this.                                                                                              .
                         nextDouble();
-                        AxisAlignedBB var22 = var15.func_185900_c(var3, var14);
-                        if (llIIlIIllIIl(var15.func_185904_a(), Material.field_151587_i) && llIIlIIllIIl(var15.func_177230_c(), Blocks.field_189877_df)) {
-                            if (llIIlIIllIIl(var15.func_185904_a(), Material.field_151579_a)) {
+                        AxisAlignedBB var22 = var15.getBoundingBox(var3, var14);
+                        if (llIIlIIllIIl(var15.getMaterial(), Material.LAVA) && llIIlIIllIIl(var15.getBlock(), Blocks.MAGMA)) {
+                            if (llIIlIIllIIl(var15.getMaterial(), Material.AIR)) {
                                 ++var10;
                                 if (llIIlIIlIlII(this..nextInt(var10))){
-                                    var4 = (double) var14.func_177958_n() + var16;
-                                    var6 = (double) ((float) var14.func_177956_o() + 0.1F) + var22.field_72337_e - 1.0D;
-                                    var8 = (double) var14.func_177952_p() + var18;
+                                    var4 = (double) var14.getX() + var16;
+                                    var6 = (double) ((float) var14.getY() + 0.1F) + var22.maxY - 1.0D;
+                                    var8 = (double) var14.getZ() + var18;
                                 }
 
                                 if (llIIlIIlIIll(81732, 7316)) {
@@ -4762,7 +4762,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                 }
 
                                 this.                                                                                   .
-                                field_71441_e.func_175688_a(EnumParticleTypes.WATER_DROP, (double) var14.func_177958_n() + var16, (double) ((float) var14.func_177956_o() + 0.1F) + var22.field_72337_e, (double) var14.func_177952_p() + var18, 0.0D, 0.0D, 0.0D, new int[0]);
+                                world.spawnParticle(EnumParticleTypes.WATER_DROP, (double) var14.getX() + var16, (double) ((float) var14.getY() + 0.1F) + var22.maxY, (double) var14.getZ() + var18, 0.0D, 0.0D, 0.0D, new int[0]);
                                 var10000 = true;
                             }
                         } else {
@@ -4771,7 +4771,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                             }
 
                             this.                                                                                   .
-                            field_71441_e.func_175688_a(EnumParticleTypes.SMOKE_NORMAL, (double) var12.func_177958_n() + var16, (double) ((float) var12.func_177956_o() + 0.1F) - var22.field_72338_b, (double) var12.func_177952_p() + var18, 0.0D, 0.0D, 0.0D, new int[0]);
+                            world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, (double) var12.getX() + var16, (double) ((float) var12.getY() + 0.1F) - var22.minY, (double) var12.getZ() + var18, 0.0D, 0.0D, 0.0D, new int[0]);
                         }
                     }
 
@@ -4793,7 +4793,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_191514_d(boolean var1) {
+    public void setupFogColor(boolean var1) {
         boolean var10000;
         FloatBuffer var10001;
         if (llIIlIIlIIlI(var1)) {
@@ -4801,7 +4801,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
             if (llIIlIIlIIll(23939, 7480)) {
                 throw null;
             } else {
-                GlStateManager.func_187402_b(2918, var10001);
+                GlStateManager.glFog(2918, var10001);
                 if (llIIlIIlIIll(23939, 7480)) {
                     throw null;
                 } else {
@@ -4815,7 +4815,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
             if (llIIlIIlIIll(23939, 7480)) {
                 throw null;
             } else {
-                GlStateManager.func_187402_b(2918, var10001);
+                GlStateManager.glFog(2918, var10001);
                 if (llIIlIIlIIll(23939, 7480)) {
                     throw null;
                 } else {
@@ -4825,8 +4825,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public boolean func_147702_a() {
-        if (llIIlIIlIIlI(OpenGlHelper.field_148824_g) && llIIlIIlllIl(this.)) {
+    public boolean isShaderActive() {
+        if (llIIlIIlIIlI(OpenGlHelper.shadersSupported) && llIIlIIlllIl(this.)) {
             return true;
         } else if (llIIlIIlIIll(54318, 52)) {
             throw null;
@@ -4837,18 +4837,18 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
     private void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(float var1, int var2) {
         if (llIIlIIlIlII(this.)) {
-            GlStateManager.func_179128_n(5889);
+            GlStateManager.matrixMode(5889);
             if (llIIlIIlIIll(72322, 790)) {
                 throw null;
             }
 
-            GlStateManager.func_179096_D();
+            GlStateManager.loadIdentity();
             if (llIIlIIlIIll(72322, 790)) {
                 throw null;
             }
 
-            if (llIIlIIlIIlI(this..field_71474_y.field_74337_g)){
-                GlStateManager.func_179109_b((float) (-(var2 * 2 - 1)) * 0.07F, 0.0F, 0.0F);
+            if (llIIlIIlIIlI(this..gameSettings.anaglyph)){
+                GlStateManager.translate((float) (-(var2 * 2 - 1)) * 0.07F, 0.0F, 0.0F);
                 if (llIIlIIlIIll(72322, 790)) {
                     throw null;
                 }
@@ -4863,24 +4863,24 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 throw null;
             }
 
-            Project.gluPerspective(var10002, (float) this..field_71443_c / (float) this.                                                                                   .
-            field_71440_d, 0.05F, this. * 2.0F);
+            Project.gluPerspective(var10002, (float) this..displayWidth / (float) this.                                                                                   .
+            displayHeight, 0.05F, this. * 2.0F);
             if (llIIlIIlIIll(72322, 790)) {
                 throw null;
             }
 
-            GlStateManager.func_179128_n(5888);
+            GlStateManager.matrixMode(5888);
             if (llIIlIIlIIll(72322, 790)) {
                 throw null;
             }
 
-            GlStateManager.func_179096_D();
+            GlStateManager.loadIdentity();
             if (llIIlIIlIIll(72322, 790)) {
                 throw null;
             }
 
-            if (llIIlIIlIIlI(this..field_71474_y.field_74337_g)){
-                GlStateManager.func_179109_b((float) (var2 * 2 - 1) * 0.1F, 0.0F, 0.0F);
+            if (llIIlIIlIIlI(this..gameSettings.anaglyph)){
+                GlStateManager.translate((float) (var2 * 2 - 1) * 0.1F, 0.0F, 0.0F);
                 if (llIIlIIlIIll(72322, 790)) {
                     throw null;
                 }
@@ -4890,7 +4890,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 throw null;
             }
 
-            GlStateManager.func_179094_E();
+            GlStateManager.pushMatrix();
             if (llIIlIIlIIll(72322, 790)) {
                 throw null;
             }
@@ -4900,7 +4900,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 throw null;
             }
 
-            if (llIIlIIlIIlI(this..field_71474_y.field_74336_f)){
+            if (llIIlIIlIIlI(this..gameSettings.viewBobbing)){
                 this. (var1);
                 if (llIIlIIlIIll(72322, 790)) {
                     throw null;
@@ -4912,8 +4912,8 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
             }
 
             byte var10000;
-            if (llIIlIIlIIlI(this..func_175606_aa() instanceof EntityLivingBase) &&
-            llIIlIIlIIlI(((EntityLivingBase) this..func_175606_aa()).func_70608_bn())){
+            if (llIIlIIlIIlI(this..getRenderViewEntity() instanceof EntityLivingBase) &&
+            llIIlIIlIIlI(((EntityLivingBase) this..getRenderViewEntity()).isPlayerSleeping())){
                 var10000 = 1;
                 boolean var10001 = true;
             } else{
@@ -4929,32 +4929,32 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
             }
 
             byte var3 = var10000;
-            var10000 = ForgeHooksClient.renderFirstPersonHand(this..field_71438_f, var1, var2);
+            var10000 = ForgeHooksClient.renderFirstPersonHand(this..renderGlobal, var1, var2);
             if (llIIlIIlIIll(72322, 790)) {
                 throw null;
             }
 
-            if (llIIlIIlIlII(var10000) && llIIlIIlIlII(this..field_71474_y.field_74320_O) &&
-            llIIlIIlIlII(var3) && llIIlIIlIlII(this..field_71474_y.field_74319_N) &&
-            llIIlIIlIlII(this..field_71442_b.func_78747_a())){
-                this.func_180436_i();
+            if (llIIlIIlIlII(var10000) && llIIlIIlIlII(this..gameSettings.thirdPersonView) &&
+            llIIlIIlIlII(var3) && llIIlIIlIlII(this..gameSettings.hideGUI) &&
+            llIIlIIlIlII(this..playerController.isSpectator())){
+                this.enableLightmap();
                 this.                                                                                                     .
-                func_78440_a(var1);
-                this.func_175072_h();
+                renderItemInFirstPerson(var1);
+                this.disableLightmap();
             }
 
             if (llIIlIIlIIll(72322, 790)) {
                 throw null;
             }
 
-            GlStateManager.func_179121_F();
+            GlStateManager.popMatrix();
             if (llIIlIIlIIll(72322, 790)) {
                 throw null;
             }
 
-            if (llIIlIIlIlII(this..field_71474_y.field_74320_O) &&llIIlIIlIlII(var3)){
+            if (llIIlIIlIlII(this..gameSettings.thirdPersonView) &&llIIlIIlIlII(var3)){
                 this.                                                                                                     .
-                func_78447_b(var1);
+                renderOverlays(var1);
                 this. (var1);
                 if (llIIlIIlIIll(72322, 790)) {
                     throw null;
@@ -4965,7 +4965,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 throw null;
             }
 
-            if (llIIlIIlIIlI(this..field_71474_y.field_74336_f)){
+            if (llIIlIIlIIlI(this..gameSettings.viewBobbing)){
                 this. (var1);
                 if (llIIlIIlIIll(72322, 790)) {
                     throw null;
@@ -4980,7 +4980,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_190565_a(ItemStack var1) {
+    public void displayItemActivation(ItemStack var1) {
         boolean var10000;
         if (llIIlIIlIIlI(this.. ()) &&llIIlIIlIIlI(this..                                                                                            .
         ())){
@@ -4998,11 +4998,11 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_147704_a(int var1, int var2) {
-        if (llIIlIIlIIlI(OpenGlHelper.field_148824_g)) {
+    public void updateShaderGroupSize(int var1, int var2) {
+        if (llIIlIIlIIlI(OpenGlHelper.shadersSupported)) {
             if (llIIlIIlllIl(this.)) {
                 this.                                                                                                                                     .
-                func_148026_a(var1, var2);
+                createBindFramebuffers(var1, var2);
             }
 
             if (llIIlIIlIIll(20295, 6743)) {
@@ -5010,7 +5010,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
             }
 
             this.                                                                                   .
-            field_71438_f.func_72720_a(var1, var2);
+            renderGlobal.createBindEntityOutlineFbs(var1, var2);
         }
 
         if (llIIlIIlIIll(20295, 6743)) {
@@ -5021,21 +5021,21 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
     }
 
     private void _____________________________________________________________________________________/* $FF was:                                                                                      */(float var1) {
-        if (llIIlIIlIIlI(this..func_175606_aa() instanceof EntityPlayer)){
+        if (llIIlIIlIIlI(this..getRenderViewEntity() instanceof EntityPlayer)){
             EntityPlayer var2;
             EntityPlayer var10000 = var2 = (EntityPlayer) this.                                                                                   .
-            func_175606_aa();
-            float var3 = var10000.field_70140_Q - var2.field_70141_P;
-            var3 = -(var10000.field_70140_Q + var3 * var1);
-            float var4 = var2.field_71107_bF + (var2.field_71109_bG - var2.field_71107_bF) * var1;
-            var1 = var10000.field_70727_aS + (var2.field_70726_aT - var2.field_70727_aS) * var1;
-            float var5 = MathHelper.func_76126_a(var3 * 3.1415927F);
+            getRenderViewEntity();
+            float var3 = var10000.distanceWalkedModified - var2.prevDistanceWalkedModified;
+            var3 = -(var10000.distanceWalkedModified + var3 * var1);
+            float var4 = var2.prevCameraYaw + (var2.cameraYaw - var2.prevCameraYaw) * var1;
+            var1 = var10000.prevCameraPitch + (var2.cameraPitch - var2.prevCameraPitch) * var1;
+            float var5 = MathHelper.sin(var3 * 3.1415927F);
             if (llIIlIIlIIll(26403, 8134)) {
                 throw null;
             }
 
             var5 = var5 * var4 * 0.5F;
-            float var10001 = MathHelper.func_76134_b(var3 * 3.1415927F);
+            float var10001 = MathHelper.cos(var3 * 3.1415927F);
             if (llIIlIIlIIll(26403, 8134)) {
                 throw null;
             }
@@ -5045,22 +5045,22 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 throw null;
             }
 
-            GlStateManager.func_179109_b(var5, -var10001, 0.0F);
+            GlStateManager.translate(var5, -var10001, 0.0F);
             if (llIIlIIlIIll(26403, 8134)) {
                 throw null;
             }
 
-            var5 = MathHelper.func_76126_a(var3 * 3.1415927F);
+            var5 = MathHelper.sin(var3 * 3.1415927F);
             if (llIIlIIlIIll(26403, 8134)) {
                 throw null;
             }
 
-            GlStateManager.func_179114_b(var5 * var4 * 3.0F, 0.0F, 0.0F, 1.0F);
+            GlStateManager.rotate(var5 * var4 * 3.0F, 0.0F, 0.0F, 1.0F);
             if (llIIlIIlIIll(26403, 8134)) {
                 throw null;
             }
 
-            var5 = MathHelper.func_76134_b(var3 * 3.1415927F - 0.2F);
+            var5 = MathHelper.cos(var3 * 3.1415927F - 0.2F);
             if (llIIlIIlIIll(26403, 8134)) {
                 throw null;
             }
@@ -5070,12 +5070,12 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 throw null;
             }
 
-            GlStateManager.func_179114_b(var5 * 5.0F, 1.0F, 0.0F, 0.0F);
+            GlStateManager.rotate(var5 * 5.0F, 1.0F, 0.0F, 0.0F);
             if (llIIlIIlIIll(26403, 8134)) {
                 throw null;
             }
 
-            GlStateManager.func_179114_b(var1, 1.0F, 0.0F, 0.0F);
+            GlStateManager.rotate(var1, 1.0F, 0.0F, 0.0F);
             if (llIIlIIlIIll(26403, 8134)) {
                 throw null;
             }
@@ -5088,40 +5088,40 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_190564_k() {
+    public void resetData() {
         this. = null;
         this.                                                                                                                                                        .
-        func_148249_a();
+        clearLoadedMaps();
         boolean var10000 = true;
     }
 
     private void __________________________________________________________________________________________/* $FF was:                                                                                           */(float var1) {
         WorldClient var2 = this.                                                                                   .
-        field_71441_e;
+        world;
         Entity var3 = this.                                                                                   .
-        func_175606_aa();
+        getRenderViewEntity();
         float var4 = 0.25F + 0.75F * (float) this.                                                                                   .
-        field_71474_y.field_151451_c / 32.0F;
+        gameSettings.renderDistanceChunks / 32.0F;
         double var10005 = Math.pow((double) var4, 0.25D);
         if (llIIlIIlIIll(50634, 975)) {
             throw null;
         } else {
             var4 = 1.0F - (float) var10005;
-            Vec3d var31 = var2.func_72833_a(this..func_175606_aa(), var1);
-            float var5 = (float) var31.field_72450_a;
-            float var6 = (float) var31.field_72448_b;
-            float var7 = (float) var31.field_72449_c;
+            Vec3d var31 = var2.getSkyColor(this..getRenderViewEntity(), var1);
+            float var5 = (float) var31.x;
+            float var6 = (float) var31.y;
+            float var7 = (float) var31.z;
             Vec3d var8;
-            this. = (float) (var8 = var2.func_72948_g(var1)).field_72450_a;
-            this. = (float) var8.field_72448_b;
-            this. = (float) var8.field_72449_c;
+            this. = (float) (var8 = var2.getFogColor(var1)).x;
+            this. = (float) var8.y;
+            this. = (float) var8.z;
             float var11;
             float var10000;
             boolean var10001;
             double var24;
             Vec3d var25;
-            if (llIIlIIlIIll(this..field_71474_y.field_151451_c,4)){
-                var10000 = MathHelper.func_76126_a(var2.func_72929_e(var1));
+            if (llIIlIIlIIll(this..gameSettings.renderDistanceChunks,4)){
+                var10000 = MathHelper.sin(var2.getCelestialAngleRadians(var1));
                 if (llIIlIIlIIll(50634, 975)) {
                     throw null;
                 }
@@ -5150,7 +5150,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
                 var8 = var25;
                 float var36;
-                if (llIIlIlIIIII((var36 = (var11 = (float) var3.func_70676_i(var1).func_72430_b(var8)) - 0.0F) == 0.0F ? 0 : (var36 < 0.0F ? -1 : 1))) {
+                if (llIIlIlIIIII((var36 = (var11 = (float) var3.getLook(var1).dotProduct(var8)) - 0.0F) == 0.0F ? 0 : (var36 < 0.0F ? -1 : 1))) {
                     var11 = 0.0F;
                 }
 
@@ -5160,7 +5160,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
                 float[] var12;
                 float var37;
-                if (llIIlIIllIlI((var37 = var11 - 0.0F) == 0.0F ? 0 : (var37 < 0.0F ? -1 : 1)) && llIIlIIlllIl(var12 = var2.field_73011_w.func_76560_a(var2.func_72826_c(var1), var1))) {
+                if (llIIlIIllIlI((var37 = var11 - 0.0F) == 0.0F ? 0 : (var37 < 0.0F ? -1 : 1)) && llIIlIIlllIl(var12 = var2.provider.calcSunriseSunsetColors(var2.getCelestialAngle(var1), var1))) {
                     var11 *= var12[3];
                     this. = this. * (1.0F - var11) + var12[0] * var11;
                     this. = this. * (1.0F - var11) + var12[1] * var11;
@@ -5178,7 +5178,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                 float var18;
                 float var19;
                 float var38;
-                if (llIIlIIllIlI((var38 = (var19 = var2.func_72867_j(var1)) - 0.0F) == 0.0F ? 0 : (var38 < 0.0F ? -1 : 1))) {
+                if (llIIlIIllIlI((var38 = (var19 = var2.getRainStrength(var1)) - 0.0F) == 0.0F ? 0 : (var38 < 0.0F ? -1 : 1))) {
                     var10 = 1.0F - var19 * 0.5F;
                     var18 = 1.0F - var19 * 0.4F;
                     this. *= var10;
@@ -5190,7 +5190,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     throw null;
                 } else {
                     float var39;
-                    if (llIIlIIllIlI((var39 = (var10 = var2.func_72819_i(var1)) - 0.0F) == 0.0F ? 0 : (var39 < 0.0F ? -1 : 1))) {
+                    if (llIIlIIllIlI((var39 = (var10 = var2.getThunderStrength(var1)) - 0.0F) == 0.0F ? 0 : (var39 < 0.0F ? -1 : 1))) {
                         var18 = 1.0F - var10 * 0.5F;
                         this. *= var18;
                         this. *= var18;
@@ -5200,7 +5200,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                     if (llIIlIIlIIll(50634, 975)) {
                         throw null;
                     } else {
-                        IBlockState var26 = ActiveRenderInfo.func_186703_a(this..field_71441_e, var3, var1);
+                        IBlockState var26 = ActiveRenderInfo.getBlockStateAtEntityViewpoint(this..world, var3, var1);
                         if (llIIlIIlIIll(50634, 975)) {
                             throw null;
                         } else {
@@ -5208,18 +5208,18 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                             Vec3d var21;
                             Class25 var28;
                             if (llIIlIIlIIlI(this.)) {
-                                Vec3d var27 = var21 = var2.func_72824_f(var1);
+                                Vec3d var27 = var21 = var2.getCloudColour(var1);
                                 var28 = this;
-                                this. = (float) var21.field_72450_a;
-                                this. = (float) var21.field_72448_b;
-                                this. = (float) var27.field_72449_c;
+                                this. = (float) var21.x;
+                                this. = (float) var21.y;
+                                this. = (float) var27.z;
                                 var10001 = true;
                             } else {
                                 if (llIIlIIlIIll(50634, 975)) {
                                     throw null;
                                 }
 
-                                var25 = ActiveRenderInfo.func_178806_a(var3, (double) var1);
+                                var25 = ActiveRenderInfo.projectViewFromEntity(var3, (double) var1);
                                 if (llIIlIIlIIll(50634, 975)) {
                                     throw null;
                                 }
@@ -5233,18 +5233,18 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                 BlockPos var22 = var29;
                                 var28 = this;
                                 IBlockState var13;
-                                Block var10003 = (var13 = this..field_71441_e.func_180495_p(var22)).func_177230_c();
+                                Block var10003 = (var13 = this..world.getBlockState(var22)).getBlock();
                                 WorldClient var33 = this.                                                                                   .
-                                field_71441_e;
+                                world;
                                 Vec3d var10009 = new Vec3d((double) this., (double) this., (double) this.);
                                 if (llIIlIIlIIll(50634, 975)) {
                                     throw null;
                                 }
 
                                 Vec3d var15;
-                                this. = (float) (var15 = var10003.getFogColor(var33, var22, var13, var3, var10009, var1)).field_72450_a;
-                                this. = (float) var15.field_72448_b;
-                                this. = (float) var15.field_72449_c;
+                                this. = (float) (var15 = var10003.getFogColor(var33, var22, var13, var3, var10009, var1)).x;
+                                this. = (float) var15.y;
+                                this. = (float) var15.z;
                             }
 
                             if (llIIlIIlIIll(50634, 975)) {
@@ -5257,10 +5257,10 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                     this. *= var11;
                                     this. *= var11;
                                     this. *= var11;
-                                    var23 = (var3.field_70137_T + (var3.field_70163_u - var3.field_70137_T) * (double) var1) * var2.field_73011_w.func_76565_k();
-                                    if (llIIlIIlIIlI(var3 instanceof EntityLivingBase) && llIIlIIlIIlI(((EntityLivingBase) var3).func_70644_a(MobEffects.field_76440_q))) {
+                                    var23 = (var3.lastTickPosY + (var3.posY - var3.lastTickPosY) * (double) var1) * var2.provider.getVoidFogYFactor();
+                                    if (llIIlIIlIIlI(var3 instanceof EntityLivingBase) && llIIlIIlIIlI(((EntityLivingBase) var3).isPotionActive(MobEffects.BLINDNESS))) {
                                         int var16;
-                                        if (llIIlIIlIllI(var16 = ((EntityLivingBase) var3).func_70660_b(MobEffects.field_76440_q).func_76459_b(), 20)) {
+                                        if (llIIlIIlIllI(var16 = ((EntityLivingBase) var3).getActivePotionEffect(MobEffects.BLINDNESS).getDuration(), 20)) {
                                             var24 = var23 *= (double) (1.0F - (float) var16 / 20.0F);
                                             var10001 = true;
                                             break label209;
@@ -5315,7 +5315,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             throw null;
                                         } else {
                                             float var14;
-                                            if (llIIlIIlIIlI(var3 instanceof EntityLivingBase) && llIIlIIlIIlI(((EntityLivingBase) var3).func_70644_a(MobEffects.field_76439_r))) {
+                                            if (llIIlIIlIIlI(var3 instanceof EntityLivingBase) && llIIlIIlIIlI(((EntityLivingBase) var3).isPotionActive(MobEffects.NIGHT_VISION))) {
                                                 var10000 = this. ((EntityLivingBase) var3, var1);
                                                 if (llIIlIIlIIll(50634, 975)) {
                                                     throw null;
@@ -5366,7 +5366,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                             if (llIIlIIlIIll(50634, 975)) {
                                                 throw null;
                                             } else {
-                                                if (llIIlIIlIIlI(this..field_71474_y.field_74337_g)){
+                                                if (llIIlIIlIIlI(this..gameSettings.anaglyph)){
                                                     var4 = (this. * 30.0F + this. * 59.0F + this. * 11.0F) / 100.0F;
                                                     var14 = (this. * 30.0F + this. * 70.0F) / 100.0F;
                                                     var5 = (this. * 30.0F + this. * 70.0F) / 100.0F;
@@ -5387,7 +5387,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                                                         this. = var17.getRed();
                                                         this. = var17.getGreen();
                                                         this. = var17.getBlue();
-                                                        GlStateManager.func_179082_a(this., this., this., 0.0F);
+                                                        GlStateManager.clearColor(this., this., this., 0.0F);
                                                         if (llIIlIIlIIll(50634, 975)) {
                                                             throw null;
                                                         } else {
@@ -5418,16 +5418,16 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
             } else if (llIIlIIlIIll(82680, 8654)) {
                 throw null;
             } else {
-                if (llIIlIIlIIlI(this..func_175606_aa() instanceof EntityLivingBase)){
+                if (llIIlIIlIIlI(this..getRenderViewEntity() instanceof EntityLivingBase)){
                     EntityLivingBase var2;
                     EntityLivingBase var5 = var2 = (EntityLivingBase) this.                                                                                   .
-                    func_175606_aa();
-                    float var3 = (float) var5.field_70737_aN - var1;
+                    getRenderViewEntity();
+                    float var3 = (float) var5.hurtTime - var1;
                     float var4;
                     float var8;
-                    if (llIIlIlIIIlI((var8 = var5.func_110143_aJ() - 0.0F) == 0.0F ? 0 : (var8 < 0.0F ? -1 : 1))) {
-                        var4 = (float) var2.field_70725_aQ + var1;
-                        GlStateManager.func_179114_b(40.0F - 8000.0F / (var4 + 200.0F), 0.0F, 0.0F, 1.0F);
+                    if (llIIlIlIIIlI((var8 = var5.getHealth() - 0.0F) == 0.0F ? 0 : (var8 < 0.0F ? -1 : 1))) {
+                        var4 = (float) var2.deathTime + var1;
+                        GlStateManager.rotate(40.0F - 8000.0F / (var4 + 200.0F), 0.0F, 0.0F, 1.0F);
                         if (llIIlIIlIIll(82680, 8654)) {
                             throw null;
                         }
@@ -5447,24 +5447,24 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         throw null;
                     }
 
-                    float var6 = var3 /= (float) var2.field_70738_aO;
-                    var6 = MathHelper.func_76126_a(var6 * var6 * var3 * var3 * 3.1415927F);
+                    float var6 = var3 /= (float) var2.maxHurtTime;
+                    var6 = MathHelper.sin(var6 * var6 * var3 * var3 * 3.1415927F);
                     if (llIIlIIlIIll(82680, 8654)) {
                         throw null;
                     }
 
                     var3 = var6;
-                    GlStateManager.func_179114_b(-(var4 = var2.field_70739_aP), 0.0F, 1.0F, 0.0F);
+                    GlStateManager.rotate(-(var4 = var2.attackedAtYaw), 0.0F, 1.0F, 0.0F);
                     if (llIIlIIlIIll(82680, 8654)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179114_b(-var3 * 14.0F, 0.0F, 0.0F, 1.0F);
+                    GlStateManager.rotate(-var3 * 14.0F, 0.0F, 0.0F, 1.0F);
                     if (llIIlIIlIIll(82680, 8654)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179114_b(var4, 0.0F, 1.0F, 0.0F);
+                    GlStateManager.rotate(var4, 0.0F, 1.0F, 0.0F);
                     if (llIIlIIlIIll(82680, 8654)) {
                         throw null;
                     }
@@ -5481,12 +5481,12 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
 
     private void ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
         boolean var9;
-        if (llIIlIIlIIlI(this..field_71438_f.func_184384_n()) &&llIIlIIlIlII(this..func_71401_C().func_184106_y())){
+        if (llIIlIIlIIlI(this..renderGlobal.hasNoChunkUpdates()) &&llIIlIIlIlII(this..getIntegratedServer().isWorldIconSet())){
             label68:
             {
-                BufferedImage var10000 = ScreenShotHelper.func_186719_a(this..field_71443_c, this.                                                                                   .
-                field_71440_d, this.                                                                                   .
-                func_147110_a());
+                BufferedImage var10000 = ScreenShotHelper.createScreenshot(this..displayWidth, this.                                                                                   .
+                displayHeight, this.                                                                                   .
+                getFramebuffer());
                 if (llIIlIIlIIll(77895, 3105)) {
                     throw null;
                 }
@@ -5528,7 +5528,7 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
                         throw null;
                     }
 
-                    ImageIO.write(var8, var10001, this..func_71401_C().func_184109_z());
+                    ImageIO.write(var8, var10001, this..getIntegratedServer().getWorldIconFile());
                     if (llIIlIIlIIll(77895, 3105)) {
                         throw null;
                     }
@@ -5563,58 +5563,58 @@ public class Class25 extends EntityRenderer implements IResourceManagerReloadLis
         }
     }
 
-    public void func_180436_i() {
-        GlStateManager.func_179138_g(OpenGlHelper.field_77476_b);
+    public void enableLightmap() {
+        GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
         if (llIIlIIlIIll(95199, 5550)) {
             throw null;
         } else {
-            GlStateManager.func_179128_n(5890);
+            GlStateManager.matrixMode(5890);
             if (llIIlIIlIIll(95199, 5550)) {
                 throw null;
             } else {
-                GlStateManager.func_179096_D();
+                GlStateManager.loadIdentity();
                 if (llIIlIIlIIll(95199, 5550)) {
                     throw null;
                 } else {
-                    GlStateManager.func_179152_a(0.00390625F, 0.00390625F, 0.00390625F);
+                    GlStateManager.scale(0.00390625F, 0.00390625F, 0.00390625F);
                     if (llIIlIIlIIll(95199, 5550)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179109_b(8.0F, 8.0F, 8.0F);
+                        GlStateManager.translate(8.0F, 8.0F, 8.0F);
                         if (llIIlIIlIIll(95199, 5550)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179128_n(5888);
+                            GlStateManager.matrixMode(5888);
                             if (llIIlIIlIIll(95199, 5550)) {
                                 throw null;
                             } else {
                                 this.                                                                                   .
-                                func_110434_K().func_110577_a(this.);
-                                GlStateManager.func_187421_b(3553, 10241, 9729);
+                                getTextureManager().bindTexture(this.);
+                                GlStateManager.glTexParameteri(3553, 10241, 9729);
                                 if (llIIlIIlIIll(95199, 5550)) {
                                     throw null;
                                 } else {
-                                    GlStateManager.func_187421_b(3553, 10240, 9729);
+                                    GlStateManager.glTexParameteri(3553, 10240, 9729);
                                     if (llIIlIIlIIll(95199, 5550)) {
                                         throw null;
                                     } else {
-                                        GlStateManager.func_187421_b(3553, 10242, 10496);
+                                        GlStateManager.glTexParameteri(3553, 10242, 10496);
                                         if (llIIlIIlIIll(95199, 5550)) {
                                             throw null;
                                         } else {
-                                            GlStateManager.func_187421_b(3553, 10243, 10496);
+                                            GlStateManager.glTexParameteri(3553, 10243, 10496);
                                             if (llIIlIIlIIll(95199, 5550)) {
                                                 throw null;
                                             } else {
-                                                GlStateManager.func_179131_c(1.0F, 1.0F, 1.0F, 1.0F);
+                                                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                                                 if (llIIlIIlIIll(95199, 5550)) {
                                                     throw null;
                                                 } else {
-                                                    GlStateManager.func_179098_w();
+                                                    GlStateManager.enableTexture2D();
                                                     if (llIIlIIlIIll(95199, 5550)) {
                                                         throw null;
                                                     } else {
-                                                        GlStateManager.func_179138_g(OpenGlHelper.field_77478_a);
+                                                        GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
                                                         if (llIIlIIlIIll(95199, 5550)) {
                                                             throw null;
                                                         } else {

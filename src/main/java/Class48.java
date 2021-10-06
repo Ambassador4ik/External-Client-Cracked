@@ -91,7 +91,7 @@ public class Class48 extends GuiOverlayDebug {
             } else {
                 var10001 = var10001.append(var10002);
                 boolean var10003;
-                if (lllllllllIlI(this..field_71474_y.field_74329_Q)){
+                if (lllllllllIlI(this..gameSettings.showDebugProfilerChart)){
                     var10002 = Class60. ("jtluzq>");
                     if (llllllllIlIl(51620, 8106)) {
                         throw null;
@@ -118,7 +118,7 @@ public class Class48 extends GuiOverlayDebug {
                         throw null;
                     } else {
                         var10001 = var10001.append(var10002);
-                        if (lllllllllIlI(this..field_71474_y.field_181657_aC)){
+                        if (lllllllllIlI(this..gameSettings.showLagometer)){
                             var10002 = Class60. ("jtluzq>");
                             if (llllllllIlIl(51620, 8106)) {
                                 throw null;
@@ -155,16 +155,16 @@ public class Class48 extends GuiOverlayDebug {
     }
 
     private List ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
-        return this.func_175238_c();
+        return this.getDebugInfoRight();
     }
 
-    public void func_175239_b(ScaledResolution var1) {
+    public void renderDebugInfoRight(ScaledResolution var1) {
         boolean var10000 = true;
     }
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public void func_180798_a() {
+    public void renderDebugInfoLeft() {
         boolean var10000 = true;
     }
 }

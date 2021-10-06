@@ -322,12 +322,12 @@ public class Class85 extends Class171 {
 
                             while (!llIlllIlllII(84460, 7356)) {
                                 if (llIlllIllllI(0)) {
-                                    if (llIlllIlllIl(this..field_71439_g.func_70090_H())){
+                                    if (llIlllIlllIl(this..player.isInWater())){
                                         var8 = this.                                                                                                    .
-                                        field_71439_g;
-                                        double var10 = var8.field_70181_x;
+                                        player;
+                                        double var10 = var8.motionY;
                                         double var10002;
-                                        if (llIlllIlllIl(this..field_71439_g.func_70090_H())){
+                                        if (llIlllIlllIl(this..player.isInWater())){
                                             var10002 = 1.0D;
                                             boolean var10003 = true;
                                         } else{
@@ -342,9 +342,9 @@ public class Class85 extends Class171 {
                                             throw null;
                                         }
 
-                                        var8.field_70181_x = var10 + var10002;
+                                        var8.motionY = var10 + var10002;
                                         this.                                                                                                    .
-                                        field_71439_g.func_70664_aZ();
+                                        player.jump();
                                         var7 = true;
                                         return;
                                     }
@@ -364,12 +364,12 @@ public class Class85 extends Class171 {
                                 throw null;
                             }
 
-                            if (llIlllIlllIl(this..field_71439_g.func_70090_H())){
+                            if (llIlllIlllIl(this..player.isInWater())){
                             this.                                                                                                    .
-                            field_71439_g.field_70747_aH = (float) this.                                                                                            .
+                            player.jumpMovementFactor = (float) this.                                                                                            .
                             () * 0.1F;
                             this.                                                                                                    .
-                            field_71439_g.field_70181_x = this.                                                                                  .
+                            player.motionY = this.                                                                                  .
                             () * 0.10000000149011612D;
                             var7 = true;
                             return;
@@ -380,9 +380,9 @@ public class Class85 extends Class171 {
                                 throw null;
                             }
 
-                            if (llIlllIlllIl(this..field_71439_g.func_70090_H())){
+                            if (llIlllIlllIl(this..player.isInWater())){
                             this.                                                                                                    .
-                            field_71439_g.field_70181_x = 0.0D;
+                            player.motionY = 0.0D;
                             var10000 = Class13. ();
                             if (llIlllIlllII(84460, 7356)) {
                                 throw null;
@@ -390,10 +390,10 @@ public class Class85 extends Class171 {
 
                             if (llIlllIlllIl(var10000)) {
                                 this.                                                                                                    .
-                                field_71439_g.field_70747_aH = (float) this.                                                                                            .
+                                player.jumpMovementFactor = (float) this.                                                                                            .
                                 () * 0.1F;
                                 this.                                                                                                    .
-                                field_71439_g.field_70181_x = this.                                                                                  .
+                                player.motionY = this.                                                                                  .
                                 () * 0.10000000149011612D;
                                 var7 = true;
                                 return;
@@ -405,33 +405,33 @@ public class Class85 extends Class171 {
                                 throw null;
                             }
 
-                            if (llIlllIlllIl(this..field_71439_g.func_70090_H())){
+                            if (llIlllIlllIl(this..player.isInWater())){
                             Class161. (1.4D);
                             if (llIlllIlllII(84460, 7356)) {
                                 throw null;
                             }
 
                             this.                                                                                                    .
-                            field_71439_g.field_70181_x = 0.25D;
+                            player.motionY = 0.25D;
                             this.                                                                                                    .
-                            field_71439_g.field_70122_E = false;
+                            player.onGround = false;
                         }
                         case 4:
                             if (llIlllIlllII(84460, 7356)) {
                                 throw null;
                             }
 
-                            if (llIlllIlllIl(this..field_71439_g.func_70090_H())){
+                            if (llIlllIlllIl(this..player.isInWater())){
                             Class161. (1.6D, this.                                                                                                    .
-                            field_71439_g.field_70177_z, (double) this.                                                                                                    .
-                            field_71439_g.field_71158_b.field_78902_a, (double) this.                                                                                                    .
-                            field_71439_g.field_71158_b.field_192832_b);
+                            player.rotationYaw, (double) this.                                                                                                    .
+                            player.movementInput.moveStrafe, (double) this.                                                                                                    .
+                            player.movementInput.moveForward);
                             if (llIlllIlllII(84460, 7356)) {
                                 throw null;
                             }
 
                             this.                                                                                                    .
-                            field_71439_g.field_70181_x = 0.3D;
+                            player.motionY = 0.3D;
                             var7 = true;
                             return;
                         }
@@ -441,22 +441,22 @@ public class Class85 extends Class171 {
                                 throw null;
                             }
 
-                            if (llIlllIlllIl(this..field_71439_g.func_70090_H()) &&llIlllIlllIl(this.. (80))){
+                            if (llIlllIlllIl(this..player.isInWater()) &&llIlllIlllIl(this.. (80))){
                             this.                                                                                                    .
-                            field_71439_g.func_70664_aZ();
+                            player.jump();
                             EntityPlayerSP var9 = this.                                                                                                    .
-                            field_71439_g;
-                            var9.field_70159_w *= 0.9D;
+                            player;
+                            var9.motionX *= 0.9D;
                             var8 = this.                                                                                                    .
-                            field_71439_g;
-                            var8.field_70179_y *= 0.9D;
+                            player;
+                            var8.motionZ *= 0.9D;
                         }
 
                         if (llIlllIlllII(84460, 7356)) {
                             throw null;
                         }
 
-                        if (llIlllIllllI(this..field_71439_g.func_70090_H())){
+                        if (llIlllIllllI(this..player.isInWater())){
                             this.                                                                                         .
                             ();
                             var7 = true;
@@ -468,16 +468,16 @@ public class Class85 extends Class171 {
                                 throw null;
                             }
 
-                            if (llIlllIlllIl(this..field_71439_g.func_70090_H()) &&llIlllIlllIl(this.. (70))){
+                            if (llIlllIlllIl(this..player.isInWater()) &&llIlllIlllIl(this.. (70))){
                             this.                                                                                                    .
-                            field_71439_g.func_70664_aZ();
+                            player.jump();
                         }
 
                         if (llIlllIlllII(84460, 7356)) {
                             throw null;
                         }
 
-                        if (llIlllIllllI(this..field_71439_g.func_70090_H())){
+                        if (llIlllIllllI(this..player.isInWater())){
                             this.                                                                                         .
                             ();
                             var7 = true;
@@ -489,13 +489,13 @@ public class Class85 extends Class171 {
                                 throw null;
                             }
 
-                            if (llIlllIlllIl(this. (this..field_71439_g)) &&llIlllIllllI(this..field_71439_g.func_70093_af()) &&llIlllIllllI(this..field_71474_y.field_74314_A.func_151470_d())){
+                            if (llIlllIlllIl(this. (this..player)) &&llIlllIllllI(this..player.isSneaking()) &&llIlllIllllI(this..gameSettings.keyBindJump.isKeyDown())){
                             this.                                                                                                    .
-                            field_71439_g.field_70181_x = 0.1D;
-                            if (llIlllIlllll(this..field_71439_g.func_184187_bx()) &&
-                            llIlllIllllI(this..field_71439_g.func_184187_bx() instanceof EntityBoat)){
+                            player.motionY = 0.1D;
+                            if (llIlllIlllll(this..player.getRidingEntity()) &&
+                            llIlllIllllI(this..player.getRidingEntity() instanceof EntityBoat)){
                                 this.                                                                                                    .
-                                field_71439_g.func_184187_bx().field_70181_x = 0.3D;
+                                player.getRidingEntity().motionY = 0.3D;
                                 var7 = true;
                                 return;
                             }
@@ -534,8 +534,8 @@ public class Class85 extends Class171 {
         } else if (llIlllIlllII(91829, 4569)) {
             throw null;
         } else {
-            double var2 = var1.field_70163_u + 0.01D;
-            int var10000 = MathHelper.func_76128_c(var1.field_70165_t);
+            double var2 = var1.posY + 0.01D;
+            int var10000 = MathHelper.floor(var1.posX);
             if (llIlllIlllII(91829, 4569)) {
                 throw null;
             } else {
@@ -543,7 +543,7 @@ public class Class85 extends Class171 {
 
                 label70:
                 while (!llIlllIlllII(91829, 4569)) {
-                    int var10001 = MathHelper.func_76143_f(var1.field_70165_t);
+                    int var10001 = MathHelper.ceil(var1.posX);
                     if (llIlllIlllII(91829, 4569)) {
                         throw null;
                     }
@@ -556,14 +556,14 @@ public class Class85 extends Class171 {
                         return false;
                     }
 
-                    var10000 = MathHelper.func_76128_c(var1.field_70161_v);
+                    var10000 = MathHelper.floor(var1.posZ);
                     if (llIlllIlllII(91829, 4569)) {
                         throw null;
                     }
 
                     boolean var8;
                     for (int var5 = var10000; !llIlllIlllII(91829, 4569); var8 = true) {
-                        var10001 = MathHelper.func_76143_f(var1.field_70161_v);
+                        var10001 = MathHelper.ceil(var1.posZ);
                         if (llIlllIlllII(91829, 4569)) {
                             throw null;
                         }
@@ -585,7 +585,7 @@ public class Class85 extends Class171 {
                         }
 
                         BlockPos var6 = var7;
-                        if (llIlllIlllIl(this..field_71441_e.func_180495_p(var6).func_177230_c() instanceof BlockLiquid))
+                        if (llIlllIlllIl(this..world.getBlockState(var6).getBlock() instanceof BlockLiquid))
                         {
                             return true;
                         }

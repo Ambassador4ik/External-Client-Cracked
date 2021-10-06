@@ -62,7 +62,7 @@ public class Class38 extends Class171 {
 
     public void _____________________________________________________________________________________/* $FF was:                                                                                      */() {
         this.                                                                                                    .
-        func_147108_a(Class73..                                                                                                 )
+        displayGuiScreen(Class73..                                                                                                 )
         ;
         this. (false);
         boolean var10000 = true;

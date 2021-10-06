@@ -68,9 +68,9 @@ public class Class67 extends Class171 {
             }
 
             double var2 = 0.41999998688698D;
-            double[] var5 = new double[]{this..field_71439_g.field_70165_t, this.                                                                                                    .
-            field_71439_g.field_70163_u + var2, this.                                                                                                    .
-            field_71439_g.field_70161_v};
+            double[] var5 = new double[]{this..player.posX, this.                                                                                                    .
+            player.posY + var2, this.                                                                                                    .
+            player.posZ};
             Position var10003 = new Position(var5[0], var5[1], var5[2], false);
             if (llIIIllIlllI(46032, 3799)) {
                 throw null;
@@ -78,7 +78,7 @@ public class Class67 extends Class171 {
 
             this. (var10003);
             this.                                                                                                    .
-            field_71439_g.func_70107_b(var5[0], var5[1], var5[2]);
+            player.setPosition(var5[0], var5[1], var5[2]);
             ++var4;
             CPacketConfirmTransaction var10001 = new CPacketConfirmTransaction();
             if (llIIIllIlllI(46032, 3799)) {

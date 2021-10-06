@@ -164,8 +164,8 @@ public class Class70 extends Class171 {
                 throw null;
             } else {
                 MovementInput var2 = var1.getMovementInput();
-                var2.field_192832_b = 0.0F;
-                var2.field_78902_a = 0.0F;
+                var2.moveForward = 0.0F;
+                var2.moveStrafe = 0.0F;
                 var10000 = true;
             }
         } else if (lllllIIIIIlI(53686, 4176)) {
@@ -194,9 +194,9 @@ public class Class70 extends Class171 {
                     throw null;
                 } else {
                     this. (var10001);
-                    if (lllllIIIIllI(var1.phase, Phase.END) && lllllIIIIlll(Class122.) && lllllIIIlIII(Class122..func_70089_S()))
+                    if (lllllIIIIllI(var1.phase, Phase.END) && lllllIIIIlll(Class122.) && lllllIIIlIII(Class122..isEntityAlive()))
                     {
-                        byte var10000 = Keyboard.isKeyDown(this..field_71474_y.field_74366_z.func_151463_i());
+                        byte var10000 = Keyboard.isKeyDown(this..gameSettings.keyBindRight.getKeyCode());
                         if (lllllIIIIIlI(84134, 951)) {
                             throw null;
                         }
@@ -209,7 +209,7 @@ public class Class70 extends Class171 {
                             throw null;
                         }
 
-                        var10000 = Keyboard.isKeyDown(this..field_71474_y.field_74370_x.func_151463_i());
+                        var10000 = Keyboard.isKeyDown(this..gameSettings.keyBindLeft.getKeyCode());
                         if (lllllIIIIIlI(84134, 951)) {
                             throw null;
                         }
@@ -222,7 +222,7 @@ public class Class70 extends Class171 {
                             throw null;
                         }
 
-                        if (lllllIIIlIII(this..field_71439_g.field_70123_F) &&lllllIIIlIII(this.. (80))){
+                        if (lllllIIIlIII(this..player.collidedHorizontally) &&lllllIIIlIII(this.. (80))){
                         this. = -this.;
                         this.                                                                                         .
                         ();
@@ -234,7 +234,7 @@ public class Class70 extends Class171 {
 
                         boolean var10;
                         double var19;
-                        if (lllllIIIlIIl((var19 = (double) this..field_71439_g.func_70032_d(Class122.) - this.. ()) ==
+                        if (lllllIIIlIIl((var19 = (double) this..player.getDistance(Class122.) - this.. ()) ==
                         0.0D ? 0 : (var19 < 0.0D ? -1 : 1))){
                         var10000 = 1;
                         var10 = true;
@@ -316,7 +316,7 @@ public class Class70 extends Class171 {
                         }
 
                         double var4 = var13;
-                        if (lllllIIIlIII(this.. ()) &&lllllIIIlIII(this..field_71439_g.func_184587_cr())){
+                        if (lllllIIIlIII(this.. ()) &&lllllIIIlIII(this..player.isHandActive())){
                         var10000 = 1;
                         var10 = true;
                     } else{
@@ -394,9 +394,9 @@ public class Class70 extends Class171 {
         double var16;
         if (lllllIIIIIII((var15 = var6 - 0.0D) == 0.0D ? 0 : (var15 < 0.0D ? -1 : 1)) && lllllIIIIIII((var16 = var4 - 0.0D) == 0.0D ? 0 : (var16 < 0.0D ? -1 : 1))) {
             this.                                                                                                    .
-            field_71439_g.field_70159_w = 0.0D;
+            player.motionX = 0.0D;
             this.                                                                                                    .
-            field_71439_g.field_70179_y = 0.0D;
+            player.motionZ = 0.0D;
             var10000 = true;
         } else if (lllllIIIIIlI(68332, 274)) {
             throw null;
@@ -526,9 +526,9 @@ public class Class70 extends Class171 {
                                 } else {
                                     var8 = var13;
                                     this.                                                                                                    .
-                                    field_71439_g.field_70159_w = var6 * var1 * var10 + var4 * var1 * var8;
+                                    player.motionX = var6 * var1 * var10 + var4 * var1 * var8;
                                     this.                                                                                                    .
-                                    field_71439_g.field_70179_y = var6 * var1 * var8 - var4 * var1 * var10;
+                                    player.motionZ = var6 * var1 * var8 - var4 * var1 * var10;
                                     var10000 = true;
                                 }
                             }

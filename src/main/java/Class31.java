@@ -45,18 +45,18 @@ public class Class31 extends Class171 {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(PlayerTickEvent var1) {
-        if (llIlIllIIlII(this..field_71439_g.func_70089_S())){
+        if (llIlIllIIlII(this..player.isEntityAlive())){
             EntityPlayerSP var10000;
             if (llIlIllIIlII(this.. (4000))){
                 var10000 = this.                                                                                                    .
-                field_71439_g;
-                float var10001 = var10000.field_70177_z;
+                player;
+                float var10001 = var10000.rotationYaw;
                 float var10002 = Class109. (0.6F);
                 if (llIlIllIIIll(72189, 11)) {
                     throw null;
                 }
 
-                var10000.field_70177_z = var10001 + var10002;
+                var10000.rotationYaw = var10001 + var10002;
             }
 
             if (llIlIllIIIll(72189, 11)) {
@@ -72,21 +72,21 @@ public class Class31 extends Class171 {
                 double var2 = var5;
                 float var4 = 0.1F;
                 EntityPlayerSP var8 = this.                                                                                                    .
-                field_71439_g;
+                player;
                 double var10 = Math.sin(var2);
                 if (llIlIllIIIll(72189, 11)) {
                     throw null;
                 }
 
-                var8.field_70159_w = -var10 * (double) var4;
+                var8.motionX = -var10 * (double) var4;
                 var10000 = this.                                                                                                    .
-                field_71439_g;
+                player;
                 double var9 = Math.cos(var2);
                 if (llIlIllIIIll(72189, 11)) {
                     throw null;
                 }
 
-                var10000.field_70179_y = var9 * (double) var4;
+                var10000.motionZ = var9 * (double) var4;
             }
 
             if (llIlIllIIIll(72189, 11)) {
@@ -102,7 +102,7 @@ public class Class31 extends Class171 {
                 if (llIlIllIIlIl(var6, 1)) {
                     this. (10L);
                     this.                                                                                                    .
-                    field_71439_g.func_184609_a(EnumHand.MAIN_HAND);
+                    player.swingArm(EnumHand.MAIN_HAND);
                 }
 
                 if (llIlIllIIIll(72189, 11)) {

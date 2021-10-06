@@ -101,37 +101,37 @@ public class Class87 extends Class171 {
 
     public void __________________________________________________________________________________/* $FF was:                                                                                   */() {
         boolean var10000;
-        if (lllIllIlIIlI(this.) && !lllIllIlIIll(this..field_71439_g.func_70089_S())){
+        if (lllIllIlIIlI(this.) && !lllIllIlIIll(this..player.isEntityAlive())){
             if (lllIllIlIlII(78918, 998)) {
                 throw null;
             } else {
-                EntityOtherPlayerMP var2 = new EntityOtherPlayerMP(this..field_71441_e, this.                                                                                                    .
-                field_71439_g.func_146103_bH());
+                EntityOtherPlayerMP var2 = new EntityOtherPlayerMP(this..world, this.                                                                                                    .
+                player.getGameProfile());
                 if (lllIllIlIlII(78918, 998)) {
                     throw null;
                 } else {
                     EntityOtherPlayerMP var1 = var2;
-                    var1.func_70107_b(this..field_71439_g.field_70165_t, this.                                                                                                    .
-                    field_71439_g.field_70163_u, this.                                                                                                    .
-                    field_71439_g.field_70161_v);
-                    var1.func_70606_j(this..field_71439_g.func_110143_aJ());
-                    var1.field_70177_z = this.                                                                                                    .
-                    field_71439_g.field_70177_z;
-                    var1.field_70125_A = this.                                                                                                    .
-                    field_71439_g.field_70125_A;
-                    var1.field_70759_as = this.                                                                                                    .
-                    field_71439_g.field_70759_as;
-                    var1.func_70095_a(this..field_71439_g.func_70093_af());
-                    var1.field_71071_by.func_70455_b(this..field_71439_g.field_71071_by);
-                    var2.field_70737_aN = this.                                                                                                    .
-                    field_71439_g.field_70737_aN;
+                    var1.setPosition(this..player.posX, this.                                                                                                    .
+                    player.posY, this.                                                                                                    .
+                    player.posZ);
+                    var1.setHealth(this..player.getHealth());
+                    var1.rotationYaw = this.                                                                                                    .
+                    player.rotationYaw;
+                    var1.rotationPitch = this.                                                                                                    .
+                    player.rotationPitch;
+                    var1.rotationYawHead = this.                                                                                                    .
+                    player.rotationYawHead;
+                    var1.setSneaking(this..player.isSneaking());
+                    var1.inventory.copyInventory(this..player.inventory);
+                    var2.hurtTime = this.                                                                                                    .
+                    player.hurtTime;
                     this.                                                                                                    .
-                    field_71439_g.field_70144_Y = 1.0F;
+                    player.entityCollisionReduction = 1.0F;
                     this. = var1;
                     this.                                                                                                    .
-                    field_71441_e.func_73027_a(-2, var1);
+                    world.addEntityToWorld(-2, var1);
                     Class73.                                                                                      .                                                                                                    .
-                    (var1.func_70005_c_());
+                    (var1.getName());
                     var10000 = true;
                 }
             }
@@ -180,7 +180,7 @@ public class Class87 extends Class171 {
                     throw null;
                 } else {
                     this. ((String) String.valueOf(var10002.append(var10003).append(this..size())));
-                    if (lllIllIlIIll(this..field_71439_g.func_70089_S())){
+                    if (lllIllIlIIll(this..player.isEntityAlive())){
                         this. ();
                     }
 
@@ -216,13 +216,13 @@ public class Class87 extends Class171 {
 
     public void __________________________________________________________________________________________/* $FF was:                                                                                           */() {
         boolean var10000;
-        if (lllIllIlIllI(this..field_71441_e.func_73045_a(-2)) &&!lllIllIlIIlI(this.)){
+        if (lllIllIlIllI(this..world.getEntityByID(-2)) &&!lllIllIlIIlI(this.)){
             if (lllIllIlIlII(31958, 4047)) {
                 throw null;
             } else {
                 if (lllIllIlIllI(this.)) {
                     Class73.                                                                                      .                                                                                                    .
-                    (this..func_70005_c_());
+                    (this..getName());
                 }
 
                 if (lllIllIlIlII(31958, 4047)) {
@@ -230,14 +230,14 @@ public class Class87 extends Class171 {
                 } else {
                     this. = null;
                     this.                                                                                                    .
-                    field_71439_g.field_70144_Y = 0.0F;
+                    player.entityCollisionReduction = 0.0F;
                     this.                                                                                                    .
-                    field_71441_e.func_73028_b(-2);
+                    world.removeEntityFromWorld(-2);
                     CPacketEntityAction var10001 = new CPacketEntityAction;
                     EntityPlayerSP var10003 = this.                                                                                                    .
-                    field_71439_g;
+                    player;
                     Action var10004;
-                    if (lllIllIlIlIl(this..field_71474_y.field_74311_E.func_151470_d())){
+                    if (lllIllIlIlIl(this..gameSettings.keyBindSneak.isKeyDown())){
                         var10004 = Action.START_SNEAKING;
                         boolean var10005 = true;
                     } else{

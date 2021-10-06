@@ -79,8 +79,8 @@ public class Class72 extends Class171 {
         if (lIIIIIIIIIIll(this.) && lIIIIIIIIIIll(var1 instanceof CPacketUseEntity)) {
             CPacketUseEntity var3;
             Entity var4;
-            if (lIIIIIIIIIIll((var4 = (var3 = (CPacketUseEntity) var1).func_149564_a(this..field_71441_e)) instanceof EntityPlayer) &&
-            lIIIIIIIIIlII(var3.func_149565_c(), Action.ATTACK)){
+            if (lIIIIIIIIIIll((var4 = (var3 = (CPacketUseEntity) var1).getEntityFromWorld(this..world)) instanceof EntityPlayer) &&
+            lIIIIIIIIIlII(var3.getAction(), Action.ATTACK)){
                 byte var10000 = this. ((EntityPlayer) var4);
                 if (lIIIIIIIIIIIl(60404, 2079)) {
                     throw null;
@@ -130,22 +130,22 @@ public class Class72 extends Class171 {
 
     private boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(EntityPlayer var1) {
         byte var10000 = Class13. (var1, this.                                                                                                    .
-        field_71439_g, 90.0F);
+        player, 90.0F);
         if (lIIIIIIIIIIIl(18640, 822)) {
             throw null;
         } else if (lIIIIIIIIIIlI(var10000)) {
             return false;
         } else if (lIIIIIIIIIIIl(18640, 822)) {
             throw null;
-        } else if (lIIIIIIIIIIll(var1.func_184587_cr()) && lIIIIIIIIIIll(Class73..                                                                                                    .
-        (var1.func_70005_c_()))){
+        } else if (lIIIIIIIIIIll(var1.isHandActive()) && lIIIIIIIIIIll(Class73..                                                                                                    .
+        (var1.getName()))){
             return false;
         } else if (lIIIIIIIIIIIl(18640, 822)) {
             throw null;
         } else {
             EntityPlayer var3 = var1;
-            EnumHand var2 = var1.func_184600_cs();
-            if (lIIIIIIIIIIll(var3.func_184592_cb().func_77973_b() instanceof ItemShield) && lIIIIIIIIIlII(var2, EnumHand.OFF_HAND)) {
+            EnumHand var2 = var1.getActiveHand();
+            if (lIIIIIIIIIIll(var3.getHeldItemOffhand().getItem() instanceof ItemShield) && lIIIIIIIIIlII(var2, EnumHand.OFF_HAND)) {
                 return true;
             } else if (lIIIIIIIIIIIl(18640, 822)) {
                 throw null;
@@ -157,27 +157,27 @@ public class Class72 extends Class171 {
 
     private void __________________________________________________________________________________________/* $FF was:                                                                                           */() {
         int var1 = this.                                                                                                    .
-        field_71439_g.field_71071_by.field_70461_c;
+        player.inventory.currentItem;
         InventoryPlayer var10010 = this.                                                                                                    .
-        field_71439_g.field_71071_by;
+        player.inventory;
         int var10011 = Class13. ();
         if (lIIIIIIIIIIIl(28856, 9842)) {
             throw null;
         } else {
-            var10010.field_70461_c = var10011;
+            var10010.currentItem = var10011;
             this.                                                                                                    .
-            field_71442_b.func_78765_e();
+            playerController.updateController();
             this. ((long) this.. ());
             this. = false;
             this. (this.);
             this.                                                                                                    .
-            field_71439_g.func_184609_a(EnumHand.MAIN_HAND);
+            player.swingArm(EnumHand.MAIN_HAND);
             this.                                                                                                    .
-            field_71439_g.func_184821_cY();
+            player.resetCooldown();
             this.                                                                                                    .
-            field_71439_g.field_71071_by.field_70461_c = var1;
+            player.inventory.currentItem = var1;
             this.                                                                                                    .
-            field_71442_b.func_78765_e();
+            playerController.updateController();
             boolean var10000 = true;
         }
     }

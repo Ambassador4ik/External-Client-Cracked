@@ -128,17 +128,17 @@ public class Class59 extends Class171 {
             throw null;
         } else {
             if (llIIlIIIIIII(var10000)) {
-                GlStateManager.func_179113_r();
+                GlStateManager.disablePolygonOffset();
                 if (llIIIlllllIl(60853, 6854)) {
                     throw null;
                 }
 
-                GlStateManager.func_179136_a(1.0F, 1100000.0F);
+                GlStateManager.doPolygonOffset(1.0F, 1100000.0F);
                 if (llIIIlllllIl(60853, 6854)) {
                     throw null;
                 }
 
-                GlStateManager.func_179145_e();
+                GlStateManager.enableLighting();
                 if (llIIIlllllIl(60853, 6854)) {
                     throw null;
                 }
@@ -179,17 +179,17 @@ public class Class59 extends Class171 {
             throw null;
         } else {
             if (llIIlIIIIIII(var10000)) {
-                GlStateManager.func_179088_q();
+                GlStateManager.enablePolygonOffset();
                 if (llIIIlllllIl(82454, 8071)) {
                     throw null;
                 }
 
-                GlStateManager.func_179136_a(1.0F, -1100000.0F);
+                GlStateManager.doPolygonOffset(1.0F, -1100000.0F);
                 if (llIIIlllllIl(82454, 8071)) {
                     throw null;
                 }
 
-                GlStateManager.func_179140_f();
+                GlStateManager.disableLighting();
                 if (llIIIlllllIl(82454, 8071)) {
                     throw null;
                 }
@@ -228,7 +228,7 @@ public class Class59 extends Class171 {
         } else {
             boolean var10;
             if (llIIlIIIIIII(var10000.equals(var10001))) {
-                GlStateManager.func_179131_c(1.0F, 1.0F, 1.0F, 1.0F);
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                 if (llIIIlllllIl(95502, 6555)) {
                     throw null;
                 }
@@ -264,10 +264,10 @@ public class Class59 extends Class171 {
                     if (llIIlIIIIIII(var10000.equals(var10001))) {
                         EntityLivingBase var2;
                         EntityLivingBase var11 = var2 = (EntityLivingBase) var1;
-                        double var3 = (double) (var11.func_110143_aJ() / 2.0F);
-                        double var5 = (double) (var11.func_110138_aP() / 2.0F);
+                        double var3 = (double) (var11.getHealth() / 2.0F);
+                        double var5 = (double) (var11.getMaxHealth() / 2.0F);
                         float var7 = (float) (100.0D * var3 / var5) / 50.0F;
-                        GlStateManager.func_179131_c(2.0F - var7, var7, 0.0F, 1.0F);
+                        GlStateManager.color(2.0F - var7, var7, 0.0F, 1.0F);
                         if (llIIIlllllIl(95502, 6555)) {
                             throw null;
                         }
@@ -288,19 +288,19 @@ public class Class59 extends Class171 {
                         if (llIIlIIIIIII(var10000.equals(var10001))) {
                             Color var12 = new Color;
                             FontRenderer var10002 = this.                                                                                                    .
-                            field_71466_p;
+                            fontRenderer;
                             char var10003 = Class13. ((EntityPlayer) var1);
                             if (llIIIlllllIl(95502, 6555)) {
                                 throw null;
                             }
 
-                            var12.<init> (var10002.func_175064_b(var10003));
+                            var12.<init> (var10002.getColorCode(var10003));
                             if (llIIIlllllIl(95502, 6555)) {
                                 throw null;
                             }
 
                             Color var8 = var12;
-                            GlStateManager.func_179131_c((float) var12.getRed() / 255.0F, (float) var8.getGreen() / 255.0F, (float) var8.getBlue() / 255.0F, 1.0F);
+                            GlStateManager.color((float) var12.getRed() / 255.0F, (float) var8.getGreen() / 255.0F, (float) var8.getBlue() / 255.0F, 1.0F);
                             if (llIIIlllllIl(95502, 6555)) {
                                 throw null;
                             }
@@ -320,8 +320,8 @@ public class Class59 extends Class171 {
 
                             if (llIIlIIIIIII(var10000.equals(var10001))) {
                                 float var9 = this.                                                                                                    .
-                                field_71439_g.func_70032_d(var1) / 25.0F;
-                                GlStateManager.func_179131_c(2.0F - var9, var9, 0.0F, 1.0F);
+                                player.getDistance(var1) / 25.0F;
+                                GlStateManager.color(2.0F - var9, var9, 0.0F, 1.0F);
                                 if (llIIIlllllIl(95502, 6555)) {
                                     throw null;
                                 }
@@ -335,7 +335,7 @@ public class Class59 extends Class171 {
                 throw null;
             } else {
                 if (llIIlIIIIIII(Class73..                                                                                                    .
-                (var1.func_70005_c_()))){
+                (var1.getName()))){
                     var10000 = this.                                                                                  .
                     ();
                     var10001 = Class60. ("Uuv>");
@@ -344,7 +344,7 @@ public class Class59 extends Class171 {
                     }
 
                     if (llIIlIIIIlIl(var10000.equals(var10001))) {
-                        GlStateManager.func_179131_c(0.0F, 1.0F, 1.0F, 1.0F);
+                        GlStateManager.color(0.0F, 1.0F, 1.0F, 1.0F);
                         if (llIIIlllllIl(95502, 6555)) {
                             throw null;
                         }

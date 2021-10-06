@@ -249,23 +249,23 @@ public class Class7 extends Class171 {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     private void ____________________________________________________________________________/* $FF was:                                                                             */(Entity var1, float var2) {
-        AxisAlignedBB var3 = var1.func_174813_aQ();
+        AxisAlignedBB var3 = var1.getEntityBoundingBox();
         double var4 = 0.0D;
-        if (llIlIIlllIII(var1.func_70093_af())) {
+        if (llIlIIlllIII(var1.isSneaking())) {
             var4 = 0.05D;
         }
 
         if (llIlIIlllIIl(51565, 5581)) {
             throw null;
         } else {
-            double var6 = var1.field_70142_S + (var1.field_70165_t - var1.field_70142_S) * (double) var2 - this.                                                                                                    .
-            func_175598_ae().field_78730_l;
-            double var8 = var1.field_70137_T + (var1.field_70163_u - var1.field_70137_T) * (double) var2 - this.                                                                                                    .
-            func_175598_ae().field_78731_m - var4;
-            double var10 = var1.field_70136_U + (var1.field_70161_v - var1.field_70136_U) * (double) var2 - this.                                                                                                    .
-            func_175598_ae().field_78728_n;
-            double var12 = (var3.field_72336_d - var3.field_72340_a) / 2.0D;
-            double var14 = var3.field_72337_e - var3.field_72338_b;
+            double var6 = var1.lastTickPosX + (var1.posX - var1.lastTickPosX) * (double) var2 - this.                                                                                                    .
+            getRenderManager().viewerPosX;
+            double var8 = var1.lastTickPosY + (var1.posY - var1.lastTickPosY) * (double) var2 - this.                                                                                                    .
+            getRenderManager().viewerPosY - var4;
+            double var10 = var1.lastTickPosZ + (var1.posZ - var1.lastTickPosZ) * (double) var2 - this.                                                                                                    .
+            getRenderManager().viewerPosZ;
+            double var12 = (var3.maxX - var3.minX) / 2.0D;
+            double var14 = var3.maxY - var3.minY;
             double var16 = 0.0D;
             String var10000 = this.                                                                                                  .
             ();
@@ -274,33 +274,33 @@ public class Class7 extends Class171 {
                 throw null;
             } else {
                 if (llIlIIlllIII(var10000.equals(var10001))) {
-                    var16 = (var3.field_72334_f - var3.field_72339_c) / 2.0D;
+                    var16 = (var3.maxZ - var3.minZ) / 2.0D;
                 }
 
                 if (llIlIIlllIIl(51565, 5581)) {
                     throw null;
                 } else {
-                    GlStateManager.func_179094_E();
+                    GlStateManager.pushMatrix();
                     if (llIlIIlllIIl(51565, 5581)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179090_x();
+                        GlStateManager.disableTexture2D();
                         if (llIlIIlllIIl(51565, 5581)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179097_i();
+                            GlStateManager.disableDepth();
                             if (llIlIIlllIIl(51565, 5581)) {
                                 throw null;
                             } else {
-                                GlStateManager.func_179129_p();
+                                GlStateManager.disableCull();
                                 if (llIlIIlllIIl(51565, 5581)) {
                                     throw null;
                                 } else {
-                                    GlStateManager.func_179147_l();
+                                    GlStateManager.enableBlend();
                                     if (llIlIIlllIIl(51565, 5581)) {
                                         throw null;
                                     } else {
-                                        GlStateManager.func_179132_a(false);
+                                        GlStateManager.depthMask(false);
                                         if (llIlIIlllIIl(51565, 5581)) {
                                             throw null;
                                         } else {
@@ -308,11 +308,11 @@ public class Class7 extends Class171 {
                                             if (llIlIIlllIIl(51565, 5581)) {
                                                 throw null;
                                             } else {
-                                                GlStateManager.func_187441_d(2.0F);
+                                                GlStateManager.glLineWidth(2.0F);
                                                 if (llIlIIlllIIl(51565, 5581)) {
                                                     throw null;
                                                 } else {
-                                                    GlStateManager.func_179137_b(var6, var8, var10);
+                                                    GlStateManager.translate(var6, var8, var10);
                                                     if (llIlIIlllIIl(51565, 5581)) {
                                                         throw null;
                                                     } else {
@@ -325,15 +325,15 @@ public class Class7 extends Class171 {
                                                             AxisAlignedBB var23;
                                                             boolean var24;
                                                             if (llIlIIlllIII(var10000.equals(var10001))) {
-                                                                GlStateManager.func_179114_b(-this..func_175598_ae().field_78735_i, 0.0F, 1.0F, 0.0F)
+                                                                GlStateManager.rotate(-this..getRenderManager().playerViewY, 0.0F, 1.0F, 0.0F)
                                                                 ;
                                                                 if (llIlIIlllIIl(51565, 5581)) {
                                                                     throw null;
                                                                 }
 
                                                                 EntityLivingBase var20 = (EntityLivingBase) var1;
-                                                                var6 = (double) (var20.func_110143_aJ() + var20.func_110139_bj());
-                                                                var8 = (double) (var20.func_110138_aP() + var20.func_110139_bj());
+                                                                var6 = (double) (var20.getHealth() + var20.getAbsorptionAmount());
+                                                                var8 = (double) (var20.getMaxHealth() + var20.getAbsorptionAmount());
                                                                 var10 = 100.0D * var6 / var8;
                                                                 double var18 = var14 * var6 / var8;
                                                                 float var22 = (float) var10 / 50.0F;
@@ -463,7 +463,7 @@ public class Class7 extends Class171 {
                                                                         throw null;
                                                                     }
 
-                                                                    GlStateManager.func_179117_G();
+                                                                    GlStateManager.resetColor();
                                                                     if (llIlIIlllIIl(51565, 5581)) {
                                                                         throw null;
                                                                     }
@@ -478,7 +478,7 @@ public class Class7 extends Class171 {
                                                                         throw null;
                                                                     }
 
-                                                                    GlStateManager.func_179117_G();
+                                                                    GlStateManager.resetColor();
                                                                     if (llIlIIlllIIl(51565, 5581)) {
                                                                         throw null;
                                                                     }
@@ -493,7 +493,7 @@ public class Class7 extends Class171 {
                                                                         throw null;
                                                                     }
 
-                                                                    GlStateManager.func_179117_G();
+                                                                    GlStateManager.resetColor();
                                                                     if (llIlIIlllIIl(51565, 5581)) {
                                                                         throw null;
                                                                     }
@@ -503,15 +503,15 @@ public class Class7 extends Class171 {
                                                             if (llIlIIlllIIl(51565, 5581)) {
                                                                 throw null;
                                                             } else {
-                                                                GlStateManager.func_179089_o();
+                                                                GlStateManager.enableCull();
                                                                 if (llIlIIlllIIl(51565, 5581)) {
                                                                     throw null;
                                                                 } else {
-                                                                    GlStateManager.func_179084_k();
+                                                                    GlStateManager.disableBlend();
                                                                     if (llIlIIlllIIl(51565, 5581)) {
                                                                         throw null;
                                                                     } else {
-                                                                        GlStateManager.func_179132_a(true);
+                                                                        GlStateManager.depthMask(true);
                                                                         if (llIlIIlllIIl(51565, 5581)) {
                                                                             throw null;
                                                                         } else {
@@ -519,19 +519,19 @@ public class Class7 extends Class171 {
                                                                             if (llIlIIlllIIl(51565, 5581)) {
                                                                                 throw null;
                                                                             } else {
-                                                                                GlStateManager.func_179098_w();
+                                                                                GlStateManager.enableTexture2D();
                                                                                 if (llIlIIlllIIl(51565, 5581)) {
                                                                                     throw null;
                                                                                 } else {
-                                                                                    GlStateManager.func_179126_j();
+                                                                                    GlStateManager.enableDepth();
                                                                                     if (llIlIIlllIIl(51565, 5581)) {
                                                                                         throw null;
                                                                                     } else {
-                                                                                        GlStateManager.func_179121_F();
+                                                                                        GlStateManager.popMatrix();
                                                                                         if (llIlIIlllIIl(51565, 5581)) {
                                                                                             throw null;
                                                                                         } else {
-                                                                                            GlStateManager.func_179117_G();
+                                                                                            GlStateManager.resetColor();
                                                                                             if (llIlIIlllIIl(51565, 5581)) {
                                                                                                 throw null;
                                                                                             } else {
@@ -563,7 +563,7 @@ public class Class7 extends Class171 {
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderWorldLastEvent var1) {
         this. (this.. ());
         this.                                                                                                    .
-        field_71441_e.func_72910_y().stream().filter(this::).forEach(this::);
+        world.getLoadedEntityList().stream().filter(this::).forEach(this::);
         boolean var10000 = true;
     }
 
@@ -607,12 +607,12 @@ public class Class7 extends Class171 {
                     throw null;
                 }
 
-                if (llIlIlIIIIII(var1.field_70128_L) && !llIlIlIIIIlI(var1, this..field_71439_g)){
+                if (llIlIlIIIIII(var1.isDead) && !llIlIlIIIIlI(var1, this..player)){
                 if (llIlIIlllIIl(96373, 5340)) {
                     throw null;
                 }
 
-                if (llIlIlIIIIII(this.. ()) &&llIlIIlllIII(var1.func_82150_aj())){
+                if (llIlIlIIIIII(this.. ()) &&llIlIIlllIII(var1.isInvisible())){
                     return false;
                 }
 
@@ -700,8 +700,8 @@ public class Class7 extends Class171 {
                 if (llIlIIlllIII(var10000.equals(var10001))) {
                     EntityLivingBase var3;
                     EntityLivingBase var12 = var3 = (EntityLivingBase) var1;
-                    double var4 = (double) (var12.func_110143_aJ() / 2.0F);
-                    double var6 = (double) (var12.func_110138_aP() / 2.0F);
+                    double var4 = (double) (var12.getHealth() / 2.0F);
+                    double var6 = (double) (var12.getMaxHealth() / 2.0F);
                     float var8 = (float) (100.0D * var4 / var6) / 50.0F;
                     GL11.glColor4f(2.0F - var8, var8, 0.0F, var2);
                     if (llIlIIlllIIl(55885, 8536)) {
@@ -725,13 +725,13 @@ public class Class7 extends Class171 {
                         if (llIlIIlllIII(var1 instanceof EntityPlayer)) {
                             Color var13 = new Color;
                             FontRenderer var10002 = this.                                                                                                    .
-                            field_71466_p;
+                            fontRenderer;
                             char var10003 = Class13. ((EntityPlayer) var1);
                             if (llIlIIlllIIl(55885, 8536)) {
                                 throw null;
                             }
 
-                            var13.<init> (var10002.func_175064_b(var10003));
+                            var13.<init> (var10002.getColorCode(var10003));
                             if (llIlIIlllIIl(55885, 8536)) {
                                 throw null;
                             }
@@ -769,7 +769,7 @@ public class Class7 extends Class171 {
 
                         if (llIlIIlllIII(var10000.equals(var10001))) {
                             float var10 = this.                                                                                                    .
-                            field_71439_g.func_70032_d(var1) / 25.0F;
+                            player.getDistance(var1) / 25.0F;
                             GL11.glColor4f(2.0F - var10, var10, 0.0F, var2);
                             if (llIlIIlllIIl(55885, 8536)) {
                                 throw null;
@@ -783,7 +783,7 @@ public class Class7 extends Class171 {
                 throw null;
             } else {
                 if (llIlIIlllIII(Class73..                                                                                                    .
-                (var1.func_70005_c_()))){
+                (var1.getName()))){
                     GL11.glColor4f(0.0F, 1.0F, 1.0F, var2);
                     if (llIlIIlllIIl(55885, 8536)) {
                         throw null;

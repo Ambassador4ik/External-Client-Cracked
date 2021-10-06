@@ -34,7 +34,7 @@ public class Class80 {
             throw null;
         } else {
             this. = var10003.                                                                                                    .
-            field_71441_e.func_180495_p(var2).func_177230_c();
+            world.getBlockState(var2).getBlock();
             this. = var2;
             boolean var10000 = true;
         }

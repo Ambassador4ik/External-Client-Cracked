@@ -87,7 +87,7 @@ public class Class64 extends Class171 {
     }
 
     public static boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Block var0) {
-        if (llIlllIIlIlI(var0, Blocks.field_150350_a) && llIlllIIlIlI(var0, Blocks.field_185773_cZ) && llIlllIIlIlI(var0, Blocks.field_150459_bM) && llIlllIIlIlI(var0, Blocks.field_150330_I) && llIlllIIlIlI(var0, Blocks.field_150398_cm) && llIlllIIlIlI(var0, Blocks.field_150356_k) && llIlllIIlIlI(var0, Blocks.field_150358_i) && llIlllIIlIlI(var0, Blocks.field_150353_l) && llIlllIIlIlI(var0, Blocks.field_150394_bc) && llIlllIIlIlI(var0, Blocks.field_150388_bm) && llIlllIIlIlI(var0, Blocks.field_150469_bN) && llIlllIIlIlI(var0, Blocks.field_150393_bb) && llIlllIIlIlI(var0, Blocks.field_150328_O) && llIlllIIlIlI(var0, Blocks.field_150337_Q) && llIlllIIlIlI(var0, Blocks.field_150429_aA) && llIlllIIlIlI(var0, Blocks.field_150329_H) && llIlllIIlIlI(var0, Blocks.field_150478_aa) && llIlllIIlIlI(var0, Blocks.field_150437_az) && llIlllIIlIlI(var0, Blocks.field_150327_N) && llIlllIIlIlI(var0, Blocks.field_150395_bd) && llIlllIIlIlI(var0, Blocks.field_150355_j) && llIlllIIlIlI(var0, Blocks.field_150321_G) && llIlllIIlIlI(var0, Blocks.field_150464_aj)) {
+        if (llIlllIIlIlI(var0, Blocks.AIR) && llIlllIIlIlI(var0, Blocks.BEETROOTS) && llIlllIIlIlI(var0, Blocks.CARROTS) && llIlllIIlIlI(var0, Blocks.DEADBUSH) && llIlllIIlIlI(var0, Blocks.DOUBLE_PLANT) && llIlllIIlIlI(var0, Blocks.FLOWING_LAVA) && llIlllIIlIlI(var0, Blocks.FLOWING_WATER) && llIlllIIlIlI(var0, Blocks.LAVA) && llIlllIIlIlI(var0, Blocks.MELON_STEM) && llIlllIIlIlI(var0, Blocks.NETHER_WART) && llIlllIIlIlI(var0, Blocks.POTATOES) && llIlllIIlIlI(var0, Blocks.PUMPKIN_STEM) && llIlllIIlIlI(var0, Blocks.RED_FLOWER) && llIlllIIlIlI(var0, Blocks.RED_MUSHROOM) && llIlllIIlIlI(var0, Blocks.REDSTONE_TORCH) && llIlllIIlIlI(var0, Blocks.TALLGRASS) && llIlllIIlIlI(var0, Blocks.TORCH) && llIlllIIlIlI(var0, Blocks.UNLIT_REDSTONE_TORCH) && llIlllIIlIlI(var0, Blocks.YELLOW_FLOWER) && llIlllIIlIlI(var0, Blocks.VINE) && llIlllIIlIlI(var0, Blocks.WATER) && llIlllIIlIlI(var0, Blocks.WEB) && llIlllIIlIlI(var0, Blocks.WHEAT)) {
             return true;
         } else if (llIlllIIllII(81546, 5391)) {
             throw null;
@@ -102,32 +102,32 @@ public class Class64 extends Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderWorldLastEvent var1) {
         this. = this.                                                                                                    .
-        field_71474_y.field_74336_f;
+        gameSettings.viewBobbing;
         EntityPlayerSP var2;
         ItemStack var3;
         boolean var33;
-        if (llIlllIlIIII(var3 = (var2 = this..field_71439_g).field_71071_by.func_70448_g())){
+        if (llIlllIlIIII(var3 = (var2 = this..player).inventory.getCurrentItem())){
             var33 = true;
         } else if (llIlllIIllII(57641, 7546)) {
             throw null;
         } else {
             Item var4;
-            if (llIlllIlIIIl((var4 = var3.func_77973_b()) instanceof ItemBow) && llIlllIlIIIl(var4 instanceof ItemSnowball) && llIlllIlIIIl(var4 instanceof ItemEgg) && llIlllIlIIIl(var4 instanceof ItemEnderPearl) && llIlllIlIIIl(var4 instanceof ItemSplashPotion) && llIlllIlIIIl(var4 instanceof ItemLingeringPotion) && llIlllIlIIIl(var4 instanceof ItemFishingRod)) {
+            if (llIlllIlIIIl((var4 = var3.getItem()) instanceof ItemBow) && llIlllIlIIIl(var4 instanceof ItemSnowball) && llIlllIlIIIl(var4 instanceof ItemEgg) && llIlllIlIIIl(var4 instanceof ItemEnderPearl) && llIlllIlIIIl(var4 instanceof ItemSplashPotion) && llIlllIlIIIl(var4 instanceof ItemLingeringPotion) && llIlllIlIIIl(var4 instanceof ItemFishingRod)) {
                 var33 = true;
             } else if (llIlllIIllII(57641, 7546)) {
                 throw null;
             } else {
                 this.                                                                                                    .
-                field_71474_y.field_74336_f = false;
+                gameSettings.viewBobbing = false;
                 Class22. (var1.getPartialTicks(), 2);
                 if (llIlllIIllII(57641, 7546)) {
                     throw null;
                 } else {
                     this.                                                                                                    .
-                    field_71474_y.field_74336_f = this.;
-                    byte var25 = var3.func_77973_b() instanceof ItemBow;
-                    double var10001 = var2.field_70142_S + (var2.field_70165_t - var2.field_70142_S) * (double) var1.getPartialTicks();
-                    double var10002 = Math.toRadians((double) var2.field_70177_z);
+                    gameSettings.viewBobbing = this.;
+                    byte var25 = var3.getItem() instanceof ItemBow;
+                    double var10001 = var2.lastTickPosX + (var2.posX - var2.lastTickPosX) * (double) var1.getPartialTicks();
+                    double var10002 = Math.toRadians((double) var2.rotationYaw);
                     if (llIlllIIllII(57641, 7546)) {
                         throw null;
                     } else {
@@ -136,9 +136,9 @@ public class Class64 extends Class171 {
                             throw null;
                         } else {
                             double var5 = var10001 - var10002 * 0.07999999821186066D;
-                            double var7 = var2.field_70137_T + (var2.field_70163_u - var2.field_70137_T) * (double) var1.getPartialTicks() + (double) var2.func_70047_e() - 0.04D;
-                            double var10000 = var2.field_70136_U + (var2.field_70161_v - var2.field_70136_U) * (double) var1.getPartialTicks();
-                            var10001 = Math.toRadians((double) var2.field_70177_z);
+                            double var7 = var2.lastTickPosY + (var2.posY - var2.lastTickPosY) * (double) var1.getPartialTicks() + (double) var2.getEyeHeight() - 0.04D;
+                            double var10000 = var2.lastTickPosZ + (var2.posZ - var2.lastTickPosZ) * (double) var1.getPartialTicks();
+                            var10001 = Math.toRadians((double) var2.rotationYaw);
                             if (llIlllIIllII(57641, 7546)) {
                                 throw null;
                             } else {
@@ -164,12 +164,12 @@ public class Class64 extends Class171 {
                                         throw null;
                                     } else {
                                         float var11 = var30;
-                                        var10001 = Math.toRadians((double) var2.field_70177_z);
+                                        var10001 = Math.toRadians((double) var2.rotationYaw);
                                         if (llIlllIIllII(57641, 7546)) {
                                             throw null;
                                         } else {
                                             float var12 = (float) var10001;
-                                            var10000 = Math.toRadians((double) var2.field_70125_A);
+                                            var10000 = Math.toRadians((double) var2.rotationPitch);
                                             if (llIlllIIllII(57641, 7546)) {
                                                 throw null;
                                             } else {
@@ -207,7 +207,7 @@ public class Class64 extends Class171 {
                                                                         var16 /= var20;
                                                                         var18 /= var20;
                                                                         if (llIlllIlIIll(var25)) {
-                                                                            var30 = var11 = (float) (72000 - var2.func_184605_cv()) / 20.0F;
+                                                                            var30 = var11 = (float) (72000 - var2.getItemInUseCount()) / 20.0F;
                                                                             float var41;
                                                                             float var42;
                                                                             if (!llIlllIlIlIl((var41 = (var11 = (var30 * var30 + var11 * 2.0F) / 3.0F) - 1.0F) == 0.0F ? 0 : (var41 < 0.0F ? -1 : 1)) || llIlllIlIlIl((var42 = var11 - 0.1F) == 0.0F ? 0 : (var42 < 0.0F ? -1 : 1))) {
@@ -269,7 +269,7 @@ public class Class64 extends Class171 {
                                                                                                         throw null;
                                                                                                     } else {
                                                                                                         RenderManager var29 = this.                                                                                                    .
-                                                                                                        func_175598_ae();
+                                                                                                        getRenderManager();
                                                                                                         if (llIlllIlIIll(var25)) {
                                                                                                             var10000 = 0.005D;
                                                                                                             var31 = true;
@@ -303,7 +303,7 @@ public class Class64 extends Class171 {
                                                                                                             throw null;
                                                                                                         } else {
                                                                                                             var20 = var10000;
-                                                                                                            Vec3d var35 = new Vec3d(var2.field_70165_t, var2.field_70163_u + (double) var2.func_70047_e(), var2.field_70161_v);
+                                                                                                            Vec3d var35 = new Vec3d(var2.posX, var2.posY + (double) var2.getEyeHeight(), var2.posZ);
                                                                                                             if (llIlllIIllII(57641, 7546)) {
                                                                                                                 throw null;
                                                                                                             } else {
@@ -333,7 +333,7 @@ public class Class64 extends Class171 {
 
                                                                                                                                 while (!llIlllIIllII(57641, 7546)) {
                                                                                                                                     if (llIlllIllIIl(var37, 1000)) {
-                                                                                                                                        GL11.glVertex3d(var5 - var29.field_78730_l, var7 - var29.field_78731_m, var9 - var29.field_78728_n);
+                                                                                                                                        GL11.glVertex3d(var5 - var29.viewerPosX, var7 - var29.viewerPosY, var9 - var29.viewerPosZ);
                                                                                                                                         if (llIlllIIllII(57641, 7546)) {
                                                                                                                                             throw null;
                                                                                                                                         }
@@ -346,7 +346,7 @@ public class Class64 extends Class171 {
                                                                                                                                         var18 *= 0.999D;
                                                                                                                                         var16 -= var20;
                                                                                                                                         Iterator var26 = this.                                                                                                    .
-                                                                                                                                        field_71441_e.field_72996_f.iterator();
+                                                                                                                                        world.loadedEntityList.iterator();
 
                                                                                                                                         Vec3d var34;
                                                                                                                                         AxisAlignedBB var38;
@@ -367,13 +367,13 @@ public class Class64 extends Class171 {
 
                                                                                                                                             Entity var27;
                                                                                                                                             if (llIlllIlIIll((var27 = (Entity) var26.next()) instanceof EntityLiving)) {
-                                                                                                                                                var38 = var27.func_174813_aQ().func_72314_b(0.35D, 0.35D, 0.35D);
+                                                                                                                                                var38 = var27.getEntityBoundingBox().grow(0.35D, 0.35D, 0.35D);
                                                                                                                                                 var34 = new Vec3d(var5, var7, var9);
                                                                                                                                                 if (llIlllIIllII(57641, 7546)) {
                                                                                                                                                     throw null;
                                                                                                                                                 }
 
-                                                                                                                                                if (llIlllIlIIll(var38.func_72318_a(var34))) {
+                                                                                                                                                if (llIlllIlIIll(var38.contains(var34))) {
                                                                                                                                                     var39 = var25 = 1;
                                                                                                                                                     var31 = true;
                                                                                                                                                     break;
@@ -393,7 +393,7 @@ public class Class64 extends Class171 {
                                                                                                                                             }
 
                                                                                                                                             var26 = this.                                                                                                    .
-                                                                                                                                            field_71441_e.field_73010_i.iterator();
+                                                                                                                                            world.playerEntities.iterator();
 
                                                                                                                                             while (true) {
                                                                                                                                                 if (llIlllIIllII(57641, 7546)) {
@@ -410,15 +410,15 @@ public class Class64 extends Class171 {
                                                                                                                                                 }
 
                                                                                                                                                 EntityPlayer var28;
-                                                                                                                                                if (llIlllIIlIlI(var28 = (EntityPlayer) var26.next(), this..field_71439_g))
+                                                                                                                                                if (llIlllIIlIlI(var28 = (EntityPlayer) var26.next(), this..player))
                                                                                                                                                 {
-                                                                                                                                                    var38 = var28.func_174813_aQ().func_72314_b(0.35D, 0.35D, 0.35D);
+                                                                                                                                                    var38 = var28.getEntityBoundingBox().grow(0.35D, 0.35D, 0.35D);
                                                                                                                                                     var34 = new Vec3d(var5, var7, var9);
                                                                                                                                                     if (llIlllIIllII(57641, 7546)) {
                                                                                                                                                         throw null;
                                                                                                                                                     }
 
-                                                                                                                                                    if (llIlllIlIIll(var38.func_72318_a(var34))) {
+                                                                                                                                                    if (llIlllIlIIll(var38.contains(var34))) {
                                                                                                                                                         var39 = var25 = 1;
                                                                                                                                                         var31 = true;
                                                                                                                                                         break;
@@ -438,7 +438,7 @@ public class Class64 extends Class171 {
                                                                                                                                                 }
 
                                                                                                                                                 WorldClient var40 = this.                                                                                                    .
-                                                                                                                                                field_71441_e;
+                                                                                                                                                world;
                                                                                                                                                 BlockPos var36 = new BlockPos;
                                                                                                                                                 var10003 = new Vec3d(var5, var7, var9);
                                                                                                                                                 if (llIlllIIllII(57641, 7546)) {
@@ -451,7 +451,7 @@ public class Class64 extends Class171 {
                                                                                                                                                     throw null;
                                                                                                                                                 }
 
-                                                                                                                                                var39 = (var40.func_180495_p(var36).func_177230_c());
+                                                                                                                                                var39 = (var40.getBlockState(var36).getBlock());
                                                                                                                                                 if (llIlllIIllII(57641, 7546)) {
                                                                                                                                                     throw null;
                                                                                                                                                 }
@@ -571,15 +571,15 @@ public class Class64 extends Class171 {
                     return var6;
                 }
 
-                var2 = var2.func_178787_e(var3.func_186678_a(0.4D));
-                Vec3d var12 = new Vec3d(var3.field_72450_a * 0.996D, var3.field_72448_b * 0.996D - var4 * 4.0D, var3.field_72449_c * 0.996D);
+                var2 = var2.add(var3.scale(0.4D));
+                Vec3d var12 = new Vec3d(var3.x * 0.996D, var3.y * 0.996D - var4 * 4.0D, var3.z * 0.996D);
                 if (llIlllIIllII(53680, 3623)) {
                     throw null;
                 }
 
                 var3 = var12;
                 Iterator var8 = this.                                                                                                    .
-                field_71441_e.field_72996_f.iterator();
+                world.loadedEntityList.iterator();
 
                 byte var15;
                 label117:
@@ -599,11 +599,11 @@ public class Class64 extends Class171 {
                                 throw null;
                             }
 
-                            if (llIlllIlIIll(var9.func_174813_aQ().func_72314_b(0.22D, 0.35D, 0.25D).func_72318_a(var2))) {
+                            if (llIlllIlIIll(var9.getEntityBoundingBox().grow(0.22D, 0.35D, 0.25D).contains(var2))) {
                                 var10 = 1;
                                 Entity var13;
                                 if (llIlllIlIIll(Class73..                                                                                                    .
-                                (var9.func_70005_c_()))){
+                                (var9.getName()))){
                                     var10000 = new Color(0, 1, 1);
                                     if (llIlllIIllII(53680, 3623)) {
                                         throw null;
@@ -630,7 +630,7 @@ public class Class64 extends Class171 {
                                     throw null;
                                 }
 
-                                if (llIlllIllIll(var13, this..field_71439_g)){
+                                if (llIlllIllIll(var13, this..player)){
                                     var10000 = new Color(0, 1, 0);
                                     if (llIlllIIllII(53680, 3623)) {
                                         throw null;
@@ -666,13 +666,13 @@ public class Class64 extends Class171 {
                 }
 
                 WorldClient var16 = this.                                                                                                    .
-                field_71441_e;
+                world;
                 BlockPos var14 = new BlockPos(var2);
                 if (llIlllIIllII(53680, 3623)) {
                     throw null;
                 }
 
-                var15 = (var16.func_180495_p(var14).func_177230_c());
+                var15 = (var16.getBlockState(var14).getBlock());
                 if (llIlllIIllII(53680, 3623)) {
                     throw null;
                 }

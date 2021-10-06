@@ -123,8 +123,8 @@ public class Class56 extends Class171 {
 
             BlockPos var4 = var5[var3];
             Block var6;
-            if (!llllllIllllI(var6 = this..field_71441_e.func_180495_p(var4).func_177230_c(),Blocks.field_150350_a) ||
-            llllllIllllI(var6, Blocks.field_150357_h)){
+            if (!llllllIllllI(var6 = this..world.getBlockState(var4).getBlock(),Blocks.AIR) ||
+            llllllIllllI(var6, Blocks.BEDROCK)){
                 if (llllllIllIll(22684, 4388)) {
                     throw null;
                 }
@@ -148,7 +148,7 @@ public class Class56 extends Class171 {
     }
 
     public BlockPos[] ________________________________________________________________________________________________/* $FF was:                                                                                                 */(BlockPos var1) {
-        return new BlockPos[]{var1.func_177978_c(), var1.func_177968_d(), var1.func_177974_f(), var1.func_177976_e(), var1.func_177977_b()};
+        return new BlockPos[]{var1.north(), var1.south(), var1.east(), var1.west(), var1.down()};
     }
 
     public boolean ____________________________________________________________________________/* $FF was:                                                                             */(BlockPos var1) {
@@ -168,8 +168,8 @@ public class Class56 extends Class171 {
 
             BlockPos var4 = var5[var3];
             Block var6;
-            if (!llllllIllllI(var6 = this..field_71441_e.func_180495_p(var4).func_177230_c(),Blocks.field_150350_a) ||
-            llllllIllllI(var6, Blocks.field_150343_Z) && llllllIllllI(var6, Blocks.field_150357_h)){
+            if (!llllllIllllI(var6 = this..world.getBlockState(var4).getBlock(),Blocks.AIR) ||
+            llllllIllllI(var6, Blocks.OBSIDIAN) && llllllIllllI(var6, Blocks.BEDROCK)){
                 if (llllllIllIll(30307, 3703)) {
                     throw null;
                 }
@@ -205,8 +205,8 @@ public class Class56 extends Class171 {
 
             BlockPos var4 = var5[var3];
             Block var6;
-            if (!llllllIllllI(var6 = this..field_71441_e.func_180495_p(var4).func_177230_c(),Blocks.field_150350_a) ||
-            llllllIllllI(var6, Blocks.field_150343_Z)){
+            if (!llllllIllllI(var6 = this..world.getBlockState(var4).getBlock(),Blocks.AIR) ||
+            llllllIllllI(var6, Blocks.OBSIDIAN)){
                 if (llllllIllIll(55034, 2701)) {
                     throw null;
                 }
@@ -263,8 +263,8 @@ public class Class56 extends Class171 {
                 return Class34.;
             }
 
-            if (llllllIllllI(this..field_71441_e.func_180495_p(var1.func_177981_b(var2)).func_177230_c(),
-            Blocks.field_150350_a)){
+            if (llllllIllllI(this..world.getBlockState(var1.up(var2)).getBlock(),
+            Blocks.AIR)){
                 return Class34.;
             }
 
@@ -288,7 +288,7 @@ public class Class56 extends Class171 {
         } else {
             this.                                                                                                   .
             clear();
-            Vec3i var10001 = Class123. (this..field_71439_g.func_174791_d());
+            Vec3i var10001 = Class123. (this..player.getPositionVector());
             if (llllllIllIll(46653, 5309)) {
                 throw null;
             } else {
@@ -298,8 +298,8 @@ public class Class56 extends Class171 {
                 int var3;
                 boolean var12;
                 label80:
-                for (int var10000 = var3 = var8.func_177958_n() - var2; !llllllIllIll(46653, 5309); var12 = true) {
-                    if (!llllllIlllIl(var10000, var8.func_177958_n() + var2)) {
+                for (int var10000 = var3 = var8.getX() - var2; !llllllIllIll(46653, 5309); var12 = true) {
+                    if (!llllllIlllIl(var10000, var8.getX() + var2)) {
                         if (llllllIllIll(46653, 5309)) {
                             throw null;
                         }
@@ -309,11 +309,11 @@ public class Class56 extends Class171 {
                     }
 
                     int var4;
-                    var10000 = var4 = var8.func_177952_p() - var2;
+                    var10000 = var4 = var8.getZ() - var2;
 
                     label77:
                     while (!llllllIllIll(46653, 5309)) {
-                        if (!llllllIlllIl(var10000, var8.func_177952_p() + var2)) {
+                        if (!llllllIlllIl(var10000, var8.getZ() + var2)) {
                             if (llllllIllIll(46653, 5309)) {
                                 throw null;
                             }
@@ -324,8 +324,8 @@ public class Class56 extends Class171 {
                         }
 
                         int var5;
-                        for (var10000 = var5 = var8.func_177956_o(); !llllllIllIll(46653, 5309); var12 = true) {
-                            if (!lllllllIlIIl(var10000, var8.func_177956_o() - 7)) {
+                        for (var10000 = var5 = var8.getY(); !llllllIllIll(46653, 5309); var12 = true) {
+                            if (!lllllllIlIIl(var10000, var8.getY() - 7)) {
                                 if (llllllIllIll(46653, 5309)) {
                                     throw null;
                                 }

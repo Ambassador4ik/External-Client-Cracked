@@ -77,26 +77,26 @@ public class Class94 extends Class171 {
         {
             Class94 var2;
             if (llIllllIlIIl(this.. ())){
-            if (!llIllllIlIlI(this..field_71439_g.func_70090_H())){
+            if (!llIllllIlIlI(this..player.isInWater())){
                 break label45;
             }
 
             WorldClient var10000 = this.                                                                                                    .
-            field_71441_e;
+            world;
             BlockPos var10001 = new BlockPos;
             Vec3d var10003 = this.                                                                                                    .
-            field_71439_g.func_174791_d();
+            player.getPositionVector();
             Vec3d var10004 = new Vec3d(0.0D, -1.0D, 0.0D);
             if (llIllllIlIll(44000, 4421)) {
                 throw null;
             }
 
-            var10001.<init> (var10003.func_178787_e(var10004));
+            var10001.<init> (var10003.add(var10004));
             if (llIllllIlIll(44000, 4421)) {
                 throw null;
             }
 
-            if (!llIllllIlIIl(var10000.func_180495_p(var10001).func_177230_c() instanceof BlockLiquid)) {
+            if (!llIllllIlIIl(var10000.getBlockState(var10001).getBlock() instanceof BlockLiquid)) {
                 break label45;
             }
 
@@ -107,7 +107,7 @@ public class Class94 extends Class171 {
                 throw null;
             }
 
-            if (!llIllllIlIIl(this..field_71439_g.func_70090_H())){
+            if (!llIllllIlIIl(this..player.isInWater())){
                 break label45;
             }
 
@@ -119,7 +119,7 @@ public class Class94 extends Class171 {
             }
 
             var2.                                                                                                    .
-            field_71439_g.field_70181_x = this.                                                                                  .
+            player.motionY = this.                                                                                  .
             ();
         }
 

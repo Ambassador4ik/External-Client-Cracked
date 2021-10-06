@@ -107,20 +107,20 @@ public class Class4 {
         if (lllIllIlllII(36929, 744)) {
             throw null;
         } else {
-            Minecraft var10002 = Minecraft.func_71410_x();
+            Minecraft var10002 = Minecraft.getMinecraft();
             if (lllIllIlllII(36929, 744)) {
                 throw null;
             } else {
                 this. = var10002;
-                Class195 var10001 = new Class195(this..field_71474_y, this.                                                                                            .
-                func_110434_K());
+                Class195 var10001 = new Class195(this..gameSettings, this.                                                                                            .
+                getTextureManager());
                 if (lllIllIlllII(36929, 744)) {
                     throw null;
                 } else {
                     this. = var10001;
-                    if (lllIlllIIlll(this..field_71474_y.field_74363_ab)){
+                    if (lllIlllIIlll(this..gameSettings.language)){
                         this.                                                                                  .
-                        setBidiFlag(this..func_135016_M().func_135044_b());
+                        setBidiFlag(this..getLanguageManager().isCurrentLanguageBidirectional());
                     }
 
                     if (lllIllIlllII(36929, 744)) {
@@ -182,7 +182,7 @@ public class Class4 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(String var1, float var2, float var3, float var4, float var5, int var6) {
         var2 = var2 + var4 / 2.0F - (float) (this. (var1) / 2);
-        var3 = var3 + var5 / 2.0F - (float) (this..field_71466_p.field_78288_b / 2);
+        var3 = var3 + var5 / 2.0F - (float) (this..fontRenderer.FONT_HEIGHT / 2);
         this.                                                                                  .
         drawString(var1, var2, var3, var6, false);
         boolean var10000 = true;
@@ -198,27 +198,27 @@ public class Class4 {
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(int var1, int var2, int var3, int var4, int var5) {
-        GlStateManager.func_179121_F();
+        GlStateManager.popMatrix();
         if (lllIllIlllII(25215, 1216)) {
             throw null;
         } else {
-            GlStateManager.func_179147_l();
+            GlStateManager.enableBlend();
             if (lllIllIlllII(25215, 1216)) {
                 throw null;
             } else {
-                GlStateManager.func_179144_i(var5);
+                GlStateManager.bindTexture(var5);
                 if (lllIllIlllII(25215, 1216)) {
                     throw null;
                 } else {
-                    Gui.func_146110_a(var1, var2, 0.0F, 0.0F, var3, var4, (float) var3, (float) var4);
+                    Gui.drawModalRectWithCustomSizedTexture(var1, var2, 0.0F, 0.0F, var3, var4, (float) var3, (float) var4);
                     if (lllIllIlllII(25215, 1216)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179084_k();
+                        GlStateManager.disableBlend();
                         if (lllIllIlllII(25215, 1216)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179094_E();
+                            GlStateManager.pushMatrix();
                             if (lllIllIlllII(25215, 1216)) {
                                 throw null;
                             } else {
@@ -233,7 +233,7 @@ public class Class4 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(String var1, float var2, float var3, int var4, int var5, int var6) {
         this. ((double) (var2 - 1.0F), (double) (var3 - 1.0F), (double) (this. (var1) + 1),(double) this.                                                                                            .
-        field_71466_p.field_78288_b, (double) var4, var6);
+        fontRenderer.FONT_HEIGHT, (double) var4, var6);
         this.                                                                                  .
         drawString(var1, var2, var3, var5, false);
         boolean var10000 = true;
@@ -246,8 +246,8 @@ public class Class4 {
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(ScaledResolution var1, float var2, float var3, float var4, float var5) {
         var4 += var2;
         var5 += var3;
-        int var6 = var1.func_78325_e();
-        GL11.glScissor((int) (var2 * (float) var6), (int) (((float) var1.func_78328_b() - var5) * (float) var6), (int) ((var4 - var2) * (float) var6), (int) ((var5 - var3) * (float) var6));
+        int var6 = var1.getScaleFactor();
+        GL11.glScissor((int) (var2 * (float) var6), (int) (((float) var1.getScaledHeight() - var5) * (float) var6), (int) ((var4 - var2) * (float) var6), (int) ((var5 - var3) * (float) var6));
         if (lllIllIlllII(17446, 7771)) {
             throw null;
         } else {
@@ -256,11 +256,11 @@ public class Class4 {
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(ItemStack var1, int var2, int var3, float var4) {
-        Minecraft var10000 = Minecraft.func_71410_x();
+        Minecraft var10000 = Minecraft.getMinecraft();
         if (lllIllIlllII(33096, 807)) {
             throw null;
         } else {
-            RenderItem var5 = var10000.func_175599_af();
+            RenderItem var5 = var10000.getRenderItem();
             GL11.glPushMatrix();
             if (lllIllIlllII(33096, 807)) {
                 throw null;
@@ -273,15 +273,15 @@ public class Class4 {
                     if (lllIllIlllII(33096, 807)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179126_j();
+                        GlStateManager.enableDepth();
                         if (lllIllIlllII(33096, 807)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179140_f();
+                            GlStateManager.disableLighting();
                             if (lllIllIlllII(33096, 807)) {
                                 throw null;
                             } else {
-                                RenderHelper.func_74520_c();
+                                RenderHelper.enableGUIStandardItemLighting();
                                 if (lllIllIlllII(33096, 807)) {
                                     throw null;
                                 } else {
@@ -289,11 +289,11 @@ public class Class4 {
                                     if (lllIllIlllII(33096, 807)) {
                                         throw null;
                                     } else {
-                                        var5.func_175042_a(var1, var2, var3);
+                                        var5.renderItemIntoGUI(var1, var2, var3);
                                         String var6 = "";
-                                        if (lllIllIlllIl(var1.func_190916_E(), 1)) {
+                                        if (lllIllIlllIl(var1.getCount(), 1)) {
                                             StringBuilder var7 = new StringBuilder;
-                                            String var10002 = String.valueOf(var1.func_190916_E());
+                                            String var10002 = String.valueOf(var1.getCount());
                                             if (lllIllIlllII(33096, 807)) {
                                                 throw null;
                                             }
@@ -309,8 +309,8 @@ public class Class4 {
                                         if (lllIllIlllII(33096, 807)) {
                                             throw null;
                                         } else {
-                                            var5.func_180453_a(this..field_71466_p, var1, var2, var3, var6);
-                                            GlStateManager.func_179140_f();
+                                            var5.renderItemOverlayIntoGUI(this..fontRenderer, var1, var2, var3, var6);
+                                            GlStateManager.disableLighting();
                                             if (lllIllIlllII(33096, 807)) {
                                                 throw null;
                                             } else {
@@ -337,15 +337,15 @@ public class Class4 {
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(double var1, double var3, double var5, double var7, double var9, int var11) {
-        GlStateManager.func_179147_l();
+        GlStateManager.enableBlend();
         if (lllIllIlllII(10866, 2552)) {
             throw null;
         } else {
-            GlStateManager.func_179090_x();
+            GlStateManager.disableTexture2D();
             if (lllIllIlllII(10866, 2552)) {
                 throw null;
             } else {
-                GlStateManager.func_179120_a(770, 771, 1, 0);
+                GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
                 if (lllIllIlllII(10866, 2552)) {
                     throw null;
                 } else {
@@ -447,17 +447,17 @@ public class Class4 {
                                                                                 throw null;
                                                                             }
 
-                                                                            GlStateManager.func_179098_w();
+                                                                            GlStateManager.enableTexture2D();
                                                                             if (lllIllIlllII(10866, 2552)) {
                                                                                 throw null;
                                                                             }
 
-                                                                            GlStateManager.func_179084_k();
+                                                                            GlStateManager.disableBlend();
                                                                             if (lllIllIlllII(10866, 2552)) {
                                                                                 throw null;
                                                                             }
 
-                                                                            GlStateManager.func_179117_G();
+                                                                            GlStateManager.resetColor();
                                                                             if (lllIllIlllII(10866, 2552)) {
                                                                                 throw null;
                                                                             }
@@ -579,7 +579,7 @@ public class Class4 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(String var1, float var2, float var3, int var4, int var5) {
         this. (var2 - 1.0F, var3 - 1.0F, (float) (this. (var1) + 1),(float) this.                                                                                            .
-        field_71466_p.field_78288_b, var5);
+        fontRenderer.FONT_HEIGHT, var5);
         this.                                                                                  .
         drawString(var1, var2, var3, var4, true);
         boolean var10000 = true;
@@ -627,7 +627,7 @@ public class Class4 {
                         if (lllIllIlllII(68133, 4521)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179147_l();
+                            GlStateManager.enableBlend();
                             if (lllIllIlllII(68133, 4521)) {
                                 throw null;
                             } else {
@@ -733,11 +733,11 @@ public class Class4 {
                                                                                     if (lllIllIlllII(68133, 4521)) {
                                                                                         throw null;
                                                                                     } else {
-                                                                                        GlStateManager.func_179084_k();
+                                                                                        GlStateManager.disableBlend();
                                                                                         if (lllIllIlllII(68133, 4521)) {
                                                                                             throw null;
                                                                                         } else {
-                                                                                            GlStateManager.func_179117_G();
+                                                                                            GlStateManager.resetColor();
                                                                                             if (lllIllIlllII(68133, 4521)) {
                                                                                                 throw null;
                                                                                             } else {
@@ -841,19 +841,19 @@ public class Class4 {
             throw null;
         } else {
             this. ();
-            GlStateManager.func_187441_d(2.0F);
+            GlStateManager.glLineWidth(2.0F);
             if (lllIllIlllII(88864, 31)) {
                 throw null;
             } else {
                 this. (var5);
                 this. (var1 + 0.2F, var2 + 0.2F, var3 - 0.2F, var4 - 0.2F);
                 this. (var1, var2 + 0.3F, var3, var4, 0.8F, var5);
-                GlStateManager.func_179147_l();
+                GlStateManager.enableBlend();
                 if (lllIllIlllII(88864, 31)) {
                     throw null;
                 } else {
                     this. ();
-                    GlStateManager.func_179117_G();
+                    GlStateManager.resetColor();
                     if (lllIllIlllII(88864, 31)) {
                         throw null;
                     } else {
@@ -870,11 +870,11 @@ public class Class4 {
     }
 
     public RenderItem ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
-        Minecraft var10000 = Minecraft.func_71410_x();
+        Minecraft var10000 = Minecraft.getMinecraft();
         if (lllIllIlllII(87013, 9693)) {
             throw null;
         } else {
-            return var10000.func_175599_af();
+            return var10000.getRenderItem();
         }
     }
 
@@ -905,50 +905,50 @@ public class Class4 {
         float var11 = (float) (var6 >> 16 & 255) / 255.0F;
         float var12 = (float) (var6 >> 8 & 255) / 255.0F;
         float var15 = (float) (var6 & 255) / 255.0F;
-        GlStateManager.func_179090_x();
+        GlStateManager.disableTexture2D();
         if (lllIllIlllII(61958, 6137)) {
             throw null;
         } else {
-            GlStateManager.func_179147_l();
+            GlStateManager.enableBlend();
             if (lllIllIlllII(61958, 6137)) {
                 throw null;
             } else {
-                GlStateManager.func_179118_c();
+                GlStateManager.disableAlpha();
                 if (lllIllIlllII(61958, 6137)) {
                     throw null;
                 } else {
-                    GlStateManager.func_187428_a(SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, SourceFactor.ONE, DestFactor.ZERO);
+                    GlStateManager.tryBlendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, SourceFactor.ONE, DestFactor.ZERO);
                     if (lllIllIlllII(61958, 6137)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179103_j(7425);
+                        GlStateManager.shadeModel(7425);
                         if (lllIllIlllII(61958, 6137)) {
                             throw null;
                         } else {
-                            Tessellator var10000 = Tessellator.func_178181_a();
+                            Tessellator var10000 = Tessellator.getInstance();
                             if (lllIllIlllII(61958, 6137)) {
                                 throw null;
                             } else {
-                                BufferBuilder var13 = var10000.func_178180_c();
-                                var13.func_181668_a(7, DefaultVertexFormats.field_181706_f);
-                                var13.func_181662_b((double) var3, (double) var2, 0.0D).func_181666_a(var8, var9, var14, var7).func_181675_d();
-                                var13.func_181662_b((double) var1, (double) var2, 0.0D).func_181666_a(var8, var9, var14, var7).func_181675_d();
-                                var13.func_181662_b((double) var1, (double) var4, 0.0D).func_181666_a(var11, var12, var15, var10).func_181675_d();
-                                var13.func_181662_b((double) var3, (double) var4, 0.0D).func_181666_a(var11, var12, var15, var10).func_181675_d();
-                                var10000.func_78381_a();
-                                GlStateManager.func_179103_j(7424);
+                                BufferBuilder var13 = var10000.getBuffer();
+                                var13.begin(7, DefaultVertexFormats.POSITION_COLOR);
+                                var13.pos((double) var3, (double) var2, 0.0D).color(var8, var9, var14, var7).endVertex();
+                                var13.pos((double) var1, (double) var2, 0.0D).color(var8, var9, var14, var7).endVertex();
+                                var13.pos((double) var1, (double) var4, 0.0D).color(var11, var12, var15, var10).endVertex();
+                                var13.pos((double) var3, (double) var4, 0.0D).color(var11, var12, var15, var10).endVertex();
+                                var10000.draw();
+                                GlStateManager.shadeModel(7424);
                                 if (lllIllIlllII(61958, 6137)) {
                                     throw null;
                                 } else {
-                                    GlStateManager.func_179084_k();
+                                    GlStateManager.disableBlend();
                                     if (lllIllIlllII(61958, 6137)) {
                                         throw null;
                                     } else {
-                                        GlStateManager.func_179141_d();
+                                        GlStateManager.enableAlpha();
                                         if (lllIllIlllII(61958, 6137)) {
                                             throw null;
                                         } else {
-                                            GlStateManager.func_179098_w();
+                                            GlStateManager.enableTexture2D();
                                             if (lllIllIlllII(61958, 6137)) {
                                                 throw null;
                                             } else {
@@ -972,15 +972,15 @@ public class Class4 {
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(float var1, float var2, float var3, float var4, float var5, float var6, int var7) {
-        GlStateManager.func_179147_l();
+        GlStateManager.enableBlend();
         if (lllIllIlllII(58778, 2639)) {
             throw null;
         } else {
-            GlStateManager.func_179090_x();
+            GlStateManager.disableTexture2D();
             if (lllIllIlllII(58778, 2639)) {
                 throw null;
             } else {
-                GlStateManager.func_179120_a(770, 771, 1, 0);
+                GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
                 if (lllIllIlllII(58778, 2639)) {
                     throw null;
                 } else {
@@ -1087,17 +1087,17 @@ public class Class4 {
                                                                                     throw null;
                                                                                 }
 
-                                                                                GlStateManager.func_179098_w();
+                                                                                GlStateManager.enableTexture2D();
                                                                                 if (lllIllIlllII(58778, 2639)) {
                                                                                     throw null;
                                                                                 }
 
-                                                                                GlStateManager.func_179084_k();
+                                                                                GlStateManager.disableBlend();
                                                                                 if (lllIllIlllII(58778, 2639)) {
                                                                                     throw null;
                                                                                 }
 
-                                                                                GlStateManager.func_179117_G();
+                                                                                GlStateManager.resetColor();
                                                                                 if (lllIllIlllII(58778, 2639)) {
                                                                                     throw null;
                                                                                 }
@@ -1229,14 +1229,14 @@ public class Class4 {
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(String var1, float var2, float var3, float var4, float var5, int var6, int var7, int var8) {
         this. ((double) var2, (double) var3, (double) var4, (double) var5, (double) var6, var8);
         var2 = var2 + var4 / 2.0F - (float) (this. (var1) / 2);
-        var3 = var3 + var5 / 2.0F - (float) (this..field_71466_p.field_78288_b / 2);
+        var3 = var3 + var5 / 2.0F - (float) (this..fontRenderer.FONT_HEIGHT / 2);
         this.                                                                                  .
         drawString(var1, var2, var3, var7, false);
         boolean var10000 = true;
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(float var1, float var2, float var3, float var4, int var5) {
-        Gui.func_73734_a((int) var1, (int) var2, (int) var3, (int) var4, var5);
+        Gui.drawRect((int) var1, (int) var2, (int) var3, (int) var4, var5);
         if (lllIllIlllII(73537, 2836)) {
             throw null;
         } else {
@@ -1245,7 +1245,7 @@ public class Class4 {
     }
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(Color var1) {
-        GlStateManager.func_179131_c((float) var1.getRed() / 255.0F, (float) var1.getGreen() / 255.0F, (float) var1.getBlue() / 255.0F, (float) var1.getAlpha() / 255.0F);
+        GlStateManager.color((float) var1.getRed() / 255.0F, (float) var1.getGreen() / 255.0F, (float) var1.getBlue() / 255.0F, (float) var1.getAlpha() / 255.0F);
         if (lllIllIlllII(99758, 7524)) {
             throw null;
         } else {
@@ -1345,11 +1345,11 @@ public class Class4 {
     }
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ItemStack var1, int var2, int var3, float var4) {
-        Minecraft var10000 = Minecraft.func_71410_x();
+        Minecraft var10000 = Minecraft.getMinecraft();
         if (lllIllIlllII(79341, 2861)) {
             throw null;
         } else {
-            RenderItem var5 = var10000.func_175599_af();
+            RenderItem var5 = var10000.getRenderItem();
             this. ((double) var2, (double) var3, 16.0D, 16.0D, 2.0D, Class73.                                                                                                  )
             ;
             GL11.glPushMatrix();
@@ -1364,15 +1364,15 @@ public class Class4 {
                     if (lllIllIlllII(79341, 2861)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179126_j();
+                        GlStateManager.enableDepth();
                         if (lllIllIlllII(79341, 2861)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179140_f();
+                            GlStateManager.disableLighting();
                             if (lllIllIlllII(79341, 2861)) {
                                 throw null;
                             } else {
-                                RenderHelper.func_74520_c();
+                                RenderHelper.enableGUIStandardItemLighting();
                                 if (lllIllIlllII(79341, 2861)) {
                                     throw null;
                                 } else {
@@ -1380,11 +1380,11 @@ public class Class4 {
                                     if (lllIllIlllII(79341, 2861)) {
                                         throw null;
                                     } else {
-                                        var5.func_175042_a(var1, var2, var3);
+                                        var5.renderItemIntoGUI(var1, var2, var3);
                                         String var6 = "";
-                                        if (lllIllIlllIl(var1.func_190916_E(), 1)) {
+                                        if (lllIllIlllIl(var1.getCount(), 1)) {
                                             StringBuilder var7 = new StringBuilder;
-                                            String var10002 = String.valueOf(var1.func_190916_E());
+                                            String var10002 = String.valueOf(var1.getCount());
                                             if (lllIllIlllII(79341, 2861)) {
                                                 throw null;
                                             }
@@ -1400,8 +1400,8 @@ public class Class4 {
                                         if (lllIllIlllII(79341, 2861)) {
                                             throw null;
                                         } else {
-                                            var5.func_180453_a(this..field_71466_p, var1, var2, var3, var6);
-                                            GlStateManager.func_179140_f();
+                                            var5.renderItemOverlayIntoGUI(this..fontRenderer, var1, var2, var3, var6);
+                                            GlStateManager.disableLighting();
                                             if (lllIllIlllII(79341, 2861)) {
                                                 throw null;
                                             } else {
@@ -1463,7 +1463,7 @@ public class Class4 {
                             if (lllIllIlllII(98324, 6544)) {
                                 throw null;
                             } else {
-                                GlStateManager.func_179147_l();
+                                GlStateManager.enableBlend();
                                 if (lllIllIlllII(98324, 6544)) {
                                     throw null;
                                 } else {
@@ -1613,11 +1613,11 @@ public class Class4 {
                                                                                                         if (lllIllIlllII(98324, 6544)) {
                                                                                                             throw null;
                                                                                                         } else {
-                                                                                                            GlStateManager.func_179084_k();
+                                                                                                            GlStateManager.disableBlend();
                                                                                                             if (lllIllIlllII(98324, 6544)) {
                                                                                                                 throw null;
                                                                                                             } else {
-                                                                                                                GlStateManager.func_179117_G();
+                                                                                                                GlStateManager.resetColor();
                                                                                                                 if (lllIllIlllII(98324, 6544)) {
                                                                                                                     throw null;
                                                                                                                 } else {
@@ -1663,15 +1663,15 @@ public class Class4 {
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(double var1, double var3, double var5, double var7, double var9) {
-        GlStateManager.func_179147_l();
+        GlStateManager.enableBlend();
         if (lllIllIlllII(12751, 3747)) {
             throw null;
         } else {
-            GlStateManager.func_179090_x();
+            GlStateManager.disableTexture2D();
             if (lllIllIlllII(12751, 3747)) {
                 throw null;
             } else {
-                GlStateManager.func_179120_a(770, 771, 1, 0);
+                GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
                 if (lllIllIlllII(12751, 3747)) {
                     throw null;
                 } else {
@@ -1761,17 +1761,17 @@ public class Class4 {
                                                                             throw null;
                                                                         }
 
-                                                                        GlStateManager.func_179098_w();
+                                                                        GlStateManager.enableTexture2D();
                                                                         if (lllIllIlllII(12751, 3747)) {
                                                                             throw null;
                                                                         }
 
-                                                                        GlStateManager.func_179084_k();
+                                                                        GlStateManager.disableBlend();
                                                                         if (lllIllIlllII(12751, 3747)) {
                                                                             throw null;
                                                                         }
 
-                                                                        GlStateManager.func_179117_G();
+                                                                        GlStateManager.resetColor();
                                                                         if (lllIllIlllII(12751, 3747)) {
                                                                             throw null;
                                                                         }

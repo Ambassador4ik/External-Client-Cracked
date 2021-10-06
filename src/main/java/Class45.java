@@ -265,7 +265,7 @@ public class Class45 extends Class5 {
         ();
         int var3 = this.                                                                                                    .
         ();
-        float var4 = (float) (var2 + this. / 2 - this..field_71466_p.field_78288_b / 2 - 1);
+        float var4 = (float) (var2 + this. / 2 - this..fontRenderer.FONT_HEIGHT / 2 - 1);
         this.                                                                                         .(2.0F);
         Class4 var10000 = this.;
         String var8;
@@ -556,7 +556,7 @@ public class Class45 extends Class5 {
 
                         var10002. (var10003, var10004, String.valueOf(var10005.append(var10006)), 1500);
                         this.                                                                                            .
-                        func_147108_a(Class73..                                                                                                 )
+                        displayGuiScreen(Class73..                                                                                                 )
                         ;
                         Mouse.setCursorPosition(var3, var4);
                         if (llIlIllIIIlI(95317, 3728)) {
@@ -660,7 +660,7 @@ public class Class45 extends Class5 {
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(int var1, int var2) {
         var1 = this.                                                                                                    .
         ();
-        Minecraft var10003 = Minecraft.func_71410_x();
+        Minecraft var10003 = Minecraft.getMinecraft();
         if (llIlIllIIIlI(68621, 3858)) {
             throw null;
         } else {
@@ -674,13 +674,13 @@ public class Class45 extends Class5 {
                 if (llIlIllIIIlI(68621, 3858)) {
                     throw null;
                 } else {
-                    int var4 = var9 * var3.func_78326_a() / var5.field_71443_c;
-                    var9 = var3.func_78328_b();
+                    int var4 = var9 * var3.getScaledWidth() / var5.displayWidth;
+                    var9 = var3.getScaledHeight();
                     int var10004 = Mouse.getEventY();
                     if (llIlIllIIIlI(68621, 3858)) {
                         throw null;
                     } else {
-                        var1 = var9 - var10004 * var3.func_78328_b() / var5.field_71440_d - 1 - var1;
+                        var1 = var9 - var10004 * var3.getScaledHeight() / var5.displayHeight - 1 - var1;
                         this. = this. (var4, var1);
                         if (llIlIllIlIll(this..isEmpty())){
                             Iterator var6;

@@ -54,7 +54,7 @@ public class Class58 extends WorldClient {
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public void func_73029_E(int var1, int var2, int var3) {
+    public void doVoidFogParticles(int var1, int var2, int var3) {
         PrintStream var10000 = System.out;
         String var10001 = Class60. ("Yj?");
         if (lllIlIIIllIl(76965, 475)) {
@@ -66,12 +66,12 @@ public class Class58 extends WorldClient {
                 throw null;
             } else {
                 Random var4 = var9;
-                Minecraft var10 = Minecraft.func_71410_x();
+                Minecraft var10 = Minecraft.getMinecraft();
                 if (lllIlIIIllIl(76965, 475)) {
                     throw null;
                 } else {
-                    ItemStack var5 = var10.field_71439_g.func_184614_ca();
-                    var10 = Minecraft.func_71410_x();
+                    ItemStack var5 = var10.player.getHeldItemMainhand();
+                    var10 = Minecraft.getMinecraft();
                     if (lllIlIIIllIl(76965, 475)) {
                         throw null;
                     } else {
@@ -79,9 +79,9 @@ public class Class58 extends WorldClient {
                         boolean var14;
                         label66:
                         {
-                            if (lllIlIIIlllI(var10.field_71442_b.func_178889_l(), GameType.CREATIVE) && lllIlIIIllll(var5.func_190926_b())) {
-                                Item var11 = var5.func_77973_b();
-                                Item var12 = Item.func_150898_a(Blocks.field_180401_cv);
+                            if (lllIlIIIlllI(var10.playerController.getCurrentGameType(), GameType.CREATIVE) && lllIlIIIllll(var5.isEmpty())) {
+                                Item var11 = var5.getItem();
+                                Item var12 = Item.getItemFromBlock(Blocks.BARRIER);
                                 if (lllIlIIIllIl(76965, 475)) {
                                     throw null;
                                 }
@@ -121,9 +121,9 @@ public class Class58 extends WorldClient {
                                         return;
                                     }
 
-                                    this.func_184153_a(var1, var2, var3, 16, var4, var6, var8);
+                                    this.showBarrierParticles(var1, var2, var3, 16, var4, var6, var8);
                                     ++var7;
-                                    this.func_184153_a(var1, var2, var3, 32, var4, var6, var8);
+                                    this.showBarrierParticles(var1, var2, var3, 32, var4, var6, var8);
                                     var16 = var7;
                                 }
 

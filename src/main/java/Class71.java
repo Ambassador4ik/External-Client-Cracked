@@ -59,7 +59,7 @@ public class Class71 extends Thread {
             if (lllIlIlllllI(var3.isEmpty())) {
                 List var10001;
                 if (!lllIllIIIIII(this.. ()) ||lllIllIIIIlI(this..                                                                                                    .
-                field_71439_g)){
+                player)){
                     if (lllIlIllllII(29002, 1864)) {
                         throw null;
                     }

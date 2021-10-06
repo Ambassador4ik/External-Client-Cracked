@@ -78,10 +78,10 @@ public class Class40 extends Class171 {
             this. (String.valueOf(var10002.append(this.. ()).append("")));
             boolean var10000;
             double var2;
-            if (lllIIlIIIIIl((var2 = (double) (this..field_71439_g.func_110143_aJ() + this..field_71439_g.func_110139_bj()) - this.                                                                                            .
+            if (lllIIlIIIIIl((var2 = (double) (this..player.getHealth() + this..player.getAbsorptionAmount()) - this.                                                                                            .
             ()) ==0.0D ? 0 : (var2 < 0.0D ? -1 : 1)) &&lllIIlIIIIll(this.)){
                 this. = false;
-                KeyBinding.func_74510_a(this..field_71474_y.field_74313_G.func_151463_i(), false);
+                KeyBinding.setKeyBindState(this..gameSettings.keyBindUseItem.getKeyCode(), false);
                 if (lllIIIlllllI(30101, 6997)) {
                     throw null;
                 } else {
@@ -91,15 +91,15 @@ public class Class40 extends Class171 {
                 throw null;
             } else {
                 double var3;
-                if (lllIIlIIIIll(this..field_71439_g.func_184592_cb().func_77973_b() instanceof ItemAppleGold) &&
-                lllIIlIIIlIl((var3 = (double) this..field_71439_g.func_110143_aJ() - this.. ()) ==
+                if (lllIIlIIIIll(this..player.getHeldItemOffhand().getItem() instanceof ItemAppleGold) &&
+                lllIIlIIIlIl((var3 = (double) this..player.getHealth() - this.. ()) ==
                 0.0D ? 0 : (var3 < 0.0D ? -1 : 1)) &&
-                (!lllIIlIIIlll(this..field_71476_x) || lllIIlIIlIIl(this..field_71476_x.field_72308_g))){
+                (!lllIIlIIIlll(this..objectMouseOver) || lllIIlIIlIIl(this..objectMouseOver.entityHit))){
                     if (lllIIIlllllI(30101, 6997)) {
                         throw null;
                     }
 
-                    KeyBinding.func_74510_a(this..field_71474_y.field_74313_G.func_151463_i(), true);
+                    KeyBinding.setKeyBindState(this..gameSettings.keyBindUseItem.getKeyCode(), true);
                     if (lllIIIlllllI(30101, 6997)) {
                         throw null;
                     }

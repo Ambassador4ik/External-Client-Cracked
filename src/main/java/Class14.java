@@ -39,12 +39,12 @@ public class Class14 extends BlockModelRenderer {
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public boolean func_178267_a(IBlockAccess var1, IBakedModel var2, IBlockState var3, BlockPos var4, BufferBuilder var5, boolean var6) {
-        long var10007 = MathHelper.func_180186_a(var4);
+    public boolean renderModel(IBlockAccess var1, IBakedModel var2, IBlockState var3, BlockPos var4, BufferBuilder var5, boolean var6) {
+        long var10007 = MathHelper.getPositionRandom(var4);
         if (llllllllllll(14122, 1931)) {
             throw null;
         } else {
-            return this.func_187493_a(var1, var2, var3, var4, var5, var6, var10007);
+            return this.renderModel(var1, var2, var3, var4, var5, var6, var10007);
         }
     }
 }

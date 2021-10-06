@@ -51,14 +51,14 @@ public class Class76 extends Class171 {
     @SubscribeEvent
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(InputUpdateEvent var1) {
         boolean var10000;
-        if (lllIlIllllIl(this. ()) &&lllIlIllllIl(this..field_71462_r instanceof GuiChat) &&
-        !lllIlIllllll(this..field_71462_r)){
+        if (lllIlIllllIl(this. ()) &&lllIlIllllIl(this..currentScreen instanceof GuiChat) &&
+        !lllIlIllllll(this..currentScreen)){
             if (lllIllIIIIIl(37030, 1735)) {
                 throw null;
             } else {
                 MovementInput var3 = var1.getMovementInput();
                 float var2 = 1.0F;
-                byte var4 = Keyboard.isKeyDown(this..field_71474_y.field_151444_V.func_151463_i());
+                byte var4 = Keyboard.isKeyDown(this..gameSettings.keyBindSprint.getKeyCode());
                 if (lllIllIIIIIl(37030, 1735)) {
                     throw null;
                 } else {
@@ -86,69 +86,69 @@ public class Class76 extends Class171 {
 
                         if (lllIllIIIIll(var4)) {
                             this.                                                                                                    .
-                            field_71439_g.func_70031_b(true);
+                            player.setSprinting(true);
                         }
                     }
 
                     if (lllIllIIIIIl(37030, 1735)) {
                         throw null;
                     } else {
-                        var4 = Keyboard.isKeyDown(this..field_71474_y.field_74351_w.func_151463_i());
+                        var4 = Keyboard.isKeyDown(this..gameSettings.keyBindForward.getKeyCode());
                         if (lllIllIIIIIl(37030, 1735)) {
                             throw null;
                         } else {
                             if (lllIllIIIIll(var4)) {
-                                var3.field_187255_c = true;
-                                var3.field_192832_b = var2;
+                                var3.forwardKeyDown = true;
+                                var3.moveForward = var2;
                             }
 
                             if (lllIllIIIIIl(37030, 1735)) {
                                 throw null;
                             } else {
-                                var4 = Keyboard.isKeyDown(this..field_71474_y.field_74314_A.func_151463_i());
+                                var4 = Keyboard.isKeyDown(this..gameSettings.keyBindJump.getKeyCode());
                                 if (lllIllIIIIIl(37030, 1735)) {
                                     throw null;
                                 } else {
                                     if (lllIllIIIIll(var4)) {
-                                        var3.field_78901_c = true;
+                                        var3.jump = true;
                                     }
 
                                     if (lllIllIIIIIl(37030, 1735)) {
                                         throw null;
                                     } else {
-                                        var4 = Keyboard.isKeyDown(this..field_71474_y.field_74370_x.func_151463_i());
+                                        var4 = Keyboard.isKeyDown(this..gameSettings.keyBindLeft.getKeyCode());
                                         if (lllIllIIIIIl(37030, 1735)) {
                                             throw null;
                                         } else {
                                             if (lllIllIIIIll(var4)) {
-                                                var3.field_187257_e = true;
-                                                var3.field_78902_a = var2;
+                                                var3.leftKeyDown = true;
+                                                var3.moveStrafe = var2;
                                             }
 
                                             if (lllIllIIIIIl(37030, 1735)) {
                                                 throw null;
                                             } else {
-                                                var4 = Keyboard.isKeyDown(this..field_71474_y.field_74366_z.func_151463_i())
+                                                var4 = Keyboard.isKeyDown(this..gameSettings.keyBindRight.getKeyCode())
                                                 ;
                                                 if (lllIllIIIIIl(37030, 1735)) {
                                                     throw null;
                                                 } else {
                                                     if (lllIllIIIIll(var4)) {
-                                                        var3.field_187258_f = true;
-                                                        var3.field_78902_a = -var2;
+                                                        var3.rightKeyDown = true;
+                                                        var3.moveStrafe = -var2;
                                                     }
 
                                                     if (lllIllIIIIIl(37030, 1735)) {
                                                         throw null;
                                                     } else {
-                                                        var4 = Keyboard.isKeyDown(this..field_71474_y.field_74368_y.func_151463_i())
+                                                        var4 = Keyboard.isKeyDown(this..gameSettings.keyBindBack.getKeyCode())
                                                         ;
                                                         if (lllIllIIIIIl(37030, 1735)) {
                                                             throw null;
                                                         } else {
                                                             if (lllIllIIIIll(var4)) {
-                                                                var3.field_187256_d = true;
-                                                                var3.field_192832_b = -var2;
+                                                                var3.backKeyDown = true;
+                                                                var3.moveForward = -var2;
                                                             }
 
                                                             if (lllIllIIIIIl(37030, 1735)) {

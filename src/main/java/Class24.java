@@ -48,17 +48,17 @@ public class Class24 extends Class171 {
     @SubscribeEvent
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Pre var1) {
         EntityPlayer var12;
-        if (llllllIlIlll((var12 = var1.getEntityPlayer()).func_82150_aj()) && llllllIllIII(var12, this..field_71439_g)){
+        if (llllllIlIlll((var12 = var1.getEntityPlayer()).isInvisible()) && llllllIllIII(var12, this..player)){
             float var2 = this.                                                                                                    .
-            func_184121_ak();
+            getRenderPartialTicks();
             RenderManager var3 = this.                                                                                                    .
-            func_175598_ae();
-            double var4 = var12.field_70142_S + (var12.field_70165_t - var12.field_70142_S) * (double) var2 - var3.field_78730_l;
-            double var6 = var12.field_70137_T + (var12.field_70163_u - var12.field_70137_T) * (double) var2 - var3.field_78731_m;
-            double var8 = var12.field_70136_U + (var12.field_70161_v - var12.field_70136_U) * (double) var2 - var3.field_78728_n;
-            double var10 = (double) (var12.field_70126_B + (var12.field_70177_z - var12.field_70126_B) * var2);
-            int var13 = var12.func_70070_b();
-            if (llllllIlIlll(var12.func_70027_ad())) {
+            getRenderManager();
+            double var4 = var12.lastTickPosX + (var12.posX - var12.lastTickPosX) * (double) var2 - var3.viewerPosX;
+            double var6 = var12.lastTickPosY + (var12.posY - var12.lastTickPosY) * (double) var2 - var3.viewerPosY;
+            double var8 = var12.lastTickPosZ + (var12.posZ - var12.lastTickPosZ) * (double) var2 - var3.viewerPosZ;
+            double var10 = (double) (var12.prevRotationYaw + (var12.rotationYaw - var12.prevRotationYaw) * var2);
+            int var13 = var12.getBrightnessForRender();
+            if (llllllIlIlll(var12.isBurning())) {
                 var13 = 15728880;
             }
 
@@ -66,20 +66,20 @@ public class Class24 extends Class171 {
                 throw null;
             }
 
-            OpenGlHelper.func_77475_a(OpenGlHelper.field_77476_b, (float) (var13 % 65536), (float) (var13 / 65536));
+            OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float) (var13 % 65536), (float) (var13 / 65536));
             if (llllllIlIlIl(83139, 75)) {
                 throw null;
             }
 
-            var12.func_82142_c(false);
-            GlStateManager.func_179131_c(1.0F, 1.0F, 1.0F, 0.5F);
+            var12.setInvisible(false);
+            GlStateManager.color(1.0F, 1.0F, 1.0F, 0.5F);
             if (llllllIlIlIl(83139, 75)) {
                 throw null;
             }
 
             this.                                                                                                    .
-            func_175598_ae().func_188391_a(var12, var4, var6, var8, (float) var10, var2, true);
-            var12.func_82142_c(true);
+            getRenderManager().renderEntity(var12, var4, var6, var8, (float) var10, var2, true);
+            var12.setInvisible(true);
         }
 
         if (llllllIlIlIl(83139, 75)) {

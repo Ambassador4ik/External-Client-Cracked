@@ -71,14 +71,14 @@ public class Class95 extends Class171 {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     public String ____________________________________________________________________________/* $FF was:                                                                             */(String var1) {
-        if (llIIlIlIIlII(this. ()) &&llIIlIlIIlIl(this..field_71439_g) &&llIIlIlIIlII(Class73..                                                                                                .                                                                                  ))
+        if (llIIlIlIIlII(this. ()) &&llIIlIlIIlIl(this..player) &&llIIlIlIIlII(Class73..                                                                                                .                                                                                  ))
         {
-            Minecraft var10000 = Minecraft.func_71410_x();
+            Minecraft var10000 = Minecraft.getMinecraft();
             if (llIIlIlIIllI(16050, 388)) {
                 throw null;
             }
 
-            String var2 = var10000.field_71439_g.func_70005_c_();
+            String var2 = var10000.player.getName();
             String var10001 = Class60. ("¼+¿m");
             if (llIIlIlIIllI(16050, 388)) {
                 throw null;

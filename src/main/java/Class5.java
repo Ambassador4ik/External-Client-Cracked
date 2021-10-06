@@ -40,7 +40,7 @@ public class Class5 {
             throw null;
         } else {
             this. = Class73.                                                                                      .;
-            Minecraft var10002 = Minecraft.func_71410_x();
+            Minecraft var10002 = Minecraft.getMinecraft();
             if (lllIllllIIIl(49926, 2714)) {
                 throw null;
             } else {

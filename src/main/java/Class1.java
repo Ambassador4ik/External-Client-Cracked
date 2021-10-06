@@ -43,10 +43,10 @@ public class Class1 extends Class171 {
     }
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Object var1, Class170 var2) {
-        if (llIIlIllIIIl(var1 instanceof CPacketUseEntity) && llIIlIllIIlI(((CPacketUseEntity) var1).func_149564_a(this..field_71441_e)) &&
-        llIIlIllIIIl(this..field_71439_g.field_70122_E)){
-            if (llIIlIllIIIl(this..field_71439_g.func_70051_ag())){
-                CPacketEntityAction var10000 = new CPacketEntityAction(this..field_71439_g, Action.STOP_SPRINTING);
+        if (llIIlIllIIIl(var1 instanceof CPacketUseEntity) && llIIlIllIIlI(((CPacketUseEntity) var1).getEntityFromWorld(this..world)) &&
+        llIIlIllIIIl(this..player.onGround)){
+            if (llIIlIllIIIl(this..player.isSprinting())){
+                CPacketEntityAction var10000 = new CPacketEntityAction(this..player, Action.STOP_SPRINTING);
                 if (llIIlIllIIll(11511, 9492)) {
                     throw null;
                 }
@@ -58,7 +58,7 @@ public class Class1 extends Class171 {
                 throw null;
             }
 
-            CPacketEntityAction var10001 = new CPacketEntityAction(this..field_71439_g, Action.START_SPRINTING);
+            CPacketEntityAction var10001 = new CPacketEntityAction(this..player, Action.START_SPRINTING);
             if (llIIlIllIIll(11511, 9492)) {
                 throw null;
             }

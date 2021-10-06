@@ -143,7 +143,7 @@ public class Class30 extends Class171 {
             double var12 = this.                                                                                            .
             ();
             if (llIllIIlIIIl(var1.getHand(), EnumHand.MAIN_HAND)) {
-                GlStateManager.func_179137_b(var2, var4, var6);
+                GlStateManager.translate(var2, var4, var6);
                 if (llIllIIlIIII(9635, 632)) {
                     throw null;
                 } else {
@@ -153,7 +153,7 @@ public class Class30 extends Class171 {
                 throw null;
             } else {
                 if (llIllIIlIIIl(var1.getHand(), EnumHand.OFF_HAND)) {
-                    GlStateManager.func_179137_b(-var2 + var8, -var4 + var10, -var6 + var12);
+                    GlStateManager.translate(-var2 + var8, -var4 + var10, -var6 + var12);
                     if (llIllIIlIIII(9635, 632)) {
                         throw null;
                     }

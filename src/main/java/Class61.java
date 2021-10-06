@@ -39,7 +39,7 @@ public class Class61 extends Class171 {
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(PlayerTickEvent var1) {
-        if (llIlIlIIIlIl(this..field_71439_g.func_70089_S())){
+        if (llIlIlIIIlIl(this..player.isEntityAlive())){
             CPacketClientStatus var10001 = new CPacketClientStatus(State.PERFORM_RESPAWN);
             if (llIlIlIIIlII(80984, 2666)) {
                 throw null;

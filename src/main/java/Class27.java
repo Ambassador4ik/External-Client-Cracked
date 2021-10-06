@@ -234,7 +234,7 @@ public class Class27 extends Class171 {
             }
 
             this.                                                                                                    .
-            field_71439_g.field_70759_as = ((CPacketPlayer) var1).func_186999_a(0.0F);
+            player.rotationYawHead = ((CPacketPlayer) var1).getYaw(0.0F);
         }
 
         if (lllIIllIllIl(35150, 6993)) {
@@ -251,14 +251,14 @@ public class Class27 extends Class171 {
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
         EntityPlayerSP var10004 = this.                                                                                                    .
-        field_71439_g;
-        var10004.field_70177_z += 0.001F;
+        player;
+        var10004.rotationYaw += 0.001F;
         EnumFacing[] var9 = this.;
-        int var10005 = Math.round(this..field_71439_g.field_70177_z / 90.0F);
+        int var10005 = Math.round(this..player.rotationYaw / 90.0F);
         if (lllIIllIllIl(9700, 7885)) {
             throw null;
         } else {
-            this. = var9[var10005 & 3].func_176734_d();
+            this. = var9[var10005 & 3].getOpposite();
             ArrayList var7 = this. (this.. (), this.                                                                                            .
             (), this.                                                                                                   .
             (), this.                                                                                           .
@@ -279,30 +279,30 @@ public class Class27 extends Class171 {
                 }
 
                 BlockPos var3 = (BlockPos) var2.next();
-                BlockPos var10000 = new BlockPos(this..field_71439_g.field_70165_t, this.                                                                                                    .
-                field_71439_g.field_70163_u - 1.0D, this.                                                                                                    .
-                field_71439_g.field_70161_v);
+                BlockPos var10000 = new BlockPos(this..player.posX, this.                                                                                                    .
+                player.posY - 1.0D, this.                                                                                                    .
+                player.posZ);
                 if (lllIIllIllIl(9700, 7885)) {
                     throw null;
                 }
 
                 BlockPos var4 = var10000;
                 IBlockState var5;
-                Material var6 = (var5 = this..field_71441_e.func_180495_p(var4)).func_185904_a();
+                Material var6 = (var5 = this..world.getBlockState(var4)).getMaterial();
                 if (lllIIllIllII(this.. (this.. ())) &&
-                (!lllIIlllIIll(var6, Material.field_151587_i) || lllIIllIlIll(var6, Material.field_151586_h))){
+                (!lllIIlllIIll(var6, Material.LAVA) || lllIIllIlIll(var6, Material.WATER))){
                     if (lllIIllIllIl(9700, 7885)) {
                         throw null;
                     }
 
-                    if (!lllIIlllIllI(var7.size(), 1) || !lllIIlllIlIl(var3.func_177958_n(), var4.func_177958_n()) || !lllIIlllIlIl(var3.func_177956_o(), var4.func_177956_o()) || lllIIlllIlII(var3.func_177952_p(), var4.func_177952_p())) {
+                    if (!lllIIlllIllI(var7.size(), 1) || !lllIIlllIlIl(var3.getX(), var4.getX()) || !lllIIlllIlIl(var3.getY(), var4.getY()) || lllIIlllIlII(var3.getZ(), var4.getZ())) {
                         if (lllIIllIllIl(9700, 7885)) {
                             throw null;
                         }
 
                         this. = var3;
                         float var10;
-                        if (lllIIllIlIlI((var10 = var5.func_177230_c().func_180647_a(var5, this..field_71439_g, this..field_71441_e,
+                        if (lllIIllIlIlI((var10 = var5.getBlock().getPlayerRelativeBlockHardness(var5, this..player, this..world,
                         var4)-0.0F) ==0.0F ? 0 : (var10 < 0.0F ? -1 : 1))){
                             CPacketPlayerDigging var10001 = new CPacketPlayerDigging(Action.START_DESTROY_BLOCK, var3, EnumFacing.DOWN);
                             if (lllIIllIllIl(9700, 7885)) {
@@ -317,9 +317,9 @@ public class Class27 extends Class171 {
                         }
 
                         this.                                                                                                    .
-                        field_71439_g.func_184609_a(EnumHand.MAIN_HAND);
+                        player.swingArm(EnumHand.MAIN_HAND);
                         this.                                                                                                    .
-                        field_71442_b.func_180512_c(var3, EnumFacing.DOWN);
+                        playerController.onPlayerDamageBlock(var3, EnumFacing.DOWN);
                         this.                                                                                         .
                         ();
                         var8 = true;
@@ -332,7 +332,7 @@ public class Class27 extends Class171 {
     }
 
     private boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Block var1) {
-        if (lllIIllIlIlI(var1 instanceof BlockAir) && lllIIllIlIlI(var1 instanceof BlockBarrier) && lllIIllIlIll(var1, Blocks.field_150357_h) && !lllIIllIllII(var1 instanceof BlockLiquid)) {
+        if (lllIIllIlIlI(var1 instanceof BlockAir) && lllIIllIlIlI(var1 instanceof BlockBarrier) && lllIIllIlIll(var1, Blocks.BEDROCK) && !lllIIllIllII(var1 instanceof BlockLiquid)) {
             if (lllIIllIllIl(25463, 4284)) {
                 throw null;
             } else {
@@ -351,9 +351,9 @@ public class Class27 extends Class171 {
             throw null;
         } else {
             ArrayList var7 = var10000;
-            BlockPos var16 = new BlockPos(this..field_71439_g.field_70165_t, this.                                                                                                    .
-            field_71439_g.field_70163_u, this.                                                                                                    .
-            field_71439_g.field_70161_v);
+            BlockPos var16 = new BlockPos(this..player.posX, this.                                                                                                    .
+            player.posY, this.                                                                                                    .
+            player.posZ);
             if (lllIIllIllIl(26742, 9594)) {
                 throw null;
             } else {
@@ -364,9 +364,9 @@ public class Class27 extends Class171 {
                 } else {
                     Class171 var9 = var17;
                     if (lllIIllIllII(var17. ()) &&lllIIlllIIlI(((Class2) var9).)){
-                        var16 = new BlockPos(((Class2) var9)..field_70165_t, ((Class2) var9).                                                                                            .
-                        field_70163_u, ((Class2) var9).                                                                                            .
-                        field_70161_v);
+                        var16 = new BlockPos(((Class2) var9)..posX, ((Class2) var9).                                                                                            .
+                        posY, ((Class2) var9).                                                                                            .
+                        posZ);
                         if (lllIIllIllIl(26742, 9594)) {
                             throw null;
                         }
@@ -391,13 +391,13 @@ public class Class27 extends Class171 {
                         byte var20;
                         if (lllIIlllIIll(this., EnumFacing.NORTH)) {
                             var18 = var2;
-                            var10003 = new BlockPos(var8.func_177958_n() - var1, var8.func_177956_o() + var5, var8.func_177952_p() + var4);
+                            var10003 = new BlockPos(var8.getX() - var1, var8.getY() + var5, var8.getZ() + var4);
                             if (lllIIllIllIl(26742, 9594)) {
                                 throw null;
                             }
 
                             this. = var10003;
-                            var10002 = new BlockPos(var8.func_177958_n() + var2, var8.func_177956_o() - var6, var8.func_177952_p() - var3);
+                            var10002 = new BlockPos(var8.getX() + var2, var8.getY() - var6, var8.getZ() - var3);
                             if (lllIIllIllIl(26742, 9594)) {
                                 throw null;
                             }
@@ -439,18 +439,18 @@ public class Class27 extends Class171 {
                                             continue label331;
                                         }
 
-                                        var16 = new BlockPos(var8.func_177958_n() + var11, var8.func_177956_o() + var12, var8.func_177952_p() + var13);
+                                        var16 = new BlockPos(var8.getX() + var11, var8.getY() + var12, var8.getZ() + var13);
                                         if (lllIIllIllIl(26742, 9594)) {
                                             throw null;
                                         }
 
                                         var14 = var16;
-                                        var19 = Minecraft.func_71410_x();
+                                        var19 = Minecraft.getMinecraft();
                                         if (lllIIllIllIl(26742, 9594)) {
                                             throw null;
                                         }
 
-                                        var15 = var19.field_71441_e.func_180495_p(var14).func_177230_c();
+                                        var15 = var19.world.getBlockState(var14).getBlock();
                                         var20 = this. (var15);
                                         if (lllIIllIllIl(26742, 9594)) {
                                             throw null;
@@ -460,7 +460,7 @@ public class Class27 extends Class171 {
                                             label439:
                                             {
                                                 if (lllIIlllIlII(var10, -1)) {
-                                                    var18 = Block.func_149682_b(var15);
+                                                    var18 = Block.getIdFromBlock(var15);
                                                     if (lllIIllIllIl(26742, 9594)) {
                                                         throw null;
                                                     }
@@ -498,13 +498,13 @@ public class Class27 extends Class171 {
 
                             if (lllIIlllIIll(this., EnumFacing.EAST)) {
                                 var18 = var3;
-                                var10003 = new BlockPos(var8.func_177958_n() - var4, var8.func_177956_o() + var5, var8.func_177952_p() - var1);
+                                var10003 = new BlockPos(var8.getX() - var4, var8.getY() + var5, var8.getZ() - var1);
                                 if (lllIIllIllIl(26742, 9594)) {
                                     throw null;
                                 }
 
                                 this. = var10003;
-                                var10002 = new BlockPos(var8.func_177958_n() + var3, var8.func_177956_o() - var6, var8.func_177952_p() + var2);
+                                var10002 = new BlockPos(var8.getX() + var3, var8.getY() - var6, var8.getZ() + var2);
                                 if (lllIIllIllIl(26742, 9594)) {
                                     throw null;
                                 }
@@ -546,18 +546,18 @@ public class Class27 extends Class171 {
                                                 continue label358;
                                             }
 
-                                            var16 = new BlockPos(var8.func_177958_n() + var11, var8.func_177956_o() + var12, var8.func_177952_p() + var13);
+                                            var16 = new BlockPos(var8.getX() + var11, var8.getY() + var12, var8.getZ() + var13);
                                             if (lllIIllIllIl(26742, 9594)) {
                                                 throw null;
                                             }
 
                                             var14 = var16;
-                                            var19 = Minecraft.func_71410_x();
+                                            var19 = Minecraft.getMinecraft();
                                             if (lllIIllIllIl(26742, 9594)) {
                                                 throw null;
                                             }
 
-                                            var15 = var19.field_71441_e.func_180495_p(var14).func_177230_c();
+                                            var15 = var19.world.getBlockState(var14).getBlock();
                                             var20 = this. (var15);
                                             if (lllIIllIllIl(26742, 9594)) {
                                                 throw null;
@@ -567,7 +567,7 @@ public class Class27 extends Class171 {
                                                 label459:
                                                 {
                                                     if (lllIIlllIlII(var10, -1)) {
-                                                        var18 = Block.func_149682_b(var15);
+                                                        var18 = Block.getIdFromBlock(var15);
                                                         if (lllIIllIllIl(26742, 9594)) {
                                                             throw null;
                                                         }
@@ -605,13 +605,13 @@ public class Class27 extends Class171 {
 
                                 if (lllIIlllIIll(this., EnumFacing.SOUTH)) {
                                     var18 = var1;
-                                    var10003 = new BlockPos(var8.func_177958_n() + var1, var8.func_177956_o() + var5, var8.func_177952_p() - var4);
+                                    var10003 = new BlockPos(var8.getX() + var1, var8.getY() + var5, var8.getZ() - var4);
                                     if (lllIIllIllIl(26742, 9594)) {
                                         throw null;
                                     }
 
                                     this. = var10003;
-                                    var10002 = new BlockPos(var8.func_177958_n() - var2, var8.func_177956_o() - var6, var8.func_177952_p() + var3);
+                                    var10002 = new BlockPos(var8.getX() - var2, var8.getY() - var6, var8.getZ() + var3);
                                     if (lllIIllIllIl(26742, 9594)) {
                                         throw null;
                                     }
@@ -656,18 +656,18 @@ public class Class27 extends Class171 {
                                                     continue label383;
                                                 }
 
-                                                var16 = new BlockPos(var8.func_177958_n() + var11, var8.func_177956_o() + var12, var8.func_177952_p() + var13);
+                                                var16 = new BlockPos(var8.getX() + var11, var8.getY() + var12, var8.getZ() + var13);
                                                 if (lllIIllIllIl(26742, 9594)) {
                                                     throw null;
                                                 }
 
                                                 var14 = var16;
-                                                var19 = Minecraft.func_71410_x();
+                                                var19 = Minecraft.getMinecraft();
                                                 if (lllIIllIllIl(26742, 9594)) {
                                                     throw null;
                                                 }
 
-                                                var15 = var19.field_71441_e.func_180495_p(var14).func_177230_c();
+                                                var15 = var19.world.getBlockState(var14).getBlock();
                                                 var20 = this. (var15);
                                                 if (lllIIllIllIl(26742, 9594)) {
                                                     throw null;
@@ -677,7 +677,7 @@ public class Class27 extends Class171 {
                                                     label461:
                                                     {
                                                         if (lllIIlllIlII(var10, -1)) {
-                                                            var18 = Block.func_149682_b(var15);
+                                                            var18 = Block.getIdFromBlock(var15);
                                                             if (lllIIllIllIl(26742, 9594)) {
                                                                 throw null;
                                                             }
@@ -715,13 +715,13 @@ public class Class27 extends Class171 {
 
                                     if (lllIIlllIIll(this., EnumFacing.WEST)) {
                                         var18 = var4;
-                                        var10003 = new BlockPos(var8.func_177958_n() + var4, var8.func_177956_o() + var5, var8.func_177952_p() + var1);
+                                        var10003 = new BlockPos(var8.getX() + var4, var8.getY() + var5, var8.getZ() + var1);
                                         if (lllIIllIllIl(26742, 9594)) {
                                             throw null;
                                         }
 
                                         this. = var10003;
-                                        var10002 = new BlockPos(var8.func_177958_n() - var3, var8.func_177956_o() - var6, var8.func_177952_p() - var2);
+                                        var10002 = new BlockPos(var8.getX() - var3, var8.getY() - var6, var8.getZ() - var2);
                                         if (lllIIllIllIl(26742, 9594)) {
                                             throw null;
                                         }
@@ -766,18 +766,18 @@ public class Class27 extends Class171 {
                                                         continue label416;
                                                     }
 
-                                                    var16 = new BlockPos(var8.func_177958_n() + var11, var8.func_177956_o() + var12, var8.func_177952_p() + var13);
+                                                    var16 = new BlockPos(var8.getX() + var11, var8.getY() + var12, var8.getZ() + var13);
                                                     if (lllIIllIllIl(26742, 9594)) {
                                                         throw null;
                                                     }
 
                                                     var14 = var16;
-                                                    var19 = Minecraft.func_71410_x();
+                                                    var19 = Minecraft.getMinecraft();
                                                     if (lllIIllIllIl(26742, 9594)) {
                                                         throw null;
                                                     }
 
-                                                    var15 = var19.field_71441_e.func_180495_p(var14).func_177230_c();
+                                                    var15 = var19.world.getBlockState(var14).getBlock();
                                                     var20 = this. (var15);
                                                     if (lllIIllIllIl(26742, 9594)) {
                                                         throw null;
@@ -787,7 +787,7 @@ public class Class27 extends Class171 {
                                                         label464:
                                                         {
                                                             if (lllIIlllIlII(var10, -1)) {
-                                                                var18 = Block.func_149682_b(var15);
+                                                                var18 = Block.getIdFromBlock(var15);
                                                                 if (lllIIllIllIl(26742, 9594)) {
                                                                     throw null;
                                                                 }

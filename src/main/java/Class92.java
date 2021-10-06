@@ -160,7 +160,7 @@ public class Class92 extends Class171 {
         EntityPlayer var2 = null;
         float var3 = 3.0F;
         Iterator var4 = this.                                                                                                    .
-        field_71441_e.field_73010_i.iterator();
+        world.playerEntities.iterator();
 
         while (!lIIIIIIIIlIII(78441, 8413)) {
             if (!lIIIIIIIIIlll(var4.hasNext())) {
@@ -173,8 +173,8 @@ public class Class92 extends Class171 {
 
             EntityPlayer var5 = (EntityPlayer) var4.next();
             float var6;
-            if (lIIIIIIIIlIll((var6 = var1.func_70032_d(var5) - var3) == 0.0F ? 0 : (var6 < 0.0F ? -1 : 1))) {
-                var3 = var1.func_70032_d(var5);
+            if (lIIIIIIIIlIll((var6 = var1.getDistance(var5) - var3) == 0.0F ? 0 : (var6 < 0.0F ? -1 : 1))) {
+                var3 = var1.getDistance(var5);
                 var2 = var5;
                 boolean var10000 = true;
             }
@@ -194,23 +194,23 @@ public class Class92 extends Class171 {
                     throw null;
                 }
 
-                if (!lIIIIIIIIlIIl(var10000, var6.func_149098_c().length)) {
+                if (!lIIIIIIIIlIIl(var10000, var6.getEntityIDs().length)) {
                     break;
                 }
 
                 Entity var3;
                 boolean var10001;
-                if (lIIIIIIIIIlll((var3 = this..field_71441_e.func_73045_a(var6.func_149098_c()[var7])) instanceof EntityEnderPearl) &&
+                if (lIIIIIIIIIlll((var3 = this..world.getEntityByID(var6.getEntityIDs()[var7])) instanceof EntityEnderPearl) &&
                 lIIIIIIIIIlll(this..containsKey(var3))){
                     EntityEnderPearl var8 = (EntityEnderPearl) var3;
-                    BlockPos var10 = new BlockPos(var8.field_70165_t, var8.field_70163_u, var8.field_70161_v);
+                    BlockPos var10 = new BlockPos(var8.posX, var8.posY, var8.posZ);
                     if (lIIIIIIIIlIII(34429, 2525)) {
                         throw null;
                     }
 
                     BlockPos var4 = var10;
                     String var11;
-                    if (lIIIIIIIIlIlI(var8.func_85052_h())) {
+                    if (lIIIIIIIIlIlI(var8.getThrower())) {
                         var11 = Class60. ("uot7");
                         if (lIIIIIIIIlIII(34429, 2525)) {
                             throw null;
@@ -222,7 +222,7 @@ public class Class92 extends Class171 {
                             throw null;
                         }
 
-                        var11 = var8.func_85052_h().func_70005_c_();
+                        var11 = var8.getThrower().getName();
                     }
 
                     if (lIIIIIIIIlIII(34429, 2525)) {
@@ -241,19 +241,19 @@ public class Class92 extends Class171 {
                         throw null;
                     }
 
-                    var13 = var13.append(var12).append(var4.func_177958_n());
+                    var13 = var13.append(var12).append(var4.getX());
                     var12 = Class60. ("8@a");
                     if (lIIIIIIIIlIII(34429, 2525)) {
                         throw null;
                     }
 
-                    var13 = var13.append(var12).append(var4.func_177956_o());
+                    var13 = var13.append(var12).append(var4.getY());
                     var12 = Class60. ("8Ca");
                     if (lIIIIIIIIlIII(34429, 2525)) {
                         throw null;
                     }
 
-                    String var9 = String.valueOf(var13.append(var12).append(var4.func_177952_p()));
+                    String var9 = String.valueOf(var13.append(var12).append(var4.getZ()));
                     if (lIIIIIIIIIlll(this.. ())){
                         this.                                                                                                   .
                         (Class172., this. (), var9, 3000);
@@ -369,8 +369,8 @@ public class Class92 extends Class171 {
                             this.                                                                                           .
                             (this.. ());
                             RenderManager var3 = this.                                                                                                    .
-                            func_175598_ae();
-                            GL11.glTranslated(-var3.field_78730_l, -var3.field_78731_m, -var3.field_78728_n);
+                            getRenderManager();
+                            GL11.glTranslated(-var3.viewerPosX, -var3.viewerPosY, -var3.viewerPosZ);
                             if (lIIIIIIIIlIII(49483, 9592)) {
                                 throw null;
                             }
@@ -427,7 +427,7 @@ public class Class92 extends Class171 {
 
                                 Vec3d var7 = (Vec3d) var6.next();
                                 var9 = var6;
-                                GL11.glVertex3d(var7.field_72450_a, var7.field_72448_b, var7.field_72449_c);
+                                GL11.glVertex3d(var7.x, var7.y, var7.z);
                                 if (lIIIIIIIIlIII(49483, 9592)) {
                                     throw null;
                                 }
@@ -488,7 +488,7 @@ public class Class92 extends Class171 {
 
                         Class104 var3 = (Class104) this.                                                                                                   .
                         get(var2);
-                        if (lIIIIIIIIllII(this..field_71441_e.func_73045_a(var2.func_145782_y()))){
+                        if (lIIIIIIIIllII(this..world.getEntityByID(var2.getEntityId()))){
                         long var7 = System.currentTimeMillis();
                         if (lIIIIIIIIlIII(93511, 223)) {
                             throw null;
@@ -509,7 +509,7 @@ public class Class92 extends Class171 {
                                 }
 
                                 ArrayList var5 = ((Class104) this..get(var2)).();
-                                Vec3d var10001 = new Vec3d(var2.field_70165_t, var2.field_70163_u, var2.field_70161_v);
+                                Vec3d var10001 = new Vec3d(var2.posX, var2.posY, var2.posZ);
                                 if (lIIIIIIIIlIII(93511, 223)) {
                                     throw null;
                                 }

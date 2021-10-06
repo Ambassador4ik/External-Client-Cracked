@@ -40,8 +40,8 @@ public class Class84 implements Comparator {
 
     public int ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var1, Entity var2) {
         int var10000 = Double.compare((double) this..                                                                                                    .
-        field_71439_g.func_70032_d(var1), (double) this.                                                                                  .                                                                                                    .
-        field_71439_g.func_70032_d(var2));
+        player.getDistance(var1), (double) this.                                                                                  .                                                                                                    .
+        player.getDistance(var2));
         if (llllllllIIII(30372, 5219)) {
             throw null;
         } else {

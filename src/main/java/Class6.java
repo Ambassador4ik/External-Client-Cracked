@@ -73,14 +73,14 @@ public class Class6 extends Class171 {
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */() {
         this.                                                                                                    .
-        field_71439_g.field_70144_Y = 0.0F;
+        player.entityCollisionReduction = 0.0F;
         boolean var10000 = true;
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(PlayerTickEvent var1) {
         if (llIIIlIIIlIl(this.. ())){
             this.                                                                                                    .
-            field_71439_g.field_70144_Y = 1.0F;
+            player.entityCollisionReduction = 1.0F;
         }
 
         if (llIIlIIllllI(92039, 8975)) {

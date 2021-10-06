@@ -68,7 +68,7 @@ public class Class98 extends Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(PlayerSPPushOutOfBlocksEvent var1) {
         this.                                                                                                    .
-        field_71439_g.field_70143_R = 0.0F;
+        player.fallDistance = 0.0F;
         byte var10000 = Class22. ();
         if (llllIIIIIIll(33907, 1534)) {
             throw null;
@@ -80,8 +80,8 @@ public class Class98 extends Class171 {
                 }
 
                 EntityPlayerSP var10001 = this.                                                                                                    .
-                field_71439_g;
-                var10001.field_70181_x *= 0.05000000074505806D;
+                player;
+                var10001.motionY *= 0.05000000074505806D;
                 String var2 = this.                                                                                  .
                 ();
                 String var4 = Class60. ("VZ\u000b");
@@ -91,9 +91,9 @@ public class Class98 extends Class171 {
 
                 if (llllIIIIIlII(var2.equals(var4))) {
                     this.                                                                                                    .
-                    field_71439_g.field_71158_b.field_78902_a *= 0.25F;
+                    player.movementInput.moveStrafe *= 0.25F;
                     this.                                                                                                    .
-                    field_71439_g.field_71158_b.field_192832_b *= 0.25F;
+                    player.movementInput.moveForward *= 0.25F;
                 }
             }
 

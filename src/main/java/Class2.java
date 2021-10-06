@@ -91,19 +91,19 @@ public class Class2 extends Class171 {
             throw null;
         } else {
             this.                                                                                                    .
-            field_71439_g.field_70145_X = true;
+            player.noClip = true;
             this.                                                                                                    .
-            field_71439_g.field_70122_E = false;
+            player.onGround = false;
             this.                                                                                                    .
-            field_71439_g.field_71075_bZ.func_75092_a((float) (0.07D * this.. ()));
+            player.capabilities.setFlySpeed((float) (0.07D * this.. ()));
             this.                                                                                                    .
-            field_71439_g.field_71075_bZ.field_75100_b = true;
+            player.capabilities.isFlying = true;
             if (llllIlIIIllI(this.. (1000))){
                 CPacketPlayer var10000 = new CPacketPlayer;
                 boolean var10003;
                 if (llllIlIIlllI(this.)) {
                     var10003 = this.                                                                                            .
-                    field_70122_E;
+                    onGround;
                     boolean var10004 = true;
                 } else {
                     if (llllIlIIIlIl(46995, 368)) {
@@ -149,32 +149,32 @@ public class Class2 extends Class171 {
                 throw null;
             } else {
                 this. = this.                                                                                                    .
-                field_71439_g.field_71075_bZ.func_75093_a();
-                EntityOtherPlayerMP var10004 = new EntityOtherPlayerMP(this..field_71441_e, this.                                                                                                    .
-                field_71439_g.func_146103_bH());
+                player.capabilities.getFlySpeed();
+                EntityOtherPlayerMP var10004 = new EntityOtherPlayerMP(this..world, this.                                                                                                    .
+                player.getGameProfile());
                 if (llllIlIIIlIl(28873, 5490)) {
                     throw null;
                 } else {
                     EntityOtherPlayerMP var1 = var10004;
-                    var1.func_70107_b(this..field_71439_g.field_70165_t, this.                                                                                                    .
-                    field_71439_g.field_70163_u, this.                                                                                                    .
-                    field_71439_g.field_70161_v);
-                    var1.func_70606_j(this..field_71439_g.func_110143_aJ());
-                    var1.field_70177_z = this.                                                                                                    .
-                    field_71439_g.field_70177_z;
-                    var1.field_70125_A = this.                                                                                                    .
-                    field_71439_g.field_70125_A;
-                    var1.field_70759_as = this.                                                                                                    .
-                    field_71439_g.field_70759_as;
-                    var1.func_70095_a(this..field_71439_g.func_70093_af());
-                    var1.field_71071_by.func_70455_b(this..field_71439_g.field_71071_by);
+                    var1.setPosition(this..player.posX, this.                                                                                                    .
+                    player.posY, this.                                                                                                    .
+                    player.posZ);
+                    var1.setHealth(this..player.getHealth());
+                    var1.rotationYaw = this.                                                                                                    .
+                    player.rotationYaw;
+                    var1.rotationPitch = this.                                                                                                    .
+                    player.rotationPitch;
+                    var1.rotationYawHead = this.                                                                                                    .
+                    player.rotationYawHead;
+                    var1.setSneaking(this..player.isSneaking());
+                    var1.inventory.copyInventory(this..player.inventory);
                     this.                                                                                                    .
-                    field_71441_e.func_73027_a(-1, var1);
+                    world.addEntityToWorld(-1, var1);
                     this. = var1;
                     this. = this.                                                                                                    .
-                    field_71474_y.field_74333_Y;
+                    gameSettings.gammaSetting;
                     this.                                                                                                    .
-                    field_71474_y.field_74333_Y = 100.0F;
+                    gameSettings.gammaSetting = 100.0F;
                     var10000 = true;
                 }
             }
@@ -193,39 +193,39 @@ public class Class2 extends Class171 {
                 throw null;
             } else {
                 this.                                                                                                    .
-                field_71439_g.field_70159_w = 0.0D;
+                player.motionX = 0.0D;
                 this.                                                                                                    .
-                field_71439_g.field_70179_y = 0.0D;
+                player.motionZ = 0.0D;
                 this.                                                                                                    .
-                field_71439_g.field_71075_bZ.func_75092_a(this.);
+                player.capabilities.setFlySpeed(this.);
                 this.                                                                                                    .
-                field_71439_g.field_70145_X = false;
+                player.noClip = false;
                 this.                                                                                                    .
-                field_71439_g.field_71075_bZ.field_75100_b = false;
+                player.capabilities.isFlying = false;
                 this.                                                                                                    .
-                field_71439_g.func_70107_b(this..field_70165_t, this.                                                                                            .
-                field_70163_u, this.                                                                                            .
-                field_70161_v);
+                player.setPosition(this..posX, this.                                                                                            .
+                posY, this.                                                                                            .
+                posZ);
                 this.                                                                                                    .
-                field_71439_g.field_70125_A = this.                                                                                            .
-                field_70125_A;
+                player.rotationPitch = this.                                                                                            .
+                rotationPitch;
                 this.                                                                                                    .
-                field_71439_g.field_70177_z = this.                                                                                            .
-                field_70177_z;
+                player.rotationYaw = this.                                                                                            .
+                rotationYaw;
                 this.                                                                                                    .
-                field_71439_g.field_70759_as = this.                                                                                            .
-                field_70759_as;
+                player.rotationYawHead = this.                                                                                            .
+                rotationYawHead;
                 this.                                                                                                    .
-                field_71441_e.func_73028_b(-1);
+                world.removeEntityFromWorld(-1);
                 this.                                                                                                    .
-                field_71438_f.func_72712_a();
+                renderGlobal.loadRenderers();
                 this.                                                                                                    .
-                field_71474_y.field_74333_Y = this.;
+                gameSettings.gammaSetting = this.;
                 CPacketEntityAction var10001 = new CPacketEntityAction;
                 EntityPlayerSP var10003 = this.                                                                                                    .
-                field_71439_g;
+                player;
                 Action var10004;
-                if (llllIlIIIllI(this..field_71474_y.field_74311_E.func_151470_d())){
+                if (llllIlIIIllI(this..gameSettings.keyBindSneak.isKeyDown())){
                     var10004 = Action.START_SNEAKING;
                     boolean var10005 = true;
                 } else{
@@ -262,7 +262,7 @@ public class Class2 extends Class171 {
             throw null;
         } else {
             double var3;
-            if (llllIlIIIllI(var1 instanceof CPacketPlayer) && llllIlIIllIl((var3 = ((CPacketPlayer) var1).func_186997_a(-1.0D) - -1.0D) == 0.0D ? 0 : (var3 < 0.0D ? -1 : 1))) {
+            if (llllIlIIIllI(var1 instanceof CPacketPlayer) && llllIlIIllIl((var3 = ((CPacketPlayer) var1).getX(-1.0D) - -1.0D) == 0.0D ? 0 : (var3 < 0.0D ? -1 : 1))) {
                 return true;
             } else if (llllIlIIIlIl(8023, 315)) {
                 throw null;

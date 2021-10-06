@@ -38,10 +38,10 @@ public class Class41 extends Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(PlayerTickEvent var1) {
         double var2;
-        if (lllIIlIlllIl((var2 = (double) this..field_71439_g.field_70143_R - 0.18321637D) == 0.0D ? 0 : (var2 < 0.0D ? -1 : 1)))
+        if (lllIIlIlllIl((var2 = (double) this..player.fallDistance - 0.18321637D) == 0.0D ? 0 : (var2 < 0.0D ? -1 : 1)))
         {
             this.                                                                                                    .
-            field_71439_g.field_70181_x = -15.4317641D;
+            player.motionY = -15.4317641D;
         }
 
         if (lllIIlIllllI(19209, 2234)) {

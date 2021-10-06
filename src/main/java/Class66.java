@@ -207,7 +207,7 @@ public class Class66 {
         if (llIlIIIlIIll(88736, 2686)) {
             throw null;
         } else {
-            int var7 = (int) ((float) var1.getResolution().func_78326_a() - this.. ());
+            int var7 = (int) ((float) var1.getResolution().getScaledWidth() - this.. ());
             ++var2;
             int var3 = 0;
             int var4 = -1;
@@ -314,22 +314,22 @@ public class Class66 {
                                             throw null;
                                         }
 
-                                        ResourceLocation var11 = AbstractClientPlayer.func_110311_f(this.);
+                                        ResourceLocation var11 = AbstractClientPlayer.getLocationSkin(this.);
                                         if (llIlIIIlIIll(88736, 2686)) {
                                             throw null;
                                         }
 
-                                        ThreadDownloadImageData var12 = AbstractClientPlayer.func_110304_a(var11, this.);
+                                        ThreadDownloadImageData var12 = AbstractClientPlayer.getDownloadImageSkin(var11, this.);
                                         if (llIlIIIlIIll(88736, 2686)) {
                                             throw null;
                                         }
 
-                                        Minecraft var9 = Minecraft.func_71410_x();
+                                        Minecraft var9 = Minecraft.getMinecraft();
                                         if (llIlIIIlIIll(88736, 2686)) {
                                             throw null;
                                         }
 
-                                        var12.func_110551_a(var9.func_110442_L());
+                                        var12.loadTexture(var9.getResourceManager());
                                     } catch (IOException var6) {
                                         if (llIlIIIlIIll(88736, 2686)) {
                                             throw null;
@@ -358,24 +358,24 @@ public class Class66 {
                                 throw null;
                             }
 
-                            GlStateManager.func_179117_G();
+                            GlStateManager.resetColor();
                             if (llIlIIIlIIll(88736, 2686)) {
                                 throw null;
                             }
 
-                            Minecraft var13 = Minecraft.func_71410_x();
+                            Minecraft var13 = Minecraft.getMinecraft();
                             if (llIlIIIlIIll(88736, 2686)) {
                                 throw null;
                             }
 
-                            TextureManager var14 = var13.func_110434_K();
-                            ResourceLocation var10 = AbstractClientPlayer.func_110311_f(this.);
+                            TextureManager var14 = var13.getTextureManager();
+                            ResourceLocation var10 = AbstractClientPlayer.getLocationSkin(this.);
                             if (llIlIIIlIIll(88736, 2686)) {
                                 throw null;
                             }
 
-                            var14.func_110577_a(var10);
-                            Gui.func_152125_a(var7 + var3 + 1, var2 + 1, 8.0F, 8.0F, 8, 8, 18, 18, 64.0F, 64.0F);
+                            var14.bindTexture(var10);
+                            Gui.drawScaledCustomSizeModalRect(var7 + var3 + 1, var2 + 1, 8.0F, 8.0F, 8, 8, 18, 18, 64.0F, 64.0F);
                             if (llIlIIIlIIll(88736, 2686)) {
                                 throw null;
                             }

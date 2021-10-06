@@ -36,9 +36,9 @@ public class Class54 extends Class171 {
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
         this.                                                                                                    .
-        field_71441_e.func_72894_k(0.0F);
+        world.setRainStrength(0.0F);
         this.                                                                                                    .
-        field_71441_e.func_147442_i(0.0F);
+        world.setThunderStrength(0.0F);
         boolean var10000 = true;
     }
 }

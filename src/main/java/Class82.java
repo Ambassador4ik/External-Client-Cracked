@@ -83,7 +83,7 @@ public class Class82 extends Class5 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
         int var1 = this. () + (this. () / 2 - this.                                                                                            .
-        field_71466_p.field_78288_b / 2);
+        fontRenderer.FONT_HEIGHT / 2);
         this.                                                                                  .(this..
         (), (float) (this. () + 13),(float) var1, Class73.                                                                                          )
         ;

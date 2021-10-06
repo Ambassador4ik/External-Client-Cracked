@@ -149,9 +149,9 @@ public class Class29 extends GuiScreen {
         return var0 != null;
     }
 
-    public void func_146281_b() {
-        if (lllIIIIllIlI(this.field_146297_k.field_71460_t.func_147702_a())) {
-            this.field_146297_k.field_71460_t.func_181022_b();
+    public void onGuiClosed() {
+        if (lllIIIIllIlI(this.mc.entityRenderer.isShaderActive())) {
+            this.mc.entityRenderer.stopUseShader();
         }
 
         if (lllIIIIlIlll(18628, 578)) {
@@ -161,7 +161,7 @@ public class Class29 extends GuiScreen {
         }
     }
 
-    public void func_73864_a(int var1, int var2, int var3) throws IOException {
+    public void mouseClicked(int var1, int var2, int var3) throws IOException {
         int var4 = 0;
         boolean var10000;
         if (lllIIIIllIlI(this.. (100))){
@@ -267,9 +267,9 @@ public class Class29 extends GuiScreen {
         }
     }
 
-    public void func_73869_a(char var1, int var2) {
+    public void keyTyped(char var1, int var2) {
         if (lllIIIIllllI(var2, 1)) {
-            this.field_146297_k.func_147108_a((GuiScreen) null);
+            this.mc.displayGuiScreen((GuiScreen) null);
         }
 
         if (lllIIIIlIlll(90575, 7097)) {
@@ -313,14 +313,14 @@ public class Class29 extends GuiScreen {
         }
     }
 
-    public boolean func_73868_f() {
+    public boolean doesGuiPauseGame() {
         return false;
     }
 
-    public void func_73866_w_() {
+    public void initGui() {
         if (lllIIIIllIll(this.) && lllIIIIllIlI(this..                                                                                            .
-        ()) &&lllIIIIlllII(this.field_146297_k.field_71460_t.func_147702_a())){
-            EntityRenderer var10000 = this.field_146297_k.field_71460_t;
+        ()) &&lllIIIIlllII(this.mc.entityRenderer.isShaderActive())){
+            EntityRenderer var10000 = this.mc.entityRenderer;
             ResourceLocation var10001 = new ResourceLocation;
             String var10003 = Class60. ("isx~{in5btbn9yyox5cia5");
             if (lllIIIIlIlll(57453, 9202)) {
@@ -332,7 +332,7 @@ public class Class29 extends GuiScreen {
                 throw null;
             }
 
-            var10000.func_175069_a(var10001);
+            var10000.loadShader(var10001);
         }
 
         if (lllIIIIlIlll(57453, 9202)) {
@@ -352,7 +352,7 @@ public class Class29 extends GuiScreen {
         }
     }
 
-    public void func_146286_b(int var1, int var2, int var3) {
+    public void mouseReleased(int var1, int var2, int var3) {
         if (lllIIIIllIll(Class73..)){
             Class73.                                                                                      .                                                                              .
             ();
@@ -425,8 +425,8 @@ public class Class29 extends GuiScreen {
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public void func_73863_a(int var1, int var2, float var3) {
-        this.func_146276_q_();
+    public void drawScreen(int var1, int var2, float var3) {
+        this.drawDefaultBackground();
         GL11.glPushMatrix();
         if (lllIIIIlIlll(93282, 2162)) {
             throw null;

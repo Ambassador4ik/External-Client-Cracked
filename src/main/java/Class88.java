@@ -257,29 +257,29 @@ public class Class88 extends Class171 {
     private boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var1) {
         double var2;
         double var3;
-        if (llllllIIlIIl(var1) && llllllIIlIlI(var1 instanceof EntityLivingBase) && llllllIIlIll(var1, this..field_71439_g) &&
-        llllllIIlIlI(var1.func_70089_S()) && llllllIIllII((var2 = (double) this..field_71439_g.func_70032_d(var1) - 0.5D) == 0.0D ? 0 : (var2 < 0.0D ? -1 : 1)) &&
-        llllllIIllIl(var1 instanceof EntityArmorStand) && llllllIIlllI((var3 = (double) this..field_71439_g.func_70032_d(var1) - this..
+        if (llllllIIlIIl(var1) && llllllIIlIlI(var1 instanceof EntityLivingBase) && llllllIIlIll(var1, this..player) &&
+        llllllIIlIlI(var1.isEntityAlive()) && llllllIIllII((var2 = (double) this..player.getDistance(var1) - 0.5D) == 0.0D ? 0 : (var2 < 0.0D ? -1 : 1)) &&
+        llllllIIllIl(var1 instanceof EntityArmorStand) && llllllIIlllI((var3 = (double) this..player.getDistance(var1) - this..
         ()) ==0.0D ? 0 : (var3 < 0.0D ? -1 : 1))){
-            byte var10000 = Class13. (this..field_71439_g, var1, (float) this.                                                                                                  .
+            byte var10000 = Class13. (this..player, var1, (float) this.                                                                                                  .
             ());
             if (llllllIlIIII(64125, 5438)) {
                 throw null;
             }
 
             if (llllllIIlIlI(var10000) && (!llllllIIlIlI(var1 instanceof EntityPlayer) || llllllIIllIl(Class73...
-            (var1.func_70005_c_())))){
+            (var1.getName())))){
                 if (llllllIlIIII(64125, 5438)) {
                     throw null;
                 }
 
-                if (llllllIIlIlI(((EntityLivingBase) var1).func_70685_l(this..field_71439_g)) &&
-                !llllllIIllIl(this..field_71415_G)){
+                if (llllllIIlIlI(((EntityLivingBase) var1).canEntityBeSeen(this..player)) &&
+                !llllllIIllIl(this..inGameHasFocus)){
                     if (llllllIlIIII(64125, 5438)) {
                         throw null;
                     }
 
-                    if (llllllIIlIlI(var1 instanceof EntityPlayer) && llllllIIlIlI(var1.func_82150_aj())) {
+                    if (llllllIIlIlI(var1 instanceof EntityPlayer) && llllllIIlIlI(var1.isInvisible())) {
                         return this.                                                                                                   .
                         ();
                     }
@@ -338,7 +338,7 @@ public class Class88 extends Class171 {
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
         List var2 = this.                                                                                                    .
-        field_71441_e.field_72996_f;
+        world.loadedEntityList;
         Class84 var10002 = new Class84(this);
         if (llllllIlIIII(40257, 9894)) {
             throw null;
@@ -368,8 +368,8 @@ public class Class88 extends Class171 {
                         label93:
                         {
                             Item var4 = this.                                                                                                    .
-                            field_71439_g.func_184614_ca().func_77973_b();
-                            if (!llllllIIlIlI(this.. ()) ||llllllIlIIll(this..field_71476_x.field_72308_g)){
+                            player.getHeldItemMainhand().getItem();
+                            if (!llllllIIlIlI(this.. ()) ||llllllIlIIll(this..objectMouseOver.entityHit)){
                             if (llllllIlIIII(40257, 9894)) {
                                 throw null;
                             }
@@ -416,7 +416,7 @@ public class Class88 extends Class171 {
                         float[] var6 = var8;
                         if (llllllIlIlII(var1.phase, Phase.END)) {
                             this.                                                                                                    .
-                            field_71439_g.field_70177_z = var6[0];
+                            player.rotationYaw = var6[0];
                             var7 = true;
                         }
                     }

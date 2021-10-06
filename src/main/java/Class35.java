@@ -187,12 +187,12 @@ public class Class35 extends Class171 {
                 }
 
                 return this.                                                                                                    .
-                field_71439_g.field_71071_by.field_70461_c;
+                player.inventory.currentItem;
             }
 
             ItemStack var2;
-            if (llIllllIlllI(var2 = this..field_71439_g.field_71069_bz.func_75139_a(var1).func_75211_c()) &&
-            llIllllIllll(var2.func_77973_b() instanceof ItemEndCrystal)){
+            if (llIllllIlllI(var2 = this..player.inventoryContainer.getSlot(var1).getStack()) &&
+            llIllllIllll(var2.getItem() instanceof ItemEndCrystal)){
                 return var1 - 36;
             }
 
@@ -210,19 +210,19 @@ public class Class35 extends Class171 {
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderGameOverlayEvent var1) {
         boolean var10000;
         int var2;
-        if (llIllllllIII(var2 = this. ()) &&!llIllllIllll(this..field_71439_g.func_184812_l_())){
+        if (llIllllllIII(var2 = this. ()) &&!llIllllIllll(this..player.isCreative())){
             if (llIllllIIlII(71247, 3182)) {
                 throw null;
             } else {
                 ScaledResolution var6 = var1.getResolution();
-                int var5 = var6.func_78326_a() / 2 - 90 - 18;
-                int var3 = var6.func_78328_b() - 18 - 21;
-                ItemStack var7 = new ItemStack(Items.field_185158_cP);
+                int var5 = var6.getScaledWidth() / 2 - 90 - 18;
+                int var3 = var6.getScaledHeight() - 18 - 21;
+                ItemStack var7 = new ItemStack(Items.END_CRYSTAL);
                 if (llIllllIIlII(71247, 3182)) {
                     throw null;
                 } else {
                     ItemStack var4 = var7;
-                    var4.func_190920_e(var2);
+                    var4.setCount(var2);
                     this.                                                                                           .
                     (var4, var5, var3, -100.0F);
                     var10000 = true;
@@ -293,22 +293,22 @@ public class Class35 extends Class171 {
                             continue label75;
                         }
 
-                        BlockPos var9 = new BlockPos(this..field_71439_g.field_70165_t + (double) var3, this.                                                                                                    .
-                        field_71439_g.field_70163_u + (double) var4, this.                                                                                                    .
-                        field_71439_g.field_70161_v + (double) var5);
+                        BlockPos var9 = new BlockPos(this..player.posX + (double) var3, this.                                                                                                    .
+                        player.posY + (double) var4, this.                                                                                                    .
+                        player.posZ + (double) var5);
                         if (llIllllIIlII(13925, 3444)) {
                             throw null;
                         }
 
                         BlockPos var6 = var9;
                         Block var7;
-                        if (!llIlllllIIlI((var7 = this..field_71441_e.func_180495_p(var6).func_177230_c()) instanceof BlockObsidian) ||
-                        llIlllllIIII(var7, Blocks.field_150357_h)){
+                        if (!llIlllllIIlI((var7 = this..world.getBlockState(var6).getBlock()) instanceof BlockObsidian) ||
+                        llIlllllIIII(var7, Blocks.BEDROCK)){
                             if (llIllllIIlII(13925, 3444)) {
                                 throw null;
                             }
 
-                            if (llIllllIllll(this..field_71441_e.func_180495_p(var6.func_177984_a()).func_177230_c() instanceof BlockAir))
+                            if (llIllllIllll(this..world.getBlockState(var6.up()).getBlock() instanceof BlockAir))
                             {
                                 var1.add(var6);
                             }
@@ -339,7 +339,7 @@ public class Class35 extends Class171 {
         } else {
             ArrayList var2 = var10000;
             Iterator var3 = this.                                                                                                    .
-            field_71441_e.field_73010_i.iterator();
+            world.playerEntities.iterator();
 
             while (!llIllllIIlII(56469, 3031)) {
                 if (!llIllllIllll(var3.hasNext())) {
@@ -354,9 +354,9 @@ public class Class35 extends Class171 {
                 double var6;
                 double var7;
                 long var8;
-                if (llIllllIlllI(var4 = (EntityPlayer) var3.next()) && llIllllIllll(var4.func_70089_S()) && llIlllllIlll(var4, this..field_71439_g) &&
-                llIlllllIIIl((var6 = var1.func_185332_f((int) var4.field_70165_t, (int) var4.field_70163_u, (int) var4.field_70161_v) - 3.1D) == 0.0D ? 0 : (var6 < 0.0D ? -1 : 1)) && llIlllllIIll((var7 = var4.field_70163_u - 0.9D - (double) var1.func_177956_o()) == 0.0D ? 0 : (var7 < 0.0D ? -1 : 1)) && llIllllIllll((var8 = var4.func_180425_c().func_177977_b().func_177986_g() - var1.func_177986_g()) == 0L ? 0 : (var8 < 0L ? -1 : 1)) && llIlllllIIlI(Class73..                                                                                                    .
-                (var4.func_70005_c_()))){
+                if (llIllllIlllI(var4 = (EntityPlayer) var3.next()) && llIllllIllll(var4.isEntityAlive()) && llIlllllIlll(var4, this..player) &&
+                llIlllllIIIl((var6 = var1.getDistance((int) var4.posX, (int) var4.posY, (int) var4.posZ) - 3.1D) == 0.0D ? 0 : (var6 < 0.0D ? -1 : 1)) && llIlllllIIll((var7 = var4.posY - 0.9D - (double) var1.getY()) == 0.0D ? 0 : (var7 < 0.0D ? -1 : 1)) && llIllllIllll((var8 = var4.getPosition().down().toLong() - var1.toLong()) == 0L ? 0 : (var8 < 0L ? -1 : 1)) && llIlllllIIlI(Class73..                                                                                                    .
+                (var4.getName()))){
                     var2.add(var4);
                     boolean var5 = true;
                 }
@@ -368,7 +368,7 @@ public class Class35 extends Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderWorldLastEvent var1) {
         Iterator var3 = this.                                                                                                    .
-        field_71441_e.field_72996_f.iterator();
+        world.loadedEntityList.iterator();
 
         while (!llIllllIIlII(61684, 4518)) {
             boolean var10000;
@@ -392,7 +392,7 @@ public class Class35 extends Class171 {
 
                         BlockPos var4;
                         double var5;
-                        if (llIllllIlllI(var4 = (BlockPos) var3.next()) && llIlllllIIll((var5 = (double) var4.func_177956_o() - this..field_71439_g.field_70163_u) == 0.0D ? 0 : (var5 < 0.0D ? -1 : 1)) &&
+                        if (llIllllIlllI(var4 = (BlockPos) var3.next()) && llIlllllIIll((var5 = (double) var4.getY() - this..player.posY) == 0.0D ? 0 : (var5 < 0.0D ? -1 : 1)) &&
                         llIlllllIIll(this. ()) &&llIlllllIIlI(this. (var4).isEmpty())){
                             Class181. (var4, Color.GREEN);
                             if (llIllllIIlII(61684, 4518)) {
@@ -415,9 +415,9 @@ public class Class35 extends Class171 {
 
             Entity var2;
             double var6;
-            if (llIllllIllll((var2 = (Entity) var3.next()) instanceof EntityEnderCrystal) && llIlllllIIIl((var6 = (double) this..field_71439_g.func_70032_d(var2) - this..
+            if (llIllllIllll((var2 = (Entity) var3.next()) instanceof EntityEnderCrystal) && llIlllllIIIl((var6 = (double) this..player.getDistance(var2) - this..
             ()) ==0.0D ? 0 : (var6 < 0.0D ? -1 : 1)) &&llIlllllIIlI(this. ((EntityEnderCrystal) var2).isEmpty())){
-                Class181. (var2.func_180425_c(), Color.RED);
+                Class181. (var2.getPosition(), Color.RED);
                 if (llIllllIIlII(61684, 4518)) {
                     throw null;
                 }
@@ -435,7 +435,7 @@ public class Class35 extends Class171 {
         boolean var10001;
         int var2;
         for (int var10000 = var2 = 0; !llIllllIIlII(55954, 1426); var10001 = true) {
-            if (!llIllllIllIl(var10000, this..field_71439_g.field_71071_by.func_70302_i_())){
+            if (!llIllllIllIl(var10000, this..player.inventory.getSizeInventory())){
                 if (llIllllIIlII(55954, 1426)) {
                     throw null;
                 }
@@ -444,9 +444,9 @@ public class Class35 extends Class171 {
             }
 
             ItemStack var3;
-            if (llIlllllIIII((var3 = this..field_71439_g.field_71071_by.func_70301_a(var2)).func_77973_b(),
-            Items.field_185158_cP)){
-                var1 += var3.func_190916_E();
+            if (llIlllllIIII((var3 = this..player.inventory.getStackInSlot(var2)).getItem(),
+            Items.END_CRYSTAL)){
+                var1 += var3.getCount();
             }
 
             if (llIllllIIlII(55954, 1426)) {
@@ -462,13 +462,13 @@ public class Class35 extends Class171 {
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
         boolean var10000;
-        if (llIlllllIIlI(this. ()) &&!llIllllIllll(this..field_71439_g.func_70026_G())){
+        if (llIlllllIIlI(this. ()) &&!llIllllIllll(this..player.isWet())){
             if (llIllllIIlII(74731, 5803)) {
                 throw null;
             } else {
                 EntityPlayerSP var10006 = this.                                                                                                    .
-                field_71439_g;
-                var10006.field_70177_z += 0.001F;
+                player;
+                var10006.rotationYaw += 0.001F;
                 this. = this. ();
                 List var10003 = this.;
                 Class185 var10004 = new Class185(this);
@@ -480,7 +480,7 @@ public class Class35 extends Class171 {
                         throw null;
                     } else {
                         this. = this.                                                                                                    .
-                        field_71439_g.field_71071_by.field_70461_c;
+                        player.inventory.currentItem;
                         Iterator var4;
                         if (llIlllllIIlI(this..isEmpty())){
                             var4 = this.                                                                                           .
@@ -497,28 +497,28 @@ public class Class35 extends Class171 {
 
                                 BlockPos var2;
                                 double var12;
-                                if (llIllllIlllI(var2 = (BlockPos) var4.next()) && llIlllllIIll((var12 = (double) var2.func_177956_o() - this..field_71439_g.field_70163_u) == 0.0D ? 0 : (var12 < 0.0D ? -1 : 1)) &&
+                                if (llIllllIlllI(var2 = (BlockPos) var4.next()) && llIlllllIIll((var12 = (double) var2.getY() - this..player.posY) == 0.0D ? 0 : (var12 < 0.0D ? -1 : 1)) &&
                                 llIlllllIIlI(this. (var2).isEmpty()) &&llIllllIllll(this.. (this.. () + 10L))){
                                     this.                                                                                                    .
-                                    field_71439_g.field_71071_by.field_70461_c = this. ();
-                                    if (llIlllllIIII(this..field_71439_g.field_71071_by.func_70448_g().func_77973_b(),
-                                    Items.field_185158_cP)){
+                                    player.inventory.currentItem = this. ();
+                                    if (llIlllllIIII(this..player.inventory.getCurrentItem().getItem(),
+                                    Items.END_CRYSTAL)){
                                         PlayerControllerMP var6 = this.                                                                                                    .
-                                        field_71442_b;
+                                        playerController;
                                         EntityPlayerSP var10001 = this.                                                                                                    .
-                                        field_71439_g;
+                                        player;
                                         WorldClient var10002 = this.                                                                                                    .
-                                        field_71441_e;
+                                        world;
                                         EnumFacing var11 = this.                                                                                                    .
-                                        field_71439_g.func_174811_aO();
+                                        player.getHorizontalFacing();
                                         Vec3d var10005 = new Vec3d(var2);
                                         if (llIllllIIlII(74731, 5803)) {
                                             throw null;
                                         }
 
-                                        var6.func_187099_a(var10001, var10002, var2, var11, var10005, EnumHand.MAIN_HAND);
+                                        var6.processRightClickBlock(var10001, var10002, var2, var11, var10005, EnumHand.MAIN_HAND);
                                         this.                                                                                                    .
-                                        field_71439_g.field_71071_by.field_70461_c = this.;
+                                        player.inventory.currentItem = this.;
                                         this.                                                                                         .
                                         ();
                                         this.                                                                                     .
@@ -533,7 +533,7 @@ public class Class35 extends Class171 {
                             throw null;
                         } else {
                             var4 = this.                                                                                                    .
-                            field_71441_e.field_72996_f.iterator();
+                            world.loadedEntityList.iterator();
 
                             label88:
                             while (!llIllllIIlII(74731, 5803)) {
@@ -555,7 +555,7 @@ public class Class35 extends Class171 {
 
                                     EntityEnderCrystal var3 = (EntityEnderCrystal) var5;
                                     double var13;
-                                    if (!llIlllllIllI((var13 = (double) this..field_71439_g.func_70032_d(var3) - this..
+                                    if (!llIlllllIllI((var13 = (double) this..player.getDistance(var3) - this..
                                     ()) ==0.0D ? 0 : (var13 < 0.0D ? -1 : 1))){
                                         continue label88;
                                     }
@@ -566,21 +566,21 @@ public class Class35 extends Class171 {
                                         }
 
                                         double var14;
-                                        if (llIlllllIIll((var14 = var3.field_70163_u - 0.9D - this..field_71439_g.field_70163_u) == 0.0D ? 0 : (var14 < 0.0D ? -1 : 1)) &&
+                                        if (llIlllllIIll((var14 = var3.posY - 0.9D - this..player.posY) == 0.0D ? 0 : (var14 < 0.0D ? -1 : 1)) &&
                                         llIllllIllll(this.. (this.. ()))){
                                             this. = var5;
                                             this.                                                                                                    .
-                                            field_71439_g.func_184609_a(EnumHand.MAIN_HAND);
+                                            player.swingArm(EnumHand.MAIN_HAND);
                                             NetHandlerPlayClient var9 = this.                                                                                                    .
-                                            field_71439_g.field_71174_a;
+                                            player.connection;
                                             CPacketUseEntity var10 = new CPacketUseEntity(var5);
                                             if (llIllllIIlII(74731, 5803)) {
                                                 throw null;
                                             }
 
-                                            var9.func_147297_a(var10);
+                                            var9.sendPacket(var10);
                                             this.                                                                                                    .
-                                            field_71439_g.func_184821_cY();
+                                            player.resetCooldown();
                                             this.                                                                                     .
                                             ();
                                             var10000 = true;
@@ -613,7 +613,7 @@ public class Class35 extends Class171 {
         } else {
             ArrayList var2 = var10000;
             Iterator var3 = this.                                                                                                    .
-            field_71441_e.field_73010_i.iterator();
+            world.playerEntities.iterator();
 
             while (!llIllllIIlII(48148, 4266)) {
                 if (!llIllllIllll(var3.hasNext())) {
@@ -627,10 +627,10 @@ public class Class35 extends Class171 {
                 EntityPlayer var4;
                 double var6;
                 double var7;
-                if (llIllllIlllI(var4 = (EntityPlayer) var3.next()) && llIllllIllll(var4.func_70089_S()) && llIlllllIlll(var4, this..field_71439_g) &&
-                llIlllllIIll((var6 = var4.field_70163_u - var1.field_70163_u) == 0.0D ? 0 : (var6 < 0.0D ? -1 : 1)) && llIlllllIllI((var7 = (double) var1.func_70032_d(var4) - this..
+                if (llIllllIlllI(var4 = (EntityPlayer) var3.next()) && llIllllIllll(var4.isEntityAlive()) && llIlllllIlll(var4, this..player) &&
+                llIlllllIIll((var6 = var4.posY - var1.posY) == 0.0D ? 0 : (var6 < 0.0D ? -1 : 1)) && llIlllllIllI((var7 = (double) var1.getDistance(var4) - this..
                 ()) ==0.0D ? 0 : (var7 < 0.0D ? -1 : 1)) &&llIlllllIIlI(Class73..                                                                                                    .
-                (var4.func_70005_c_()))){
+                (var4.getName()))){
                     var2.add(var4);
                     boolean var5 = true;
                 }

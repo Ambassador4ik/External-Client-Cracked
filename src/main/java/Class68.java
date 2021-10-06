@@ -40,7 +40,7 @@ public class Class68 implements ICrashReportDetail {
         if (llIIllllIlIl(43618, 781)) {
             throw null;
         } else {
-            return var10000.field_71462_r.getClass().getCanonicalName();
+            return var10000.currentScreen.getClass().getCanonicalName();
         }
     }
 

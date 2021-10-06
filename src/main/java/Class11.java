@@ -120,8 +120,8 @@ public class Class11 extends Class171 {
         if (llIllIllIIll(43781, 1740)) {
             throw null;
         } else {
-            if (llIllIllIlII(this..field_71439_g)){
-                Class22. (this..field_71439_g.func_70090_H());
+            if (llIllIllIlII(this..player)){
+                Class22. (this..player.isInWater());
                 if (llIllIllIIll(43781, 1740)) {
                     throw null;
                 }
@@ -136,29 +136,29 @@ public class Class11 extends Class171 {
     }
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
-        if (llIllIllIlIl(this.. ()) &&llIllIllIlIl(this..field_71439_g.func_70644_a(MobEffects.field_76431_k))){
+        if (llIllIllIlIl(this.. ()) &&llIllIllIlIl(this..player.isPotionActive(MobEffects.NAUSEA))){
             this.                                                                                                    .
-            field_71439_g.field_71080_cy = 0.0F;
+            player.prevTimeInPortal = 0.0F;
             this.                                                                                                    .
-            field_71439_g.field_71086_bY = 0.0F;
+            player.timeInPortal = 0.0F;
         }
 
         if (llIllIllIIll(18435, 3824)) {
             throw null;
         } else {
-            if (llIllIllIlIl(this.. ()) &&llIllIllIlIl(this..field_71439_g.func_70644_a(MobEffects.field_76440_q))){
+            if (llIllIllIlIl(this.. ()) &&llIllIllIlIl(this..player.isPotionActive(MobEffects.BLINDNESS))){
                 this.                                                                                                    .
-                field_71439_g.func_184596_c(MobEffects.field_76440_q);
+                player.removeActivePotionEffect(MobEffects.BLINDNESS);
             }
 
             if (llIllIllIIll(18435, 3824)) {
                 throw null;
             } else {
-                Class22. (this..field_71439_g.func_70090_H());
+                Class22. (this..player.isInWater());
                 if (llIllIllIIll(18435, 3824)) {
                     throw null;
                 } else {
-                    if (llIllIllIlIl(this.. ()) &&llIllIllIlIl(this..field_71439_g.func_70027_ad())){
+                    if (llIllIllIlIl(this.. ()) &&llIllIllIlIl(this..player.isBurning())){
                         Class22. (true);
                         if (llIllIllIIll(18435, 3824)) {
                             throw null;

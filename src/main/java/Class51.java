@@ -90,13 +90,13 @@ public class Class51 extends Class171 {
 
                 float var6;
                 float var7;
-                if (llIIllIllIIl(var2.equals(var10001)) && llIIllIllIlI((var6 = this..field_71439_g.field_70143_R - 3.0F - 0.0F) == 0.0F ? 0 : (var6 < 0.0F ? -1 : 1)) &&
-                llIIllIllIll((var7 = this..field_71439_g.field_70143_R - 256.0F) == 0.0F ? 0 : (var7 < 0.0F ? -1 : 1))){
+                if (llIIllIllIIl(var2.equals(var10001)) && llIIllIllIlI((var6 = this..player.fallDistance - 3.0F - 0.0F) == 0.0F ? 0 : (var6 < 0.0F ? -1 : 1)) &&
+                llIIllIllIll((var7 = this..player.fallDistance - 256.0F) == 0.0F ? 0 : (var7 < 0.0F ? -1 : 1))){
                     this.                                                                                                    .
-                    field_71439_g.field_70181_x -= (double) this.                                                                                                    .
-                    field_71439_g.field_70143_R;
+                    player.motionY -= (double) this.                                                                                                    .
+                    player.fallDistance;
                     this.                                                                                                    .
-                    field_71439_g.field_70122_E = true;
+                    player.onGround = true;
                     var3 = true;
                     return;
                 }
@@ -111,7 +111,7 @@ public class Class51 extends Class171 {
                 }
 
                 float var8;
-                if (llIIllIllIIl(var2.equals(var10001)) && llIIllIllIlI((var8 = this..field_71439_g.field_70143_R - 3.0F) == 0.0F ? 0 : (var8 < 0.0F ? -1 : 1)))
+                if (llIIllIllIIl(var2.equals(var10001)) && llIIllIllIlI((var8 = this..player.fallDistance - 3.0F) == 0.0F ? 0 : (var8 < 0.0F ? -1 : 1)))
                 {
                     CPacketPlayer var4 = new CPacketPlayer(true);
                     if (llIIllIllIII(31761, 9738)) {

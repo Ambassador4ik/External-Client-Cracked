@@ -88,7 +88,7 @@ public class Class73 {
                 throw null;
             } else {
                 this. = var10002;
-                Minecraft var10001 = Minecraft.func_71410_x();
+                Minecraft var10001 = Minecraft.getMinecraft();
                 if (llIlllllIlII(15208, 2162)) {
                     throw null;
                 } else {
@@ -214,19 +214,19 @@ public class Class73 {
                                                     if (llIlllllIlII(95674, 9004)) {
                                                         throw null;
                                                     } else {
-                                                        var3.func_71560_a(var5);
+                                                        var3.registerCommand(var5);
                                                         ClientCommandHandler var6 = ClientCommandHandler.instance;
                                                         Class114 var9 = new Class114();
                                                         if (llIlllllIlII(95674, 9004)) {
                                                             throw null;
                                                         } else {
-                                                            var6.func_71560_a(var9);
+                                                            var6.registerCommand(var9);
                                                             ClientCommandHandler var11 = ClientCommandHandler.instance;
                                                             Class113 var12 = new Class113();
                                                             if (llIlllllIlII(95674, 9004)) {
                                                                 throw null;
                                                             } else {
-                                                                var11.func_71560_a(var12);
+                                                                var11.registerCommand(var12);
                                                                 Class22. ();
                                                                 if (llIlllllIlII(95674, 9004)) {
                                                                     throw null;
@@ -255,9 +255,9 @@ public class Class73 {
                                                                                           =true;
         this.                                                                                .
         ().stream().filter(Class73::).forEach(Class73::);
-        if (llIlllllIlIl(this..field_71462_r) &&llIlllllIlIl(this..field_71439_g)){
+        if (llIlllllIlIl(this..currentScreen) &&llIlllllIlIl(this..player)){
             this.                                                                                            .
-            func_147108_a((GuiScreen) null);
+            displayGuiScreen((GuiScreen) null);
         }
 
         if (llIlllllIlII(77056, 8054)) {

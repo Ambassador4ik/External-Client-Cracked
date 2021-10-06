@@ -199,7 +199,7 @@ public class Class22 {
             throw null;
         } else {
                                                                                                       =var10000;
-            Minecraft var0 = Minecraft.func_71410_x();
+            Minecraft var0 = Minecraft.getMinecraft();
             if (llIllllIIllI(72736, 9011)) {
                 throw null;
             } else {
@@ -288,7 +288,7 @@ public class Class22 {
             }
 
                                                                                               .
-            setBoolean(.field_71439_g, var0);
+            setBoolean(.player, var0);
         } catch (ReflectiveOperationException var2) {
             if (llIllllIIllI(95179, 4367)) {
                 throw null;
@@ -319,7 +319,7 @@ public class Class22 {
                 throw null;
             }
 
-                                                                                     .setInt(.field_71442_b, var0);
+                                                                                     .setInt(.playerController, var0);
         } catch (ReflectiveOperationException var2) {
             if (llIllllIIllI(34617, 590)) {
                 throw null;
@@ -498,10 +498,10 @@ public class Class22 {
 
             Method var3 = ;
             EntityRenderer var10001 =                                                                                                .
-            field_71460_t;
+            entityRenderer;
             Object[] var10002 = new Object[2];
             Float var10005 =                                                                                                .
-            func_184121_ak();
+            getRenderPartialTicks();
             if (llIllllIIllI(68811, 6372)) {
                 throw null;
             }
@@ -580,7 +580,7 @@ public class Class22 {
             }
 
             var10000 =                                                                                                        .
-            getInt(var0.func_145881_a());
+            getInt(var0.getSpawnerBaseLogic());
         } catch (ReflectiveOperationException var2) {
             if (llIllllIIllI(41952, 6753)) {
                 throw null;
@@ -611,12 +611,12 @@ public class Class22 {
             }
 
             Field var10000 = ;
-            Minecraft var10001 = Minecraft.func_71410_x();
+            Minecraft var10001 = Minecraft.getMinecraft();
             if (llIllllIIllI(23374, 8002)) {
                 throw null;
             }
 
-            var2 = var10000.getBoolean(var10001.field_71439_g);
+            var2 = var10000.getBoolean(var10001.player);
         } catch (ReflectiveOperationException var1) {
             if (llIllllIIllI(23374, 8002)) {
                 throw null;
@@ -746,7 +746,7 @@ public class Class22 {
             }
 
             var10000 =                                                                             .
-            getInt(.field_71442_b);
+            getInt(.playerController);
         } catch (ReflectiveOperationException var1) {
             if (llIllllIIllI(25436, 9065)) {
                 throw null;
@@ -940,7 +940,7 @@ public class Class22 {
                                                                                                                                           =
                                                 var0;
                                                 Class var1 =                                                                                                .
-                                                field_71460_t.getClass();
+                                                entityRenderer.getClass();
                                                 if (llIllllIIlll()) {
                                                     var10001 = Class60. ("h\u007flnoY}vvhqOe{zhmuz6");
                                                     if (llIllllIIllI(66330, 7164)) {
@@ -1405,7 +1405,7 @@ public class Class22 {
             }
 
                                                                                                           .
-            setFloat(.field_71442_b, var0);
+            setFloat(.playerController, var0);
         } catch (ReflectiveOperationException var2) {
             if (llIllllIIllI(52075, 7024)) {
                 throw null;
@@ -1502,7 +1502,7 @@ public class Class22 {
                 }
 
                 float var4;
-                if (llIllllIIlll((var4 = ((CPacketPlayer) var0).func_186998_b(-1.0F) - 91.0F) == 0.0F ? 0 : (var4 < 0.0F ? -1 : 1))) {
+                if (llIllllIIlll((var4 = ((CPacketPlayer) var0).getPitch(-1.0F) - 91.0F) == 0.0F ? 0 : (var4 < 0.0F ? -1 : 1))) {
                     Field var3 = ;
                     Float var10002 = var1;
                     if (llIllllIIllI(11785, 2344)) {
@@ -1675,7 +1675,7 @@ public class Class22 {
 
                     Method var4 = ;
                     EntityRenderer var10001 =                                                                                                .
-                    field_71460_t;
+                    entityRenderer;
                     Object[] var10002 = new Object[2];
                     Float var10005 = var0;
                     if (llIllllIIllI(19674, 954)) {
@@ -1820,7 +1820,7 @@ public class Class22 {
 
     public static void _____________________________________________________________________________________/* $FF was:                                                                                      */() {
         GuiIngame var10000 =                                                                                                .
-        field_71456_v;
+        ingameGUI;
         Field var10001 = ;
         Class102 var10002 = new Class102();
         if (llIllllIIllI(15356, 1393)) {
@@ -1925,7 +1925,7 @@ public class Class22 {
                                                                                     throw null;
                                                                                 }
 
-                                                                                ((Object) TileEntityRendererDispatcher.field_147556_a, (Field), (Object) var0)
+                                                                                ((Object) TileEntityRendererDispatcher.instance, (Field), (Object) var0)
                                                                                 ;
                                                                                 if (llIllllIIllI(35395, 6874)) {
                                                                                     throw null;
@@ -1935,7 +1935,7 @@ public class Class22 {
                                                                                 return;
                                                                             }
 
-                                                                            ((TileEntitySpecialRenderer) var1.next()).func_147497_a(TileEntityRendererDispatcher.field_147556_a);
+                                                                            ((TileEntitySpecialRenderer) var1.next()).setRendererDispatcher(TileEntityRendererDispatcher.instance);
                                                                             var2 = var1;
                                                                         }
 
@@ -1960,7 +1960,7 @@ public class Class22 {
 
     public static void ____________________________________________________________________________/* $FF was:                                                                             */() {
         Class var10000 =                                                                                                .
-        field_71460_t.getClass();
+        entityRenderer.getClass();
         String var10001;
         boolean var10002;
         if (llIllllIIlll()) {
@@ -2094,12 +2094,12 @@ public class Class22 {
             }
 
             Field var3 = ;
-            Minecraft var10001 = Minecraft.func_71410_x();
+            Minecraft var10001 = Minecraft.getMinecraft();
             if (llIllllIIllI(58198, 3023)) {
                 throw null;
             }
 
-            var3.setBoolean(var10001.field_71439_g, var0);
+            var3.setBoolean(var10001.player, var0);
         } catch (ReflectiveOperationException var2) {
             if (llIllllIIllI(58198, 3023)) {
                 throw null;
@@ -2163,7 +2163,7 @@ public class Class22 {
             }
 
             var10000 =                                                                                                  .
-            getFloat(.field_71442_b);
+            getFloat(.playerController);
         } catch (ReflectiveOperationException var1) {
             if (llIllllIIllI(37656, 1091)) {
                 throw null;
@@ -2193,7 +2193,7 @@ public class Class22 {
                 throw null;
             }
 
-            ((IReloadableResourceManager).get()).func_110542_a(var0);
+            ((IReloadableResourceManager).get()).registerReloadListener(var0);
         } catch (ReflectiveOperationException var2) {
             if (llIllllIIllI(57913, 8709)) {
                 throw null;
@@ -2260,7 +2260,7 @@ public class Class22 {
             }
 
             var10000 =                                                                                          .
-            getInt(.field_71439_g);
+            getInt(.player);
         } catch (ReflectiveOperationException var1) {
             if (llIllllIIllI(80882, 4369)) {
                 throw null;
@@ -2329,7 +2329,7 @@ public class Class22 {
 
             Field var3 = ;
             EntityPlayerSP var10001 =                                                                                                .
-            field_71439_g;
+            player;
             Boolean var10002 = var0;
             if (llIllllIIllI(87666, 8830)) {
                 throw null;
@@ -2366,7 +2366,7 @@ public class Class22 {
                 throw null;
             }
 
-                                                                                         .setInt(.field_71439_g, var0);
+                                                                                         .setInt(.player, var0);
         } catch (ReflectiveOperationException var2) {
             if (llIllllIIllI(60917, 4118)) {
                 throw null;
@@ -2430,7 +2430,7 @@ public class Class22 {
             }
 
                                                                                                 .
-            setBoolean(.field_71442_b, var0);
+            setBoolean(.playerController, var0);
         } catch (ReflectiveOperationException var2) {
             if (llIllllIIllI(91609, 6418)) {
                 throw null;
@@ -2463,7 +2463,7 @@ public class Class22 {
 
             Field var3 = ;
             EntityPlayerSP var10001 =                                                                                                .
-            field_71439_g;
+            player;
             Float var10002 = var0;
             if (llIllllIIllI(74750, 6624)) {
                 throw null;

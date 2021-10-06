@@ -68,7 +68,7 @@ public class Class0 extends Class171 {
     }
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Block var1) {
-        if (llllIllllIlI(var1, Blocks.field_150350_a) && llllIllllIlI(var1, Blocks.field_185773_cZ) && llllIllllIlI(var1, Blocks.field_150459_bM) && llllIllllIlI(var1, Blocks.field_150330_I) && llllIllllIlI(var1, Blocks.field_150398_cm) && llllIllllIlI(var1, Blocks.field_150356_k) && llllIllllIlI(var1, Blocks.field_150358_i) && llllIllllIlI(var1, Blocks.field_150353_l) && llllIllllIlI(var1, Blocks.field_150394_bc) && llllIllllIlI(var1, Blocks.field_150388_bm) && llllIllllIlI(var1, Blocks.field_150469_bN) && llllIllllIlI(var1, Blocks.field_150393_bb) && llllIllllIlI(var1, Blocks.field_150328_O) && llllIllllIlI(var1, Blocks.field_150337_Q) && llllIllllIlI(var1, Blocks.field_150429_aA) && llllIllllIlI(var1, Blocks.field_150329_H) && llllIllllIlI(var1, Blocks.field_150478_aa) && llllIllllIlI(var1, Blocks.field_150437_az) && llllIllllIlI(var1, Blocks.field_150327_N) && llllIllllIlI(var1, Blocks.field_150395_bd) && llllIllllIlI(var1, Blocks.field_150355_j) && llllIllllIlI(var1, Blocks.field_150321_G) && llllIllllIlI(var1, Blocks.field_150464_aj)) {
+        if (llllIllllIlI(var1, Blocks.AIR) && llllIllllIlI(var1, Blocks.BEETROOTS) && llllIllllIlI(var1, Blocks.CARROTS) && llllIllllIlI(var1, Blocks.DEADBUSH) && llllIllllIlI(var1, Blocks.DOUBLE_PLANT) && llllIllllIlI(var1, Blocks.FLOWING_LAVA) && llllIllllIlI(var1, Blocks.FLOWING_WATER) && llllIllllIlI(var1, Blocks.LAVA) && llllIllllIlI(var1, Blocks.MELON_STEM) && llllIllllIlI(var1, Blocks.NETHER_WART) && llllIllllIlI(var1, Blocks.POTATOES) && llllIllllIlI(var1, Blocks.PUMPKIN_STEM) && llllIllllIlI(var1, Blocks.RED_FLOWER) && llllIllllIlI(var1, Blocks.RED_MUSHROOM) && llllIllllIlI(var1, Blocks.REDSTONE_TORCH) && llllIllllIlI(var1, Blocks.TALLGRASS) && llllIllllIlI(var1, Blocks.TORCH) && llllIllllIlI(var1, Blocks.UNLIT_REDSTONE_TORCH) && llllIllllIlI(var1, Blocks.YELLOW_FLOWER) && llllIllllIlI(var1, Blocks.VINE) && llllIllllIlI(var1, Blocks.WATER) && llllIllllIlI(var1, Blocks.WEB) && llllIllllIlI(var1, Blocks.WHEAT)) {
             return true;
         } else if (llllIllllIII(83709, 88)) {
             throw null;
@@ -104,27 +104,27 @@ public class Class0 extends Class171 {
                 throw null;
             } else {
                 float var2 = var10000;
-                if (llllIlllIlll(this..field_71439_g.field_70122_E) &&
-                llllIllllIIl(this..field_71474_y.field_74314_A.func_151468_f())){
+                if (llllIlllIlll(this..player.onGround) &&
+                llllIllllIIl(this..gameSettings.keyBindJump.isPressed())){
                     WorldClient var5 = this.                                                                                                    .
-                    field_71441_e;
+                    world;
                     BlockPos var10002 = new BlockPos;
                     Vec3d var10004 = this.                                                                                                    .
-                    field_71439_g.func_174791_d();
+                    player.getPositionVector();
                     Vec3d var10005 = new Vec3d(0.0D, -0.5D, 0.0D);
                     if (llllIllllIII(-212264, 199577)) {
                         throw null;
                     }
 
-                    var10002.<init> (var10004.func_178787_e(var10005));
+                    var10002.<init> (var10004.add(var10005));
                     if (llllIllllIII(-212264, 199577)) {
                         throw null;
                     }
 
-                    if (llllIllllIIl(this. (var5.func_180495_p(var10002).func_177230_c()))){
-                        var3.field_78899_d = true;
-                        var3.field_192832_b *= var2;
-                        var3.field_78902_a *= var2;
+                    if (llllIllllIIl(this. (var5.getBlockState(var10002).getBlock()))){
+                        var3.sneak = true;
+                        var3.moveForward *= var2;
+                        var3.moveStrafe *= var2;
                     }
                 }
 

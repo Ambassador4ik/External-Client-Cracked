@@ -101,7 +101,7 @@ public class Class23 extends Class171 {
                             throw null;
                         }
 
-                        if (llIllIIIIllI(this..field_71439_g)){
+                        if (llIllIIIIllI(this..player)){
                         var10000 = Class13. ();
                         if (llIllIIIIlIl(17455, 2686)) {
                             throw null;
@@ -126,8 +126,8 @@ public class Class23 extends Class171 {
                             }
 
                             float var4 = var12 * var6;
-                            float var5 = (float) (this..field_71439_g.field_70159_w * (double) (1.0F - var6));
-                            var6 = (float) (this..field_71439_g.field_70179_y * (double) (1.0F - var6));
+                            float var5 = (float) (this..player.motionX * (double) (1.0F - var6));
+                            var6 = (float) (this..player.motionZ * (double) (1.0F - var6));
                             var10000 = Class13. ();
                             if (llIllIIIIlIl(17455, 2686)) {
                                 throw null;
@@ -135,21 +135,21 @@ public class Class23 extends Class171 {
 
                             if (llIllIIIlIII(var10000)) {
                                 EntityPlayerSP var9 = this.                                                                                                    .
-                                field_71439_g;
+                                player;
                                 var11 = Math.sin(var2);
                                 if (llIllIIIIlIl(17455, 2686)) {
                                     throw null;
                                 }
 
-                                var9.field_70159_w = -var11 * (double) var4 + (double) var5;
+                                var9.motionX = -var11 * (double) var4 + (double) var5;
                                 EntityPlayerSP var7 = this.                                                                                                    .
-                                field_71439_g;
+                                player;
                                 double var10 = Math.cos(var2);
                                 if (llIllIIIIlIl(17455, 2686)) {
                                     throw null;
                                 }
 
-                                var7.field_70179_y = var10 * (double) var4 + (double) var6;
+                                var7.motionZ = var10 * (double) var4 + (double) var6;
                             }
 
                             if (llIllIIIIlIl(17455, 2686)) {

@@ -135,7 +135,7 @@ public class Class81 implements Comparator {
                     if (llIllIIIlIIl(16013, 9546)) {
                         throw null;
                     } else {
-                        var8 = Double.compare((double) var3.func_110143_aJ(), (double) var6.func_110143_aJ());
+                        var8 = Double.compare((double) var3.getHealth(), (double) var6.getHealth());
                         if (llIllIIIlIIl(16013, 9546)) {
                             throw null;
                         }
@@ -147,8 +147,8 @@ public class Class81 implements Comparator {
                         throw null;
                     } else {
                         var8 = Double.compare((double) this..                                                                                                    .
-                        field_71439_g.func_70032_d(var3), (double) this.                                                                                  .                                                                                                    .
-                        field_71439_g.func_70032_d(var6));
+                        player.getDistance(var3), (double) this.                                                                                  .                                                                                                    .
+                        player.getDistance(var6));
                         if (llIllIIIlIIl(16013, 9546)) {
                             throw null;
                         } else {

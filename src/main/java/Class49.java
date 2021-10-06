@@ -111,9 +111,9 @@ public class Class49 extends Class171 {
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */() {
         this.                                                                                                    .
-        field_71439_g.field_71075_bZ.field_75100_b = false;
+        player.capabilities.isFlying = false;
         this.                                                                                                    .
-        field_71439_g.field_71075_bZ.func_75092_a(0.05F);
+        player.capabilities.setFlySpeed(0.05F);
         super. ();
         if (llllIIIIlIIl(51723, 3243)) {
             throw null;
@@ -250,16 +250,16 @@ public class Class49 extends Class171 {
                     while (!llllIIIIlIIl(81660, 5496)) {
                         if (llllIIIIlIll(0)) {
                             double var8;
-                            if (llllIIIIllII((var8 = (double) this..field_71439_g.field_70143_R - 0.01D) == 0.0D ? 0 : (var8 < 0.0D ? -1 : 1)) &&
-                            llllIIIIlIll(this..field_71439_g.func_70090_H()) &&
-                            llllIIIIlIll(this..field_71439_g.func_70617_f_()) &&
-                            llllIIIIlIll(this..field_71439_g.func_70055_a(Material.field_151587_i)) &&
-                            llllIIIIlIlI(this..field_71439_g.func_70089_S())){
+                            if (llllIIIIllII((var8 = (double) this..player.fallDistance - 0.01D) == 0.0D ? 0 : (var8 < 0.0D ? -1 : 1)) &&
+                            llllIIIIlIll(this..player.isInWater()) &&
+                            llllIIIIlIll(this..player.isOnLadder()) &&
+                            llllIIIIlIll(this..player.isInsideOfMaterial(Material.LAVA)) &&
+                            llllIIIIlIlI(this..player.isEntityAlive())){
                                 this.                                                                                                    .
-                                field_71439_g.field_70747_aH = (float) this.                                                                                            .
+                                player.jumpMovementFactor = (float) this.                                                                                            .
                                 () * 0.1F;
                                 this.                                                                                                    .
-                                field_71439_g.field_70181_x = -0.03999999910593033D;
+                                player.motionY = -0.03999999910593033D;
                                 var7 = true;
                                 return;
                             }
@@ -279,8 +279,8 @@ public class Class49 extends Class171 {
                         throw null;
                     }
 
-                    this.                                                                                                    .field_71439_g.field_71075_bZ.field_75100_b = true;
-                    this.                                                                                                    .field_71439_g.field_71075_bZ.func_75092_a((float) (0.05000000074505806D * this.. ()));
+                    this.                                                                                                    .player.capabilities.isFlying = true;
+                    this.                                                                                                    .player.capabilities.setFlySpeed((float) (0.05000000074505806D * this.. ()));
                     var7 = true;
                     return;
                 case 2:
@@ -288,16 +288,16 @@ public class Class49 extends Class171 {
                         throw null;
                     }
 
-                    this.                                                                                                    .field_71439_g.field_71075_bZ.field_75100_b = false;
-                    this.                                                                                                    .field_71439_g.field_71075_bZ.func_75092_a((float) (0.05000000074505806D * this.. ()));
-                    this.                                                                                                    .field_71439_g.field_70747_aH = (float) this.                                                                                            .();
-                    this.                                                                                                    .field_71439_g.field_70181_x = 0.0D;
-                    this.                                                                                                    .field_71439_g.field_70159_w = 0.0D;
-                    this.                                                                                                    .field_71439_g.field_70179_y = 0.0D;
-                    if (llllIIIIlIlI(this..field_71474_y.field_74314_A.func_151470_d())){
+                    this.                                                                                                    .player.capabilities.isFlying = false;
+                    this.                                                                                                    .player.capabilities.setFlySpeed((float) (0.05000000074505806D * this.. ()));
+                    this.                                                                                                    .player.jumpMovementFactor = (float) this.                                                                                            .();
+                    this.                                                                                                    .player.motionY = 0.0D;
+                    this.                                                                                                    .player.motionX = 0.0D;
+                    this.                                                                                                    .player.motionZ = 0.0D;
+                    if (llllIIIIlIlI(this..gameSettings.keyBindJump.isKeyDown())){
                     var6 = this.                                                                                                    .
-                    field_71439_g;
-                    var6.field_70181_x += this.                                                                                            .
+                    player;
+                    var6.motionY += this.                                                                                            .
                     () / 1.6D;
                     var7 = true;
                     return;
@@ -307,10 +307,10 @@ public class Class49 extends Class171 {
                     throw null;
                 }
 
-                if (llllIIIIlIlI(this..field_71474_y.field_74311_E.func_151470_d())){
+                if (llllIIIIlIlI(this..gameSettings.keyBindSneak.isKeyDown())){
                     var6 = this.                                                                                                    .
-                    field_71439_g;
-                    var6.field_70181_x -= this.                                                                                            .
+                    player;
+                    var6.motionY -= this.                                                                                            .
                     () / 1.6D;
                     var7 = true;
                     return;
@@ -321,25 +321,25 @@ public class Class49 extends Class171 {
                         throw null;
                     }
 
-                    this.                                                                                                    .field_71439_g.field_71075_bZ.field_75100_b = true;
-                    this.                                                                                                    .field_71439_g.field_70159_w = 0.0D;
-                    this.                                                                                                    .field_71439_g.field_70181_x = 0.0D;
-                    this.                                                                                                    .field_71439_g.field_70179_y = 0.0D;
-                    this.                                                                                                    .field_71439_g.field_70747_aH = (float) this.                                                                                            .();
-                    if (llllIIIIlIlI(this..field_71474_y.field_74314_A.func_151470_d())){
+                    this.                                                                                                    .player.capabilities.isFlying = true;
+                    this.                                                                                                    .player.motionX = 0.0D;
+                    this.                                                                                                    .player.motionY = 0.0D;
+                    this.                                                                                                    .player.motionZ = 0.0D;
+                    this.                                                                                                    .player.jumpMovementFactor = (float) this.                                                                                            .();
+                    if (llllIIIIlIlI(this..gameSettings.keyBindJump.isKeyDown())){
                     var6 = this.                                                                                                    .
-                    field_71439_g;
-                    var6.field_70181_x += 0.1D;
+                    player;
+                    var6.motionY += 0.1D;
                 }
 
                 if (llllIIIIlIIl(81660, 5496)) {
                     throw null;
                 }
 
-                if (llllIIIIlIlI(this..field_71474_y.field_74311_E.func_151470_d())){
+                if (llllIIIIlIlI(this..gameSettings.keyBindSneak.isKeyDown())){
                     var6 = this.                                                                                                    .
-                    field_71439_g;
-                    var6.field_70181_x -= 0.1D;
+                    player;
+                    var6.motionY -= 0.1D;
                     var7 = true;
                     return;
                 }
@@ -349,18 +349,18 @@ public class Class49 extends Class171 {
                         throw null;
                     }
 
-                    if (llllIIIIlIlI(this..field_71439_g.field_70122_E)){
+                    if (llllIIIIlIlI(this..player.onGround)){
                     this.                                                                                                    .
-                    field_71439_g.func_70664_aZ();
+                    player.jump();
                 }
 
                 if (llllIIIIlIIl(81660, 5496)) {
                     throw null;
                 }
 
-                this.                                                                                                    .field_71439_g.field_70747_aH = 0.16F;
-                var6 = this.                                                                                                    .field_71439_g;
-                var6.field_70181_x += 0.03500000014901161D;
+                this.                                                                                                    .player.jumpMovementFactor = 0.16F;
+                var6 = this.                                                                                                    .player;
+                var6.motionY += 0.03500000014901161D;
                 var7 = true;
                 return;
             }

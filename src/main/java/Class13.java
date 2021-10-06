@@ -102,7 +102,7 @@ public class Class13 {
     private static int 5907=1263;
 
     static {
-        Minecraft var10000 = Minecraft.func_71410_x();
+        Minecraft var10000 = Minecraft.getMinecraft();
         if (llIllIIlIIlI(44515, 2517)) {
             throw null;
         } else {
@@ -120,13 +120,13 @@ public class Class13 {
     }
 
     public static float[] ____________________________________________________________________________/* $FF was:                                                                             */(Entity var0, float var1) {
-        double var2 = var0.field_70165_t -                                                                                   .
-        field_71439_g.field_70165_t;
-        double var4 = var0.field_70161_v -                                                                                   .
-        field_71439_g.field_70161_v;
-        double var6 = var0.field_70163_u -                                                                                   .
-        field_71439_g.field_70163_u - 0.5D;
-        float var10000 = MathHelper.func_76133_a(var2 * var2 + var4 * var4);
+        double var2 = var0.posX -                                                                                   .
+        player.posX;
+        double var4 = var0.posZ -                                                                                   .
+        player.posZ;
+        double var6 = var0.posY -                                                                                   .
+        player.posY - 0.5D;
+        float var10000 = MathHelper.sqrt(var2 * var2 + var4 * var4);
         if (llIllIIlIIlI(58266, 1238)) {
             throw null;
         } else {
@@ -141,12 +141,12 @@ public class Class13 {
                     throw null;
                 } else {
                     float var3 = (float) (-(var12 * 180.0D / 3.141592653589793D));
-                    var10000 = (.field_71439_g.field_70125_A, var3, var1);
+                    var10000 = (.player.rotationPitch, var3, var1);
                     if (llIllIIlIIlI(58266, 1238)) {
                         throw null;
                     } else {
                         float var10 = var10000;
-                        var10000 = (.field_71439_g.field_70177_z, var11, var1);
+                        var10000 = (.player.rotationYaw, var11, var1);
                         if (llIllIIlIIlI(58266, 1238)) {
                             throw null;
                         } else {
@@ -160,12 +160,12 @@ public class Class13 {
     }
 
     public static float[] ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var0, float var1, float var2, boolean var3, boolean var4) {
-        double var10000 = var0.field_70165_t;
+        double var10000 = var0.posX;
         double var10001;
         boolean var10002;
         if (llIllIIlIlll(var3)) {
             var10001 =                                                                                   .
-            field_71439_g.field_70169_q;
+            player.prevPosX;
             var10002 = true;
         } else {
             if (llIllIIlIIlI(56567, 4436)) {
@@ -173,17 +173,17 @@ public class Class13 {
             }
 
             var10001 =                                                                                   .
-            field_71439_g.field_70165_t;
+            player.posX;
         }
 
         if (llIllIIlIIlI(56567, 4436)) {
             throw null;
         } else {
             double var5 = var10000 - var10001;
-            var10000 = var0.field_70161_v;
+            var10000 = var0.posZ;
             if (llIllIIlIlll(var3)) {
                 var10001 =                                                                                   .
-                field_71439_g.field_70166_s;
+                player.prevPosZ;
                 var10002 = true;
             } else {
                 if (llIllIIlIIlI(56567, 4436)) {
@@ -191,17 +191,17 @@ public class Class13 {
                 }
 
                 var10001 =                                                                                   .
-                field_71439_g.field_70161_v;
+                player.posZ;
             }
 
             if (llIllIIlIIlI(56567, 4436)) {
                 throw null;
             } else {
                 double var7 = var10000 - var10001;
-                double var10 = (double) ((float) var0.field_70163_u + var0.func_70047_e() * 0.7F) - (.field_71439_g.field_70163_u + (
+                double var10 = (double) ((float) var0.posY + var0.getEyeHeight() * 0.7F) - (.player.posY + (
                 double)                                                                                  .
-                field_71439_g.func_70047_e());
-                float var16 = MathHelper.func_76133_a(var5 * var5 + var7 * var7);
+                player.getEyeHeight());
+                float var16 = MathHelper.sqrt(var5 * var5 + var7 * var7);
                 if (llIllIIlIIlI(56567, 4436)) {
                     throw null;
                 } else {
@@ -257,7 +257,7 @@ public class Class13 {
                                     throw null;
                                 } else {
                                     float var15 = var16 + var17;
-                                    var17 = MathHelper.func_76142_g(var14 - var1);
+                                    var17 = MathHelper.wrapDegrees(var14 - var1);
                                     if (llIllIIlIIlI(56567, 4436)) {
                                         throw null;
                                     } else {
@@ -266,7 +266,7 @@ public class Class13 {
                                             throw null;
                                         } else {
                                             var14 = var1 + var17;
-                                            var17 = MathHelper.func_76142_g(var15 - var2);
+                                            var17 = MathHelper.wrapDegrees(var15 - var2);
                                             if (llIllIIlIIlI(56567, 4436)) {
                                                 throw null;
                                             } else {
@@ -276,7 +276,7 @@ public class Class13 {
                                                 } else {
                                                     var16 = var2 + var17;
                                                     var17 += var2;
-                                                    var16 = MathHelper.func_76131_a(var16, -90.0F, 90.0F);
+                                                    var16 = MathHelper.clamp(var16, -90.0F, 90.0F);
                                                     if (llIllIIlIIlI(56567, 4436)) {
                                                         throw null;
                                                     } else {
@@ -297,8 +297,8 @@ public class Class13 {
     }
 
     public static boolean ____________________________________________________________________________/* $FF was:                                                                             */() {
-        if (llIllIIllIlI(.field_71439_g.field_70123_F) &&
-        llIllIIlIIlI(.field_71439_g.func_71024_bL().func_75116_a() / 2, 3)){
+        if (llIllIIllIlI(.player.collidedHorizontally) &&
+        llIllIIlIIlI(.player.getFoodStats().getFoodLevel() / 2, 3)){
             return true;
         } else if (llIllIIlIIlI(58029, 5183)) {
             throw null;
@@ -314,7 +314,7 @@ public class Class13 {
             throw null;
         } else {
             Iterator var1 =                                                                                   .
-            field_71441_e.field_72996_f.iterator();
+            world.loadedEntityList.iterator();
 
             while (!llIllIIlIIlI(48386, 3257)) {
                 if (!llIllIIlIlll(var1.hasNext())) {
@@ -326,7 +326,7 @@ public class Class13 {
                 }
 
                 Entity var2 = (Entity) var1.next();
-                if (llIllIIlIlll(var0.func_70005_c_().contains(var2.func_70005_c_())) && llIllIIllIlI(var2 instanceof EntityArmorStand) && llIllIIlIlll(var2 instanceof EntityPlayer)) {
+                if (llIllIIlIlll(var0.getName().contains(var2.getName())) && llIllIIllIlI(var2 instanceof EntityArmorStand) && llIllIIlIlll(var2 instanceof EntityPlayer)) {
                     return (EntityPlayer) var2;
                 }
             }
@@ -346,9 +346,9 @@ public class Class13 {
         double var14;
         if (llIllIIllIlI((var13 = var4 - 0.0D) == 0.0D ? 0 : (var13 < 0.0D ? -1 : 1)) && llIllIIllIlI((var14 = var6 - 0.0D) == 0.0D ? 0 : (var14 < 0.0D ? -1 : 1))) {
                                                                                            .
-            field_71439_g.field_70159_w = 0.0D;
+            player.motionX = 0.0D;
                                                                                            .
-            field_71439_g.field_70179_y = 0.0D;
+            player.motionZ = 0.0D;
             var11 = true;
         } else if (llIllIIlIIlI(34269, 841)) {
             throw null;
@@ -437,9 +437,9 @@ public class Class13 {
                             } else {
                                 var2 = var10;
                                                                                                           .
-                                field_71439_g.field_70159_w = var4 * var0 + var6 * var8 * var0 * var2;
+                                player.motionX = var4 * var0 + var6 * var8 * var0 * var2;
                                                                                                           .
-                                field_71439_g.field_70179_y = var4 * var0 - var6 * var2 * var0 * var8;
+                                player.motionZ = var4 * var0 - var6 * var2 * var0 * var8;
                                 var11 = true;
                             }
                         }
@@ -452,8 +452,8 @@ public class Class13 {
     public static boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
         float var0;
         float var1;
-        if (llIllIIllIlI((var0 =.field_71439_g.field_191988_bg - 0.0F) == 0.0F ? 0 : (var0 < 0.0F ? -1 : 1)) &&
-        !llIllIIlIlll((var1 =.field_71439_g.field_70702_br - 0.0F) == 0.0F ? 0 : (var1 < 0.0F ? -1 : 1))){
+        if (llIllIIllIlI((var0 =.player.moveForward - 0.0F) == 0.0F ? 0 : (var0 < 0.0F ? -1 : 1)) &&
+        !llIllIIlIlll((var1 =.player.moveStrafing - 0.0F) == 0.0F ? 0 : (var1 < 0.0F ? -1 : 1))){
             if (llIllIIlIIlI(23696, 5907)) {
                 throw null;
             } else {
@@ -475,44 +475,44 @@ public class Class13 {
     }
 
     public static double ________________________________________________________________________________________________/* $FF was:                                                                                                 */(EntityLivingBase var0) {
-        double var1 = (double) var0.func_110143_aJ();
-        Minecraft var10000 = Minecraft.func_71410_x();
+        double var1 = (double) var0.getHealth();
+        Minecraft var10000 = Minecraft.getMinecraft();
         if (llIllIIlIIlI(8241, 3033)) {
             throw null;
         } else {
-            double var3 = (double) var10000.field_71439_g.func_70032_d(var0);
+            double var3 = (double) var10000.player.getDistance(var0);
             double var5 = 0.0D;
-            if (llIllIIlIlll(var0.func_180799_ab())) {
+            if (llIllIIlIlll(var0.isInLava())) {
                 var5 += 10.0D;
             }
 
             if (llIllIIlIIlI(8241, 3033)) {
                 throw null;
             } else {
-                if (llIllIIlIlll(var0.func_70090_H())) {
+                if (llIllIIlIlll(var0.isInWater())) {
                     var5 += 10.0D;
                 }
 
                 if (llIllIIlIIlI(8241, 3033)) {
                     throw null;
                 } else {
-                    if (llIllIIlIlll(var0.func_70055_a(Material.field_151569_G))) {
+                    if (llIllIIlIlll(var0.isInsideOfMaterial(Material.WEB))) {
                         var5 += 20.0D;
                     }
 
                     if (llIllIIlIIlI(8241, 3033)) {
                         throw null;
                     } else {
-                        var10000 = Minecraft.func_71410_x();
+                        var10000 = Minecraft.getMinecraft();
                         if (llIllIIlIIlI(8241, 3033)) {
                             throw null;
                         } else {
-                            WorldClient var8 = var10000.field_71441_e;
-                            BlockPos var10001 = new BlockPos(var0.field_70165_t, var0.field_70163_u, var0.field_70161_v);
+                            WorldClient var8 = var10000.world;
+                            BlockPos var10001 = new BlockPos(var0.posX, var0.posY, var0.posZ);
                             if (llIllIIlIIlI(8241, 3033)) {
                                 throw null;
                             } else {
-                                if (llIllIlIIIll(var8.func_180495_p(var10001).func_177230_c(), Blocks.field_150321_G)) {
+                                if (llIllIlIIIll(var8.getBlockState(var10001).getBlock(), Blocks.WEB)) {
                                     var5 += 10.0D;
                                 }
 
@@ -520,21 +520,21 @@ public class Class13 {
                                     throw null;
                                 } else {
                                     float var11;
-                                    if (llIllIIlIllI((var11 = var0.field_70125_A - 50.0F) == 0.0F ? 0 : (var11 < 0.0F ? -1 : 1))) {
+                                    if (llIllIIlIllI((var11 = var0.rotationPitch - 50.0F) == 0.0F ? 0 : (var11 < 0.0F ? -1 : 1))) {
                                         var5 += 10.0D;
                                     }
 
                                     if (llIllIIlIIlI(8241, 3033)) {
                                         throw null;
                                     } else {
-                                        if (llIllIIlIlll(var0.func_70026_G())) {
+                                        if (llIllIIlIlll(var0.isWet())) {
                                             var5 += 10.0D;
                                         }
 
                                         if (llIllIIlIIlI(8241, 3033)) {
                                             throw null;
                                         } else {
-                                            if (llIllIIlIlll(var0.func_82150_aj())) {
+                                            if (llIllIIlIlll(var0.isInvisible())) {
                                                 var5 -= 10.0D;
                                             }
 
@@ -542,7 +542,7 @@ public class Class13 {
                                                 throw null;
                                             } else {
                                                 ItemStack var7;
-                                                if (llIllIlIIlII(var7 = var0.func_184614_ca()) && llIllIIllIlI(var7.func_77973_b() instanceof ItemAir) && llIllIlIIIll(var7.func_77973_b(), Items.field_190929_cY)) {
+                                                if (llIllIlIIlII(var7 = var0.getHeldItemMainhand()) && llIllIIllIlI(var7.getItem() instanceof ItemAir) && llIllIlIIIll(var7.getItem(), Items.TOTEM_OF_UNDYING)) {
                                                     var5 += 10.0D;
                                                 }
 
@@ -552,9 +552,9 @@ public class Class13 {
                                                     EntityLivingBase var9;
                                                     label145:
                                                     {
-                                                        if (llIllIlIIlII(var7) && llIllIIllIlI(var7.func_77973_b() instanceof ItemAir)) {
+                                                        if (llIllIlIIlII(var7) && llIllIIllIlI(var7.getItem() instanceof ItemAir)) {
                                                             boolean var10;
-                                                            if (llIllIIlIlll(var7.func_77973_b() instanceof ItemAppleGold)) {
+                                                            if (llIllIIlIlll(var7.getItem() instanceof ItemAppleGold)) {
                                                                 var5 += 20.0D;
                                                                 var9 = var0;
                                                                 var10 = true;
@@ -565,7 +565,7 @@ public class Class13 {
                                                                 throw null;
                                                             }
 
-                                                            if (llIllIIlIlll(var7.func_77973_b() instanceof ItemEnderPearl)) {
+                                                            if (llIllIIlIlll(var7.getItem() instanceof ItemEnderPearl)) {
                                                                 var5 += 20.0D;
                                                                 var9 = var0;
                                                                 var10 = true;
@@ -576,7 +576,7 @@ public class Class13 {
                                                                 throw null;
                                                             }
 
-                                                            if (llIllIIlIlll(var7.func_77973_b() instanceof ItemPickaxe)) {
+                                                            if (llIllIIlIlll(var7.getItem() instanceof ItemPickaxe)) {
                                                                 var5 += 10.0D;
                                                                 var9 = var0;
                                                                 var10 = true;
@@ -587,7 +587,7 @@ public class Class13 {
                                                                 throw null;
                                                             }
 
-                                                            if (llIllIIlIlll(var7.func_77973_b() instanceof ItemSword)) {
+                                                            if (llIllIIlIlll(var7.getItem() instanceof ItemSword)) {
                                                                 var5 += 10.0D;
                                                                 var9 = var0;
                                                                 var10 = true;
@@ -598,7 +598,7 @@ public class Class13 {
                                                                 throw null;
                                                             }
 
-                                                            if (llIllIlIIIll(var7.func_77973_b(), Items.field_190929_cY)) {
+                                                            if (llIllIlIIIll(var7.getItem(), Items.TOTEM_OF_UNDYING)) {
                                                                 var5 += 10.0D;
                                                             }
                                                         }
@@ -613,7 +613,7 @@ public class Class13 {
                                                     if (llIllIIlIIlI(8241, 3033)) {
                                                         throw null;
                                                     } else {
-                                                        if (llIllIIlIlll(var9.func_70617_f_())) {
+                                                        if (llIllIIlIlll(var9.isOnLadder())) {
                                                             var5 += 10.0D;
                                                         }
 
@@ -646,7 +646,7 @@ public class Class13 {
             throw null;
         } else {
             float var1;
-            if (llIllIIlIIll((var1 = (float) var10000 /.field_71439_g.func_184818_cX() - var0) == 0.0F ? 0 : (var1 < 0.0F ? -1 : 1)))
+            if (llIllIIlIIll((var1 = (float) var10000 /.player.getCooldownPeriod() - var0) == 0.0F ? 0 : (var1 < 0.0F ? -1 : 1)))
             {
                 return true;
             } else if (llIllIIlIIlI(23166, 9201)) {
@@ -665,13 +665,13 @@ public class Class13 {
         label88:
         {
             var2 =                                                                                   .
-            field_71439_g.field_71158_b.field_192832_b;
+            player.movementInput.moveForward;
             var3 =                                                                                   .
-            field_71439_g.field_71158_b.field_78902_a;
+            player.movementInput.moveStrafe;
             var4 =                                                                                   .
-            field_71439_g.field_70126_B + (.field_71439_g.field_70177_z -                                                                                   .
-            field_71439_g.field_70126_B) *                                                                                   .
-            func_184121_ak();
+            player.prevRotationYaw + (.player.rotationYaw -                                                                                   .
+            player.prevRotationYaw) *                                                                                   .
+            getRenderPartialTicks();
             float var14;
             if (llIllIIlIlll((var14 = var2 - 0.0F) == 0.0F ? 0 : (var14 < 0.0F ? -1 : 1))) {
                 float var15;
@@ -786,10 +786,10 @@ public class Class13 {
 
     public static double _____________________________________________________________________________________/* $FF was:                                                                                      */() {
         float var0 =                                                                                   .
-        field_71439_g.field_70177_z;
+        player.rotationYaw;
         float var1 = 1.0F;
         float var4;
-        if (llIllIIlIlIl((var4 =.field_71439_g.field_191988_bg - 0.0F) == 0.0F ? 0 : (var4 < 0.0F ? -1 : 1))){
+        if (llIllIIlIlIl((var4 =.player.moveForward - 0.0F) == 0.0F ? 0 : (var4 < 0.0F ? -1 : 1))){
             var0 += 180.0F;
         }
 
@@ -797,7 +797,7 @@ public class Class13 {
             throw null;
         } else {
             float var5;
-            if (llIllIIlIlIl((var5 =.field_71439_g.field_191988_bg - 0.0F) == 0.0F ? 0 : (var5 < 0.0F ? -1 : 1))){
+            if (llIllIIlIlIl((var5 =.player.moveForward - 0.0F) == 0.0F ? 0 : (var5 < 0.0F ? -1 : 1))){
                 var1 = -0.5F;
                 boolean var10000 = true;
             } else{
@@ -806,7 +806,7 @@ public class Class13 {
                 }
 
                 float var6;
-                if (llIllIIlIllI((var6 =.field_71439_g.field_191988_bg - 0.0F) == 0.0F ? 0 : (var6 < 0.0F ? -1 : 1))){
+                if (llIllIIlIllI((var6 =.player.moveForward - 0.0F) == 0.0F ? 0 : (var6 < 0.0F ? -1 : 1))){
                     var1 = 0.5F;
                 }
             }
@@ -816,7 +816,7 @@ public class Class13 {
             } else {
                 float var2;
                 float var7;
-                if (llIllIIlIllI((var7 =.field_71439_g.field_70702_br - 0.0F) == 0.0F ? 0 : (var7 < 0.0F ? -1 : 1))){
+                if (llIllIIlIllI((var7 =.player.moveStrafing - 0.0F) == 0.0F ? 0 : (var7 < 0.0F ? -1 : 1))){
                     var2 = var0 - 90.0F * var1;
                     boolean var10001 = true;
                 } else{
@@ -825,7 +825,7 @@ public class Class13 {
                     }
 
                     float var8;
-                    if (llIllIIlIlIl((var8 =.field_71439_g.field_70702_br - 0.0F) == 0.0F ? 0 : (var8 < 0.0F ? -1 : 1)))
+                    if (llIllIIlIlIl((var8 =.player.moveStrafing - 0.0F) == 0.0F ? 0 : (var8 < 0.0F ? -1 : 1)))
                     {
                         var0 += 90.0F * var1;
                     }
@@ -852,10 +852,10 @@ public class Class13 {
     }
 
     public static float ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
-        double var10000 = Math.sqrt(.field_71439_g.field_70159_w *                                                                                   .
-        field_71439_g.field_70159_w +                                                                                   .
-        field_71439_g.field_70179_y *                                                                                   .
-        field_71439_g.field_70179_y);
+        double var10000 = Math.sqrt(.player.motionX *                                                                                   .
+        player.motionX +                                                                                   .
+        player.motionZ *                                                                                   .
+        player.motionZ);
         if (llIllIIlIIlI(83011, 7151)) {
             throw null;
         } else {
@@ -864,7 +864,7 @@ public class Class13 {
     }
 
     public static char ________________________________________________________________________________________________/* $FF was:                                                                                                 */(EntityPlayer var0) {
-        String var1 = var0.func_145748_c_().func_150254_d();
+        String var1 = var0.getDisplayName().getFormattedText();
         char[] var4;
         int var3 = (var4 = new char[]{'e', 'a', 'b', 'c', '7', 'd', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'n', 'm', 'r', 'o', 'l', 'f'}).length;
 
@@ -929,19 +929,19 @@ public class Class13 {
     }
 
     public static double[] ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var0) {
-        double var1 = var0.field_70142_S + (var0.field_70165_t - var0.field_70142_S);
-        double var3 = var0.field_70137_T + (var0.field_70163_u - var0.field_70137_T);
-        double var5 = var0.field_70136_U + (var0.field_70161_v - var0.field_70136_U);
+        double var1 = var0.lastTickPosX + (var0.posX - var0.lastTickPosX);
+        double var3 = var0.lastTickPosY + (var0.posY - var0.lastTickPosY);
+        double var5 = var0.lastTickPosZ + (var0.posZ - var0.lastTickPosZ);
         return new double[]{var1, var3, var5};
     }
 
     public static float[] ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var0, float var1, float var2, boolean var3, boolean var4, float var5) {
-        double var10000 = var0.field_70165_t;
+        double var10000 = var0.posX;
         double var10001;
         boolean var10002;
         if (llIllIIlIlll(var3)) {
             var10001 =                                                                                   .
-            field_71439_g.field_70169_q;
+            player.prevPosX;
             var10002 = true;
         } else {
             if (llIllIIlIIlI(75492, 7391)) {
@@ -949,17 +949,17 @@ public class Class13 {
             }
 
             var10001 =                                                                                   .
-            field_71439_g.field_70165_t;
+            player.posX;
         }
 
         if (llIllIIlIIlI(75492, 7391)) {
             throw null;
         } else {
             double var6 = var10000 - var10001;
-            var10000 = var0.field_70161_v;
+            var10000 = var0.posZ;
             if (llIllIIlIlll(var3)) {
                 var10001 =                                                                                   .
-                field_71439_g.field_70166_s;
+                player.prevPosZ;
                 var10002 = true;
             } else {
                 if (llIllIIlIIlI(75492, 7391)) {
@@ -967,17 +967,17 @@ public class Class13 {
                 }
 
                 var10001 =                                                                                   .
-                field_71439_g.field_70161_v;
+                player.posZ;
             }
 
             if (llIllIIlIIlI(75492, 7391)) {
                 throw null;
             } else {
                 double var8 = var10000 - var10001;
-                double var10 = (double) ((float) var0.field_70163_u + var0.func_70047_e() * 0.7F) - (.field_71439_g.field_70163_u + (
+                double var10 = (double) ((float) var0.posY + var0.getEyeHeight() * 0.7F) - (.player.posY + (
                 double)                                                                                  .
-                field_71439_g.func_70047_e());
-                float var16 = MathHelper.func_76133_a(var6 * var6 + var8 * var8);
+                player.getEyeHeight());
+                float var16 = MathHelper.sqrt(var6 * var6 + var8 * var8);
                 if (llIllIIlIIlI(75492, 7391)) {
                     throw null;
                 } else {
@@ -1031,7 +1031,7 @@ public class Class13 {
                                     throw null;
                                 } else {
                                     float var15 = var16 + var17;
-                                    var17 = MathHelper.func_76142_g(var14 - var1);
+                                    var17 = MathHelper.wrapDegrees(var14 - var1);
                                     if (llIllIIlIIlI(75492, 7391)) {
                                         throw null;
                                     } else {
@@ -1040,7 +1040,7 @@ public class Class13 {
                                             throw null;
                                         } else {
                                             var14 = var1 + var17;
-                                            var17 = MathHelper.func_76142_g(var15 - var2);
+                                            var17 = MathHelper.wrapDegrees(var15 - var2);
                                             if (llIllIIlIIlI(75492, 7391)) {
                                                 throw null;
                                             } else {
@@ -1050,7 +1050,7 @@ public class Class13 {
                                                 } else {
                                                     var16 = var2 + var17;
                                                     var17 += var2;
-                                                    var16 = MathHelper.func_76131_a(var16, -90.0F, 90.0F);
+                                                    var16 = MathHelper.clamp(var16, -90.0F, 90.0F);
                                                     if (llIllIIlIIlI(75492, 7391)) {
                                                         throw null;
                                                     } else {
@@ -1112,11 +1112,11 @@ public class Class13 {
         label88:
         {
             var3 =                                                                                   .
-            field_71439_g.field_71158_b.field_78902_a;
+            player.movementInput.moveStrafe;
             var4 =                                                                                   .
-            field_71439_g.field_70126_B + (.field_71439_g.field_70177_z -                                                                                   .
-            field_71439_g.field_70126_B) *                                                                                   .
-            func_184121_ak();
+            player.prevRotationYaw + (.player.rotationYaw -                                                                                   .
+            player.prevRotationYaw) *                                                                                   .
+            getRenderPartialTicks();
             float var14;
             if (llIllIIlIlll((var14 = var2 - 0.0F) == 0.0F ? 0 : (var14 < 0.0F ? -1 : 1))) {
                 float var15;
@@ -1230,7 +1230,7 @@ public class Class13 {
     }
 
     public static double ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
-        if (llIllIIlIlll(.field_71439_g.field_70122_E)){
+        if (llIllIIlIlll(.player.onGround)){
             return 0.0D;
         } else if (llIllIIlIIlI(76372, 4445)) {
             throw null;
@@ -1247,16 +1247,16 @@ public class Class13 {
                     return -1.0D;
                 }
 
-                BlockPos var3 = new BlockPos(.field_71439_g.field_70165_t,                                                                                   .
-                field_71439_g.field_70163_u - var0,                                                                                   .
-                field_71439_g.field_70161_v);
+                BlockPos var3 = new BlockPos(.player.posX,                                                                                   .
+                player.posY - var0,                                                                                   .
+                player.posZ);
                 if (llIllIIlIIlI(76372, 4445)) {
                     throw null;
                 }
 
                 BlockPos var2 = var3;
-                if (llIllIIllIlI(.field_71441_e.func_180495_p(var2).func_177230_c() instanceof BlockAir) &&
-                llIllIIllIlI(.field_71441_e.func_180495_p(var2).func_177230_c() instanceof BlockLiquid)){
+                if (llIllIIllIlI(.world.getBlockState(var2).getBlock() instanceof BlockAir) &&
+                llIllIIllIlI(.world.getBlockState(var2).getBlock() instanceof BlockLiquid)){
                     return var0;
                 }
 
@@ -1272,7 +1272,7 @@ public class Class13 {
     }
 
     public static float ________________________________________________________________________________________________/* $FF was:                                                                                                 */(float var0, float var1, float var2) {
-        float var10000 = MathHelper.func_76142_g(var1 - var0);
+        float var10000 = MathHelper.wrapDegrees(var1 - var0);
         if (llIllIIlIIlI(60703, 3135)) {
             throw null;
         } else {
@@ -1434,9 +1434,9 @@ public class Class13 {
                             } else {
                                 double var9 = var11;
                                                                                                           .
-                                field_71439_g.field_70159_w = var5 * var0 * var7 + var3 * var0 * var9;
+                                player.motionX = var5 * var0 * var7 + var3 * var0 * var9;
                                                                                                           .
-                                field_71439_g.field_70179_y = var5 * var0 * var9 - var3 * var0 * var7;
+                                player.motionZ = var5 * var0 * var9 - var3 * var0 * var7;
                                 var10000 = true;
                             }
                         }
@@ -1448,9 +1448,9 @@ public class Class13 {
 
     public static void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(double var0) {
         (var0,                                                                                   .
-        field_71439_g.field_70177_z, ( double)                                                                                  .
-        field_71439_g.field_71158_b.field_78902_a, ( double)                                                                                  .
-        field_71439_g.field_71158_b.field_192832_b);
+        player.rotationYaw, ( double)                                                                                  .
+        player.movementInput.moveStrafe, ( double)                                                                                  .
+        player.movementInput.moveForward);
         if (llIllIIlIIlI(25368, 2725)) {
             throw null;
         } else {
@@ -1459,13 +1459,13 @@ public class Class13 {
     }
 
     public static float[] ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var0) {
-        double var1 = var0.field_70165_t -                                                                                   .
-        field_71439_g.field_70165_t;
-        double var3 = var0.field_70161_v -                                                                                   .
-        field_71439_g.field_70161_v;
-        double var5 = var0.field_70163_u -                                                                                   .
-        field_71439_g.field_70163_u - 0.5D;
-        float var10000 = MathHelper.func_76133_a(var1 * var1 + var3 * var3);
+        double var1 = var0.posX -                                                                                   .
+        player.posX;
+        double var3 = var0.posZ -                                                                                   .
+        player.posZ;
+        double var5 = var0.posY -                                                                                   .
+        player.posY - 0.5D;
+        float var10000 = MathHelper.sqrt(var1 * var1 + var3 * var3);
         if (llIllIIlIIlI(20192, 8360)) {
             throw null;
         } else {
@@ -1489,20 +1489,20 @@ public class Class13 {
     public static double ____________________________________________________________________________/* $FF was:                                                                             */() {
         double var0 = 0.2875D;
         EntityPlayerSP var10000 =                                                                                   .
-        field_71439_g;
-        Potion var10001 = Potion.func_188412_a(1);
+        player;
+        Potion var10001 = Potion.getPotionById(1);
         if (llIllIIlIIlI(19173, 8213)) {
             throw null;
         } else {
-            if (llIllIIlIlll(var10000.func_70644_a(var10001))) {
+            if (llIllIIlIlll(var10000.isPotionActive(var10001))) {
                 EntityPlayerSP var10003 =                                                                                   .
-                field_71439_g;
-                Potion var10004 = Potion.func_188412_a(1);
+                player;
+                Potion var10004 = Potion.getPotionById(1);
                 if (llIllIIlIIlI(19173, 8213)) {
                     throw null;
                 }
 
-                var0 *= 1.0D + 0.2D * (double) (var10003.func_70660_b(var10004).func_76458_c() + 1);
+                var0 *= 1.0D + 0.2D * (double) (var10003.getActivePotionEffect(var10004).getAmplifier() + 1);
             }
 
             if (llIllIIlIIlI(19173, 8213)) {
@@ -1514,13 +1514,13 @@ public class Class13 {
     }
 
     public static float[] ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var0, float var1) {
-        double var2 = var0.field_70165_t -                                                                                   .
-        field_71439_g.field_70169_q;
-        double var4 = var0.field_70161_v -                                                                                   .
-        field_71439_g.field_70166_s;
-        double var6 = var0.field_70163_u -                                                                                   .
-        field_71439_g.field_70167_r - 0.5D;
-        float var10000 = MathHelper.func_76133_a(var2 * var2 + var4 * var4);
+        double var2 = var0.posX -                                                                                   .
+        player.prevPosX;
+        double var4 = var0.posZ -                                                                                   .
+        player.prevPosZ;
+        double var6 = var0.posY -                                                                                   .
+        player.prevPosY - 0.5D;
+        float var10000 = MathHelper.sqrt(var2 * var2 + var4 * var4);
         if (llIllIIlIIlI(49875, 8857)) {
             throw null;
         } else {
@@ -1535,19 +1535,19 @@ public class Class13 {
                     throw null;
                 } else {
                     float var3 = (float) (-(var11 * 180.0D / 3.141592653589793D));
-                    var10000 = (.field_71439_g.field_70177_z, var10, var1);
+                    var10000 = (.player.rotationYaw, var10, var1);
                     if (llIllIIlIIlI(49875, 8857)) {
                         throw null;
                     } else {
                         var10 = var10000;
-                        var10000 = (.field_71439_g.field_70125_A, var3, var1);
+                        var10000 = (.player.rotationPitch, var3, var1);
                         if (llIllIIlIIlI(49875, 8857)) {
                             throw null;
                         } else {
                             var3 = var10000;
                             var10000 =                                                                                   .
-                            field_71439_g.field_70177_z;
-                            float var10001 = MathHelper.func_76142_g(var10 -.field_71439_g.field_70177_z);
+                            player.rotationYaw;
+                            float var10001 = MathHelper.wrapDegrees(var10 -.player.rotationYaw);
                             if (llIllIIlIIlI(49875, 8857)) {
                                 throw null;
                             } else {
@@ -1557,8 +1557,8 @@ public class Class13 {
                                 } else {
                                     var10 = var10000 + var10001;
                                     var10000 =                                                                                   .
-                                    field_71439_g.field_70125_A;
-                                    var10001 = MathHelper.func_76142_g(var3 -.field_71439_g.field_70125_A);
+                                    player.rotationPitch;
+                                    var10001 = MathHelper.wrapDegrees(var3 -.player.rotationPitch);
                                     if (llIllIIlIIlI(49875, 8857)) {
                                         throw null;
                                     } else {
@@ -1581,18 +1581,18 @@ public class Class13 {
 
     public static double[] ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var0, float var1) {
         RenderManager var2 =                                                                                   .
-        func_175598_ae();
-        double var3 = var0.field_70142_S + (var0.field_70165_t - var0.field_70142_S) * (double) var1 - var2.field_78730_l;
-        double var5 = var0.field_70137_T + (var0.field_70163_u - var0.field_70137_T) * (double) var1 - var2.field_78731_m;
-        double var7 = var0.field_70136_U + (var0.field_70161_v - var0.field_70136_U) * (double) var1 - var2.field_78728_n;
+        getRenderManager();
+        double var3 = var0.lastTickPosX + (var0.posX - var0.lastTickPosX) * (double) var1 - var2.viewerPosX;
+        double var5 = var0.lastTickPosY + (var0.posY - var0.lastTickPosY) * (double) var1 - var2.viewerPosY;
+        double var7 = var0.lastTickPosZ + (var0.posZ - var0.lastTickPosZ) * (double) var1 - var2.viewerPosZ;
         return new double[]{var3, var5, var7};
     }
 
     public static float[] ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var0, Entity var1) {
-        double var2 = var1.field_70142_S - var0.field_70165_t;
-        double var4 = var1.field_70136_U - var0.field_70161_v;
-        double var6 = var1.field_70137_T - var0.field_70163_u - 0.5D;
-        float var10000 = MathHelper.func_76133_a(var2 * var2 + var4 * var4);
+        double var2 = var1.lastTickPosX - var0.posX;
+        double var4 = var1.lastTickPosZ - var0.posZ;
+        double var6 = var1.lastTickPosY - var0.posY - 0.5D;
+        float var10000 = MathHelper.sqrt(var2 * var2 + var4 * var4);
         if (llIllIIlIIlI(54286, 6274)) {
             throw null;
         } else {
@@ -1614,13 +1614,13 @@ public class Class13 {
     }
 
     public static float[] ________________________________________________________________________________________________/* $FF was:                                                                                                 */(BlockPos var0) {
-        double var1 = (double) var0.func_177958_n() + 0.5D -                                                                                   .
-        field_71439_g.field_70165_t;
-        double var3 = (double) var0.func_177956_o() + 0.5D - (.field_71439_g.field_70163_u + ( double)                                                                                  .
-        field_71439_g.func_70047_e());
-        double var5 = (double) var0.func_177952_p() + 0.5D -                                                                                   .
-        field_71439_g.field_70161_v;
-        float var10000 = MathHelper.func_76133_a(var1 * var1 + var5 * var5);
+        double var1 = (double) var0.getX() + 0.5D -                                                                                   .
+        player.posX;
+        double var3 = (double) var0.getY() + 0.5D - (.player.posY + ( double)                                                                                  .
+        player.getEyeHeight());
+        double var5 = (double) var0.getZ() + 0.5D -                                                                                   .
+        player.posZ;
+        float var10000 = MathHelper.sqrt(var1 * var1 + var5 * var5);
         if (llIllIIlIIlI(62535, 8383)) {
             throw null;
         } else {
@@ -1636,15 +1636,15 @@ public class Class13 {
                 } else {
                     float var2 = (float) (-(var10 * 180.0D / 3.141592653589793D));
                     var10000 =                                                                                   .
-                    field_71439_g.field_70177_z;
-                    float var10001 = MathHelper.func_76142_g(var9 -.field_71439_g.field_70177_z);
+                    player.rotationYaw;
+                    float var10001 = MathHelper.wrapDegrees(var9 -.player.rotationYaw);
                     if (llIllIIlIIlI(62535, 8383)) {
                         throw null;
                     } else {
                         var9 = var10000 + var10001;
                         var10000 =                                                                                   .
-                        field_71439_g.field_70125_A;
-                        var10001 = MathHelper.func_76142_g(var2 -.field_71439_g.field_70125_A);
+                        player.rotationPitch;
+                        var10001 = MathHelper.wrapDegrees(var2 -.player.rotationPitch);
                         if (llIllIIlIIlI(62535, 8383)) {
                             throw null;
                         } else {
@@ -1675,10 +1675,10 @@ public class Class13 {
                 }
 
                 return                                                                                   .
-                field_71439_g.field_71071_by.field_70461_c;
+                player.inventory.currentItem;
             }
 
-            if (llIllIIlIlll(.field_71439_g.field_71071_by.func_70301_a(var0).func_77973_b() instanceof ItemAxe)){
+            if (llIllIIlIlll(.player.inventory.getStackInSlot(var0).getItem() instanceof ItemAxe)){
                 return var0;
             }
 
@@ -1694,8 +1694,8 @@ public class Class13 {
     }
 
     public static boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var0, Entity var1, float var2) {
-        double var3 = var1.field_70165_t - var0.field_70165_t;
-        double var10000 = Math.atan2(var1.field_70161_v - var0.field_70161_v, var3);
+        double var3 = var1.posX - var0.posX;
+        double var10000 = Math.atan2(var1.posZ - var0.posZ, var3);
         if (llIllIIlIIlI(19574, 1785)) {
             throw null;
         } else {
@@ -1703,7 +1703,7 @@ public class Class13 {
             if (llIllIIlIIlI(19574, 1785)) {
                 throw null;
             } else {
-                var10000 = ((double) ((float) (var10000 - 90.0D)), (double) var0.field_70177_z);
+                var10000 = ((double) ((float) (var10000 - 90.0D)), (double) var0.rotationYaw);
                 if (llIllIIlIIlI(19574, 1785)) {
                     throw null;
                 } else {
@@ -1721,17 +1721,17 @@ public class Class13 {
     }
 
     public static float[] ________________________________________________________________________________________________/* $FF was:                                                                                                 */(AxisAlignedBB var0) {
-        Vec3d var10000 = new Vec3d(var0.field_72340_a + (var0.field_72336_d - var0.field_72340_a) * 0.5D, var0.field_72338_b + (var0.field_72337_e - var0.field_72338_b) * 0.01D, var0.field_72339_c + (var0.field_72334_f - var0.field_72339_c) * 0.5D);
+        Vec3d var10000 = new Vec3d(var0.minX + (var0.maxX - var0.minX) * 0.5D, var0.minY + (var0.maxY - var0.minY) * 0.01D, var0.minZ + (var0.maxZ - var0.minZ) * 0.5D);
         if (llIllIIlIIlI(89892, 5717)) {
             throw null;
         } else {
-            double var2 = var10000.field_72450_a -                                                                                   .
-            field_71439_g.field_70165_t;
-            double var4 = var10000.field_72448_b -                                                                                   .
-            field_71439_g.field_70163_u - 0.5D;
-            double var6 = var10000.field_72449_c -                                                                                   .
-            field_71439_g.field_70161_v;
-            float var11 = MathHelper.func_76133_a(var2 * var2 + var6 * var6);
+            double var2 = var10000.x -                                                                                   .
+            player.posX;
+            double var4 = var10000.y -                                                                                   .
+            player.posY - 0.5D;
+            double var6 = var10000.z -                                                                                   .
+            player.posZ;
+            float var11 = MathHelper.sqrt(var2 * var2 + var6 * var6);
             if (llIllIIlIIlI(89892, 5717)) {
                 throw null;
             } else {
@@ -1754,12 +1754,12 @@ public class Class13 {
     }
 
     public static float[] ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var0, boolean var1, boolean var2) {
-        double var10000 = var0.field_70165_t;
+        double var10000 = var0.posX;
         double var10001;
         boolean var10002;
         if (llIllIIlIlll(var1)) {
             var10001 =                                                                                   .
-            field_71439_g.field_70169_q;
+            player.prevPosX;
             var10002 = true;
         } else {
             if (llIllIIlIIlI(93777, 4922)) {
@@ -1767,17 +1767,17 @@ public class Class13 {
             }
 
             var10001 =                                                                                   .
-            field_71439_g.field_70165_t;
+            player.posX;
         }
 
         if (llIllIIlIIlI(93777, 4922)) {
             throw null;
         } else {
             double var3 = var10000 - var10001;
-            var10000 = var0.field_70161_v;
+            var10000 = var0.posZ;
             if (llIllIIlIlll(var1)) {
                 var10001 =                                                                                   .
-                field_71439_g.field_70166_s;
+                player.prevPosZ;
                 var10002 = true;
             } else {
                 if (llIllIIlIIlI(93777, 4922)) {
@@ -1785,17 +1785,17 @@ public class Class13 {
                 }
 
                 var10001 =                                                                                   .
-                field_71439_g.field_70161_v;
+                player.posZ;
             }
 
             if (llIllIIlIIlI(93777, 4922)) {
                 throw null;
             } else {
                 double var5 = var10000 - var10001;
-                double var8 = (double) ((float) var0.field_70163_u + var0.func_70047_e() * 0.7F) - (.field_71439_g.field_70163_u + (
+                double var8 = (double) ((float) var0.posY + var0.getEyeHeight() * 0.7F) - (.player.posY + (
                 double)                                                                                  .
-                field_71439_g.func_70047_e());
-                float var14 = MathHelper.func_76133_a(var3 * var3 + var5 * var5);
+                player.getEyeHeight());
+                float var14 = MathHelper.sqrt(var3 * var3 + var5 * var5);
                 if (llIllIIlIIlI(93777, 4922)) {
                     throw null;
                 } else {
@@ -1852,8 +1852,8 @@ public class Class13 {
                                 } else {
                                     float var13 = var14 + var15;
                                     var14 =                                                                                   .
-                                    field_71439_g.field_70177_z;
-                                    var15 = MathHelper.func_76142_g(var12 -.field_71439_g.field_70177_z);
+                                    player.rotationYaw;
+                                    var15 = MathHelper.wrapDegrees(var12 -.player.rotationYaw);
                                     if (llIllIIlIIlI(93777, 4922)) {
                                         throw null;
                                     } else {
@@ -1863,8 +1863,8 @@ public class Class13 {
                                         } else {
                                             var12 = var14 + var15;
                                             var14 =                                                                                   .
-                                            field_71439_g.field_70125_A;
-                                            var15 = MathHelper.func_76142_g(var13 -.field_71439_g.field_70125_A);
+                                            player.rotationPitch;
+                                            var15 = MathHelper.wrapDegrees(var13 -.player.rotationPitch);
                                             if (llIllIIlIIlI(93777, 4922)) {
                                                 throw null;
                                             } else {
@@ -1872,7 +1872,7 @@ public class Class13 {
                                                 if (llIllIIlIIlI(93777, 4922)) {
                                                     throw null;
                                                 } else {
-                                                    var14 = MathHelper.func_76131_a(var14 + var15, -90.0F, 90.0F);
+                                                    var14 = MathHelper.clamp(var14 + var15, -90.0F, 90.0F);
                                                     if (llIllIIlIIlI(93777, 4922)) {
                                                         throw null;
                                                     } else {
@@ -1893,13 +1893,13 @@ public class Class13 {
     }
 
     public static float[] ________________________________________________________________________________________________/* $FF was:                                                                                                 */(BlockPos var0, float var1, float var2, boolean var3) {
-        double var4 = (double) var0.func_177958_n() + 0.5D -                                                                                   .
-        field_71439_g.field_70165_t;
-        double var6 = (double) var0.func_177956_o() + 0.5D - (.field_71439_g.field_70163_u + ( double)                                                                                  .
-        field_71439_g.func_70047_e());
-        double var8 = (double) var0.func_177952_p() + 0.5D -                                                                                   .
-        field_71439_g.field_70161_v;
-        float var10000 = MathHelper.func_76133_a(var4 * var4 + var8 * var8);
+        double var4 = (double) var0.getX() + 0.5D -                                                                                   .
+        player.posX;
+        double var6 = (double) var0.getY() + 0.5D - (.player.posY + ( double)                                                                                  .
+        player.getEyeHeight());
+        double var8 = (double) var0.getZ() + 0.5D -                                                                                   .
+        player.posZ;
+        float var10000 = MathHelper.sqrt(var4 * var4 + var8 * var8);
         if (llIllIIlIIlI(76287, 4088)) {
             throw null;
         } else {
@@ -1954,12 +1954,12 @@ public class Class13 {
                             throw null;
                         } else {
                             float var12 = var10000 + var10001;
-                            var10001 = MathHelper.func_76142_g(var13 - var1);
+                            var10001 = MathHelper.wrapDegrees(var13 - var1);
                             if (llIllIIlIIlI(76287, 4088)) {
                                 throw null;
                             } else {
                                 var13 = var1 + var10001;
-                                var10001 = MathHelper.func_76142_g(var12 - var2);
+                                var10001 = MathHelper.wrapDegrees(var12 - var2);
                                 if (llIllIIlIIlI(76287, 4088)) {
                                     throw null;
                                 } else {

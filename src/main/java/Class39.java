@@ -77,23 +77,23 @@ public class Class39 extends Class5 {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
-        GlStateManager.func_179094_E();
+        GlStateManager.pushMatrix();
         if (llIIIlIIlIII(81117, 2892)) {
             throw null;
         } else {
-            GlStateManager.func_179109_b(4.0F, 4.5F, -3.0F);
+            GlStateManager.translate(4.0F, 4.5F, -3.0F);
             if (llIIIlIIlIII(81117, 2892)) {
                 throw null;
             } else {
                 this.                                                                                  .(this..
                 (), this. () - 3, this. () - 3, -100.0F);
-                GlStateManager.func_179121_F();
+                GlStateManager.popMatrix();
                 if (llIIIlIIlIII(81117, 2892)) {
                     throw null;
                 } else {
                     int var1 = this. () + (this..                                                                                                    .
                     () / 2 - this.                                                                                            .
-                    field_71466_p.field_78288_b / 2);
+                    fontRenderer.FONT_HEIGHT / 2);
                     this.                                                                                  .(this..
                     (), (float) (this. () + 18),(float) var1, Class73.                                                                                          )
                     ;

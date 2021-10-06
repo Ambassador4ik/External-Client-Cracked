@@ -243,8 +243,8 @@ public class Class47 extends Class171 {
                 if (lllIIlIIIllI(var10000.equals(var10001))) {
                     EntityLivingBase var2 = (EntityLivingBase) var1;
                     var10 = var1;
-                    double var3 = (double) (var2.func_110143_aJ() / 2.0F);
-                    double var5 = (double) (var2.func_110138_aP() / 2.0F);
+                    double var3 = (double) (var2.getHealth() / 2.0F);
+                    double var5 = (double) (var2.getMaxHealth() / 2.0F);
                     float var7 = (float) (100.0D * var3 / var5) / 50.0F;
                     GL11.glColor4f(2.0F - var7, var7, 0.0F, 1.0F);
                     if (lllIIlIIIlII(48004, 2172)) {
@@ -268,13 +268,13 @@ public class Class47 extends Class171 {
                         if (lllIIlIIIllI(var1 instanceof EntityPlayer)) {
                             Color var12 = new Color;
                             FontRenderer var10002 = this.                                                                                                    .
-                            field_71466_p;
+                            fontRenderer;
                             char var10003 = Class13. ((EntityPlayer) var1);
                             if (lllIIlIIIlII(48004, 2172)) {
                                 throw null;
                             }
 
-                            var12.<init> (var10002.func_175064_b(var10003));
+                            var12.<init> (var10002.getColorCode(var10003));
                             if (lllIIlIIIlII(48004, 2172)) {
                                 throw null;
                             }
@@ -314,7 +314,7 @@ public class Class47 extends Class171 {
 
                         if (lllIIlIIIllI(var10000.equals(var10001))) {
                             float var9 = this.                                                                                                    .
-                            field_71439_g.func_70032_d(var1) / 25.0F;
+                            player.getDistance(var1) / 25.0F;
                             GL11.glColor4f(2.0F - var9, var9, 0.0F, 1.0F);
                             if (lllIIlIIIlII(48004, 2172)) {
                                 throw null;
@@ -334,7 +334,7 @@ public class Class47 extends Class171 {
                 throw null;
             } else {
                 if (lllIIlIIIllI(var10 instanceof EntityPlayer) && lllIIlIIIllI(Class73..                                                                                                    .
-                (var1.func_70005_c_()))){
+                (var1.getName()))){
                     this.                                                                                           .
                     (this.. (), 1.0F);
                 }
@@ -362,7 +362,7 @@ public class Class47 extends Class171 {
     }
 
     private boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var1) {
-        if (lllIIIllllll(var1) && lllIIlIIIIII(var1 instanceof EntityArmorStand) && lllIIlIIIIII(var1.field_70128_L) && !lllIIlIIIIlI(var1, this..field_71439_g))
+        if (lllIIIllllll(var1) && lllIIlIIIIII(var1 instanceof EntityArmorStand) && lllIIlIIIIII(var1.isDead) && !lllIIlIIIIlI(var1, this..player))
         {
             if (lllIIlIIIlII(18437, 6055)) {
                 throw null;
@@ -381,7 +381,7 @@ public class Class47 extends Class171 {
                 if (lllIIlIIIlII(18437, 6055)) {
                     throw null;
                 } else if (lllIIlIIIllI(Class73..                                                                                                    .
-                (var1.func_70005_c_())) &&lllIIlIIIIII(this.. ())){
+                (var1.getName())) &&lllIIlIIIIII(this.. ())){
                     return false;
                 } else if (lllIIlIIIlII(18437, 6055)) {
                     throw null;
@@ -396,7 +396,7 @@ public class Class47 extends Class171 {
                     } else if (lllIIlIIIIII(var1 instanceof EntityMob) && lllIIlIIIIII(var1 instanceof EntitySlime) && !lllIIlIIIllI(var1 instanceof EntityGhast)) {
                         if (lllIIlIIIlII(18437, 6055)) {
                             throw null;
-                        } else if (lllIIlIIIllI(var1.func_82150_aj()) && lllIIlIIIIII(this.. ())){
+                        } else if (lllIIlIIIllI(var1.isInvisible()) && lllIIlIIIIII(this.. ())){
                             return false;
                         } else if (lllIIlIIIlII(18437, 6055)) {
                             throw null;
@@ -426,15 +426,15 @@ public class Class47 extends Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderWorldLastEvent var1) {
         this. = this.                                                                                                    .
-        field_71474_y.field_74336_f;
+        gameSettings.viewBobbing;
         this.                                                                                                    .
-        field_71474_y.field_74336_f = false;
+        gameSettings.viewBobbing = false;
         Class22. (var1.getPartialTicks(), 2);
         if (lllIIlIIIlII(41080, 7255)) {
             throw null;
         } else {
             this.                                                                                                    .
-            field_71474_y.field_74336_f = this.;
+            gameSettings.viewBobbing = this.;
             GL11.glPushMatrix();
             if (lllIIlIIIlII(41080, 7255)) {
                 throw null;
@@ -464,12 +464,12 @@ public class Class47 extends Class171 {
                                         throw null;
                                     } else {
                                         RenderManager var2 = this.                                                                                                    .
-                                        func_175598_ae();
+                                        getRenderManager();
                                         Vec3d var3 = this.                                                                                                    .
-                                        field_71439_g.func_70040_Z().func_72441_c(0.0D, (double) this..field_71439_g.func_70047_e(), 0.0D)
+                                        player.getLookVec().add(0.0D, (double) this..player.getEyeHeight(), 0.0D)
                                         ;
                                         Iterator var4 = this.                                                                                                    .
-                                        field_71441_e.func_72910_y().iterator();
+                                        world.getLoadedEntityList().iterator();
 
                                         while (!lllIIlIIIlII(41080, 7255)) {
                                             boolean var9;
@@ -503,7 +503,7 @@ public class Class47 extends Class171 {
                                                     throw null;
                                                 }
 
-                                                GlStateManager.func_179117_G();
+                                                GlStateManager.resetColor();
                                                 if (lllIIlIIIlII(41080, 7255)) {
                                                     throw null;
                                                 }
@@ -524,19 +524,19 @@ public class Class47 extends Class171 {
                                             }
 
                                             if (lllIIlIIIllI(var10000)) {
-                                                AxisAlignedBB var6 = var5.func_174813_aQ();
-                                                Vec3d var8 = new Vec3d(var6.field_72340_a + (var6.field_72336_d - var6.field_72340_a) * 0.5D, var6.field_72338_b + (var6.field_72337_e - var6.field_72338_b) * 0.0D, var6.field_72339_c + (var6.field_72334_f - var6.field_72339_c) * 0.5D);
+                                                AxisAlignedBB var6 = var5.getEntityBoundingBox();
+                                                Vec3d var8 = new Vec3d(var6.minX + (var6.maxX - var6.minX) * 0.5D, var6.minY + (var6.maxY - var6.minY) * 0.0D, var6.minZ + (var6.maxZ - var6.minZ) * 0.5D);
                                                 if (lllIIlIIIlII(41080, 7255)) {
                                                     throw null;
                                                 }
 
-                                                Vec3d var10001 = new Vec3d(var5.field_70165_t, var5.field_70163_u, var5.field_70161_v);
+                                                Vec3d var10001 = new Vec3d(var5.posX, var5.posY, var5.posZ);
                                                 if (lllIIlIIIlII(41080, 7255)) {
                                                     throw null;
                                                 }
 
                                                 Vec3d var7;
-                                                var8 = var7 = var8.func_178788_d(var10001.func_178786_a(var5.field_70169_q, var5.field_70167_r, var5.field_70166_s).func_186678_a((double) (1.0F - var1.getPartialTicks()))).func_72441_c(-var2.field_78730_l, -var2.field_78731_m, -var2.field_78728_n);
+                                                var8 = var7 = var8.subtract(var10001.subtract(var5.prevPosX, var5.prevPosY, var5.prevPosZ).scale((double) (1.0F - var1.getPartialTicks()))).add(-var2.viewerPosX, -var2.viewerPosY, -var2.viewerPosZ);
                                                 this. (var5);
                                                 if (lllIIlIIIlII(41080, 7255)) {
                                                     throw null;
@@ -547,12 +547,12 @@ public class Class47 extends Class171 {
                                                     throw null;
                                                 }
 
-                                                GL11.glVertex3d(var3.field_72450_a, var3.field_72448_b, var3.field_72449_c);
+                                                GL11.glVertex3d(var3.x, var3.y, var3.z);
                                                 if (lllIIlIIIlII(41080, 7255)) {
                                                     throw null;
                                                 }
 
-                                                GL11.glVertex3d(var8.field_72450_a, var7.field_72448_b, var7.field_72449_c);
+                                                GL11.glVertex3d(var8.x, var7.y, var7.z);
                                                 if (lllIIlIIIlII(41080, 7255)) {
                                                     throw null;
                                                 }

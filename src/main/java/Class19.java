@@ -262,7 +262,7 @@ public class Class19 {
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(int var1, int var2) {
         if (llIlllllllIl(this.)) {
             ScaledResolution var10000 = new ScaledResolution;
-            Minecraft var10002 = Minecraft.func_71410_x();
+            Minecraft var10002 = Minecraft.getMinecraft();
             if (llIllllllllI(29001, 1578)) {
                 throw null;
             }
@@ -273,7 +273,7 @@ public class Class19 {
             }
 
             ScaledResolution var3 = var10000;
-            if (lllIIIIlIIII(var1 - this.) && lllIIIIIIIll(var1 - this., var3.func_78326_a() - this. ())){
+            if (lllIIIIlIIII(var1 - this.) && lllIIIIIIIll(var1 - this., var3.getScaledWidth() - this. ())){
                 this. (var1 - this.);
             }
 
@@ -281,7 +281,7 @@ public class Class19 {
                 throw null;
             }
 
-            if (lllIIIIlIIII(var2 - this.) && lllIIIIIIIll(var2 - this., var3.func_78328_b() - this. ())){
+            if (lllIIIIlIIII(var2 - this.) && lllIIIIIIIll(var2 - this., var3.getScaledHeight() - this. ())){
                 this. (var2 - this.);
             }
         }
@@ -290,7 +290,7 @@ public class Class19 {
             throw null;
         } else {
             ScaledResolution var8 = new ScaledResolution;
-            Minecraft var10004 = Minecraft.func_71410_x();
+            Minecraft var10004 = Minecraft.getMinecraft();
             if (llIllllllllI(29001, 1578)) {
                 throw null;
             } else {
@@ -298,7 +298,7 @@ public class Class19 {
                 if (llIllllllllI(29001, 1578)) {
                     throw null;
                 } else {
-                    this. = var8.func_78328_b();
+                    this. = var8.getScaledHeight();
                     if (llIlllllllIl(this. ()) &&llIlllllllIl(this. (var1, var2)) &&lllIIIIIIIII(this. (), this. ())){
                         int var6 = Mouse.getDWheel();
                         if (llIllllllllI(29001, 1578)) {
@@ -519,7 +519,7 @@ public class Class19 {
             } else {
                 Class4 var9 = this.;
                 ScaledResolution var12 = new ScaledResolution;
-                Minecraft var10003 = Minecraft.func_71410_x();
+                Minecraft var10003 = Minecraft.getMinecraft();
                 if (llIllllllllI(84513, 3292)) {
                     throw null;
                 } else {
@@ -689,7 +689,7 @@ public class Class19 {
                             }
 
                             this.                                                                                                   .
-                            (this., this., this. (), this. (), this. ().func_110552_b());
+                            (this., this., this. (), this. (), this. ().getGlTextureId());
                         } catch (Exception var2) {
                             if (llIllllllllI(54435, 7560)) {
                                 throw null;
