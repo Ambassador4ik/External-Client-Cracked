@@ -80,20 +80,20 @@ public class Class138 extends Class171 {
             }
 
             this.                                                                                                    .
-            field_71439_g.field_70145_X = true;
+            player.noClip = true;
             this.                                                                                                    .
-            field_71439_g.field_70143_R = 0.0F;
+            player.fallDistance = 0.0F;
             this.                                                                                                    .
-            field_71439_g.field_70122_E = false;
+            player.onGround = false;
             this.                                                                                                    .
-            field_71439_g.field_70181_x = 0.0D;
+            player.motionY = 0.0D;
             this.                                                                                                    .
-            field_71439_g.field_70747_aH = 0.0365F;
+            player.jumpMovementFactor = 0.0365F;
             EntityPlayerSP var10000;
-            if (llIIlIllIIII(this..field_71474_y.field_74314_A.func_151470_d())){
+            if (llIIlIllIIII(this..gameSettings.keyBindJump.isKeyDown())){
                 var10000 = this.                                                                                                    .
-                field_71439_g;
-                var10000.field_70181_x += this.                                                                                            .
+                player;
+                var10000.motionY += this.                                                                                            .
                 ();
             }
 
@@ -101,10 +101,10 @@ public class Class138 extends Class171 {
                 throw null;
             }
 
-            if (llIIlIllIIII(this..field_71474_y.field_74311_E.func_151470_d())){
+            if (llIIlIllIIII(this..gameSettings.keyBindSneak.isKeyDown())){
                 var10000 = this.                                                                                                    .
-                field_71439_g;
-                var10000.field_70181_x -= this.                                                                                            .
+                player;
+                var10000.motionY -= this.                                                                                            .
                 ();
             }
         }
@@ -117,17 +117,17 @@ public class Class138 extends Class171 {
     }
 
     public boolean __________________________________________________________________________________/* $FF was:                                                                                   */() {
-        BlockPos var10000 = new BlockPos(this..field_71439_g.field_70165_t, this.                                                                                                    .
-        field_71439_g.field_70163_u, this.                                                                                                    .
-        field_71439_g.field_70161_v);
+        BlockPos var10000 = new BlockPos(this..player.posX, this.                                                                                                    .
+        player.posY, this.                                                                                                    .
+        player.posZ);
         if (llIIlIlIllll(78348, 9504)) {
             throw null;
         } else {
             BlockPos var1 = var10000;
             Block var2 = this.                                                                                                    .
-            field_71441_e.func_180495_p(var1).func_177230_c();
+            world.getBlockState(var1).getBlock();
             Block var3 = this.                                                                                                    .
-            field_71441_e.func_180495_p(var1.func_177984_a()).func_177230_c();
+            world.getBlockState(var1.up()).getBlock();
             if (llIIlIllIIII(var2 instanceof BlockAir) && llIIlIllIIII(var3 instanceof BlockAir)) {
                 return false;
             } else if (llIIlIlIllll(78348, 9504)) {

@@ -28,11 +28,11 @@ public class Class199 {
         } else if (lllIIIllllIl(37246, 500)) {
             throw null;
         } else {
-            double var10000 = Math.pow(var0.field_70165_t - var0.field_70169_q, 2.0D);
+            double var10000 = Math.pow(var0.posX - var0.prevPosX, 2.0D);
             if (lllIIIllllIl(37246, 500)) {
                 throw null;
             } else {
-                double var10001 = Math.pow(var0.field_70161_v - var0.field_70166_s, 2.0D);
+                double var10001 = Math.pow(var0.posZ - var0.prevPosZ, 2.0D);
                 if (lllIIIllllIl(37246, 500)) {
                     throw null;
                 } else {

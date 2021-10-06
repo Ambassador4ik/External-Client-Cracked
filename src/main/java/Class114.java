@@ -47,7 +47,7 @@ public class Class114 implements ICommand {
         if (lllllIIIIlII(91445, 8952)) {
             throw null;
         } else {
-            Minecraft var10001 = Minecraft.func_71410_x();
+            Minecraft var10001 = Minecraft.getMinecraft();
             if (lllllIIIIlII(91445, 8952)) {
                 throw null;
             } else {
@@ -69,11 +69,11 @@ public class Class114 implements ICommand {
         return var0 != 0;
     }
 
-    public String func_71518_a(ICommandSender var1) {
+    public String getUsage(ICommandSender var1) {
         return "";
     }
 
-    public List func_184883_a(MinecraftServer var1, ICommandSender var2, String[] var3, BlockPos var4) {
+    public List getTabCompletions(MinecraftServer var1, ICommandSender var2, String[] var3, BlockPos var4) {
         return null;
     }
 
@@ -81,11 +81,11 @@ public class Class114 implements ICommand {
         return 0;
     }
 
-    public boolean func_82358_a(String[] var1, int var2) {
+    public boolean isUsernameIndex(String[] var1, int var2) {
         return false;
     }
 
-    public List func_71514_a() {
+    public List getAliases() {
         String[] var10000 = new String[1];
         String var10003 = Class60. ("93");
         if (lllllIIIIlII(56687, 9241)) {
@@ -101,21 +101,21 @@ public class Class114 implements ICommand {
         }
     }
 
-    public boolean func_184882_a(MinecraftServer var1, ICommandSender var2) {
+    public boolean checkPermission(MinecraftServer var1, ICommandSender var2) {
         return true;
     }
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public String func_71517_b() {
+    public String getName() {
         return "";
     }
 
-    public void func_184881_a(MinecraftServer var1, ICommandSender var2, String[] var3) throws CommandException {
+    public void execute(MinecraftServer var1, ICommandSender var2, String[] var3) throws CommandException {
         boolean var10000;
         if (lllllIIIIIll(Class73.)) {
             NetHandlerPlayClient var8 = this.                                                                                  .
-            func_147114_u();
+            getConnection();
             CPacketChatMessage var10001 = new CPacketChatMessage;
             StringBuilder var10003 = new StringBuilder();
             if (lllllIIIIlII(32017, 6475)) {
@@ -138,7 +138,7 @@ public class Class114 implements ICommand {
                             if (lllllIIIIlII(32017, 6475)) {
                                 throw null;
                             } else {
-                                var8.func_147297_a(var10001);
+                                var8.sendPacket(var10001);
                                 var10000 = true;
                             }
                         }
@@ -168,9 +168,9 @@ public class Class114 implements ICommand {
 
                         double[] var5 = var7;
                         this.                                                                                  .
-                        field_71439_g.func_70107_b(this..field_71439_g.field_70165_t + var5[0], this.                                                                                  .
-                        field_71439_g.field_70163_u, this.                                                                                  .
-                        field_71439_g.field_70161_v + var5[1]);
+                        player.setPosition(this..player.posX + var5[0], this.                                                                                  .
+                        player.posY, this.                                                                                  .
+                        player.posZ + var5[1]);
                     } catch (Exception var4) {
                         if (lllllIIIIlII(32017, 6475)) {
                             throw null;

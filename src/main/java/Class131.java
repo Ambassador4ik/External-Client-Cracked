@@ -77,7 +77,7 @@ public class Class131 {
                     throw null;
                 } else {
                                                                                                            =var0;
-                    Minecraft var1 = Minecraft.func_71410_x();
+                    Minecraft var1 = Minecraft.getMinecraft();
                     if (llIlIlIIIllI(38055, 6352)) {
                         throw null;
                     } else {
@@ -107,7 +107,7 @@ public class Class131 {
     public static ITextComponent ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
         File var10000 = new File;
         File var10002 =                                                                                                    .
-        field_71412_D;
+        gameDir;
         String var10003 = Class60. ("crauq\u007fdxwe(");
         if (llIlIlIIIllI(92540, 6512)) {
             throw null;
@@ -152,18 +152,18 @@ public class Class131 {
                             throw null;
                         } else {
                             TextComponentString var1 = var4;
-                            Style var5 = var4.func_150256_b();
+                            Style var5 = var4.getStyle();
                             ClickEvent var10001 = new ClickEvent(Action.OPEN_FILE, var0.getAbsolutePath());
                             if (llIlIlIIIllI(92540, 6512)) {
                                 throw null;
                             } else {
-                                var5.func_150241_a(var10001);
-                                Style var6 = var1.func_150256_b();
+                                var5.setClickEvent(var10001);
+                                Style var6 = var1.getStyle();
                                 Boolean var8 = true;
                                 if (llIlIlIIIllI(92540, 6512)) {
                                     throw null;
                                 } else {
-                                    var6.func_150228_d(var8);
+                                    var6.setUnderlined(var8);
                                     TextComponentTranslation var7 = new TextComponentTranslation;
                                     String var9 = Class60. ("ixk\u007f{unr}o?icxv\u007fy(");
                                     if (llIlIlIIIllI(92540, 6512)) {
@@ -186,13 +186,13 @@ public class Class131 {
     }
 
     public static BufferedImage ________________________________________________________________________________________________/* $FF was:                                                                                                 */(int var0, int var1, Framebuffer var2) {
-        byte var10000 = OpenGlHelper.func_148822_b();
+        byte var10000 = OpenGlHelper.isFramebufferEnabled();
         if (llIlIlIIIllI(92951, 672)) {
             throw null;
         } else {
             if (llIlIlIIlIlI(var10000)) {
-                var0 = var2.field_147622_a;
-                var1 = var2.field_147620_b;
+                var0 = var2.framebufferTextureWidth;
+                var1 = var2.framebufferTextureHeight;
             }
 
             if (llIlIlIIIllI(92951, 672)) {
@@ -216,26 +216,26 @@ public class Class131 {
                 if (llIlIlIIIllI(92951, 672)) {
                     throw null;
                 } else {
-                    GlStateManager.func_187425_g(3333, 1);
+                    GlStateManager.glPixelStorei(3333, 1);
                     if (llIlIlIIIllI(92951, 672)) {
                         throw null;
                     } else {
-                        GlStateManager.func_187425_g(3317, 1);
+                        GlStateManager.glPixelStorei(3317, 1);
                         if (llIlIlIIIllI(92951, 672)) {
                             throw null;
                         } else {
                                                                                                        .clear();
-                            var10000 = OpenGlHelper.func_148822_b();
+                            var10000 = OpenGlHelper.isFramebufferEnabled();
                             if (llIlIlIIIllI(92951, 672)) {
                                 throw null;
                             } else {
                                 if (llIlIlIIlIlI(var10000)) {
-                                    GlStateManager.func_179144_i(var2.field_147617_g);
+                                    GlStateManager.bindTexture(var2.framebufferTexture);
                                     if (llIlIlIIIllI(92951, 672)) {
                                         throw null;
                                     }
 
-                                    GlStateManager.func_187433_a(3553, 0, 32993, 33639, );
+                                    GlStateManager.glGetTexImage(3553, 0, 32993, 33639, );
                                     if (llIlIlIIIllI(92951, 672)) {
                                         throw null;
                                     }
@@ -246,7 +246,7 @@ public class Class131 {
                                         throw null;
                                     }
 
-                                    GlStateManager.func_187413_a(0, 0, var0, var1, 32993, 33639, );
+                                    GlStateManager.glReadPixels(0, 0, var0, var1, 32993, 33639, );
                                     if (llIlIlIIIllI(92951, 672)) {
                                         throw null;
                                     }
@@ -256,7 +256,7 @@ public class Class131 {
                                     throw null;
                                 } else {
                                                                                                              .get();
-                                    TextureUtil.func_147953_a(, var0, var1);
+                                    TextureUtil.processPixelValues(, var0, var1);
                                     if (llIlIlIIIllI(92951, 672)) {
                                         throw null;
                                     } else {
@@ -419,20 +419,20 @@ public class Class131 {
             }
 
             TextComponentString var7 = var15;
-            Style var17 = var15.func_150256_b();
+            Style var17 = var15.getStyle();
             ClickEvent var11 = new ClickEvent(Action.OPEN_FILE,.getAbsolutePath());
             if (llIlIlIIIllI(11373, 6780)) {
                 throw null;
             }
 
-            var17.func_150241_a(var11);
-            Style var13 = var7.func_150256_b();
+            var17.setClickEvent(var11);
+            Style var13 = var7.getStyle();
             Boolean var18 = true;
             if (llIlIlIIIllI(11373, 6780)) {
                 throw null;
             }
 
-            var13.func_150228_d(var18);
+            var13.setUnderlined(var18);
             var8 = new TextComponentTranslation;
             var10002 = Class60. ("ixk\u007f{unr}o?icxv\u007fy(");
             if (llIlIlIIIllI(11373, 6780)) {
@@ -531,30 +531,30 @@ public class Class131 {
 
     public static void ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
         boolean var1;
-        if (llIlIlIIIlll(.field_71462_r,Class73.                                                                                      .                                                                                                 ))
+        if (llIlIlIIIlll(.currentScreen,Class73.                                                                                      .                                                                                                 ))
         {
             var1 = true;
         } else if (llIlIlIIIllI(70532, 4283)) {
             throw null;
         } else {
-            if (llIlIlIIlIII(.field_71462_r) &&llIlIlIIlIIl(.field_71462_r, Class73.                                                                                      .                                                                                                 ))
+            if (llIlIlIIlIII(.currentScreen) &&llIlIlIIlIIl(.currentScreen, Class73.                                                                                      .                                                                                                 ))
             {
-                if (llIlIlIIlIlI(.field_71474_y.field_74319_N)){
+                if (llIlIlIIlIlI(.gameSettings.hideGUI)){
                                                                                                                   .
-                field_71456_v.func_175180_a(0.0F);
+                ingameGUI.renderGameOverlay(0.0F);
             }
 
                 if (llIlIlIIIllI(70532, 4283)) {
                     throw null;
                 }
 
-                GlStateManager.func_179097_i();
+                GlStateManager.disableDepth();
                 if (llIlIlIIIllI(70532, 4283)) {
                     throw null;
                 }
 
                 GuiScreen var10000 =                                                                                                    .
-                field_71462_r;
+                currentScreen;
                 int var10001 = Mouse.getX();
                 if (llIlIlIIIllI(70532, 4283)) {
                     throw null;
@@ -565,19 +565,19 @@ public class Class131 {
                     throw null;
                 }
 
-                var10000.func_73863_a(var10001, var10002, 0.0F);
+                var10000.drawScreen(var10001, var10002, 0.0F);
             }
 
             if (llIlIlIIIllI(70532, 4283)) {
                 throw null;
             } else {
                 GuiNewChat var0 =                                                                                                    .
-                field_71456_v.func_146158_b();
+                ingameGUI.getChatGUI();
                 ITextComponent var2 = ();
                 if (llIlIlIIIllI(70532, 4283)) {
                     throw null;
                 } else {
-                    var0.func_146227_a(var2);
+                    var0.printChatMessage(var2);
                     var1 = true;
                 }
             }
@@ -606,10 +606,10 @@ public class Class131 {
     }
 
     public static ITextComponent ____________________________________________________________________________/* $FF was:                                                                             */() {
-        ITextComponent var10000 = (.field_71412_D,                                                                                                    .
-        field_71443_c,                                                                                                    .
-        field_71440_d,                                                                                                    .
-        func_147110_a());
+        ITextComponent var10000 = (.gameDir,                                                                                                    .
+        displayWidth,                                                                                                    .
+        displayHeight,                                                                                                    .
+        getFramebuffer());
         if (llIlIlIIIllI(59467, 7367)) {
             throw null;
         } else {

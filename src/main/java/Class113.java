@@ -51,7 +51,7 @@ public class Class113 implements ICommand {
         if (lllIlIlIIIIl(54705, 3802)) {
             throw null;
         } else {
-            Minecraft var10001 = Minecraft.func_71410_x();
+            Minecraft var10001 = Minecraft.getMinecraft();
             if (lllIlIlIIIIl(54705, 3802)) {
                 throw null;
             } else {
@@ -85,7 +85,7 @@ public class Class113 implements ICommand {
         return var0 != 0;
     }
 
-    public List func_184883_a(MinecraftServer var1, ICommandSender var2, String[] var3, BlockPos var4) {
+    public List getTabCompletions(MinecraftServer var1, ICommandSender var2, String[] var3, BlockPos var4) {
         return null;
     }
 
@@ -93,12 +93,12 @@ public class Class113 implements ICommand {
         return 0;
     }
 
-    public void func_184881_a(MinecraftServer var1, ICommandSender var2, String[] var3) throws CommandException {
+    public void execute(MinecraftServer var1, ICommandSender var2, String[] var3) throws CommandException {
         String var10004;
         boolean var24;
         if (lllIlIIlllll(Class73.)) {
             NetHandlerPlayClient var25 = this.                                                                                  .
-            func_147114_u();
+            getConnection();
             CPacketChatMessage var23 = new CPacketChatMessage;
             StringBuilder var21 = new StringBuilder();
             if (lllIlIlIIIIl(94268, 4465)) {
@@ -121,7 +121,7 @@ public class Class113 implements ICommand {
                             if (lllIlIlIIIIl(94268, 4465)) {
                                 throw null;
                             } else {
-                                var25.func_147297_a(var23);
+                                var25.sendPacket(var23);
                                 var24 = true;
                             }
                         }
@@ -233,15 +233,15 @@ public class Class113 implements ICommand {
 
                                     int var13;
                                     for (var10000 = var13 = 0; !lllIlIlIIIIl(94268, 4465); var16 = true) {
-                                        if (!lllIlIlIIIlI(var10000, this..field_71441_e.field_73010_i.size())){
+                                        if (!lllIlIlIIIlI(var10000, this..world.playerEntities.size())){
                                             if (lllIlIlIIIIl(94268, 4465)) {
                                                 throw null;
                                             }
 
                                             EntityOtherPlayerMP var22 = new EntityOtherPlayerMP;
                                             WorldClient var19 = this.                                                                                  .
-                                            field_71441_e;
-                                            GameProfile var20 = new GameProfile(this..field_71439_g.func_110124_au(), var10)
+                                            world;
+                                            GameProfile var20 = new GameProfile(this..player.getUniqueID(), var10)
                                             ;
                                             if (lllIlIlIIIIl(94268, 4465)) {
                                                 throw null;
@@ -253,25 +253,25 @@ public class Class113 implements ICommand {
                                             }
 
                                             EntityOtherPlayerMP var14 = var22;
-                                            var14.func_70107_b(this..field_71439_g.field_70165_t, this.                                                                                  .
-                                            field_71439_g.field_70163_u, this.                                                                                  .
-                                            field_71439_g.field_70161_v);
-                                            var14.func_70606_j(this..field_71439_g.func_110143_aJ());
-                                            var14.field_70177_z = this.                                                                                  .
-                                            field_71439_g.field_70177_z;
-                                            var14.field_70125_A = this.                                                                                  .
-                                            field_71439_g.field_70125_A;
-                                            var14.field_70759_as = this.                                                                                  .
-                                            field_71439_g.field_70759_as;
-                                            var22.func_70095_a(this..field_71439_g.func_70093_af());
-                                            var22.field_71071_by.func_70455_b(this..field_71439_g.field_71071_by);
+                                            var14.setPosition(this..player.posX, this.                                                                                  .
+                                            player.posY, this.                                                                                  .
+                                            player.posZ);
+                                            var14.setHealth(this..player.getHealth());
+                                            var14.rotationYaw = this.                                                                                  .
+                                            player.rotationYaw;
+                                            var14.rotationPitch = this.                                                                                  .
+                                            player.rotationPitch;
+                                            var14.rotationYawHead = this.                                                                                  .
+                                            player.rotationYawHead;
+                                            var22.setSneaking(this..player.isSneaking());
+                                            var22.inventory.copyInventory(this..player.inventory);
                                             this.                                                                                  .
-                                            field_71441_e.func_73027_a(var9, var14);
+                                            world.addEntityToWorld(var9, var14);
                                             var24 = true;
                                             return;
                                         }
 
-                                        if (lllIlIlIIlII(((Entity) this..field_71441_e.field_73010_i.get(var13)).func_145782_y(),
+                                        if (lllIlIlIIlII(((Entity) this..world.playerEntities.get(var13)).getEntityId(),
                                         var9)){
                                             --var9;
                                         }
@@ -308,15 +308,15 @@ public class Class113 implements ICommand {
                                     throw null;
                                 }
 
-                                if (!lllIlIlIIIlI(var10000, this..field_71441_e.field_73010_i.size())){
+                                if (!lllIlIlIIIlI(var10000, this..world.playerEntities.size())){
                                     break;
                                 }
 
                                 Entity var7;
-                                if (lllIlIIlllll((var7 = (Entity) this..field_71441_e.field_73010_i.get(var4)).func_70005_c_().equals(var10)) &&
-                                lllIlIlIIlIl(var7.func_145782_y())){
+                                if (lllIlIIlllll((var7 = (Entity) this..world.playerEntities.get(var4)).getName().equals(var10)) &&
+                                lllIlIlIIlIl(var7.getEntityId())){
                                     this.                                                                                  .
-                                    field_71441_e.func_72900_e(var7);
+                                    world.removeEntity(var7);
                                 }
 
                                 if (lllIlIlIIIIl(94268, 4465)) {
@@ -359,15 +359,15 @@ public class Class113 implements ICommand {
         }
     }
 
-    public String func_71517_b() {
+    public String getName() {
         return "";
     }
 
-    public String func_71518_a(ICommandSender var1) {
+    public String getUsage(ICommandSender var1) {
         return "";
     }
 
-    public boolean func_184882_a(MinecraftServer var1, ICommandSender var2) {
+    public boolean checkPermission(MinecraftServer var1, ICommandSender var2) {
         return true;
     }
 
@@ -375,13 +375,13 @@ public class Class113 implements ICommand {
         return this.compareTo((ICommand) var1);
     }
 
-    public boolean func_82358_a(String[] var1, int var2) {
+    public boolean isUsernameIndex(String[] var1, int var2) {
         return false;
     }
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public List func_71514_a() {
+    public List getAliases() {
         String[] var10000 = new String[1];
         String var10003 = Class60. (";\u007f3");
         if (lllIlIlIIIIl(36054, 4672)) {

@@ -34,7 +34,7 @@ public class Class155 implements ICrashReportDetail {
     }
 
     public String call() throws Exception {
-        String var10000 = String.valueOf(this..func_77973_b());
+        String var10000 = String.valueOf(this..getItem());
         if (llIIlIlllllI(21271, 486)) {
             throw null;
         } else {

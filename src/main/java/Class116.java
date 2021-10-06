@@ -90,32 +90,32 @@ public class Class116 extends Class171 {
     }
 
     public static List ________________________________________________________________________________________________/* $FF was:                                                                                                 */(ItemStack var0) {
-        NonNullList var10000 = NonNullList.func_191197_a(27, ItemStack.field_190927_a);
+        NonNullList var10000 = NonNullList.withSize(27, ItemStack.EMPTY);
         if (lllIIIIIlIll(15265, 8997)) {
             throw null;
         } else {
             NonNullList var1 = var10000;
             NBTTagCompound var2;
-            if (lllIIIIIllII(var2 = var0.func_77978_p())) {
+            if (lllIIIIIllII(var2 = var0.getTagCompound())) {
                 String var10001 = Class60. ("Xwvyu^sn{ohNw<");
                 if (lllIIIIIlIll(15265, 8997)) {
                     throw null;
                 }
 
-                if (lllIIIIIlllI(var2.func_150297_b(var10001, 10))) {
+                if (lllIIIIIlllI(var2.hasKey(var10001, 10))) {
                     var10001 = Class60. ("Xwvyu^sn{ohNw<");
                     if (lllIIIIIlIll(15265, 8997)) {
                         throw null;
                     }
 
-                    NBTTagCompound var3 = var2 = var2.func_74775_l(var10001);
+                    NBTTagCompound var3 = var2 = var2.getCompoundTag(var10001);
                     var10001 = Class60. ("Vjyr(");
                     if (lllIIIIIlIll(15265, 8997)) {
                         throw null;
                     }
 
-                    if (lllIIIIIlllI(var3.func_150297_b(var10001, 9))) {
-                        ItemStackHelper.func_191283_b(var2, var1);
+                    if (lllIIIIIlllI(var3.hasKey(var10001, 9))) {
+                        ItemStackHelper.loadAllItems(var2, var1);
                         if (lllIIIIIlIll(15265, 8997)) {
                             throw null;
                         }
@@ -137,13 +137,13 @@ public class Class116 extends Class171 {
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Post var1) {
         boolean var10000;
         if (lllIIIIIllll(this. ()) &&lllIIIIIlllI(Class73..                                                                                                .                                                                                  ) &&
-        !lllIIIIIllll(this..field_71462_r instanceof GuiContainer)){
+        !lllIIIIIllll(this..currentScreen instanceof GuiContainer)){
             if (lllIIIIIlIll(83010, 893)) {
                 throw null;
             } else {
                 Slot var2;
-                if (lllIIIIIllII(var2 = ((GuiContainer) var1.getGui()).getSlotUnderMouse()) && lllIIIIIlllI(var2.func_75216_d()) && lllIIIIIllll(var2.func_75211_c().func_190926_b()) && lllIIIIIlllI(var2.func_75211_c().func_77973_b() instanceof ItemShulkerBox)) {
-                    List var10 = (var2.func_75211_c());
+                if (lllIIIIIllII(var2 = ((GuiContainer) var1.getGui()).getSlotUnderMouse()) && lllIIIIIlllI(var2.getHasStack()) && lllIIIIIllll(var2.getStack().isEmpty()) && lllIIIIIlllI(var2.getStack().getItem() instanceof ItemShulkerBox)) {
+                    List var10 = (var2.getStack());
                     if (lllIIIIIlIll(83010, 893)) {
                         throw null;
                     }
@@ -153,12 +153,12 @@ public class Class116 extends Class171 {
                     int var4 = 0;
                     int var7 = var1.getMouseX() + 8;
                     int var9 = var1.getMouseY() - 69;
-                    GlStateManager.func_179097_i();
+                    GlStateManager.disableDepth();
                     if (lllIIIIIlIll(83010, 893)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179140_f();
+                    GlStateManager.disableLighting();
                     if (lllIIIIIlIll(83010, 893)) {
                         throw null;
                     }
@@ -169,12 +169,12 @@ public class Class116 extends Class171 {
                     this.                                                                                           .
                     ((float) (var7 - 1), (float) (var9 - 1), 154.0F, 52.0F, 2.0F, 2.3F, Class73.                                                                                       .
                     getRGB());
-                    GlStateManager.func_179145_e();
+                    GlStateManager.enableLighting();
                     if (lllIIIIIlIll(83010, 893)) {
                         throw null;
                     }
 
-                    GlStateManager.func_179126_j();
+                    GlStateManager.enableDepth();
                     if (lllIIIIIlIll(83010, 893)) {
                         throw null;
                     }
@@ -217,15 +217,15 @@ public class Class116 extends Class171 {
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(ItemStack var1, int var2, int var3, float var4) {
-        GlStateManager.func_179094_E();
+        GlStateManager.pushMatrix();
         if (lllIIIIIlIll(30105, 5997)) {
             throw null;
         } else {
-            RenderHelper.func_74520_c();
+            RenderHelper.enableGUIStandardItemLighting();
             if (lllIIIIIlIll(30105, 5997)) {
                 throw null;
             } else {
-                GlStateManager.func_179097_i();
+                GlStateManager.disableDepth();
                 if (lllIIIIIlIll(30105, 5997)) {
                     throw null;
                 } else {
@@ -237,19 +237,19 @@ public class Class116 extends Class171 {
                         throw null;
                     } else {
                         var10004. (var10005, var10006, 16.0D, 16.0D, 2.0D, var10010.getRGB());
-                        GlStateManager.func_179126_j();
+                        GlStateManager.enableDepth();
                         if (lllIIIIIlIll(30105, 5997)) {
                             throw null;
                         } else {
                             this.                                                                                           .
                             (). = 500.0F;
                             this.                                                                                           .
-                            ().func_175042_a(var1, var2, var3);
+                            ().renderItemIntoGUI(var1, var2, var3);
                             this.                                                                                           .
                             (). = 0.0F;
                             String var5 = "";
-                            if (lllIIIIlIlII(var1.func_190916_E(), 1)) {
-                                String var10000 = String.valueOf(var1.func_190916_E());
+                            if (lllIIIIlIlII(var1.getCount(), 1)) {
+                                String var10000 = String.valueOf(var1.getCount());
                                 if (lllIIIIIlIll(30105, 5997)) {
                                     throw null;
                                 }
@@ -261,8 +261,8 @@ public class Class116 extends Class171 {
                                 throw null;
                             } else {
                                 this.                                                                                           .
-                                ().func_180453_a(this..field_71466_p, var1, var2, var3, var5);
-                                GlStateManager.func_179121_F();
+                                ().renderItemOverlayIntoGUI(this..fontRenderer, var1, var2, var3, var5);
+                                GlStateManager.popMatrix();
                                 if (lllIIIIIlIll(30105, 5997)) {
                                     throw null;
                                 } else {

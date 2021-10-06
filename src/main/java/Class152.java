@@ -72,9 +72,9 @@ public class Class152 extends Class171 {
 
     private boolean __________________________________________________________________________________/* $FF was:                                                                                   */() {
         double var1;
-        if (llllIIllIIII(this..field_71439_g.field_71071_by.func_70448_g().func_77973_b() instanceof ItemBow) &&
-        llllIIllIIII(this..field_71474_y.field_74312_F.func_151470_d()) &&
-        llllIIllIIlI((var1 = (double) this..field_71439_g.func_184612_cw() - this.. ()) ==
+        if (llllIIllIIII(this..player.inventory.getCurrentItem().getItem() instanceof ItemBow) &&
+        llllIIllIIII(this..gameSettings.keyBindAttack.isKeyDown()) &&
+        llllIIllIIlI((var1 = (double) this..player.getItemInUseMaxCount() - this.. ()) ==
         0.0D ? 0 : (var1 < 0.0D ? -1 : 1))){
             return true;
         } else if (llllIIlIlllI(30722, 5188)) {
@@ -116,27 +116,27 @@ public class Class152 extends Class171 {
         } else {
             if (llllIIllIIII(var10000)) {
                 NetHandlerPlayClient var10003 = this.                                                                                                    .
-                field_71439_g.field_71174_a;
-                CPacketPlayerDigging var10004 = new CPacketPlayerDigging(Action.RELEASE_USE_ITEM, BlockPos.field_177992_a, this..field_71439_g.func_174811_aO())
+                player.connection;
+                CPacketPlayerDigging var10004 = new CPacketPlayerDigging(Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, this..player.getHorizontalFacing())
                 ;
                 if (llllIIlIlllI(35439, 7847)) {
                     throw null;
                 }
 
-                var10003.func_147297_a(var10004);
+                var10003.sendPacket(var10004);
                 NetHandlerPlayClient var10002 = this.                                                                                                    .
-                field_71439_g.field_71174_a;
-                CPacketPlayerTryUseItem var3 = new CPacketPlayerTryUseItem(this..field_71439_g.func_184600_cs());
+                player.connection;
+                CPacketPlayerTryUseItem var3 = new CPacketPlayerTryUseItem(this..player.getActiveHand());
                 if (llllIIlIlllI(35439, 7847)) {
                     throw null;
                 }
 
-                var10002.func_147297_a(var3);
+                var10002.sendPacket(var3);
                 this.                                                                                                    .
-                field_71439_g.func_184597_cx();
+                player.stopActiveHand();
                 this.                                                                                                    .
-                field_71439_g.field_71071_by.func_70448_g().func_77973_b().func_77659_a(this..field_71441_e, this.                                                                                                    .
-                field_71439_g, EnumHand.MAIN_HAND);
+                player.inventory.getCurrentItem().getItem().onItemRightClick(this..world, this.                                                                                                    .
+                player, EnumHand.MAIN_HAND);
             }
 
             if (llllIIlIlllI(35439, 7847)) {

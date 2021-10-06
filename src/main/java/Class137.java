@@ -77,41 +77,41 @@ public class Class137 extends Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderWorldLastEvent var1) {
         this.                                                                                                    .
-        field_71441_e.func_72910_y().stream().filter(Class137::).forEach(this::);
+        world.getLoadedEntityList().stream().filter(Class137::).forEach(this::);
         boolean var10000 = true;
     }
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(Entity var1) {
-        double var2 = var1.field_70142_S + (var1.field_70165_t - var1.field_70142_S) * (double) this.                                                                                                    .
-        func_184121_ak() - this.                                                                                                    .
-        func_175598_ae().field_78730_l;
-        double var4 = var1.field_70137_T + (var1.field_70163_u - var1.field_70137_T) * (double) this.                                                                                                    .
-        func_184121_ak() - this.                                                                                                    .
-        func_175598_ae().field_78731_m;
-        double var6 = var1.field_70136_U + (var1.field_70161_v - var1.field_70136_U) * (double) this.                                                                                                    .
-        func_184121_ak() - this.                                                                                                    .
-        func_175598_ae().field_78728_n;
-        GlStateManager.func_179094_E();
+        double var2 = var1.lastTickPosX + (var1.posX - var1.lastTickPosX) * (double) this.                                                                                                    .
+        getRenderPartialTicks() - this.                                                                                                    .
+        getRenderManager().viewerPosX;
+        double var4 = var1.lastTickPosY + (var1.posY - var1.lastTickPosY) * (double) this.                                                                                                    .
+        getRenderPartialTicks() - this.                                                                                                    .
+        getRenderManager().viewerPosY;
+        double var6 = var1.lastTickPosZ + (var1.posZ - var1.lastTickPosZ) * (double) this.                                                                                                    .
+        getRenderPartialTicks() - this.                                                                                                    .
+        getRenderManager().viewerPosZ;
+        GlStateManager.pushMatrix();
         if (lllIlIlllIII(26496, 4896)) {
             throw null;
         } else {
-            GlStateManager.func_179090_x();
+            GlStateManager.disableTexture2D();
             if (lllIlIlllIII(26496, 4896)) {
                 throw null;
             } else {
-                GlStateManager.func_179097_i();
+                GlStateManager.disableDepth();
                 if (lllIlIlllIII(26496, 4896)) {
                     throw null;
                 } else {
-                    GlStateManager.func_179129_p();
+                    GlStateManager.disableCull();
                     if (lllIlIlllIII(26496, 4896)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179147_l();
+                        GlStateManager.enableBlend();
                         if (lllIlIlllIII(26496, 4896)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179132_a(false);
+                            GlStateManager.depthMask(false);
                             if (lllIlIlllIII(26496, 4896)) {
                                 throw null;
                             } else {
@@ -123,7 +123,7 @@ public class Class137 extends Class171 {
                                     if (lllIlIlllIII(26496, 4896)) {
                                         throw null;
                                     } else {
-                                        GlStateManager.func_187441_d(2.0F);
+                                        GlStateManager.glLineWidth(2.0F);
                                         if (lllIlIlllIII(26496, 4896)) {
                                             throw null;
                                         } else {
@@ -139,23 +139,23 @@ public class Class137 extends Class171 {
                                                 if (lllIlIlllIII(26496, 4896)) {
                                                     throw null;
                                                 } else {
-                                                    GlStateManager.func_179098_w();
+                                                    GlStateManager.enableTexture2D();
                                                     if (lllIlIlllIII(26496, 4896)) {
                                                         throw null;
                                                     } else {
-                                                        GlStateManager.func_179126_j();
+                                                        GlStateManager.enableDepth();
                                                         if (lllIlIlllIII(26496, 4896)) {
                                                             throw null;
                                                         } else {
-                                                            GlStateManager.func_179089_o();
+                                                            GlStateManager.enableCull();
                                                             if (lllIlIlllIII(26496, 4896)) {
                                                                 throw null;
                                                             } else {
-                                                                GlStateManager.func_179084_k();
+                                                                GlStateManager.disableBlend();
                                                                 if (lllIlIlllIII(26496, 4896)) {
                                                                     throw null;
                                                                 } else {
-                                                                    GlStateManager.func_179132_a(true);
+                                                                    GlStateManager.depthMask(true);
                                                                     if (lllIlIlllIII(26496, 4896)) {
                                                                         throw null;
                                                                     } else {
@@ -163,11 +163,11 @@ public class Class137 extends Class171 {
                                                                         if (lllIlIlllIII(26496, 4896)) {
                                                                             throw null;
                                                                         } else {
-                                                                            GlStateManager.func_179121_F();
+                                                                            GlStateManager.popMatrix();
                                                                             if (lllIlIlllIII(26496, 4896)) {
                                                                                 throw null;
                                                                             } else {
-                                                                                GlStateManager.func_179117_G();
+                                                                                GlStateManager.resetColor();
                                                                                 if (lllIlIlllIII(26496, 4896)) {
                                                                                     throw null;
                                                                                 } else {

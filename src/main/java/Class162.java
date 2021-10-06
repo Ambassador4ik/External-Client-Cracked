@@ -156,7 +156,7 @@ public class Class162 extends Class171 {
                 if (lllIlIlIIlll(var1.getGui()) && lllIlIlIIllI(var1.getGui() instanceof GuiEditSign)) {
                     this. ((long) this.. ());
                     this.                                                                                                    .
-                    func_147108_a((GuiScreen) null);
+                    displayGuiScreen((GuiScreen) null);
                 }
 
                 if (lllIlIlIIIII(29404, 5428)) {
@@ -170,11 +170,11 @@ public class Class162 extends Class171 {
 
     public int _____________________________________________________________________________________/* $FF was:                                                                                      */() {
         return this.                                                                                                    .
-        field_71441_e.field_147482_g.stream().filter(this::).mapToInt(Class162::).sum();
+        world.loadedTileEntityList.stream().filter(this::).mapToInt(Class162::).sum();
     }
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(TileEntitySign var1) {
-        if (lllIlIIllllI(var1.field_145915_a[0].func_150254_d().length(), 16)) {
+        if (lllIlIIllllI(var1.signText[0].getFormattedText().length(), 16)) {
             return true;
         } else if (lllIlIlIIIII(20574, 5506)) {
             throw null;

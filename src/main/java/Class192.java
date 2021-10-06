@@ -98,7 +98,7 @@ public class Class192 extends Class171 {
     }
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Object var1, Class170 var2) {
-        if (lllllIlIIIIl(var1 instanceof CPacketUseEntity) && lllllIlIIIll(((CPacketUseEntity) var1).func_149565_c(), Action.ATTACK) && lllllIlIIlII(((CPacketUseEntity) var1).func_149564_a(this..field_71441_e)))
+        if (lllllIlIIIIl(var1 instanceof CPacketUseEntity) && lllllIlIIIll(((CPacketUseEntity) var1).getAction(), Action.ATTACK) && lllllIlIIlII(((CPacketUseEntity) var1).getEntityFromWorld(this..world)))
         {
             double var10000 = this.                                                                                            .
             ();
@@ -148,18 +148,18 @@ public class Class192 extends Class171 {
             boolean var2;
             if (lllllIlIIIIl(var10000.equals(var10001))) {
                 KeyBinding var1 = this.                                                                                                    .
-                field_71474_y.field_74311_E;
-                KeyBinding.func_74510_a(var1.func_151463_i(), true);
+                gameSettings.keyBindSneak;
+                KeyBinding.setKeyBindState(var1.getKeyCode(), true);
                 if (lllllIlIIIII(21572, 2140)) {
                     throw null;
                 } else {
                     this. (120L);
-                    int var3 = var1.func_151463_i();
-                    boolean var5 = GameSettings.func_100015_a(var1);
+                    int var3 = var1.getKeyCode();
+                    boolean var5 = GameSettings.isKeyDown(var1);
                     if (lllllIlIIIII(21572, 2140)) {
                         throw null;
                     } else {
-                        KeyBinding.func_74510_a(var3, var5);
+                        KeyBinding.setKeyBindState(var3, var5);
                         if (lllllIlIIIII(21572, 2140)) {
                             throw null;
                         } else {
@@ -170,14 +170,14 @@ public class Class192 extends Class171 {
             } else if (lllllIlIIIII(21572, 2140)) {
                 throw null;
             } else {
-                CPacketEntityAction var10004 = new CPacketEntityAction(this..field_71439_g, net.
+                CPacketEntityAction var10004 = new CPacketEntityAction(this..player, net.
                 minecraft.network.play.client.CPacketEntityAction.Action.START_SNEAKING);
                 if (lllllIlIIIII(21572, 2140)) {
                     throw null;
                 } else {
                     this. (var10004);
                     this. (120L);
-                    CPacketEntityAction var4 = new CPacketEntityAction(this..field_71439_g, net.
+                    CPacketEntityAction var4 = new CPacketEntityAction(this..player, net.
                     minecraft.network.play.client.CPacketEntityAction.Action.STOP_SNEAKING);
                     if (lllllIlIIIII(21572, 2140)) {
                         throw null;

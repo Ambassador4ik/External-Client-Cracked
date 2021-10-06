@@ -29,7 +29,7 @@ public class Class133 {
     private static int 70788=-11359;
 
     static {
-        Minecraft var10000 = Minecraft.func_71410_x();
+        Minecraft var10000 = Minecraft.getMinecraft();
         if (llIlIlIIlllI(41747, 5452)) {
             throw null;
         } else {

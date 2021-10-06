@@ -81,7 +81,7 @@ public class Class102 extends GuiNewChat {
         return var0 != 0;
     }
 
-    public void func_146227_a(ITextComponent var1) {
+    public void printChatMessage(ITextComponent var1) {
         boolean var10000;
         if (llIllIlIllII(var1.equals(ScreenshotEvent.DEFAULT_CANCEL_REASON))) {
             var10000 = true;
@@ -90,7 +90,7 @@ public class Class102 extends GuiNewChat {
         } else if (llIllIlIllII(this.isCanceled(var1))) {
             Method var3 = this.;
             GuiNewChat var10001 = this.                                                                                  .
-            field_71456_v.func_146158_b();
+            ingameGUI.getChatGUI();
             Object[] var10002 = new Object[]{var1, null, null, null};
             Integer var10005 = 0;
             if (llIllIlIllIl(50052, 9982)) {
@@ -98,7 +98,7 @@ public class Class102 extends GuiNewChat {
             } else {
                 var10002[1] = var10005;
                 var10005 = this.                                                                                  .
-                field_71456_v.func_73834_c();
+                ingameGUI.getUpdateCounter();
                 if (llIllIlIllIl(50052, 9982)) {
                     throw null;
                 } else {
@@ -120,7 +120,7 @@ public class Class102 extends GuiNewChat {
         } else if (llIllIlIllIl(50052, 9982)) {
             throw null;
         } else {
-            super.func_146234_a(var1, 0);
+            super.printChatMessageWithOptionalDeletion(var1, 0);
             if (llIllIlIllIl(50052, 9982)) {
                 throw null;
             } else {
@@ -133,7 +133,7 @@ public class Class102 extends GuiNewChat {
 
     public boolean isCanceled(ITextComponent var1) {
         if (llIllIlIllII(this.. ()) &&llIllIllIIII(this..                                                                                  .
-        ()) &&llIllIlIllII(var1.func_150254_d().contains(this.. ()))){
+        ()) &&llIllIlIllII(var1.getFormattedText().contains(this.. ()))){
             return true;
         } else if (llIllIlIllIl(62972, 391)) {
             throw null;

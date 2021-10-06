@@ -66,11 +66,11 @@ public class Class181 {
         if (llIllIlIIlIl(85620, 6221)) {
             throw null;
         } else {
-            GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72339_c);
+            GL11.glVertex3d(var0.minX, var0.minY, var0.minZ);
             if (llIllIlIIlIl(85620, 6221)) {
                 throw null;
             } else {
-                GL11.glVertex3d(var0.field_72336_d, var0.field_72338_b, var0.field_72339_c);
+                GL11.glVertex3d(var0.maxX, var0.minY, var0.minZ);
                 if (llIllIlIIlIl(85620, 6221)) {
                     throw null;
                 } else {
@@ -82,11 +82,11 @@ public class Class181 {
                         if (llIllIlIIlIl(85620, 6221)) {
                             throw null;
                         } else {
-                            GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72339_c);
+                            GL11.glVertex3d(var0.minX, var0.maxY, var0.minZ);
                             if (llIllIlIIlIl(85620, 6221)) {
                                 throw null;
                             } else {
-                                GL11.glVertex3d(var0.field_72336_d, var0.field_72337_e, var0.field_72339_c);
+                                GL11.glVertex3d(var0.maxX, var0.maxY, var0.minZ);
                                 if (llIllIlIIlIl(85620, 6221)) {
                                     throw null;
                                 } else {
@@ -98,19 +98,19 @@ public class Class181 {
                                         if (llIllIlIIlIl(85620, 6221)) {
                                             throw null;
                                         } else {
-                                            GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72339_c);
+                                            GL11.glVertex3d(var0.minX, var0.minY, var0.minZ);
                                             if (llIllIlIIlIl(85620, 6221)) {
                                                 throw null;
                                             } else {
-                                                GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72339_c);
+                                                GL11.glVertex3d(var0.minX, var0.maxY, var0.minZ);
                                                 if (llIllIlIIlIl(85620, 6221)) {
                                                     throw null;
                                                 } else {
-                                                    GL11.glVertex3d(var0.field_72336_d, var0.field_72338_b, var0.field_72339_c);
+                                                    GL11.glVertex3d(var0.maxX, var0.minY, var0.minZ);
                                                     if (llIllIlIIlIl(85620, 6221)) {
                                                         throw null;
                                                     } else {
-                                                        GL11.glVertex3d(var0.field_72336_d, var0.field_72337_e, var0.field_72339_c);
+                                                        GL11.glVertex3d(var0.maxX, var0.maxY, var0.minZ);
                                                         if (llIllIlIIlIl(85620, 6221)) {
                                                             throw null;
                                                         } else {
@@ -258,19 +258,19 @@ public class Class181 {
         if (llIllIlIIlIl(17877, 8839)) {
             throw null;
         } else {
-            GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72339_c);
+            GL11.glVertex3d(var0.minX, var0.minY, var0.minZ);
             if (llIllIlIIlIl(17877, 8839)) {
                 throw null;
             } else {
-                GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72339_c);
+                GL11.glVertex3d(var0.minX, var0.maxY, var0.minZ);
                 if (llIllIlIIlIl(17877, 8839)) {
                     throw null;
                 } else {
-                    GL11.glVertex3d(var0.field_72336_d, var0.field_72337_e, var0.field_72339_c);
+                    GL11.glVertex3d(var0.maxX, var0.maxY, var0.minZ);
                     if (llIllIlIIlIl(17877, 8839)) {
                         throw null;
                     } else {
-                        GL11.glVertex3d(var0.field_72336_d, var0.field_72338_b, var0.field_72339_c);
+                        GL11.glVertex3d(var0.maxX, var0.minY, var0.minZ);
                         if (llIllIlIIlIl(17877, 8839)) {
                             throw null;
                         } else {
@@ -325,23 +325,23 @@ public class Class181 {
         if (llIllIlIIlIl(33356, 8223)) {
             throw null;
         } else {
-            GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72339_c);
+            GL11.glVertex3d(var0.minX, var0.minY, var0.minZ);
             if (llIllIlIIlIl(33356, 8223)) {
                 throw null;
             } else {
-                GL11.glVertex3d(var0.field_72336_d, var0.field_72338_b, var0.field_72339_c);
+                GL11.glVertex3d(var0.maxX, var0.minY, var0.minZ);
                 if (llIllIlIIlIl(33356, 8223)) {
                     throw null;
                 } else {
-                    GL11.glVertex3d(var0.field_72336_d, var0.field_72338_b, var0.field_72334_f);
+                    GL11.glVertex3d(var0.maxX, var0.minY, var0.maxZ);
                     if (llIllIlIIlIl(33356, 8223)) {
                         throw null;
                     } else {
-                        GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72334_f);
+                        GL11.glVertex3d(var0.minX, var0.minY, var0.maxZ);
                         if (llIllIlIIlIl(33356, 8223)) {
                             throw null;
                         } else {
-                            GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72339_c);
+                            GL11.glVertex3d(var0.minX, var0.minY, var0.minZ);
                             if (llIllIlIIlIl(33356, 8223)) {
                                 throw null;
                             } else {
@@ -353,23 +353,23 @@ public class Class181 {
                                     if (llIllIlIIlIl(33356, 8223)) {
                                         throw null;
                                     } else {
-                                        GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72339_c);
+                                        GL11.glVertex3d(var0.minX, var0.maxY, var0.minZ);
                                         if (llIllIlIIlIl(33356, 8223)) {
                                             throw null;
                                         } else {
-                                            GL11.glVertex3d(var0.field_72336_d, var0.field_72337_e, var0.field_72339_c);
+                                            GL11.glVertex3d(var0.maxX, var0.maxY, var0.minZ);
                                             if (llIllIlIIlIl(33356, 8223)) {
                                                 throw null;
                                             } else {
-                                                GL11.glVertex3d(var0.field_72336_d, var0.field_72337_e, var0.field_72334_f);
+                                                GL11.glVertex3d(var0.maxX, var0.maxY, var0.maxZ);
                                                 if (llIllIlIIlIl(33356, 8223)) {
                                                     throw null;
                                                 } else {
-                                                    GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72334_f);
+                                                    GL11.glVertex3d(var0.minX, var0.maxY, var0.maxZ);
                                                     if (llIllIlIIlIl(33356, 8223)) {
                                                         throw null;
                                                     } else {
-                                                        GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72339_c);
+                                                        GL11.glVertex3d(var0.minX, var0.maxY, var0.minZ);
                                                         if (llIllIlIIlIl(33356, 8223)) {
                                                             throw null;
                                                         } else {
@@ -381,35 +381,35 @@ public class Class181 {
                                                                 if (llIllIlIIlIl(33356, 8223)) {
                                                                     throw null;
                                                                 } else {
-                                                                    GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72339_c);
+                                                                    GL11.glVertex3d(var0.minX, var0.minY, var0.minZ);
                                                                     if (llIllIlIIlIl(33356, 8223)) {
                                                                         throw null;
                                                                     } else {
-                                                                        GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72339_c);
+                                                                        GL11.glVertex3d(var0.minX, var0.maxY, var0.minZ);
                                                                         if (llIllIlIIlIl(33356, 8223)) {
                                                                             throw null;
                                                                         } else {
-                                                                            GL11.glVertex3d(var0.field_72336_d, var0.field_72338_b, var0.field_72339_c);
+                                                                            GL11.glVertex3d(var0.maxX, var0.minY, var0.minZ);
                                                                             if (llIllIlIIlIl(33356, 8223)) {
                                                                                 throw null;
                                                                             } else {
-                                                                                GL11.glVertex3d(var0.field_72336_d, var0.field_72337_e, var0.field_72339_c);
+                                                                                GL11.glVertex3d(var0.maxX, var0.maxY, var0.minZ);
                                                                                 if (llIllIlIIlIl(33356, 8223)) {
                                                                                     throw null;
                                                                                 } else {
-                                                                                    GL11.glVertex3d(var0.field_72336_d, var0.field_72338_b, var0.field_72334_f);
+                                                                                    GL11.glVertex3d(var0.maxX, var0.minY, var0.maxZ);
                                                                                     if (llIllIlIIlIl(33356, 8223)) {
                                                                                         throw null;
                                                                                     } else {
-                                                                                        GL11.glVertex3d(var0.field_72336_d, var0.field_72337_e, var0.field_72334_f);
+                                                                                        GL11.glVertex3d(var0.maxX, var0.maxY, var0.maxZ);
                                                                                         if (llIllIlIIlIl(33356, 8223)) {
                                                                                             throw null;
                                                                                         } else {
-                                                                                            GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72334_f);
+                                                                                            GL11.glVertex3d(var0.minX, var0.minY, var0.maxZ);
                                                                                             if (llIllIlIIlIl(33356, 8223)) {
                                                                                                 throw null;
                                                                                             } else {
-                                                                                                GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72334_f);
+                                                                                                GL11.glVertex3d(var0.minX, var0.maxY, var0.maxZ);
                                                                                                 if (llIllIlIIlIl(33356, 8223)) {
                                                                                                     throw null;
                                                                                                 } else {
@@ -449,19 +449,19 @@ public class Class181 {
     }
 
     public static double[] ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var0) {
-        Minecraft var10000 = Minecraft.func_71410_x();
+        Minecraft var10000 = Minecraft.getMinecraft();
         if (llIllIlIIlIl(42457, 9066)) {
             throw null;
         } else {
-            float var1 = var10000.func_184121_ak();
-            var10000 = Minecraft.func_71410_x();
+            float var1 = var10000.getRenderPartialTicks();
+            var10000 = Minecraft.getMinecraft();
             if (llIllIlIIlIl(42457, 9066)) {
                 throw null;
             } else {
-                RenderManager var2 = var10000.func_175598_ae();
-                double var3 = var0.field_70142_S + (var0.field_70165_t - var0.field_70142_S) * (double) var1 - var2.field_78730_l;
-                double var5 = var0.field_70137_T + (var0.field_70163_u - var0.field_70137_T) * (double) var1 - var2.field_78731_m;
-                double var7 = var0.field_70136_U + (var0.field_70161_v - var0.field_70136_U) * (double) var1 - var2.field_78728_n;
+                RenderManager var2 = var10000.getRenderManager();
+                double var3 = var0.lastTickPosX + (var0.posX - var0.lastTickPosX) * (double) var1 - var2.viewerPosX;
+                double var5 = var0.lastTickPosY + (var0.posY - var0.lastTickPosY) * (double) var1 - var2.viewerPosY;
+                double var7 = var0.lastTickPosZ + (var0.posZ - var0.lastTickPosZ) * (double) var1 - var2.viewerPosZ;
                 return new double[]{var3, var5, var7};
             }
         }
@@ -508,22 +508,22 @@ public class Class181 {
                                     if (llIllIlIIlIl(90210, 4071)) {
                                         throw null;
                                     } else {
-                                        Minecraft var10000 = Minecraft.func_71410_x();
+                                        Minecraft var10000 = Minecraft.getMinecraft();
                                         if (llIllIlIIlIl(90210, 4071)) {
                                             throw null;
                                         } else {
-                                            double var2 = var10000.func_175598_ae().field_78730_l;
-                                            var10000 = Minecraft.func_71410_x();
+                                            double var2 = var10000.getRenderManager().viewerPosX;
+                                            var10000 = Minecraft.getMinecraft();
                                             if (llIllIlIIlIl(90210, 4071)) {
                                                 throw null;
                                             } else {
-                                                double var4 = var10000.func_175598_ae().field_78731_m;
-                                                var10000 = Minecraft.func_71410_x();
+                                                double var4 = var10000.getRenderManager().viewerPosY;
+                                                var10000 = Minecraft.getMinecraft();
                                                 if (llIllIlIIlIl(90210, 4071)) {
                                                     throw null;
                                                 } else {
-                                                    double var6 = var10000.func_175598_ae().field_78728_n;
-                                                    GL11.glTranslated((double) var0.func_177958_n() - var2, (double) var0.func_177956_o() - var4, (double) var0.func_177952_p() - var6);
+                                                    double var6 = var10000.getRenderManager().viewerPosZ;
+                                                    GL11.glTranslated((double) var0.getX() - var2, (double) var0.getY() - var4, (double) var0.getZ() - var6);
                                                     if (llIllIlIIlIl(90210, 4071)) {
                                                         throw null;
                                                     } else {
@@ -531,7 +531,7 @@ public class Class181 {
                                                         if (llIllIlIIlIl(90210, 4071)) {
                                                             throw null;
                                                         } else {
-                                                            (Block.field_185505_j);
+                                                            (Block.FULL_BLOCK_AABB);
                                                             if (llIllIlIIlIl(90210, 4071)) {
                                                                 throw null;
                                                             } else {
@@ -539,7 +539,7 @@ public class Class181 {
                                                                 if (llIllIlIIlIl(90210, 4071)) {
                                                                     throw null;
                                                                 } else {
-                                                                    (Block.field_185505_j);
+                                                                    (Block.FULL_BLOCK_AABB);
                                                                     if (llIllIlIIlIl(90210, 4071)) {
                                                                         throw null;
                                                                     } else {
@@ -597,99 +597,99 @@ public class Class181 {
         if (llIllIlIIlIl(69724, 6407)) {
             throw null;
         } else {
-            GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72339_c);
+            GL11.glVertex3d(var0.minX, var0.minY, var0.minZ);
             if (llIllIlIIlIl(69724, 6407)) {
                 throw null;
             } else {
-                GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72339_c);
+                GL11.glVertex3d(var0.minX, var0.maxY, var0.minZ);
                 if (llIllIlIIlIl(69724, 6407)) {
                     throw null;
                 } else {
-                    GL11.glVertex3d(var0.field_72336_d, var0.field_72337_e, var0.field_72339_c);
+                    GL11.glVertex3d(var0.maxX, var0.maxY, var0.minZ);
                     if (llIllIlIIlIl(69724, 6407)) {
                         throw null;
                     } else {
-                        GL11.glVertex3d(var0.field_72336_d, var0.field_72338_b, var0.field_72339_c);
+                        GL11.glVertex3d(var0.maxX, var0.minY, var0.minZ);
                         if (llIllIlIIlIl(69724, 6407)) {
                             throw null;
                         } else {
-                            GL11.glVertex3d(var0.field_72336_d, var0.field_72338_b, var0.field_72339_c);
+                            GL11.glVertex3d(var0.maxX, var0.minY, var0.minZ);
                             if (llIllIlIIlIl(69724, 6407)) {
                                 throw null;
                             } else {
-                                GL11.glVertex3d(var0.field_72336_d, var0.field_72337_e, var0.field_72339_c);
+                                GL11.glVertex3d(var0.maxX, var0.maxY, var0.minZ);
                                 if (llIllIlIIlIl(69724, 6407)) {
                                     throw null;
                                 } else {
-                                    GL11.glVertex3d(var0.field_72336_d, var0.field_72337_e, var0.field_72334_f);
+                                    GL11.glVertex3d(var0.maxX, var0.maxY, var0.maxZ);
                                     if (llIllIlIIlIl(69724, 6407)) {
                                         throw null;
                                     } else {
-                                        GL11.glVertex3d(var0.field_72336_d, var0.field_72338_b, var0.field_72334_f);
+                                        GL11.glVertex3d(var0.maxX, var0.minY, var0.maxZ);
                                         if (llIllIlIIlIl(69724, 6407)) {
                                             throw null;
                                         } else {
-                                            GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72334_f);
+                                            GL11.glVertex3d(var0.minX, var0.minY, var0.maxZ);
                                             if (llIllIlIIlIl(69724, 6407)) {
                                                 throw null;
                                             } else {
-                                                GL11.glVertex3d(var0.field_72336_d, var0.field_72338_b, var0.field_72334_f);
+                                                GL11.glVertex3d(var0.maxX, var0.minY, var0.maxZ);
                                                 if (llIllIlIIlIl(69724, 6407)) {
                                                     throw null;
                                                 } else {
-                                                    GL11.glVertex3d(var0.field_72336_d, var0.field_72337_e, var0.field_72334_f);
+                                                    GL11.glVertex3d(var0.maxX, var0.maxY, var0.maxZ);
                                                     if (llIllIlIIlIl(69724, 6407)) {
                                                         throw null;
                                                     } else {
-                                                        GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72334_f);
+                                                        GL11.glVertex3d(var0.minX, var0.maxY, var0.maxZ);
                                                         if (llIllIlIIlIl(69724, 6407)) {
                                                             throw null;
                                                         } else {
-                                                            GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72339_c);
+                                                            GL11.glVertex3d(var0.minX, var0.minY, var0.minZ);
                                                             if (llIllIlIIlIl(69724, 6407)) {
                                                                 throw null;
                                                             } else {
-                                                                GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72334_f);
+                                                                GL11.glVertex3d(var0.minX, var0.minY, var0.maxZ);
                                                                 if (llIllIlIIlIl(69724, 6407)) {
                                                                     throw null;
                                                                 } else {
-                                                                    GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72334_f);
+                                                                    GL11.glVertex3d(var0.minX, var0.maxY, var0.maxZ);
                                                                     if (llIllIlIIlIl(69724, 6407)) {
                                                                         throw null;
                                                                     } else {
-                                                                        GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72339_c);
+                                                                        GL11.glVertex3d(var0.minX, var0.maxY, var0.minZ);
                                                                         if (llIllIlIIlIl(69724, 6407)) {
                                                                             throw null;
                                                                         } else {
-                                                                            GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72339_c);
+                                                                            GL11.glVertex3d(var0.minX, var0.minY, var0.minZ);
                                                                             if (llIllIlIIlIl(69724, 6407)) {
                                                                                 throw null;
                                                                             } else {
-                                                                                GL11.glVertex3d(var0.field_72336_d, var0.field_72338_b, var0.field_72339_c);
+                                                                                GL11.glVertex3d(var0.maxX, var0.minY, var0.minZ);
                                                                                 if (llIllIlIIlIl(69724, 6407)) {
                                                                                     throw null;
                                                                                 } else {
-                                                                                    GL11.glVertex3d(var0.field_72336_d, var0.field_72338_b, var0.field_72334_f);
+                                                                                    GL11.glVertex3d(var0.maxX, var0.minY, var0.maxZ);
                                                                                     if (llIllIlIIlIl(69724, 6407)) {
                                                                                         throw null;
                                                                                     } else {
-                                                                                        GL11.glVertex3d(var0.field_72340_a, var0.field_72338_b, var0.field_72334_f);
+                                                                                        GL11.glVertex3d(var0.minX, var0.minY, var0.maxZ);
                                                                                         if (llIllIlIIlIl(69724, 6407)) {
                                                                                             throw null;
                                                                                         } else {
-                                                                                            GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72339_c);
+                                                                                            GL11.glVertex3d(var0.minX, var0.maxY, var0.minZ);
                                                                                             if (llIllIlIIlIl(69724, 6407)) {
                                                                                                 throw null;
                                                                                             } else {
-                                                                                                GL11.glVertex3d(var0.field_72340_a, var0.field_72337_e, var0.field_72334_f);
+                                                                                                GL11.glVertex3d(var0.minX, var0.maxY, var0.maxZ);
                                                                                                 if (llIllIlIIlIl(69724, 6407)) {
                                                                                                     throw null;
                                                                                                 } else {
-                                                                                                    GL11.glVertex3d(var0.field_72336_d, var0.field_72337_e, var0.field_72334_f);
+                                                                                                    GL11.glVertex3d(var0.maxX, var0.maxY, var0.maxZ);
                                                                                                     if (llIllIlIIlIl(69724, 6407)) {
                                                                                                         throw null;
                                                                                                     } else {
-                                                                                                        GL11.glVertex3d(var0.field_72336_d, var0.field_72337_e, var0.field_72339_c);
+                                                                                                        GL11.glVertex3d(var0.maxX, var0.maxY, var0.minZ);
                                                                                                         if (llIllIlIIlIl(69724, 6407)) {
                                                                                                             throw null;
                                                                                                         } else {
@@ -747,24 +747,24 @@ public class Class181 {
                     if (llIllIlIIlIl(37853, 2649)) {
                         throw null;
                     } else {
-                        double var10001 = var0.field_70142_S + (var0.field_70165_t - var0.field_70142_S) * (double) var2;
-                        Minecraft var10002 = Minecraft.func_71410_x();
+                        double var10001 = var0.lastTickPosX + (var0.posX - var0.lastTickPosX) * (double) var2;
+                        Minecraft var10002 = Minecraft.getMinecraft();
                         if (llIllIlIIlIl(37853, 2649)) {
                             throw null;
                         } else {
-                            double var5 = var10001 - var10002.func_175598_ae().field_78730_l;
-                            var10001 = var0.field_70137_T + (var0.field_70163_u - var0.field_70137_T) * (double) var2;
-                            var10002 = Minecraft.func_71410_x();
+                            double var5 = var10001 - var10002.getRenderManager().viewerPosX;
+                            var10001 = var0.lastTickPosY + (var0.posY - var0.lastTickPosY) * (double) var2;
+                            var10002 = Minecraft.getMinecraft();
                             if (llIllIlIIlIl(37853, 2649)) {
                                 throw null;
                             } else {
-                                double var7 = var10001 - var10002.func_175598_ae().field_78731_m;
-                                double var10000 = var0.field_70136_U + (var0.field_70161_v - var0.field_70136_U) * (double) var2;
-                                Minecraft var21 = Minecraft.func_71410_x();
+                                double var7 = var10001 - var10002.getRenderManager().viewerPosY;
+                                double var10000 = var0.lastTickPosZ + (var0.posZ - var0.lastTickPosZ) * (double) var2;
+                                Minecraft var21 = Minecraft.getMinecraft();
                                 if (llIllIlIIlIl(37853, 2649)) {
                                     throw null;
                                 } else {
-                                    double var9 = var10000 - var21.func_175598_ae().field_78728_n;
+                                    double var9 = var10000 - var21.getRenderManager().viewerPosZ;
                                     GL11.glLineWidth(4.0F);
                                     if (llIllIlIIlIl(37853, 2649)) {
                                         throw null;
@@ -851,7 +851,7 @@ public class Class181 {
                                                         }
 
                                                         var22 = var15;
-                                                        GL11.glVertex3d(var16.field_72450_a, var16.field_72448_b + 0.05000000074505806D, var16.field_72449_c);
+                                                        GL11.glVertex3d(var16.x, var16.y + 0.05000000074505806D, var16.z);
                                                         if (llIllIlIIlIl(37853, 2649)) {
                                                             throw null;
                                                         }
@@ -901,27 +901,27 @@ public class Class181 {
             if (llIllIlIIlIl(63983, 6253)) {
                 throw null;
             } else {
-                GlStateManager.func_179094_E();
+                GlStateManager.pushMatrix();
                 if (llIllIlIIlIl(63983, 6253)) {
                     throw null;
                 } else {
-                    GlStateManager.func_179090_x();
+                    GlStateManager.disableTexture2D();
                     if (llIllIlIIlIl(63983, 6253)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179097_i();
+                        GlStateManager.disableDepth();
                         if (llIllIlIIlIl(63983, 6253)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179129_p();
+                            GlStateManager.disableCull();
                             if (llIllIlIIlIl(63983, 6253)) {
                                 throw null;
                             } else {
-                                GlStateManager.func_179147_l();
+                                GlStateManager.enableBlend();
                                 if (llIllIlIIlIl(63983, 6253)) {
                                     throw null;
                                 } else {
-                                    GlStateManager.func_179132_a(false);
+                                    GlStateManager.depthMask(false);
                                     if (llIllIlIIlIl(63983, 6253)) {
                                         throw null;
                                     } else {
@@ -929,19 +929,19 @@ public class Class181 {
                                         if (llIllIlIIlIl(63983, 6253)) {
                                             throw null;
                                         } else {
-                                            Minecraft var11 = Minecraft.func_71410_x();
+                                            Minecraft var11 = Minecraft.getMinecraft();
                                             if (llIllIlIIlIl(63983, 6253)) {
                                                 throw null;
                                             } else {
-                                                RenderManager var3 = var11.func_175598_ae();
-                                                GL11.glTranslated((double) var0.func_177958_n() - var3.field_78730_l, (double) var0.func_177956_o() - var3.field_78731_m, (double) var0.func_177952_p() - var3.field_78728_n);
+                                                RenderManager var3 = var11.getRenderManager();
+                                                GL11.glTranslated((double) var0.getX() - var3.viewerPosX, (double) var0.getY() - var3.viewerPosY, (double) var0.getZ() - var3.viewerPosZ);
                                                 if (llIllIlIIlIl(63983, 6253)) {
                                                     throw null;
                                                 } else {
                                                     int var10;
                                                     byte var12;
                                                     boolean var10001;
-                                                    if (llIllIlIlIII(var10 = var1.func_177958_n() - var0.func_177958_n())) {
+                                                    if (llIllIlIlIII(var10 = var1.getX() - var0.getX())) {
                                                         var12 = 0;
                                                         var10001 = true;
                                                     } else {
@@ -972,7 +972,7 @@ public class Class181 {
                                                             throw null;
                                                         } else {
                                                             int var5 = var13;
-                                                            if (llIllIlIlIII(var10 = var1.func_177956_o() - var0.func_177956_o())) {
+                                                            if (llIllIlIlIII(var10 = var1.getY() - var0.getY())) {
                                                                 var12 = 0;
                                                                 var10001 = true;
                                                             } else {
@@ -1002,7 +1002,7 @@ public class Class181 {
                                                                     throw null;
                                                                 } else {
                                                                     int var7 = var13;
-                                                                    if (llIllIlIlIII(var10 = var1.func_177952_p() - var0.func_177952_p())) {
+                                                                    if (llIllIlIlIII(var10 = var1.getZ() - var0.getZ())) {
                                                                         var12 = 0;
                                                                         var10001 = true;
                                                                     } else {
@@ -1056,15 +1056,15 @@ public class Class181 {
                                                                                                 if (llIllIlIIlIl(63983, 6253)) {
                                                                                                     throw null;
                                                                                                 } else {
-                                                                                                    GlStateManager.func_179089_o();
+                                                                                                    GlStateManager.enableCull();
                                                                                                     if (llIllIlIIlIl(63983, 6253)) {
                                                                                                         throw null;
                                                                                                     } else {
-                                                                                                        GlStateManager.func_179084_k();
+                                                                                                        GlStateManager.disableBlend();
                                                                                                         if (llIllIlIIlIl(63983, 6253)) {
                                                                                                             throw null;
                                                                                                         } else {
-                                                                                                            GlStateManager.func_179132_a(true);
+                                                                                                            GlStateManager.depthMask(true);
                                                                                                             if (llIllIlIIlIl(63983, 6253)) {
                                                                                                                 throw null;
                                                                                                             } else {
@@ -1072,19 +1072,19 @@ public class Class181 {
                                                                                                                 if (llIllIlIIlIl(63983, 6253)) {
                                                                                                                     throw null;
                                                                                                                 } else {
-                                                                                                                    GlStateManager.func_179098_w();
+                                                                                                                    GlStateManager.enableTexture2D();
                                                                                                                     if (llIllIlIIlIl(63983, 6253)) {
                                                                                                                         throw null;
                                                                                                                     } else {
-                                                                                                                        GlStateManager.func_179126_j();
+                                                                                                                        GlStateManager.enableDepth();
                                                                                                                         if (llIllIlIIlIl(63983, 6253)) {
                                                                                                                             throw null;
                                                                                                                         } else {
-                                                                                                                            GlStateManager.func_179121_F();
+                                                                                                                            GlStateManager.popMatrix();
                                                                                                                             if (llIllIlIIlIl(63983, 6253)) {
                                                                                                                                 throw null;
                                                                                                                             } else {
-                                                                                                                                GlStateManager.func_179117_G();
+                                                                                                                                GlStateManager.resetColor();
                                                                                                                                 if (llIllIlIIlIl(63983, 6253)) {
                                                                                                                                     throw null;
                                                                                                                                 } else {

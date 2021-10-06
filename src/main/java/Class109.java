@@ -47,7 +47,7 @@ public class Class109 {
     private static float ____________________________________________________________________________/* $FF was:                                                                             */() {
         float var0;
         float var10000 = var0 = Class13.                                                                                  .
-        field_71474_y.field_74341_c * 0.6F + 0.2F;
+        gameSettings.mouseSensitivity * 0.6F + 0.2F;
         return var10000 * var10000 * var0 * 8.0F;
     }
 

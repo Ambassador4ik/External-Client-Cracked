@@ -115,7 +115,7 @@ public class Class171 {
         if (llIlIIIIIlIl(75786, 3236)) {
             throw null;
         } else {
-            Minecraft var10017 = Minecraft.func_71410_x();
+            Minecraft var10017 = Minecraft.getMinecraft();
             if (llIlIIIIIlIl(75786, 3236)) {
                 throw null;
             } else {
@@ -364,7 +364,7 @@ public class Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(ITextComponent var1) {
         this.                                                                                                    .
-        field_71439_g.func_146105_b(var1, false);
+        player.sendStatusMessage(var1, false);
         boolean var10000 = true;
     }
 
@@ -384,17 +384,17 @@ public class Class171 {
     }
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
-        Minecraft var10000 = Minecraft.func_71410_x();
+        Minecraft var10000 = Minecraft.getMinecraft();
         if (llIlIIIIIlIl(90799, 9029)) {
             throw null;
         } else {
-            if (llIlIIIIlIII(var10000.field_71439_g)) {
-                var10000 = Minecraft.func_71410_x();
+            if (llIlIIIIlIII(var10000.player)) {
+                var10000 = Minecraft.getMinecraft();
                 if (llIlIIIIIlIl(90799, 9029)) {
                     throw null;
                 }
 
-                if (!llIlIIIIIllI(var10000.field_71441_e)) {
+                if (!llIlIIIIIllI(var10000.world)) {
                     if (llIlIIIIIlIl(90799, 9029)) {
                         throw null;
                     }
@@ -448,12 +448,12 @@ public class Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(String var1) {
         NetHandlerPlayClient var10000 = this.                                                                                                    .
-        func_147114_u();
+        getConnection();
         CPacketChatMessage var10001 = new CPacketChatMessage(var1);
         if (llIlIIIIIlIl(36167, 1215)) {
             throw null;
         } else {
-            var10000.func_147297_a(var10001);
+            var10000.sendPacket(var10001);
             boolean var2 = true;
         }
     }
@@ -494,18 +494,18 @@ public class Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Packet var1) {
         this.                                                                                                    .
-        func_147114_u().func_147297_a(var1);
+        getConnection().sendPacket(var1);
         boolean var10000 = true;
     }
 
     public void _____________________________________________________________________________________/* $FF was:                                                                                      */(String var1) {
         EntityPlayerSP var10000 = this.                                                                                                    .
-        field_71439_g;
+        player;
         TextComponentString var10001 = new TextComponentString(var1);
         if (llIlIIIIIlIl(72793, 9758)) {
             throw null;
         } else {
-            var10000.func_146105_b(var10001, false);
+            var10000.sendStatusMessage(var10001, false);
             boolean var2 = true;
         }
     }

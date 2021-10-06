@@ -47,7 +47,7 @@ public class Class135 implements Predicate {
     }
 
     public boolean apply(@Nullable Entity var1) {
-        if (llIllIIIllII(var1) && llIllIIIllIl(var1.func_70067_L())) {
+        if (llIllIIIllII(var1) && llIllIIIllIl(var1.canBeCollidedWith())) {
             return true;
         } else if (llIllIIIlllI(59407, 8846)) {
             throw null;

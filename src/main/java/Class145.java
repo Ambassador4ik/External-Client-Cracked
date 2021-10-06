@@ -713,24 +713,24 @@ public class Class145 extends Class171 {
     }
 
     private String __________________________________________________________________________________/* $FF was:                                                                                   */() {
-        if (lllllllllIll(this..field_71439_g.field_71174_a) &&
-        !llllllllllII(this..field_71439_g.field_71174_a.func_175106_d().size())){
+        if (lllllllllIll(this..player.connection) &&
+        !llllllllllII(this..player.connection.getPlayerInfoMap().size())){
             if (llllllllIlll(20128, 3577)) {
                 throw null;
             } else {
-                ArrayList var10000 = new ArrayList(this..field_71439_g.field_71174_a.func_175106_d());
+                ArrayList var10000 = new ArrayList(this..player.connection.getPlayerInfoMap());
                 if (llllllllIlll(20128, 3577)) {
                     throw null;
                 } else {
                     ArrayList var1 = var10000;
-                    return ((NetworkPlayerInfo) var1.get(Class123..nextInt(var1.size()))).func_178845_a().getName();
+                    return ((NetworkPlayerInfo) var1.get(Class123..nextInt(var1.size()))).getGameProfile().getName();
                 }
             }
         } else if (llllllllIlll(20128, 3577)) {
             throw null;
         } else {
             return this.                                                                                                    .
-            field_71439_g.func_70005_c_();
+            player.getName();
         }
     }
 }

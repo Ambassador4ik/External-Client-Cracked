@@ -65,7 +65,7 @@ public class Class196 extends Slot {
     }
 
     public Class196(Class10 var1, Slot var2, int var3) {
-        super(var2.field_75224_c, var3, 0, 0);
+        super(var2.inventory, var3, 0, 0);
         this. = var1;
         if (llIlllIIIllI(86435, 6624)) {
             throw null;
@@ -83,14 +83,14 @@ public class Class196 extends Slot {
         return var0.;
     }
 
-    public boolean func_82869_a(EntityPlayer var1) {
+    public boolean canTakeStack(EntityPlayer var1) {
         return this.                                                                                  .
-        func_82869_a(var1);
+        canTakeStack(var1);
     }
 
-    public boolean func_75217_a(IInventory var1, int var2) {
+    public boolean isHere(IInventory var1, int var2) {
         return this.                                                                                  .
-        func_75217_a(var1, var2);
+        isHere(var1, var2);
     }
 
     public ResourceLocation getBackgroundLocation() {
@@ -104,28 +104,28 @@ public class Class196 extends Slot {
         boolean var10000 = true;
     }
 
-    public boolean func_111238_b() {
-        return this.                                                                                  .func_111238_b();
+    public boolean isEnabled() {
+        return this.                                                                                  .isEnabled();
     }
 
-    public ItemStack func_75209_a(int var1) {
+    public ItemStack decrStackSize(int var1) {
         return this.                                                                                  .
-        func_75209_a(var1);
+        decrStackSize(var1);
     }
 
-    public void func_75215_d(ItemStack var1) {
-        this.                                                                                  .func_75215_d(var1);
+    public void putStack(ItemStack var1) {
+        this.                                                                                  .putStack(var1);
         boolean var10000 = true;
     }
 
-    public ItemStack func_190901_a(EntityPlayer var1, ItemStack var2) {
+    public ItemStack onTake(EntityPlayer var1, ItemStack var2) {
         this.                                                                                  .
-        func_190901_a(var1, var2);
+        onTake(var1, var2);
         return var2;
     }
 
-    public int func_75219_a() {
-        return this.                                                                                  .func_75219_a();
+    public int getSlotStackLimit() {
+        return this.                                                                                  .getSlotStackLimit();
     }
 
     @Nullable
@@ -134,19 +134,19 @@ public class Class196 extends Slot {
         getBackgroundSprite();
     }
 
-    public void func_75218_e() {
-        this.                                                                                  .func_75218_e();
+    public void onSlotChanged() {
+        this.                                                                                  .onSlotChanged();
         boolean var10000 = true;
     }
 
     @Nullable
-    public String func_178171_c() {
-        return this.                                                                                  .func_178171_c();
+    public String getSlotTexture() {
+        return this.                                                                                  .getSlotTexture();
     }
 
-    public boolean func_75214_a(ItemStack var1) {
+    public boolean isItemValid(ItemStack var1) {
         return this.                                                                                  .
-        func_75214_a(var1);
+        isItemValid(var1);
     }
 
     public boolean isSameInventory(Slot var1) {
@@ -154,19 +154,19 @@ public class Class196 extends Slot {
         isSameInventory(var1);
     }
 
-    public int func_178170_b(ItemStack var1) {
+    public int getItemStackLimit(ItemStack var1) {
         return this.                                                                                  .
-        func_178170_b(var1);
+        getItemStackLimit(var1);
     }
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public ItemStack func_75211_c() {
-        return this.                                                                                  .func_75211_c();
+    public ItemStack getStack() {
+        return this.                                                                                  .getStack();
     }
 
-    public boolean func_75216_d() {
-        return this.                                                                                  .func_75216_d();
+    public boolean getHasStack() {
+        return this.                                                                                  .getHasStack();
     }
 
     public void setBackgroundName(@Nullable String var1) {

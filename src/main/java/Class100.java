@@ -38,14 +38,14 @@ public class Class100 {
         if (lllIIllIIIIl(30876, 7055)) {
             throw null;
         } else {
-            Minecraft var10002 = Minecraft.func_71410_x();
+            Minecraft var10002 = Minecraft.getMinecraft();
             if (lllIIllIIIIl(30876, 7055)) {
                 throw null;
             } else {
                 this. = var10002;
                 File var10001 = new File;
                 File var10004 = this.                                                                                  .
-                field_71412_D;
+                gameDir;
                 String var10005 = Class60. ("wzyryr<p}a~:{s<");
                 if (lllIIllIIIIl(30876, 7055)) {
                     throw null;

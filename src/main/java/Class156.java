@@ -93,7 +93,7 @@ public class Class156 extends Class171 {
             }
 
             float var6;
-            if (llIllIIIIlII((var6 = this..field_71439_g.field_191988_bg - 0.0F) == 0.0F ? 0 : (var6 < 0.0F ? -1 : 1))){
+            if (llIllIIIIlII((var6 = this..player.moveForward - 0.0F) == 0.0F ? 0 : (var6 < 0.0F ? -1 : 1))){
                 var10000 = 1;
                 var10001 = true;
             } else{
@@ -113,7 +113,7 @@ public class Class156 extends Class171 {
             {
                 byte var2 = var10000;
                 var3 = this.                                                                                                    .
-                field_71439_g;
+                player;
                 if (llIllIIIIIIl(var2)) {
                     byte var4 = Class13. ();
                     if (llIllIIIIIll(46913, 329)) {
@@ -132,13 +132,13 @@ public class Class156 extends Class171 {
                 }
 
                 var10001 = this.                                                                                                    .
-                field_71439_g.func_70051_ag();
+                player.isSprinting();
             }
 
             if (llIllIIIIIll(46913, 329)) {
                 throw null;
             } else {
-                var3.func_70031_b(var10001);
+                var3.setSprinting(var10001);
                 boolean var5 = true;
             }
         }
@@ -148,7 +148,7 @@ public class Class156 extends Class171 {
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Object var1, Class170 var2) {
         if (llIllIIIIIIl(this.. ()) &&
-        llIllIIIIIIl(var1 instanceof CPacketEntityAction) && !llIllIIIIIlI(((CPacketEntityAction) var1).func_180764_b(), Action.STOP_SPRINTING))
+        llIllIIIIIIl(var1 instanceof CPacketEntityAction) && !llIllIIIIIlI(((CPacketEntityAction) var1).getAction(), Action.STOP_SPRINTING))
         {
             if (llIllIIIIIll(48336, 3249)) {
                 throw null;

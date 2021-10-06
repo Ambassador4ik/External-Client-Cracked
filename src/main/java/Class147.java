@@ -50,16 +50,16 @@ public class Class147 extends Class5 {
             ();
             this. = var3;
             GuiTextField var10004 = new GuiTextField(this.. (), this.                                                                                            .
-            field_71466_p, this. + 2, this., this.                                                                                         .                                                                                                    .
+            fontRenderer, this. + 2, this., this.                                                                                         .                                                                                                    .
             () - 4, this.                                                                                         .                                                                                                    .
             () - 1);
             if (llIIllllllII(57147, 7686)) {
                 throw null;
             } else {
                 this. = var10004;
-                this.                                                                              .func_146180_a(this..
+                this.                                                                              .setText(this..
                 ());
-                this.                                                                              .func_146203_f(16);
+                this.                                                                              .setMaxStringLength(16);
                 if (llIIlllllllI(this.. ())){
                     Class4 var10000 = this.;
                     float var10001 = (float) (this. () + 1);
@@ -100,9 +100,9 @@ public class Class147 extends Class5 {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(char var1, int var2) {
-        this.                                                                              .func_146201_a(var1, var2);
+        this.                                                                              .textboxKeyTyped(var1, var2);
         if (llIIlllllIll(var2, 28)) {
-            this.                                                                              .func_146195_b(false);
+            this.                                                                              .setFocused(false);
         }
 
         if (llIIllllllII(57310, 8387)) {
@@ -113,9 +113,9 @@ public class Class147 extends Class5 {
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
-        this.                                                                              .func_146194_f();
+        this.                                                                              .drawTextBox();
         this.                                                                                                   .
-        (this..func_146179_b());
+        (this..getText());
         boolean var10000 = true;
     }
 
@@ -139,14 +139,14 @@ public class Class147 extends Class5 {
         ();
         this. = this.                                                                                         .                                                                                                    .
         ();
-        this.                                                                              .field_146209_f = this. + 2;
-        this.                                                                              .field_146210_g = this.;
+        this.                                                                              .x = this. + 2;
+        this.                                                                              .y = this.;
         boolean var10000 = true;
     }
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(int var1, int var2, int var3) {
         this.                                                                              .
-        func_146192_a(var1, var2, var3);
+        mouseClicked(var1, var2, var3);
         boolean var10000 = true;
     }
 }

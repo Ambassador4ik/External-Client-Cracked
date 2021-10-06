@@ -45,16 +45,16 @@ public class Class159 extends Slot {
         return var0 == 0;
     }
 
-    public boolean func_82869_a(EntityPlayer var1) {
-        byte var10000 = super.func_82869_a(var1);
+    public boolean canTakeStack(EntityPlayer var1) {
+        byte var10000 = super.canTakeStack(var1);
         if (lllllIlIlIlI(23550, 1907)) {
             throw null;
-        } else if (lllllIlIlIll(var10000) && lllllIlIlIll(this.func_75216_d())) {
-            ItemStack var2 = this.func_75211_c();
+        } else if (lllllIlIlIll(var10000) && lllllIlIlIll(this.getHasStack())) {
+            ItemStack var2 = this.getStack();
             String var10001 = Class60. ("Ynjnqv^hwzes`~Yui0");
             if (lllllIlIlIlI(23550, 1907)) {
                 throw null;
-            } else if (lllllIlIllII(var2.func_179543_a(var10001))) {
+            } else if (lllllIlIllII(var2.getSubCompound(var10001))) {
                 return true;
             } else if (lllllIlIlIlI(23550, 1907)) {
                 throw null;
@@ -63,7 +63,7 @@ public class Class159 extends Slot {
             }
         } else if (lllllIlIlIlI(23550, 1907)) {
             throw null;
-        } else if (lllllIlIllIl(this.func_75216_d())) {
+        } else if (lllllIlIllIl(this.getHasStack())) {
             return true;
         } else if (lllllIlIlIlI(23550, 1907)) {
             throw null;

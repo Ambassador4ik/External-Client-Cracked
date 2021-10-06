@@ -196,15 +196,15 @@ public class Class123 {
 
     public static Vec3i ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Vec3d var0) {
         Vec3i var10000 = new Vec3i;
-        double var10002 = Math.ceil(var0.field_72450_a);
+        double var10002 = Math.ceil(var0.x);
         if (lllIIIIIIllI(82092, 3461)) {
             throw null;
         } else {
-            double var10003 = Math.ceil(var0.field_72448_b);
+            double var10003 = Math.ceil(var0.y);
             if (lllIIIIIIllI(82092, 3461)) {
                 throw null;
             } else {
-                double var10004 = Math.ceil(var0.field_72449_c);
+                double var10004 = Math.ceil(var0.z);
                 if (lllIIIIIIllI(82092, 3461)) {
                     throw null;
                 } else {
@@ -249,7 +249,7 @@ public class Class123 {
     }
 
     public static double ________________________________________________________________________________________________/* $FF was:                                                                                                 */(double var0) {
-        int var10001 = Minecraft.func_175610_ah();
+        int var10001 = Minecraft.getDebugFPS();
         if (lllIIIIIIllI(43715, 5433)) {
             throw null;
         } else {
@@ -262,14 +262,14 @@ public class Class123 {
     }
 
     public static int ________________________________________________________________________________________________/* $FF was:                                                                                                 */(EntityPlayer var0) {
-        Minecraft var10000 = Minecraft.func_71410_x();
+        Minecraft var10000 = Minecraft.getMinecraft();
         if (lllIIIIIIllI(58571, 9503)) {
             throw null;
         } else {
             NetworkPlayerInfo var1;
             int var3;
-            if (lllIIIIIlIIl(var1 = var10000.func_147114_u().func_175104_a(var0.func_70005_c_()))) {
-                var3 = var1.func_178853_c();
+            if (lllIIIIIlIIl(var1 = var10000.getConnection().getPlayerInfo(var0.getName()))) {
+                var3 = var1.getResponseTime();
                 boolean var10001 = true;
             } else {
                 if (lllIIIIIIllI(58571, 9503)) {
@@ -293,7 +293,7 @@ public class Class123 {
     }
 
     public static float ________________________________________________________________________________________________/* $FF was:                                                                                                 */(World var0, float var1) {
-        int var2 = var0.func_175659_aa().func_151525_a();
+        int var2 = var0.getDifficulty().getId();
         float var10001;
         boolean var10002;
         if (lllIIIIIIlll(var2)) {

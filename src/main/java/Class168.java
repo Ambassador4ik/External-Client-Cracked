@@ -52,12 +52,12 @@ public class Class168 extends Class171 {
             throw null;
         } else {
             boolean var10000;
-            if (lllIIIllIlll(this..field_71439_g)){
+            if (lllIIIllIlll(this..player)){
                 var10000 = true;
             } else if (lllIIIllIlII(77848, 4909)) {
                 throw null;
             } else {
-                CPacketCloseWindow var10001 = new CPacketCloseWindow(this..field_71439_g.field_71069_bz.field_75152_c);
+                CPacketCloseWindow var10001 = new CPacketCloseWindow(this..player.inventoryContainer.windowId);
                 if (lllIIIllIlII(77848, 4909)) {
                     throw null;
                 } else {
@@ -75,7 +75,7 @@ public class Class168 extends Class171 {
                 throw null;
             }
 
-            if (!lllIIIllIllI(var10000, this..field_71439_g.field_71069_bz.field_75152_c)){
+            if (!lllIIIllIllI(var10000, this..player.inventoryContainer.windowId)){
                 if (lllIIIllIlII(10968, 1399)) {
                     throw null;
                 }

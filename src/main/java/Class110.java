@@ -118,7 +118,7 @@ public class Class110 extends Class171 {
                 throw null;
             }
 
-            if (!llIIlIllIllI(this..field_71462_r)){
+            if (!llIIlIllIllI(this..currentScreen)){
                 if (llIIlIllIlIl(60046, 4905)) {
                     throw null;
                 }
@@ -138,8 +138,8 @@ public class Class110 extends Class171 {
 
         if (llIIlIllIlIl(60046, 4905)) {
             throw null;
-        } else if (llIIlIllIlII(var12.. ()) &&llIIlIllIlll(this..field_71462_r instanceof GuiInventory) &&
-        llIIlIllIlll(this..field_71462_r instanceof Class127)){
+        } else if (llIIlIllIlII(var12.. ()) &&llIIlIllIlll(this..currentScreen instanceof GuiInventory) &&
+        llIIlIllIlll(this..currentScreen instanceof Class127)){
             var10000 = true;
         } else if (llIIlIllIlIl(60046, 4905)) {
             throw null;
@@ -227,8 +227,8 @@ public class Class110 extends Class171 {
                                     }
 
                                     ItemStack var11;
-                                    if (!llIIlIllIllI(var11 = this..field_71439_g.field_71071_by.func_70440_f(var10)) ||
-                                    !llIIlIlllIlI(this..field_71439_g.field_71071_by.func_70447_i(), -1)){
+                                    if (!llIIlIllIllI(var11 = this..player.inventory.armorItemInSlot(var10)) ||
+                                    !llIIlIlllIlI(this..player.inventory.getFirstEmptyStack(), -1)){
                                         if (llIIlIllIlIl(60046, 4905)) {
                                             throw null;
                                         }
@@ -243,10 +243,10 @@ public class Class110 extends Class171 {
 
                                         if (llIIlIllIllI(var11)) {
                                             this.                                                                                                    .
-                                            field_71442_b.func_187098_a(0, 8 - var10, 0, ClickType.QUICK_MOVE, this..field_71439_g)
+                                            playerController.windowClick(0, 8 - var10, 0, ClickType.QUICK_MOVE, this..player)
                                             ;
                                             this.                                                                                                    .
-                                            field_71442_b.func_187098_a(0, var6, 0, ClickType.QUICK_MOVE, this..field_71439_g)
+                                            playerController.windowClick(0, var6, 0, ClickType.QUICK_MOVE, this..player)
                                             ;
                                             var10000 = true;
                                             return;
@@ -267,10 +267,10 @@ public class Class110 extends Class171 {
                             return;
                         }
 
-                        if (llIIlIllIllI(var4 = this..field_71439_g.field_71071_by.func_70301_a(var3)) &&
-                        llIIlIllIlII(var4.func_77973_b() instanceof ItemArmor)){
-                            var5 = (ItemArmor) var4.func_77973_b();
-                            var6 = var5.field_77881_a.func_188454_b();
+                        if (llIIlIllIllI(var4 = this..player.inventory.getStackInSlot(var3)) &&
+                        llIIlIllIlII(var4.getItem() instanceof ItemArmor)){
+                            var5 = (ItemArmor) var4.getItem();
+                            var6 = var5.armorType.getIndex();
                             int var7;
                             if (llIIlIlllIIl(var7 = this. (var5, var4),var2[var6])){
                                 var8[var6] = var3;
@@ -290,9 +290,9 @@ public class Class110 extends Class171 {
                 }
 
                 var8[var3] = -1;
-                if (llIIlIllIllI(var4 = this..field_71439_g.field_71071_by.func_70440_f(var3)) &&
-                llIIlIllIlII(var4.func_77973_b() instanceof ItemArmor)){
-                    var5 = (ItemArmor) var4.func_77973_b();
+                if (llIIlIllIllI(var4 = this..player.inventory.armorItemInSlot(var3)) &&
+                llIIlIllIlII(var4.getItem() instanceof ItemArmor)){
+                    var5 = (ItemArmor) var4.getItem();
                     var2[var3] = this. (var5, var4);
                 }
 
@@ -311,23 +311,23 @@ public class Class110 extends Class171 {
     public int ________________________________________________________________________________________________/* $FF was:                                                                                                 */(ItemArmor var1, ItemStack var2) {
         ItemArmor var10001 = var1;
         ItemArmor var10000 = var1;
-        int var7 = var1.field_77879_b;
+        int var7 = var1.damageReduceAmount;
         boolean var3 = false;
-        int var4 = (int) var10001.field_189415_e;
-        int var5 = var10000.func_82812_d().func_78044_b(EntityEquipmentSlot.LEGS);
-        Enchantment var6 = Enchantments.field_180310_c;
+        int var4 = (int) var10001.toughness;
+        int var5 = var10000.getArmorMaterial().getDamageReductionAmount(EntityEquipmentSlot.LEGS);
+        Enchantment var6 = Enchantments.PROTECTION;
         Enchantment var10 = var6;
-        int var10002 = EnchantmentHelper.func_77506_a(var6, var2);
+        int var10002 = EnchantmentHelper.getEnchantmentLevel(var6, var2);
         if (llIIlIllIlIl(87285, 1355)) {
             throw null;
         } else {
             int var8 = var10002;
-            DamageSource var12 = DamageSource.func_76365_a(this..field_71439_g);
+            DamageSource var12 = DamageSource.causePlayerDamage(this..player);
             if (llIIlIllIlIl(87285, 1355)) {
                 throw null;
             } else {
                 DamageSource var11 = var12;
-                int var9 = var10.func_77318_a(var8, var11);
+                int var9 = var10.calcModifierDamage(var8, var11);
                 return var7 * 5 + var9 * 3 + var4 + var5;
             }
         }

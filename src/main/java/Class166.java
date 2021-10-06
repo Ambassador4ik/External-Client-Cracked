@@ -143,20 +143,20 @@ public class Class166 extends Class171 {
     }
 
     private boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Potion var1) {
-        if (llllIllIIllI(var1.func_76398_f())) {
+        if (llllIllIIllI(var1.isBadEffect())) {
             return false;
         } else if (llllIllIIlll(34079, 2144)) {
             throw null;
         } else {
             double var3;
-            if (llllIllIIllI(var1 instanceof PotionHealth) && llllIllIlIII((var3 = (double) this..field_71439_g.func_110143_aJ() - this..
+            if (llllIllIIllI(var1 instanceof PotionHealth) && llllIllIlIII((var3 = (double) this..player.getHealth() - this..
             ()) ==0.0D ? 0 : (var3 < 0.0D ? -1 : 1))){
                 return true;
             } else if (llllIllIIlll(34079, 2144)) {
                 throw null;
             } else {
-                String var2 = var1.getRegistryName().func_110623_a();
-                if (llllIllIlIIl(this..field_71439_g.func_70644_a(var1))){
+                String var2 = var1.getRegistryName().getPath();
+                if (llllIllIlIIl(this..player.isPotionActive(var1))){
                     label62:
                     {
                         String var10001 = Class60. ("r|eqOgvgufkuvv>");
@@ -201,7 +201,7 @@ public class Class166 extends Class171 {
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
         boolean var10000;
-        if (llllIllIIllI(this..field_71439_g.func_70089_S()) &&!llllIllIlIIl(this..field_71439_g.field_70122_E)){
+        if (llllIllIIllI(this..player.isEntityAlive()) &&!llllIllIlIIl(this..player.onGround)){
             if (llllIllIIlll(33362, 8489)) {
                 throw null;
             } else {
@@ -220,16 +220,16 @@ public class Class166 extends Class171 {
                     }
 
                     ItemStack var2;
-                    if (llllIllIIllI((var2 = this..field_71439_g.field_71071_by.func_70301_a(var4)).func_77973_b() instanceof ItemPotion))
+                    if (llllIllIIllI((var2 = this..player.inventory.getStackInSlot(var4)).getItem() instanceof ItemPotion))
                     {
-                        String var8 = var2.func_77973_b().getRegistryName().toString();
+                        String var8 = var2.getItem().getRegistryName().toString();
                         String var10001 = Class60. ("adaik\u007fjjp7t|llpdC}pxqb5");
                         if (llllIllIIlll(33362, 8489)) {
                             throw null;
                         }
 
                         if (llllIllIIllI(var8.equals(var10001))) {
-                            List var9 = PotionUtils.func_185189_a(var2);
+                            List var9 = PotionUtils.getEffectsFromStack(var2);
                             if (llllIllIIlll(33362, 8489)) {
                                 throw null;
                             }
@@ -273,7 +273,7 @@ public class Class166 extends Class171 {
                                 }
 
                                 if (llllIllIIllI(var10. (var11 + (double) var15))){
-                                    byte var12 = this. (var3.func_188419_a());
+                                    byte var12 = this. (var3.getPotion());
                                     if (llllIllIIlll(33362, 8489)) {
                                         throw null;
                                     }
@@ -310,16 +310,16 @@ public class Class166 extends Class171 {
                                             }
 
                                             int var6 = this.                                                                                                    .
-                                            field_71439_g.field_71071_by.field_70461_c;
+                                            player.inventory.currentItem;
                                             CPacketHeldItemChange var10004 = new CPacketHeldItemChange(this.);
                                             if (llllIllIIlll(33362, 8489)) {
                                                 throw null;
                                             }
 
                                             this. (var10004);
-                                            Rotation var20 = new Rotation(this..field_71439_g.field_70177_z,
+                                            Rotation var20 = new Rotation(this..player.rotationYaw,
                                             90.0F, this.                                                                                                    .
-                                            field_71439_g.field_70122_E);
+                                            player.onGround);
                                             if (llllIllIIlll(33362, 8489)) {
                                                 throw null;
                                             }
@@ -364,12 +364,12 @@ public class Class166 extends Class171 {
 
     private void __________________________________________________________________________________/* $FF was:                                                                                   */() {
         int var1 = this.                                                                                                    .
-        field_71439_g.field_71071_by.field_70461_c;
+        player.inventory.currentItem;
         this.                                                                                                    .
-        field_71439_g.field_71071_by.field_70461_c = this.;
+        player.inventory.currentItem = this.;
         this. (60L);
-        Rotation var10003 = new Rotation(this..field_71439_g.field_70177_z, 91.0F, this.                                                                                                    .
-        field_71439_g.field_70122_E);
+        Rotation var10003 = new Rotation(this..player.rotationYaw, 91.0F, this.                                                                                                    .
+        player.onGround);
         if (llllIllIIlll(43935, 1921)) {
             throw null;
         } else {
@@ -380,7 +380,7 @@ public class Class166 extends Class171 {
             } else {
                 this. (var10002);
                 this.                                                                                                    .
-                field_71439_g.field_71071_by.field_70461_c = var1;
+                player.inventory.currentItem = var1;
                 boolean var10000 = true;
             }
         }
@@ -390,8 +390,8 @@ public class Class166 extends Class171 {
 
     public void __________________________________________________________________________________________/* $FF was:                                                                                           */() {
         boolean var7;
-        if (!llllIllIlIIl(this..field_71462_r instanceof Class127) ||
-        !llllIllIlIIl(this..field_71462_r instanceof Class127) ||llllIllIlIll(this..field_71462_r)){
+        if (!llllIllIlIIl(this..currentScreen instanceof Class127) ||
+        !llllIllIlIIl(this..currentScreen instanceof Class127) ||llllIllIlIll(this..currentScreen)){
             if (llllIllIIlll(40355, 5248)) {
                 throw null;
             }
@@ -404,14 +404,14 @@ public class Class166 extends Class171 {
                     throw null;
                 }
 
-                if (!llllIllIlIlI(var10000, this..field_71439_g.field_71071_by.field_70462_a.size())){
+                if (!llllIllIlIlI(var10000, this..player.inventory.mainInventory.size())){
                     break;
                 }
 
                 ItemStack var2;
-                if (llllIllIllII(var2 = this..field_71439_g.field_71071_by.func_70301_a(var1)) &&
-                llllIllIIllI(var2.func_77973_b() instanceof ItemPotion)){
-                    List var5 = PotionUtils.func_185189_a(var2);
+                if (llllIllIllII(var2 = this..player.inventory.getStackInSlot(var1)) &&
+                llllIllIIllI(var2.getItem() instanceof ItemPotion)){
+                    List var5 = PotionUtils.getEffectsFromStack(var2);
                     if (llllIllIIlll(40355, 5248)) {
                         throw null;
                     }
@@ -428,8 +428,8 @@ public class Class166 extends Class171 {
                         }
 
                         PotionEffect var4;
-                        if (llllIllIIllI((var4 = (PotionEffect) var3.next()).func_188419_a() instanceof PotionHealth) && llllIllIlIIl(var4.func_188419_a().func_76398_f())) {
-                            String var6 = var2.func_77973_b().getRegistryName().toString();
+                        if (llllIllIIllI((var4 = (PotionEffect) var3.next()).getPotion() instanceof PotionHealth) && llllIllIlIIl(var4.getPotion().isBadEffect())) {
+                            String var6 = var2.getItem().getRegistryName().toString();
                             String var10001 = Class60. ("adaik\u007fjjp7t|llpdC}pxqb5");
                             if (llllIllIIlll(40355, 5248)) {
                                 throw null;
@@ -437,8 +437,8 @@ public class Class166 extends Class171 {
 
                             if (llllIllIIllI(var6.equals(var10001)) && llllIllIIllI(this.. (100))){
                                 this.                                                                                                    .
-                                field_71442_b.func_187098_a(this..field_71439_g.field_71069_bz.field_75152_c, var1, 0, ClickType.QUICK_MOVE, this.                                                                                                    .
-                                field_71439_g);
+                                playerController.windowClick(this..player.inventoryContainer.windowId, var1, 0, ClickType.QUICK_MOVE, this.                                                                                                    .
+                                player);
                                 this.                                                                                            .
                                 ();
                                 var7 = true;

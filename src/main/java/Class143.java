@@ -113,28 +113,28 @@ public class Class143 extends Class171 {
             }
 
             this.                                                                                                    .
-            field_71439_g.field_70759_as = this.;
+            player.rotationYawHead = this.;
             this.                                                                                                    .
-            field_71439_g.field_70761_aq = this.;
+            player.renderYawOffset = this.;
         }
 
         if (llIIllIllllI(96671, 6663)) {
             throw null;
         } else {
             CPacketEntityAction var3;
-            if (!llIIllIlllII(var1 instanceof CPacketEntityAction) || llIIllIlllll((var3 = (CPacketEntityAction) var1).func_180764_b(), Action.START_SPRINTING) && !llIIlllIIIII(var3.func_180764_b(), Action.STOP_SPRINTING)) {
+            if (!llIIllIlllII(var1 instanceof CPacketEntityAction) || llIIllIlllll((var3 = (CPacketEntityAction) var1).getAction(), Action.START_SPRINTING) && !llIIlllIIIII(var3.getAction(), Action.STOP_SPRINTING)) {
                 if (llIIllIllllI(96671, 6663)) {
                     throw null;
                 } else {
                     if (llIIllIlllII(var1 instanceof SPacketPlayerPosLook)) {
                         Class22. ((SPacketPlayerPosLook) var1, this.                                                                                                    .
-                        field_71439_g.field_70177_z);
+                        player.rotationYaw);
                         if (llIIllIllllI(96671, 6663)) {
                             throw null;
                         }
 
                         Class22. ((SPacketPlayerPosLook) var1, this.                                                                                                    .
-                        field_71439_g.field_70125_A);
+                        player.rotationPitch);
                         if (llIIllIllllI(96671, 6663)) {
                             throw null;
                         }
@@ -157,15 +157,15 @@ public class Class143 extends Class171 {
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(PlayerTickEvent var1) {
         float var3;
         float var4;
-        if (!llIIllIlllII((var3 = this..field_71439_g.field_191988_bg - 0.0F) == 0.0F ? 0 : (var3 < 0.0F ? -1 : 1)) ||
-        llIIlllIIIIl((var4 = this..field_71439_g.field_70702_br - 0.0F) == 0.0F ? 0 : (var4 < 0.0F ? -1 : 1))){
+        if (!llIIllIlllII((var3 = this..player.moveForward - 0.0F) == 0.0F ? 0 : (var3 < 0.0F ? -1 : 1)) ||
+        llIIlllIIIIl((var4 = this..player.moveStrafing - 0.0F) == 0.0F ? 0 : (var4 < 0.0F ? -1 : 1))){
             if (llIIllIllllI(42876, 8363)) {
                 throw null;
             }
 
             EntityPlayerSP var10000 = this.                                                                                                    .
-            field_71439_g;
-            var10000.field_70177_z = (float) ((double) var10000.field_70177_z + 1.0E-4D);
+            player;
+            var10000.rotationYaw = (float) ((double) var10000.rotationYaw + 1.0E-4D);
         }
 
         if (llIIllIllllI(42876, 8363)) {

@@ -200,16 +200,16 @@ public class Class161 extends Class171 {
                                 throw null;
                             } else {
                                 double var9 = var11;
-                                Minecraft var14 = Minecraft.func_71410_x();
+                                Minecraft var14 = Minecraft.getMinecraft();
                                 if (lllIllIIlIll(75353, 3730)) {
                                     throw null;
                                 } else {
-                                    var14.field_71439_g.field_70159_w = var5 * var0 * var7 + var3 * var0 * var9;
-                                    var14 = Minecraft.func_71410_x();
+                                    var14.player.motionX = var5 * var0 * var7 + var3 * var0 * var9;
+                                    var14 = Minecraft.getMinecraft();
                                     if (lllIllIIlIll(75353, 3730)) {
                                         throw null;
                                     } else {
-                                        var14.field_71439_g.field_70179_y = var5 * var0 * var9 - var3 * var0 * var7;
+                                        var14.player.motionZ = var5 * var0 * var9 - var3 * var0 * var7;
                                         var10000 = true;
                                     }
                                 }
@@ -238,20 +238,20 @@ public class Class161 extends Class171 {
     }
 
     public static void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(double var0) {
-        Minecraft var10000 = Minecraft.func_71410_x();
+        Minecraft var10000 = Minecraft.getMinecraft();
         if (lllIllIIlIll(69476, 3376)) {
             throw null;
         } else {
             Minecraft var2 = var10000;
-            double var3 = (double) var10000.field_71439_g.field_71158_b.field_192832_b;
-            double var5 = (double) var10000.field_71439_g.field_71158_b.field_78902_a;
-            float var7 = var10000.field_71439_g.field_70177_z;
+            double var3 = (double) var10000.player.movementInput.moveForward;
+            double var5 = (double) var10000.player.movementInput.moveStrafe;
+            float var7 = var10000.player.rotationYaw;
             boolean var8;
             double var13;
             double var14;
             if (lllIllIIllII((var13 = var3 - 0.0D) == 0.0D ? 0 : (var13 < 0.0D ? -1 : 1)) && lllIllIIllII((var14 = var5 - 0.0D) == 0.0D ? 0 : (var14 < 0.0D ? -1 : 1))) {
-                var2.field_71439_g.field_70159_w = 0.0D;
-                var2.field_71439_g.field_70179_y = 0.0D;
+                var2.player.motionX = 0.0D;
+                var2.player.motionZ = 0.0D;
                 var8 = true;
             } else if (lllIllIIlIll(69476, 3376)) {
                 throw null;
@@ -342,7 +342,7 @@ public class Class161 extends Class171 {
                 if (lllIllIIlIll(69476, 3376)) {
                     throw null;
                 } else {
-                    EntityPlayerSP var9 = var10000.field_71439_g;
+                    EntityPlayerSP var9 = var10000.player;
                     double var12 = var3 * var0;
                     double var10 = Math.toRadians((double) (var7 + 90.0F));
                     if (lllIllIIlIll(69476, 3376)) {
@@ -362,8 +362,8 @@ public class Class161 extends Class171 {
                                 if (lllIllIIlIll(69476, 3376)) {
                                     throw null;
                                 } else {
-                                    var9.field_70159_w = var12 + var10 * var10003;
-                                    var9 = var2.field_71439_g;
+                                    var9.motionX = var12 + var10 * var10003;
+                                    var9 = var2.player;
                                     var12 = var3 * var0;
                                     var10 = Math.toRadians((double) (var7 + 90.0F));
                                     if (lllIllIIlIll(69476, 3376)) {
@@ -383,7 +383,7 @@ public class Class161 extends Class171 {
                                                 if (lllIllIIlIll(69476, 3376)) {
                                                     throw null;
                                                 } else {
-                                                    var9.field_70179_y = var12 - var10 * var10003;
+                                                    var9.motionZ = var12 - var10 * var10003;
                                                     var8 = true;
                                                 }
                                             }
@@ -401,18 +401,18 @@ public class Class161 extends Class171 {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
-        if (lllIllIIllIl(this..field_71439_g.func_70090_H())){
+        if (lllIllIIllIl(this..player.isInWater())){
             label30:
             {
                 if (lllIllIIllIl(this.. ())){
                 EntityPlayerSP var10000 = this.                                                                                                    .
-                field_71439_g;
-                Potion var10001 = Potion.func_188412_a(1);
+                player;
+                Potion var10001 = Potion.getPotionById(1);
                 if (lllIllIIlIll(44211, 5230)) {
                     throw null;
                 }
 
-                if (!lllIllIIllIl(var10000.func_70644_a(var10001))) {
+                if (!lllIllIIllIl(var10000.isPotionActive(var10001))) {
                     break label30;
                 }
             }
@@ -422,9 +422,9 @@ public class Class161 extends Class171 {
                 }
 
                 (this.. (), this.                                                                                                    .
-                field_71439_g.field_70177_z, (double) this.                                                                                                    .
-                field_71439_g.field_71158_b.field_78902_a, (double) this.                                                                                                    .
-                field_71439_g.field_71158_b.field_192832_b);
+                player.rotationYaw, (double) this.                                                                                                    .
+                player.movementInput.moveStrafe, (double) this.                                                                                                    .
+                player.movementInput.moveForward);
                 if (lllIllIIlIll(44211, 5230)) {
                     throw null;
                 }

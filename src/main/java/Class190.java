@@ -132,7 +132,7 @@ public class Class190 extends Class171 {
                 throw null;
             }
 
-            if (!llIlIIIIllIl(var10000) || !llIlIIIlIIIl(this..field_71462_r)){
+            if (!llIlIIIIllIl(var10000) || !llIlIIIlIIIl(this..currentScreen)){
                 break label80;
             }
         }

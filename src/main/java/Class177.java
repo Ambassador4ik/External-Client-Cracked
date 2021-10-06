@@ -127,7 +127,7 @@ public class Class177 extends Class171 {
     }
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Object var1, Class170 var2) {
-        if (lllIlIIIlIlI(var1 instanceof SPacketEntityVelocity) && lllIlIIIlIll(((SPacketEntityVelocity) var1).func_149412_c(), this..field_71439_g.func_145782_y()))
+        if (lllIlIIIlIlI(var1 instanceof SPacketEntityVelocity) && lllIlIIIlIll(((SPacketEntityVelocity) var1).getEntityID(), this..player.getEntityId()))
         {
             byte var10000;
             float var3;

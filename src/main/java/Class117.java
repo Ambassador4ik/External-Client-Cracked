@@ -61,7 +61,7 @@ public class Class117 extends Class171 {
                 if (llIlIllIlllI(98794, 7821)) {
                     throw null;
                 } else {
-                    ItemStack var10018 = new ItemStack(Blocks.field_150462_ai);
+                    ItemStack var10018 = new ItemStack(Blocks.CRAFTING_TABLE);
                     if (llIlIllIlllI(98794, 7821)) {
                         throw null;
                     } else {
@@ -75,7 +75,7 @@ public class Class117 extends Class171 {
                             if (llIlIllIlllI(98794, 7821)) {
                                 throw null;
                             } else {
-                                ItemStack var23 = new ItemStack(Blocks.field_150460_al);
+                                ItemStack var23 = new ItemStack(Blocks.FURNACE);
                                 if (llIlIllIlllI(98794, 7821)) {
                                     throw null;
                                 } else {
@@ -89,7 +89,7 @@ public class Class117 extends Class171 {
                                         if (llIlIllIlllI(98794, 7821)) {
                                             throw null;
                                         } else {
-                                            ItemStack var22 = new ItemStack(Items.field_179570_aq);
+                                            ItemStack var22 = new ItemStack(Items.OAK_DOOR);
                                             if (llIlIllIlllI(98794, 7821)) {
                                                 throw null;
                                             } else {
@@ -103,7 +103,7 @@ public class Class117 extends Class171 {
                                                     if (llIlIllIlllI(98794, 7821)) {
                                                         throw null;
                                                     } else {
-                                                        ItemStack var21 = new ItemStack(Blocks.field_150415_aT);
+                                                        ItemStack var21 = new ItemStack(Blocks.TRAPDOOR);
                                                         if (llIlIllIlllI(98794, 7821)) {
                                                             throw null;
                                                         } else {
@@ -117,7 +117,7 @@ public class Class117 extends Class171 {
                                                                 if (llIlIllIlllI(98794, 7821)) {
                                                                     throw null;
                                                                 } else {
-                                                                    ItemStack var19 = new ItemStack(Blocks.field_180390_bo);
+                                                                    ItemStack var19 = new ItemStack(Blocks.OAK_FENCE_GATE);
                                                                     if (llIlIllIlllI(98794, 7821)) {
                                                                         throw null;
                                                                     } else {
@@ -131,7 +131,7 @@ public class Class117 extends Class171 {
                                                                             if (llIlIllIlllI(98794, 7821)) {
                                                                                 throw null;
                                                                             } else {
-                                                                                ItemStack var17 = new ItemStack(Blocks.field_150486_ae);
+                                                                                ItemStack var17 = new ItemStack(Blocks.CHEST);
                                                                                 if (llIlIllIlllI(98794, 7821)) {
                                                                                     throw null;
                                                                                 } else {
@@ -147,7 +147,7 @@ public class Class117 extends Class171 {
                                                                                         if (llIlIllIlllI(98794, 7821)) {
                                                                                             throw null;
                                                                                         } else {
-                                                                                            ItemStack var15 = new ItemStack(Blocks.field_150477_bB);
+                                                                                            ItemStack var15 = new ItemStack(Blocks.ENDER_CHEST);
                                                                                             if (llIlIllIlllI(98794, 7821)) {
                                                                                                 throw null;
                                                                                             } else {
@@ -164,7 +164,7 @@ public class Class117 extends Class171 {
                                                                                                     if (llIlIllIlllI(98794, 7821)) {
                                                                                                         throw null;
                                                                                                     } else {
-                                                                                                        ItemStack var13 = new ItemStack(Items.field_151155_ap);
+                                                                                                        ItemStack var13 = new ItemStack(Items.SIGN);
                                                                                                         if (llIlIllIlllI(98794, 7821)) {
                                                                                                             throw null;
                                                                                                         } else {
@@ -181,7 +181,7 @@ public class Class117 extends Class171 {
                                                                                                                 if (llIlIllIlllI(98794, 7821)) {
                                                                                                                     throw null;
                                                                                                                 } else {
-                                                                                                                    ItemStack var11 = new ItemStack(Blocks.field_190987_dv);
+                                                                                                                    ItemStack var11 = new ItemStack(Blocks.PURPLE_SHULKER_BOX);
                                                                                                                     if (llIlIllIlllI(98794, 7821)) {
                                                                                                                         throw null;
                                                                                                                     } else {
@@ -198,7 +198,7 @@ public class Class117 extends Class171 {
                                                                                                                             if (llIlIllIlllI(98794, 7821)) {
                                                                                                                                 throw null;
                                                                                                                             } else {
-                                                                                                                                ItemStack var9 = new ItemStack(Items.field_179565_cj);
+                                                                                                                                ItemStack var9 = new ItemStack(Items.ARMOR_STAND);
                                                                                                                                 if (llIlIllIlllI(98794, 7821)) {
                                                                                                                                     throw null;
                                                                                                                                 } else {
@@ -215,7 +215,7 @@ public class Class117 extends Class171 {
                                                                                                                                         if (llIlIllIlllI(98794, 7821)) {
                                                                                                                                             throw null;
                                                                                                                                         } else {
-                                                                                                                                            ItemStack var7 = new ItemStack(Blocks.field_150367_z);
+                                                                                                                                            ItemStack var7 = new ItemStack(Blocks.DISPENSER);
                                                                                                                                             if (llIlIllIlllI(98794, 7821)) {
                                                                                                                                                 throw null;
                                                                                                                                             } else {
@@ -232,7 +232,7 @@ public class Class117 extends Class171 {
                                                                                                                                                     if (llIlIllIlllI(98794, 7821)) {
                                                                                                                                                         throw null;
                                                                                                                                                     } else {
-                                                                                                                                                        ItemStack var5 = new ItemStack(Blocks.field_150409_cd);
+                                                                                                                                                        ItemStack var5 = new ItemStack(Blocks.DROPPER);
                                                                                                                                                         if (llIlIllIlllI(98794, 7821)) {
                                                                                                                                                             throw null;
                                                                                                                                                         } else {
@@ -249,7 +249,7 @@ public class Class117 extends Class171 {
                                                                                                                                                                 if (llIlIllIlllI(98794, 7821)) {
                                                                                                                                                                     throw null;
                                                                                                                                                                 } else {
-                                                                                                                                                                    ItemStack var3 = new ItemStack(Items.field_151160_bD);
+                                                                                                                                                                    ItemStack var3 = new ItemStack(Items.ITEM_FRAME);
                                                                                                                                                                     if (llIlIllIlllI(98794, 7821)) {
                                                                                                                                                                         throw null;
                                                                                                                                                                     } else {
@@ -324,14 +324,14 @@ public class Class117 extends Class171 {
 
     @SubscribeEvent
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RightClickBlock var1) {
-        var1.setCanceled(this. (this..field_71441_e.func_180495_p(var1.getPos()).func_177230_c()));
+        var1.setCanceled(this. (this..world.getBlockState(var1.getPos()).getBlock()));
         boolean var10000 = true;
     }
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Object var1, Class170 var2) {
         if (llIlIllIllIl(var1 instanceof CPacketPlayerTryUseItemOnBlock)) {
             CPacketPlayerTryUseItemOnBlock var3 = (CPacketPlayerTryUseItemOnBlock) var1;
-            if (llIlIllIllIl(this. (this..field_71441_e.func_180495_p(var3.func_187023_a()).func_177230_c()))){
+            if (llIlIllIllIl(this. (this..world.getBlockState(var3.getPos()).getBlock()))){
                 return false;
             }
         }
@@ -341,8 +341,8 @@ public class Class117 extends Class171 {
         } else {
             CPacketUseEntity var4;
             if (!llIlIllIllIl(var1 instanceof CPacketUseEntity) || !llIlIllIllIl(this.
-            ((var4 = (CPacketUseEntity) var1).func_149564_a(this..field_71441_e))) ||
-            llIlIlllIlll(var4.func_149565_c(), Action.INTERACT) && !llIlIlllIllI(var4.func_149565_c(), Action.INTERACT_AT))
+            ((var4 = (CPacketUseEntity) var1).getEntityFromWorld(this..world))) ||
+            llIlIlllIlll(var4.getAction(), Action.INTERACT) && !llIlIlllIllI(var4.getAction(), Action.INTERACT_AT))
             {
                 if (llIlIllIlllI(41027, 8947)) {
                     throw null;
@@ -352,7 +352,7 @@ public class Class117 extends Class171 {
             } else if (llIlIllIlllI(41027, 8947)) {
                 throw null;
             } else {
-                if (llIlIlllIlll(this..field_71439_g.field_71071_by.func_70448_g().func_77973_b(),Items.field_190931_a))
+                if (llIlIlllIlll(this..player.inventory.getCurrentItem().getItem(),Items.AIR))
                 {
                     CPacketPlayerTryUseItem var10001 = new CPacketPlayerTryUseItem(EnumHand.MAIN_HAND);
                     if (llIlIllIlllI(41027, 8947)) {
@@ -374,16 +374,16 @@ public class Class117 extends Class171 {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Block var1) {
-        if (llIlIllIllIl(this.. ()) &&llIlIlllIllI(var1, Blocks.field_150462_ai)){
+        if (llIlIllIllIl(this.. ()) &&llIlIlllIllI(var1, Blocks.CRAFTING_TABLE)){
             return true;
         } else if (llIlIllIlllI(91341, 6616)) {
             throw null;
-        } else if (llIlIllIllIl(this.. ()) &&llIlIlllIllI(var1, Blocks.field_150460_al)){
+        } else if (llIlIllIllIl(this.. ()) &&llIlIlllIllI(var1, Blocks.FURNACE)){
             return true;
         } else if (llIlIllIlllI(91341, 6616)) {
             throw null;
         } else if (llIlIllIllIl(this.. ()) &&
-        (!llIlIlllIlll(var1, Blocks.field_150454_av) || !llIlIlllIlll(var1, Blocks.field_180410_as) || !llIlIlllIlll(var1, Blocks.field_180412_aq) || !llIlIlllIlll(var1, Blocks.field_180409_at) || !llIlIlllIlll(var1, Blocks.field_180411_ar) || !llIlIlllIlll(var1, Blocks.field_180413_ao) || llIlIlllIllI(var1, Blocks.field_180414_ap)))
+        (!llIlIlllIlll(var1, Blocks.IRON_DOOR) || !llIlIlllIlll(var1, Blocks.ACACIA_DOOR) || !llIlIlllIlll(var1, Blocks.BIRCH_DOOR) || !llIlIlllIlll(var1, Blocks.DARK_OAK_DOOR) || !llIlIlllIlll(var1, Blocks.JUNGLE_DOOR) || !llIlIlllIlll(var1, Blocks.OAK_DOOR) || llIlIlllIllI(var1, Blocks.SPRUCE_DOOR)))
         {
             if (llIlIllIlllI(91341, 6616)) {
                 throw null;
@@ -392,17 +392,17 @@ public class Class117 extends Class171 {
             }
         } else if (llIlIllIlllI(91341, 6616)) {
             throw null;
-        } else if (llIlIllIllIl(this.. ()) &&llIlIlllIllI(var1, Blocks.field_150415_aT)){
+        } else if (llIlIllIllIl(this.. ()) &&llIlIlllIllI(var1, Blocks.TRAPDOOR)){
             return true;
         } else if (llIlIllIlllI(91341, 6616)) {
             throw null;
         } else if (!llIlIllIllIl(this.. ()) ||
-        llIlIlllIlll(var1, Blocks.field_180390_bo) && llIlIlllIlll(var1, Blocks.field_180387_bt) && llIlIlllIlll(var1, Blocks.field_180392_bq) && llIlIlllIlll(var1, Blocks.field_180385_bs) && llIlIlllIlll(var1, Blocks.field_180386_br) && !llIlIlllIllI(var1, Blocks.field_180391_bp))
+        llIlIlllIlll(var1, Blocks.OAK_FENCE_GATE) && llIlIlllIlll(var1, Blocks.ACACIA_FENCE_GATE) && llIlIlllIlll(var1, Blocks.BIRCH_FENCE_GATE) && llIlIlllIlll(var1, Blocks.DARK_OAK_FENCE_GATE) && llIlIlllIlll(var1, Blocks.JUNGLE_FENCE_GATE) && !llIlIlllIllI(var1, Blocks.SPRUCE_FENCE_GATE))
         {
             if (llIlIllIlllI(91341, 6616)) {
                 throw null;
             } else if (llIlIllIllIl(this.. ()) &&
-            (!llIlIlllIlll(var1, Blocks.field_150486_ae) || llIlIlllIllI(var1, Blocks.field_150447_bR))){
+            (!llIlIlllIlll(var1, Blocks.CHEST) || llIlIlllIllI(var1, Blocks.TRAPPED_CHEST))){
             if (llIlIllIlllI(91341, 6616)) {
                 throw null;
             } else {
@@ -410,16 +410,16 @@ public class Class117 extends Class171 {
             }
         } else if (llIlIllIlllI(91341, 6616)) {
             throw null;
-        } else if (llIlIllIllIl(this.. ()) &&llIlIlllIllI(var1, Blocks.field_150477_bB)){
+        } else if (llIlIllIllIl(this.. ()) &&llIlIlllIllI(var1, Blocks.ENDER_CHEST)){
             return true;
         } else if (llIlIllIlllI(91341, 6616)) {
             throw null;
         } else if (!llIlIllIllIl(this.. ()) ||
-            llIlIlllIlll(var1, Blocks.field_150472_an) && !llIlIlllIllI(var1, Blocks.field_150444_as)){
+            llIlIlllIlll(var1, Blocks.STANDING_SIGN) && !llIlIlllIllI(var1, Blocks.WALL_SIGN)){
             if (llIlIllIlllI(91341, 6616)) {
                 throw null;
             } else if (llIlIllIllIl(this.. ()) &&
-            (!llIlIlllIlll(var1, Blocks.field_190975_dA) || !llIlIlllIlll(var1, Blocks.field_190988_dw) || !llIlIlllIlll(var1, Blocks.field_190989_dx) || !llIlIlllIlll(var1, Blocks.field_190986_du) || !llIlIlllIlll(var1, Blocks.field_190984_ds) || !llIlIlllIlll(var1, Blocks.field_190990_dy) || !llIlIlllIlll(var1, Blocks.field_190980_do) || !llIlIlllIlll(var1, Blocks.field_190982_dq) || !llIlIlllIlll(var1, Blocks.field_190979_dn) || !llIlIlllIlll(var1, Blocks.field_190978_dm) || !llIlIlllIlll(var1, Blocks.field_190983_dr) || !llIlIlllIlll(var1, Blocks.field_190987_dv) || !llIlIlllIlll(var1, Blocks.field_190991_dz) || !llIlIlllIlll(var1, Blocks.field_190985_dt) || !llIlIlllIlll(var1, Blocks.field_190977_dl) || llIlIlllIllI(var1, Blocks.field_190981_dp)))
+            (!llIlIlllIlll(var1, Blocks.BLACK_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.BLUE_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.BROWN_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.CYAN_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.GRAY_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.GREEN_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.LIGHT_BLUE_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.LIME_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.MAGENTA_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.ORANGE_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.PINK_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.PURPLE_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.RED_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.SILVER_SHULKER_BOX) || !llIlIlllIlll(var1, Blocks.WHITE_SHULKER_BOX) || llIlIlllIllI(var1, Blocks.YELLOW_SHULKER_BOX)))
             {
                 if (llIlIllIlllI(91341, 6616)) {
                     throw null;
@@ -428,11 +428,11 @@ public class Class117 extends Class171 {
                 }
             } else if (llIlIllIlllI(91341, 6616)) {
                 throw null;
-            } else if (llIlIllIllIl(this.. ()) &&llIlIlllIllI(var1, Blocks.field_150367_z)){
+            } else if (llIlIllIllIl(this.. ()) &&llIlIlllIllI(var1, Blocks.DISPENSER)){
                 return true;
             } else if (llIlIllIlllI(91341, 6616)) {
                 throw null;
-            } else if (llIlIllIllIl(this.. ()) &&llIlIlllIllI(var1, Blocks.field_150409_cd)){
+            } else if (llIlIllIllIl(this.. ()) &&llIlIlllIllI(var1, Blocks.DROPPER)){
                 return true;
             } else if (llIlIllIlllI(91341, 6616)) {
                 throw null;

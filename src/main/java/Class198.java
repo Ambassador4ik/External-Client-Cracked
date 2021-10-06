@@ -77,7 +77,7 @@ public class Class198 extends Class171 {
         this. (this.. ());
         if (llIlIlIllllI(var1 instanceof CPacketChatMessage)) {
             Field var10000 = this.;
-            String var10002 = this. (((CPacketChatMessage) var1).func_149439_c());
+            String var10002 = this. (((CPacketChatMessage) var1).getMessage());
             if (llIlIIIIlIlI(63404, 6402)) {
                 throw null;
             }

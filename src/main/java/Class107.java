@@ -84,15 +84,15 @@ public class Class107 extends Class171 {
                 MovementInput var4 = var1.getMovementInput();
                 double var2 = (double) this.                                                                                            .
                 () * 0.05D;
-                if (llIllllllIlI(this..field_71439_g.func_184587_cr()) &&
-                llIllllllIll(this..field_71439_g.func_184218_aH()) &&(!llIllllllIlI(this.. ()) ||
-                llIllllllIll(this..field_71439_g.field_70122_E))){
+                if (llIllllllIlI(this..player.isHandActive()) &&
+                llIllllllIll(this..player.isRiding()) &&(!llIllllllIlI(this.. ()) ||
+                llIllllllIll(this..player.onGround))){
                     if (llIllllllIIl(94582, 9788)) {
                         throw null;
                     }
 
-                    var4.field_192832_b = (float) ((double) var4.field_192832_b * var2);
-                    var4.field_78902_a = (float) ((double) var4.field_78902_a * var2);
+                    var4.moveForward = (float) ((double) var4.moveForward * var2);
+                    var4.moveStrafe = (float) ((double) var4.moveStrafe * var2);
                 }
 
                 if (llIllllllIIl(94582, 9788)) {

@@ -156,16 +156,16 @@ public class Class105 extends Class171 {
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
         double var4;
-        if (lllllIllIIIl(this. ()) &&(!lllllIllIIIl((var4 = (double) this..field_71439_g.func_110143_aJ() - this.. ()) ==
+        if (lllllIllIIIl(this. ()) &&(!lllllIllIIIl((var4 = (double) this..player.getHealth() - this.. ()) ==
         0.0D ? 0 : (var4 < 0.0D ? -1 : 1)) ||lllllIllIlII(this. ()))){
             if (lllllIllIIlI(8059, 2036)) {
                 throw null;
             }
 
             Item var3 = this.                                                                                                    .
-            field_71439_g.func_184592_cb().func_77973_b();
+            player.getHeldItemOffhand().getItem();
             int var2 = this. ();
-            if (lllllIllIlIl(var3, Items.field_190929_cY)) {
+            if (lllllIllIlIl(var3, Items.TOTEM_OF_UNDYING)) {
                 this.                                                                                         .();
             }
 
@@ -173,14 +173,14 @@ public class Class105 extends Class171 {
                 throw null;
             }
 
-            if (lllllIllIlll(var3, Items.field_190929_cY) && lllllIlllIII(var2, -1) && lllllIllIlII(this.. (this.. ())))
+            if (lllllIllIlll(var3, Items.TOTEM_OF_UNDYING) && lllllIlllIII(var2, -1) && lllllIllIlII(this.. (this.. ())))
             {
                 this.                                                                                                    .
-                field_71442_b.func_187098_a(0, var2, 1, ClickType.PICKUP, this..field_71439_g);
+                playerController.windowClick(0, var2, 1, ClickType.PICKUP, this..player);
                 this.                                                                                                    .
-                field_71442_b.func_187098_a(0, 45, 1, ClickType.PICKUP, this..field_71439_g);
+                playerController.windowClick(0, 45, 1, ClickType.PICKUP, this..player);
                 this.                                                                                                    .
-                field_71442_b.func_187098_a(0, var2, 0, ClickType.PICKUP, this..field_71439_g);
+                playerController.windowClick(0, var2, 0, ClickType.PICKUP, this..player);
             }
         }
 
@@ -209,8 +209,8 @@ public class Class105 extends Class171 {
                         return -1;
                     }
 
-                    if (lllllIllIlIl(this..field_71439_g.field_71069_bz.func_75139_a(var1).func_75211_c().func_77973_b(),
-                    Items.field_190929_cY)){
+                    if (lllllIllIlIl(this..player.inventoryContainer.getSlot(var1).getStack().getItem(),
+                    Items.TOTEM_OF_UNDYING)){
                         return var1;
                     }
 
@@ -225,8 +225,8 @@ public class Class105 extends Class171 {
                 throw null;
             }
 
-            if (lllllIllIlIl(this..field_71439_g.field_71069_bz.func_75139_a(var1).func_75211_c().func_77973_b(),
-            Items.field_190929_cY)){
+            if (lllllIllIlIl(this..player.inventoryContainer.getSlot(var1).getStack().getItem(),
+            Items.TOTEM_OF_UNDYING)){
                 return var1;
             }
 
@@ -243,7 +243,7 @@ public class Class105 extends Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderGameOverlayEvent var1) {
         boolean var10000;
-        if (lllllIllIlII(this.. ()) &&!lllllIllIlII(this..field_71439_g.func_184812_l_())){
+        if (lllllIllIlII(this.. ()) &&!lllllIllIlII(this..player.isCreative())){
             if (lllllIllIIlI(50924, 6069)) {
                 throw null;
             } else {
@@ -254,14 +254,14 @@ public class Class105 extends Class171 {
                     throw null;
                 } else {
                     ScaledResolution var6 = var1.getResolution();
-                    int var5 = var6.func_78326_a() / 2 + 90;
-                    int var3 = var6.func_78328_b() - 18 - 21;
-                    ItemStack var7 = new ItemStack(Items.field_190929_cY);
+                    int var5 = var6.getScaledWidth() / 2 + 90;
+                    int var3 = var6.getScaledHeight() - 18 - 21;
+                    ItemStack var7 = new ItemStack(Items.TOTEM_OF_UNDYING);
                     if (lllllIllIIlI(50924, 6069)) {
                         throw null;
                     } else {
                         ItemStack var4 = var7;
-                        var4.func_190920_e(var2);
+                        var4.setCount(var2);
                         this.                                                                                           .
                         (var4, var5, var3, -100.0F);
                         var10000 = true;
@@ -276,7 +276,7 @@ public class Class105 extends Class171 {
     }
 
     public boolean __________________________________________________________________________________/* $FF was:                                                                                   */() {
-        if (lllllIllIIIl(this..field_71441_e.func_72910_y().stream().filter(this::).mapToInt(Class105::).sum())){
+        if (lllllIllIIIl(this..world.getLoadedEntityList().stream().filter(this::).mapToInt(Class105::).sum())){
             return true;
         } else if (lllllIllIIlI(54498, 1758)) {
             throw null;
@@ -288,7 +288,7 @@ public class Class105 extends Class171 {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     private boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(int var1) {
-        if (lllllIllIlIl(this..field_71439_g.field_71071_by.func_70301_a(var1).func_77973_b(),Items.field_190929_cY)){
+        if (lllllIllIlIl(this..player.inventory.getStackInSlot(var1).getItem(),Items.TOTEM_OF_UNDYING)){
             return true;
         } else if (lllllIllIIlI(27409, 3015)) {
             throw null;
@@ -299,7 +299,7 @@ public class Class105 extends Class171 {
 
     private boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var1) {
         float var2;
-        if (lllllIllIlII(var1 instanceof EntityEnderCrystal) && lllllIlllIIl((var2 = this..field_71439_g.func_70032_d(var1) - 5.0F) == 0.0F ? 0 : (var2 < 0.0F ? -1 : 1)))
+        if (lllllIllIlII(var1 instanceof EntityEnderCrystal) && lllllIlllIIl((var2 = this..player.getDistance(var1) - 5.0F) == 0.0F ? 0 : (var2 < 0.0F ? -1 : 1)))
         {
             return true;
         } else if (lllllIllIIlI(8509, 6626)) {
@@ -310,7 +310,7 @@ public class Class105 extends Class171 {
     }
 
     public int _____________________________________________________________________________________/* $FF was:                                                                                      */() {
-        IntStream var10000 = IntStream.range(0, this..field_71439_g.field_71071_by.func_70302_i_());
+        IntStream var10000 = IntStream.range(0, this..player.inventory.getSizeInventory());
         if (lllllIllIIlI(95219, 3691)) {
             throw null;
         } else {

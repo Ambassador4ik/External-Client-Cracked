@@ -299,13 +299,13 @@ public class Class189 extends Class171 {
                         while (!llIIIlIIlIIl(13865, 2704)) {
                             if (llIIIlIlIIIl(0)) {
                                 this.                                                                                                    .
-                                field_71439_g.field_70747_aH = 0.027F;
-                                if (llIIIlIIllll(this..field_71439_g.field_70122_E) &&
+                                player.jumpMovementFactor = 0.027F;
+                                if (llIIIlIIllll(this..player.onGround) &&
                                 llIIIlIlIlIl(var1.phase, Phase.START)){
                                     this.                                                                                                    .
-                                    field_71439_g.func_70664_aZ();
+                                    player.jump();
                                     this.                                                                                                    .
-                                    field_71439_g.field_70747_aH = 0.27F;
+                                    player.jumpMovementFactor = 0.27F;
                                     var7 = true;
                                     return;
                                 }
@@ -325,7 +325,7 @@ public class Class189 extends Class171 {
                             throw null;
                         }
 
-                        if (llIIIlIIllll(this..field_71439_g.field_70122_E) &&llIIIlIlIlIl(var1.phase, Phase.END)){
+                        if (llIIIlIIllll(this..player.onGround) &&llIIIlIlIlIl(var1.phase, Phase.END)){
                         Class22. (60.0F);
                         if (llIIIlIIlIIl(13865, 2704)) {
                             throw null;
@@ -333,7 +333,7 @@ public class Class189 extends Class171 {
 
                         var8 = this;
                         this.                                                                                                    .
-                        field_71439_g.func_70664_aZ();
+                        player.jump();
                         var6 = true;
                     } else{
                         if (llIIIlIIlIIl(13865, 2704)) {
@@ -353,7 +353,7 @@ public class Class189 extends Class171 {
                     }
 
                     float var14;
-                    if (llIIIlIllIII((var14 = var8..field_71439_g.field_70143_R - 0.1F) == 0.0F ? 0 : (var14 < 0.0F ? -1 : 1))){
+                    if (llIIIlIllIII((var14 = var8..player.fallDistance - 0.1F) == 0.0F ? 0 : (var14 < 0.0F ? -1 : 1))){
                         Class22. (30.0F);
                         if (llIIIlIIlIIl(13865, 2704)) {
                             throw null;
@@ -368,16 +368,16 @@ public class Class189 extends Class171 {
                             throw null;
                         }
 
-                        if (llIIIlIIllll(this..field_71439_g.field_70122_E) &&llIIIlIlIlIl(var1.phase, Phase.END)){
+                        if (llIIIlIIllll(this..player.onGround) &&llIIIlIlIlIl(var1.phase, Phase.END)){
                         Class22. (36.0F);
                         if (llIIIlIIlIIl(13865, 2704)) {
                             throw null;
                         }
 
                         this.                                                                                                    .
-                        field_71439_g.func_70031_b(true);
+                        player.setSprinting(true);
                         this.                                                                                                    .
-                        field_71439_g.func_70664_aZ();
+                        player.jump();
                         ++this.;
                         var7 = true;
                         return;
@@ -388,10 +388,10 @@ public class Class189 extends Class171 {
                     }
 
                     float var11;
-                    if (llIIIlIllIII((var11 = this..field_71439_g.field_70143_R - 0.1F) == 0.0F ? 0 : (var11 < 0.0F ? -1 : 1))){
+                    if (llIIIlIllIII((var11 = this..player.fallDistance - 0.1F) == 0.0F ? 0 : (var11 < 0.0F ? -1 : 1))){
                         EntityPlayerSP var10 = this.                                                                                                    .
-                        field_71439_g;
-                        var10.field_70163_u -= 0.10000000149011612D;
+                        player;
+                        var10.posY -= 0.10000000149011612D;
                         if (llIIIlIlllIl(this., 1)) {
                             Class22. (4.0F);
                             if (llIIIlIIlIIl(13865, 2704)) {
@@ -421,7 +421,7 @@ public class Class189 extends Class171 {
                     }
 
                     float var12;
-                    if (llIIIlIllIII((var12 = this..field_71439_g.field_70143_R - 0.2F) == 0.0F ? 0 : (var12 < 0.0F ? -1 : 1))){
+                    if (llIIIlIllIII((var12 = this..player.fallDistance - 0.2F) == 0.0F ? 0 : (var12 < 0.0F ? -1 : 1))){
                         Class22. (20.0F);
                         if (llIIIlIIlIIl(13865, 2704)) {
                             throw null;
@@ -436,15 +436,15 @@ public class Class189 extends Class171 {
                             throw null;
                         }
 
-                        KeyBinding.func_74510_a(this..field_71474_y.field_74314_A.func_151463_i(), false);
+                        KeyBinding.setKeyBindState(this..gameSettings.keyBindJump.getKeyCode(), false);
                         if (llIIIlIIlIIl(13865, 2704)) {
                             throw null;
                         }
 
-                        if (llIIIlIIllll(this..field_71439_g.field_70122_E) &&llIIIlIlIlIl(var1.phase, Phase.END)){
+                        if (llIIIlIIllll(this..player.onGround) &&llIIIlIlIlIl(var1.phase, Phase.END)){
                         var8 = this;
                         this.                                                                                                    .
-                        field_71439_g.func_70664_aZ();
+                        player.jump();
                         this. = 5;
                         var6 = true;
                     } else{
@@ -480,7 +480,7 @@ public class Class189 extends Class171 {
                             }
 
                             this.                                                                                                    .
-                            field_71439_g.field_70747_aH = 0.027F;
+                            player.jumpMovementFactor = 0.027F;
                         }
                     }
 
@@ -489,7 +489,7 @@ public class Class189 extends Class171 {
                     }
 
                     double var13;
-                    if (llIIIlIlIIIl((var13 = var8..field_71439_g.field_70181_x - 0.0030162615090425808D) == 0.0D ? 0 : (var13 < 0.0D ? -1 : 1))){
+                    if (llIIIlIlIIIl((var13 = var8..player.motionY - 0.0030162615090425808D) == 0.0D ? 0 : (var13 < 0.0D ? -1 : 1))){
                         Class22. (32.0F);
                         if (llIIIlIIlIIl(13865, 2704)) {
                             throw null;
@@ -514,7 +514,7 @@ public class Class189 extends Class171 {
                         throw null;
                     }
 
-                    if (llIIIlIlllIl(var8..field_71439_g.field_70173_aa % 60,39)){
+                    if (llIIIlIlllIl(var8..player.ticksExisted % 60,39)){
                         Class22. (40.0F);
                         if (llIIIlIIlIIl(13865, 2704)) {
                             throw null;
@@ -529,9 +529,9 @@ public class Class189 extends Class171 {
                             throw null;
                         }
 
-                        if (llIIIlIIllll(this..field_71439_g.field_70122_E)){
+                        if (llIIIlIIllll(this..player.onGround)){
                         this.                                                                                                    .
-                        field_71439_g.field_70747_aH = 0.026F;
+                        player.jumpMovementFactor = 0.026F;
                         if (llIIIlIlIlIl(var1.phase, Phase.END)) {
                             Class22. (1.15F);
                             if (llIIIlIIlIIl(13865, 2704)) {
@@ -539,7 +539,7 @@ public class Class189 extends Class171 {
                             }
 
                             this.                                                                                                    .
-                            field_71439_g.func_70664_aZ();
+                            player.jump();
                             var7 = true;
                             return;
                         }
@@ -549,11 +549,11 @@ public class Class189 extends Class171 {
                         }
 
                         float var16;
-                        if (llIIIlIlIIIl(this..field_71439_g.field_70122_E) &&
-                        llIIIlIllIII((var16 = this..field_71439_g.field_70143_R - 0.0F) == 0.0F ? 0 : (var16 < 0.0F ? -1 : 1)))
+                        if (llIIIlIlIIIl(this..player.onGround) &&
+                        llIIIlIllIII((var16 = this..player.fallDistance - 0.0F) == 0.0F ? 0 : (var16 < 0.0F ? -1 : 1)))
                         {
                             this.                                                                                                    .
-                            field_71439_g.field_70747_aH = 0.02F;
+                            player.jumpMovementFactor = 0.02F;
                             Class22. (1.0F);
                             if (llIIIlIIlIIl(13865, 2704)) {
                                 throw null;
@@ -569,7 +569,7 @@ public class Class189 extends Class171 {
                             throw null;
                         }
 
-                        if (llIIIlIIllll(this..field_71439_g.field_70122_E) &&llIIIlIlIlIl(var1.phase, Phase.END)){
+                        if (llIIIlIIllll(this..player.onGround) &&llIIIlIlIlIl(var1.phase, Phase.END)){
                         Class22. (2000.0F);
                         if (llIIIlIIlIIl(13865, 2704)) {
                             throw null;
@@ -584,10 +584,10 @@ public class Class189 extends Class171 {
 
                         float var9;
                         float var15;
-                        if (llIIIlIllIII((var15 = this..field_71439_g.field_70143_R - 0.0F) == 0.0F ? 0 : (var15 < 0.0F ? -1 : 1)))
+                        if (llIIIlIllIII((var15 = this..player.fallDistance - 0.0F) == 0.0F ? 0 : (var15 < 0.0F ? -1 : 1)))
                         {
                             var9 = this.                                                                                                    .
-                            field_71439_g.field_70143_R * 10.0F;
+                            player.fallDistance * 10.0F;
                             boolean var10002 = true;
                         } else{
                             if (llIIIlIIlIIl(13865, 2704)) {
@@ -613,9 +613,9 @@ public class Class189 extends Class171 {
                         throw null;
                     }
 
-                    if (llIIIlIIllll(var8..field_71439_g.field_70122_E)){
+                    if (llIIIlIIllll(var8..player.onGround)){
                         this.                                                                                                    .
-                        field_71439_g.field_70181_x = 0.42D;
+                        player.motionY = 0.42D;
                         var7 = true;
                         return;
                     }
@@ -625,24 +625,24 @@ public class Class189 extends Class171 {
                             throw null;
                         }
 
-                        if (llIIIlIIllll(this..field_71439_g.field_70122_E)){
+                        if (llIIIlIIllll(this..player.onGround)){
                         this.                                                                                                    .
-                        field_71439_g.func_70664_aZ();
+                        player.jump();
                     }
 
                     if (llIIIlIIlIIl(13865, 2704)) {
                         throw null;
                     }
 
-                    this.                                                                                                    .field_71439_g.field_70747_aH = 0.26F;
+                    this.                                                                                                    .player.jumpMovementFactor = 0.26F;
                     Class22. (20.0F);
                     if (llIIIlIIlIIl(13865, 2704)) {
                         throw null;
                     }
 
-                    if (llIIIlIlIIIl(this..field_71439_g.field_70173_aa % 10)){
+                    if (llIIIlIlIIIl(this..player.ticksExisted % 10)){
                         this.                                                                                                    .
-                        field_71439_g.field_70747_aH = 0.27F;
+                        player.jumpMovementFactor = 0.27F;
                         Class22. (22.0F);
                         if (llIIIlIIlIIl(13865, 2704)) {
                             throw null;
@@ -653,18 +653,18 @@ public class Class189 extends Class171 {
                         throw null;
                     }
 
-                    if (llIIIlIlIIIl(this..field_71439_g.field_70173_aa % 10)){
+                    if (llIIIlIlIIIl(this..player.ticksExisted % 10)){
                         this.                                                                                                    .
-                        field_71439_g.field_70747_aH = 0.26F;
+                        player.jumpMovementFactor = 0.26F;
                     }
 
                     if (llIIIlIIlIIl(13865, 2704)) {
                         throw null;
                     }
 
-                    if (llIIIlIlIIIl(this..field_71439_g.field_70173_aa % 5)){
+                    if (llIIIlIlIIIl(this..player.ticksExisted % 5)){
                         this.                                                                                                    .
-                        field_71439_g.field_70747_aH = 0.265F;
+                        player.jumpMovementFactor = 0.265F;
                         Class22. (21.800001F);
                         if (llIIIlIIlIIl(13865, 2704)) {
                             throw null;
@@ -696,7 +696,7 @@ public class Class189 extends Class171 {
                 throw null;
             } else {
                 this.                                                                                                    .
-                field_71439_g.field_70747_aH = 0.02F;
+                player.jumpMovementFactor = 0.02F;
                 this. = 0;
                 super. ();
                 if (llIIIlIIlIIl(19535, 9387)) {

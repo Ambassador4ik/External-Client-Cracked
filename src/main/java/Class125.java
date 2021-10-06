@@ -453,7 +453,7 @@ public class Class125 extends Class171 {
     }
 
     private static boolean ____________________________________________________________________________/* $FF was:                                                                             */(PotionEffect var0) {
-        return var0.func_188418_e();
+        return var0.doesShowParticles();
     }
 
     private static int ________________________________________________________________________________________________/* $FF was:                                                                                                 */(PotionEffect var0) {
@@ -473,7 +473,7 @@ public class Class125 extends Class171 {
     }
 
     private static boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(PotionEffect var0) {
-        if (llllllIllIlI(var0.func_188418_e()) && llllllIllIlI(var0.func_188419_a().func_76398_f())) {
+        if (llllllIllIlI(var0.doesShowParticles()) && llllllIllIlI(var0.getPotion().isBadEffect())) {
             return true;
         } else if (llllllIllIIl(25054, 9678)) {
             throw null;
@@ -609,12 +609,12 @@ public class Class125 extends Class171 {
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(GuiOpenEvent var1) {
         if (llllllIllIlI(this.. ()) &&llllllIllIlI(var1.getGui() instanceof GuiInventory)){
             Class127 var10001 = new Class127;
-            Minecraft var10003 = Minecraft.func_71410_x();
+            Minecraft var10003 = Minecraft.getMinecraft();
             if (llllllIllIIl(96484, 3773)) {
                 throw null;
             }
 
-            var10001.<init> (var10003.field_71439_g);
+            var10001.<init> (var10003.player);
             if (llllllIllIIl(96484, 3773)) {
                 throw null;
             }
@@ -635,7 +635,7 @@ public class Class125 extends Class171 {
         boolean var10001;
         int var2;
         for (int var10000 = var2 = 0; !llllllIllIIl(85294, 5878); var10001 = true) {
-            if (!lllllllIIIII(var10000, this..field_71439_g.field_71071_by.func_70302_i_())){
+            if (!lllllllIIIII(var10000, this..player.inventory.getSizeInventory())){
                 if (llllllIllIIl(85294, 5878)) {
                     throw null;
                 }
@@ -644,9 +644,9 @@ public class Class125 extends Class171 {
             }
 
             ItemStack var3;
-            if (lllllllIIIIl((var3 = this..field_71439_g.field_71071_by.func_70301_a(var2)).func_77973_b() instanceof ItemAir) &&
-            llllllIlllII(var3.func_77973_b(), Items.field_151032_g)){
-                var1 += var3.func_190916_E();
+            if (lllllllIIIIl((var3 = this..player.inventory.getStackInSlot(var2)).getItem() instanceof ItemAir) &&
+            llllllIlllII(var3.getItem(), Items.ARROW)){
+                var1 += var3.getCount();
             }
 
             if (llllllIllIIl(85294, 5878)) {
@@ -662,7 +662,7 @@ public class Class125 extends Class171 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderGameOverlayEvent var1) {
         boolean var62;
-        if (llllllIllIlI(this..field_71474_y.field_74330_P)){
+        if (llllllIllIlI(this..gameSettings.showDebugInfo)){
             var62 = true;
         } else if (llllllIllIIl(44069, 5554)) {
             throw null;
@@ -672,8 +672,8 @@ public class Class125 extends Class171 {
                 throw null;
             } else {
                 ScaledResolution var2 = var10000;
-                int var15 = var2.func_78326_a();
-                int var3 = var2.func_78328_b();
+                int var15 = var2.getScaledWidth();
+                int var3 = var2.getScaledHeight();
                 String var4;
                 String var36;
                 if (llllllIllIlI(this.. ()) &&llllllIllIlI(this.. (1000))){
@@ -704,7 +704,7 @@ public class Class125 extends Class171 {
                 if (llllllIllIIl(44069, 5554)) {
                     throw null;
                 } else {
-                    if (llllllIllIlI(this..field_71462_r instanceof GuiChat)){
+                    if (llllllIllIlI(this..currentScreen instanceof GuiChat)){
                         var3 -= 14;
                     }
 
@@ -763,9 +763,9 @@ public class Class125 extends Class171 {
                             if (llllllIllIIl(44069, 5554)) {
                                 throw null;
                             } else {
-                                BlockPos var42 = new BlockPos(this..field_71439_g.field_70165_t, this.                                                                                                    .
-                                field_71439_g.field_70163_u, this.                                                                                                    .
-                                field_71439_g.field_70161_v);
+                                BlockPos var42 = new BlockPos(this..player.posX, this.                                                                                                    .
+                                player.posY, this.                                                                                                    .
+                                player.posZ);
                                 if (llllllIllIIl(44069, 5554)) {
                                     throw null;
                                 } else {
@@ -779,19 +779,19 @@ public class Class125 extends Class171 {
                                         }
 
                                         var43 = new Object[3];
-                                        var10005 = var19.func_177958_n();
+                                        var10005 = var19.getX();
                                         if (llllllIllIIl(44069, 5554)) {
                                             throw null;
                                         }
 
                                         var43[0] = var10005;
-                                        var10005 = var19.func_177956_o();
+                                        var10005 = var19.getY();
                                         if (llllllIllIIl(44069, 5554)) {
                                             throw null;
                                         }
 
                                         var43[1] = var10005;
-                                        var10005 = var19.func_177952_p();
+                                        var10005 = var19.getZ();
                                         if (llllllIllIIl(44069, 5554)) {
                                             throw null;
                                         }
@@ -815,19 +815,19 @@ public class Class125 extends Class171 {
                                             }
 
                                             var43 = new Object[3];
-                                            var10005 = var19.func_177958_n() / 8;
+                                            var10005 = var19.getX() / 8;
                                             if (llllllIllIIl(44069, 5554)) {
                                                 throw null;
                                             }
 
                                             var43[0] = var10005;
-                                            var10005 = var19.func_177956_o();
+                                            var10005 = var19.getY();
                                             if (llllllIllIIl(44069, 5554)) {
                                                 throw null;
                                             }
 
                                             var43[1] = var10005;
-                                            var10005 = var19.func_177952_p() / 8;
+                                            var10005 = var19.getZ() / 8;
                                             if (llllllIllIIl(44069, 5554)) {
                                                 throw null;
                                             }
@@ -848,7 +848,7 @@ public class Class125 extends Class171 {
                                             StringBuilder var51;
                                             if (llllllIllIlI(this.. ())){
                                                 EnumFacing var20 = this.                                                                                                    .
-                                                field_71439_g.func_174811_aO();
+                                                player.getHorizontalFacing();
                                                 String var6 = "";
                                                 if (llllllIlllII(var20, EnumFacing.NORTH)) {
                                                     var36 = Class60. ("7\u0001");
@@ -943,7 +943,7 @@ public class Class125 extends Class171 {
                                                     }
 
                                                     var43 = new Object[1];
-                                                    var54 = Minecraft.func_175610_ah();
+                                                    var54 = Minecraft.getDebugFPS();
                                                     if (llllllIllIIl(44069, 5554)) {
                                                         throw null;
                                                     }
@@ -972,7 +972,7 @@ public class Class125 extends Class171 {
                                                         }
 
                                                         var43 = new Object[1];
-                                                        var54 = Class123. ((EntityPlayer) this..field_71439_g);
+                                                        var54 = Class123. ((EntityPlayer) this..player);
                                                         if (llllllIllIIl(44069, 5554)) {
                                                             throw null;
                                                         }
@@ -1001,7 +1001,7 @@ public class Class125 extends Class171 {
                                                             }
 
                                                             var43 = new Object[1];
-                                                            double var57 = Class199. (this..field_71439_g);
+                                                            double var57 = Class199. (this..player);
                                                             if (llllllIllIIl(44069, 5554)) {
                                                                 throw null;
                                                             }
@@ -1311,7 +1311,7 @@ public class Class125 extends Class171 {
                                                                             var14 = 9;
                                                                             byte var22 = 0;
                                                                             var23 = this.                                                                                                    .
-                                                                            field_71439_g.field_71071_by.field_70460_b.iterator();
+                                                                            player.inventory.armorInventory.iterator();
 
                                                                             label580:
                                                                             while (true) {
@@ -1324,7 +1324,7 @@ public class Class125 extends Class171 {
                                                                                         throw null;
                                                                                     }
 
-                                                                                    if (lllllllIIIIl(this..field_71439_g.field_71071_by.func_70448_g().func_77973_b() instanceof ItemAir))
+                                                                                    if (lllllllIIIIl(this..player.inventory.getCurrentItem().getItem() instanceof ItemAir))
                                                                                     {
                                                                                         var22 = 1;
                                                                                     }
@@ -1352,7 +1352,7 @@ public class Class125 extends Class171 {
 
                                                                                     byte var24 = var63;
                                                                                     Iterator var29 = this.                                                                                                    .
-                                                                                    field_71439_g.field_71071_by.field_70462_a.iterator();
+                                                                                    player.inventory.mainInventory.iterator();
 
                                                                                     while (true) {
                                                                                         while (!llllllIllIIl(44069, 5554)) {
@@ -1391,7 +1391,7 @@ public class Class125 extends Class171 {
                                                                                     }
                                                                                 }
 
-                                                                                if (lllllllIIIIl(((ItemStack) var23.next()).func_77973_b() instanceof ItemAir)) {
+                                                                                if (lllllllIIIIl(((ItemStack) var23.next()).getItem() instanceof ItemAir)) {
                                                                                     var22 = 1;
                                                                                     var62 = true;
                                                                                 }
@@ -1407,7 +1407,7 @@ public class Class125 extends Class171 {
                                                                             boolean var16 = false;
                                                                             boolean var26 = false;
                                                                             var53 = var23 = this.                                                                                                    .
-                                                                            field_71439_g.field_71071_by.field_70460_b.iterator();
+                                                                            player.inventory.armorInventory.iterator();
 
                                                                             while (true) {
                                                                                 if (llllllIllIIl(44069, 5554)) {
@@ -1420,8 +1420,8 @@ public class Class125 extends Class171 {
                                                                                     }
 
                                                                                     ItemStack var28;
-                                                                                    if (lllllllIIIll((var28 = this..field_71439_g.field_71071_by.func_70448_g()).func_77973_b(),
-                                                                                    Items.field_190931_a)){
+                                                                                    if (lllllllIIIll((var28 = this..player.inventory.getCurrentItem()).getItem(),
+                                                                                    Items.AIR)){
                                                                                         var52 = var15 - 17;
                                                                                         ++var18;
                                                                                         var14 = var52;
@@ -1431,7 +1431,7 @@ public class Class125 extends Class171 {
                                                                                         ;
                                                                                         this.                                                                                           .
                                                                                         (var28, var14, var21, -100.0F);
-                                                                                        if (llllllIlllII(var28.func_77973_b(), Items.field_151031_f)) {
+                                                                                        if (llllllIlllII(var28.getItem(), Items.BOW)) {
                                                                                             var39 = new StringBuilder();
                                                                                             if (llllllIllIIl(44069, 5554)) {
                                                                                                 throw null;
@@ -1453,7 +1453,7 @@ public class Class125 extends Class171 {
                                                                                             this.                                                                                           .
                                                                                             (var32, (float) (var15 - this..
                                                                                             (var32) - 1),
-                                                                                            (float) (var21 - this..field_71466_p.field_78288_b),
+                                                                                            (float) (var21 - this..fontRenderer.FONT_HEIGHT),
                                                                                             Class73., true);
                                                                                         }
                                                                                     }
@@ -1461,7 +1461,7 @@ public class Class125 extends Class171 {
                                                                                 }
 
                                                                                 ItemStack var31;
-                                                                                if (llllllIllIlI((var31 = (ItemStack) var23.next()).func_190926_b())) {
+                                                                                if (llllllIllIlI((var31 = (ItemStack) var23.next()).isEmpty())) {
                                                                                     var53 = var23;
                                                                                     var46 = true;
                                                                                 } else {
@@ -1518,8 +1518,8 @@ public class Class125 extends Class171 {
     }
 
     public int _____________________________________________________________________________________/* $FF was:                                                                                      */() {
-        if (llllllIlllll(this..field_71439_g.func_70651_bq().stream().filter(Class125::).mapToInt(Class125::).sum())){
-            if (llllllIlllll(this..field_71439_g.func_70651_bq().stream().filter(Class125::).mapToInt(Class125::).sum()))
+        if (llllllIlllll(this..player.getActivePotionEffects().stream().filter(Class125::).mapToInt(Class125::).sum())){
+            if (llllllIlllll(this..player.getActivePotionEffects().stream().filter(Class125::).mapToInt(Class125::).sum()))
             {
                 return 52;
             } else if (llllllIllIIl(71863, 3121)) {

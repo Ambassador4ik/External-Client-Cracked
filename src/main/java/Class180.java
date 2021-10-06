@@ -32,7 +32,7 @@ public class Class180 implements ItemMeshDefinition {
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public ModelResourceLocation func_178113_a(ItemStack var1) {
+    public ModelResourceLocation getModelLocation(ItemStack var1) {
         ModelResourceLocation var10000 = new ModelResourceLocation;
         String var10002 = Class60. ("isp\u007fr?");
         if (llIIlllllIlI(87424, 6829)) {

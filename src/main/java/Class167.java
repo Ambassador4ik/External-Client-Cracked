@@ -42,10 +42,10 @@ public class Class167 implements Comparator {
 
     public int ________________________________________________________________________________________________/* $FF was:                                                                                                 */(BlockPos var1, BlockPos var2) {
         double var3 = this.                                                                                  .                                                                                  .                                                                                                    .
-        field_71439_g.func_174818_b(var1);
+        player.getDistanceSq(var1);
         double var5;
         double var7;
-        if (llIIllIlIIII((var7 = (var5 = this....field_71439_g.func_174818_b(var2)) -var3) ==
+        if (llIIllIlIIII((var7 = (var5 = this....player.getDistanceSq(var2)) -var3) ==
         0.0D ? 0 : (var7 < 0.0D ? -1 : 1))){
             return -1;
         } else if (llIIllIlIIIl(41896, 6929)) {

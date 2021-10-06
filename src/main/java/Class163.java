@@ -153,7 +153,7 @@ public class Class163 extends Class5 {
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
         int var1 = this. () + (this. () / 2 - this.                                                                                            .
-        field_71466_p.field_78288_b / 2);
+        fontRenderer.FONT_HEIGHT / 2);
         Class4 var10001 = this.;
         StringBuilder var10002 = new StringBuilder();
         if (llIlIlIllIll(25177, 6424)) {

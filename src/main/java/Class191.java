@@ -94,7 +94,7 @@ public class Class191 extends Class171 {
     }
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Object var1, Class170 var2) {
-        if (llIIlIlIlIll(var1 instanceof CPacketPlayerDigging) && !llIIlIlIlllI(((CPacketPlayerDigging) var1).func_180762_c(), Action.ABORT_DESTROY_BLOCK)) {
+        if (llIIlIlIlIll(var1 instanceof CPacketPlayerDigging) && !llIIlIlIlllI(((CPacketPlayerDigging) var1).getAction(), Action.ABORT_DESTROY_BLOCK)) {
             if (llIIlIlIlIlI(50432, 2974)) {
                 throw null;
             } else {
@@ -110,32 +110,32 @@ public class Class191 extends Class171 {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderWorldLastEvent var1) {
-        if (llIIlIlIlIll(this.. ()) &&llIIlIlIllII(this..field_71476_x) &&
-        llIIlIlIllII(this..field_71476_x.func_178782_a()) &&llIIlIlIllIl(this..field_71476_x.field_72313_a, Type.BLOCK))
+        if (llIIlIlIlIll(this.. ()) &&llIIlIlIllII(this..objectMouseOver) &&
+        llIIlIlIllII(this..objectMouseOver.getBlockPos()) &&llIIlIlIllIl(this..objectMouseOver.typeOfHit, Type.BLOCK))
         {
             BlockPos var4 = this.                                                                                                    .
-            field_71476_x.func_178782_a();
-            GlStateManager.func_179094_E();
+            objectMouseOver.getBlockPos();
+            GlStateManager.pushMatrix();
             if (llIIlIlIlIlI(35730, 1650)) {
                 throw null;
             }
 
-            GlStateManager.func_179090_x();
+            GlStateManager.disableTexture2D();
             if (llIIlIlIlIlI(35730, 1650)) {
                 throw null;
             }
 
-            GlStateManager.func_179147_l();
+            GlStateManager.enableBlend();
             if (llIIlIlIlIlI(35730, 1650)) {
                 throw null;
             }
 
-            GlStateManager.func_179097_i();
+            GlStateManager.disableDepth();
             if (llIIlIlIlIlI(35730, 1650)) {
                 throw null;
             }
 
-            GlStateManager.func_187441_d(2.0F);
+            GlStateManager.glLineWidth(2.0F);
             if (llIIlIlIlIlI(35730, 1650)) {
                 throw null;
             }
@@ -146,14 +146,14 @@ public class Class191 extends Class171 {
             }
 
             RenderManager var2 = this.                                                                                                    .
-            func_175598_ae();
-            GL11.glTranslated((double) var4.func_177958_n() - var2.field_78730_l, (double) var4.func_177956_o() - var2.field_78731_m, (double) var4.func_177952_p() - var2.field_78728_n);
+            getRenderManager();
+            GL11.glTranslated((double) var4.getX() - var2.viewerPosX, (double) var4.getY() - var2.viewerPosY, (double) var4.getZ() - var2.viewerPosZ);
             if (llIIlIlIlIlI(35730, 1650)) {
                 throw null;
             }
 
             IBlockState var5 = this.                                                                                                    .
-            field_71441_e.func_180495_p(var4);
+            world.getBlockState(var4);
             Color var3 = this.                                                                                            .
             ();
             GL11.glColor4f((float) var3.getRed(), (float) var3.getGreen(), (float) var3.getBlue(), 0.6F);
@@ -161,7 +161,7 @@ public class Class191 extends Class171 {
                 throw null;
             }
 
-            Class181. (var5.func_185900_c(this..field_71441_e, var4));
+            Class181. (var5.getBoundingBox(this..world, var4));
             if (llIIlIlIlIlI(35730, 1650)) {
                 throw null;
             }
@@ -171,22 +171,22 @@ public class Class191 extends Class171 {
                 throw null;
             }
 
-            Class181. (var5.func_185900_c(this..field_71441_e, var4));
+            Class181. (var5.getBoundingBox(this..world, var4));
             if (llIIlIlIlIlI(35730, 1650)) {
                 throw null;
             }
 
-            GlStateManager.func_179098_w();
+            GlStateManager.enableTexture2D();
             if (llIIlIlIlIlI(35730, 1650)) {
                 throw null;
             }
 
-            GlStateManager.func_179084_k();
+            GlStateManager.disableBlend();
             if (llIIlIlIlIlI(35730, 1650)) {
                 throw null;
             }
 
-            GlStateManager.func_179126_j();
+            GlStateManager.enableDepth();
             if (llIIlIlIlIlI(35730, 1650)) {
                 throw null;
             }
@@ -196,12 +196,12 @@ public class Class191 extends Class171 {
                 throw null;
             }
 
-            GlStateManager.func_179121_F();
+            GlStateManager.popMatrix();
             if (llIIlIlIlIlI(35730, 1650)) {
                 throw null;
             }
 
-            GlStateManager.func_179117_G();
+            GlStateManager.resetColor();
             if (llIIlIlIlIlI(35730, 1650)) {
                 throw null;
             }
@@ -215,15 +215,15 @@ public class Class191 extends Class171 {
     }
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
-        if (llIIlIlIllIl(var1.phase, Phase.END) && llIIlIlIllII(this..field_71476_x) &&
-        llIIlIlIllII(this..field_71476_x.func_178782_a()) &&llIIlIlIllIl(this..field_71476_x.field_72313_a, Type.BLOCK))
+        if (llIIlIlIllIl(var1.phase, Phase.END) && llIIlIlIllII(this..objectMouseOver) &&
+        llIIlIlIllII(this..objectMouseOver.getBlockPos()) &&llIIlIlIllIl(this..objectMouseOver.typeOfHit, Type.BLOCK))
         {
             BlockPos var2 = this.                                                                                                    .
-            field_71476_x.func_178782_a();
+            objectMouseOver.getBlockPos();
             this.                                                                                                    .
-            field_71439_g.func_184609_a(EnumHand.MAIN_HAND);
+            player.swingArm(EnumHand.MAIN_HAND);
             this.                                                                                                    .
-            field_71442_b.func_180512_c(var2, this..field_71439_g.func_174811_aO());
+            playerController.onPlayerDamageBlock(var2, this..player.getHorizontalFacing());
         }
 
         if (llIIlIlIlIlI(67611, 9773)) {

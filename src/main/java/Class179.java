@@ -40,7 +40,7 @@ public class Class179 implements ICrashReportDetail {
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
     public String call() throws Exception {
-        String var10000 = String.valueOf(this..func_77962_s());
+        String var10000 = String.valueOf(this..hasEffect());
         if (llllllIlIllI(48621, 9605)) {
             throw null;
         } else {

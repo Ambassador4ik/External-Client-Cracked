@@ -117,19 +117,19 @@ public class Class108 extends Class171 {
                                 throw null;
                             } else {
                                 TextComponentString var4 = var10000;
-                                Style var7 = var3.func_150256_b();
+                                Style var7 = var3.getStyle();
                                 HoverEvent var10001 = new HoverEvent(Action.SHOW_TEXT, var4);
                                 if (lllIIllIlIIl(68812, 9536)) {
                                     throw null;
                                 } else {
-                                    var7.func_150209_a(var10001);
-                                    Style var8 = var3.func_150256_b();
+                                    var7.setHoverEvent(var10001);
+                                    Style var8 = var3.getStyle();
                                     ClickEvent var10 = new ClickEvent(net.minecraft.util.text.event.ClickEvent.Action.SUGGEST_COMMAND, var1);
                                     if (lllIIllIlIIl(68812, 9536)) {
                                         throw null;
                                     } else {
-                                        var8.func_150241_a(var10);
-                                        var2.func_150253_a().add(var3);
+                                        var8.setClickEvent(var10);
+                                        var2.getSiblings().add(var3);
                                         TextComponentString var11 = new TextComponentString;
                                         StringBuilder var10005 = new StringBuilder();
                                         if (lllIIllIlIIl(68812, 9536)) {
@@ -156,13 +156,13 @@ public class Class108 extends Class171 {
                                                             throw null;
                                                         } else {
                                                             var3 = var11;
-                                                            Style var12 = var6.func_150256_b();
+                                                            Style var12 = var6.getStyle();
                                                             HoverEvent var10004 = new HoverEvent(Action.SHOW_TEXT, var3);
                                                             if (lllIIllIlIIl(68812, 9536)) {
                                                                 throw null;
                                                             } else {
-                                                                var12.func_150209_a(var10004);
-                                                                var2.func_150253_a().add(var6);
+                                                                var12.setHoverEvent(var10004);
+                                                                var2.getSiblings().add(var6);
                                                                 return var2;
                                                             }
                                                         }
@@ -235,22 +235,22 @@ public class Class108 extends Class171 {
             throw null;
         } else {
             this.                                                                                            .isAlive();
-            if (lllIIllIllll(this..field_71439_g) &&
-            lllIIlllIIII(var1.getEntity() instanceof EntityPlayer) && lllIIlllIIIl(var1.getEntity(), this..field_71439_g) &&
-            lllIIllIlllI(this..contains(var1.getEntity().func_70005_c_())) &&lllIIllIlllI(Class73..                                                                                                    .
-            ().contains(var1.getEntity().func_70005_c_())) &&
-            lllIIllIlllI(var1.getEntity().func_70005_c_().equals(this..field_71439_g.func_70005_c_()))){
-                String var10000 = var1.getEntity().func_70005_c_();
+            if (lllIIllIllll(this..player) &&
+            lllIIlllIIII(var1.getEntity() instanceof EntityPlayer) && lllIIlllIIIl(var1.getEntity(), this..player) &&
+            lllIIllIlllI(this..contains(var1.getEntity().getName())) &&lllIIllIlllI(Class73..                                                                                                    .
+            ().contains(var1.getEntity().getName())) &&
+            lllIIllIlllI(var1.getEntity().getName().equals(this..player.getName()))){
+                String var10000 = var1.getEntity().getName();
                 String var3 = Class60. ("}");
                 if (lllIIllIlIIl(63586, 5124)) {
                     throw null;
                 }
 
-                if (lllIIllIlllI(var10000.contains(var3)) && lllIIllIlIIl(var1.getEntity().func_70005_c_().length(), 3)) {
+                if (lllIIllIlllI(var10000.contains(var3)) && lllIIllIlIIl(var1.getEntity().getName().length(), 3)) {
                     this.                                                                                            .
                     isAlive();
                     this.                                                                                  .
-                    add(var1.getEntity().func_70005_c_());
+                    add(var1.getEntity().getName());
                 }
             }
 

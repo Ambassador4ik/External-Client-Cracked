@@ -120,7 +120,7 @@ public class Class129 extends Class5 {
             }
 
             int var10 = var11.getRGB();
-            Gui.func_73734_a((int) var4, (int) var2, (int) var4 + 1, (int) var6, var10);
+            Gui.drawRect((int) var4, (int) var2, (int) var4 + 1, (int) var6, var10);
             if (llIlIIIIIIII(23505, 6361)) {
                 throw null;
             }

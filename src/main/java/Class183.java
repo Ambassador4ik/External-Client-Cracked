@@ -47,13 +47,13 @@ public class Class183 implements ICrashReportDetail {
         } else {
             Object[] var10001 = new Object[5];
             Integer var10004 = this.                                                                                  .
-            func_78326_a();
+            getScaledWidth();
             if (llIllIlIlIIl(78534, 4744)) {
                 throw null;
             } else {
                 var10001[0] = var10004;
                 var10004 = this.                                                                                  .
-                func_78328_b();
+                getScaledHeight();
                 if (llIllIlIlIIl(78534, 4744)) {
                     throw null;
                 } else {
@@ -62,7 +62,7 @@ public class Class183 implements ICrashReportDetail {
                     if (llIllIlIlIIl(78534, 4744)) {
                         throw null;
                     } else {
-                        var10004 = var1.field_71443_c;
+                        var10004 = var1.displayWidth;
                         if (llIllIlIlIIl(78534, 4744)) {
                             throw null;
                         } else {
@@ -71,13 +71,13 @@ public class Class183 implements ICrashReportDetail {
                             if (llIllIlIlIIl(78534, 4744)) {
                                 throw null;
                             } else {
-                                var10004 = var1.field_71440_d;
+                                var10004 = var1.displayHeight;
                                 if (llIllIlIlIIl(78534, 4744)) {
                                     throw null;
                                 } else {
                                     var10001[3] = var10004;
                                     var10004 = this.                                                                                  .
-                                    func_78325_e();
+                                    getScaleFactor();
                                     if (llIllIlIlIIl(78534, 4744)) {
                                         throw null;
                                     } else {

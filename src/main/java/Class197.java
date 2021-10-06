@@ -65,7 +65,7 @@ public class Class197 extends Class171 {
 
     @SubscribeEvent
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(PlaySoundEvent var1) {
-        if (llllIIlIIlII(this. ()) &&llllIIlIIllI(this..field_71439_g.field_71104_cf)){
+        if (llllIIlIIlII(this. ()) &&llllIIlIIllI(this..player.fishEntity)){
             String var10000 = var1.getName();
             String var10001 = Class60. ("~tlrkc2y|xr~e4gkg{{3");
             if (llllIIlIIIll(70290, 1706)) {

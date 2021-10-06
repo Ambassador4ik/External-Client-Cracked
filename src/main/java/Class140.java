@@ -30,7 +30,7 @@ public class Class140 implements ItemMeshDefinition {
         return var0 >= var1;
     }
 
-    public ModelResourceLocation func_178113_a(ItemStack var1) {
+    public ModelResourceLocation getModelLocation(ItemStack var1) {
         ModelResourceLocation var10000 = new ModelResourceLocation;
         String var10002 = Class60. ("xzwt{)");
         if (llIllllIllII(76761, 7118)) {

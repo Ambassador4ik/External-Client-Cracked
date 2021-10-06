@@ -118,7 +118,7 @@ public class Class154 extends Class171 {
     }
 
     private boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Packet var1) {
-        if (lllIIlIlIIII(((CPacketPlayerDigging) var1).func_180762_c(), Action.START_DESTROY_BLOCK) && lllIIlIlIIIl(this..field_71439_g.field_71075_bZ.field_75098_d))
+        if (lllIIlIlIIII(((CPacketPlayerDigging) var1).getAction(), Action.START_DESTROY_BLOCK) && lllIIlIlIIIl(this..player.capabilities.isCreativeMode))
         {
             return true;
         } else if (lllIIlIIlIll(67454, 9484)) {
@@ -144,15 +144,15 @@ public class Class154 extends Class171 {
             }
 
             ItemStack var5;
-            if (lllIIlIIllIl(var5 = this..field_71439_g.field_71071_by.func_70301_a(var4)) &&
-            lllIIlIIlllI(var5, ItemStack.field_190927_a)){
-                var10000 = EnchantmentHelper.func_77506_a(Enchantments.field_185305_q, var5);
+            if (lllIIlIIllIl(var5 = this..player.inventory.getStackInSlot(var4)) &&
+            lllIIlIIlllI(var5, ItemStack.EMPTY)){
+                var10000 = EnchantmentHelper.getEnchantmentLevel(Enchantments.EFFICIENCY, var5);
                 if (lllIIlIIlIll(74655, 4549)) {
                     throw null;
                 }
 
                 float var6 = (float) var10000 * 0.1F;
-                float var8 = var5.func_150997_a(this..field_71441_e.func_180495_p(var1));
+                float var8 = var5.getDestroySpeed(this..world.getBlockState(var1));
                 float var10;
                 float var10001;
                 if (lllIIlIIllll((var10 = var8 - 1.0F) == 0.0F ? 0 : (var10 < 0.0F ? -1 : 1))) {
@@ -198,7 +198,7 @@ public class Class154 extends Class171 {
 
             if (lllIIlIlIIlI(var10000)) {
                 BlockPos var3;
-                if (lllIIlIlIIll(var3 = ((CPacketPlayerDigging) var1).func_179715_a())) {
+                if (lllIIlIlIIll(var3 = ((CPacketPlayerDigging) var1).getPosition())) {
                     return true;
                 }
 
@@ -225,9 +225,9 @@ public class Class154 extends Class171 {
                 }
 
                 if (lllIIlIlIIlI(this.. ()) &&
-                lllIIlIlIllI(this., -1) && lllIIlIlIIlI(this..field_71474_y.field_74312_F.func_151470_d())){
+                lllIIlIlIllI(this., -1) && lllIIlIlIIlI(this..gameSettings.keyBindAttack.isKeyDown())){
                     this. = this.                                                                                                    .
-                    field_71439_g.field_71071_by.field_70461_c;
+                    player.inventory.currentItem;
                 }
 
                 if (lllIIlIIlIll(72093, 265)) {
@@ -235,9 +235,9 @@ public class Class154 extends Class171 {
                 }
 
                 this.                                                                                                    .
-                field_71439_g.field_71071_by.field_70461_c = var4;
+                player.inventory.currentItem = var4;
                 this.                                                                                                    .
-                field_71442_b.func_78765_e();
+                playerController.updateController();
             }
         }
 
@@ -250,11 +250,11 @@ public class Class154 extends Class171 {
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
         if (lllIIlIlIIlI(this.. ()) &&
-        lllIIlIlIlII(this., -1) && lllIIlIlIIIl(this..field_71474_y.field_74312_F.func_151470_d())){
+        lllIIlIlIlII(this., -1) && lllIIlIlIIIl(this..gameSettings.keyBindAttack.isKeyDown())){
             this.                                                                                                    .
-            field_71439_g.field_71071_by.field_70461_c = this.;
+            player.inventory.currentItem = this.;
             this.                                                                                                    .
-            field_71442_b.func_78765_e();
+            playerController.updateController();
             this. = -1;
         }
 

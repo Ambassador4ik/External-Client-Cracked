@@ -74,7 +74,7 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
     }
 
     public Class127(EntityPlayer var1) {
-        super(var1.field_71069_bz);
+        super(var1.inventoryContainer);
         if (lllIllIIIlIl(49195, 8245)) {
             throw null;
         } else {
@@ -88,7 +88,7 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
                     throw null;
                 } else {
                     this. = var10003;
-                    this.field_146291_p = true;
+                    this.allowUserInput = true;
                     boolean var10000 = true;
                 }
             }
@@ -96,40 +96,40 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
     }
 
     public static void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(int var0, int var1, int var2, float var3, float var4, EntityLivingBase var5) {
-        GlStateManager.func_179142_g();
+        GlStateManager.enableColorMaterial();
         if (lllIllIIIlIl(39813, 8787)) {
             throw null;
         } else {
-            GlStateManager.func_179094_E();
+            GlStateManager.pushMatrix();
             if (lllIllIIIlIl(39813, 8787)) {
                 throw null;
             } else {
-                GlStateManager.func_179109_b((float) var0, (float) var1, 50.0F);
+                GlStateManager.translate((float) var0, (float) var1, 50.0F);
                 if (lllIllIIIlIl(39813, 8787)) {
                     throw null;
                 } else {
-                    GlStateManager.func_179152_a((float) (-var2), (float) var2, (float) var2);
+                    GlStateManager.scale((float) (-var2), (float) var2, (float) var2);
                     if (lllIllIIIlIl(39813, 8787)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179114_b(180.0F, 0.0F, 0.0F, 1.0F);
+                        GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
                         if (lllIllIIIlIl(39813, 8787)) {
                             throw null;
                         } else {
-                            float var9 = var5.field_70761_aq;
-                            float var10 = var5.field_70177_z;
-                            float var6 = var5.field_70125_A;
-                            float var7 = var5.field_70758_at;
-                            float var8 = var5.field_70759_as;
-                            GlStateManager.func_179114_b(135.0F, 0.0F, 1.0F, 0.0F);
+                            float var9 = var5.renderYawOffset;
+                            float var10 = var5.rotationYaw;
+                            float var6 = var5.rotationPitch;
+                            float var7 = var5.prevRotationYawHead;
+                            float var8 = var5.rotationYawHead;
+                            GlStateManager.rotate(135.0F, 0.0F, 1.0F, 0.0F);
                             if (lllIllIIIlIl(39813, 8787)) {
                                 throw null;
                             } else {
-                                RenderHelper.func_74519_b();
+                                RenderHelper.enableStandardItemLighting();
                                 if (lllIllIIIlIl(39813, 8787)) {
                                     throw null;
                                 } else {
-                                    GlStateManager.func_179114_b(-135.0F, 0.0F, 1.0F, 0.0F);
+                                    GlStateManager.rotate(-135.0F, 0.0F, 1.0F, 0.0F);
                                     if (lllIllIIIlIl(39813, 8787)) {
                                         throw null;
                                     } else {
@@ -137,7 +137,7 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
                                         if (lllIllIIIlIl(39813, 8787)) {
                                             throw null;
                                         } else {
-                                            GlStateManager.func_179114_b(-((float) var10012) * 20.0F, 1.0F, 0.0F, 0.0F);
+                                            GlStateManager.rotate(-((float) var10012) * 20.0F, 1.0F, 0.0F, 0.0F);
                                             if (lllIllIIIlIl(39813, 8787)) {
                                                 throw null;
                                             } else {
@@ -145,58 +145,58 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
                                                 if (lllIllIIIlIl(39813, 8787)) {
                                                     throw null;
                                                 } else {
-                                                    var5.field_70761_aq = (float) var10012 * 20.0F;
+                                                    var5.renderYawOffset = (float) var10012 * 20.0F;
                                                     double var10011 = Math.atan((double) (var3 / 40.0F));
                                                     if (lllIllIIIlIl(39813, 8787)) {
                                                         throw null;
                                                     } else {
-                                                        var5.field_70177_z = (float) var10011 * 40.0F;
+                                                        var5.rotationYaw = (float) var10011 * 40.0F;
                                                         double var10010 = Math.atan((double) (var4 / 40.0F));
                                                         if (lllIllIIIlIl(39813, 8787)) {
                                                             throw null;
                                                         } else {
-                                                            var5.field_70125_A = -((float) var10010) * 20.0F;
-                                                            var5.field_70759_as = var5.field_70177_z;
-                                                            var5.field_70758_at = var5.field_70177_z;
-                                                            GlStateManager.func_179109_b(0.0F, 0.0F, 0.0F);
+                                                            var5.rotationPitch = -((float) var10010) * 20.0F;
+                                                            var5.rotationYawHead = var5.rotationYaw;
+                                                            var5.prevRotationYawHead = var5.rotationYaw;
+                                                            GlStateManager.translate(0.0F, 0.0F, 0.0F);
                                                             if (lllIllIIIlIl(39813, 8787)) {
                                                                 throw null;
                                                             } else {
-                                                                Minecraft var10005 = Minecraft.func_71410_x();
+                                                                Minecraft var10005 = Minecraft.getMinecraft();
                                                                 if (lllIllIIIlIl(39813, 8787)) {
                                                                     throw null;
                                                                 } else {
-                                                                    RenderManager var11 = var10005.func_175598_ae();
-                                                                    var11.func_178631_a(180.0F);
-                                                                    var11.func_178633_a(false);
-                                                                    var11.func_188391_a(var5, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F, false);
-                                                                    var11.func_178633_a(true);
-                                                                    var5.field_70761_aq = var9;
-                                                                    var5.field_70177_z = var10;
-                                                                    var5.field_70125_A = var6;
-                                                                    var5.field_70758_at = var7;
-                                                                    var5.field_70759_as = var8;
-                                                                    GlStateManager.func_179121_F();
+                                                                    RenderManager var11 = var10005.getRenderManager();
+                                                                    var11.setPlayerViewY(180.0F);
+                                                                    var11.setRenderShadow(false);
+                                                                    var11.renderEntity(var5, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F, false);
+                                                                    var11.setRenderShadow(true);
+                                                                    var5.renderYawOffset = var9;
+                                                                    var5.rotationYaw = var10;
+                                                                    var5.rotationPitch = var6;
+                                                                    var5.prevRotationYawHead = var7;
+                                                                    var5.rotationYawHead = var8;
+                                                                    GlStateManager.popMatrix();
                                                                     if (lllIllIIIlIl(39813, 8787)) {
                                                                         throw null;
                                                                     } else {
-                                                                        RenderHelper.func_74518_a();
+                                                                        RenderHelper.disableStandardItemLighting();
                                                                         if (lllIllIIIlIl(39813, 8787)) {
                                                                             throw null;
                                                                         } else {
-                                                                            GlStateManager.func_179101_C();
+                                                                            GlStateManager.disableRescaleNormal();
                                                                             if (lllIllIIIlIl(39813, 8787)) {
                                                                                 throw null;
                                                                             } else {
-                                                                                GlStateManager.func_179138_g(OpenGlHelper.field_77476_b);
+                                                                                GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
                                                                                 if (lllIllIIIlIl(39813, 8787)) {
                                                                                     throw null;
                                                                                 } else {
-                                                                                    GlStateManager.func_179090_x();
+                                                                                    GlStateManager.disableTexture2D();
                                                                                     if (lllIllIIIlIl(39813, 8787)) {
                                                                                         throw null;
                                                                                     } else {
-                                                                                        GlStateManager.func_179138_g(OpenGlHelper.field_77478_a);
+                                                                                        GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
                                                                                         if (lllIllIIIlIl(39813, 8787)) {
                                                                                             throw null;
                                                                                         } else {
@@ -248,19 +248,19 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
         return this.;
     }
 
-    public void func_73866_w_() {
-        this.field_146292_n.clear();
+    public void initGui() {
+        this.buttonList.clear();
         Class127 var10000;
         boolean var2;
-        if (lllIllIIIlll(this.field_146297_k.field_71442_b.func_78758_h())) {
+        if (lllIllIIIlll(this.mc.playerController.isInCreativeMode())) {
             var10000 = this;
-            Minecraft var10001 = this.field_146297_k;
-            Class10 var10002 = new Class10(this.field_146297_k.field_71439_g);
+            Minecraft var10001 = this.mc;
+            Class10 var10002 = new Class10(this.mc.player);
             if (lllIllIIIlIl(59278, 8355)) {
                 throw null;
             }
 
-            var10001.func_147108_a(var10002);
+            var10001.displayGuiScreen(var10002);
             var2 = true;
         } else {
             if (lllIllIIIlIl(59278, 8355)) {
@@ -268,7 +268,7 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
             }
 
             var10000 = this;
-            super.func_73866_w_();
+            super.initGui();
             if (lllIllIIIlIl(59278, 8355)) {
                 throw null;
             }
@@ -277,7 +277,7 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
         if (lllIllIIIlIl(59278, 8355)) {
             throw null;
         } else {
-            if (lllIllIIIllI(this.field_146294_l, 379)) {
+            if (lllIllIIIllI(this.width, 379)) {
                 var2 = true;
                 boolean var3 = true;
             } else {
@@ -293,15 +293,15 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
             } else {
                 var10000. = var2;
                 this.                                                                                            .
-                func_194303_a(this.field_146294_l, this.field_146295_m, this.field_146297_k, this., ((ContainerPlayer) this.field_147002_h).field_75181_e);
-                this.field_147003_i = this.                                                                                            .
-                func_193011_a(this., this.field_146294_l, this.field_146999_f);
-                GuiButtonImage var4 = new GuiButtonImage(10, this.field_147003_i + 104, this.field_146295_m / 2 - 22, 20, 18, 178, 0, 19, field_147001_a);
+                func_194303_a(this.width, this.height, this.mc, this., ((ContainerPlayer) this.inventorySlots).craftMatrix);
+                this.guiLeft = this.                                                                                            .
+                updateScreenPosition(this., this.width, this.xSize);
+                GuiButtonImage var4 = new GuiButtonImage(10, this.guiLeft + 104, this.height / 2 - 22, 20, 18, 178, 0, 19, INVENTORY_BACKGROUND);
                 if (lllIllIIIlIl(59278, 8355)) {
                     throw null;
                 } else {
                     this. = var4;
-                    this.field_146292_n.add(this.);
+                    this.buttonList.add(this.);
                     this.                                                                                                   .
                     (1.0F);
                     boolean var1 = true;
@@ -310,10 +310,10 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
         }
     }
 
-    public void func_73863_a(int var1, int var2, float var3) {
-        this.func_146276_q_();
+    public void drawScreen(int var1, int var2, float var3) {
+        this.drawDefaultBackground();
         boolean var10001;
-        if (lllIllIIlIII(this..func_191878_b())){
+        if (lllIllIIlIII(this..isVisible())){
             var10001 = true;
             boolean var10002 = true;
         } else{
@@ -327,36 +327,36 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
         if (lllIllIIIlIl(67398, 8604)) {
             throw null;
         } else {
-            this.field_147045_u = var10001;
+            this.hasActivePotionEffects = var10001;
             this.                                                                                                   .();
-            ScaledResolution var6 = new ScaledResolution(this.field_146297_k);
+            ScaledResolution var6 = new ScaledResolution(this.mc);
             if (lllIllIIIlIl(67398, 8604)) {
                 throw null;
             } else {
-                int var4 = var6.func_78326_a();
-                int var5 = var6.func_78328_b();
-                GlStateManager.func_179094_E();
+                int var4 = var6.getScaledWidth();
+                int var5 = var6.getScaledHeight();
+                GlStateManager.pushMatrix();
                 if (lllIllIIIlIl(67398, 8604)) {
                     throw null;
                 } else {
-                    GlStateManager.func_179109_b((float) (var4 / 2), (float) (var5 / 2), 0.0F);
+                    GlStateManager.translate((float) (var4 / 2), (float) (var5 / 2), 0.0F);
                     if (lllIllIIIlIl(67398, 8604)) {
                         throw null;
                     } else {
-                        GlStateManager.func_179152_a(this.. (), this.                                                                                                   .
+                        GlStateManager.scale(this.. (), this.                                                                                                   .
                         (), 1.0F);
                         if (lllIllIIIlIl(67398, 8604)) {
                             throw null;
                         } else {
-                            GlStateManager.func_179109_b((float) (-var4 / 2), (float) (-var5 / 2), 0.0F);
+                            GlStateManager.translate((float) (-var4 / 2), (float) (-var5 / 2), 0.0F);
                             if (lllIllIIIlIl(67398, 8604)) {
                                 throw null;
                             } else {
                                 boolean var10000;
-                                if (lllIllIIIlll(this..func_191878_b()) &&lllIllIIIlll(this.)){
-                                    this.func_146976_a(var3, var1, var2);
+                                if (lllIllIIIlll(this..isVisible()) &&lllIllIIIlll(this.)){
+                                    this.drawGuiContainerBackgroundLayer(var3, var1, var2);
                                     this.                                                                                            .
-                                    func_191861_a(var1, var2, var3);
+                                    render(var1, var2, var3);
                                     var10000 = true;
                                 } else{
                                     if (lllIllIIIlIl(67398, 8604)) {
@@ -364,26 +364,26 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
                                     }
 
                                     this.                                                                                            .
-                                    func_191861_a(var1, var2, var3);
-                                    super.func_73863_a(var1, var2, var3);
+                                    render(var1, var2, var3);
+                                    super.drawScreen(var1, var2, var3);
                                     if (lllIllIIIlIl(67398, 8604)) {
                                         throw null;
                                     }
 
                                     this.                                                                                            .
-                                    func_191864_a(this.field_147003_i, this.field_147009_r, false, var3);
+                                    renderGhostRecipe(this.guiLeft, this.guiTop, false, var3);
                                 }
 
                                 if (lllIllIIIlIl(67398, 8604)) {
                                     throw null;
                                 } else {
-                                    GlStateManager.func_179121_F();
+                                    GlStateManager.popMatrix();
                                     if (lllIllIIIlIl(67398, 8604)) {
                                         throw null;
                                     } else {
-                                        this.func_191948_b(var1, var2);
+                                        this.renderHoveredToolTip(var1, var2);
                                         this.                                                                                            .
-                                        func_191876_c(this.field_147003_i, this.field_147009_r, var1, var2);
+                                        renderTooltip(this.guiLeft, this.guiTop, var1, var2);
                                         this. = (float) var1;
                                         this. = (float) var2;
                                         var10000 = true;
@@ -397,7 +397,7 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
         }
     }
 
-    public void func_146286_b(int var1, int var2, int var3) {
+    public void mouseReleased(int var1, int var2, int var3) {
         boolean var10000;
         if (lllIllIIIlll(this.)) {
             this. = false;
@@ -405,7 +405,7 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
         } else if (lllIllIIIlIl(62015, 9285)) {
             throw null;
         } else {
-            super.func_146286_b(var1, var2, var3);
+            super.mouseReleased(var1, var2, var3);
             if (lllIllIIIlIl(62015, 9285)) {
                 throw null;
             } else {
@@ -414,9 +414,9 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
         }
     }
 
-    public void func_73869_a(char var1, int var2) throws IOException {
-        if (lllIllIIlIII(this..func_191859_a(var1, var2))){
-            super.func_73869_a(var1, var2);
+    public void keyTyped(char var1, int var2) throws IOException {
+        if (lllIllIIlIII(this..keyPressed(var1, var2))){
+            super.keyTyped(var1, var2);
             if (lllIllIIIlIl(65406, 658)) {
                 throw null;
             }
@@ -429,22 +429,22 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
         }
     }
 
-    public void func_192043_J_() {
+    public void recipesUpdated() {
         this.                                                                                            .
-        func_193948_e();
+        recipesUpdated();
         boolean var10000 = true;
     }
 
-    public void func_146284_a(GuiButton var1) throws IOException {
-        if (lllIllIIlIIl(var1.field_146127_k, 10)) {
+    public void actionPerformed(GuiButton var1) throws IOException {
+        if (lllIllIIlIIl(var1.id, 10)) {
             this.                                                                                            .
-            func_193014_a(this., ((ContainerPlayer) this.field_147002_h).field_75181_e);
+            initVisuals(this., ((ContainerPlayer) this.inventorySlots).craftMatrix);
             this.                                                                                            .
-            func_191866_a();
-            this.field_147003_i = this.                                                                                            .
-            func_193011_a(this., this.field_146294_l, this.field_146999_f);
+            toggleVisibility();
+            this.guiLeft = this.                                                                                            .
+            updateScreenPosition(this., this.width, this.xSize);
             this.                                                                                           .
-            func_191746_c(this.field_147003_i + 104, this.field_146295_m / 2 - 22);
+            setPosition(this.guiLeft + 104, this.height / 2 - 22);
             this. = true;
         }
 
@@ -455,16 +455,16 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
         }
     }
 
-    public void func_146976_a(float var1, int var2, int var3) {
-        GlStateManager.func_179131_c(1.0F, 1.0F, 1.0F, 1.0F);
+    public void drawGuiContainerBackgroundLayer(float var1, int var2, int var3) {
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         if (lllIllIIIlIl(84550, 5832)) {
             throw null;
         } else {
-            this.field_146297_k.func_110434_K().func_110577_a(field_147001_a);
-            int var4 = this.field_147003_i;
-            var2 = this.field_147009_r;
-            this.func_73729_b(var4, var2, 0, 0, this.field_146999_f, this.field_147000_g);
-            (var4 + 51, var2 + 75, 30, (float) (var4 + 51) - this., (float) (var2 + 75 - 50) - this., this.field_146297_k.field_71439_g)
+            this.mc.getTextureManager().bindTexture(INVENTORY_BACKGROUND);
+            int var4 = this.guiLeft;
+            var2 = this.guiTop;
+            this.drawTexturedModalRect(var4, var2, 0, 0, this.xSize, this.ySize);
+            (var4 + 51, var2 + 75, 30, (float) (var4 + 51) - this., (float) (var2 + 75 - 50) - this., this.mc.player)
             ;
             if (lllIllIIIlIl(84550, 5832)) {
                 throw null;
@@ -474,9 +474,9 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
         }
     }
 
-    public boolean func_193983_c(int var1, int var2, int var3, int var4) {
+    public boolean hasClickedOutside(int var1, int var2, int var3, int var4) {
         byte var10000;
-        if (lllIllIIIlIl(var1, var3) && lllIllIIIlIl(var2, var4) && lllIllIIIllI(var1, var3 + this.field_146999_f) && !lllIllIIIlIl(var2, var4 + this.field_147000_g)) {
+        if (lllIllIIIlIl(var1, var3) && lllIllIIIlIl(var2, var4) && lllIllIIIllI(var1, var3 + this.xSize) && !lllIllIIIlIl(var2, var4 + this.ySize)) {
             if (lllIllIIIlIl(39586, 9461)) {
                 throw null;
             }
@@ -495,7 +495,7 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
             throw null;
         } else {
             byte var5 = var10000;
-            if (lllIllIIIlll(this..func_193955_c(var1, var2, this.field_147003_i, this.field_147009_r, this.field_146999_f, this.field_147000_g)) &&
+            if (lllIllIIIlll(this..hasClickedOutside(var1, var2, this.guiLeft, this.guiTop, this.xSize, this.ySize)) &&
             lllIllIIIlll(var5)){
                 return true;
             } else if (lllIllIIIlIl(39586, 9461)) {
@@ -506,14 +506,14 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
         }
     }
 
-    public void func_73864_a(int var1, int var2, int var3) throws IOException {
-        if (lllIllIIlIII(this..func_191862_a(var1, var2, var3)) &&
-        (!lllIllIIIlll(this.) || lllIllIIlIII(this..func_191878_b()))){
+    public void mouseClicked(int var1, int var2, int var3) throws IOException {
+        if (lllIllIIlIII(this..mouseClicked(var1, var2, var3)) &&
+        (!lllIllIIIlll(this.) || lllIllIIlIII(this..isVisible()))){
             if (lllIllIIIlIl(80380, 2729)) {
                 throw null;
             }
 
-            super.func_73864_a(var1, var2, var3);
+            super.mouseClicked(var1, var2, var3);
             if (lllIllIIIlIl(80380, 2729)) {
                 throw null;
             }
@@ -526,13 +526,13 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
         }
     }
 
-    public boolean func_146978_c(int var1, int var2, int var3, int var4, int var5, int var6) {
-        if (!lllIllIIIlll(this.) || lllIllIIlIII(this..func_191878_b())){
+    public boolean isPointInRegion(int var1, int var2, int var3, int var4, int var5, int var6) {
+        if (!lllIllIIIlll(this.) || lllIllIIlIII(this..isVisible())){
             if (lllIllIIIlIl(58057, 9031)) {
                 throw null;
             }
 
-            byte var10000 = super.func_146978_c(var1, var2, var3, var4, var5, var6);
+            byte var10000 = super.isPointInRegion(var1, var2, var3, var4, var5, var6);
             if (lllIllIIIlIl(58057, 9031)) {
                 throw null;
             }
@@ -549,11 +549,11 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
         }
     }
 
-    public void func_146281_b() {
+    public void onGuiClosed() {
         this.                                                                                            .
-        func_191871_c();
+        removed();
         this.                                                                                                   .(0.0F);
-        super.func_146281_b();
+        super.onGuiClosed();
         if (lllIllIIIlIl(96102, 2457)) {
             throw null;
         } else {
@@ -563,49 +563,49 @@ public class Class127 extends InventoryEffectRenderer implements IRecipeShownLis
 
     public protected private abstract final synchronized native void _Пошел_нахуй/* $FF was: _Пошел нахуй*/();
 
-    public void func_73876_c() {
-        if (lllIllIIIlll(this.field_146297_k.field_71442_b.func_78758_h())) {
-            Minecraft var10000 = this.field_146297_k;
-            Class10 var10001 = new Class10(this.field_146297_k.field_71439_g);
+    public void updateScreen() {
+        if (lllIllIIIlll(this.mc.playerController.isInCreativeMode())) {
+            Minecraft var10000 = this.mc;
+            Class10 var10001 = new Class10(this.mc.player);
             if (lllIllIIIlIl(9537, 4336)) {
                 throw null;
             }
 
-            var10000.func_147108_a(var10001);
+            var10000.displayGuiScreen(var10001);
         }
 
         if (lllIllIIIlIl(9537, 4336)) {
             throw null;
         } else {
             this.                                                                                            .
-            func_193957_d();
+            tick();
             boolean var1 = true;
         }
     }
 
-    public void func_146979_b(int var1, int var2) {
-        FontRenderer var10000 = this.field_146289_q;
+    public void drawGuiContainerForegroundLayer(int var1, int var2) {
+        FontRenderer var10000 = this.fontRenderer;
         String var10001 = Class60. ("ytwn\u007frs\u007f`5rhw}asd<");
         if (lllIllIIIlIl(80796, 6765)) {
             throw null;
         } else {
-            var10001 = I18n.func_135052_a(var10001, new Object[0]);
+            var10001 = I18n.format(var10001, new Object[0]);
             if (lllIllIIIlIl(80796, 6765)) {
                 throw null;
             } else {
-                var10000.func_78276_b(var10001, 97, 8, 4210752);
+                var10000.drawString(var10001, 97, 8, 4210752);
                 boolean var3 = true;
             }
         }
     }
 
-    public void func_184098_a(Slot var1, int var2, int var3, ClickType var4) {
-        super.func_184098_a(var1, var2, var3, var4);
+    public void handleMouseClick(Slot var1, int var2, int var3, ClickType var4) {
+        super.handleMouseClick(var1, var2, var3, var4);
         if (lllIllIIIlIl(62522, 384)) {
             throw null;
         } else {
             this.                                                                                            .
-            func_191874_a(var1);
+            slotClicked(var1);
             boolean var10000 = true;
         }
     }

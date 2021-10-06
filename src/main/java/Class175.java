@@ -44,7 +44,7 @@ public class Class175 extends Class171 {
 
     @SubscribeEvent
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(FogDensity var1) {
-        if (!llIIllllIIll(var1.getState().func_185904_a(), Material.field_151586_h) || llIIllllIlII(var1.getState().func_185904_a(), Material.field_151587_i)) {
+        if (!llIIllllIIll(var1.getState().getMaterial(), Material.WATER) || llIIllllIlII(var1.getState().getMaterial(), Material.LAVA)) {
             if (llIIllllIIlI(16177, 1121)) {
                 throw null;
             }

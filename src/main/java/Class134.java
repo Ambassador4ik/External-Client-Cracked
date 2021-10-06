@@ -173,15 +173,15 @@ public class Class134 extends Class171 {
             if (llIlllIIIIIl(92905, 9107)) {
                 throw null;
             } else {
-                if (llIlllIIIIlI(var3) && llIlllIIIIll(this..field_71476_x) &&llIlllIIIIlI(this.
-                (this..field_71476_x.field_72308_g))){
+                if (llIlllIIIIlI(var3) && llIlllIIIIll(this..objectMouseOver) &&llIlllIIIIlI(this.
+                (this..objectMouseOver.entityHit))){
                     this.                                                                                                    .
-                    field_71442_b.func_78764_a(this..field_71439_g, this.                                                                                                    .
-                    field_71476_x.field_72308_g);
+                    playerController.attackEntity(this..player, this.                                                                                                    .
+                    objectMouseOver.entityHit);
                     this.                                                                                                    .
-                    field_71439_g.func_184609_a(EnumHand.MAIN_HAND);
+                    player.swingArm(EnumHand.MAIN_HAND);
                     this.                                                                                                    .
-                    field_71439_g.func_184821_cY();
+                    player.resetCooldown();
                 }
 
                 if (llIlllIIIIIl(92905, 9107)) {
@@ -196,7 +196,7 @@ public class Class134 extends Class171 {
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var1) {
         label85:
         {
-            if (llIlllIIIIll(var1) && llIlllIIIIlI(var1.func_70089_S()) && llIlllIIIlII(var1, this..field_71439_g)){
+            if (llIlllIIIIll(var1) && llIlllIIIIlI(var1.isEntityAlive()) && llIlllIIIlII(var1, this..player)){
             if (!llIlllIIIIlI(var1 instanceof EntityPlayer)) {
                 break label85;
             }
@@ -220,12 +220,12 @@ public class Class134 extends Class171 {
 
         if (llIlllIIIIIl(52537, 1132)) {
             throw null;
-        } else if (llIlllIIIIlI(var1.func_82150_aj())) {
+        } else if (llIlllIIIIlI(var1.isInvisible())) {
             return this.                                                                                           .();
         } else if (llIlllIIIIIl(52537, 1132)) {
             throw null;
         } else if (llIlllIIIIlI(var1 instanceof EntityPlayer) && llIlllIIIIII(Class73..                                                                                                    .
-        (((EntityPlayer) var1).func_146103_bH().getName()))){
+        (((EntityPlayer) var1).getGameProfile().getName()))){
             return this.                                                                                                   .
             ();
         } else if (llIlllIIIIIl(52537, 1132)) {

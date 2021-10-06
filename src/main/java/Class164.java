@@ -36,12 +36,12 @@ public class Class164 extends ChannelDuplexHandler {
                     throw null;
                 }
 
-                var10000 = Minecraft.func_71410_x();
+                var10000 = Minecraft.getMinecraft();
                 if (lllllllllllI(38985, 9742)) {
                     throw null;
                 }
 
-                ChannelPipeline var5 = var10000.func_147114_u().func_147298_b().channel().pipeline();
+                ChannelPipeline var5 = var10000.getConnection().getNetworkManager().channel().pipeline();
                 var10001 = Class60. ("jzzq{oBrsuuvs)");
                 if (lllllllllllI(38985, 9742)) {
                     throw null;
@@ -58,18 +58,18 @@ public class Class164 extends ChannelDuplexHandler {
                     throw null;
                 }
 
-                var10000 = Minecraft.func_71410_x();
+                var10000 = Minecraft.getMinecraft();
                 if (lllllllllllI(38985, 9742)) {
                     throw null;
                 }
 
-                EntityPlayerSP var3 = var10000.field_71439_g;
+                EntityPlayerSP var3 = var10000.player;
                 var10001 = Class60. ("Ytwt{xis}u+:Sigux;ft.zyncxish<");
                 if (lllllllllllI(38985, 9742)) {
                     throw null;
                 }
 
-                var3.func_71165_d(var10001);
+                var3.sendChatMessage(var10001);
                 var4 = true;
                 return;
             }

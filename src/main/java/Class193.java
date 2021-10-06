@@ -147,7 +147,7 @@ public class Class193 extends Class171 {
     }
 
     private static boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(EntityPlayer var0, NetworkPlayerInfo var1) {
-        return var1.func_178845_a().getName().equals(var0.func_70005_c_());
+        return var1.getGameProfile().getName().equals(var0.getName());
     }
 
     private static boolean lllIllllIlIl(int var0) {
@@ -187,7 +187,7 @@ public class Class193 extends Class171 {
     }
 
     private static boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(ItemStack var0) {
-        if (lllIllllIllI(var0.func_190926_b()) && lllIllllIllI(var0.func_77948_v())) {
+        if (lllIllllIllI(var0.isEmpty()) && lllIllllIllI(var0.isItemEnchanted())) {
             return true;
         } else if (lllIllllIIII(61889, 3690)) {
             throw null;
@@ -233,19 +233,19 @@ public class Class193 extends Class171 {
                                 throw null;
                             }
 
-                            if (!lllIlllllIIl(var9, this..field_71441_e.field_73010_i.size())){
+                            if (!lllIlllllIIl(var9, this..world.playerEntities.size())){
                                 break;
                             }
 
                             EntityPlayer var7;
-                            if (lllIllllIIlI(var7 = (EntityPlayer) this..field_71441_e.field_73010_i.get(var6)) &&
-                            lllIlllIllll(var7.func_82150_aj()) && lllIlllllIIl(var7.field_70173_aa, 10)){
+                            if (lllIllllIIlI(var7 = (EntityPlayer) this..world.playerEntities.get(var6)) &&
+                            lllIlllIllll(var7.isInvisible()) && lllIlllllIIl(var7.ticksExisted, 10)){
                                 var15 = Class60. ("½-[uj;ºy7h1½ ipweml:&LhvnVnhcr");
                                 if (lllIllllIIII(69154, 3612)) {
                                     throw null;
                                 }
 
-                                var15 = String.format(var15, var7.func_70005_c_());
+                                var15 = String.format(var15, var7.getName());
                                 if (lllIllllIIII(69154, 3612)) {
                                     throw null;
                                 }
@@ -303,7 +303,7 @@ public class Class193 extends Class171 {
                                 byte var13;
                                 double var18;
                                 double var19;
-                                if (lllIllllllII((var18 = (var3 = (double) this..field_71439_g.func_70032_d(var2.)) - var2.) == 0.0D ? 0 : (var18 < 0.0D ? -1 : 1)) &&
+                                if (lllIllllllII((var18 = (var3 = (double) this..player.getDistance(var2.)) - var2.) == 0.0D ? 0 : (var18 < 0.0D ? -1 : 1)) &&
                                 lllIlllllIll((var19 = var3 - 3.0D) == 0.0D ? 0 : (var19 < 0.0D ? -1 : 1))){
                                     var13 = 1;
                                     var12 = true;
@@ -342,8 +342,8 @@ public class Class193 extends Class171 {
                                 }
 
                                 byte var8 = var13;
-                                if (lllIllllllIl(var2..field_71071_by.field_70460_b.stream().filter(Class193::).mapToInt(Class193::).sum(),
-                                4) &&lllIllllIllI(var2..field_71071_by.func_70448_g().func_190926_b())){
+                                if (lllIllllllIl(var2..inventory.armorInventory.stream().filter(Class193::).mapToInt(Class193::).sum(),
+                                4) &&lllIllllIllI(var2..inventory.getCurrentItem().isEmpty())){
                                     var13 = 1;
                                     var12 = true;
                                 } else{
@@ -367,7 +367,7 @@ public class Class193 extends Class171 {
                                         throw null;
                                     }
 
-                                    var15 = String.format(var15, var2..func_70005_c_());
+                                    var15 = String.format(var15, var2..getName());
                                     if (lllIllllIIII(69154, 3612)) {
                                         throw null;
                                     }
@@ -379,8 +379,8 @@ public class Class193 extends Class171 {
                                         throw null;
                                     }
 
-                                    var16 = Class123. (this..field_71439_g.field_70163_u - var2.                                                                                                   .
-                                    field_70163_u);
+                                    var16 = Class123. (this..player.posY - var2.                                                                                                   .
+                                    posY);
                                     if (lllIllllIIII(69154, 3612)) {
                                         throw null;
                                     }
@@ -402,7 +402,7 @@ public class Class193 extends Class171 {
                                             throw null;
                                         }
 
-                                        var15 = String.format(var15, var2..func_70005_c_());
+                                        var15 = String.format(var15, var2..getName());
                                         if (lllIllllIIII(69154, 3612)) {
                                             throw null;
                                         }
@@ -438,7 +438,7 @@ public class Class193 extends Class171 {
         this.                                                                                                   .
         (Class172., this. (), var2, 1500);
         this.                                                                                                    .
-        field_71441_e.func_72900_e(var1);
+        world.removeEntity(var1);
         this. (var2);
 
         boolean var10001;
@@ -491,13 +491,13 @@ public class Class193 extends Class171 {
             throw null;
         } else {
             Entity var10;
-            if (lllIllllIIlI(var10 = var1.getEntity()) && lllIlllIllll(var10 instanceof EntityPlayer) && lllIllllIIll(var10, this..field_71439_g))
+            if (lllIllllIIlI(var10 = var1.getEntity()) && lllIlllIllll(var10 instanceof EntityPlayer) && lllIllllIIll(var10, this..player))
             {
                 EntityPlayer var2 = (EntityPlayer) var10;
                 double var3 = (double) this.                                                                                                    .
-                field_71439_g.func_70032_d(var10);
+                player.getDistance(var10);
                 NetworkPlayerInfo var11 = this.                                                                                                    .
-                func_147114_u().func_175102_a(var2.func_110124_au());
+                getConnection().getPlayerInfo(var2.getUniqueID());
                 byte var10000;
                 boolean var10001;
                 double var20;
@@ -519,7 +519,7 @@ public class Class193 extends Class171 {
 
                 byte var5 = var10000;
                 float var22;
-                if (lllIllllIllI((var22 = var2.func_110143_aJ() - 20.0F) == 0.0F ? 0 : (var22 < 0.0F ? -1 : 1))) {
+                if (lllIllllIllI((var22 = var2.getHealth() - 20.0F) == 0.0F ? 0 : (var22 < 0.0F ? -1 : 1))) {
                     var10000 = 1;
                     var10001 = true;
                 } else {
@@ -535,7 +535,7 @@ public class Class193 extends Class171 {
                 }
 
                 byte var6 = var10000;
-                if (lllIllllIlll(var11.func_178848_b(), GameType.SURVIVAL)) {
+                if (lllIllllIlll(var11.getGameType(), GameType.SURVIVAL)) {
                     var10000 = 1;
                     var10001 = true;
                 } else {
@@ -552,7 +552,7 @@ public class Class193 extends Class171 {
 
                 byte var12 = var10000;
                 byte var14 = Class13. (var2, this.                                                                                                    .
-                field_71439_g, (float) this.                                                                                            .
+                player, (float) this.                                                                                            .
                 ());
                 if (lllIllllIIII(28014, 4397)) {
                     throw null;
@@ -634,14 +634,14 @@ public class Class193 extends Class171 {
 
                         while (!lllIllllIIII(28014, 4397)) {
                             if (lllIllllIllI(0)) {
-                                if (lllIlllllIII(this..func_147114_u().func_175106_d().stream().filter(Class193::).mapToInt(Class193::).sum(),
+                                if (lllIlllllIII(this..getConnection().getPlayerInfoMap().stream().filter(Class193::).mapToInt(Class193::).sum(),
                                 1)){
                                     String var10002 = Class60. ("¤4Bls\"£`.q(¤9pin|tu#?Vuar");
                                     if (lllIllllIIII(28014, 4397)) {
                                         throw null;
                                     }
 
-                                    var10002 = String.format(var10002, var2.func_70005_c_());
+                                    var10002 = String.format(var10002, var2.getName());
                                     if (lllIllllIIII(28014, 4397)) {
                                         throw null;
                                     }

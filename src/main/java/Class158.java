@@ -50,9 +50,9 @@ public class Class158 extends Class171 {
     }
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Object var1, Class170 var2) {
-        if (lllIllIllIII(var2, Class170.) && lllIllIllIIl(var1 instanceof CPacketUseEntity) && lllIllIllIII(((CPacketUseEntity) var1).func_149565_c(), Action.ATTACK) && lllIllIllIlI(this..field_71476_x.field_72308_g) &&
+        if (lllIllIllIII(var2, Class170.) && lllIllIllIIl(var1 instanceof CPacketUseEntity) && lllIllIllIII(((CPacketUseEntity) var1).getAction(), Action.ATTACK) && lllIllIllIlI(this..objectMouseOver.entityHit) &&
         !lllIllIllIll(Class73..                                                                                                    .
-        (this..field_71476_x.field_72308_g.func_70005_c_()))){
+        (this..objectMouseOver.entityHit.getName()))){
             if (lllIllIlIlll(28327, 2902)) {
                 throw null;
             } else {

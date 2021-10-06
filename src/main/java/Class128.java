@@ -99,42 +99,42 @@ public class Class128 extends Class171 {
             }
 
             float[] var2 = var10000;
-            Rotation var10003 = new Rotation(var2[0], var2[1], this..field_71439_g.field_70122_E);
+            Rotation var10003 = new Rotation(var2[0], var2[1], this..player.onGround);
             if (lllllIIllIll(62840, 7631)) {
                 throw null;
             }
 
             this. ((Packet) var10003);
             this.                                                                                                    .
-            field_71439_g.func_70034_d(var2[0]);
+            player.setRotationYawHead(var2[0]);
             this.                                                                                                    .
-            field_71439_g.func_181013_g(var2[0]);
+            player.setRenderYawOffset(var2[0]);
         }
 
         if (lllllIIllIll(62840, 7631)) {
             throw null;
         } else {
             this.                                                                                                    .
-            field_71439_g.func_70031_b(false);
+            player.setSprinting(false);
             this.                                                                                                    .
-            field_71442_b.func_78764_a(this..field_71439_g, var1);
+            playerController.attackEntity(this..player, var1);
             this.                                                                                                    .
-            field_71439_g.func_184609_a(EnumHand.MAIN_HAND);
+            player.swingArm(EnumHand.MAIN_HAND);
             this.                                                                                                    .
-            field_71439_g.func_184821_cY();
+            player.resetCooldown();
             boolean var3 = true;
         }
     }
 
     public void ____________________________________________________________________________/* $FF was:                                                                             */(ClientTickEvent var1) {
         this.                                                                                                    .
-        field_71441_e.func_72910_y().stream().filter(this::).forEach(this::);
+        world.getLoadedEntityList().stream().filter(this::).forEach(this::);
         boolean var10000 = true;
     }
 
     private boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Entity var1) {
         double var2;
-        if (lllllIIlllIl(var1 instanceof EntityShulkerBullet) && lllllIIllllI((var2 = (double) this..field_71439_g.func_70032_d(var1) - this..
+        if (lllllIIlllIl(var1 instanceof EntityShulkerBullet) && lllllIIllllI((var2 = (double) this..player.getDistance(var1) - this..
         ()) ==0.0D ? 0 : (var2 < 0.0D ? -1 : 1)) &&lllllIIlllIl(this.. (100))){
             return true;
         } else if (lllllIIllIll(27607, 301)) {

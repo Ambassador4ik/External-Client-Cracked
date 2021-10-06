@@ -61,7 +61,7 @@ public class Class150 extends Class171 {
         if (llllIIllllII(var1 instanceof SPacketChat)) {
             SPacketChat var3;
             String var4;
-            String var10000 = var4 = (var3 = (SPacketChat) var1).func_148915_c().func_150254_d();
+            String var10000 = var4 = (var3 = (SPacketChat) var1).getChatComponent().getFormattedText();
             String var10001 = Class60. ("5oic{(");
             if (llllIIllIlll(54067, 5772)) {
                 throw null;
@@ -121,7 +121,7 @@ public class Class150 extends Class171 {
                 throw null;
             }
 
-            this. = var3.func_148915_c().func_150254_d();
+            this. = var3.getChatComponent().getFormattedText();
         }
 
         if (llllIIllIlll(54067, 5772)) {

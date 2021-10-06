@@ -89,9 +89,9 @@ public class Class146 extends Class171 {
 
     @SubscribeEvent
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Post var1) {
-        if (llllIIllIIll(var1.getEntityPlayer(), this..field_71439_g) &&llllIIllIlII(Class73..                                                                                                .                                                                                  ))
+        if (llllIIllIIll(var1.getEntityPlayer(), this..player) &&llllIIllIlII(Class73..                                                                                                .                                                                                  ))
         {
-            GlStateManager.func_179121_F();
+            GlStateManager.popMatrix();
             if (llllIIllIlIl(68608, 1565)) {
                 throw null;
             }
@@ -106,14 +106,14 @@ public class Class146 extends Class171 {
 
     @SubscribeEvent
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(Pre var1) {
-        if (llllIIllIIll(var1.getEntityPlayer(), this..field_71439_g) &&llllIIllIlII(Class73..                                                                                                .                                                                                  ))
+        if (llllIIllIIll(var1.getEntityPlayer(), this..player) &&llllIIllIlII(Class73..                                                                                                .                                                                                  ))
         {
-            GlStateManager.func_179094_E();
+            GlStateManager.pushMatrix();
             if (llllIIllIlIl(18755, 6179)) {
                 throw null;
             }
 
-            GlStateManager.func_179139_a(this.. (), this.                                                                                                   .
+            GlStateManager.scale(this.. (), this.                                                                                                   .
             (), this.                                                                                  .());
             if (llllIIllIlIl(18755, 6179)) {
                 throw null;

@@ -100,7 +100,7 @@ public class Class165 {
                 throw null;
             } else {
                 this. = var10005;
-                Minecraft var10004 = Minecraft.func_71410_x();
+                Minecraft var10004 = Minecraft.getMinecraft();
                 if (llIIIllIIIll(80744, 4333)) {
                     throw null;
                 } else {
@@ -266,7 +266,7 @@ public class Class165 {
             if (llIIIllIIIll(90982, 4637)) {
                 throw null;
             } else {
-                if (llIIIllIllIl(this..field_71456_v instanceof Class124)){
+                if (llIIIllIllIl(this..ingameGUI instanceof Class124)){
                     Minecraft var10002 = this.;
                     Class124 var10003 = new Class124(this.);
                     if (llIIIllIIIll(90982, 4637)) {
@@ -282,7 +282,7 @@ public class Class165 {
                 if (llIIIllIIIll(90982, 4637)) {
                     throw null;
                 } else {
-                    if (llIIIllIllIl(this..field_71456_v.func_146158_b() instanceof Class102)){
+                    if (llIIIllIllIl(this..ingameGUI.getChatGUI() instanceof Class102)){
                         Class22. ();
                         if (llIIIllIIIll(90982, 4637)) {
                             throw null;
@@ -293,10 +293,10 @@ public class Class165 {
                         throw null;
                     } else {
                         Class206 var2;
-                        if (llIIIllIllIl(this..field_71466_p instanceof Class206)){
+                        if (llIIIllIllIl(this..fontRenderer instanceof Class206)){
                             Class206 var10000 = new Class206;
                             GameSettings var10 = this.                                                                                                   .
-                            field_71474_y;
+                            gameSettings;
                             ResourceLocation var11 = new ResourceLocation;
                             String var10005 = Class60. ("xhwx}\u007fn\u007f+khbt\"b\u007f\u007fdv\"hc<");
                             if (llIIIllIIIll(90982, 4637)) {
@@ -309,15 +309,15 @@ public class Class165 {
                             }
 
                             var10000.<init> (var10, var11, this.                                                                                                   .
-                            field_71446_o, false);
+                            renderEngine, false);
                             if (llIIIllIIIll(90982, 4637)) {
                                 throw null;
                             }
 
                             var2 = var10000;
-                            if (llIIIllIlIlI(this..field_71474_y.field_74363_ab)){
-                                var2.func_78264_a(this..func_152349_b());
-                                var2.func_78275_b(this..func_135016_M().func_135044_b());
+                            if (llIIIllIlIlI(this..gameSettings.language)){
+                                var2.setUnicodeFlag(this..isUnicode());
+                                var2.setBidiFlag(this..getLanguageManager().isCurrentLanguageBidirectional());
                             }
 
                             if (llIIIllIIIll(90982, 4637)) {
@@ -330,19 +330,19 @@ public class Class165 {
                             }
 
                             this.                                                                                                   .
-                            field_71466_p = var2;
+                            fontRenderer = var2;
                         }
 
                         if (llIIIllIIIll(90982, 4637)) {
                             throw null;
                         } else {
-                            if (llIIIllIllIl(this..field_71460_t instanceof Class25)){
-                                if (llIIIllIllll(Class73..) &&llIIIllIlIlI(this..field_71460_t)){
+                            if (llIIIllIllIl(this..entityRenderer instanceof Class25)){
+                                if (llIIIllIllll(Class73..) &&llIIIllIlIlI(this..entityRenderer)){
                                     Class73.                                                                                      .                                                                                         =
                                     this.                                                                                                   .
-                                    field_71460_t;
+                                    entityRenderer;
                                     Class73 var6 = Class73.;
-                                    Class25 var10001 = new Class25(this., this..func_110442_L());
+                                    Class25 var10001 = new Class25(this., this..getResourceManager());
                                     if (llIIIllIIIll(90982, 4637)) {
                                         throw null;
                                     }
@@ -355,7 +355,7 @@ public class Class165 {
                                 }
 
                                 this.                                                                                                   .
-                                field_71460_t = Class73.                                                                                      .
+                                entityRenderer = Class73.                                                                                      .
                                 ;
                                 Class22. ();
                                 if (llIIIllIIIll(90982, 4637)) {
@@ -366,7 +366,7 @@ public class Class165 {
                             if (llIIIllIIIll(90982, 4637)) {
                                 throw null;
                             } else {
-                                if (llIIIllIllIl(this..func_175599_af() instanceof Class136)){
+                                if (llIIIllIllIl(this..getRenderItem() instanceof Class136)){
                                     label168:
                                     {
                                         try {
@@ -381,7 +381,7 @@ public class Class165 {
                                             }
 
                                             ModelManager var5 = (ModelManager) var7.get(this.);
-                                            Class136 var8 = new Class136(this..func_110434_K(), var5, this.                                                                                                   .
+                                            Class136 var8 = new Class136(this..getTextureManager(), var5, this.                                                                                                   .
                                             getItemColors());
                                             if (llIIIllIIIll(90982, 4637)) {
                                                 throw null;
@@ -508,24 +508,24 @@ public class Class165 {
             Class73.                                                                                      .                                                                                .                                                                                                   .
             stream().filter(Class165::).forEach(Class165::);
             float var3;
-            if (llIIIllIlIIl(var1.phase, Phase.END) && llIIIllIlIlI(var1.player) && llIIIllIlIll(var1.player.func_145782_y(), -1) && llIIIllIllII((var3 = var1.player.func_70032_d(this..field_71439_g) - 4.0F) == 0.0F ? 0 : (var3 < 0.0F ? -1 : 1)))
+            if (llIIIllIlIIl(var1.phase, Phase.END) && llIIIllIlIlI(var1.player) && llIIIllIlIll(var1.player.getEntityId(), -1) && llIIIllIllII((var3 = var1.player.getDistance(this..player) - 4.0F) == 0.0F ? 0 : (var3 < 0.0F ? -1 : 1)))
             {
                 float[] var10004 = Class13. (var1.player, this.                                                                                                   .
-                field_71439_g);
+                player);
                 if (llIIIllIIIll(41725, 4249)) {
                     throw null;
                 }
 
                 float[] var2 = var10004;
-                var1.player.field_70125_A = var2[1];
-                var1.player.func_70034_d(var2[0]);
-                var1.player.field_70177_z = var2[0];
-                if (llIIIllIllIl(var1.player.field_70173_aa % 12)) {
-                    var1.player.func_70652_k(this..field_71439_g);
-                    var1.player.func_184609_a(EnumHand.MAIN_HAND);
-                    var1.player.func_184821_cY();
+                var1.player.rotationPitch = var2[1];
+                var1.player.setRotationYawHead(var2[0]);
+                var1.player.rotationYaw = var2[0];
+                if (llIIIllIllIl(var1.player.ticksExisted % 12)) {
+                    var1.player.attackEntityAsMob(this..player);
+                    var1.player.swingArm(EnumHand.MAIN_HAND);
+                    var1.player.resetCooldown();
                     this.                                                                                                   .
-                    field_71439_g.func_184185_a((SoundEvent) SoundEvent.field_187505_a.func_148754_a(359), 100.0F, 1.0F);
+                    player.playSound((SoundEvent) SoundEvent.REGISTRY.getObjectById(359), 100.0F, 1.0F);
                 }
             }
 
@@ -538,7 +538,7 @@ public class Class165 {
     }
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
-        if (llIIIllIlIlI(this..field_71439_g) &&!llIIIllIllll(this..field_71441_e)){
+        if (llIIIllIlIlI(this..player) &&!llIIIllIllll(this..world)){
             if (llIIIllIIIll(46055, 376)) {
                 throw null;
             } else {

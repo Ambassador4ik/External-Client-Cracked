@@ -59,7 +59,7 @@ public class Class101 extends Class171 {
 
             var10000.println(var10001);
             CPacketCustomPayload var3;
-            String var4 = (var3 = (CPacketCustomPayload) var1).func_149559_c();
+            String var4 = (var3 = (CPacketCustomPayload) var1).getChannelName();
             var10001 = Class60. ("VYdYm{r?");
             if (llIllllIIIlI(58255, 5841)) {
                 throw null;
@@ -82,7 +82,7 @@ public class Class101 extends Class171 {
                     throw null;
                 }
 
-                Class22. (var3, var5.func_180714_a(var10002));
+                Class22. (var3, var5.writeString(var10002));
                 if (llIllllIIIlI(58255, 5841)) {
                     throw null;
                 }

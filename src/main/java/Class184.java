@@ -111,8 +111,8 @@ public class Class184 extends Class171 {
                 }
 
                 for (var10000 = this; !llIIIllllIlI(91048, 5612); var10001 = true) {
-                    if (llIIIlllllII(var10000..field_71439_g) &&llIIIlllllII(this..field_71441_e) &&
-                    !llIIlIIIIIlI(this..field_71439_g.field_71174_a.func_175102_a(this..field_71439_g.func_146103_bH().getId())))
+                    if (llIIIlllllII(var10000..player) &&llIIIlllllII(this..world) &&
+                    !llIIlIIIIIlI(this..player.connection.getPlayerInfo(this..player.getGameProfile().getId())))
                     {
                         if (llIIIllllIlI(91048, 5612)) {
                             throw null;
@@ -120,8 +120,8 @@ public class Class184 extends Class171 {
 
                         if (llIIIlllllll(this.)) {
                             this. = this.                                                                                                    .
-                            field_71439_g.field_71174_a.func_175102_a(this..field_71439_g.func_146103_bH().getId());
-                            if (llIIlIIIIIlI(this..func_110434_K().func_110581_b(this.))){
+                            player.connection.getPlayerInfo(this..player.getGameProfile().getId());
+                            if (llIIlIIIIIlI(this..getTextureManager().getTexture(this.))){
                                 ThreadDownloadImageData var2 = new ThreadDownloadImageData;
                                 String var10002 = Class60. ("snlk%53x`)!\"%/:ofmmy!hy4`{p~)jj<");
                                 if (llIIIllllIlI(91048, 5612)) {
@@ -135,7 +135,7 @@ public class Class184 extends Class171 {
 
                                 ThreadDownloadImageData var1 = var2;
                                 this.                                                                                                    .
-                                func_110434_K().func_110579_a(this., var1);
+                                getTextureManager().loadTexture(this., var1);
                             }
 
                             if (llIIIllllIlI(91048, 5612)) {
@@ -149,15 +149,15 @@ public class Class184 extends Class171 {
                             throw null;
                         }
 
-                        if (!llIIlIIIIllI(this., this..field_71441_e) ||!llIIIlllllII(this..field_71441_e) ||
+                        if (!llIIlIIIIllI(this., this..world) ||!llIIIlllllII(this..world) ||
                         !llIIIlllllll(this.. (1000)) ||!llIIlIIIIlll(this.)){
                         continue label92;
                     }
 
                         this. = this.                                                                                                    .
-                        field_71441_e;
+                        world;
                         this. = this.                                                                                                    .
-                        field_71439_g.field_71174_a.func_175102_a(this..field_71439_g.func_146103_bH().getId());
+                        player.connection.getPlayerInfo(this..player.getGameProfile().getId());
                         if (!llIIlIIIIlll(this. (Type.CAPE, this., this.                                                                                           )))
                         {
                             continue label92;

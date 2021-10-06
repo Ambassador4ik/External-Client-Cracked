@@ -66,7 +66,7 @@ public class Class151 extends Class171 {
         if (llIlIlIlIlII(81971, 1266)) {
             throw null;
         } else {
-            var10005.<init> (var10007, BlockPos.field_177992_a, false);
+            var10005.<init> (var10007, BlockPos.ORIGIN, false);
             if (llIlIlIlIlII(81971, 1266)) {
                 throw null;
             } else {
@@ -93,7 +93,7 @@ public class Class151 extends Class171 {
             }
 
             ArrayList var6 = var10000;
-            String[] var5 = ((SPacketTabComplete) var1).func_149630_c();
+            String[] var5 = ((SPacketTabComplete) var1).getMatches();
             int var3;
             int var8 = var3 = 0;
 

@@ -105,17 +105,17 @@ public class Class149 {
     }
 
     public boolean ________________________________________________________________________________________________/* $FF was:                                                                                                 */(String var1) {
-        Minecraft var10000 = Minecraft.func_71410_x();
+        Minecraft var10000 = Minecraft.getMinecraft();
         if (llllIIlllIII(17742, 7572)) {
             throw null;
         } else {
-            if (llllIIlllIIl(var10000.field_71439_g)) {
-                var10000 = Minecraft.func_71410_x();
+            if (llllIIlllIIl(var10000.player)) {
+                var10000 = Minecraft.getMinecraft();
                 if (llllIIlllIII(17742, 7572)) {
                     throw null;
                 }
 
-                if (llllIIlllIlI(var10000.field_71439_g.func_70005_c_().equals(var1))) {
+                if (llllIIlllIlI(var10000.player.getName().equals(var1))) {
                     return true;
                 }
             }

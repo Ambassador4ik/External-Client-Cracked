@@ -476,9 +476,9 @@ public class Class122 extends Class171 {
                 }
 
                 this. = this.                                                                                                    .
-                field_71439_g.field_70177_z;
+                player.rotationYaw;
                 this. = this.                                                                                                    .
-                field_71439_g.field_70125_A;
+                player.rotationPitch;
             }
 
             if (llllIlIIIlII(68423, 67)) {
@@ -623,8 +623,8 @@ public class Class122 extends Class171 {
                     }
 
                     var15 = this;
-                    this.                                                                                                    .field_71439_g.field_70177_z = var3[0];
-                    this.                                                                                                    .field_71439_g.field_70125_A = var3[1];
+                    this.                                                                                                    .player.rotationYaw = var3[0];
+                    this.                                                                                                    .player.rotationPitch = var3[1];
                     var10 = true;
                     break;
                 default:
@@ -640,9 +640,9 @@ public class Class122 extends Class171 {
             }
 
             var15.                                                                                                    .
-            field_71439_g.func_70034_d(var3[0]);
+            player.setRotationYawHead(var3[0]);
             this.                                                                                                    .
-            field_71439_g.func_181013_g(var3[0]);
+            player.setRenderYawOffset(var3[0]);
         }
 
         if (llllIlIIIlII(68423, 67)) {
@@ -650,8 +650,8 @@ public class Class122 extends Class171 {
         } else {
             if (llllIlIlIIIl() && llllIlIIllII(this.. ())){
                 CPacketUseEntity var7;
-                if (llllIlIIllII(var1 instanceof CPacketUseEntity) && llllIlIIlIIl((var7 = (CPacketUseEntity) var1).func_149564_a(this..field_71441_e),                                                                                               ) &&
-                (!llllIlIIllll(var7.func_149565_c(), Action.INTERACT) || llllIlIIlIIl(var7.func_149565_c(), Action.INTERACT_AT)))
+                if (llllIlIIllII(var1 instanceof CPacketUseEntity) && llllIlIIlIIl((var7 = (CPacketUseEntity) var1).getEntityFromWorld(this..world),                                                                                               ) &&
+                (!llllIlIIllll(var7.getAction(), Action.INTERACT) || llllIlIIlIIl(var7.getAction(), Action.INTERACT_AT)))
                 {
                     if (llllIlIIIlII(68423, 67)) {
                         throw null;
@@ -674,13 +674,13 @@ public class Class122 extends Class171 {
             } else {
                 if (llllIlIIllII(var1 instanceof SPacketPlayerPosLook)) {
                     Class22. (var1, this.                                                                                                    .
-                    field_71439_g.field_70177_z);
+                    player.rotationYaw);
                     if (llllIlIIIlII(68423, 67)) {
                         throw null;
                     }
 
                     Class22. (var1, this.                                                                                                    .
-                    field_71439_g.field_70125_A);
+                    player.rotationPitch);
                     if (llllIlIIIlII(68423, 67)) {
                         throw null;
                     }
@@ -703,7 +703,7 @@ public class Class122 extends Class171 {
             }
 
             double var2;
-            if (llllIlIIllII(var10000) && llllIlIlIIII((var2 = (double) this..field_71439_g.func_70032_d(var1) - this..
+            if (llllIlIIllII(var10000) && llllIlIlIIII((var2 = (double) this..player.getDistance(var1) - this..
             ()) ==0.0D ? 0 : (var2 < 0.0D ? -1 : 1))){
                 return true;
             }
@@ -718,7 +718,7 @@ public class Class122 extends Class171 {
 
     private Entity ________________________________________________________________________________________________/* $FF was:                                                                                                 */() {
         Stream var10000 = this.                                                                                                    .
-        field_71441_e.func_72910_y().stream().filter(this::);
+        world.getLoadedEntityList().stream().filter(this::);
         Class81 var10001 = new Class81(this);
         if (llllIlIIIlII(28195, 5271)) {
             throw null;
@@ -746,7 +746,7 @@ public class Class122 extends Class171 {
             throw null;
         } else {
             Iterator var1 = this.                                                                                                    .
-            field_71441_e.field_72996_f.iterator();
+            world.loadedEntityList.iterator();
 
             while (!llllIlIIIlII(39608, 3654)) {
                 if (!llllIlIIllII(var1.hasNext())) {
@@ -759,11 +759,11 @@ public class Class122 extends Class171 {
 
                 Entity var2;
                 float var3;
-                if (llllIlIIllII((var2 = (Entity) var1.next()) instanceof EntityLivingBase) && llllIlIIllll(var2, this..field_71439_g) &&
-                llllIlIlIIII((var3 = this..field_71439_g.func_70032_d(var2) - 10.0F) == 0.0F ? 0 : (var3 < 0.0F ? -1 : 1)) &&
-                llllIlIIllII(this..field_71439_g.field_70122_E) &&
-                llllIlIIlIII(this..field_71474_y.field_74314_A.func_151470_d()) &&
-                llllIlIIlIII(this..field_71439_g.func_70090_H()) &&llllIlIIlIII(this..field_71439_g.func_180799_ab())){
+                if (llllIlIIllII((var2 = (Entity) var1.next()) instanceof EntityLivingBase) && llllIlIIllll(var2, this..player) &&
+                llllIlIlIIII((var3 = this..player.getDistance(var2) - 10.0F) == 0.0F ? 0 : (var3 < 0.0F ? -1 : 1)) &&
+                llllIlIIllII(this..player.onGround) &&
+                llllIlIIlIII(this..gameSettings.keyBindJump.isKeyDown()) &&
+                llllIlIIlIII(this..player.isInWater()) &&llllIlIIlIII(this..player.isInLava())){
                     return true;
                 }
             }
@@ -773,7 +773,7 @@ public class Class122 extends Class171 {
     }
 
     public void ________________________________________________________________________________________________/* $FF was:                                                                                                 */(RenderWorldLastEvent var1) {
-        if (llllIlIlIIIl() && llllIlIIllII(.func_70089_S())){
+        if (llllIlIlIIIl() && llllIlIIllII(.isEntityAlive())){
             EntityLivingBase var10000 = ;
             Color var10001 = new Color(255, 0, 0);
             if (llllIlIIIlII(82986, 5648)) {
@@ -796,10 +796,10 @@ public class Class122 extends Class171 {
     public boolean __________________________________________________________________________________/* $FF was:                                                                                   */() {
         float var9;
         byte var10000;
-        if (llllIlIIlIII(this..field_71439_g.field_70122_E) &&
-        llllIlIIlIlI((var9 = this..field_71439_g.field_70143_R - 0.0F) == 0.0F ? 0 : (var9 < 0.0F ? -1 : 1)) &&
-        llllIlIIlIII(this..field_71439_g.func_70617_f_()) &&llllIlIIlIII(this..field_71439_g.func_70090_H()) &&
-        llllIlIIlIII(this..field_71439_g.func_180799_ab())){
+        if (llllIlIIlIII(this..player.onGround) &&
+        llllIlIIlIlI((var9 = this..player.fallDistance - 0.0F) == 0.0F ? 0 : (var9 < 0.0F ? -1 : 1)) &&
+        llllIlIIlIII(this..player.isOnLadder()) &&llllIlIIlIII(this..player.isInWater()) &&
+        llllIlIIlIII(this..player.isInLava())){
             var10000 = 1;
             boolean var10001 = true;
         } else{
@@ -815,7 +815,7 @@ public class Class122 extends Class171 {
         } else {
             byte var1 = var10000;
             double var5 = (double) this.                                                                                                    .
-            field_71439_g.field_70143_R;
+            player.fallDistance;
             long var10;
             double var10002;
             if (llllIlIlIlIl((var10 = this.. () - 120L) ==0L ? 0 : (var10 < 0L ? -1 : 1))){
@@ -851,7 +851,7 @@ public class Class122 extends Class171 {
                 } else {
                     int var3 = var1 & var6;
                     double var12;
-                    if (llllIlIIlIlI((var12 = (double) this..field_71439_g.func_70032_d() - this.. ()) ==
+                    if (llllIlIIlIlI((var12 = (double) this..player.getDistance() - this.. ()) ==
                     0.0D ? 0 : (var12 < 0.0D ? -1 : 1))){
                         return false;
                     } else if (llllIlIIIlII(11341, 7012)) {
@@ -860,7 +860,7 @@ public class Class122 extends Class171 {
                         byte var2 = this.                                                                            .
                         ();
                         float var4 = this.                                                                                                    .
-                        field_71439_g.func_184825_o(1.0F);
+                        player.getCooledAttackStrength(1.0F);
                         float var7;
                         if (llllIlIIllII(var2)) {
                             var7 = 0.95F;
@@ -889,7 +889,7 @@ public class Class122 extends Class171 {
                                     if (llllIlIIIlII(11341, 7012)) {
                                         throw null;
                                     } else {
-                                        if (!llllIlIIlIII(var10000) || llllIlIIlIII(this..field_71439_g.func_70090_H()))
+                                        if (!llllIlIIlIII(var10000) || llllIlIIlIII(this..player.isInWater()))
                                         {
                                             if (llllIlIIIlII(11341, 7012)) {
                                                 throw null;
@@ -900,7 +900,7 @@ public class Class122 extends Class171 {
                                                 throw null;
                                             }
 
-                                            if (llllIlIIlIII(var10000) && !llllIlIIllII(this..field_71439_g.func_180799_ab()))
+                                            if (llllIlIIlIII(var10000) && !llllIlIIllII(this..player.isInLava()))
                                             {
                                                 if (llllIlIIIlII(11341, 7012)) {
                                                     throw null;
@@ -934,32 +934,32 @@ public class Class122 extends Class171 {
             return false;
         } else if (llllIlIIIlII(77723, 21)) {
             throw null;
-        } else if (llllIlIIlIII(var1.func_70089_S())) {
+        } else if (llllIlIIlIII(var1.isEntityAlive())) {
             return false;
         } else if (llllIlIIIlII(77723, 21)) {
             throw null;
-        } else if (llllIlIIlIIl(var1, this..field_71439_g)){
+        } else if (llllIlIIlIIl(var1, this..player)){
             return false;
         } else if (llllIlIIIlII(77723, 21)) {
             throw null;
         } else {
             float var2;
-            if (llllIlIIlIlI((var2 = this..field_71439_g.func_70032_d(var1) - 10.0F) == 0.0F ? 0 : (var2 < 0.0F ? -1 : 1)))
+            if (llllIlIIlIlI((var2 = this..player.getDistance(var1) - 10.0F) == 0.0F ? 0 : (var2 < 0.0F ? -1 : 1)))
             {
                 return false;
             } else if (llllIlIIIlII(77723, 21)) {
                 throw null;
-            } else if (llllIlIIlIII(this.. ()) &&llllIlIIlIII(var1.func_70685_l(this..field_71439_g))){
+            } else if (llllIlIIlIII(this.. ()) &&llllIlIIlIII(var1.canEntityBeSeen(this..player))){
                 return false;
             } else if (llllIlIIIlII(77723, 21)) {
                 throw null;
-            } else if (llllIlIIlIII(this.. ()) &&llllIlIIllII(var1.func_82150_aj())){
+            } else if (llllIlIIlIII(this.. ()) &&llllIlIIllII(var1.isInvisible())){
                 return false;
             } else if (llllIlIIIlII(77723, 21)) {
                 throw null;
             } else if (llllIlIIllII(this.. ()) &&llllIlIIllII(var1 instanceof EntityPlayer)){
                 if (llllIlIIlIII(Class73..                                                                                                    .
-                (var1.func_70005_c_()))){
+                (var1.getName()))){
                     return true;
                 } else if (llllIlIIIlII(77723, 21)) {
                     throw null;
@@ -1028,8 +1028,8 @@ public class Class122 extends Class171 {
                         label150:
                         {
                             var3 = this.                                                                                                    .
-                            field_71439_g;
-                            var3.field_70177_z += 0.001F;
+                            player;
+                            var3.rotationYaw += 0.001F;
                             if (llllIlIlIIIl()) {
                                 var4 = this. ();
                                 if (llllIlIIIlII(97471, 5405)) {
@@ -1081,7 +1081,7 @@ public class Class122 extends Class171 {
                     } else {
                         if (llllIlIIllII(this.. ()) &&llllIlIIllII(this. ())){
                             this.                                                                                                    .
-                            field_71439_g.func_70664_aZ();
+                            player.jump();
                             this.                                                                                         .
                             ();
                         }
@@ -1094,8 +1094,8 @@ public class Class122 extends Class171 {
                             throw null;
                         } else {
                             if (llllIlIIllII(this.. ()) &&
-                            llllIlIIllII(this..field_71439_g.func_184592_cb().func_77973_b() instanceof ItemShield) &&
-                            llllIlIIlIIl(this..field_71439_g.func_184600_cs(), EnumHand.OFF_HAND)){
+                            llllIlIIllII(this..player.getHeldItemOffhand().getItem() instanceof ItemShield) &&
+                            llllIlIIlIIl(this..player.getActiveHand(), EnumHand.OFF_HAND)){
                                 CPacketPlayerDigging var9 = new CPacketPlayerDigging;
                                 net.minecraft.network.play.client.CPacketPlayerDigging.Action var10003 = net.minecraft.network.play.client.CPacketPlayerDigging.Action.RELEASE_USE_ITEM;
                                 BlockPos var10004 = new BlockPos(-1, -1, -1);
@@ -1104,7 +1104,7 @@ public class Class122 extends Class171 {
                                 }
 
                                 var9.<init> (var10003, var10004, this.                                                                                                    .
-                                field_71439_g.func_174811_aO());
+                                player.getHorizontalFacing());
                                 if (llllIlIIIlII(97471, 5405)) {
                                     throw null;
                                 }
@@ -1116,7 +1116,7 @@ public class Class122 extends Class171 {
                                 throw null;
                             } else {
                                 boolean var10;
-                                if (llllIlIIllII(this.. ()) &&llllIlIIllII(this..field_71439_g.func_70051_ag())){
+                                if (llllIlIIllII(this.. ()) &&llllIlIIllII(this..player.isSprinting())){
                                     var4 = 1;
                                     var10 = true;
                                 } else{
@@ -1132,7 +1132,7 @@ public class Class122 extends Class171 {
                                 } else {
                                     byte var2 = var4;
                                     var3 = this.                                                                                                    .
-                                    field_71439_g;
+                                    player;
                                     if (llllIlIIllII(var2)) {
                                         var10 = false;
                                         var8 = true;
@@ -1142,13 +1142,13 @@ public class Class122 extends Class171 {
                                         }
 
                                         var10 = this.                                                                                                    .
-                                        field_71439_g.func_70051_ag();
+                                        player.isSprinting();
                                     }
 
                                     if (llllIlIIIlII(97471, 5405)) {
                                         throw null;
                                     } else {
-                                        var3.func_70031_b(var10);
+                                        var3.setSprinting(var10);
                                         this. (8L);
                                         CPacketUseEntity var12 = new CPacketUseEntity();
                                         if (llllIlIIIlII(97471, 5405)) {
@@ -1156,9 +1156,9 @@ public class Class122 extends Class171 {
                                         } else {
                                             this. ((Packet) var12);
                                             this.                                                                                                    .
-                                            field_71439_g.func_184609_a(EnumHand.MAIN_HAND);
+                                            player.swingArm(EnumHand.MAIN_HAND);
                                             this.                                                                                                    .
-                                            field_71439_g.func_184821_cY();
+                                            player.resetCooldown();
                                             var11 = true;
                                         }
                                     }
